@@ -1,0 +1,40 @@
+#Ladder NPCs
+#zone:Many NPC: Champion_Darkwater
+#AngeloX
+elsif($text=~/Title/i){
+ if (($charid > 527) && ($ulevel < 6)){
+  quest::say("You are Level $ulevel!");
+  quest::say("You get first");}
+  #quest::enabletitle(int titleset)
+ elsif (($charid > 527) && ($ulevel < 16)){
+  quest::say("You are Level $ulevel!");
+  quest::say("You get second");}
+  #quest::enabletitle(int titleset)
+ elsif (($charid > 527) && ($ulevel < 41)){
+  quest::say("You are Level $ulevel!");
+  quest::say("You get third");}
+  #quest::enabletitle(int titleset)
+ elsif (($charid > 527) && ($ulevel < 56)){
+  quest::say("You are Level $ulevel!");
+  quest::say("You get fifth");}
+  #quest::enabletitle(int titleset)
+ elsif (($charid > 527) && ($ulevel < 65)){
+  quest::say("You are Level $ulevel!");
+  quest::say("You ger sixth");}
+  #quest::enabletitle(int titleset)
+ if ($charid < 526){
+  quest::say("You need to start a new character!");}
+  #quest::enabletitle(int titleset)
+ if (($charid > 527) && ($ulevel > 64)){ #need to set a global flag here too
+  quest::say("You are the champion!");}
+  #quest::enabletitle(int titleset)
+ }
+elsif($text=~/Clear/i){
+quest::say("Here ya go!");
+#quest::removetitle(int titleset)
+ }
+# quest::checktitle(int titleset)
+# $client->SetAATitle("Ladder", "save = 0");
+# $client->SetTitleSuffix("Boy","save = 0");
+
+#END of FILE Zone:Many NPC Champion_Darkwater
