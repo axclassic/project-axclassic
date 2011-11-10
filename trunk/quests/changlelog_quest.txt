@@ -1,0 +1,302 @@
+AX Classic Quests Changelog (Started April 15, 2009)
+-----------------------------------------------------
+==11/05/2011==
+Angelox: Ancients in Sleepers set to spawn (at least tell quest gets fixed).
+
+==10/02/2011==
+Angelox: PoP brought up to date and re-opened.
+
+==09/29/2011==
+Angelox: Events should only be run one at a time.
+
+==09/25/2011==
+Angelox: Pitch Black stays on for much longet time now.
+
+==09/23/2011==
+Angelox: Added Thicken Mana quest to Illusionist LaFea is located near the bridge in the Feerrott and Illusionist Isabela in northern Felwithe.
+
+==09/19/2011==
+Congdar: Druid Epic: fixed Niola and Farios' faction checking
+
+==09/18/2011==
+Congdar: Monk Epic: fix Eejag in correct version of Lavastorm
+
+==09/17/2011==
+Congdar: Monk Epic 1.0 update to a sleeping ogre in Nurga.
+Congdar: Monk Epic 1.0 update to Deep in Lake Rathetear.
+Congdar: Monk Epic 1.0 update to Astral Projection in Overthere.
+Congdar: Monk Epic 1.0 update to Vorash in Lake of Ill Omen.
+Congdar: Monk Epic 1.0 update to Eejag and a fire sprite in Lavastorm.
+
+==09/16/2011==
+Congdar: Monk Epic 1.0 update to Kaiaren in Trankanon.  required sql: update npc_types set qglobal=1 where name='Kaiaren';
+
+==09/09/2011==
+Angelox: Soulbinders will also sense the ties to your soul (port to origin). 
+
+==09/02/2011==
+Angelox: Added quest for #bot selos command.
+
+==07/10/2011==
+Angelox: Added Random Moonstone Event.
+
+==06/14/2011==
+Angelox: Fixed Korrigain night spawn (For ring quest).
+Angelox: Tweaked Bloodhunt event.
+Angelox: Fixed coldain lookout for  ring quest.
+
+==06/12/2011==
+Caved: Added Epic Quest for de-level (Ram Malnverr).
+Angelox: Update to Bloodhunt event.
+
+==05/30/2011==
+Angelox: Pitch Black event will only become active when set, otherwise OoT will be normal at night.
+
+==05/29/2011==
+Angelox: Created Bloodhunt event.
+
+==05/18/2011==
+Angelox: Database: Mobs in Sebilis shouldn't come through the walls so much.
+Angelox: Found and fixed more bugs with Anita Thralls' script - should be working fine now.
+Angelox: Possible solution for Aediles Thrall "going silent" bug: I'm thinking the PL is not loading from /templates at times - Might be because it's a big script and loading time gets cut off.
+ 
+==05/05/2011==
+Angelox: Hopefully fixed the Aediles and Anita Thrall bug where they go unresponsive.
+
+==04/23/2011==
+Angelox: Updated Emilio Leafwalker for start/stop events (added Easter).
+
+==04/22/2011==
+Angelox: Added Easter event to Ranger Band - also optimized his New Years event.
+
+==04/19/2011==
+EQPlayer: #Norrath_Adventurer.pl: Fixed bug where incomplete trophy isn't returned (unfortunately any contents are still lost).
+
+==03/29/2011==
+EQPlayer: Terren_Starwatcher.pl: Cleanup Sylvan Initiate Armor quest text and added missing Sylvan Initiate Further Guidance quest.
+
+==03/28/2011==
+Angelox: Revised Trelaks' quest in WoS is now working. Notice I fixed faction check, but left it a "0" since he has no faction yet.
+EQPlayer: Seria_Woodwind.pl, Krivn_S-Tai.pl, Medron_Y-Lask.pl, Talorial_D-Estalian.pl: Cleanup quest texts.
+EQPlayer: Ulraz_S-Lon.pl: Cleanup Bone Mail quest.
+
+==03/24/2011==
+EQPlayer: Frankel_the_Pirate.pl: Minor spelling and grammar changes.
+
+==03/21/2011==
+EQPlayer: Kinool_Goldsinger.pl: Clean up note hand-in and added Rain Caller quest.
+EQPlayer: Niola_Impholder.pl: Updated quests.
+EQPlayer: Tarker_Blazetoss.pl: Handle Enrollment Letter turn-in and added Black Wolf Skin quest.
+EQPlayer: Yuin_Starchaser.pl: Updated quests: Art Keepers Armor and Art Keepers Task.
+EQPlayer: Added $name to plugin call for soulbinders.
+
+==03/17/2011==
+EQPlayer: Added $name to 'plugin::soulbinder_say'.
+EQPlayer: #Anita_Thrall.pl: Replaced bitwise-OR with logical-OR. Also fixed various grammatical stuff.
+EQPlayer: #Anita_Thrall.pl: Removed first 'circle' text check. It's actually handled further down.
+EQPlayer: Exterminator_Valern.pl: Changed text 'you coins' to 'your coins' and added return of unwanted items.
+
+==03/16/2011==
+EQPlayer: Aediles_Thrall.pl: Fixed 'foreach' log warnings.
+
+==03/10/2011==
+Angelox: Anita script reverted due to saylinks missing on last fix.
+Angelox: EQPlayer: Fixed Anita Thrall is using "bitwise-OR instead of logical-OR" bug.
+Angelox: EQPlayer: Fixed Ranger Band Log Error.
+
+==12/29/2010==
+Angelox: Fix for Ranger_Band.pl for activate special events
+
+==11/13/2010==
+Olhadon: Added new waypoint to Guard_Beren, Modified Guard Beren, Faren, and Trumpy scripts for interaction.
+Olhadon: Changed all qeynos Guard scripts to use $npc->CalculateDistance() and removed Distance subroutine from utility.pl
+Angelox: Tweaks to Aedles, CR,  and Player.pl Scripts
+
+==11/12/2010==
+Olhadon: Modified and added numerous quest files for South Qeynos city ambiance. Mostly for Guards and Trumpy_Irontoe. Fixed Anson_McBale typo.
+Olhadon: Added subroutine Distance to quests/utlity.pl
+Angelox: Implementation of the "Corpse Recovery Stone" quest.
+Angelox: Removed West Freeport-Shadeweaver zoner spawn/quest.
+Olhadon: Modified quest text and hand-ins for the Sword of Nobility Quest (Ghoulbane).
+
+==11/06/2010==
+Olhadon: Added Paw of Opolla quest hand-ins for Melixis.pl Kept old quest intact, changed lost ring quest to be a random emote.
+
+==11/05/2010==
+Olhadon: fixed syntax for Vin_Moltor.pl.
+Angelox: Added soulbinder to Shadeweaver.
+
+==11/04/2010==
+Olhadon: Adding in some of the Paw of Opolla quest hand-ins and text. Adjusted Trumpy_Irontoe's random text to be based on wp location. Adjusted Anson_McBale and Stanos_Herkanor script files.
+
+==10/24/2010==
+Olhadon: Fixed some quests and added missing text to Rivervale citizens and a couple in Misty Thicket.
+
+==10/16/2010==
+Olhadon: Added despawn timer to Stanos, added text to Beef and Bryan_McGee in Highpass.
+Olhadon: Modified Beef and Bryan_McGee in Highpass. Renamed Prime_Patriarch_Vuzx.pl in cabeast to add the # to match DB name to get quests working.
+
+==10/11/2010==
+Olhadon: Adjusted Scripts for General V`ghera changes in Kithicor due to quest::unique_spawn.
+Angelox: Part of a fix for quest::unique_spawn - These cannot have the same NPC spawning from the database.
+
+==10/10/2010==
+Olhadon: Added quest hand-ins for Adjuntant_D-kan and Advisor_C-zatl for Rogue Epic. Added text to lakerathe/Cyanelle.pl
+Olhadon: Modified Rogue Epic Quest scripts due to recent changes with Trivial zones. Added General V`ghera text and quest hand-ins.
+
+==10/09/2010==
+Olhadon: Added EVENT_WAYPOINT text to Guard_Weleth.pl
+Olhadon: Updated/added "The Crate" quest in North Qeynos.
+
+==10/06/2010==
+Olhadon: Updated Founy_Jestands and Tani_N-Mar due to quest item getting added to loot tables.
+
+==10/05/2010==
+Olhadon: Updated Rogue Epic text dialog and side quests.
+
+==10/04/2010==
+Threeflies: Added Fabled Eldak Howlingbear depoper script
+
+===10/03/2010==
+Threeflies: Added maidens (maidens eye) folder to quests
+Threeflies: Changed port to Agnars room instead of Karanas in order to solve door issue.
+
+==9/30/2010==
+Angelox: Quest updates to PoK.
+Angelox: Plugins updated.
+
+==9/27/2010==
+Angelox:Added Minotaur Lord spawn/quest to Steamfont Mino Caves.
+
+==9/25/2010==
+Angelox:Moved quests back to Google - use this changelog for update info.
+
+==8/12/2009==
+Asram: Oggok Quests (Part 3) and only two more quests to go for now.
+
+==8/11/2009==
+Asram: Oggok Quests (Part 2)
+
+==8/10/2009==
+Asram: Confirmed Ogre Beastlord and Shaman quests, and rounded out Clurg in Oggok
+
+==8/06/2009==
+Asram: Added quests required for Bard epic; added teleporter NPC for hateplane and PoSky to Nektulos
+
+==8/04/2009==
+Angelox:Aediles Thrall quest for raid bots re-done (bots granted after you get the first 5).
+
+==8/01/2009==
+Angelox:Increased price for additional raid bots.
+
+==7/29/2009==
+Angelox:Added spell Temperance to Anita Thrall.
+Angelox:Added spell Blessing of Temperance but not in the source yet - will not affect Regular Temperance quest.
+
+==7/28/2009==
+Asram: Added Karg Icebear's and Sulgar's quests for Everfrost.
+
+==7/27/2009==
+Asram: Fixed hand-in for "Tormax's Head - Dwarves"; updated Dain Frostreaver IV.
+
+==7/14/2009==
+Angelox:Revised quests for bot-druid circle and wizard portal spells to Anita Thrall.
+
+==7/7/2009==
+Angelox:Added quest for bot-druid circle and wizard portal spells to Anita Thrall.
+Angelox:changed quest items for quest 2 (Moonstone of Circles), and quest 3 (Moonstone of Portals) to Norrath Adventurer, Needed for Anita Thrall gate spell activation.
+
+==7/01/2009==
+Angelox:Added spell Conjure Corpse to Anita Thrall.
+
+==6/22/2009==
+Angelox: Fixed syntax errors to Avatar_of_Water.pl.
+
+==6/13/2009==
+Romell:Updated all Fabled de-poper scripts to use sub EVENT_AGGRO instead of a proximity effect.
+
+==6/12/2009==
+Angelox:Added Anita Thrall, Bot Spell Scriber (only two spells to start with; Summon Corpse and Lesser Summon Corpse).
+Asram: Added Natasha Whitewater (Timorous) for Cleric Epic quest
+
+==6/11/2009==
+Asram: Fixed newbie note turnin for iksar necromancers.
+
+==6/10/2009==
+Asram: Fixed #a_storm_giant_architect.pl in Wakening Lands which was giving Claws of Veeshan faction instead of taking it away
+
+==6/09/2009==
+Asram:  Added Omat_Vastsea.pl for Cleric Epic.
+
+==6/07/2009==
+Angelox: (ToFS) Omica now spawns where she should.
+Angelox: (Iceclad) 'a lost pirate' working again (needed for Eyepatch quest).
+
+==6/06/2009==
+Angelox: Aediles Thrall now wants a hunting bow instead of a store bought - long bow.
+
+==5/30/2009==
+Angelox: Added more hints and impoved Ranger Bands script. Ranger Band is now in most of the newbee zones, should provide some help for the new players and old too.
+
+==5/29/2009==
+Asram: Updated Klom_Jysun in freportw: Removed extraneous words from parsing to match keywords in text
+Angelox: added a ton of newbee help for starting bots into the Aediles Thrall script.
+
+==5/23/2009==
+Angelox: Aediles Thrall now tells you to come back when you get whichever needed level (instead of "go away!"). If you have bots disabled, he then should tell you to "mind yer own!"
+
+==5/14/2009==
+Asram: Added Grigdor to Grobb for Troll Berserkers' armor quest (Quest still needs recipes and Innothule Loots checked)
+
+==5/13/2009==
+Asram: Fixed spelling of Goriba Thurgorson in kaladimb so berserker newbie armor quest could be done.
+Asram: Fixed Baddi Waca in Oggok so she trains Berserkers instead of Bards
+
+==5/12/2009==
+Angelox: (OoT) Pirate Captain now spawns for a short time on either pier in OoT. He arrives with the Ghost Ship.
+
+==5/02/2009==
+Angelox: Jailer Khazil now can reward any part of your classes Kerranian gear.
+
+==5/01/2009==
+Angelox: Fixed the Tesha's quest in Kerraridge.
+
+==4/26/2009==
+Angelox: Fixed the jailor's quest in Kerraridge.
+
+==4/26/2009==
+Angelox: Possible fix for the Aediles Thrall bug to where he doesn't answer and eats items.
+Angelox: (Paineel): Fixed a couple of quests that needed the right syntax.
+Angelox: Placed a Zoner fix for SoF client users - Starter-Zone characters should get bounced back to  their hometown.
+
+==4/25/2009==
+Angelox: (Warrens): Brought quests there to date
+
+==4/24/2009==
+Asram: (Paineel): Completed Shevra Kollintar's quest and added XP award to Noclin Saah.
+
+==4/20/2009==
+Angelox: Gonner: Added Gonner's acrylia events
+Asram: (Paineel): Completed necro newbie armor quest (Shwara Volerno)
+Asram: (Paineel): Completed various Paineel newbie quests (Dzan Amo, Coriante Verisue); Fixed typos
+Asram: (Paineel): Yet more Paineel quest completions (Azzar Habbib, Coriante Verisue (fix), Mandaril Dark Knife, Miadera Shadowfyre, Sern Adolia, and fixed syntax that prevented quests from starting
+Asram: (Cabilis East) Fixed Drill Master Vygan to fulfill Warrior Pike #1 (Added recipe to database too)
+
+==4/17/2009==
+Asram: (Erudnext) - Tiam Khonsir now accepts kobold molars 100% of the time and rewards Erudites with forward fashion that fits.
+Asram: (Paineel) - Royal Guard Lilkus now accepts kobold molars 100% of the time and begrudgingly tosses out old ringmail that fits.
+
+==4/16/2009==
+Asram: (Grobb) - added Kugaran.pl
+Asram: (Grobb) - Fixed Hukulk.pl returning your guild summons note every time.
+
+==4/15/2009==
+Angelox: created the changelog.txt
+leslamarch: The last of the Bulk upload, from here on out it should be just updates.
+
+==01/11/2010==
+leslamarch: submitted all he quests Caved submitted to the forums, tested and working.
+
+==01/04/2010==
+leslamarch: Removed header info and moved to footer, still not working with header info. ?? zone = qeynos file = Exterminator_Rasmon.pl
+leslamarch: Initial Checkin

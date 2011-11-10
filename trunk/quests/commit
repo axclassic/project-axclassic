@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ -z "$1" ]; then echo "Need to specify file name"; exit 1; fi
+cvs commit -m "Submitting quests from HTTP submission area; verified by angelox" "$@" || exit 1
+chmod 777 "$@"
