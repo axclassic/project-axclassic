@@ -52,7 +52,6 @@ sub EVENT_SAY {
       quest::summonitem("20673"); # Wax Sealed Note ID-20673
     }
   }
-}
 
 ######## EVENT_ITEM AREA ###################
 ### Called when the NPC is handed items

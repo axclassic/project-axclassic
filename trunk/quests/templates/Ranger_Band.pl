@@ -99,7 +99,7 @@ if($random_result2<=40){
 	elsif($random_result<=80){
        $client->Message(14,"Ranger Band says,\"I remember the time we camped for the Tserrina's Robe in $tofs .\""); }
 	elsif($random_result<=90){
-       $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\s Cauldron?\""); }
+       $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\Qs\E Cauldron?\""); }
 	else{
        $client->Message(14,"Ranger Band says,\"Don't let the $night catch you in Lake Rathe!.\"");
     }
@@ -251,7 +251,7 @@ $npc->SetAppearance(0);
 	  $client->Message(14,"Ranger Band says,\"$name! Have you been looking for faster ways to travel? If so, I have some rare items that might $interest you.\"");}
 	 else{
 	  $client->Message(14,"Ranger Band says,\"Well met $name, I have $travel\Qed\E many lands, seen many things, if you're interested, I can tell you of them.");}
-          $client->Message(14,"Ranger Band says,\"Feel free to ask me of my $travel\s many times, as I carry much informations");
+          $client->Message(14,"Ranger Band says,\"Feel free to ask me of my $travel\Qs\E many times, as I carry much informations");
           $client->Message(14,"Ranger Band says,\"I also have some Ranger $buffs\""); }
      if(($text=~/travel/i) && ($random_result<=10)){
         $client->Message(14,"Ranger Band says,\"There was a time when I camped in $najena for the Journeymans Boots...\""); }
@@ -298,7 +298,7 @@ $npc->SetAppearance(0);
 	 elsif($text=~/tofs/i){
         $client->Message(14,"Ranger Band says,\"Aye, Tower of Frozen Shadow, you can find it in Iceclad. Tserrina Syl'Tor and her minions live there, and it is infested with undead, vampires, and more.\""); }
 	 elsif(($text=~/travel/i) && ($random_result<=90)){
-        $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\s Cauldron?\""); }
+        $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\Qs\E Cauldron?\""); }
 	 elsif($text=~/dagnor/i){
         $client->Message(14,"Ranger Band says,\"Strange place that is, over run by aqua goblins, mean little critters. There's one that carries a $prize\""); }
 	 elsif($text=~/prize/i){

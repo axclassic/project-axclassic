@@ -29,11 +29,10 @@ sub EVENT_SAY {
    quest::depop();
    quest::stoptimer("depop");
   }
-}
    else {
     quest::say("I can not trust you with such important information, yet.");
   }
- }
+}
 
 sub EVENT_TIMER {
    quest::depop();
