@@ -66,7 +66,7 @@ my $random_result = int(rand(100));
       (${$name})=undef;
      }
   }
-  elsif ((!plugin::check_hasitem($client, 138)) && (${$name}==2)){
+  elsif ((!plugin::check_hasitem($client, 138)) && (defined ${$name}==2)){
     quest::summonitem(140);
    }
   #elsif (!defined($tswitch)) {

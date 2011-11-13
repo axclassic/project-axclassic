@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
+==11/13/2011==
+Angelox: Fixed syntax errors and log errors. 
+
 ==11/05/2011==
 Angelox: Ancients in Sleepers set to spawn (at least tell quest gets fixed).
 

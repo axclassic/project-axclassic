@@ -39,7 +39,6 @@ sub EVENT_SIGNAL {
    }
 
 sub EVENT_ATTACK {
-  }
     my $random_result = int(rand(100));
     if(($combat_state == 1) &&($random_result<=20)){
     quest::say("Another corpse for the caretaker ...");
@@ -51,4 +50,4 @@ sub EVENT_ATTACK {
     quest::say("Your death will come quickly!");
     }elsif($combat_state == 1){
     quest::say("Halt! who enters here?");}
-
+}

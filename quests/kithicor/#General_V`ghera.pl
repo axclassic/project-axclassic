@@ -1,4 +1,4 @@
-i#############
+#############
 #NPC: #General_V`ghera ID:20252
 #Quest Name: Ragebringer, Rogue Epic Quest
 #Quest by: 
