@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
+==11/15/2011==
+Congdar: Bor Wharhammer has agreed to make planar armor for bots.
+
 ==11/13/2011==
 Angelox: Fixed syntax errors and log errors. 
 
