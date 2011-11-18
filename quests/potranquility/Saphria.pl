@@ -1,5 +1,5 @@
 ## Angelox
-## Tailoring Script
+## Silk Tailoring Script
 
 
 sub EVENT_SAY{
@@ -10,7 +10,7 @@ sub EVENT_SAY{
     quest::say("Pay me 50pp for my time, with the [parts] I need.");
   }
   elsif($text=~/parts/i) {
-    quest::say("I need a Packet of Paeala Sap, a Celestial Essence, two Strands of Ether - the rest I have. Hand this to me together with my [fee]  ");
+    quest::say("I need a Packet of Paeala Sap, a Celestial Essence, two Strands of Ether - the rest I have. Hand this to me together with my [fee]");
   }
 }
 

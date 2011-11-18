@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
+==11/18/2011==
+Congdar: added leather tailoring and smithing scritps for planar armor.
+
 ==11/15/2011==
 Congdar: Bor Wharhammer has agreed to make planar armor for bots.
 

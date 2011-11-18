@@ -237,7 +237,7 @@ sub EVENT_ITEM {
             quest::givecash($copper,$silver,$gold,$platinum); #Return money
          }
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
-         quest::say("If you would like an emblem and container for a differen class, give me back both your class emblem and container.");
+         quest::say("If you would like an emblem and container for a different class, give me back both your class emblem and container.");
       }
       else {
          if(($cash < 500000) &&  ($cash > 0)) {
