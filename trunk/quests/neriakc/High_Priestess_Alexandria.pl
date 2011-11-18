@@ -110,7 +110,7 @@ if (plugin::check_handin(\%itemcount, 22617 => 1, 22618 => 1, 22619 => 1)) {
 		quest::faction(257, -30);#Priests of Life
 		quest::faction(258, -30);#Priests of Marr
 	}
-   elsif(($platinum == 1) && plugin::check_handin(\%itemcount, 22601  => 2, 16168 => 1, 16167 => 1)) {
+   elsif(($platinum == 1) && plugin::check_handin(\%itemcount, 22601  => 2, 16168 => 1, 19575 => 1)) {
         $client->Message(14,"Very good, $name! Here are your very own Initiate Darkpriest Armguards"); #armguards turnin
         quest::ding(); quest::exp(1000);
         quest::summonitem(22606);
