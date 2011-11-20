@@ -57,6 +57,15 @@ sub EVENT_ITEM {
   quest::summonitem(9104);
    quest::ding(); quest::exp(500);    
   }
+  elsif (plugin::check_handin(\%itemcount, 18433 => 1)) { #Gnome note
+    quest::say("Hail, $name, and welcome.. I am Lewis Reldnok. first Paladin of the Deep Muses. When I was just a young lad I journeyed to Kaladim. the home of our cousins the Dwarves. At the Temple of the Duke of Below I studied the ways of a Paladin of our creator Brell Serilis. I have returned to Ak'Anon to train interested young gnomes the ways I have mastered so that we may defend Ak'Anon and Brells disciples everywhere from the threats that would see us destroyed. If you are a Paladin of the Deep Muses I have some [armor quests] for you to complete.");
+    quest::faction(76,10);  # Deep Muses
+    quest::faction(246,10); # Paladins Underfoot
+    quest::faction(44,10);  # Clerics of Underfoot
+    quest::faction(45,10); # Clockwork Gnome
+     quest::ding(); quest::exp(24); # 3/5 blue bubble at level 1
+    quest::summonitem(13517); # Worn felt tunic* 
+  }
  #do all other handins first with plugin, then let it do disciplines
  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
  plugin::return_items(\%itemcount);
