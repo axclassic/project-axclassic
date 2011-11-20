@@ -31,7 +31,7 @@ if($text=~/ingredients/i) {
 $client->Message(14,"You will be given different combination recipes for whichever armor piece you want me to craft. Just get the items that i ask of you and hand them over so i can craft the armour piece for you. Do you $understand the instructions I have just given you?");
 }
 if($text=~/understand/i) {
-if ((($class == 'wizard') || ($class == 'magician') || ($class == 'enchanter')) && ($race == 'dark elf')){
+if ($race == 'dark elf'){
 $client->Message(14,"'Very well $name, I can craft Spurned Initiate $scullcaps, $bracers, $sandals, $sleeves, $trousers, $gloves and $robes. When you feel you are ready to gather the items necessary for me to craft your armor simply tell me which piece you want me to craft. The items that you will need to collect will mostly be found in the Forest but some will be here in town. As I said before seek out the Arcane Lightwalkers to collect the cloaks that you will need so I can make the armour. I look forward to seeing what you will make of this opportunity. After you got your armour i have 1 $final task for you");
 }
 else {
