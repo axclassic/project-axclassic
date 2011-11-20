@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
+==11/20/2011==
+Angelox: Fix for the Gnome Paladin newbee turn-in. 
+
 ==11/18/2011==
 Congdar: added leather tailoring and smithing scritps for planar armor.
 
