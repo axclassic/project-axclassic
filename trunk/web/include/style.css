@@ -1,0 +1,54 @@
+
+body{
+	font-family:Tahoma;
+	font-size: 8pt;
+	padding: 5px;
+	background:url(../images/bg.gif);
+	color: #ffffff;
+}
+
+.wrapper{
+	width: 80%;
+	background: url(../images/wrapper.png);
+	padding: 10px;
+	border: 1px solid #878787;
+}
+
+.r-button{
+	background:#101E32 url(../images/button.gif);
+	border: 1px solid #7F7F7F;
+	padding: 4px;
+	font-size: 8pt;
+	color: #ffffff;
+	margin: 5px;
+}
+
+h1{
+	font-size: 17pt;
+}
+
+h2{
+	font-size: 12pt;
+	text-decoration: underline;
+}
+
+h3{
+	font-size: 13pt;
+	text-decoration: underline;
+}
+
+h4{
+	font-size: 9pt;
+	color: white;
+	border: 1px solid #7F7F7F;
+}
+
+A:Link, A:visited, A:Active{
+font-weight:none;
+color: #ffffff;
+text-decoration:none;
+}
+
+A:Hover{
+font-weight:700;
+}

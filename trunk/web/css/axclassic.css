@@ -1,0 +1,66 @@
+body        { 
+margin: 0; 
+background-image: url(../images/rock_bg_2.jpg); 
+background-color: black; 
+color: black; }
+a { color: #660000 }
+a:active { color: #CC0000 }
+
+.texte a, .news a { text-decoration: none }
+
+td, th, a, h1, h2, .titre, .newstitle, .signature, .lienHeadlines, .news, .cite, .cell, .cell2, .cell3, .chatBanner, .footnote, .titretab, .titretab2, .liens, .date, .texte { 
+font-family: Arial, Helvetica, Sans-Serif; }
+
+
+.copyright               {
+	color: gold;
+	font-size: 9pt;
+	text-align:right;
+	font-style: italic;
+}
+
+.insidetext       { 
+color: black; 
+font-size: 11pt; 
+text-align: justify; 
+margin: 0 2em; }
+
+form { margin: 0 }
+
+input.sable, textarea.sable, select.sable  { 
+color: black; 
+background-color: #dfc597 }
+
+
+.lienHeadlines                { 
+font-size: 11px; 
+text-decoration: none; 
+margin: 0 3px 6px 3px; 
+color: white; }
+
+a.lienHeadlines         { 
+color: white;   }
+
+a.lienHeadlines:hover         { 
+color: #dfc597; }
+
+td.bordNewsHautCentre   { 
+background-image: url(../images/haut2.gif);    }
+
+td.bordNewsCentreGauche { 
+background-image: url(../images/left.gif);  }
+
+td.bordNewsCentre       { 
+background-image: url(../images/centre5.gif);  }
+
+td.bordNewsCentreDroit  { 
+background-image: url(../images/right.gif);  }
+
+td.bordNewsBasCentre    { 
+background-image: url(../images/bas2.gif);     }
+
+.stick { 
+line-height: 0 }
+
+.nobr { 
+white-space: nowrap }
