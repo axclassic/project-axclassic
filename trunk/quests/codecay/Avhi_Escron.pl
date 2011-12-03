@@ -23,5 +23,5 @@ quest::spawn2(208001,0,0,$x,($y - 7),$z,$h);
 sub EVENT_DEATH
 {
 quest::depopall(208001);
-quest::spawn2(200039,0,0,180,230,-71.5,127);
+quest::spawn2(200059,0,0,180,230,-71.5,127);
 }
