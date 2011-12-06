@@ -1,5 +1,21 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==12/06/2011==
+Angelox: (KLS) SoF)Tribute hack removed.
+
+==12/05/2011==
+Angelox: Rev 1307 -1309 changes made by Derision.
+
+==12/04/2011==
+Angelox: (Derision) SoD - Spawns work, sometimes. Client will crash randomly sometimes when receiving spawns.
+Angelox: Six SoD updates by Weisres (See EqEmu changelog R1298-1305).
+
+==12/02/2011==
+Angelox: (Derision) Fix for temporary items on merchants appearing to increase in price.
+Angelox: (Leere) Fix for purchase price of stacked items != displayed price * quantity.
+Angelox: (Derision) Begging should no longer bug the client. Still needs some work around chance/amount/skillups etc.
+Angelox: (Trevius) Saylinks should no longer cause zone crashes if used outside of EVENTs.  They should function from anywhere now.
+
 ==11/30/2011==
 Angelox: (weisres)Inspecting SoF players is now possible.
 Angelox: Bots following chat-spam reduced.
