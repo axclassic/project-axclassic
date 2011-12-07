@@ -1,7 +1,14 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==12/07/2011==
+Angelox: All healers in BattleHeal mode will warn when not enough mana for heal and not spam so much with the warning.
+Angelox: BattleHeal mode Druids and Shamans should try to hold off heals (give chance for the Cleric CHeal to take). 
+Angelox: Randsays made less often.
+ 
 ==12/06/2011==
 Angelox: (KLS) SoF)Tribute hack removed.
+Angelox: Small Fix to decrease the "not enough mana for CHeal" spam.
+Angelox: Decreased random following chat to spam less.
 
 ==12/05/2011==
 Angelox: Rev 1307 -1309 changes made by Derision.
