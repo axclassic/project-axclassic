@@ -17,7 +17,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18027 => 1)) {
     quest::say("Ah, thank you, kind $name.  You've made two foolish lovebirds very happy.  Please, take this..  Though it is not much, it will help keep you warm on those chilly Karana nights.  It is very good to have a friend such as yourself, and I will one day repay you for your kindness and generosity.");
-	quest::summonitem(1055);
+    quest::summonitem(1055);
   }
   elsif (plugin::check_handin(\%itemcount, 18021 => 1)) {
     quest::emote("yawns and says, 'Oh, report time already again?  Yeah, here ya go, $name.  Be careful around here at night, I've been seeing some rough looking characters lurking about.");
