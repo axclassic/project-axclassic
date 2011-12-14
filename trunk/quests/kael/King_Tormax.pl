@@ -16,7 +16,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($faction == 4) { # Require amiable or better faction
+  if ($faction == 2) { # Require warmly or better faction
     if (plugin::check_handin(\%itemcount, 30501 => 1)) { ## Dain head
       quest::summonitem(25858);
       quest::faction(49,-100); # -coldain
