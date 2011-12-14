@@ -2,7 +2,7 @@
 # Belt of Dwarf Slaying
 
 sub EVENT_SAY {
-  if ($faction < 5) { # Require amiable or better faction
+  if ($faction < 4) { # Require amiable or better faction
     if ($text=~/hail/i) {
       quest::say("Greetings, $race. You know who I am, but I only vaguely know of you. My purpose is simple, I will rule these lands like my father, and my grandfather before him. All tasks but two are inconsequential to me.");
     }
@@ -16,7 +16,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($faction == 5) { # Require amiable or better faction
+  if ($faction == 4) { # Require amiable or better faction
     if (plugin::check_handin(\%itemcount, 30501 => 1)) { ## Dain head
       quest::summonitem(25858);
       quest::faction(49,-100); # -coldain
