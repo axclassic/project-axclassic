@@ -14,7 +14,7 @@ quest::say("The army of the Crushbone orcs is deadly indeed. They are great mili
 if($text=~/who is trondle ogrebane/i){
 quest::say("Trondle Ogrebane is the legendary dwarven warrior who single-handedly exterminated the ogre clan called the [Mudtoes]. He was recently killed in battle. It took an entire legion of Crushbone orcs to bring him down. Furtog is still fuming about that.");
 }
-if($text=~/what mudtoes/i){
+if($text=~/who are the mudtoes/i){
 quest::say("The Mudtoes were a small clan of ogres. They lived somewhere in the Butcherblock Mountains. They had an insatiable appetite for dwarves. They were finally destroyed by the hand of Trondle Ogrebane.");
 }
 }
