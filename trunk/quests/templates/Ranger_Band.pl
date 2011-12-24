@@ -120,6 +120,10 @@ my $easter = quest::saylink("Easter", 1);
    }
     if(($random_result2 <= 75) && ($event3==1)){
        $client->Message(14,"Ranger Band says,\"Countess Zellia can be found around here at night.\"");
+   }
+    if(($random_result2 <= 75) && ($event6==1)){
+my $different = quest::saylink("different", 1);
+       $client->Message(14,"Ranger Band says,\"Merry Xmas $name! I've been busy making these colorful bags for presents, I have so many and want to make something $different.\"");
    }      
  }
 
@@ -202,6 +206,7 @@ if($random_result2<=40){
 sub EVENT_SAY {
 my $easter = quest::saylink("Easter", 1);
 my $year = quest::saylink("Year", 1);
+my $different = quest::saylink("different", 1);
 my $interest = quest::saylink("interest", 1);
 my $tempt = quest::saylink("tempt", 1);
 my $travel = quest::saylink("travel", 1);
@@ -355,6 +360,8 @@ $npc->SetAppearance(0);
 	 elsif(($ulevel <= 65) && ($text=~/easter/i) && ($event2==1)){
          $client->Message(14,"Ranger Band says,\"Oh yes, Easter! I'm in a pinch with that: I'm throwing a big Easter party for all my friends, but have not enough eggs for the easter egg hunt!\"");
 	 $client->Message(14,"Ranger Band says,\"I need eggs of any type, for every four eggs you bring me, I will give you a handsome reward...\""); }
+	 elsif(($ulevel <= 65) && ($text=~/different/i) && ($event6==1)){
+         $client->Message(14,"Ranger Band says,\"I am interested in spider silks for creating something different, I'll trade you one of my hand-made colorful bags for four spider silks of any kind.\"");}
 }
 
 sub EVENT_ITEM {
@@ -393,7 +400,7 @@ if ($event2==1){
 
  if ($event1==1){
    if (($ulevel <= 10) && (plugin::check_handin(\%itemcount, 13417 =>1, 13250 =>1, 6018 =>1, 13073 =>1))) { #newyear turnin for moonstones
-    my @items = (125 .. 139); ## New Years Event random item reward
+    my @items = (125 .. 139,141,142); ## New Years Event random item reward
     my $total4 = $items[ rand @items ];
     $client->Message(14,"Ranger Band says,\"Congratulations, $name! Take this Moonstone as a reward!.\"");
     $client->Message(6,"You received a random Moonstone! In the event that you already got the Moonstone Ranger Band was about to give you, you will get nothing. Better luck next time!\"");
@@ -415,6 +422,21 @@ if ($event2==1){
     quest::ding();
     return;
    }
+ }
+
+ if ($event6==1){
+  my @itemsk = (9914,13041,13099,20357,54324,86010,); ## Spider Silks for Colorful Bag Event.
+  my $total6 = 0;
+  foreach my $skitem (@itemsk) {
+  $total6 += $itemcount{$skitem};
+  };
+  my @itemsl = (32001 .. 32009); ## Colorful Bag Event random item reward.
+  my $total7 = $itemsl[ rand @itemsl ];
+   if ($total6 >= 4) {
+    $client->Message(14,"Ranger Band says,\"Thank you $name! Have a nice Christmas day.\"");
+    quest::summonitem($total7);
+  return;
+  };
  } 
 
 my $owner = $npc->GetOwnerID();

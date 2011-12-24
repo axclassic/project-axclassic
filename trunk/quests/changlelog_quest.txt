@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
+==12/24/2011==
+Angelox: Made way for 2012 Ladder reset and added a small Xmas event.
+
 ==11/20/2011==
 Angelox: Fix for the Gnome Paladin newbee turn-in.
 Angelox: Removed class requirement from Morgalanth quest (can be quested for bots now).
