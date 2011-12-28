@@ -4,14 +4,32 @@
 # Quests:
 #   Felwithe Defender Armor
 #   Felwithe Defenders Falchion
+#Threeflies-added saylinks
+
+
 
 sub EVENT_SAY {
+
+my $member = quest::saylink("member");
+my $suit = quest::saylink("suit of armor");
+my $enemies = quest::saylink("enemies");
+my $gauntlets = quest::saylink("gauntlets");
+my $boots = quest::saylink("boots");
+my $bracer = quest::saylink("bracer");
+my $helm = quest::saylink("helm");
+my $vambraces = quest::saylink("vambraces");
+my $breastplate = quest::saylink("breastplate");
+my $further = quest::saylink("further instruction");
+
+
+
+
     if ($text=~/Hail/i) {
-        quest::say("Hail friend. I am Seria Woodwind of the Royal Order of the Koada'Vie, the defenders of Felwithe. I assist young Koada'Dal that are called into Tunare's service as a paladin in learning the ways of the Koada'Vie so that one day they too may bear that noble title. Do you wish to become a [member] of the Koada'Vie?");
+        quest::say("Hail friend. I am Seria Woodwind of the Royal Order of the Koada'Vie, the defenders of Felwithe. I assist young Koada'Dal that are called into Tunare's service as a paladin in learning the ways of the Koada'Vie so that one day they too may bear that noble title. Do you wish to become a $member of the Koada'Vie?");
     }
 
     if ($text=~/member/i) {
-        quest::say("As a defender of Felwithe you will be required to face much of the evil that inhabits the lands of Norrath. We do not sit idle and wait for the enemy to arrive at our gates before taking action towards the safety of our citizens. Every Koada'Vie initiate should acquire a [suit of armor] to aid in protecting themselves from the weapons of our [enemies].");
+        quest::say("As a defender of Felwithe you will be required to face much of the evil that inhabits the lands of Norrath. We do not sit idle and wait for the enemy to arrive at our gates before taking action towards the safety of our citizens. Every Koada'Vie initiate should acquire a $suit of armor to aid in protecting themselves from the weapons of our $enemies.");
     }
 
     if ($text=~/enemies/i) {
@@ -19,7 +37,7 @@ sub EVENT_SAY {
     }
 
     if ($text=~/suit of armor/i) {
-        quest::say("You require this special Mail Assembly Kit in order to fashion your Felwithe Defender's Armor. The materials necessary for the armor's construction vary according to the piece you are attempting to craft. Once you have been properly outfitted return to me and I will provide you with [further instruction]. Do you plan on crafting Felwithe Defender [Gauntlets], [Boots], [Bracer], [Helm], [Greaves], [Vambraces], or [Breastplate]?");
+        quest::say("You require this special Mail Assembly Kit in order to fashion your Felwithe Defender's Armor. The materials necessary for the armor's construction vary according to the piece you are attempting to craft. Once you have been properly outfitted return to me and I will provide you with $further . Do you plan on crafting Felwithe Defender $gauntlets , $boots, $bracer, $helm, $greaves, $vambraces, or $breastplate?");
         quest::summonitem("17124"); # Mail Assembly Kit
     }
 

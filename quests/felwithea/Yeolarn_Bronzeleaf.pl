@@ -1,8 +1,21 @@
+#
+#
+#
+#
+#Threeflies  - added saylinks
+#
+
+
 sub EVENT_SAY {
+
+
+my $protect = quest::saylink("protect the Mother");
+
+
   if($text=~/hail/i) {
-    quest::say("Hail, $name! We of Tunare are charged with protecting the Great Mother from the forces of Innoruuk. Even now, the evil minions of this foul deity are despoiling our great forest. Will you help us [protect the Mother]?");
+    quest::say("Hail, $name! We of Tunare are charged with protecting the Great Mother from the forces of Innoruuk. Even now, the evil minions of this foul deity are despoiling our great forest. Will you help us $protect the Mother?");
   }
-  if($text=~/protect/i) {
+  if($text=~/protect the mother/i) {
     quest::say("Just outside the gates of Felwithe, the forces of Innoruuk gather in the guise of decaying skeletons. Bring me four sets of bone chips as proof of your vigilance. I assure you, your faith shall not go unrewarded.");
   }
   if($text=~/initiate of tunare/i) {
@@ -18,10 +31,13 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+
+my $Initiate = quest::saylink("Initiate of Tunare");
+
   if(plugin::check_handin(\%itemcount, 13073 => 4)) { #Bone Chips x 4
-    quest::say("Praise Tunare! I knew you would be victorious. I reward you with this spell, and pray that it will help you in your fight against the unholy forces of Innoruk. When you are ready you will make a fine [Initiate of Tunare].");
+    quest::say("Praise Tunare! I knew you would be victorious. I reward you with this spell, and pray that it will help you in your fight against the unholy forces of Innoruk. When you are ready you will make a fine $Initiate.");
     quest::summonitem(15014); #Spell: Strike
-    quest::exp(2500);
+    quest::exp(4500);
     quest::faction(43,15);  #Clerics of Tunare
     quest::faction(178,15); #King Tearis Thex
     quest::faction(8,15);   #Anti-mage
@@ -29,7 +45,7 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 10199 => 4)) { #Putrescent Heart x 4
     quest::say("Praise Tunare!! You have done well young Initiate. Here the symbol of your station within our faith. Return to me when you are ready to [slay the necromancer] that has been creating the undead.");
     quest::summonitem(1570); #Initiate Symbol of Tunare
-    quest::exp(3250);
+    quest::exp(5250);
     quest::faction(43,15);  #Clerics of Tunare
     quest::faction(178,15); #King Tearis Thex
     quest::faction(8,15);   #Anti-mage
@@ -37,7 +53,7 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 1570 => 1, 12514 => 1, 19065 =>1, 12513 => 1)) { #Initiate Symbol of Tunare, Larik Z`Vole's Head, Teir`Dal Couriers Head, Teir`Dal Crate
     quest::say("Praise Tunare! The Mother smiles on you this day Disciple Angelsyn! I present you with the symbol of your new station among the Priests of Tunare. Return to me when you are ready to become a [Warden of Tunare]?");
     quest::summonitem(1571); # Disciple Symbol of Tunare
-    quest::exp(4000);
+    quest::exp(5000);
     quest::faction(43,15);  #Clerics of Tunare
     quest::faction(178,15); #King Tearis Thex
     quest::faction(8,15);   #Anti-mage
@@ -45,7 +61,7 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 1571 =>1, 1599 => 1)) { #Disciple Symbol of Tunare, Powder of Unanimation
     quest::say("Praise Tunare!! I will have our sorcerers examine this power immediately to see if we can reproduce it in quantities enough to eliminate the undead plague. I award you the rank of Warden of Tunare, the All Mother smiles upon you, $name!");
     quest::summonitem(1572); # Warden Symbol of Tunare
-    quest::exp(5000);
+    quest::exp(6000);
     quest::faction(43,15);  #Clerics of Tunare
     quest::faction(178,15); #King Tearis Thex
     quest::faction(8,15);   #Anti-mage
@@ -53,7 +69,7 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 18780 => 1)) { #Tattered Note
     quest::say("Welcome, friend, to the Clerics of Tunare. I am Yeolarn Bronzeleaf, head of the guild and devout follower of Tunare. Here is your guild tunic - it will help to protect you against this world's evils.");
     quest::summonitem(13590); #Faded Gold Training Tunic*
-    quest::exp(1000);
+    quest::exp(2000);
   }
   else {
     quest::say("I have no need for this.");

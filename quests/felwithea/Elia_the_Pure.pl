@@ -1,13 +1,19 @@
 # Paladin Epic 1.0
 # NPCID: 61013
 # Zone: felwithea
+#Threeflies added saylink
 
 sub EVENT_SAY {
+
+my $tasks = quest::saylink("tasks");
+my $purity = quest::saylink("purity");
+
+
   if ($text=~/Hail/i) {
-    quest::say("Hail to you, friend. If you require assistance, please ask, if not I must return to my tasks.");
+    quest::say("Hail to you, friend. If you require assistance, please ask, if not I must return to my $tasks .");
   }
   if ($text=~/tasks/i) {
-    quest::say("It is here that the light shines brightest in our fair city. Here I sit, transcribing scrolls of luminescence. Spells to light the dark, to blind the evil with purity, or to heal those in pain. I find it so much easier to work with such spells if I am in the light itself.");
+    quest::say("It is here that the light shines brightest in our fair city. Here I sit, transcribing scrolls of luminescence. Spells to light the dark, to blind the evil with $purity, or to heal those in pain. I find it so much easier to work with such spells if I am in the light itself.");
   }
   if ($text=~/purity/i) {
     quest::say("Cleansing and such. Often our temple will cleanse evil. If you have need of such a thing, I can help. Merely let me examine the item.");

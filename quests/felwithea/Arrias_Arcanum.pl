@@ -1,6 +1,11 @@
+#Threeflies added saylink
+
 sub EVENT_SAY {
+
+my $troubles = quest::saylink("troubles");
+
   if($text=~/hail/i) {
-    quest::say("I am sorry, young one, but I am too burdened by my own [troubles] to help you now. Please seek another of the faith to ease your soul.");
+    quest::say("I am sorry, young one, but I am too burdened by my own $troubles to help you now. Please seek another of the faith to ease your soul.");
   }
   if($text=~/troubles/i) {
     quest::say("My son Ariam, a paladin of this fair city, has been missing for many years. Now, after remaining hopeful for so long, I have given up and it has broken my heart and soul. If I could but hear news to know of his fate, then I could find comfort again. Until then, I am no good to others. I am sorry.");
