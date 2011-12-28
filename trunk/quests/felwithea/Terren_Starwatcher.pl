@@ -1,16 +1,34 @@
 # NPC: Terren Starwatcher (ID:61017)
 #
 # Quests:
-#   Sylvan Initiate Armor
-#   Sylvan Initiate Further Guidance
+# Sylvan Initiate Armor
+# Sylvan Initiate Further Guidance
+#
+#
+#Threeflies - added saylinks
+#
 
 sub EVENT_SAY {
+
+my $seeking = quest::saylink("seeking guidance");
+my $suit = quest::saylink("suit of armor");
+my $creatures = quest::saylink("creatures");
+my $further = quest::saylink("further guidance");
+my $Gauntlets = quest::saylink("Gauntlets");
+my $Boots = quest::saylink("Boots");
+my $Bracer = quest::saylink("Bracer");
+my $helm = quest::saylink("Helm");
+my $Greaves = quest::saylink("Greaves");
+my $Vambraces = quest::saylink("Vambraces");
+my $Breastplate = quest::saylink("Breastplate");
+
+
     if ($text=~/Hail/i) {
-        quest::say("Welcome friend! Have you come to the Temple of Tunare to give praise or are you a young Cleric [seeking guidance] from your elders?");
+        quest::say("Welcome friend! Have you come to the Temple of Tunare to give praise or are you a young Cleric $seeking  from your elders?");
     }
 
     if ($text=~/seeking guidance/i) {
-        quest::say("Tunare shall be pleased to have a new disciple amongst her Koada`Dal children. We Clerics of Tunare offer spiritual guidance to the citizens of Felwithe and when needed aid the Paladins of Tunare and the Keepers of the Art in the defense of our people and forest from those [creatures] that seek to cause us harm. Every young cleric should pursue acquiring a [suit of armor] to protect themselves when aiding those in need outside of the safety of Felwithes walls.");
+        quest::say("Tunare shall be pleased to have a new disciple amongst her Koada`Dal children. We Clerics of Tunare offer spiritual guidance to the citizens of Felwithe and when needed aid the Paladins of Tunare and the Keepers of the Art in the defense of our people and forest from those $creatures that seek to cause us harm. Every young cleric should pursue acquiring a $suit to protect themselves when aiding those in need outside of the safety of Felwithes walls.");
     }
 
     if ($text=~/creatures/i) {
@@ -18,7 +36,7 @@ sub EVENT_SAY {
     }
 
     if ($text=~/suit of armor/i) {
-        quest::say("You will need this Mail Assembly Kit to craft your Sylvan Initiate Armor. The materials required for the armor vary according to which piece you desire to craft. Once you have been suitably outfitted return to me and I will offer [further guidance]. Do you desire to craft Sylvan Initiate [Gauntlets], [Boots], [Bracer], [Helm], [Greaves], [Vambraces], or [Breastplate]?");
+        quest::say("You will need this Mail Assembly Kit to craft your Sylvan Initiate Armor. The materials required for the armor vary according to which piece you desire to craft. Once you have been suitably outfitted return to me and I will offer $further. Do you desire to craft Sylvan Initiate $Gauntlets, $Boots, $Bracer, $Helm, $Greaves, $Vambraces, or $Breastplate?");
         quest::summonitem("17124"); # Mail Assembly Kit
     }
 
