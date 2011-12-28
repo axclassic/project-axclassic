@@ -1,6 +1,51 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==12/27/2011==
+Angelox: Bots will now auto-select their weapon animation.
+Angelox: Converted botCommand.h, botDatabase.h to botCommand.cpp, botDatabase.cpp (probably what they should be).
+Angelox: (Trevius) Added 2 new fields (prim_melee_type and sec_melee_type) to the npc_types table to allow setting attack animations/messages to go with weapon models (Default is 28 - Hand to Hand)
+Angelox: (Trevius) Added Perl Quest Objects; GetPrimSkill(), GetSecSkill(), SetPrimSkill(skill_type), SetSecSkill(skill_type) for altering the above setting temporarily.
+Angelox: Fixed zone crash due to above fixes and bots attack code.
+
+==12/24/2011==
+Angelox: Two problems with tracking: 1-tracks "non-trackable" mobs, 2-Leaves out NPCs in the tracking window.
+Hopefully this fix made it better. 
+
+==12/19/2011==
+Angelox: Applied some documentation to the 'dynamic-static' zone operator.
+
+==12/18/2011==
+Angelox: Fix so recipe search will work in 64 bit arena.
+
+==12/17/2011==
+Angelox: LS update.
+Angelox: Small adjustment to tracking.
+Angelox: Tradskill auto-combine and find recipes should work now.
+Angelox: Disabled SoD in patches.cpp for now, since it's not working right and will crash the zone.  
+
+==12/13/2011==
+Angelox: Derisions updates in Rev 1371, uploaded separatly for the many changes.
+Angelox: SoD updates by Derision (See EqEmu changelog R1360-1370, 1372).
+Angelox: Last update omits bots from tracking.
+Angelox: Tweak to #bot track.
+
+==12/12/2011==
+Angelox: SoD updates by Derision (See EqEmu changelog R1349-1352).
+Angelox: SoD updates by Derision (See EqEmu changelog R1353-1359).
+
+==12/11/2011==
+Angelox: SoD updates by Derision, Weisres (See EqEmu changelog R1336-1346). AA Change in 1332.
+Angelox: SoD updates by Derision (See EqEmu changelog R1347-1348). Bazaar Change in 1348.
+
+==12/09/2011==
+Angelox: SoD updates by Derision (See EqEmu changelog R1330-1332). big tracking change in 1332.
+
+==12/08/2011==
+Angelox: SoD updates by Weisres and Derision (See EqEmu changelog R1318-1327).
+Angelox: SoD update by Dersion More work on groups (R1329).
+
 ==12/07/2011==
+Angelox: SoD updates by Weisres and Derision (See EqEmu changelog R1310-1317).
 Angelox: All healers in BattleHeal mode will warn when not enough mana for heal and not spam so much with the warning.
 Angelox: BattleHeal mode Druids and Shamans should try to hold off heals (give chance for the Cleric CHeal to take). 
 Angelox: Randsays made less often.
