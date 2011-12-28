@@ -4,15 +4,31 @@
 # Quests:
 #   Art Keepers Armor
 #   Art Keepers Task
+#
+#Threeflies - added saylinks
+#
 
 sub EVENT_SAY {
+
+my $clothing = quest::saylink("robe and clothing");
+my $cap = quest::saylink("cap");
+my $wristband = quest::saylink("wristband");
+my $gloves = quest::saylink("gloves");
+my $boots = quest::saylink("boots");
+my $sleeves = quest::saylink("sleeves");
+my $pantaloons = quest::saylink("pantaloons");
+my $robe = quest::saylink("robe");
+my $task = quest::saylink("task");
+my $crushbone = quest::saylink("crushbone");
+
+
     if ($text=~/hail/i) {
-        quest::say("Welcome to the Keepers of the Art friend $name. I am Yuin Starchaser and it is my pleasure to assist new scholars wishing to study the arts of Enchantment, Wizardry and Magery. Although much can be learned within these halls there is no substitute for experiences gained in the world outside Felwithe. The Koada'Dal have many enemies however, and it is wise to be prepared to face them. If you are new to the Keepers of the Art I will assist you in obtaining a [robe and clothing] suitable for study in the wilds.");
+        quest::say("Welcome to the Keepers of the Art friend $name. I am Yuin Starchaser and it is my pleasure to assist new scholars wishing to study the arts of Enchantment, Wizardry and Magery. Although much can be learned within these halls there is no substitute for experiences gained in the world outside Felwithe. The Koada'Dal have many enemies however, and it is wise to be prepared to face them. If you are new to the Keepers of the Art I will assist you in obtaining a $clothing suitable for study in the wilds.");
     }
 
     # Quest: Art Keepers Armor
     if ($text=~/robe and clothing/i) {
-        quest::say("You will need this specially prepared Curing Kit to craft the Art Keepers clothing. The materials required vary depending on the piece of clothing you desire to craft. Once you have been outfitted in the garments return to me and you may be assistance with another [task]. Do you desire to craft a Art Keepers [cap], [wristband], [gloves], [boots], [sleeves], [pantaloons], or [robe]?");
+        quest::say("You will need this specially prepared Curing Kit to craft the Art Keepers clothing. The materials required vary depending on the piece of clothing you desire to craft. Once you have been outfitted in the garments return to me and you may be assistance with another $task. Do you desire to craft a Art Keepers $cap, $wristband, $gloves, $boots, $sleeves, $pantaloons, or $robe?");
         quest::summonitem(17125); # Curing Kit
     } elsif ($text=~/robe/i) { # Quest: Art Keepers Robe
         quest::say("To craft an Art Keepers Robe you will require three silk thread, giant wasp warrior pollen, two woven spider silks, and a pristine forest drakeling scales. Once you have the necessary components combine them in your Curing Kit with this Tattered Robe Pattern.");
@@ -57,7 +73,7 @@ sub EVENT_SAY {
 
     # Quest: Art Keepers Task
     if ($text=~/task/i) {
-        quest::say("One of the responsibilities of the Keepers of the Art is to weave and maintain powerful magic wards that help protect Felwithe from enemy magic. An understanding of the magic wielded by Felwithes many foes is vital to the success of our protective wards. With the help of the paladins of the Koada'Vie we have discovered many of the secrets of the orcish shaman that reside in the citadel of Clan Crushbone to the north of the Faydarks but there is still much to learn. The task I have to present you will take you into the [Crushbone] Citadel itself.");
+        quest::say("One of the responsibilities of the Keepers of the Art is to weave and maintain powerful magic wards that help protect Felwithe from enemy magic. An understanding of the magic wielded by Felwithes many foes is vital to the success of our protective wards. With the help of the paladins of the Koada'Vie we have discovered many of the secrets of the orcish shaman that reside in the citadel of Clan Crushbone to the north of the Faydarks but there is still much to learn. The task I have to present you will take you into the $Crushbone Citadel itself.");
     }
 
     # Quest: Art Keepers Task
