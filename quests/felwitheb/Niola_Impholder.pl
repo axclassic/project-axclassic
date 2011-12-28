@@ -1,6 +1,17 @@
+#
+#
+#
+#
+#Threeflies  - added saylink
+
+
+
 sub EVENT_SAY {
+
+my $fetch = quest::saylink("fetch");
+
    if($text=~/Hail/i) {
-      quest::say("Greetings, $name . Welcome to the home of the Keepers of the Art. I am in need of spell components. Would you be willing to [fetch] some for me?");
+      quest::say("Greetings, $name . Welcome to the home of the Keepers of the Art. I am in need of spell components. Would you be willing to $fetch some for me?");
    }
    if($text=~/fetch/i) {
       quest::say("What I need are some bat wings for a spell I am researching. If you bring me back four bat wings, I would be willing to reward you with a scroll.");

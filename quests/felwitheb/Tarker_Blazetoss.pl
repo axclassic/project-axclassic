@@ -4,10 +4,17 @@
 # Quests:
 #   Enrollment Letter (Wizard)
 #   Black Wolf Skin
+#
+#
+#Threeflies - added saylink
 
 sub EVENT_SAY {
+
+my $perform = quest::saylink("perform a task");
+
+
     if ($text=~/Hail/i) {
-        quest::say("Hail and well met, $name! Have you come to study, or can you [perform a task] for me this day?");
+        quest::say("Hail and well met, $name! Have you come to study, or can you $perform for me this day?");
     }
 
     if ($text=~/perform a task/i) {
@@ -21,7 +28,7 @@ sub EVENT_ITEM {
         quest::say("Welcome. I am Tarker Blazetoss. Master Wizard of the Keepers of the Art. Here is our guild robe. You have much to learn, so let's get started.");
         quest::summonitem(13594); # Singed Training Robe
         quest::ding();
-        quest::exp(100);
+        quest::exp(1000);
     }
 
     # Quest: Black Wolf Skin
@@ -38,7 +45,7 @@ sub EVENT_ITEM {
         quest::faction(178, 10);  # +King Tearis Thex
         quest::faction(322, -10); # -The Dead
         quest::ding();
-        quest::exp(350);
+        quest::exp(1000);
     }
 
     plugin::return_items(\%itemcount); # Return unused items
