@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
+==12/29/2011==
+Angelox: Goblin Traitor cycle is working again.
+Angelox: Add Caveds New Years item.
+
 ==12/24/2011==
 Angelox: Made way for 2012 Ladder reset and added a small Xmas event.
 
