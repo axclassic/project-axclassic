@@ -1,9 +1,19 @@
+#
+#
+#Threeflies - added saylinks
+#
+
+
 sub EVENT_SAY {
+
+my $serve = quest::saylink("serve as a cleric");
+my $next = quest::saylink("next task");
+
   if($text =~ /Hail, Derthix Gibblix/i) {
-    quest::say("Greetings Clinical. It is my duty to train young gnomes that have been called to they ways of Bertoxxulous, the Plague Bringer, and wish to [serve as a cleric] of the Dark Reflection. The faithful of the Plague Bringer are gifted with the sight of the Dark Reflection. The ability to recognize the importance of the powerful forces of disease and decay, and the role they play in the cycles of deterioration and renewal, death and life, destruction and creation.");
+    quest::say("Greetings Clinical. It is my duty to train young gnomes that have been called to they ways of Bertoxxulous, the Plague Bringer, and wish to $serve of the Dark Reflection. The faithful of the Plague Bringer are gifted with the sight of the Dark Reflection. The ability to recognize the importance of the powerful forces of disease and decay, and the role they play in the cycles of deterioration and renewal, death and life, destruction and creation.");
   }
-  if($text =~ /I wish to serve as a cleric/i) {
-    quest::say("We have been blessed by Bertoxxulous with the vision of the Dark Reflection. We are the prophet and protectors of all who serve the Plague Bringer and have devoted our lives to spreading disease and decay for the glory of Bertoxxulous and the balances that must be maintained. Take this parchment to Glerbella Gibblix, she will assist you with the construction of a suit of armor to aid in protecting you from the weapons of those who would see us destroyed. When you have been properly outfitted return to me for your [next task].");
+  if($text =~ /serve as a cleric/i) {
+    quest::say("We have been blessed by Bertoxxulous with the vision of the Dark Reflection. We are the prophet and protectors of all who serve the Plague Bringer and have devoted our lives to spreading disease and decay for the glory of Bertoxxulous and the balances that must be maintained. Take this parchment to Glerbella Gibblix, she will assist you with the construction of a suit of armor to aid in protecting you from the weapons of those who would see us destroyed. When you have been properly outfitted return to me for your $next.");
     quest::summonitem(10989);
   }
   if ($text=~/next task/i) {
@@ -14,7 +24,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 10993 => 1)) {
     quest::say("It is good you returned with this. I almost thought you had lost to Vyntok, or worse become merciful to his cause. I suppose a reward is in order. A mace for a mace, now go forth and spread the word of Bertoxxulous.");
     quest::summonitem(11080);
-     quest::ding(); quest::exp(100);
+     quest::ding(); quest::exp(1000);
   }
   plugin::return_items(\%itemcount);
 }
