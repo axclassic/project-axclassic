@@ -16,6 +16,8 @@ my $possession = quest::saylink("possession", 1);
 my $prove = quest::saylink("prove", 1);
 my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
+my $freebe1 = 0;
+my $freebe2 = 1;
   if(($text=~/Hail/i) && ($charid < 1823)) { #set
     #$client->Message(14,"Your character ID is $charid ");
     $client->Message(14,"Your character is too old for this ladder, start a new character!");
@@ -26,9 +28,17 @@ my $second = quest::saylink("second", 1);
   if (($text=~/Hail/i) && ($charid > 1822)){  #set
     $client->Message(14,"Hail, $name! I am Darkwater the Ladder Guide, and will be observing and rewarding you for your advancement on the Ladder."); 
     $client->Message(14,"I will $reward you for advancement to levels 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title\, and I will provide it for you, in addition to your reward.");
-    # $client->Message(14,"I see you started with the New Year. Glad to have you here again! Here,take my special reward for your dedication.");
-    # quest::summonitem(625);
-    return;
+    # if ($freebe1 == 0){ //Angelox earring item, unquote for New Years day only. 
+      # $client->Message(14,"I see you started with the New Year. Glad to have you here again! Here,take my special reward for your dedication.");
+      # quest::summonitem(625);
+      # $freebe1 = 1;
+      # $freebe2 = 0;
+      # return;}
+    # if ($freebe2 == 0){ //Caveds item, unquote for one month.
+      # $client->Message(14,"I see you started with the New Year. Glad to have you here again! Here,take my special reward for your dedication.");
+      # quest::summonitem(119503);
+      # $freebe2 = 1;
+      # return;}
   }
   if (($text=~/join/i)&& ($charid > 1822)){ #set
     $client->Message(14,"Glad to have you with us ");

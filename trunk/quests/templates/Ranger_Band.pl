@@ -425,7 +425,7 @@ if ($event2==1){
  }
 
  if ($event6==1){
-  my @itemsk = (9914,13041,13099,20357,54324,86010,); ## Spider Silks for Colorful Bag Event.
+  my @itemsk = (9914,13041,13099,20357,54234,86010,2659,2789,2790,6695,10983,12766,12878,12957,16483,16484,25306); ## Spider Silks for Colorful Bag Event.
   my $total6 = 0;
   foreach my $skitem (@itemsk) {
   $total6 += $itemcount{$skitem};
