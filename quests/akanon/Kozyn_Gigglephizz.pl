@@ -14,12 +14,12 @@
 			
 sub EVENT_SAY {
 
-#my $Tinmizer = quest::saylink("who is Tinmizer", 0,"Tinmizer");
-#my $Fabulous = quest::saylink("what fabulous compactor", 0,"Fabulous compactor");
-#my $T.B.I = quest::saylink("what is the T.B.I", 0,"T.B.I.");
-#my $200 = quest::saylink("where is Tinmizer", 0,"Tinmizer");
-#my $clockwork = quest::saylink("what clockwork dragon", 0,"clockwork dragon");
-#my $big = quest::saylink("Big Bynn");
+my $Tinmizer = quest::saylink("who is Tinmizer", 0,"Tinmizer");
+my $Fabulous = quest::saylink("what fabulous compactor", 0,"Fabulous compactor");
+my $T.B.I = quest::saylink("what is the T.B.I", 0,"T.B.I.");
+my $200 = quest::saylink("where is Tinmizer", 0,"Tinmizer");
+my $clockwork = quest::saylink("what clockwork dragon", 0,"clockwork dragon");
+my $big = quest::saylink("Big Bynn");
 
 
 
