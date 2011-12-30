@@ -48,20 +48,20 @@ quest::emote("looks you in the eye. \"Some say he has been seen in the mouintain
 }
 
 
-#sub EVENT_ITEM {
+sub EVENT_ITEM {
 
-#if (plugin::check_handin(\%itemcount, 319504 => 1)) { #Tinmizer's Fabulous Compactor
-#quest::say("Yes Yes Yes !! , Keep them coming young $race , the more I get the richer you become. Here , take this gem , now be #off with you .");
-#quest::summonitem(10027);
-#quest::ding(); 
-#quest::exp(3000);
-#}
-#else {
-#plugin::return_items(\%itemcount);
-# }
-#}
+if (plugin::check_handin(\%itemcount, 626 => 1)) { #Tinmizer's Fabulous Compactor
+quest::say("Yes Yes Yes !! , Keep them coming young $race , the more I get the richer you become. Here , take this gem , now be off with you .");
+quest::summonitem(10027);
+quest::ding(); 
+quest::exp(3000);
+}
+else {
+plugin::return_items(\%itemcount);
+ }
+}
 
-# EOF zone: Akanon ID: 55223 NPC: Kozyn_Gigglephizz
+ EOF zone: Akanon ID: 55223 NPC: Kozyn_Gigglephizz
 
 
 
