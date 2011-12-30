@@ -25,7 +25,7 @@ my $Big = quest::saylink("Big Bynn");
 
 
 if($text=~/Hail/i){
-quest::emote(" bows politely. Greetings, my friend. Have you come to turn in one of those malfunctioning containers called $Fabulous ?,Created of course by that mad as a hatter wizard $Tinmizer. I shall gladly exchange it for a nice gem."); 
+quest::emote("bows politely. Greetings, my friend. Have you come to turn in one of those malfunctioning containers called $Fabulous ?,Created of course by that mad as a hatter wizard $Tinmizer. I shall gladly exchange it for a nice gem."); 
 }
 if($text=~/who is Tinmizer/i){
 quest::emote("chortles with glee. 'Ho, ho, ho!! Oh, my! Tinmizer was a bit of a goof when it came to tinkering. I am from the $TBI. and I was sent to clean up the mess he made. He was tinkering defective containers and selling them. We exiled him and destroyed all his containers. Now we hear the scrapman found some and was using them as	a reward for deeds. We have warned him."); 
