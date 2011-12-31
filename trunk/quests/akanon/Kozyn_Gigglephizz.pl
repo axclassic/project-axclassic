@@ -16,7 +16,7 @@
 sub EVENT_SAY {
 
 my $Tinmizer = quest::saylink("who is Tinmizer", 0,"Tinmizer");  
-my $Fabulous = quest::saylink("what fabulous compactor", 0,"Tinmizer's Fabulous compactor");
+my $Fabulous = quest::saylink("what fabulous compactor", 0,"Tinmizers Fabulous compactor");
 my $TBI = quest::saylink("what is the T.B.I", 0,"T.B.I.");
 my $tiz = quest::saylink("where is Tinmizer", 0,"Tinmizer");
 my $clockwork = quest::saylink("what clockwork dragon", 0,"clockwork dragon");
