@@ -36,8 +36,7 @@ if ($text=~/fetch hair tonic/i) {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13198 => 4 )) { #Turn in 4 scrap metal
     quest::say("For your efforts I shall reward you"); #Not official dialog, Dont actually know what he says.
-    quest::summonitem(quest::ChooseRandom(5013,5019,626));
- #Various Items and a contraption, Kozyn Gigglephizz quest item given when completed. All randomly.
+    quest::summonitem(quest::ChooseRandom(5013,5019,626)); #Various Items and a contraption, Kozyn Gigglephizz quest item.
    quest::ding();
    quest::exp(2000); #Amount of Experience guessed, No actual Experience Info.
    quest::givecash (4,5,1,1); #Amount of coin recieved is guessed, No actual coin Info.
