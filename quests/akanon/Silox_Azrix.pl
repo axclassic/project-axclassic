@@ -1,10 +1,10 @@
 
 sub EVENT_SAY {
 
-if($text=~/Hail/i)
+if($text=~/Hail/i){
 quest::emote("Silox Azrix gives you a crooked smile. Hello there $name. Im doin some important meditations to my
 god here. Maybe you can go somewhere else ?");
-}
+ }
 }
 
 sub EVENT_ITEM {
