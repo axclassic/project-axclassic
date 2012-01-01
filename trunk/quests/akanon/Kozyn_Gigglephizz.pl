@@ -60,8 +60,7 @@ else {
 plugin::return_items(\%itemcount);
  }
 }
-
- EOF zone: Akanon ID: 55223 NPC: Kozyn_Gigglephizz
+# EOF zone: Akanon ID: 55223 NPC: Kozyn_Gigglephizz
 
 
 
