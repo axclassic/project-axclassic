@@ -47,6 +47,7 @@ my $second = quest::saylink("second", 1);
 	  }
 	return;
       }
+    return;
   }
   if (($text=~/join/i)&& ($charid > 2625)){ #set
     $client->Message(14,"Glad to have you with us ");
