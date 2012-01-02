@@ -17,7 +17,7 @@ $z = $npc->GetZ();
 $h = $npc->GetHeading();
 
 
-quest::set_proximity( $x-60,$x+60,$y-60,$y+60,$z-60,$z+60);
+quest::set_proximity( $x-80,$x+80,$y-80,$y+80,$z-80,$z+80);
 } 
 
 
