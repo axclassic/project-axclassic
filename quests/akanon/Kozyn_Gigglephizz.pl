@@ -43,7 +43,7 @@ if($text=~/What clockwork dragon/i){
 quest::emote("shakes in fear. 'Oh!! I have seen it. A thousand feet tall and smells of burning oil. It was tinkered by Tinmizer. Yep, that's it all righty. Tinkered by the loon. He started out just making a clock, a GIANT ONE!! It was in the form of a wurm. He called it $Big, you know, after his familiar named Bynn. And then... then it escaped. Yeah.. That's it.");
 }
 if ($text=~/Big Bynn/i){
-quest::emote("looks you in the eye. \"Some say he has been seen in the mouintains, astride him his creator..... Tinmizer... I'm not saying the story's  true, but I wouldn't like to bet my clockwork pixie on it.");
+quest::emote("looks you in the eye. \"Some say he has been seen in the mountains, astride him his creator..... Tinmizer... I'm not saying the story's  true, but I wouldn't like to bet my clockwork pixie on it.");
   }
 }
 
