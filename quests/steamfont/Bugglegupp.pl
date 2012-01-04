@@ -3,30 +3,12 @@
 #Threeflies
 #Jan 2012
 
-sub EVENT_SPAWN
-
-{
-my $x;
-my $y;
-my $z;
-my $h;
-
-$x = $npc->GetX();
-$y = $npc->GetY();
-$z = $npc->GetZ();
-$h = $npc->GetHeading();
-
-
-quest::set_proximity( $x-80,$x+80,$y-80,$y+80,$z-80,$z+80);
-} 
-
-
-sub EVENT_ENTER
-
-{
-quest::emote("Hahahaaa...Cleansing Steamfont of $race.");
-quest::attack($name);
+sub EVENT_COMBAT {
+    if($combat_state == 1) {
+    quest::say("It's Bashin time $race.");
+     }
 }
+
 
 
 #Memories of a High Elf wizard slaughtered by this NPC at night ..........what a corpse run !
