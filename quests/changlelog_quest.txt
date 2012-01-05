@@ -1,7 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
 ==12/30/2011==
-Angelox: Rewards for New Years added to teh event1 variable.
+Angelox: Rewards for New Years added to the event1 variable.
 
 ==12/29/2011==
 Angelox: Goblin Traitor cycle is working again.
