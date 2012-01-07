@@ -30,7 +30,7 @@ my $random_result = int(rand(100));
     $client->Message(14,"Don't forget: Rathe server restarts daily at 4:01am eastern time, server will stay down minutes for maintenance, then start again - make sure you're in a safe spot before the restart.");
   }
   elsif ($random_result<=15){
-    $client->Message(14,"The Ladder resets on New Years 2012, be sure to start your new character on the same day for the special, one-day-only reward. Hail Champion Darkwater for your reward.");
+    $client->Message(14,"The new ladder started on New Years 2012, New characters created on or after this date should talk to Champion Darkwater.");
   }
   elsif (($event1==1)&&($random_result<=70)){ #New Year event
     $client->Message(14,"New Year event is active! Ask Ranger Band about the New [Year]. You must be level 10 or lower for this event.");
