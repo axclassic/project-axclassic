@@ -3,11 +3,12 @@
 ## Angelox
 ## Qadar
 sub EVENT_WAYPOINT{
+no warnings 'all' ;
  if ($event4==1){ #Pitch Black Event
   if(((($zonetime >= 1800)&&($zonetime <= 2359))|(($zonetime >= 0)&&($zonetime <= 500)))&&($sirens==71)){ quest::unique_spawn(69309,70,0,-9198.0,291.8,1.0,254.9);} #Kidd Spawn
   if(((($zonetime >= 1800)&&($zonetime <= 2359))|(($zonetime >= 0)&&($zonetime <= 500)))&&($sirens==98)){quest::depopall(69309);} #Kidd Spawn
  }
-  if($debugpl){quest::shout("Sirens is set at $sirens");}
+  #if($debugpl){quest::shout("Sirens is set at $sirens");}
   if($sirens==60){
     quest::depopall(69153);
     quest::depopall(69134);
@@ -28,6 +29,6 @@ sub EVENT_WAYPOINT{
 }
 
 sub EVENT_SIGNAL{
-  if($debugpl){quest::shout("Fake boat depopping!");}
+  #if($debugpl){quest::shout("Fake boat depopping!");}
   quest::depop();
 }

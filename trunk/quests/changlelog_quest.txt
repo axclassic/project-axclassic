@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
+==2/27/2012==
+Angelox: Removed unneeded variables from quests related to the boats in butcher, FP, and Oot.
+
 ==12/30/2011==
 Angelox: Rewards for New Years added to the event1 variable.
 

@@ -8,6 +8,7 @@ sub EVENT_SPAWN{
    quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);}
 
 sub EVENT_ENTER{
+no warnings 'all' ;
 if (($skiffa >=30) && ($skiffa <=40)){
  quest::delglobal("skiffa");
  quest::setglobal("skiffa",40,7,"F");
