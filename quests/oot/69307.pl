@@ -2,7 +2,8 @@
 ## PITCH BLACK Event in OOT
 ## Angelox
 
-sub EVENT_SPAWN { 
+sub EVENT_SPAWN {
+no warnings 'all' ; 
  if ($event4==1){#Pitch Black Event
   if ((($zonetime >= 1800)&&($zonetime <= 2359))|(($zonetime >= 0)&&($zonetime <= 500))){  #nighttime
    quest::spawn_condition(oot,7,0); #Day Mobs
@@ -18,6 +19,7 @@ sub EVENT_SPAWN {
   }
 }
 sub EVENT_WAYPOINT{
+no warnings 'all' ;
  if ($event4==1){ #Pitch Black Event
   if ((($zonetime >= 1800)&&($zonetime <= 2359))|(($zonetime >= 0)&&($zonetime <= 500))){  #nighttime
    quest::spawn_condition(oot,7,0); #Day Mobs

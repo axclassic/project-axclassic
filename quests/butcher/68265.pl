@@ -5,8 +5,9 @@
 ##############
 
 sub EVENT_WAYPOINT{
+no warnings 'all' ;
 if (($skiffa >=35) && ($skiffa <=40)){quest::depop();}
- if(($debugpl2==1) && ($skiffa <=2)){quest::shout("skiffa is set at $skiffa");}
+ #if(($debugpl2==1) && ($skiffa <=2)){quest::shout("skiffa is set at $skiffa");}
   if($skiffa==0){
     quest::signal(68150);
     quest::spawn2(68150,233,0,3386,130,-12.5,251);

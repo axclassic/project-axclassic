@@ -9,10 +9,11 @@ sub EVENT_DEATH {
   }
 }
 sub EVENT_WAYPOINT {
+no warnings 'all' ;
 ## In Oot > FP ################################## In Oot > FP #################
 
 if (($sirens==60.5) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout("telling 69154 to depop, ZONING in From Butcher setting 61");}
+   #if($debugpl){quest::shout("telling 69154 to depop, ZONING in From Butcher setting 61");}
  quest::signal(69154);
  quest::delglobal("sirens");
  quest::setglobal("sirens",61,7,"F");
@@ -22,7 +23,7 @@ elsif (($sirens==61) && ($sirens >=60) && ($sirens <=99)){
  quest::setglobal("sirens",62,7,"F");
  $sirens=undef;}
 elsif (($sirens==62) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Setting 63");}
+   #if($debugpl){quest::shout ("Setting 63");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",63,7,"F");
  $sirens=undef;}
@@ -51,17 +52,17 @@ elsif (($sirens==68) && ($sirens >=60) && ($sirens <=99)){
  quest::setglobal("sirens",69,7,"F");
  $sirens=undef;}
 elsif (($sirens==68) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Near Pier)");}
+   #if($debugpl){quest::shout ("Near Pier)");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",70,7,"F");
  $sirens=undef;}
 elsif (($sirens==69) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("AT Pier)");}
+   #if($debugpl){quest::shout ("AT Pier)");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",70,7,"F");
  $sirens=undef;}
 elsif (($sirens==70) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("SET 71)");}
+   #if($debugpl){quest::shout ("SET 71)");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",71,7,"F");
  $sirens=undef;}
@@ -70,7 +71,7 @@ elsif (($sirens==71) && ($sirens >=60) && ($sirens <=99)){
  quest::setglobal("sirens",72,7,"F");
  $sirens=undef;}
 elsif (($sirens==72) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Setting 73");}
+   #if($debugpl){quest::shout ("Setting 73");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",73,7,"F");
  $sirens=undef;}
@@ -101,25 +102,25 @@ elsif (($sirens==78) && ($sirens >=60) && ($sirens <=99)){
 elsif (($sirens==79) && ($sirens >=60) && ($sirens <=99)){
  quest::delglobal("sirens");
  quest::setglobal("sirens",80,7,"F");
-   if($debugpl){quest::shout ("SET 80)");}
+   #if($debugpl){quest::shout ("SET 80)");}
  $sirens=undef;}
 elsif (($sirens==80) && ($sirens >=60) && ($sirens <=99)){
  quest::delglobal("sirens");
-   if($debugpl){quest::shout ("SET 81)");}
+   #if($debugpl){quest::shout ("SET 81)");}
  quest::setglobal("sirens",81,7,"F");
  $sirens=undef;}
 elsif (($sirens==81) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("SET 82)");}
+   #if($debugpl){quest::shout ("SET 82)");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",82,7,"F");
  $sirens=undef;}
 elsif (($sirens==82) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("SET 83!)");}
+   #if($debugpl){quest::shout ("SET 83!)");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",83,7,"F");
  $sirens=undef;}
 elsif (($sirens==83) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("SET 84)");}
+   #if($debugpl){quest::shout ("SET 84)");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",84,7,"F");
  $sirens=undef;}
@@ -148,7 +149,7 @@ elsif (($sirens==89) && ($sirens >=60) && ($sirens <=99)){
  quest::setglobal("sirens",90,7,"F");
  $sirens=undef;}
 elsif (($sirens==90) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Set 91!)");}
+   #if($debugpl){quest::shout ("Set 91!)");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",91,7,"F");
  $sirens=undef;}
@@ -161,38 +162,38 @@ elsif (($sirens==92) && ($sirens >=60) && ($sirens <=99)){
  quest::setglobal("sirens",93,7,"F");
  $sirens=undef;}
 elsif (($sirens==93) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Set 94!)");}
+   #if($debugpl){quest::shout ("Set 94!)");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",94,7,"F");
  $sirens=undef;}
 elsif (($sirens==94) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Set 95!");}
+   #if($debugpl){quest::shout ("Set 95!");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",95,7,"F");
  $sirens=undef;}
 elsif (($sirens==95) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Set 96!");}
+   #if($debugpl){quest::shout ("Set 96!");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",96,7,"F");
  $sirens=undef;}
 elsif (($sirens==96) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Set 97!");}
+   #if($debugpl){quest::shout ("Set 97!");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",97,7,"F");
  $sirens=undef;}
 elsif (($sirens==97) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Set 98-Near ZoneLine!)");}
+   #if($debugpl){quest::shout ("Set 98-Near ZoneLine!)");}
  quest::settimer("boat2",10);
  quest::delglobal("sirens");
  quest::setglobal("sirens",98,7,"F");
  $sirens=undef;}
 elsif (($sirens==98) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Set 99-Near ZoneLine!)");}
+   #if($debugpl){quest::shout ("Set 99-Near ZoneLine!)");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",99,7,"F");
 $sirens=undef;}
 elsif (($sirens==99) && ($sirens >=60) && ($sirens <=99)){
-   if($debugpl){quest::shout ("Set 100!");}
+   #if($debugpl){quest::shout ("Set 100!");}
  quest::delglobal("sirens");
  quest::setglobal("sirens",100,7,"F");
  $sirens=undef;}}

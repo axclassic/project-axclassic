@@ -9,7 +9,7 @@ sub EVENT_SPAWN{
 
 sub EVENT_ENTER{
     if(($sirens>=35) && ($sirens<=40)){
-     if($debugpl){quest::shout ("Zoning PC's to FREEPORT Setting to 37!!!");}
+     #if($debugpl){quest::shout ("Zoning PC's to FREEPORT Setting to 37!!!");}
      if($sirens != 40) {
        quest::delglobal("sirens");
        quest::setglobal("sirens",39,7,"F");}

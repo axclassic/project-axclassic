@@ -2,7 +2,8 @@
 ## Angelox
 ## Qadar
 sub EVENT_SPAWN { ## Starts in Butcher
-quest::shout("I currently see sirens set at $sirens");
+no warnings 'all' ;
+#quest::shout("I currently see sirens set at $sirens");
 if (($sirens ==0) && ($sirens <=13)){ ##butcher
  quest::spawn_condition(butcher, 2,0); #BoatThere
  quest::spawn_condition(butcher, 1,1);}
