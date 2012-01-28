@@ -81,9 +81,10 @@ sub EVENT_ITEM {
    }
    elsif(plugin::check_handin(\%itemcount,22293>=1)) {
       quest::say("Bad luck must be one of your strong suits. You should have been a begger because you sure aren't a very good $class. You lose!");
-   } elsif{
-     plugin::return_items(\%itemcount);
+   }
+ else {     
      quest::say("I don't want that!");
+plugin::return_items(\%itemcount);
    }
 }
 
