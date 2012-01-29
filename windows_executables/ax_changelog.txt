@@ -1,5 +1,67 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==01/29/2012==
+Angelox: Added options to have up to three raid groups saved: #bot spawnraid, groupraid, or saveraid [agroup], [bgroup], or [cgroup].
+	 Required Sql "BotGroups.sql" is in the SVN.
+
+==01/27/2012==
+Angelox: Some typo fixes to bot invis spells chat. 
+
+==01/21/2012==
+Angelox: Added a check to move any stray bots up close to the group while on the run.
+Angelox: re-added movement timers, z-coord finder, familiars will follow bots.
+
+==01/19/2012==
+Angelox: New option: #botmode optimize [speed] or [quality] speed is for players with lag problems.
+
+==01/18/2012==
+Angelox: Removed movement timer while bot-raiding.
+
+==01/17/2012==
+Angelox: More reinstated fixes to raids, also looking to correct some follow problems.
+Angelox: Fix for bots that forget to follow.
+
+==01/16/2012==
+Angelox: Reinstated a few fixes that were not doing harm.
+Angelox: Another one that might be screwing things up (position updates in the wrong spot).
+Angelox: Removed methods for z coord fixes and warps, while in raid mode - also no taunt switch in raid mode.
+
+==01/15/2012==
+Angelox: Possible fix for raid mode: Removed all database queries in botAI.cpp while in raid mode. 
+         Changed battleheal to work by level and not with switch; bots 39 or higher wil always use it.
+Angelox: Possible fix for raid mode.
+
+==01/14/2012==
+Angelox: Reverted last changes back to what they were, since they had no effect.
+Angelox: Reverted movement checks to no-raid groups only.
+Angelox: "jumping" bots won't jump anymore on slopes either - also put in some checks to avoid movement timers while engaged.
+Angelox: "jumping" bots won't jump anymore (still jump a little while on slopes).
+
+==01/13/2012==
+Angelox: Bots will not start meditate or Bot_AI_IdleCast Checks for a few seconds to ensure they are not follow running (and lagged).
+
+==01/08/2012==
+Angelox: Work on new client mode. Bot titles won't show in new client mode for now. "jumping" bots should jump less now.
+
+==01/07/2012==
+Angelox: Work on new client mode. Also fixed some boo-boos from yesterdays update.
+
+==01/06/2012==
+Angelox: Added new option #botmode [client] or [npc] - will toggle between bots looking more like clients or the default npc look.
+
+==01/04/2012==
+Angelox: Added more options to bot med chat - taunters will chat taunting their targets and not the clients.
+Angelox: Some cleanups to the bot files.
+
+==01/03/2012==
+Angelox: Auto Mez chat was pointing mob names to clients target.
+
+==01/02/2012==
+Angelox: Fixed bug in Auto Mez that was crashing the zone, Bard will use his own mez spell (not borrow from Enchanter).
+
+==12/28/2011==
+Angelox: Added new source file botChat.cpp for random gsay consolidation.
+
 ==12/27/2011==
 Angelox: Bots will now auto-select their weapon animation.
 Angelox: Converted botCommand.h, botDatabase.h to botCommand.cpp, botDatabase.cpp (probably what they should be).
