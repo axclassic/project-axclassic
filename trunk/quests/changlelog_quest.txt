@@ -1,6 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
-==2/27/2012==
+==2/01/2012==
+Angelox: Aediles Thrall now gives the first bot for free.
+
+==1/27/2012==
 Angelox: Removed unneeded variables from quests related to the boats in butcher, FP, and Oot.
 
 ==12/30/2011==
