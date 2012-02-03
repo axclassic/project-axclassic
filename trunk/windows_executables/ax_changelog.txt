@@ -1,5 +1,11 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==01/31/2012==
+Angelox: Players can make multiple petitions without prior ones getting checkedout.
+
+==01/30/2012==
+Angelox: Increased distance to where bots stop behind character.
+
 ==01/29/2012==
 Angelox: Added options to have up to three raid groups saved: #bot spawnraid, groupraid, or saveraid [agroup], [bgroup], or [cgroup].
 	 Required Sql "BotGroups.sql" is in the SVN.
