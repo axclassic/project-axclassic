@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 
 sub EVENT_WAYPOINT
 {
-if($wp108 == 15)
+if($wp108 == 14)
 {
 quest::say("TEST TEST TEST");
 quest::depop();
