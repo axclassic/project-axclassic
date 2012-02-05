@@ -27,4 +27,17 @@ sub EVENT_ITEM {
 } 
 
 # EOF zone: rathemtn ID: 50188 NPC: Hasten_Bootstrutter
+##Waypoint ending Threeflies
+
+sub EVENT_WAYPOINT
+{
+if ($wp == 15)
+{
+quest::say("TEST TEST TEST");
+quest::depop();
+}
+
+}
+
+
 
