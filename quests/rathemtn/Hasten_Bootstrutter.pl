@@ -1,4 +1,5 @@
 # Journeyman Boots
+#Threeflies - added waypoint depop
 
 sub EVENT_SAY {
   if ($text=~ /Hail/i) {
@@ -24,20 +25,18 @@ sub EVENT_ITEM {
      quest::ding(); quest::exp(1250);
     quest::summonitem(2300);
   }  
+}
+
+sub EVENT_WAYPOINT {
+   if ($wp == 16) {
+quest::depop();
+}
 } 
 
 # EOF zone: rathemtn ID: 50188 NPC: Hasten_Bootstrutter
-##Waypoint ending Threeflies
 
-sub EVENT_WAYPOINT
-{
-if($wp108 == 14)
-{
-quest::say("TEST TEST TEST");
-quest::depop();
-}
 
-}
+
 
 
 
