@@ -18,7 +18,7 @@ my $random_result = int(rand(100));
        $client->Message(14,"You will not be able to board the ship that sails from Freeport to Butcher and back without these files.");}
 	elsif($random_result<=75){
        $client->Message(14,"Petitions are monitored constantly."); 
-       $client->Message(14,"Use /petition with your message and a GM will come withing 5 minutes.");}
+       $client->Message(14,"You first bot-helper is free (no quest needed), find and talk to Aediles Thrall about it.");}
 	elsif($random_result<=100){
        $client->Message(14,"Most travel in AXClassic is done by looted or quested moonstones and quested gates or portals for your Druid or Wizard Mercenary Bot."); 
        $client->Message(14,"Use your \"Find\" button and look for the Anita Thrall for gate or portal quests. ");}
