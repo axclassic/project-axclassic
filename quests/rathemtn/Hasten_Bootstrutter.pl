@@ -1,5 +1,5 @@
 # Journeyman Boots
-#Threeflies - added waypoint depop
+#Threeflies - added waypoint depop and spell effects
 
 sub EVENT_SAY {
   if ($text=~ /Hail/i) {
@@ -31,8 +31,28 @@ sub EVENT_WAYPOINT {
    if ($wp == 16) {
 quest::depop();
 }
+if ($wp == 2) {
+$npc->CastSpell(5146,$50188);#Hasten self cast Bootstrutters blessing , Jboot spell.
+}
+if ($wp == 5) {
+$npc->CastSpell(5146,$50188);#Hasten self cast Bootstrutters blessing , Jboot spell.
 } 
-
+if ($wp == 7) {
+$npc->CastSpell(5146,$50188);#Hasten self cast Bootstrutters blessing , Jboot spell.
+}
+if ($wp == 9) {
+$npc->CastSpell(5146,$50188);#Hasten self cast Bootstrutters blessing , Jboot spell.
+}
+if ($wp == 11) {
+$npc->CastSpell(5146,$50188);#Hasten self cast Bootstrutters blessing , Jboot spell.
+}
+if ($wp == 13) {
+$npc->CastSpell(5146,$50188);#Hasten self cast Bootstrutters blessing , Jboot spell.
+}
+if ($wp == 15) {
+$npc->CastSpell(5146,$50188);#Hasten self cast Bootstrutters blessing , Jboot spell.
+}
+}
 # EOF zone: rathemtn ID: 50188 NPC: Hasten_Bootstrutter
 
 
