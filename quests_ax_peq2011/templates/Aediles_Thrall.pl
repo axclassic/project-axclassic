@@ -248,57 +248,45 @@ my $show = quest::saylink("show", 1);
             $client->Message(14,"A bot is another name we give to your NPC helpers or Mercenaries. You can use them so you don't have to venture alone.");
          }
          if(($ulevel >= $firstbotlevel) && ($qglobals{bot_spawn_limit} <= 0)) {
- #        quest::settimer("face", 25);
-         if($text=~/Hail/i) {
+	   #quest::settimer("face", 25);
+           if($text=~/Hail/i) {
             $client->Message(14,"Aediles Thrall says, \"Hey der youngster.  Lookin' fer a bit o' $help with yer adventurin'?\"");
-         }
-         if($text=~/help/i) {
+           }
+           if($text=~/help/i) {
             quest::emote("looks around the room and pauses a few seconds");
             $client->Message(14,"Well, I kin sell ye a $product ye can't find no place else.");
-         }
-         if($text=~/product/i) {
+           }
+           if($text=~/product/i) {
             quest::emote("looks around the room again");
             $client->Message(14,"Shhh, i'm involved in wut I like ta call A.I.D., I kin $aid ye in yer adventurin'");
-         }
-         if($text=~/aid/i) {
+           }
+           if($text=~/aid/i) {
             quest::emote("looks around the room again");
             $client->Message(14,"It be 'Acquired Individuals Delivery' and it means I kin supply ye with $individuals .");
-         }
-         if($text=~/individuals/i) {
-            quest::emote("looks around the room again");
-            $client->Message(14,"Shhh, not too loud... I kin deliver ye an Individual if yer $interested ?");
-         }
-         if($text=~/interested/i) {
+           }
+            if($text=~/individuals/i) {
+              quest::emote("looks around the room again");
+              $client->Message(14,"Shhh, not too loud... I kin deliver ye an Individual if yer $interested ?");
+           }
+           if($text=~/interested/i) {
             $client->Message(14,"Let me tell ye, keepin' up a supply o' Individuals can be a costly endeavor and so's I kin feed 'em I need ye ta be collectin' up sum $supplies fer me.");
-         }
-         if(($text=~/supplies/i) && ($race eq 'Froglok')) {
-            $client->Message(14,"The Individual will cost ye $firstbotcost platinum pieces an' 4 small mosquito wings.");
-        return;
-         }
-         if(($text=~/supplies/i) && ($race eq 'Iksar')) {
-            $client->Message(14,"The Individual will cost ye $firstbotcost platinum pieces an' 4 loose scales.");
-        return;
-         }
-         if(($text=~/supplies/i) && ($race eq 'Dark Elf')) {
-            $client->Message(14,"The Individual will cost ye $firstbotcost platinum pieces an' 4 rat whiskers.");
-        return;
-         }
-         if(($text=~/supplies/i) && ($race eq 'Vah Shir')) {
-            $client->Message(14,"The Individual will cost ye $firstbotcost platinum pieces an' 4 rat furs.");
-        return;
-         }
-         if(($text=~/supplies/i) && ($race eq 'Erudite')) {
-            $client->Message(14,"The Individual will cost ye $firstbotcost platinum pieces an' 4 bone chips.");
-        return;
-         }
-         if(($text=~/supplies/i) && ($race eq 'Barbarian')) {
-            $client->Message(14,"The Individual will cost ye $firstbotcost platinum pieces an' 4 bone chips.");
-        return;
-         }
-         if($text=~/supplies/i) {
-            $client->Message(14,"The Individual will cost ye $firstbotcost platinum pieces an' 4 bat wings.");
-         }
-      }
+           }
+           if(($text=~/supplies/i) && ($qglobals{bot_spawn_limit} <= 0)) {
+	      my $success1 = 0;
+              $success1 = $qglobals{bot_spawn_limit}+1;
+              $client->Message(14,"First one's on da house! Now if ya need me to $show you how to work these things, or want to learn how to make $macros of your bot $command\s, Even if ya don't know how to $spawn a bot, just say so.");
+	        if($success1 > 0) {
+	    	  quest::setglobal("bot_spawn_limit", $success1, 5, "F");
+		  $bot_spawn_limit = undef;
+		  $client->Message(6,"You receive a character flag!");
+		    if ($ulevel <=5){
+		      $client->Message(6,"You can now create and spawn an Individual! See: '#bot help create' and '#bot spawn' commands.");}
+		      my $sbcount = quest::spawnbotcount();
+		      $client->Message(6,"You have $success1 out of $sbcount possible Individuals.");
+		      $success1 = 0;
+	      }
+           }
+        }
       elsif(($ulevel >= $secondbotlevel) && ($qglobals{bot_spawn_limit} <= 1)) {
 my $interested = quest::saylink("interested", 1);
 my $supplies = quest::saylink("supplies", 1);
