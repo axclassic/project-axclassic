@@ -29,6 +29,7 @@ sub EVENT_ITEM {
 
 sub EVENT_WAYPOINT {
    if ($wp == 16) {
+quest::shout("Catch me if you can !! .");
 quest::depop();
 }
 if ($wp == 2) {
@@ -53,6 +54,10 @@ if ($wp == 15) {
 $npc->CastSpell(5146,$50188);#Hasten self cast Bootstrutters blessing , Jboot spell.
 }
 }
+
+
+ 
+
 # EOF zone: rathemtn ID: 50188 NPC: Hasten_Bootstrutter
 
 
