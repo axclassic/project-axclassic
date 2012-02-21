@@ -8,7 +8,7 @@ sub EVENT_SAY {
             quest::say("Greetin's t'ye $name!  Isn't the area 'round 'ere so nice an' quiet?  Such a departure from me old days; slaving o'er the forge t'create masterpieces!  T'be 'onest. at times I do miss the old forge. but after I created me finest breastplate. it seemed as if nothing else I made could ever live up t'it.  So I left me home to'wander the land an' see what I could learn o'the world.  I 'ave learned quite a bit from the elders 'ere an' the skilled craftspeople in New Tanaan.  I 'ave even devised a type o'[emblem] that will impart the magic o'tranquility into the user t'create planar armors from pieces o'energy found in the planes.");
    }
    if($text=~/emblem/i) {
-      if ($ulevel <=54) {
+      if ($ulevel <=50) {
          quest::say("Ye look mighty inexperienced t'be in this area. $name. Come an' seek me out when ye 'ave more knowledge o'the planes!");
       }
       else {
@@ -139,7 +139,7 @@ sub EVENT_ITEM {
    $cash = 0;
    $cash = $platinum * 1000 + $gold * 100 + $silver * 10 + $copper;
 
-   if($ulevel > 54) { #Must be level 55 or higher
+   if($ulevel > 49) { #Must be level 50 or higher
       if((plugin::check_handin(\%itemcount, 16267 => 1, 17184 => 1)) ||
          (plugin::check_handin(\%itemcount, 16271 => 1, 17184 => 1)) ||
          (plugin::check_handin(\%itemcount, 16269 => 1, 17184 => 1)) ||
