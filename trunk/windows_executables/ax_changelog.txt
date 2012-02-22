@@ -1,5 +1,11 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==02/22/2012==
+Angelox: Re-wrote the Bot-Chat scripts, should be a lot more efficient and better randomized.
+Angelox: Fixed a bug with #Bot Tash command.
+Angelox: Moved all database queries out of the BotAI - while settings are still stored in the DB, they are converted to memory run 
+boolean (or int) before entering the BotAI.  
+
 ==01/31/2012==
 Angelox: Players can make multiple petitions without prior ones getting checkedout.
 
