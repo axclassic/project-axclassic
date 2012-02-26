@@ -2,7 +2,8 @@ AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
 ==02/25/2012==
 Angelox: Fixed chat-related bug that was crashing bots with pets.
-Angelox: #bot taunt was still in the ai with database queries.  
+Angelox: #bot taunt was still in the ai with database queries.
+Angelox: #botmode [client] or [npc] reinstated, and is under development again.
 
 ==02/22/2012==
 Angelox: Re-wrote the Bot-Chat scripts, should be a lot more efficient and better randomized.
