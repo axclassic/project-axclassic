@@ -1,5 +1,15 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==03/06/2012==
+Angelox: Fixed "#bot set" commands, should be saving to database and applying to the whole group.
+	 Also moved "#bot taunt" to "#bot set taunt".
+
+==03/04/2012==
+Angelox: Zone saves when not engaged.
+
+==03/03/2012==
+Angelox: Added "#bot rez" to "#bot resurrectme" (both work).
+
 ==02/27/2012==
 Angelox: Another fix for bot chat: when in guard mode was crashing.
 
