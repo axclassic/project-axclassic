@@ -26,12 +26,12 @@ sub EVENT_SPAWN
 	quest::setglobal("astate",1,3,"F");
 	$astate=undef;
 #starts zone with gremlins, resets everything
-	quest::spawn_condition(hollowshade,3,0); #wolves are 3
-	quest::spawn_condition(hollowshade,2,0); #owls are 2
-	quest::spawn_condition(hollowshade,1,1); #grimlin are 1
-	quest::spawn_condition(hollowshade,4,0); #grimlin defender are 4
-	quest::spawn_condition(hollowshade,5,0); #owls defender are 5
-	quest::spawn_condition(hollowshade,6,0); #wolves defender are 6
+	quest::spawn_condition("hollowshade",3,0); #wolves are 3
+	quest::spawn_condition("hollowshade",2,0); #owls are 2
+	quest::spawn_condition("hollowshade",1,1); #grimlin are 1
+	quest::spawn_condition("hollowshade",4,0); #grimlin defender are 4
+	quest::spawn_condition("hollowshade",5,0); #owls defender are 5
+	quest::spawn_condition("hollowshade",6,0); #wolves defender are 6
 
 }
 # EOF zone: Hollowshade  Global Watcher
