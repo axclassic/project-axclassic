@@ -274,7 +274,7 @@ my $show = quest::saylink("show", 1);
            if(($text=~/supplies/i) && ($qglobals{bot_spawn_limit} <= 0)) {
 	      my $success1 = 0;
               $success1 = $qglobals{bot_spawn_limit}+1;
-              $client->Message(14,"First one's on da house! Now if ya need me to $show you how to work these things, or want to learn how to make $macros of your bot $command\s, Even if ya don't know how to $spawn a bot, just say so.");
+              $client->Message(14,"First one's on da house! Now if ya need me to $show you how to work these things, or want to learn how to make $macros of your bot $command\Qs\E, Even if ya don't know how to $spawn a bot, just say so.");
 	        if($success1 > 0) {
 	    	  quest::setglobal("bot_spawn_limit", $success1, 5, "F");
 		  $bot_spawn_limit = undef;

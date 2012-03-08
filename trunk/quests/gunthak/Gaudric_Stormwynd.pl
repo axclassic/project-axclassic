@@ -6,7 +6,6 @@ if ($text=~/Hail/i){
   quest::emote("motions for silence. 'Can you hear it?  The sound of nature crying out in pain. The children of Karana long for a release from this place of torment.' Gaudric turns away and appears to begin meditating."); 
   #quest::say("Can you hear it?  The sound of nature crying out in pain. The children of Karana long for a release from this place of torment.");
  }
-}
 if($text=~/winds/i){
       quest::say("The fury of a truly torrential storm is a beautiful thing. Even in their destruction they bring the birth of new life. Such is the cycle of life on Norrath, from the ashes nature always rebuilds. The trolls care nothing for this cycle though, and merely use the power of the storm to fill their treasuries. I hear the tormented cries of tempest [spirits] across the wind.");
    }
