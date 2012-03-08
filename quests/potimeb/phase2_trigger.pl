@@ -17,7 +17,7 @@ sub EVENT_SPAWN {
     quest::spawn2(223201,0,0,80,574,495,64); #fire door
     quest::spawn2(223206,0,0,98,574,495,195);
 
-    quest::spawn_condition(potimeb,10,1);
+    quest::spawn_condition("potimeb",10,1);
     
     quest::depopall(223089); #clean up non-required leftovers from phase 1.
     quest::depopall(223094);
@@ -29,8 +29,8 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
   if ($signal == 10020) {
     quest::clearspawntimers();
-    quest::spawn_condition(potimeb,10,0); #won't force a repop without this.
-    quest::spawn_condition(potimeb,10,1);
+    quest::spawn_condition("potimeb",10,0); #won't force a repop without this.
+    quest::spawn_condition("potimeb",10,1);
     quest::spawn2(223134,0,0,262,1644,493,192.5);
     quest::spawn2(223118,0,0,262,1354,493,192.5);
     quest::spawn2(223127,0,0,262,1109,493,192.5);
@@ -42,7 +42,7 @@ sub EVENT_SIGNAL {
 }
   if ($IIacounter == 5 ) { #phase 2 success
     quest::spawn2(223154,0,0,-140,1737,547,0); #phase 3 trigger
-    quest::spawn_condition(potimeb,10,0); #set us to default.
+    quest::spawn_condition("potimeb",10,0); #set us to default.
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
     $IIacounter = 0;
 }
@@ -80,7 +80,7 @@ sub EVENT_TIMER {
 		if($check == 0) {
 			#then we need to end the event
 			quest::shout("Phase 2 failed! Time expired.");
-			quest::spawn_condition(potimeb,10,0); #set us to default.
+			quest::spawn_condition("potimeb",10,0); #set us to default.
 			quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
 			quest::stoptimer("phase2");
 			quest::signalwith(223177,666,0);

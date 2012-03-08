@@ -2,16 +2,16 @@ my $Icounter;
 
 sub EVENT_SPAWN {
     $Icounter = 0;
-    quest::spawn_condition($zonesn,1,0); #set us to default.
-    quest::spawn_condition($zonesn,2,0);
-    quest::spawn_condition($zonesn,3,0);
-    quest::spawn_condition($zonesn,4,0);
-    quest::spawn_condition($zonesn,5,0);
-    quest::spawn_condition($zonesn,6,0);
-    quest::spawn_condition($zonesn,7,0);
-    quest::spawn_condition($zonesn,8,0);
-    quest::spawn_condition($zonesn,9,0);
-    quest::spawn_condition($zonesn,10,0);
+    quest::spawn_condition("$zonesn",1,0); #set us to default.
+    quest::spawn_condition("$zonesn",2,0);
+    quest::spawn_condition("$zonesn",3,0);
+    quest::spawn_condition("$zonesn",4,0);
+    quest::spawn_condition("$zonesn",5,0);
+    quest::spawn_condition("$zonesn",6,0);
+    quest::spawn_condition("$zonesn",7,0);
+    quest::spawn_condition("$zonesn",8,0);
+    quest::spawn_condition("$zonesn",9,0);
+    quest::spawn_condition("$zonesn",10,0);
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
     quest::spawn2(223169,0,0,13.5,1632.4,492.3,0); #earth trigger
     quest::spawn2(223170,0,0,10.1,1350,492.6,0); #air trigger

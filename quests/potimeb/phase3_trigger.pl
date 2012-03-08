@@ -39,7 +39,7 @@ sub EVENT_SPAWN {
     quest::spawn2(223023,0,0,1230,1310,359.38,175);
     quest::spawn2(223155,0,0,1250,1135,359.5,192);
     quest::spawn2(223156,0,0,1250,1085,359.5,192);
-    quest::spawn_condition(potimeb,2,1); #1st wave
+    quest::spawn_condition("potimeb",2,1); #1st wave
     quest::spawn2(223217,0,0,0,0,0,0); #this will be our wave counter
     quest::depopall(223179); #depop player counter
     quest::depopall(223178); #depop player counter
@@ -81,7 +81,7 @@ sub EVENT_SIGNAL {
     $namedI += 1;
 }
   if ($namedI == 2) { 
-    quest::spawn_condition(potimeb,3,1); # wave 2
+    quest::spawn_condition("potimeb",3,1); # wave 2
     quest::spawn2(223218,0,0,0,0,0,0); # wave counter
     quest::depopall(223016); #depop untargetable nameds
     quest::depopall(223017);
@@ -103,7 +103,7 @@ sub EVENT_SIGNAL {
     $namedII += 1;
 }
   if ($namedII == 2) {
-    quest::spawn_condition(potimeb,4,1); #3
+    quest::spawn_condition("potimeb",4,1); #3
     quest::spawn2(223219,0,0,0,0,0,0);
     quest::depopall(223022);
     quest::depopall(223023);
@@ -124,7 +124,7 @@ sub EVENT_SIGNAL {
     $namedIII += 1;
 }
   if ($namedIII == 2) {
-    quest::spawn_condition(potimeb,5,1); #4
+    quest::spawn_condition("potimeb",5,1); #4
     quest::spawn2(223220,0,0,0,0,0,0);
     quest::depopall(223012);
     quest::depopall(223013);
@@ -145,7 +145,7 @@ sub EVENT_SIGNAL {
     $namedIV += 1;
 }
   if ($namedIV == 2) {
-    quest::spawn_condition(potimeb,6,1); #5
+    quest::spawn_condition("potimeb",6,1); #5
     quest::spawn2(223221,0,0,0,0,0,0);
     quest::depopall(223010);
     quest::depopall(223011);
@@ -166,7 +166,7 @@ sub EVENT_SIGNAL {
     $namedV += 1;
 }
   if ($namedV == 2) {
-    quest::spawn_condition(potimeb,7,1); #6
+    quest::spawn_condition("potimeb",7,1); #6
     quest::spawn2(223222,0,0,0,0,0,0);
     quest::depopall(223014);
     quest::depopall(223015);
@@ -187,7 +187,7 @@ sub EVENT_SIGNAL {
     $namedVI += 1;
 }
   if ($namedVI == 2) {
-    quest::spawn_condition(potimeb,8,1); #7
+    quest::spawn_condition("potimeb",8,1); #7
     quest::spawn2(223223,0,0,0,0,0,0);
     quest::depopall(223020);
     quest::depopall(223021);
@@ -208,7 +208,7 @@ sub EVENT_SIGNAL {
      $namedVII += 1;
 }
   if ($namedVII == 2) {
-    quest::spawn_condition(potimeb,9,1); #final wave
+    quest::spawn_condition("potimeb",9,1); #final wave
     quest::spawn2(223224,0,0,0,0,0,0);
     quest::depopall(223018);
     quest::depopall(223019);
@@ -239,7 +239,7 @@ sub EVENT_SIGNAL {
     $namedIX += 1;
 } 
   if ($namedIX == 2) { #event success
-    quest::spawn_condition(potimeb,9,0); #set us to default.
+    quest::spawn_condition("potimeb",9,0); #set us to default.
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
     quest::spawn2(223157,0,0,-410,-69,348,0); #spawn phase4_trigger
     $namedIX = 0;
@@ -272,14 +272,14 @@ sub EVENT_TIMER {
 		
 		if($check == 0) {
     quest::shout("Phase 3 failed! Time expired.");
-    quest::spawn_condition(potimeb,2,0); #set us to default.
-    quest::spawn_condition(potimeb,3,0);
-    quest::spawn_condition(potimeb,4,0);
-    quest::spawn_condition(potimeb,5,0);
-    quest::spawn_condition(potimeb,6,0);
-    quest::spawn_condition(potimeb,7,0);
-    quest::spawn_condition(potimeb,8,0);
-    quest::spawn_condition(potimeb,9,0);
+    quest::spawn_condition("potimeb",2,0); #set us to default.
+    quest::spawn_condition("potimeb",3,0);
+    quest::spawn_condition("potimeb",4,0);
+    quest::spawn_condition("potimeb",5,0);
+    quest::spawn_condition("potimeb",6,0);
+    quest::spawn_condition("potimeb",7,0);
+    quest::spawn_condition("potimeb",8,0);
+    quest::spawn_condition("potimeb",9,0);
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
     quest::stoptimer("phase3");
     quest::signalwith(223177,666,0);

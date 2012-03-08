@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
     quest::spawn2(223165,0,0,-257,255,6,101.5); #Fake Cazic
     quest::spawn2(223000,0,0,303.3,306,13.3,161.5); #Fake Innoruuk
     quest::spawn2(223001,0,0,264,-279,18.75,217.5); #Fake Rallos
-    quest::spawn_condition(potimeb, 1,1); #armies
+    quest::spawn_condition("potimeb", 1,1); #armies
     quest::depopall(223164);
     quest::depopall(223083);
     quest::depopall(223084);
@@ -38,7 +38,7 @@ sub EVENT_SIGNAL {
     $godcounterII += 1;
 }
   if ($godcounterII == 4) { #event success
-    quest::spawn_condition(potimeb, 1,0); #set us to default.
+    quest::spawn_condition("potimeb", 1,0); #set us to default.
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
     quest::spawn2(223159,0,0,166,-938,9.7,0); #spawn quarm_trigger
     $godcounterII = 0;
@@ -61,7 +61,7 @@ sub EVENT_TIMER {
 		if($check == 0) {
 			#then we need to end the event
     quest::stoptimer("phase5");
-    quest::spawn_condition(potimeb, 1,0); #set us to default.
+    quest::spawn_condition("potimeb", 1,0); #set us to default.
     quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
     quest::shout("Phase 5 failed! Time expired.");
     quest::signalwith(223177,666,0);
