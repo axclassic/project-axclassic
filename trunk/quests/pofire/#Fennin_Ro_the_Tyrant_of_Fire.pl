@@ -2,8 +2,8 @@
 # Timers: 1 = check for named mobs to be up, 2 = time for event
 
 sub EVENT_SPAWN {
-        quest::spawn_condition($zonesn,1,0);
-        quest::spawn_condition($zonesn,2,0);
+        quest::spawn_condition("$zonesn",1,0);
+        quest::spawn_condition("$zonesn",2,0);
 	quest::settimer(1,30);
 	$start_event = undef;
 }
@@ -90,7 +90,7 @@ $check_named = $entity_list->GetMobByNpcTypeID(217088);
 		}
 #phase 2
        if ($timer == 1 && $start_event == 1 && $named_up == 0)  {
-               quest::spawn_condition($zonesn,1,1);
+               quest::spawn_condition("$zonesn",1,1);
                quest::ze(1,"Four enraged roars of fury echo from further down the bridge over the cacophany of an army waiting to hand out death. The powerful voice is then heard saying, 'Rexanous, Azobian, Hebabbilys, and Javonn! Come destroy these intruders.'");
                quest::spawn2(217079,0,0,-1325,-1521.6,-202.2,98.9);
                quest::spawn2(217080,0,0,-1283.4,-1568.4,-222.5,95.6);
@@ -101,7 +101,7 @@ $check_named = $entity_list->GetMobByNpcTypeID(217088);
 
 #phase 3
         elsif ($timer == 1 && $start_event == 2 && $named_up == 0){
-                quest::spawn_condition($zonesn,1,0);
+                quest::spawn_condition("$zonesn",1,0);
 		quest::ze(1,"As the last of the army is defeated visions of endless burning flames intrude into your mind. Suddenly the visions ends as a call comes from just ahead saying, 'Prepare to meet your end at the hands of the Council of Fire!'");
                 quest::spawn2(217083,0,0,-1459.5,-1150,-197.2,127.6);
                 quest::spawn2(217084,0,0,-1545.1,-1147.5,-197.2,130.6);
@@ -114,7 +114,7 @@ $check_named = $entity_list->GetMobByNpcTypeID(217088);
 	elsif ($timer == 1 && $start_event == 3 && $named_up == 0) {
 		quest::stoptimer(1);
 		quest::stoptimer(2);
-                quest::spawn_condition($zonesn,2,1);
+                quest::spawn_condition("$zonesn",2,1);
                 quest::spawn2(217054,0,0,$x,$y,$z,$h);
 		quest::ze(1,"A maddened call of endless fury erupts as a burning creature of pure destructions stands tall before you. The creature then speaks in the loud booming voice of immense power saying, 'You are fools to have come this far. Prepare to tremble at the might of Doomfire!'");
 		quest::depop();
@@ -138,8 +138,8 @@ $check_named = $entity_list->GetMobByNpcTypeID(217088);
                 quest::depopall(217100);
                 quest::depopall(217087);
                 quest::depopall(217088);
-                quest::spawn_condition($zonesn,1,0);
-                quest::spawn_condition($zonesn,2,0);
+                quest::spawn_condition("$zonesn",1,0);
+                quest::spawn_condition("$zonesn",2,0);
 	}
 }
 
