@@ -17,8 +17,7 @@
              quest::say("I have been tracked here by a bounty hunter named Slaythe.  I have heard reports of his presence beyond the Great Wall.  Please seek him out and bring me some board part of his as proof of his passing.  Do this and the emerald shard is yours.");
              quest::spawn2(33146,0,0,77.7,1026.9,13.5,129.3);
           }
-          else
-          {
+          elsif ($faction < 4){
              quest::say("You are no ally of the Rivervale Deeppockets!! Leave at once!!!");
           }
        }
@@ -40,8 +39,7 @@
        quest::givecash(5,4,3,0);
                 quest::summonitem(13323);#Give Emerald Shard II ID:13323
        }
-       else
-        {
+       elsif ($faction < 4){
           quest::say("You are no ally of the Rivervale Deeppockets!! Leave at once!!!");
         }
       }

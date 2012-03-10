@@ -9,7 +9,7 @@
 sub EVENT_SAY {
 my $information = quest::saylink("information");
 my $deal = quest::saylink("deal with");
-my $deal = quest::saylink("work");
+my $work = quest::saylink("work");
 my $more = quest::saylink("more");
 my $interesting = quest::saylink("interesting ore");
   if(($ulevel >= 15) && (!defined($qglobals{Wayfarer}))) {
