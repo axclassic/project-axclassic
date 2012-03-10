@@ -54,13 +54,13 @@ if($forceboats){
 
 
 if (($sirens ==39) &&($sirens >=39) && ($sirens <=59)){ ##Oot
- quest::spawn_condition(freporte,2,0); #BoatThere
- quest::spawn_condition(freporte,1,1);
+ quest::spawn_condition("freporte",2,0); #BoatThere
+ quest::spawn_condition("freporte",1,1);
  # quest::shout ("Boat there");
  quest::depop();}
 else{
- quest::spawn_condition(freporte,2,1); #BoatGone
- quest::spawn_condition(freporte,1,0);
+ quest::spawn_condition("freporte",2,1); #BoatGone
+ quest::spawn_condition("freporte",1,0);
 # quest::shout ("Not there");
  quest::depop();}}
 

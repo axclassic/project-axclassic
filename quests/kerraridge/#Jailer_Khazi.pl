@@ -6,7 +6,7 @@ sub EVENT_SPAWN{
     quest::delglobal("khazi");
     quest::setglobal("khazi",1,3,"F");        # set $khazi = 1  (Quest not started)
     $khazi=undef;
-    quest::spawn_condition(kerraridge,3,1);
+    quest::spawn_condition("kerraridge",3,1);
   }
 }
 
@@ -27,7 +27,7 @@ sub EVENT_SIGNAL{                                # signaled by Grexah when he fr
   quest::delglobal("khazi");
   quest::setglobal("khazi",3,3,"F");             # set $khazi = 3 (kobolds released)
   $khazi=undef;
-  quest::spawn_condition(kerraridge,3,0);
+  quest::spawn_condition("kerraridge",3,0);
   quest::depopall(74080);
   quest::depopall(74079);              # depop any kobold prisoners
   quest::say("Somebody help me!  Grexah has released the prisoners!");
@@ -115,7 +115,7 @@ sub EVENT_ITEM{
       }
     }
 
-    quest::spawn_condition(kerraridge,3,1);
+    quest::spawn_condition("kerraridge",3,1);
     quest::depopall(74541);
     quest::delglobal("khazi");
     quest::setglobal("khazi",1,3,"F");           # reset quest on handin

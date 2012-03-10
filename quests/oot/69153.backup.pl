@@ -4,11 +4,11 @@
 sub EVENT_SPAWN { ## Starts in Oot return to Butcher
 if (($sirens ==60) && ($sirens >=60) && ($sirens <=99)){ ##Oot
   if($debugpl){quest::shout("spawning, starting 69153.pl");}
- quest::spawn_condition(oot, 2,0); #BoatThere
- quest::spawn_condition(oot, 3,1);}
+ quest::spawn_condition("oot", 2,0); #BoatThere
+ quest::spawn_condition("oot", 3,1);}
 else{
- quest::spawn_condition(oot, 2,1); #BoatGone
- quest::spawn_condition(oot, 3,0);
+ quest::spawn_condition("oot", 2,1); #BoatGone
+ quest::spawn_condition("oot", 3,0);
  quest::depop();}}
 
 sub EVENT_WAYPOINT {
@@ -201,13 +201,13 @@ elsif (($sirens==99) && ($sirens >=60) && ($sirens <=99)){
  quest::setglobal("sirens",100,7,"F");
  $sirens=undef;}
 else{
- quest::spawn_condition(oot,2,1); #BoatGone
- quest::spawn_condition(oot,3,0);
+ quest::spawn_condition("oot",2,1); #BoatGone
+ quest::spawn_condition("oot",3,0);
  quest::depop();}}
 
 sub EVENT_TIMER{
  if ($timer eq "boat2"){
     if($debugpl){quest::shout ("Zoning to Freeport :)");}
-  quest::spawn_condition(oot, 2,1); #BoatGone
-  quest::spawn_condition(oot, 3,0);
+  quest::spawn_condition("oot", 2,1); #BoatGone
+  quest::spawn_condition("oot", 3,0);
   quest::stoptimer("boat2");}}

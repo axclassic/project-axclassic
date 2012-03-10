@@ -3,11 +3,11 @@
 ## Qadar
 sub EVENT_SPAWN { ## Starts in Oot
 if (($sirens ==14) && ($sirens >=14) && ($sirens <=38)){ ##Oot
- quest::spawn_condition(oot, 2,0); #BoatThere
- quest::spawn_condition(oot, 1,1);}
+ quest::spawn_condition("oot", 2,0); #BoatThere
+ quest::spawn_condition("oot", 1,1);}
 else{
- quest::spawn_condition(oot, 2,1); #BoatGone
- quest::spawn_condition(oot, 1,0);}}
+ quest::spawn_condition("oot", 2,1); #BoatGone
+ quest::spawn_condition("oot", 1,0);}}
 
 sub EVENT_WAYPOINT {
 ## In Oot > FP ################################## In Oot > FP #################
@@ -126,8 +126,8 @@ elsif (($sirens==38) && ($sirens >= 14) && ($sirens <=38)){
  quest::setglobal("sirens",39,7,"F");
  $sirens=undef;}
 else{
- quest::spawn_condition(oot,2,1); #BoatGone
- quest::spawn_condition(oot,1,0);
+ quest::spawn_condition("oot",2,1); #BoatGone
+ quest::spawn_condition("oot",1,0);
  quest::depop();}}
 
 
@@ -136,7 +136,7 @@ sub EVENT_TIMER{
  if($debugpl){  quest::shout ("Zoning to Freeport :)");}
   quest::delglobal("sirens");
   quest::setglobal("sirens",39,7,"F");
-  quest::spawn_condition(oot, 2,1); #BoatGone
-  quest::spawn_condition(oot, 1,0);
+  quest::spawn_condition("oot", 2,1); #BoatGone
+  quest::spawn_condition("oot", 1,0);
   quest::stoptimer("boat2")}};
   
