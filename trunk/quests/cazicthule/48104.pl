@@ -11,13 +11,13 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER{
 if (($ulevel <=45) && ($cazpop==2)){
- quest::spawn_condition(cazicthule,7,0);
- quest::spawn_condition(cazicthule,8,1);
+ quest::spawn_condition("cazicthule",7,0);
+ quest::spawn_condition("cazicthule",8,1);
  quest::delglobal("cazpop");
  quest::setglobal("cazpop",3,3,"F");}
 elsif (($ulevel >=46) && ($cazpop==2)){
- quest::spawn_condition(cazicthule,7,1);
- quest::spawn_condition(cazicthule,8,0);
+ quest::spawn_condition("cazicthule",7,1);
+ quest::spawn_condition("cazicthule",8,0);
  quest::delglobal("cazpop");
  quest::setglobal("cazpop",3,3,"F");}}
 

@@ -17,7 +17,7 @@ sub EVENT_SPAWN {
    $countertwo=0;
    $counterthree=0;
    $counterfour=0;
-   quest::spawn_condition($zonesn,2,0); #Make sure we aren't up yet.
+   quest::spawn_condition("$zonesn",2,0); #Make sure we aren't up yet.
 }
 
 sub EVENT_TIMER {
@@ -53,14 +53,14 @@ sub EVENT_TIMER {
     if($timer eq "stone" && $check == 0 && !defined $qglobals{stone_ring}) {
 		# Here we spawn 50 a_stone_fortification
 		# Event moves forward when all are dead
-		quest::spawn_condition($zonesn,2,1); #a_stone_fortification
+		quest::spawn_condition("$zonesn",2,1); #a_stone_fortification
                 quest::stoptimer("stone");
 		$counter=0; 
 		$countertwo=0;
 		$check=0;
 		}
 	else {
-		quest::spawn_condition($zonesn,2,0);
+		quest::spawn_condition("$zonesn",2,0);
 	}
 }
 
@@ -70,7 +70,7 @@ sub EVENT_SIGNAL {
 
       if(!$check_boss) {	  
   #when all fortificatiosn are dead, we spawn the next wave, 4 A_Mound_of_Rubble
-  		quest::spawn_condition($zonesn,2,0);
+  		quest::spawn_condition("$zonesn",2,0);
         	quest::spawn2(218076,0,0,-645,-290,85,30); #Mound_of_Rubble
 		quest::spawn2(218076,0,0,-643,-226,85,30);
 		quest::spawn2(218076,0,0,-576,-226,85,30);

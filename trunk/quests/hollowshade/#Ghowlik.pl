@@ -3,9 +3,9 @@
 
 sub EVENT_DEATH {
 	my $random_result = int(rand(100));
-	quest::spawn_condition(hollowshade,4,0); #grimlin defender are 4
-	quest::spawn_condition(hollowshade,6,1); #wolf defender are 6
-	quest::spawn_condition(hollowshade,5,0); #owl defender are 5
+	quest::spawn_condition("hollowshade",4,0); #grimlin defender are 4
+	quest::spawn_condition("hollowshade",6,1); #wolf defender are 6
+	quest::spawn_condition("hollowshade",5,0); #owl defender are 5
  if($random_result<51){
 	quest::delglobal("astate");
 	quest::setglobal("astate",1,3,"F"); #grimlins

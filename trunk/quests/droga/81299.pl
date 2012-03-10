@@ -1,5 +1,5 @@
 ## LOW/HIGH LEVEL SWITCH FOR SPAWNS
-## DROGA
+## droga
 ## Angelox
 
 sub EVENT_SPAWN {
@@ -11,13 +11,13 @@ sub EVENT_SPAWN {
 
 sub EVENT_ENTER{
 if (($ulevel <=45) && ($dropop==2)){
- quest::spawn_condition(droga,7,0);
- quest::spawn_condition(droga,8,1);
+ quest::spawn_condition("droga",7,0);
+ quest::spawn_condition("droga",8,1);
  quest::delglobal("dropop");
  quest::setglobal("dropop",3,3,"F");}
 elsif (($ulevel >=46) && ($dropop==2)){
- quest::spawn_condition(droga,7,1);
- quest::spawn_condition(droga,8,0);
+ quest::spawn_condition("droga",7,1);
+ quest::spawn_condition("droga",8,0);
  quest::delglobal("dropop");
  quest::setglobal("dropop",3,3,"F");}}
 
