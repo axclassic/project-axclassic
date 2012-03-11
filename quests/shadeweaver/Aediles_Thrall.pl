@@ -1,1 +1,0 @@
-/eqemu/server/questsGoogle/trunk/quests/templates/Aediles_Thrall.pl
