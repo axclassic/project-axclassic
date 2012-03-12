@@ -1,5 +1,11 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==03/12/2012==
+Angelox: Removed SayRandomMessage(), moved SayRandomBotMessage() to replace them. 
+
+==03/11/2012==
+Angelox: Bots will regroup when you swap one, few changes to try and avoid a zone crash.
+
 ==03/06/2012==
 Angelox: Fixed "#bot set" commands, should be saving to database and applying to the whole group.
 	 Also moved "#bot taunt" to "#bot set taunt".
