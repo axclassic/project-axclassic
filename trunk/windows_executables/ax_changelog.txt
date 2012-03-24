@@ -1,5 +1,8 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==03/24/2012==
+Angelox: Tracking should work much better now - Also made adjustments to chat code, bots should chat less and seem more realistic.
+
 ==03/21/2012==
 Angelox: Tracking fix.
 
