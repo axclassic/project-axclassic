@@ -33,7 +33,7 @@ sub EVENT_SAY {
       quest::say("I shall require an ancient tarnished pair of chain gauntlets and three crushed lava rubys to complete my ritual.");
     }
     if ($text=~/leggings/i) {
-      quest::say("You seek leggings? Then provide for me, three chipped onyx and a pair of ancient tarnished chain leggings. I will give these to you for your service.");
+      quest::say("You seek leggings? Then provide for me, three chipped onyx Sapphires and a pair of ancient tarnished chain leggings. I will give these to you for your service.");
     }
     if ($text=~/boots/i) {
       quest::say("These boots will help you in your battles to come. I shall grant them upon receipt of three crushed flame emeralds and a pair of an ancient tarnished chain boots.");
@@ -96,7 +96,7 @@ sub EVENT_ITEM {
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
-    elsif (plugin::check_handin(\%itemcount, 25632 => 3, 24908 => 1)) { # legs
+    elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24908 => 1)) { # legs
       quest::summonitem(25361);
        quest::ding(); quest::exp(150000);
       quest::faction(179,20); # King Tormax
