@@ -14,7 +14,6 @@ error_reporting(E_ALL ^ E_NOTICE);
 <body style="background-image: url(images/bg_classic.jpeg);">
          <center>
            <img src="images/eq_main_women.gif" width="285" height="146" alt="axclassic.com" longdesc="http://axclassic.com">
-
 		   <link rel="stylesheet" href="css/menu.css" type="text/css" />
 <table id="cbinsmenuebul_table" width="0" cellpadding="0" cellspacing="0" border="0">
 <tr>
