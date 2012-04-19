@@ -1,5 +1,18 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==04/19/2012==
+Fez_Ajer: Make loottables work the way (I believe) they were intended.
+Fez_Ajer: Clean up tracking code in entity.cpp.
+Angelox: Bots, their pets and familiars, will not appear on track when close to your character. 
+Fez_Ajer: Fix tracking packet patch bug from merge of SoD tracking code.
+Angelox: Fez_Ajer's fix for other two structs files were also bugged.  
+
+==04/17/2012==
+Angelox: Syntax fix.
+
+==04/10/2012==
+Angelox: Player will camp out of a bot/player combo-group without crashing the zone. 
+
 ==04/09/2012==
 Angelox: Fix for '#bot healme' command - was crashing the zone.
 
