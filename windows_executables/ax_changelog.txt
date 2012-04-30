@@ -1,5 +1,21 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==04/29/2012==
+Angelox: Fix for melee not to recieve mind buffs, and casters not to recieve haste or stat buffs. 
+
+==04/26/2012==
+Angelox: Fixed problem where not enough raid bots were being allowed to spawn (I hope).
+
+==04/25/2012==
+Angelox: #bot levitate should work properly with classes and levels now.
+
+==04/24/2012==
+Angelox: Cleaned up bard Selos switch.
+
+==04/20/2012==
+Angelox: Fix for #bot raid groups and quest to character de-level: Spawn bot-amount limits for raid groups are enforced even if you have 
+lowered your charcter level (no more level 10 raid groups).  
+
 ==04/19/2012==
 Fez_Ajer: Make loottables work the way (I believe) they were intended.
 Fez_Ajer: Clean up tracking code in entity.cpp.
