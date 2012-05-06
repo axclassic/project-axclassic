@@ -1,5 +1,13 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==05/03/2012==
+Angelox: Wizard was still getting stat buffs.
+Angelox: Shaman will not blow out his mana anymore.
+Angelox: Shamans and Druids will now reserve mana for heals.
+
+==04/30/2012==
+Angelox: SK Bot will not waste time re-casting his crappy pet during melee.
+
 ==04/29/2012==
 Angelox: Fix for melee not to recieve mind buffs, and casters not to recieve haste or stat buffs. 
 
