@@ -23,7 +23,7 @@ sub EVENT_ITEM {
 	quest::summonitem("3189");
     } elsif(plugin::check_handin(\%itemcount, 10566 => 1, 10570 => 1, 10034 => 1)) { # helm
 	quest::summonitem("3181");
-    } elsif(plugin::check_handin(\%itemcount, 10548 => 1, 10570 => 1, 10032 => 2)) { # sleeves
+    } elsif(plugin::check_handin(\%itemcount, 10548 => 1, 10568 => 1, 10032 => 2)) { # sleeves
 	quest::summonitem("3188");
     } elsif(plugin::check_handin(\%itemcount, 10571 => 1, 10567 => 1, 10035 => 2)) { # tunic
 	quest::summonitem("3184");
