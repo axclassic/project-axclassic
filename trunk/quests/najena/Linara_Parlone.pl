@@ -8,5 +8,17 @@ quest::say("If you can find the [key] to my restraints. I should be able to esca
 if($text=~/key/i){
 quest::say("Last I knew. Najena's priest had the key.  I fear he has left this place though.  I heard talk of traveling to some estate.  I know not where.  Oh dear. oh dear!  I shall never leave this place!"); }
 }
-#END of FILE Zone:najena  ID:44020 -- Linara_Parlone 
 
+sub EVENT_ITEM {
+  if(plugin::check_handin(\%itemcount, 12269 => 1)) { #Tarnished Bronze Key
+    quest::say("Thank you, $name! Take this note to my father Tolkar Parlone in Felwithe. He will be grateful to hear of my escape!");
+    quest::summonitem(5573); #folded note
+
+    quest::depop();
+  }
+  else {
+    quest::say("I have no need for this, $name.");
+    plugin::return_items(\%itemcount);
+  }
+}
+#END of FILE Zone:najena  ID:44020 -- Linara_Parlone 

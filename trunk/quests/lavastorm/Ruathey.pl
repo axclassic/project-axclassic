@@ -19,6 +19,6 @@ sub EVENT_SAY
  if($text=~/what bag/i)
   {
    quest::say("Take this bag and gather the items I've mentioned. I've been told that the Ghoul's Heart can be found in the estate of the undead, while the scroll can be found in the Keep not far from the Karanas. One of the others are rumored to be found near the dwarven city among the goblins. While the last should be found in the caverns of Najena.");
-   quest::summonitem(64020);
+   quest::summonitem(17878);
   }
 }

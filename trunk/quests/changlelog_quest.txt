@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
+==5/09/2012==
+Fez_Ajer: Fixes to quests in erudinit, felwithe, kithicor, lavastrorm, lfaydark and najena.
+
 ==2/01/2012==
 Angelox: Aediles Thrall now gives the first bot for free.
 
