@@ -18,7 +18,6 @@ quest::summonitem(17267);
 
 if($text=~/i want to craft helm/i){
 quest::say("To create your helm material you will need to combine 2 Bricks of Crude of Iron Ore. 1 Piece of Rat Fur and 1 Chunk of Meat in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Helm of the Prime Healer Initiate.");
-quest::say("To create your helm material you will need to combine 2 Bricks of Crude of Iron Ore. 1 Piece of Rat Fur and 1 Chunk of Meat in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Helm of the Prime Healer Initiate.");
 quest::summonitem("22610");
 }
 
