@@ -47,7 +47,7 @@ sub EVENT_ITEM
       quest::say("You have not yet proven yourself.");
     }
   }
-  if(plugin::check_handin(\%itemcount, 18710 => 1))
+  if(plugin::check_handin(\%itemcount, 18711 => 1))
   {
     quest::say("Welcome to the Temple of Life. You have much to learn and we have much work to do. Pain, hurt, disease and death lurk everywhere, our job is seemingly endless, but none is more gratifying. Here is our guild tunic, represent us well. Suuspa Clanim shall help you to get started. Good health be with you.");
     quest::summonitem("13506");
