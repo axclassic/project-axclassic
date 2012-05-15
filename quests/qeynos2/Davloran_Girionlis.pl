@@ -8,7 +8,7 @@ quest::say("We have a number of new recruits entering our guild hall every singl
 if($text=~/paladin of rodcet/i){
 quest::say("Fantastic $name. let me explain to you how the exercises work. You will combine a number of magical items that you will gather from our city and in the training areas and combine them in a Lightbringers Assembly Kit. Certain items used in certain quantities will combine into a specific armor material. These materials can then be taken with the appropriate mold to a forge and be combined together to create a piece of Lightbringers Armor. I can present you with the material recipes along with the correct armor molds for each armor piece once you are [ready to begin your exercises].");
 }
-if($text=~/ready to begin your exercises/i){
+if($text=~/ready to begin/i){
 quest::say("Very well $name. Please take this Lightbringers Assembly Kit. When you are ready to gather the items for a specific armor piece you must only tell me what piece you [want] to craft. I can provide you with the recipes and armor molds for Lightbringers Platemail [Helms]. [Bracers]. [Armguards]. [Boots]. [Greaves]. [Gauntlets] and [Breastplates].");
 quest::summonitem(17266);
 }
