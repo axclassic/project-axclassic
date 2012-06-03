@@ -9,9 +9,6 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I am Sir Valeron Dushire, leader of the order of the Knights of Truth. If your soul shines with purity and strength, I urge you to join our order. The might of Mithaniel Marr stands behind all who join. Soon that might will help us free this city from the tyranny of the [Freeport Militia].");
   }
-  if ($text=~/Diggs Duggun/i) {
-    quest::say("According to this crest on the tunic, you have recovered one of the bones of a lost paladin [hero].");
-  }
   if ($text=~/freeport militia/i) {
     quest::say("The Freeport Militia took control of this city long ago. They are nothing more than a group of thugs not worthy of respect. They follow the words of [Sir Lucan] D'Lere. He has been a thorn in this city's side for too long. If you wish to aid us in the fight against tyranny, go speak with Jemoz or Sir Theron. May the Truthbringer shine upon your soul.");
   }
@@ -38,14 +35,17 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18737 => 1)) { #guild note
     quest::summonitem(13554);
-    quest::ding();
-    quest::exp(1000);
     quest::faction(258,100); #priests of marr
     quest::faction(105,-50); #freeport militia
     quest::faction(184,100); #knights of truth
   }
+  elsif (plugin::check_handin(\%itemcount, 6701 => 1)) { #a dusty old leg bone
+    quest::say("According to this crest on the tunic, you have recovered one of the bones of a lost Paladin [Hero].");
+    quest::summonitem(6701);
+  }
   elsif (plugin::check_handin(\%itemcount, 18827 => 1)) { #a testimony of truth
     quest::say("Praise be to Marr!! You have done the impossible!! Sir Lucan is finally sent to the higher courts of the Tribunal. The city now has a chance to prosper. The Hall of Truth has been redeemed and gives you thanks. Take this, it is the Sword of Faith. May you wield it with righteousness. Beware of the remainder of the militia. They will be hunting for your head.");
+    # Brilliant Sword of Faith
     quest::summonitem(13947);
   }
   #do all other handins first with plugin, then let it do disciplines
