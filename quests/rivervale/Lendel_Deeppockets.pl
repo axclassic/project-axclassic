@@ -27,37 +27,37 @@ sub EVENT_SAY {
     #Dusty Mail Assembly Kit ID:17247
     quest::summonitem("17247");
   }
-  if($text=~/I want to craft Coifs/i){
+  if($text=~/Coif/i){
     quest::say("Protecting the ole noggin is probably the smartest move you will make young $name. Here is your pattern, once you have combined 2 Bricks of Crude Iron Ore, 2 Ruined Thorn Drakeling Scales and 1 Carrot in your kit place it in a forge along with this pattern to create your Slickfinger Chainmail Coif.");
     #Enchanted Coif Pattern ID:22671
     quest::summonitem("22671");
   }
-  if($text=~/I want to craft bracers/i){
+  if($text=~/bracer/i){
     quest::say("Go out into the thicket and seek out 1 Brick of Crude Iron Ore, 1 Shattered Warbead, 1 Large Yellowjacket Sternite and 1 Milk. Once you have combined them in your kit to fashion the bracer material take it to a forge along with this pattern to create your Slickfinger Chainmail Bracer.");
     #Enchanted Bracer Pattern ID:22672
     quest::summonitem("22672");
   }
-  if($text=~/I want to craft sleeves/i){
+  if($text=~/sleeves/i){
     quest::say("If sleeves are what you wish to craft you will need to collect 3 Bricks of Crude Iron Ore, 3 Honeycombs, 2 Thorn Drakeling Scales and 2 Grapes then combine them in your kit to fashion the necessary material. Take this pattern to the nearest forge with that material to create your Sleeves of the Slickfinger.");
     #Enchanted Sleeves Pattern ID:22673
     quest::summonitem("22673");
   }
-  if($text=~/I want to craft boots/i){
+  if($text=~/boots/i){
     quest::say("Boots you say $name? Well I think I heard you right but I had to check. Make sure you only wear your boots in case of emergency. All other times you should showcase your feet to the world with pride. You will need to combine 2 Bricks of Crude Iron Ore, 2 Fire Beetle Eyes and 2 Giant Thicket Rat Skulls in your kit to fashion your Slickfinger Boot Material. Once you have done this take the material to a forge along with this pattern to create your Slickfinger Chainmail Boots.");
     #Enchanted Boots Pattern ID:22674
     quest::summonitem("22674");
   }
-  if($text=~/I want to craft legplates/i){
+  if($text=~/legplates/i){
     quest::say("I must say that pants are a good idea young $name. Please gather 4 Bricks of Crude Iron Ore, 2 Spiderling Eyes, 2 Large Wood Spider Tarsus, 1 Bottle of Kalish and 1 Ruined Wolf Pelt then combine them in your kit to create your Legplates Material.");
     #Enchanted Legplates Pattern ID:22675
     quest::summonitem("22675");
   }
-  if($text=~/I want to craft gauntlets/i){
+  if($text=~/gauntlets/i){
     quest::say("Your gauntlets may possibly be the most important part of armor. One should always be sure that their hands are not exposed, because taking a blow to the hand is a lot worse then getting hurt anywhere else! To create the gauntlet material please collect 3 Bricks of Crude Iron Ore, 2 Bixie Wings, 1 Large Snake Skin and 1 Red Wine.");
     #Enchanted Gauntlets Pattern ID:22676
     quest::summonitem("22676");
   }
-  if($text=~/I want to craft tunic/i){
+  if($text=~/tunic/i){
     quest::say("I'm happy to see that your training is coming along so well $name. I have no doubt in my mind that you are ready to craft your tunic. Please collect 5 Bricks of Crude Iron Ore, 1 Giant Wood Spider Femurs, 1 Embalming Dusts, 1 Dark Elf Skin and 1 Giant Yellowjacket Thorax. Come back after you are finished. I have a [job] for you.");
     #Enchanted Tunic Pattern ID:22677
     quest::summonitem("22677");
