@@ -25,7 +25,10 @@ sub EVENT_ITEM {
 sub EVENT_SIGNAL {
    if ($signal == 1) {
      quest::say("Finally, the rat comes out of his hole! Send some men, no no, go yourself, and track him down. Then kill him. I don't care who sees you, or who gets in your way. Finish the job. And bring me whatever you find on his carcass. I'm sure he took some valuables from us when he escaped. And don't worry about Malka, she will keep until you finish Stanos, then she is yours. Shame to waste such talent, but you don't steal from the Circle and live.");
-     quest::signal(2033, 1, 2); #signal to Renux Herkanor
+     ## Angelox This quest:signal gives error in logs:
+     ## Script error: qst2074::EVENT_SIGNAL - Perl runtime error: 
+     ## Usage: signal(npc_id[,wait_ms]) at quests/qeynos2/Hanns_Krieghor.pl line 28.
+     ## quest::signal(2033, 1, 2); #signal to Renux Herkanor
    }
  }
 #END of FILE Zone:qeynos2  ID:2074 -- Hanns_Krieghor
