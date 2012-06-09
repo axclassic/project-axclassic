@@ -1,12 +1,30 @@
 #zone: gunthak NPC: Gaudric_Stormwynd (224193)
-#Angelox
+#Started by Angelox, finished by Kilelen
+#Swarm of Pain/Icewind
 
-sub EVENT_SAY { 
-if ($text=~/Hail/i){
-  quest::emote("motions for silence. 'Can you hear it?  The sound of nature crying out in pain. The children of Karana long for a release from this place of torment.' Gaudric turns away and appears to begin meditating."); 
-  #quest::say("Can you hear it?  The sound of nature crying out in pain. The children of Karana long for a release from this place of torment.");
- }
-if($text=~/winds/i){
+#Got the x,y and z manually from in game,
+#the description of where the Tempest pops is "behind you"
+sub SpawnTempest {
+   my $y = 1583;
+   my $x = -152;
+   my $z = 3;
+   my $h = $npc->GetHeading();
+   
+   my $a = 224340;
+   
+   quest::unique_spawn($a,0,0,$x,$y,$z);
+}
+
+sub EVENT_SAY {
+   if ($text=~/Hail/i){
+      if ($class eq "Ranger"){
+         quest::say("Greeting. What brings you to this forsaken rock? I have been sent here by the council of Surefall Glade to gather information about this Island. This place seethes with anger and hatred, and even the familiar [winds] of Karana blow with a cold bite. So far the creatures have all proved very hostile, even to a follow of Karana. I suspect that the curse of Innoruuk has caused them be very aggressive towards all outsiders. I have been able to gather some information on a new race of [insect] though.");
+      }
+      else{
+        quest::emote("motions for silence. 'Can you hear it?  The sound of nature crying out in pain. The children of Karana long for a release from this place of torment.' Gaudric turns away and appears to begin meditating.");
+     }
+    }
+   if($text=~/winds/i){
       quest::say("The fury of a truly torrential storm is a beautiful thing. Even in their destruction they bring the birth of new life. Such is the cycle of life on Norrath, from the ashes nature always rebuilds. The trolls care nothing for this cycle though, and merely use the power of the storm to fill their treasuries. I hear the tormented cries of tempest [spirits] across the wind.");
    }
    if($text=~/spirits/i){
