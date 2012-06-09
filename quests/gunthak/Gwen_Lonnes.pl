@@ -5,7 +5,7 @@
 
 sub EVENT_SAY { 
 	if ($text=~/Hail/i){
-		#if (($class eq "Monk") || ($class eq "Rogue") || ($class eq "Warrior") || ($class eq "Berserker")){
+		if (($class eq "Monk") || ($class eq "Rogue") || ($class eq "Warrior") || ($class eq "Berserker")){
 			quest::emote("swirls her leg around and nearly takes your head off with a powerful roundhouse kick. Apparently she doesn't like to be surprised while practicing her forms. 'What is it whelp, I have little time to waste speaking to weaklings. I must be in top form if I am to do battle with the pirates of Broken Skull, not to mention their fishy friends the [Luggalds].' She then turns back to her forms.");
 		}
 		else{
