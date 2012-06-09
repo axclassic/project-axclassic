@@ -1,6 +1,7 @@
 #zone: gunthak NPC: Gaudric_Stormwynd (224193)
 #Started by Angelox, finished by Kilelen
 #Swarm of Pain/Icewind
+#Edited by Threeflies
 
 #Got the x,y and z manually from in game,
 #the description of where the Tempest pops is "behind you"
@@ -10,7 +11,7 @@ sub SpawnTempest {
    my $z = 3;
    my $h = $npc->GetHeading();
    
-   my $a = 224340;
+   my $a = 224242;
    
    quest::unique_spawn($a,0,0,$x,$y,$z);
 }
