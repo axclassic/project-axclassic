@@ -8,9 +8,9 @@ sub EVENT_SAY {
 		if (($class eq "Monk") || ($class eq "Rogue") || ($class eq "Warrior") || ($class eq "Berserker")){
 			quest::emote("swirls her leg around and nearly takes your head off with a powerful roundhouse kick. Apparently she doesn't like to be surprised while practicing her forms. 'What is it whelp, I have little time to waste speaking to weaklings. I must be in top form if I am to do battle with the pirates of Broken Skull, not to mention their fishy friends the [Luggalds].' She then turns back to her forms.");
 		}
-		else{
-			quest::emote("glances at you for a moment, then sneers and turns back around. 'Go away whelp, before I decide to use you for a sparring dummy.'");
-		}
+		#else{
+			#quest::emote("glances at you for a moment, then sneers and turns back around. 'Go away whelp, #before I decide to use you for a sparring dummy.'");
+		#}
 	}
 	if ($text=~/Luggalds/i){
 		quest::emote("whips her arm around and slashes it towards your face. It stops a mere inch squarely in front of your nose. 'You obviously just got off the boat, $name. Anyone who's been here more then a day knows about the Luggalds. Rumors say they are the new children of Innoruuk, created to serve their dark master in the aqueous lands of Norrath. Even now they sit in their caves deep within Broken Skull, weaving their magics and making plans to gather more relics of the old age. Few have seen what lies under their dark robes and lived to tell about it. Indeed the [robes] seem to have some sort of dark enchantment on them.'");
