@@ -7,7 +7,7 @@ sub EVENT_SAY {
  if($text=~/hail/i) {
   quest::emote("burps loudly in your face and says, 'Bah! Leave me be, fool! You have nothin' I want and I certainly have nothin' you want.");
   }
- if(($text=~/booze/i) && ($move == 1)) {
+ elsif(($text=~/booze/i) && ($move == 1)) {
    quest::emote("suddenly becomes completely sober and says, 'Very well, shaman, please come with me.");
    quest::spawn2(8117,0,0,67.7,60.6,31.1,247.4);
    $move = 2;
