@@ -11,7 +11,7 @@ sub EVENT_SAY {
    quest::emote("suddenly becomes completely sober and says, 'Very well, shaman, please come with me.");
    quest::spawn2(8117,0,0,67.7,60.6,31.1,247.4);
    $move = 2;
-   quest::start(14);
+   quest::start(20);
   }
 }
 
