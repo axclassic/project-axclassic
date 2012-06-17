@@ -20,7 +20,7 @@ sub EVENT_ITEM {
    quest::say("WOW, thanks! This must be worth a fortune! I could drink for a month after sellin' this to one of them fool merchants. I'm going to see how much I can get for it right now!");
    quest::faction(342,10);
     quest::ding(); quest::exp(10000);
-   quest::moveto(555.4,429.4,-20.7);
+   quest::moveto(555.4,429.4,-20.7,161.8);
    $move = 1;
   }
  else {
@@ -33,7 +33,7 @@ sub EVENT_ITEM {
 sub EVENT_WAYPOINT {
   if ($move == 1) {
    quest::depop();
-   quest::spawn2(8003,0,0,407.0,226.1,-10.9,66.0);
+   quest::spawn2(8003,0,0,555.4,429.4,-20.7,161.8);
    quest::say("What!? You don't approve of me buyin' some drinks with this gem? Who the heck are you to offer me a gift and order me what to do with it? Is this some kinda conditional kindness? Well? Are you gonna let me buy some booze with this or not?");
    }
 }
