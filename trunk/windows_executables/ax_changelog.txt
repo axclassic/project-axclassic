@@ -1,5 +1,46 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==06/16/2012==
+Angelox: Fixed #bot automez.
+
+==06/15/2012==
+Angelox: Ported numerous fixes and mem-leak fixes from Kings & Bandits code (by Image, devN00b).
+Angelox: Altered our code to accomodate the new "Classic" database/server.
+
+==06/10/2012==
+Angelox: Added some LoS checks in attempt to correct a zone crash (me thinks its for LoS).
+
+==06/09/2012==
+Angelox: "#bot set chat off" will disable any type of chat coming from the bots.
+
+==06/06/2012==
+Angelox: Quoted out stat checker - might be crashing server.
+
+==06/05/2012==
+Angelox: Added some stat-display options to world.
+
+==06/04/2012==
+Angelox: More fixes to possible zone crashes.
+
+==06/02/2012==
+Angelox: Some changes that might possibly be causing occasional zone crashes.
+
+==05/31/2012==
+Angelox: Expansions available should were not showing on the client.
+
+==05/30/2012==
+Angelox: Ported EqEmus ls and multi-ls code. Customized for our own account creation with unique account IDs.
+
+==05/12/2012==
+Angelox: Fix for a fix! possibly 04/29/2012 fix was causing zone crashes under certain bot configurations. 
+
+==05/12/2012==
+Angelox: Fix for problem when sending bots to attack up/down stairs, ramps, etc. 
+
+==05/10/2012==
+Angelox: Fixed a bug I made with the #bot change command.
+Angelox: Added new feature to change bots appearance - #bot change [face] [haircolor] [hair] [beard] [beardcolor] [eyes]. 
+
 ==05/03/2012==
 Angelox: Wizard was still getting stat buffs.
 Angelox: Shaman will not blow out his mana anymore.
