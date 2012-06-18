@@ -9,7 +9,7 @@ sub EVENT_SAY {
   }
  if(($text=~/booze/i) && ($move == 1)) {
    quest::emote("suddenly becomes completely sober and says, 'Very well, shaman, please come with me.");
-   quest::spawn2(8117,0,0,741,100.6,31.3,239.9);
+   quest::spawn2(8117,0,0,64.5,96.8,31.3,6.5);
    $move = 2;
    quest::start(20);
   }
