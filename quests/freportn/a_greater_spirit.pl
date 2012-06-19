@@ -15,7 +15,7 @@ sub EVENT_SAY {
   }
  if($text=~/I follow justice./i) {
    quest::say("Ah, a follower of the Tribunal from the North you are, then. You would be best served by speaking to my brother in the next room. Farewell, $name.");
-   quest::spawn2(8117,0,0,76.6,105.7,32.4,200.6);
+   quest::spawn2(8125,0,0,76.6,105.7,32.4,200.6);
    $hailed = 1;
    quest::depop();
   }
