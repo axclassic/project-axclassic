@@ -40,6 +40,5 @@ sub EVENT_WAYPOINT {
  
 if ($wp == 23) {
 quest::depop();
-  
-  
-   }
+  }  
+}
