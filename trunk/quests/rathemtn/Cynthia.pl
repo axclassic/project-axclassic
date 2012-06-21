@@ -1,4 +1,13 @@
 # Part of quest for Rod of Insidious Glamour
+# Spawns Frogtown in Rathe
+sub EVENT_SPAWN{
+  if (($classic2012 < 1) | (!defined $classic2012)){
+    quest::spawn_condition("rathemtn",2,1);
+  }
+  elsif ($classic2012 > 0 ){
+    quest::spawn_condition("rathemtn",2,0);
+  }
+}
 
 sub EVENT_SAY { 
   if($text=~/Hail/i){
