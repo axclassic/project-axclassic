@@ -3,14 +3,14 @@
 ## Angelox
 
 sub EVENT_SPAWN {
-if (($classic2012 < 1) | (!defined $classic2012)){
+if (($Classic2012 < 1) | (!defined $Classic2012)){
    $x = $npc->GetX();
    $y = $npc->GetY();
    quest::set_proximity($x - 30, $x + 30, $y - 30, $y + 30);
    quest::delglobal("cazpop");
    quest::setglobal("cazpop",2,3,"F");
   }
-elsif ($classic2012 > 0) {
+elsif ($Classic2012 > 0) {
    quest::spawn_condition("cazicthule",7,0);
    quest::spawn_condition("cazicthule",8,1);
    quest::delglobal("cazpop");
@@ -20,7 +20,7 @@ elsif ($classic2012 > 0) {
 
 
 sub EVENT_ENTER{
-if (($classic2012 < 1) | (!defined $classic2012)){
+if (($Classic2012 < 1) | (!defined $Classic2012)){
   if (($ulevel <=45) && ($cazpop==2)){
     quest::spawn_condition("cazicthule",7,0);
     quest::spawn_condition("cazicthule",8,1);
