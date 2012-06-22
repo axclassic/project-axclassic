@@ -2,7 +2,7 @@ sub EVENT_SAY {
  if($text=~/hail/i){ #Part of Shaman Epic 1.0
   quest::emote("burps loudly in your face and says, 'Bah! Leave me be, fool! You have nothin' I want and I certainly have nothin' you want.");
   }
- elsif($text=~/you can buy booze/i){ #Part of Shaman Epic 1.0
+ elsif($text=~/booze/i){ #Part of Shaman Epic 1.0
   quest::emote("suddenly becomes completely sober and says, 'Very well, shaman, please come with me.'");
   quest::start(20);
  }
@@ -18,5 +18,7 @@ sub EVENT_ITEM {
   quest::say("What!? You don't approve of me buyin' some drinks with this gem? Who the heck are you to offer me a gift and order me what to do with it? Is this some kinda conditional kindness? Well? Are you gonna let me buy some booze with this or not?");
  }
 }
+
+
 
 #Submitted by: Jim Mills
