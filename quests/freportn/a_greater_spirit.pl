@@ -13,7 +13,7 @@ sub EVENT_SAY {
  if(($text=~/hail/i) && ($hailed == 1)) {
   quest::say("It is good to see you, $name. We're glad you trusted in our brother and did what was asked regardless of Bondl's intentions. This fills us with joy, as the [true spirits] work in ways most people would not understand and [trust] is the first lesson of the [Heyokah].");
   }
- if($text=~/I follow justice./i) {
+ if($text=~/justice/i) {
    quest::say("Ah, a follower of the Tribunal from the North you are, then. You would be best served by speaking to my brother in the next room. Farewell, $name.");
    quest::spawn2(8125,0,0,76.6,105.7,32.4,200.6);
    $hailed = 1;
