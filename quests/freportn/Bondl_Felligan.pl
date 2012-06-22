@@ -14,7 +14,7 @@ sub EVENT_ITEM {
   quest::faction(342,100);
   quest::exp(1000);
   quest::spawn2(8117,0,0,62,66,32.1,254);
-  #quest::spawn2(8125,0,0,67,103,32.1,508);
+  quest::spawn2(8125,0,0,67,103,32.1,508);
   quest::say("What!? You don't approve of me buyin' some drinks with this gem? Who the heck are you to offer me a gift and order me what to do with it? Is this some kinda conditional kindness? Well? Are you gonna let me buy some booze with this or not?");
  }
 }
