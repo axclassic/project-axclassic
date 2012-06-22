@@ -4,19 +4,19 @@ sub EVENT_SAY {
  if($text=~/hail/i){ #Part of Shaman Epic 1.0
   quest::say("Greetings, shaman. Tell me, do you follow [Justice], [War], [Honor], [Fear], or [Hate]?");
   }
- elsif($text=~/i follow justice/i){ #Part of Shaman Epic 1.0
+ elsif($text=~/justice/i){ #Part of Shaman Epic 1.0
   quest::say("Ah, it does me much good to meet with one who holds respect and reverence for the spirits. [Trust] that your place in the whole is important. Rather than trying to enslave and command others with the powers the gods grant you, you live in harmony and balance with the world around you. There are times when we, the [true spirits] and those like you, can work together to achieve goals. Individuals who help us are known as [Heyokah].");
   }
- elsif($text=~/i follow fear/i){ #Part of Shaman Epic 1.0
+ elsif($text=~/fear/i){ #Part of Shaman Epic 1.0
   quest::say("You would be best served by speaking to my brother in the next room, $name.");
   }
- elsif($text=~/i follow war/i){ #Part of Shaman Epic 1.0
+ elsif($text=~/war/i){ #Part of Shaman Epic 1.0
   quest::say("You would be best served by speaking to my brother in the next room, $name.");
   }
- elsif($text=~/i follow hate/i){ #Part of Shaman Epic 1.0
+ elsif($text=~/hate/i){ #Part of Shaman Epic 1.0
   quest::say("You would be best served by speaking to my brother in the next room, $name.");
   }
- elsif($text=~/i follow honor/i){ #Part of Shaman Epic 1.0
+ elsif($text=~/honor/i){ #Part of Shaman Epic 1.0
   quest::say("Ah, it does me much good to meet with one who holds respect and reverence for the spirits. [Trust] that your place in the whole is important. Rather than trying to enslave and command others with the powers the gods grant you, you live in harmony and balance with the world around you. There are times when we, the [true spirits] and those like you, can work together to achieve goals. Individuals who help us are known as [Heyokah].");
   }
  elsif($text=~/trust/i){ #Part of Shaman Epic 1.0
