@@ -6,7 +6,7 @@
 
 
 sub EVENT_SAY {
- if ($faction < 4) {
+ #if ($faction < 4) {
  if(($text=~/hail/i) && ($hailed != 1)) {
   quest::say("Greetings, shaman. Tell me, do you follow [Justice], [War], [Fear], or [Hate]?");
   }
