@@ -1,3 +1,8 @@
+#Edited by Threeflies for Ax_classic 2012
+#Added signal
+
+
+
 sub EVENT_SAY {
  if($text=~/hail/i){ #Part of Shaman Epic 1.0
   quest::emote("burps loudly in your face and says, 'Bah! Leave me be, fool! You have nothin' I want and I certainly have nothin' you want.");
@@ -16,6 +21,12 @@ sub EVENT_ITEM {
   quest::spawn2(8117,0,0,62,66,32.1,254);
   quest::spawn2(8125,0,0,67,103,32.1,508);
   quest::say("What!? You don't approve of me buyin' some drinks with this gem? Who the heck are you to offer me a gift and order me what to do with it? Is this some kinda conditional kindness? Well? Are you gonna let me buy some booze with this or not?");
+ }
+}
+
+sub EVENT_SIGNAL {
+ if($signal == 0) {
+   quest::depop();
  }
 }
 
