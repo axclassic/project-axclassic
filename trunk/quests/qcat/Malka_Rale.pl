@@ -9,7 +9,7 @@
 
 sub EVENT_SAY {
   # To make Rogue only, add in ($class eq "Rogue") to the if statement
-  if($ulevel >= 50){
+  #if($ulevel >= 50){
     if($text=~/hail/i){
       quest::say("Whew! I thought you were one of Hanns' goons. These sewers are a mess, you never know what is going to turn up next. I really wish I could get out of here."); 
     }
@@ -28,4 +28,3 @@ sub EVENT_SAY {
 }
 
 #END of FILE Zone:qcat  ID:45095 -- Malka_Rale 
-
