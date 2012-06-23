@@ -1,4 +1,5 @@
 #This is for the second of the two greater spirits in North Freeport.
+#Edited by Threeflies for Ax_classic 2012
 
 sub EVENT_SAY {
  if($text=~/hail/i){ #Part of Shaman Epic 1.0
