@@ -10,14 +10,19 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ((plugin::check_handin(\%itemcount, 22815=>1)) && ($gold >= 10000)) {
+  if ((plugin::check_handin(\%itemcount, 22815=>1)) && (($gold >= 10000) || ($platinum >= 1000))) {
     quest::emote("skillfully crafts the section of Lodizal's shell into the shape of a shield. He then attaches sturdy cured walrus hide leather straps to the inner side of the shield and inscribes intricate glowing runes on the shield's face. When he is finished, he hands you the shield and claps loudly.");
     quest::summonitem("22816");
-     quest::ding(); quest::exp(150000);
+    quest::ding();
+    quest::exp(150000);
     quest::faction( 241, 30);
     quest::faction( 345, -60);
   }
   else {
+    quest::say("These are not the items I require.");
     plugin::return_items(\%itemcount);
+    if (($copper > 0) || ($silver > 0) || ($gold > 0) || ($platinum > 0)) {
+        quest::givecash($copper, $silver, $gold, $platinum); #Return money
+    }
   }
 }
