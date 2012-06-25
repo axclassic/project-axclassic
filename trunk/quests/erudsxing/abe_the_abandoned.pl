@@ -30,7 +30,7 @@ sub EVENT_SAY {
     quest::emote("suddenly gasps and says, 'I have found it! I know the answer! Come with me and I will tell you. Eyes are everywhere and this knowledeg is not for everyone. Finally my centuries of waiting are over hahahaha! Follow me Shaman!");
     quest::signalwith(98046,299,20000);
     quest::moveto(3000,-1600,-250);
-#    quest::spawn2(8117,0,0,4219.4,-1586.2,-292.7,128.1);
+#    quest::spawn2(98057,0,0,4219.4,-1586.2,-292.7,128.1);
   }
 }
 
