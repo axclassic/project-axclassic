@@ -20,4 +20,4 @@ sub EVENT_SAY {
 }
 
 
-# End of File - NPCID 1667 - A_Greater_Spirit
+# End of File - NPCID 98057 - A_Greater_Spirit
