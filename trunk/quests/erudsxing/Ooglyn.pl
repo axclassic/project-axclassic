@@ -8,7 +8,7 @@ sub EVENT_SAY {
    if($text=~/hail/i) {
      quest::emote("Ooooh, it you, $name. Me's been waitin for you cuz our frenz say you comin an need da test. So's I gib you da test. Hmm, now where me put it? Ooglyn been waiting for sign for so long dat me forget where me put test. Keep your eyes out for sign while me look for test. Oh, hey, $name, they gib you gem? I need dat gem, please, heheh.");
     }
- }
+ #}
 
  else {
     $reply1 = ("I didn't know Slime could speak common..go back to the sewer before I lose my temper.");
