@@ -24,7 +24,7 @@ sub EVENT_SAY {
       #Stanos' Pouch ID:28014
       quest::summonitem(28014); 
     }
-  }
+  #}
 }
 
 #END of FILE Zone:qcat  ID:45095 -- Malka_Rale 

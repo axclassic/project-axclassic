@@ -125,5 +125,14 @@ elsif ($Classic2012 > 0) {
     $client->Message(6,"You receive a character flag!");
     $client->Message(14,"You have your fifth bot available for creation, use the '#bot create' command.");
     }
+    ## Angelox: This is for anouncing events
+   my $random_result = int(rand(100));
+   if ($random_result<=2){
+    $client->Message(14,"If you spot a bug while playing, you can send the report to us with the /bug command.");
+    $client->Message(14,"Petitions are monitored constantly."); 
+    }
+   elsif ($random_result<=4){
+    $client->Message(14,"This server restarts daily at 4:01am eastern time, server will stay down a few minutes for maintenance, then start again - make sure you're in a safe spot before the restart.");
+    }
   }
 }
