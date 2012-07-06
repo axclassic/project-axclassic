@@ -1,5 +1,21 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+
+==07/05/2012==
+Angelox: Master keys now work where needed - fixed Charasis and Frozenshadow keys.
+   Required SQL; 
+   ALTER TABLE `ax_classic`.`doors` ADD COLUMN `keyitem2` INTEGER  NOT NULL DEFAULT 0 AFTER `keyitem`;
+
+==06/24/2012==
+Fez_Ajer: Fix perl quest return_items by adding GetItemStat to perl_mob.cpp and mob.cpp/mob.h.
+Fez_Ajer: Fix the other perl error in logs from GetPlayerCorpseCount (perl_client.cpp and PlayerCorpse.cpp/zonedb.h)
+
+==06/21/2012==
+Angelox: Updated the eqemu_config.xml status (only need one now).
+
+==06/20/2012==
+Angelox: Iksar and Froglok will start in Rathemtn while in Classic2012 mode.
+
 ==06/16/2012==
 Angelox: Fixed #bot automez.
 
