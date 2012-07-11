@@ -1,5 +1,13 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==07/10/2012==
+Angelox: Bots will buff across raid-groups in raids.
+
+==07/09/2012==
+Angelox: Auto-mez works in raids again. Taunt probably wasn't working in Raids either.
+
+==07/06/2012==
+Angelox: Found/fixed a bug where zones set to be ignored and remain static (date 0), were being removed.
 
 ==07/05/2012==
 Angelox: Master keys now work where needed - fixed Charasis and Frozenshadow keys.
