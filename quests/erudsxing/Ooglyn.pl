@@ -38,7 +38,7 @@ sub EVENT_ITEM {
 sub EVENT_WAYPOINT {
    if ($move == 1) {
     quest::say("Ok, here is place for you to for waiting. Hab fun shaman!");
-    quest::signalwith(98045,199,20000);
+    quest::signalwith(98045,199,20000); # #translocator Jempar
    }
   }
 
