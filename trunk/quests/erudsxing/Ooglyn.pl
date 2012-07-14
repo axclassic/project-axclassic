@@ -47,7 +47,8 @@ sub EVENT_SIGNAL {
     quest::depop();
    }
    if ($signal == 99) {
-    quest::resume();
+    #quest::resume();
+    quest::depop();
    }
  }
 
