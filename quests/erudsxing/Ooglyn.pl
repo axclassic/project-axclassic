@@ -46,10 +46,7 @@ sub EVENT_SIGNAL {
    if ($signal == 199) {
     quest::depop();
    }
-   if ($signal == 99) {
-    #quest::resume();
-    quest::depop();
-   }
+   
  }
 
 # End of File - NPCID 98009 - Ooglyn
