@@ -1,0 +1,27 @@
+#!/bin/sh
+ADDATE=`date +%b-%d-%Y`
+#echo "Script start time (Unix epoch): $ADDATE"
+DIR='/home/samba/public/updates/data' 
+#echo Removing old files...
+chown -R mysql:mysql /home/samba/public/updates
+sleep 3
+if cd $DIR; then
+	rm *.txt &
+else
+	echo "Could not change directory! Aborting." 1>&2
+	exit 1
+fi
+sleep 7
+#echo Done.
+
+#echo Back-up/adding ax_classic database new files...
+mysql -uroot -ppassword -Dax_classic < /home/samba/public/updates/backup_accounts_bots/backup.sql &
+sleep 10
+#echo Done.
+
+#echo Compressing new files...
+zip -j /home/samba/public/updates/backup_accounts_bots/charbu-$ADDATE.zip /home/samba/public/updates/data/*.txt &
+#echo Compressing new files...
+sleep 10
+svn commit --username user --password password -m "Rathe character-accounts update" /home/samba/public/updates/data
+#echo Done.

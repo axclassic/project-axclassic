@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo clearing out accounts/characters...
+mysql -uroot -ppassword -Dax_classic < clear_char.sql
+sleep 5
+echo done.

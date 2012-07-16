@@ -1,0 +1,130 @@
+#!/bin/bash
+#Angelox: This script will also organize your logs by re-boot session,
+#you need to make a directory '/compressed' in your eqemu root,
+#your logs will get compressed, then moved into the 'compressed' directory.
+#If your server path is not '/eqemu/server', change the $emuPath variable.  
+P=`pwd`
+emuPath=/eqemu/server
+zones=$emuPath/.lock-zones
+world=$emuPath/.lock-world
+launcher=$emuPath/.lock-launcher
+login=$emuPath/.lock-login
+ADDATE=`date +%b-%d-%Y`
+cd $emuPath 
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$P"
+#Gives you a chance to opt out
+echo "This script will shutdown then restart your EqEmu Server!"
+echo "Sure you want to continue (y/n) or shutdown the server (s)?"
+read -p "10 second wait for input..." -t 10 ans
+if [ "$?" != "0" ]; then
+	echo "No answer, starting script."
+elif [ "$ans" == "y" ]; then
+	echo "Starting script..."
+elif [ "$ans" == "n" ]; then
+	echo "Exiting script..."
+	exit 0
+elif [ "$ans" == "s" ]; then
+	echo "Shutting down the server..."
+	killall -9 world eqlaunch zone
+	sleep 2
+	$emuPath/./cleanipc 
+	rm -f .lock-zones .lock-world .lock-login .lock-launcher
+	sleep 5
+	#Sometimes this script stays lingering.
+	killall run_server
+	exit 0
+fi
+#make sure we have a place to log
+mkdir -p logs 2>&1 > /dev/null 
+
+echo "Checking/stopping anything that might be running...."
+#killall world eqlaunch zone
+sleep 3
+if [ -f $world ]; then
+    echo "World instance found, stopping now."
+    killall -9 world eqlaunch zone
+    sleep 2
+    $emuPath/./cleanipc 
+    rm -f .lock-zones .lock-world .lock-login .lock-launcher
+    sleep 15
+elif [ -f $zones ]; then
+    echo "Zones instance found, stopping now."
+    killall -9 world eqlaunch zone
+    sleep 2
+    $emuPath/./cleanipc 
+    rm -f .lock-zones .lock-world .lock-login .lock-launcher
+    sleep 15
+elif [ -f $launcher ]; then
+    echo "Launcher instance found, stopping now."
+    killall -9 world eqlaunch zone
+    sleep 2
+    $emuPath/./cleanipc 
+    rm -f .lock-zones .lock-world .lock-login .lock-launcher
+    sleep 15
+elif ps ax|grep -e 'w[o]rld' -e 'z[o]ne' -e 'eq[l]aunch' >/dev/null; then
+    echo "Instance found, stopping now."
+    killall -9 world eqlaunch zone
+    sleep 2
+    $emuPath/./cleanipc 
+    rm -f .lock-zones .lock-world .lock-login .lock-launcher
+    sleep 15
+fi
+
+if ps ax|grep -e 'w[o]rld' -e 'z[o]ne' -e 'eq[l]aunch' >/dev/null; then
+  echo "INSTANCE STILL RUNNING!."
+else
+  echo "No Server instance found."
+fi
+
+echo "Starting up the Server..."
+if [ ! -e $emuPath/.lock-world ] ; then 
+  echo "Compressing and removing old logs, setting paths, log directory check ..."
+  sleep 2
+  zip -j $emuPath/compressed/LogBu-$ADDATE.zip $emuPath/logs/*.log &
+  sleep 10
+  echo "Removing old logs ..."
+  rm -f $emuPath/logs/*
+  sleep 5
+  echo "Done."
+echo "Booting up World ..."
+#boot up world
+  touch $emuPath/.lock-world 
+  $emuPath/./world & 
+  # wait for shared memory to load
+  sleep 40
+  echo "World Done."
+  #if you have your own LS, sometimes outside players can't get in,
+  #the LS needs to restart after world is running.
+  #Also, I found a bug where players can log in other accounts if you restart
+  #LS while players are in game (I think if LS is in the same LAN as the server).
+  #So always restart your LS when you restart the server.
+  echo "Sending signal to restart the login server...."
+  /eqemu/source/EQEmuLoginServer/start_login </dev/null >nohup.out 2>&1 &
+  #ssh -p22 angelox@nahunta.org /eqemu/source/EQEmuLoginServer/start_login </dev/null >nohup.out 2>&1 &
+  sleep 20
+else
+  echo "CANNOT LOCK WORLD!"
+fi 
+echo "Starting Launcher..."
+#start up the official launcher
+if [ ! -e $emuPath/.lock-launcher ]; then
+    touch $emuPath/.lock-launcher
+#    $emuPath/./eqlaunch FewZones &
+#    sleep 30
+    $emuPath/./eqlaunch zones &
+    sleep 80
+    $emuPath/./eqlaunch Primary &
+    sleep 200
+    echo "Launcher Done."
+else
+  echo "CANNOT LOCK LAUNCHER!"
+fi
+#Shared mem check
+if ps -C zone >/dev/null; then
+echo "Zones up and running!"
+else
+echo "No zones yet - shared memory must have not loaded, restarting server... "
+$emuPath/run_server
+exit 0
+fi
+echo "All Done."

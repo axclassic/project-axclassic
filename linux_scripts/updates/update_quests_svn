@@ -1,0 +1,5 @@
+#!/bin/sh
+DIR='/eqemu/server/questsGoogle/trunk'
+echo Updating AXClassic quests from Google SVN ...
+svn update --username user@gmail.com --password password $DIR/quests
+echo done.

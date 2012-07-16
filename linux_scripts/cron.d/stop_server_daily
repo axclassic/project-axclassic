@@ -1,0 +1,3 @@
+# Stops Eqemu Server
+# MAILTO=""
+# 01 04 * * * angelox /home/eqemu/server/stop

@@ -1,0 +1,3 @@
+# Checks for overloaded processes
+# MAILTO=""
+*/10 * * * * root /home/samba/public/updates/check_load

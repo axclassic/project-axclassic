@@ -1,0 +1,29 @@
+#!/bin/sh
+ADDATE=`date +%b-%d-%Y`
+DIR='/home/samba/public/updates/main_data' 
+#echo "Script start time (Unix epoch): $ADDATE"
+#echo Removing old files...
+chown -R mysql:mysql /home/samba/public/updates
+#chmod -R -t /var/lib/eqemu_updates
+sleep 3
+if cd $DIR; then
+	rm *.txt &
+else
+	echo "Could not change directory! Aborting." 1>&2
+	exit 1
+fi
+#rm -f ../main_data/*.txt &
+sleep 7
+#echo Done.
+
+#echo Back-up/adding ax_classic database new files...
+mysql -uroot -ppassword -Dax_classic < /home/samba/public/updates/backup_accounts_bots/backup_main.sql &
+sleep 30
+#echo Done.
+
+#echo Compressing new files...
+zip -j /home/samba/public/updates/backup_accounts_bots/mainbu-$ADDATE.zip /home/samba/public/updates/main_data/*.txt &
+#echo Compressing new files...
+sleep 20
+svn commit --username user --password password -m "AXClassic Core update" /home/samba/public/updates/main_data
+echo Done.

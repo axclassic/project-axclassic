@@ -1,0 +1,3 @@
+# Updates quests every 30 min
+# MAILTO=""
+*/30 * * * * root /home/samba/public/updates/update_quests_svn
