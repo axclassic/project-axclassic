@@ -1,0 +1,39 @@
+#!/bin/bash
+
+## Note: will kill the top-most process if the $CPU_LOAD is greater than the $CPU_THRESHOLD.
+echo
+echo checking for run-away process ...
+ 
+CPU_LOAD=$(uptime | cut -d"," -f4 | cut -d":" -f2 | cut -d" " -f2 | sed -e "s/\.//g")
+CPU_THRESHOLD=150
+PROCESS=$(ps aux r)
+
+if [ $CPU_LOAD -gt $CPU_THRESHOLD ] ; then
+  # kill -9 $(ps -eo pid | sort -k 1 -r | grep -v PID | head -n 1)
+  echo system overloading!
+  echo load average is at $CPU_LOAD
+  echo 
+  echo Active processes...
+  ps aux r
+
+  # send an email using mail
+  SUBJECT="Runaway Process Report at Marysol"
+  # Email To ?
+  EMAIL="email@email"
+  # Email text/message
+  EMAILMESSAGE="/tmp/emailmessage.txt"
+  echo "System overloading, possible runaway process."> $EMAILMESSAGE
+  echo "load average was at $CPU_LOAD" >>$EMAILMESSAGE
+  echo "Active processes..." >>$EMAILMESSAGE
+  echo "$PROCESS" >>$EMAILMESSAGE
+  mail -s "$SUBJECT" "$EMAIL" < $EMAILMESSAGE
+
+else
+ echo
+ echo no run-aways. 
+ echo load average is at $CPU_LOAD
+ echo 
+ echo Active processes...
+ ps aux r
+fi
+exit 0

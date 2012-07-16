@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo clearing out main database...
+mysql -uroot -ppassword -Dax_classic < clear_main.sql
+sleep 5
+echo done.

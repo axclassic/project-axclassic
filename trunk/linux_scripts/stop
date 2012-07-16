@@ -1,0 +1,58 @@
+#!/bin/bash
+#Angelox: run_server will take care of everything, 
+#this is just incase you need to emergency shut-down.
+FILE=/home/eqemu/server/.lock-world
+FILE2=/home/eqemu/server/.lock-launcher
+FILE3=/home/eqemu/server/.lock-zones
+FILE4=/home/eqemu/server/.lock-login
+EQPATH=/home/eqemu/server
+cd $EQPATH
+
+killall world eqlaunch zone run_server
+sleep 3
+
+if ps -C eqlaunch >/dev/null; then
+echo "Killing Launcher"
+killall launcher
+else
+echo "launcher is down."
+fi
+
+if ps -C world >/dev/null; then
+echo "Killing world"
+killall world
+else
+echo "world is down."
+fi
+
+if ps -C zone >/dev/null; then
+echo "Killing Zone"
+killall zone
+else
+echo "zone is down."
+fi
+
+if ps -C run_server >/dev/null; then
+echo "Killing run_server"
+killall run_server
+else
+echo "No run_server scripts running."
+fi
+
+if ps -C startup_all >/dev/null; then
+echo "Killing startup_all"
+killall startup_all
+else
+echo "No startup_all scripts running."
+fi
+
+$EQPATH/./cleanipc 
+rm -f $FILE $FILE2 $FILE3 $FILE4
+sleep 3
+if ps -C stop >/dev/null; then
+echo "Killing stop"
+killall stop
+else
+echo "Stop script already finished."
+fi
+echo done.

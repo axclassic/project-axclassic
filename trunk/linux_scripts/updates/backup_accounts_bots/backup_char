@@ -1,0 +1,27 @@
+#!/bin/sh
+ADDATE=`date +%b-%d-%Y`
+echo "Script start time (Unix epoch): $ADDATE"
+DIR='../data' 
+echo Removing old files...
+chown -R mysql:mysql ../../updates
+sleep 3
+if cd $DIR; then
+	rm *.txt &
+else
+	echo "Could not change directory! Aborting." 1>&2
+	exit 1
+fi
+sleep 7
+echo Done.
+
+cd ../backup_accounts_bots
+echo Back-up/adding ax_classic database new files...
+mysql -uroot -ppassword -Dax_classic < backup.sql &
+sleep 10
+echo Done.
+
+echo Compressing new files...
+zip -j charbu-$ADDATE.zip ../data/*.txt &
+echo Compressing new files...
+sleep 10
+echo Done.

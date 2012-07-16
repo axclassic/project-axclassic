@@ -1,0 +1,3 @@
+DELETE QUICK FROM bottemp;
+DELETE QUICK FROM botleader;
+DELETE QUICK FROM botbuffs;

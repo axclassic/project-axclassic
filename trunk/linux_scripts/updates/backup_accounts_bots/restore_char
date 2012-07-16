@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo restoring accounts/characters...
+chown -R mysql:mysql ../../updates
+sleep 2
+mysql -uroot -ppassword -Dax_classic < restore.sql
+sleep 5
+echo done.

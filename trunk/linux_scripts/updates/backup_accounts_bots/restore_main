@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo restoring main database...
+chown -R mysql:mysql ../../updates
+sleep 2
+mysql -uroot -ppassword -Dax_classic < restore_main.sql
+sleep 5
+echo done.
+echo DON\'T FORGET TO RESTORE VARIABLES TABLE AND SET REVISION FOR FULL DATABASE BACKUP!!
+echo You have to loggin MySql as ROOT. 

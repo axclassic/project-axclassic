@@ -1,0 +1,3 @@
+# Creates the new database
+# MAILTO=""
+31 03 * * * root /home/samba/public/updates/backup_main
