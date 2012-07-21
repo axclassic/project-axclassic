@@ -21,7 +21,7 @@ $h = $npc->GetHeading();
 
 sub EVENT_EXIT
 {
-    if($ulevel >= 45) {
+    if($ulevel >= 44) {
 quest::depop();
 
 }
