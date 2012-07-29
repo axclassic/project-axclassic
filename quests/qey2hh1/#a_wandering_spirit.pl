@@ -2,7 +2,7 @@ sub EVENT_SAY {
  if($text=~/hail/i) {
   quest::emote("stops and flashes brightly for a moment. It seems to be regarding you with interest.");
   quest::pause(30);
-  } if($faction <= 4) {
+  } if($faction <= 5) {
   if($text=~/Shield of Falsehood/i) {
    quest::say("Yes, I have taken Marr's Promise along with Woe and Envy and fashioned them together to create the Shield of Falsehood. Wield this in defense of possession and the weakness that comes with hoarding treasure instead of using it to accomplish your goals. May it serve you well, $race.");
    quest::summonitem(1679);
