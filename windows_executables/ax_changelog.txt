@@ -1,5 +1,36 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==07/30/2012==
+Angelox: Bots will stop casting before de-popping (might be cause for zone crash). 
+
+==07/28/2012==
+Angelox: Cleaned up some more and fixed bot/pet attack animations with pathing (not at its best yet). 
+
+==07/27/2012==
+Angelox: Cleaned up my mess I made with the new pathing code.
+Angelox: Somewhat fixed attack animations with new pathing code.
+Angelox: Pets will also attack without LoS.
+Angelox: Raid bots will also use new pathing to find LoS.   
+
+==07/25/2012==
+Angelox: Added some method for bots that get lost while pathing - Also client can target/attack without LoS.
+Angelox: Bots will use the .path maps instead of pathing through walls (if the zone has a .path map).
+Angelox: Reverted to old method for bot raids, as it causes problems for some players.  
+
+==07/22/2012==
+Angelox: Quoted out code fix for bots attacking mobs too high or too low (not working right).  
+
+==07/21/2012==
+Angelox: Timer delay added to disband group or raid in attempt to avoid zone crash when re-forming groups.
+
+==07/20/2012==
+Angelox: Players boxing are crashing zones due to buggy client grouping - this temporary fix keeps zone from crashing.
+
+==07/17/2012==
+Angelox: Disband button doesn't break the raid (now, it disbands the raid).
+Angelox: Raid bots now depop instead of killing themselves.
+Angelox: Removed "#bot group remove", we have the disband button that works better.   
+
 ==07/14/2012==
 Angelox: Update to the MGB fix.
 
