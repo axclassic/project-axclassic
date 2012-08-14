@@ -1,5 +1,11 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==08/13/2012==
+Angelox: Bards were not path correctly, pets shouldn't wander so far.
+
+==08/11/2012==
+Angelox: Tweak to the bot respawn timers.
+
 ==08/03/2012==
 Angelox: Reverted most of the class buffing - only kept mind buff part.
 
