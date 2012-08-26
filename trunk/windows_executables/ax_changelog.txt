@@ -1,7 +1,47 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==08/25/2012==
+Angelox: Master key for keychain fixed - locks that can't be picked can't be picked by bots either.
+
+==08/24/2012==
+Angelox: Keys/master keys to doors were not working right - still need to fix keychain for master key.
+
+==08/23/2012==
+Angelox: Bots can be swapped during single group play, even with the raid(saved) groups.
+Angelox: Swapping out a bot that was duplicate in hunting groups won't delete them all.
+Angelox: #bot spawngroup should always default to 20 now (default single group hunting).
+
+==08/22/2012==
+Angelox: More changes and fixes to saving single groups vs raid groups;
+    -groups with IDs of less than 20 are raid groups and are restricted.
+    -groups with IDs 20 and over are reserved for single grouping.
+    -multiple single groups can be saved and bots can be re-used across the single groups.
+    -#bot spawngroup defaults to GroupID 20.
+
+    Required SQL:
+      ALTER TABLE `ax_classic`.`botbank` DROP PRIMARY KEY,
+      ADD PRIMARY KEY  USING BTREE(`groupid`, `botid`);
+      
+      UPDATE ax_classic.botbank SET groupid = 20;
+
+Angelox: Fixed archery bug, archers will stand back and shoot their bows as before.
+
+==08/20/2012==
+Angelox: Changed single grouping to use the raid groups table - you now can form groups 
+	 from level one, that will work with your raid. 
+   Required SQL;
+    ALTER TABLE `ax_classic`.`botgroups` ADD COLUMN `hp` INTEGER  NOT NULL DEFAULT 0 AFTER `slot`,
+    ADD COLUMN `mana` INTEGER  NOT NULL DEFAULT 0 AFTER `hp`;
+    ALTER TABLE `ax_classic`.`botgroups_b` ADD COLUMN `hp` INTEGER  NOT NULL DEFAULT 0 AFTER `slot`,
+    ADD COLUMN `mana` INTEGER  NOT NULL DEFAULT 0 AFTER `hp`;
+    ALTER TABLE `ax_classic`.`botgroups_c` ADD COLUMN `hp` INTEGER  NOT NULL DEFAULT 0 AFTER `slot`,
+    ADD COLUMN `mana` INTEGER  NOT NULL DEFAULT 0 AFTER `hp`;
+
+==08/15/2012==
+Angelox: Cleaned up some tracking code and adjusted distance to trackable bots.
+
 ==08/13/2012==
-Angelox: Bards were not path correctly, pets shouldn't wander so far.
+Angelox: Bards were not pathing correctly, pets shouldn't wander so far.
 
 ==08/11/2012==
 Angelox: Tweak to the bot respawn timers.
