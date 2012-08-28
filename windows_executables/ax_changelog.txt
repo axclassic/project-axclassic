@@ -1,5 +1,14 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==08/28/2012==
+Angelox: Pets were not pathing correctly.
+
+==08/27/2012==
+Angelox: Put follow-player pathing back to raid groups, seems to work better.
+
+==08/26/2012==
+Angelox: Cleaned up my key code changes, GMs can by-pass key usage again. 
+
 ==08/25/2012==
 Angelox: Master key for keychain fixed - locks that can't be picked can't be picked by bots either.
 
