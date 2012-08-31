@@ -1,5 +1,15 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==08/31/2012==
+Angelox: Engaged bots and pets will maintain a distance from the mob.
+Angelox: Fixed a savegroup bug.
+Angelox: Made #bot move a little better. 
+
+==08/30/2012==
+Angelox: Possible memleak fix.
+Angelox: '#bot raid info' will properly display their current GroupID to match what's in the database.
+Angelox: Spawning a non-existent GroupID will not bug out and require disbandgroup command.
+
 ==08/28/2012==
 Angelox: Pets were not pathing correctly.
 
