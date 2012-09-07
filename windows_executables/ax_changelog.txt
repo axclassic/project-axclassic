@@ -1,6 +1,17 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==09/04/2012==
+Angelox: Bots should follow and stay from on top each other.
+
+==09/03/2012==
+Angelox: Reverted tweak 
+Angelox: Tweaked bot pathing to spread the bots out some.
+
+==09/01/2012==
+Angelox: Added "#bot showgroups [normal] [raid]" - Displays your list of bots with their groups that are saved in the database.
+
 ==08/31/2012==
+Angelox: Fix for #bot guard while moving.
 Angelox: Engaged bots and pets will maintain a distance from the mob.
 Angelox: Fixed a savegroup bug.
 Angelox: Made #bot move a little better. 
