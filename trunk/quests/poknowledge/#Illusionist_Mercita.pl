@@ -1,5 +1,5 @@
 ## Angelox
-## Enchant Bars Script
+## Tradeskills Script
 sub EVENT_SAY{
   if($text=~/hail/i) {
     quest::say("Hello $name, I have some [tradeskills] that may be of use to you");
