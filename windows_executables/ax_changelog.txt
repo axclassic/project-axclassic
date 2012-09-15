@@ -1,5 +1,14 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==09/14/2012==
+Angelox: Put in checks for movement and targeting while useing some bot commands. 
+
+==09/13/2012==
+Angelox: Fix to try and correct a bug were groups with all bots with pets appear to sometimes crash the zone. 
+
+==09/12/2012==
+Angelox: Bots will better-warn you about returning their LORE items you already have.
+
 ==09/10/2012==
 Angelox: Using "#bot guard" repeatedly was crashing the zone. 
 
