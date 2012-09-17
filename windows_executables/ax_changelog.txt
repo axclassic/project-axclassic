@@ -1,5 +1,8 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==09/16/2012==
+Angelox: Fixed bug/exploit where #bot charm would just kill the target. 
+
 ==09/14/2012==
 Angelox: Put in checks for movement and targeting while useing some bot commands. 
 
