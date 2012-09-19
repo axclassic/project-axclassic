@@ -1,0 +1,33 @@
+APP=eqlaunch
+SF=eqlaunch.o ../common/logsys.o ../common/logsys_eqemu.o \
+  .obj/debug.o ../common/misc.o .obj/Mutex.o ../common/unix.o \
+  ../common/worldconn.o ../common/ProcLauncher.o \
+  worldserver.o ../common/TCPConnection.o ../common/timer.o \
+  ../common/MiscFunctions.o ../common/packet_functions.o \
+   ../common/EQEmuConfig.o ../common/XMLParser.o ../common/tinyxml/tinystr.o \
+   ../common/tinyxml/tinyxml.o ../common/tinyxml/tinyxmlerror.o \
+   ../common/tinyxml/tinyxmlparser.o ../common/md5.o ../common/MiscFunctions.o \
+   ../common/packet_dump.o ZoneLaunch.o ../common/TCPServer.o \
+   ../common/EmuTCPServer.o ../common/EmuTCPConnection.o
+
+
+#  ../common/BasePacket.o ../common/packet_dump.o perl_EQL.o \
+#  HTTPRequest.o perl_HTTPRequest.o 
+#  ../common/database.o
+
+all: $(APP)
+
+
+$(APP): $(SF)
+	$(LINKER) $(LINKOUT)$@ $^ $(LINKOPTS)
+
+clean:
+	rm -f $(SF) $(APP)
+
+%.o: %.cpp
+	$(CC) $(NOLINK) $(COPTS) $< $(OUT)$@
+
+.obj/%.o: ../common/%.cpp ../common/%.h
+	mkdir -p .obj
+	$(CC) $(COPTS) $(NOLINK) $< $(OUT)$@
+
