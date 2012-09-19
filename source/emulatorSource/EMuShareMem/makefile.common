@@ -1,0 +1,21 @@
+#all common .o files must be built in .obj so they get -fPIC
+SF=MMFMutex.o Doors.o Items.o Spells.o NPCFactionLists.o MMF.o Loot.o Opcodes.o SkillCaps.o DLLMain.o .obj/timer.o .obj/unix.o
+
+# .obj/unix.o .obj/EMuShareMem.o 
+
+
+$(LIB): $(SF)
+	$(LINKER) $(LINKRES) $(SF) $(LINKOPTS)
+
+clean:
+	rm -f $(SF) $(LIB)
+
+%.o: %.cpp
+	$(CC) $(NOLINK) $(COPTS) $< $(OUT)$@
+
+.obj/%.o: ../common/%.cpp ../common/%.h
+	mkdir -p .obj
+	$(CC) $(COPTS) $(NOLINK) $< $(OUT)$@
+
+
+
