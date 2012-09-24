@@ -31,53 +31,53 @@ my $random_result2 = int(rand(200));
 ##Countess Event
  if ($event3==1) {
    if (($countess1!=1) && ($zoneid == 2) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(1310,0,0,162,468,3.1,161);
-      $countess1=1;}
+      quest::unique_spawn(1310,0,0,162,468,3.1,161);
+      }
    elsif (($countess2!=1) && ($zoneid == 3) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(3062,0,0,50,36,3.1,76);
-      $countess2=1;}
+      quest::unique_spawn(3062,0,0,50,36,3.1,76);
+      }
    elsif (($countess3!=1) && ($zoneid == 9) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(9161,0,0,-77,-35,-25,55);
-      $countess3=1;}
+      quest::unique_spawn(9161,0,0,-77,-35,-25,55);
+      }
    elsif (($countess4!=1) && ($zoneid == 10) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(10202,0,0,-732,-237,-53,51);
-      $countess4=1;}
+      quest::unique_spawn(10202,0,0,-732,-237,-53,51);
+      }
    elsif (($countess5!=1) && ($zoneid == 19) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(19155,0,0,-81,-37,3.1,218);
+      quest::unique_spawn(19155,0,0,-81,-37,3.1,218);
       $countess5=1;}
    elsif (($countess6!=1) && ($zoneid == 25) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(25209,0,0,-961,2193,-3,60);
-      $countess6=1;}
+      quest::unique_spawn(25209,0,0,-961,2193,-3,60);
+      }
    elsif (($countess7!=1) && ($zoneid == 30) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(30145,0,0,641,3233,-61.2,182);
-      $countess7=1;}
+      quest::unique_spawn(30145,0,0,641,3233,-61.2,182);
+      }
    elsif (($countess8!=1) && ($zoneid == 38) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(38212,0,0,173,2175,-46,39);
-      $countess8=1;}
+      quest::unique_spawn(38212,0,0,173,2175,-46,39);
+      }
    elsif (($countess9!=1) && ($zoneid == 49) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(49135,0,0,526,254,59,137);
-      $countess9=1;}
+      quest::unique_spawn(49135,0,0,526,254,59,137);
+      }
    elsif (($countess10!=1) && ($zoneid == 54) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(54290,0,0,157,119,4.1,64);
-      $countess10=1;}
+      quest::unique_spawn(54290,0,0,157,119,4.1,64);
+      }
    elsif (($countess11!=1) && ($zoneid == 61) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(61097,0,0,16,35,3.1,118);
-      $countess11=1;}
+      quest::unique_spawn(61097,0,0,16,35,3.1,118);
+      }
    elsif (($countess12!=1) && ($zoneid == 68) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(68315,0,0,-358,2806,3.6,242);
-      $countess12=1;}
+      quest::unique_spawn(68315,0,0,-358,2806,3.6,242);
+      }
    elsif (($countess13!=1) && ($zoneid == 78) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(78214,0,0,2590,-2101,26,1);
-      $countess13=1;}
+      quest::unique_spawn(78214,0,0,2590,-2101,26,1);
+      }
    elsif (($countess14!=1) && ($zoneid == 83) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(83345,0,0,-2050,-1091,3,168);
-      $countess14=1;}
+      quest::unique_spawn(83345,0,0,-2050,-1091,3,168);
+      }
    elsif (($countess15!=1) && ($zoneid == 165) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(165321,0,0,-2884,-1710,-214,29);
-      $countess15=1;}
+      quest::unique_spawn(165321,0,0,-2884,-1710,-214,29);
+      }
    elsif (($countess16!=1) && ($zoneid == 189) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))){
-      quest::spawn2(189999,0,0,22,48,12,152);
-      $countess16=1;}
+      quest::unique_spawn(189999,0,0,22,48,12,152);
+      }
   }
 
 $npc->SetAppearance(1);
@@ -167,42 +167,8 @@ if($random_result2<=40){
 	else{
        $client->Message(14,"Ranger Band says,\"Don't let the $night catch you in Lake Rathe!\""); }
   }
-##Countess Event
- if ($event3==1) {
-   if ($zoneid == 2){
-    $countess1=0;}
-   elsif ($zoneid == 3){
-    $countess2=0;}
-   elsif ($zoneid == 9){
-    $countess3=0;}
-   elsif ($zoneid == 10){
-    $countess4=0;}
-   elsif ($zoneid == 19){
-    $countess5=0;}
-   elsif ($zoneid == 25){
-    $countess6=0;}
-   elsif ($zoneid == 30){
-    $countess7=0;}
-   elsif ($zoneid == 38){
-    $countess8=0;}
-   elsif ($zoneid == 49){
-    $countess9=0;}
-   elsif ($zoneid == 54){
-    $countess10=0;}
-   elsif ($zoneid == 61){
-    $countess11=0;}
-   elsif ($zoneid == 68){
-    $countess12=0;}
-   elsif ($zoneid == 78){
-    $countess13=0;}
-   elsif ($zoneid == 83){
-    $countess14=0;}
-   elsif ($zoneid == 165){
-    $countess15=0;}
-   elsif ($zoneid == 189){
-    $countess16=0;}
-  }
 }
+
 sub EVENT_SAY {
 my $easter = quest::saylink("Easter", 1);
 my $year = quest::saylink("Year", 1);
