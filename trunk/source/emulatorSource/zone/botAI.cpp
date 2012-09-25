@@ -1363,14 +1363,18 @@ bool NPC::Bot_AICastSpell(Mob* tar, int8 iChance, int16 iSpellTypes) {
 	if(!AI_HasSpells())
 		return false;
 
-	if(tar->GetAppearance() == eaDead) {
-		if(!(tar->IsClient() && tar->CastToClient()->GetFeigned()))
-			return false;
-	}
-
 	if (iChance < 100)
 		if (MakeRandomInt(0, 100) > iChance)
 			return false;
+
+	if(tar->GetAppearance() == eaDead) {
+		if((tar->IsClient() && tar->CastToClient()->GetFeigned()) || tar->IsBot()) {
+		// do nothing
+		}
+		else {
+			return false;
+		}
+	}
 	
 	int8 botClass = GetClass();
 	uint8 botLevel = GetLevel();
