@@ -9,11 +9,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH {
-  quest::depop(158091);
-  quest::depop(158091);
-  quest::depop(158091);
-  quest::depop(158091);
-  quest::depop(158091);
+  quest::depopall(158091);
 }
 
 #End of File, Zone:vexthal  NPC:158011 -- #Thall_Xundraux_Diabo

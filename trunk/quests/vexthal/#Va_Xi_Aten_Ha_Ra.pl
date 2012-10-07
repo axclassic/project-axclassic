@@ -18,20 +18,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH {
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
-  quest::depop(158094);
+  quest::depopall(158094);
 }
 
 #End of File, Zone:vexthal  NPC:158009 -- #Va_Xi_Aten_Ha_Ra

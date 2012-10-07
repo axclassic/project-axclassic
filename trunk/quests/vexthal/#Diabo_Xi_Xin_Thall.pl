@@ -11,13 +11,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH {
-  quest::depop(158089);
-  quest::depop(158089);
-  quest::depop(158089);
-  quest::depop(158089);
-  quest::depop(158089);
-  quest::depop(158089);
-  quest::depop(158089);
+  quest::depopall(158089);
 }
 
 #End of File, Zone:vexthal  NPC:158012 -- #Diabo_Xi_Xin_Thall
