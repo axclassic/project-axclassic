@@ -6,8 +6,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH {
-  quest::depop(158090);
-  quest::depop(158090);
+  quest::depopall(158090);
 }
 
 #End of File, Zone:vexthal  NPC:158008 -- #Thall_Va_Kelun

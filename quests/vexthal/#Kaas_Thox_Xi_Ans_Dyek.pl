@@ -6,8 +6,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH {
-	quest::depop(158087);
-	quest::depop(158087);
+  quest::depopall(158087);	
 }
 
 #End of File, Zone:vexthal  NPC:158013 -- #Kaas_Thox_Xi_Ans_Dyek
