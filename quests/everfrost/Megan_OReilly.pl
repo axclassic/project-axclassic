@@ -11,7 +11,7 @@ sub EVENT_SAY {
 	if($text=~/Hail/i){
 		quest::say("Brrrr.. It.. Is sooo.. c-cold!! I never.. sh-should've j-joined.. the.. the W-wolves of the N-north!!");
 	}
-	if ($text=~/Ivan's remains/i) {
+	if ($text=~/Ivans remains/i) {
 		quest::say("You were sent to retrieve the remains? I am sorry, I lost them. It was not my fault! There was no escort as I was told. I got lost returning to Halas and ended up on a frozen river. The ice broke and the remains were scattered into the freezing water. Will you [dive for the remains]?");
 	}
 	if ($text=~/dive for the remains/i) {
