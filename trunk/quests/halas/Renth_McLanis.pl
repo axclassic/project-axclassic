@@ -29,11 +29,11 @@ if (plugin::check_handin(\%itemcount, 13246 => 1)) {
 	quest::say("Thank ye, $name! I knew ye could do it. It is a sad thing, but at least now he can rest in peace. Here is something for your efforts. If ye are interested, there is a [dangerous matter] that needs to be looked into.");
 	 quest::ding(); quest::exp(3000);
 	quest::givecash(5,0,0,0);
- } elsif($itemcount{10556} == 1){
+ } elsif($itemcount{12227} == 1){
 	quest::say("Nice work $name! Basil has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax for your efforts.");
 	 quest::ding(); quest::exp(10000);
 	quest::summonitem(5367);
- } elsif($itemcount{13913} == 1){
+ } elsif($itemcount{12225} == 1){
 	quest::say("Nice work $name! Paglan has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax of the Wolves for your efforts.");
 	 quest::ding(); quest::exp(12000);
 	quest::summonitem(5368);
