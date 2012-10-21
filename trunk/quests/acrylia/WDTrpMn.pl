@@ -6,7 +6,7 @@ my $counter;
 
 sub EVENT_SPAWN {
 	quest::spawn2(154053,0,0,344.07, -323.49, -7.94,187); # Spiritist_Kama_Resan V2
-	quest::spawn2(154052,0,0,342.75, -232.48, -7.94,187); # Spiritual Arcanist V1
+	quest::spawn2(154152,0,0,342.75, -232.48, -7.94,187); # Spiritual Arcanist V1
 	$counter = 0;
 	}
 	
