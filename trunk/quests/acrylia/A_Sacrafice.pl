@@ -1,7 +1,7 @@
 # Khati Sha Event
 # Created by Gonner
 
-sub EVENT_WAYPOINT_DEPART {
+sub EVENT_WAYPOINT {
 	my $x = $npc->GetX();
 	my $y = $npc->GetY();
 		if($x = 432 && $y = -298) {
