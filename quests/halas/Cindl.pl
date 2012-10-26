@@ -11,6 +11,10 @@ sub EVENT_SAY {
   if($text=~/second job/i) { 
     quest::say("I have seen the warriors bringing in items called Wrath Orc Wristbands. Apparently they find them upon the lifeless bodies of the snow orc troopers. They are made from a skin I have yet to find. I will gladly reward you with either a Rawhide Tunic or Leggings or even perhaps Leather Gloves. All I ask for are Two Wrath Orc Wristbands.");
   }
+  if($text=~/mammoth hide parchment/i) {
+    quest::say("Oh, for Jinkus? Ok, here you go."); #Text made up
+    quest::summonitem(12621); #Mammoth Hide Parchment
+  }
 } 
 
 sub EVENT_ITEM { 
