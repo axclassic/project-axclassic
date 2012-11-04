@@ -1,6 +1,6 @@
 #Meldrath's_Paige script for GM event, actually written by nork! OMG!
 
-sub Event_Say {
+sub EVENT_SAY {
 	if ($status >= 80 && $text=~/Hail/i) {
 	quest::say ("All subvertents will be converted! Meldrath is your new lord and master! All who resist shall be punished!"); 
 	}
@@ -33,7 +33,7 @@ if ($entitylist -> GetMobByNpcTypeId(56173) == undef){
 
 if ($status >= 80 && $text=~/you shall not break our defense/i) {
 	quest::say ("Now you have done it! Surely the pinicale of tinkering robotics! An Austrian action filmstar shall make you grovel!");
-	quest:emote ("starts to cower under the shadow of the mechanical monster");
+	quest::emote ("starts to cower under the shadow of the mechanical monster");
 if ($entitylist -> GetMobByNpcTypeId(16174) == undef){
 	quest::spawn2 (56175,0,0,600,-1224.3,-108.9,125.4);
 	quest::ze (14, "The scrap metal, allthough broken and shattered, begins to form into a terrifying construct of metal and oil");
