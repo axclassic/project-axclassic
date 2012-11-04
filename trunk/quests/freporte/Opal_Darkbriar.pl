@@ -53,7 +53,7 @@ sub EVENT_ITEM
   {
   quest::say("Thanks.");
   # Patched Violet Robe ID-13558
-  summonitem("13558");
+  quest::summonitem("13558");
   exp("100");
   }
 
