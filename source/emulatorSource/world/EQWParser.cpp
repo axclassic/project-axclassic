@@ -30,6 +30,10 @@
 
 using namespace std;
 
+#ifndef GvCV_set
+#define GvCV_set(gv,cv) (GvCV(gv) = (cv))
+#endif
+
 //link against your Perl Lib
 #ifdef WIN32
 #pragma comment(lib, "perl510.lib")
@@ -100,15 +104,15 @@ void EQWParser::DoInit() {
 	//ruin the perl exit and command:
 	eval_pv("sub my_exit {}",TRUE);
 	eval_pv("sub my_sleep {}",TRUE);
-	if(gv_stashpv("CORE::GLOBAL", FALSE)) {
-		GV *exitgp = gv_fetchpv("CORE::GLOBAL::exit", TRUE, SVt_PVCV);
-		GvCV(exitgp) = perl_get_cv("my_exit", TRUE);	//dies on error
-		GvIMPORTED_CV_on(exitgp);
-		GV *sleepgp = gv_fetchpv("CORE::GLOBAL::sleep", TRUE, SVt_PVCV);
-		GvCV(sleepgp) = perl_get_cv("my_sleep", TRUE);	//dies on error
-		GvIMPORTED_CV_on(sleepgp);
-	}
-	
+    if(gv_stashpv("CORE::GLOBAL", FALSE)) {
+	GV *exitgp = gv_fetchpv("CORE::GLOBAL::exit", TRUE, SVt_PVCV);
+	GvCV_set(exitgp, perl_get_cv("my_exit", TRUE)); //dies on error
+	GvIMPORTED_CV_on(exitgp);
+	GV *sleepgp = gv_fetchpv("CORE::GLOBAL::sleep", TRUE, SVt_PVCV);
+	GvCV_set(sleepgp, perl_get_cv("my_sleep", TRUE)); //dies on error
+	GvIMPORTED_CV_on(sleepgp);
+    }
+
 	//setup eval_file
 	eval_pv(
 	"our %Cache;"
