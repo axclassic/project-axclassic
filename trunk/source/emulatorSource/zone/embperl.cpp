@@ -18,6 +18,10 @@ Eglin
 #include "embxs.h"
 #include "features.h"
 
+#ifndef GvCV_set
+#define GvCV_set(gv,cv) (GvCV(gv) = (cv))
+#endif
+
 //#pragma message("You may want to ensure that you add perl\\lib\\CORE to your include path")
 //#pragma message("You may want to ensure that your build settings look like `perl -MExtUtils::Embed -e ccopts -e ldopts`")
 //link against your Perl Lib
@@ -141,13 +145,14 @@ void Embperl::DoInit() {
 	//ruin the perl exit and command:
 	eval_pv("sub my_exit {}",TRUE);
 	eval_pv("sub my_sleep {}",TRUE);
+	
 	if(gv_stashpv("CORE::GLOBAL", FALSE)) {
-		GV *exitgp = gv_fetchpv("CORE::GLOBAL::exit", TRUE, SVt_PVCV);
-		GvCV(exitgp) = perl_get_cv("my_exit", TRUE);	//dies on error
-		GvIMPORTED_CV_on(exitgp);
-		GV *sleepgp = gv_fetchpv("CORE::GLOBAL::sleep", TRUE, SVt_PVCV);
-		GvCV(sleepgp) = perl_get_cv("my_sleep", TRUE);	//dies on error
-		GvIMPORTED_CV_on(sleepgp);
+	    GV *exitgp = gv_fetchpv("CORE::GLOBAL::exit", TRUE, SVt_PVCV);
+	    GvCV_set(exitgp, perl_get_cv("my_exit", TRUE)); //dies on error
+	    GvIMPORTED_CV_on(exitgp);
+	    GV *sleepgp = gv_fetchpv("CORE::GLOBAL::sleep", TRUE, SVt_PVCV);
+	    GvCV_set(sleepgp, perl_get_cv("my_sleep", TRUE)); //dies on error
+	    GvIMPORTED_CV_on(sleepgp);
 	}
 
 	//declare our file eval routine.
