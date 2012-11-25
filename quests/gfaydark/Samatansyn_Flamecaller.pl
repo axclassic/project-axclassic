@@ -72,7 +72,8 @@ sub EVENT_ITEM {
 		quest::faction(304,10); #Soldiers of Tunare got better. 
 		quest::faction(63,-10); #Crushbone Orcs got worse.
 	 }
-	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 2, 1013 => 1, 27410 => 1)) {
+	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 2, 1013 => 1, 27410 => 1) ||
+	       plugin::check_handin(\%itemcount, 19697 => 2, 1001 => 1, 27410 => 1)) {
 	    $client->Message(14,"Congratulations, $name! Your dedication and hard work is noted and appreciated. Take this coif as a reward!"); #Coif handin
 		quest::ding(); quest::exp(1000);
 		quest::summonitem(27509);
@@ -82,7 +83,8 @@ sub EVENT_ITEM {
 		quest::faction(304,10); #Soldiers of Tunare got better. 
 		quest::faction(63,-10); #Crushbone Orcs got worse.
    	 }
-	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 1, 1021 => 1, 9130 => 1)) {
+	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 1, 1021 => 1, 9130 => 1) ||
+	       plugin::check_handin(\%itemcount, 19697 => 1, 1009 => 1, 9130 => 1)) {
 		$client->Message(14,"Congratulations, $name! Your dedication and hard work is noted and appreciated. Take this bracer as a reward!"); #Bracer handin
 		quest::ding(); quest::exp(1000);
 		quest::summonitem(27510); 
@@ -92,7 +94,8 @@ sub EVENT_ITEM {
 		quest::faction(304,10); #Soldiers of Tunare got better. 
 		quest::faction(63,-10); #Crushbone Orcs got worse.
 	 }
-	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 =>2, 1020 => 1, 13145 => 1)) {
+	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 =>2, 1020 => 1, 13145 => 1) ||
+		plugin::check_handin(\%itemcount, 19697 =>2, 1008 => 1, 13145 => 1)) {
 		$client->Message(14,"Congratulations, $name! Your dedication and hard work is noted and appreciated. Take these sleeves as a reward!"); #Sleeves handin
 		quest::ding(); quest::exp(1000);
 		quest::summonitem(27511);
@@ -102,7 +105,8 @@ sub EVENT_ITEM {
 		quest::faction(304,10); #Soldiers of Tunare got better. 
 		quest::faction(63,-10); #Crushbone Orcs got worse.
 	 }
-	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 2, 1024 => 1, 13791 => 1)) {
+	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 2, 1024 => 1, 13791 => 1) ||
+		plugin::check_handin(\%itemcount, 19697 => 2, 1012 => 1, 13791 => 1)) {
 		$client->Message(14,"Congratulations, $name! Your dedication and hard work is noted and appreciated. Take these boots as a reward!"); #Boots handin
 		quest::ding(); quest::exp(1000);
 		quest::summonitem(27512);
@@ -112,7 +116,8 @@ sub EVENT_ITEM {
 		quest::faction(304,10); #Soldiers of Tunare got better. 
 		quest::faction(63,-10); #Crushbone Orcs got worse.
 	 }
-	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 2, 1023 => 1, 16170 => 1)) {
+	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 2, 1023 => 1, 16170 => 1) || 
+	       plugin::check_handin(\%itemcount, 19697 => 2, 1011 => 1, 16170 => 1)) {
 		$client->Message(14,"Congratulations, $name! Your dedication and hard work is noted and appreciated. Take these legplates as a reward!"); #Legplates handin
 		quest::ding(); quest::exp(1000);
 		quest::summonitem(27513);
@@ -122,7 +127,8 @@ sub EVENT_ITEM {
 		quest::faction(304,10); #Soldiers of Tunare got better. 
 		quest::faction(63,-10); #Crushbone Orcs got worse.
 	 }
-	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 2, 1022 => 1, 20272 => 1)) {
+	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 1) && plugin::check_handin(\%itemcount, 19697 => 2, 1022 => 1, 20272 => 1) ||
+	      plugin::check_handin(\%itemcount, 19697 => 2, 1010 => 1, 20272 => 1)) {
 		$client->Message(14,"Congratulations, $name! Your dedication and hard work is noted and appreciated. Take these gauntlets as a reward!"); #Gauntlets handin
 		quest::ding(); quest::exp(1000);
 		quest::summonitem(27514);
@@ -132,7 +138,8 @@ sub EVENT_ITEM {
 		quest::faction(304,10); #Soldiers of Tunare got better. 
 		quest::faction(63,-10); #Crushbone Orcs got worse.
 	 }
-  	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 2) && plugin::check_handin(\%itemcount, 19697 => 2, 1018 => 1, 14018 => 1)) {
+  	 elsif(($race == 'Wood Elf') && ($class == 'ranger') && ($platinum == 2) && plugin::check_handin(\%itemcount, 19697 => 2, 1018 => 1, 14018 => 1) || 
+	      plugin::check_handin(\%itemcount, 19697 => 2, 1006 => 1, 14018 => 1)) {
 		$client->Message(14,"Congratulations, $name! Your dedication and hard work is noted and appreciated. Take this tunic as a reward!"); #Tunic handin
 		quest::ding(); quest::exp(1000);
 		quest::summonitem(27515);
@@ -146,7 +153,10 @@ sub EVENT_ITEM {
      $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items
      plugin::return_items(\%itemcount);
      plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
+       if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+            quest::givecash($copper, $silver, $gold, $platinum);
+       }
      return 1;
-	}
+    }
 }
 
