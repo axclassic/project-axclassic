@@ -18,7 +18,7 @@
 
     sub EVENT_ITEM {
 
-      if (plugin::check_handin(\%itemcount, 54019 => 1)) {
+      if (plugin::check_handin(\%itemcount, 18784 => 1)) {
 
         quest::emote("scans the note and sizes you up with a look.");
 
@@ -30,7 +30,7 @@
 
       }
 
-      if(($gold >= 2) && (plugin::check_handin(\%itemcount, 7007 => 1))){
+      if(($gold >= 2) && (plugin::check_handin(\%itemcount, 7007 => 2))){
 
        quest::say("Well, well. I didn't think you could do it. Here's your cut and don't be surprised that it's not much because it's your first lesson. Remember. the smaller the operation. the bigger the share, and the richest rogues have the tightest lips.");
 
