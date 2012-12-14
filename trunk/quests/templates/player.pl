@@ -135,4 +135,16 @@ elsif ($Classic2012 > 0) {
     $client->Message(14,"This server restarts daily at 4:01am eastern time, server will stay down a few minutes for maintenance, then start again - make sure you're in a safe spot before the restart.");
     }
   }
+    ## Both Database advisories
+    #
+    ## Advise the new SoD and newer players that Titanium/SoF  are the best.
+    if ($ulevel == 1){
+      $clientver = $client->GetClientVersion();
+      if($clientver > 3){
+	$client->Message(15,"Your client is still not completely ported into the servers code and work is in progress. ");
+	$client->Message(15,"The most compatible clients are Titanium, followed by Secrets of Faydwer (SoF).");
+	$client->Message(15,"We hope you find AXClassic interesting and will try us with a more compatible client.");
+	$client->Message(15,"Thank you for trying us out!");
+      }
+    }
 }
