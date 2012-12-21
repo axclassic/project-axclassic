@@ -45,7 +45,7 @@ sub EVENT_ITEM
 if($platinum == 50)
 {
  quest::say ("A wise choice $name");
- quest::summonitem(56017);
+ quest::summonitem(627);
 }
 else {
 plugin::return_items(\%itemcount);
