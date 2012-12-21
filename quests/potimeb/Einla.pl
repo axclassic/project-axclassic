@@ -1,7 +1,10 @@
 #TimeB FD quest
+#The Plane of Time >> Einla (223227)
 #threeflies
 #Ax_Classic
 #December 2012
+
+
 sub EVENT_SPAWN
 {
 	$x = $npc->GetX();
