@@ -79,4 +79,9 @@ sub BEGINRAID {
 		quest::setglobal("potimeLockout", 1, 5, "H24");
 		quest::setglobal("potime_canzone", 1, 5, "H24");
 	}
+
+sub EVENT_ZONE {
+
+$client->NukeItem(627);
+}
 }
