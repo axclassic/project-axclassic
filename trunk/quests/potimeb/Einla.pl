@@ -36,7 +36,7 @@ quest::say ("We discovered the [Cloud of Death] ring whilst exploring the destro
 if ($text =~/cloud of death/i)
 {
 quest::say ("The cloud of Death will hide you from your foes, you will appear slain and still to all who cast their eyes over your apparent lifeless corpse, however magic so powerful comes at a cost. Hand me a sum fit for a Prince and I will gladly let you borrow the item. Shall we say 50 Platinum pieces?");
-quest::emote ("Taps his foot impatiently");
+quest::emote ("Taps her foot impatiently");
  }
 
 sub EVENT_ITEM
