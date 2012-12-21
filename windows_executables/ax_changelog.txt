@@ -1,7 +1,53 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==12/21/2012==
+Angelox: Fix for "#bot raid disband" crashing the zone.
+Angelox: Character select will send newer clients to their towns if selected at character screen.
+Angelox: New clients character screen will not select Crescent anymore.
+
+==12/19/2012==
+Angelox: Bot chat changes.
+Angelox: SoD/Underfoot client updates.
+Angelox: Compiler fixes and client ports.
+
+==12/18/2012==
+Angelox: Tracking fixed for SoD and Underfoot clients.
+
+==12/17/2012==
+Angelox: Ports to the SoD and UF clients.
+
+==12/16/2012==
+Angelox: Door fix for Potime doors.
+Angelox: Some compiler warning fixes.
+
+==12/14/2012==
+Angelox: Fix to get players with clients greater than Titanium to a classic starter zone.
+Angelox: On going SoD/UF port.
+
+==12/13/2012==
+Angelox: More ports from project EqEmu to update the SoD/UF client for AXClassic.
+Angelox: Ports from project EqEmu to update the SoD/UF client for AXClassic.
+
+==12/12/2012==
+Angelox: Continued ports from project EqEmu to update the SoD/UF client for AXClassic.
+
+==12/11/2012==
+Angelox: Adjusted bot-chat probabilities.
+Angelox: Some work towards the Underfoot client merge.
+Angelox: Set a general zin point for highpasshold.
+
+==12/09/2012==
+Angelox: SoD Client fix.
+
+==12/07/2012==
+Angelox: Highpasshold activated for SoF and higher clients (Titanium clients will use highpass).
+Angelox: SoD Client fixed to where player can log in and play. 
+
+==12/04/2012==
+Angelox: Fixed some bugs with SoF client (see last submission).
+
 ==11/06/2012==
-Angelox: Fix for gcc 4.6x version compile.
+Angelox: Fix for gcc 4.6x version compile (as per KLS, EqEmu).
 
 ==09/23/2012==
 Angelox: Possible fix to a targeting crash. 
