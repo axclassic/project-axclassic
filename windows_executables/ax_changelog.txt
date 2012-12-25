@@ -1,6 +1,9 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
 ==12/21/2012==
+Angelox: All clients should now send new players to proper starting zones - also fixed some client bit id variables. 
+
+==12/21/2012==
 Angelox: Fix for "#bot raid disband" crashing the zone.
 Angelox: Character select will send newer clients to their towns if selected at character screen.
 Angelox: New clients character screen will not select Crescent anymore.
