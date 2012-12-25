@@ -141,9 +141,9 @@ elsif ($Classic2012 > 0) {
     if ($ulevel == 1){
       $clientver = $client->GetClientVersion();
       if($clientver > 3){
-	$client->Message(15,"Your client is still not completely ported into the servers code and work is in progress. ");
-	$client->Message(15,"The most compatible clients are Titanium, followed by Secrets of Faydwer (SoF).");
-	$client->Message(15,"We hope you find AXClassic interesting and will try us with a more compatible client.");
+	$client->Message(15,"The most compatible client for AXClassic is the Titanium era client.");
+	$client->Message(15,"Your client will work, but is oriented to the Titanium era.");
+	$client->Message(15,"We hope you find AXClassics custom content interesting and stay with us.");
 	$client->Message(15,"Thank you for trying us out!");
       }
     }
