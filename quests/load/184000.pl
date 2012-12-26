@@ -6,12 +6,14 @@ sub EVENT_SPAWN
 {
 	$x = $npc->GetX();
 	$y = $npc->GetY();
-	quest::set_proximity($x - 150, $x + 150, $y - 150, $y + 150);
+	quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
 }
 
 sub EVENT_ENTER{
-#   if (($clientver > 2) && ($ulevel == 1)){
-#     quest::summonitem(119512);}
+#   if (($clientver > 2) && ($ulevel == 1)){}
+#Since this script doesn't always get you to your home town, 
+#summon a temporary Stone of Origen 
+  quest::summonitem(119512); #temporary Stone of Origen
   if ($race eq 'Wood Elf'){
   quest::rebind(54,-197,27,-0.7);
   quest::movepc(54,-197,27,-0.7);}
