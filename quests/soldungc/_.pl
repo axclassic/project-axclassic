@@ -40,7 +40,7 @@ sub EVENT_SIGNAL {
    }
   if ($elemwaveb == 2) { 
    quest::emote("The pool of lava begins to boil furiously. Something large is growing within.");
-   quest::spawn2(278259,0,0,-230,-94,-16.8,0); #Will need to add support for Pure_Flame_Elemental(278258) when Wizard 1.5 is written.
+   quest::spawn2(278259,0,0,-229,-94.7,-16.5,0); #Will need to add support for Pure_Flame_Elemental(278258) when Wizard 1.5 is written.
    $elemwaveb = 0;
    }
    
