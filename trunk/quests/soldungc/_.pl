@@ -26,21 +26,21 @@ sub EVENT_SIGNAL {
   }
   if ($elemwave == 8) { 
    quest::emote("The room grows warmer as the lava pool begins to steam heavily.");
-   quest::spawn2(278123,0,0,-203,-61,-17.5,195);
-   quest::spawn2(278123,0,0,-207,-124,-17.5,195);
-   quest::spawn2(278123,0,0,-262,-130,-17.5,195);
-   quest::spawn2(278123,0,0,-256,-54,-17.5,195);
+   quest::spawn2(278273,0,0,-203,-61,-17.5,195);
+   quest::spawn2(278273,0,0,-207,-124,-17.5,195);
+   quest::spawn2(278273,0,0,-262,-130,-17.5,195);
+   quest::spawn2(278273,0,0,-256,-54,-17.5,195);
    $elemwave = 0;
    }
   if ($elemwavea == 4) { 
    quest::emote("The lava starts to bubble and churn. Dark shapes move beneath the molten rock.");
-   quest::spawn2(278122,0,0,-163,-95,-13.9,0);
-   quest::spawn2(278122,0,0,-301,-94,-14,0);
+   quest::spawn2(278272,0,0,-163,-95,-13.9,0);
+   quest::spawn2(278272,0,0,-301,-94,-14,0);
    $elemwavea = 0;
    }
   if ($elemwaveb == 2) { 
    quest::emote("The pool of lava begins to boil furiously. Something large is growing within.");
-   quest::spawn2(278109,0,0,-230,-94,-16.8,0); #Will need to add support for Pure_Flame_Elemental(278108) when Wizard 1.5 is written.
+   quest::spawn2(278259,0,0,-230,-94,-16.8,0); #Will need to add support for Pure_Flame_Elemental(278258) when Wizard 1.5 is written.
    $elemwaveb = 0;
    }
    
