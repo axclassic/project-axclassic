@@ -5,9 +5,9 @@ quest::settimer("champion",1);
    
 sub EVENT_TIMER { #depop doesn't work well with sub EVENT_SPAWN
 $elemrest = $entity_list->GetMobByNpcTypeID(278124);
-$furiousmagma = $entity_list->GetMobByNpcTypeID(278123);
-$inflamedchamp = $entity_list->GetMobByNpcTypeID(278122);
-$protectorfire = $entity_list->GetMobByNpcTypeID(278109);
+$furiousmagma = $entity_list->GetMobByNpcTypeID(278273);
+$inflamedchamp = $entity_list->GetMobByNpcTypeID(278272);
+$protectorfire = $entity_list->GetMobByNpcTypeID(278259);
 
 if ($timer eq "champion") {
 if ($elemrest || $furiousmagma || $inflamedchamp || $protectorfire) {
