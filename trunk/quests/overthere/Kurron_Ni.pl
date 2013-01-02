@@ -6,7 +6,7 @@ sub EVENT_SAY {
   }
   if($text=~/mission/i) {
     $faction = $client->GetCharacterFactionLevel(342);
-    if ($faction < 7) {
+    if ($faction < 5) {
       quest::say("My mission is none of your concern!  Now you die, pitiful fool!");
       quest::attack("$name");
     }
@@ -29,7 +29,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (($platinum >= 900) && plugin::check_handin(\%itemcount, 3141 => 1, 3145 => 1, 3140 => 1)) { #Platinum x 900, Darkforge Breastplate, Darkforge Greaves, Darkforge Helm
     quest::say("Well done, $name, I honestly didn't expect to see you again. Yes, yes, this is perfect! My mission is nearly complete!");
-    quest::faction(342,7);
+    quest::faction(342,5);
     $npc->AddItem(18099, 1);
   }
   else {
