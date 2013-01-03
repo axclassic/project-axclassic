@@ -2,6 +2,7 @@
 ## NPC: #Norrath Adventurer         ##
 ## Zone: Global Template            ##
 ##  Moonstones Quests               ##
+## By: Qadar                        ##
 ## Revised by caved for AXClassic   ##
 ## EQWorld Server     19-12-2010    ##
 ######################################

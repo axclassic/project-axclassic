@@ -2,6 +2,7 @@
 ## NPC: #Anita_Thrall               ##
 ## Zone: All Starter Zones          ##
 ##       PoK and Bazaar             ##
+## By:    Angelox                   ##
 ## Revised by caved for AXClassic   ##
 ## EQWorld Server     19-12-2010    ##
 ######################################
