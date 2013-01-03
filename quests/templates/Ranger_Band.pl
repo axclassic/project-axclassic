@@ -2,11 +2,12 @@
 ## NPC: Band the Ranger             ##
 ## Zone: All Starter Zones          ##
 ##                                  ##
+## By: Angelox                      ##
 ## Revised by Caved for AXClassic   ##
 ## to make Clicklinks available     ##
 ## EQWorld Server     19-12-2010    ##
-## $event1 is a global variable to activate New Years event (set to 1 in quest_globals)
-## Second revision by EQPlayer 	    ##
+##                                  ##
+## Second revision by EQPlayer 	     ##
 ######################################
 sub EVENT_SPAWN
 {
