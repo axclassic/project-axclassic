@@ -319,7 +319,7 @@ $npc->SetAppearance(0);
 	 elsif(($text=~/wind/i) && ($zoneid == 165)){
         $client->Message(14,"Ranger Band says,\"Aye, Moonstone of the Wind! Fastest moonstone in Norrath, also great to have when trying to escape a dire situation");}
 	 elsif(($ulevel <= 10) && ($text=~/year/i) && ($event1==1)){
-         $client->Message(14,"Ranger Band says,\"What I will do in the 2011 you ask? I travel around make new friends, I adventure so I can tell stories about my travels to anyone who wants to hear. Do you want to travel too? Maybe I can help you. I got a stack of Moonstones right here but you guessed it, bring what I want, and I will give you a random Moonstone - go and find me: 1 Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.\""); }
+         $client->Message(14,"Ranger Band says,\"What I will do in the 2013 you ask? I travel around make new friends, I adventure so I can tell stories about my travels to anyone who wants to hear. Do you want to travel too? Maybe I can help you. I got a stack of Moonstones right here but you guessed it, bring what I want, and I will give you a random Moonstone - go and find me: 1 Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.\""); }
 	 elsif(($ulevel <= 20) && ($text=~/interest/i) && ($event5==1)){
          $client->Message(14,"Ranger Band says,\"I have a collection of Moonstones I obtained while camping certain named mobs in Norrath, I haven't much need for them anymore, void to $tempt you with a quest.\"");}
 	 elsif(($ulevel <= 20) && ($text=~/tempt/i) && ($event5==1)){
@@ -366,7 +366,8 @@ if ($event2==1){
 };
 
  if ($event1==1){
-   if (($ulevel <= 10) && (plugin::check_handin(\%itemcount, 13417 =>1, 13250 =>1, 6018 =>1, 13073 =>1))) { #newyear turnin for moonstones
+   if (($ulevel <= 10) && ((plugin::check_handin(\%itemcount, 13417 =>1, 13250 =>1, 6018 =>1, 13073 =>1))|
+			   (plugin::check_handin(\%itemcount, 13254 =>1, 13250 =>1, 6018 =>1, 13073 =>1)))) { #newyear turnin for moonstones
     my @items = (125 .. 139,141,142); ## New Years Event random item reward
     my $total4 = $items[ rand @items ];
     $client->Message(14,"Ranger Band says,\"Congratulations, $name! Take this Moonstone as a reward!.\"");
