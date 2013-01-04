@@ -15,8 +15,10 @@ my $third = quest::saylink("third", 1);
 my $gems = quest::saylink("gems", 1);
 my $trophy = quest::saylink("trophy", 1);
 my $types = quest::saylink("types", 1);
+my $color = quest::saylink("color", 1);
+my $command = quest::saylink("command", 1);
   if($text=~/Hail/i){
-    $client->Message(14,"Hello, $name!  What an amazing world we live in. The best advice I can give you is to take a trip, go somewhere new, enjoy some adventures. My $travels have been very exciting!");
+    $client->Message(14,"Hello, $name!  What an amazing world we live in. The best advice I can give you is to take a trip, go somewhere new, enjoy some adventures. My $travels have been very exciting! I can also help you iff you wish to dye your mercenaries armor $color , or help you using the $command once you've got it, just let me know...");
   }
   if($text=~/travels/i){
     $client->Message(14,"I have traveled all across Norrath, and have experienced many of its wonders. I have seen many lands, and many creatures, some fantastic and some frightening. Would you like to $hear more?");
@@ -42,6 +44,13 @@ my $types = quest::saylink("types", 1);
   }
   if($text=~/types/i){
     $client->Message(14,"There are three types of gems. The six travelers gems can be found in the areas I visited on my $first trip, the six explorer gems are in the areas I visited on my $second trip, and the six adventurer gems you will find in the areas where I visited on my $third trip.");
+  }
+  if($text=~/color/i){
+    $client->Message(14,"I can grant you the bot command to dye your bots armor but you will have to do me a favour first. You have to travel to the Southern plains of the Karanas and visit a friend of mine a famous painter with the name Dino Blackdye, he was last seen close to Lake Rathe. Ask him to fill this vial and bring it back to me.");
+quest::summonitem(10062); #Empty vial
+  }
+  if($text=~/command/i){
+    $client->Message(14,"The command is #bot armorcolor [slot] [red] [green] [blue], if you forget you can always do #bot armorcolor help.");
   }
 }
 sub EVENT_ITEM {
@@ -69,6 +78,12 @@ my $types = quest::saylink("types", 1);
     # Return incomplete trophy, but contents are lost
     quest::summonitem(318); # Unfinished Trophy
   }
+elsif (plugin::check_handin(\%itemcount, 119513 => 1)) {
+$client->Message(14,"Wonderfull, I see you have spoken to Dino. How is he doing? Well as promissed here is your #bot armorcolor skill, enjoy...");
+#Enable skill for player here and i got no clue: #bot armorcolor
+quest::ding();
+quest::exp(1000);
+}
    else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items 
     plugin::return_items(\%itemcount);
