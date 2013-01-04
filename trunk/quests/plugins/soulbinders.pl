@@ -1,6 +1,13 @@
-#!/usr/bin/perl
+######################################
+## NPC: All Soulbinders             ##
+## Zone: All starting zones         ##
+##  Bind soul & port to start city  ##
+##                                  ##
+## Revised by caved for AXClassic   ##
+## EQWorld Server     04-01-2013    ##
+######################################
 
-sub soulbinder_say {
+sub EVENT_SAY {
   my $bind = quest::saylink("bind", 1);
   my $sense = quest::saylink("sense", 1);
     if($text=~/hail/i){
