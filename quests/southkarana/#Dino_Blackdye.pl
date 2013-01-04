@@ -1,6 +1,6 @@
 ########################################
-## NPC:  Armano Blackdye              ##
-## Zone: Plane of Knowledge           ##
+## NPC:  Dino Blackdye                ##
+## Zone: South Karana                 ##
 ## Bots  Armourdye unlock skill Quest ##
 ## Created by Caved for AX-CLASSIC    ##
 ##       03-03-2013                   ##

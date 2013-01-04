@@ -79,10 +79,12 @@ my $types = quest::saylink("types", 1);
     quest::summonitem(318); # Unfinished Trophy
   }
 elsif (plugin::check_handin(\%itemcount, 119513 => 1)) {
-$client->Message(14,"Wonderfull, I see you have spoken to Dino. How is he doing? Well as promissed here is your #bot armorcolor skill, enjoy...");
-#Enable skill for player here and i got no clue: #bot armorcolor
-quest::ding();
-quest::exp(1000);
+    $client->Message(14,"Wonderfull, I see you have spoken to Dino. How is he doing? Well as promissed here is your #bot armorcolor skill, enjoy...");
+    quest::ding();
+    quest::exp(1000);
+    quest::setglobal("armorcolor",1,5,"F");
+    $armorcolor = undef;
+    $client->Message(6,"You have learned the armorcolor skill!");
 }
    else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items 
