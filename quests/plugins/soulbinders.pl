@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-sub EVENT_SAY {
+sub soulbinder_say {
   my $bind = quest::saylink("bind", 1);
   my $sense = quest::saylink("sense", 1);
     if($text=~/hail/i){
