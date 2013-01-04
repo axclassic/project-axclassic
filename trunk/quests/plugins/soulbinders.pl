@@ -1,16 +1,22 @@
 #!/usr/bin/perl
 
-sub soulbinder_say {
-	my $text = shift;
-	if($text=~/hail/i){
-		quest::say("Greetings ${name} . When a hero of our world is slain their soul returns to the place it was last bound and the body is reincarnated. As a member of the Order of Eternity it is my duty to [bind your soul] to this location, or [sense the ties] to your soul if that is your wish.");
-	} elsif($text=~/bind/i) {
-	    quest::say("Binding your soul. You will return here when you die.");
-	    quest::selfcast(2049);
-	} elsif($text=~/sense/i) {
-	    quest::say("Not only can I bind your soul, but I can return you to your bind of [origin].");
-	} elsif($text=~/origin/i) {
-	    quest::say("Returning you to your home!");
-	    quest::selfcast(5824);
-	}
+sub EVENT_SAY {
+  my $bind = quest::saylink("bind", 1);
+  my $sense = quest::saylink("sense", 1);
+  my $origin = quest::saylink("origin", 1);
+    if($text=~/hail/i){
+      $client->Message(14,"Greetings $name . When a hero of our world is slain their soul returns to the place it was last bound and the body is reincarnated. As a member of the Order of Eternity it is my duty to $bind your soul to this location, or $sense the ties to your soul if that is your wish.");
+    }
+    elsif($text=~/bind/i) {
+      $client->Message(14,"Binding your soul. You will return
+here when you die.");
+      quest::selfcast(2049);
+    }
+    elsif($text=~/sense/i) {
+      $client->Message(14,"Not only can I bind your soul, but I can return you to your bind of $origin .");
+    }
+    elsif($text=~/origin/i) {
+      $client->Message(14,"Returning you to your home!");
+      quest::selfcast(5824);
+    }
 }
