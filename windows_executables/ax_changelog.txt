@@ -1,7 +1,24 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==1/4/2013==
+Angelox: Armorcolor quest should be ready.
+
+==1/2/2013==
+Angelox: Armor tints ready for testing. 
+
+==12/31/2012==
+Angelox: Bugged raids will suggest #bot disbandgroup.
+Angelox: World won't spam packet details.
+Angelox: Ports for SoD/UF summon corpse.
+Angelox: More ports on armor tints.
+
+==12/29/2012==
+Angelox: Cleaned out botCommand.cpp a lot of old, quoted out code.
+Angelox: Made some changes to BotKill(), Kill(), and group disbanding.
+Angelox: More work on bot raid disbanding.
+
 ==12/26/2012==
-Angelox: Fixed bug with group-spawning and adding bots with groupid if zero. 
+Angelox: Fixed bug with group-spawning and adding bots with groupid of zero. 
 
 ==12/25/2012==
 Angelox: All clients should now send new players to proper starting zones - also fixed some client bit id variables. 
