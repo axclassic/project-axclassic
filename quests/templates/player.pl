@@ -1,6 +1,6 @@
 sub EVENT_ENTERZONE {
 no warnings 'all' ;
-if (($Classic2012 < 1) | (!defined $Classic2012)){
+if (((defined $Classic2012) && ($Classic2012 < 1)) | (!defined $Classic2012)){
  #$client->Message(14,"AXClassic mode.");
  if($ulevel >= 50){
   my @zonex = (1..17,19..31,33..38,40..47,49..63,67..70,73..75,78,82..84,97,98,100,101,104,106,121,156,165,166,189); #Trivial ZoneIDs array
@@ -80,7 +80,7 @@ my $random_result = int(rand(100));
    # $taunt_switch = undef;
  # }
  }
-elsif ($Classic2012 > 0) {
+elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
  #$client->Message(14,"Classic 2011 mode.");
    if (!defined $bot_spell_6){
     quest::setglobal("bot_spell_1",3,5,"F");
