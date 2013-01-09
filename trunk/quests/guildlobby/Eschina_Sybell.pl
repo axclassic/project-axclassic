@@ -50,6 +50,11 @@ my @items = (119499,119501,119514,119515,119516); #Al the illusion stones
     quest::ding();
     return;
  }
+else {
+        $client->Message(14,"I don't need this $name. Take it back.");
+        plugin::return_items(\%itemcount);
+	    return 1;
+ }
 }
 
 
