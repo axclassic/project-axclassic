@@ -41,7 +41,7 @@ my @items = (119499,119501,119514,119515,119516); #Al the illusion stones
     quest::ding();
     return;
  }
-elsif (plugin::check_handin(\%itemcount, 119499 = 2) || (\%itemcount, 119501 = 2) || (\%itemcount, 119514 = 2) || (\%itemcount, 119515 = 2) || (\%itemcount, 119516 = 2)) {
+elsif (plugin::check_handin((\%itemcount, 119499 = 2) || (\%itemcount, 119501 = 2) || (\%itemcount, 119514 = 2) || (\%itemcount, 119515 = 2) || (\%itemcount, 119516 = 2))) {
         $client->Message(14,"Thank you $class , I will exchange the 2 double ones for 1 new random illusion stone. enjoy...");
 my @items = (119499,119501,119514,119515,119516); #Al the illusion stones
     my $total = $items[ rand @items ]; #Randomize
