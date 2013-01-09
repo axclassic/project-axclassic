@@ -28,8 +28,8 @@ my $instanceID = quest::CreateInstance("mmca", 0, 6400);
 quest::AssignToInstance($instanceID);
 quest::MovePCInstance(233, $instanceID, -610.42, -359.91, 6.08, 150);        
 return 1;
+ }
 }
-
 sub EVENT_ITEM {
 
 if (plugin::check_handin(\%itemcount, 119517 = 4)) {
