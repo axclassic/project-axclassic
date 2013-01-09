@@ -32,7 +32,7 @@ return 1;
 
 sub EVENT_ITEM {
 
-if (plugin::check_handin(\%itemcount, 22617 = 4)) {
+if (plugin::check_handin(\%itemcount, 119517 = 4)) {
         $client->Message(14,"Thank you so much $class , can't wait to fix my mirror. Here is your illusion stone.");
 my @items = (119499,119501,119514,119515,119516); #Al the illusion stones
     my $total = $items[ rand @items ]; #Randomize
