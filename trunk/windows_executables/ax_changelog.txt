@@ -1,5 +1,17 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==1/10/2013==
+Angelox: Reverted to rev 390. 
+
+==1/9/2013==
+Angelox: Complier-warning fixes.
+
+==1/8/2013==
+Angelox: More complier-warning fixes, fixed #bot summon group.
+
+==1/7/2013==
+Angelox: Corrected many GCC Warnings, also found a few bugs in the process (that's what the warnings are for). 
+
 ==1/4/2013==
 Angelox: Armorcolor quest should be ready.
 
