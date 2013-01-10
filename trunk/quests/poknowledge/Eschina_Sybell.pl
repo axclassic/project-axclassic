@@ -9,9 +9,12 @@ sub EVENT_SAY {
 my $mirror = quest::saylink("mirror", 1); 
 my $shards = quest::saylink("shards", 1); 
 my $willing = quest::saylink("willing", 1);
+my $send = quest::saylink("send", 1);
 
   if ($text=~/hail/i &&$ ulevel >= 60) {
     $client->Message(14,"Hello $name , I am devistated. Thismorning I broke the only $mirror I had and am now unable to look at myself after casting my illusions. I need you help..");
+$client->Message(12,"A word of warning: If you die during this quest, you will have to wait until the quest instance expires. Your corpse will then be available and I can $send you to it...");
+
   }
   if ($text=~/hail/i && $ulevel < 60) {
     $client->Message(14,"Hello $name , I am devistated. Thismorning I broke the only mirror I had and am now unable to look at myself after casting my illusions. Unfortunatly you are to young to help me out here. Please return when you are level 60 or above. I couldn't live with myself in the knowledge I had send you to your death. Go now...");
@@ -29,6 +32,10 @@ quest::AssignToInstance($instanceID);
 quest::MovePCInstance(233, $instanceID, -610.42, -359.91, 6.08, 150);        
 return 1;
  }
+      if ($text=~/send/i && $ulevel >= 59) {
+        $client->Message(14,"I am sending you to the regular Forlorn zone instance. Your corpse will be available after your quest instance has expired, not before..");
+quest::movepc(233, -610.42, -359.91, 6.08);
+  }
 }
 sub EVENT_ITEM {
 
