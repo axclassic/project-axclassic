@@ -41,16 +41,16 @@ sub EVENT_ITEM {
 
 if (plugin::check_handin(\%itemcount, 119517 => 4)) {
         $client->Message(14,"Thank you so much $class , can't wait to fix my mirror. Here is your illusion stone.");
-my @items = (119499,119501,119514,119515,119516,119518,119519); #All the illusion stones
+my @items = (119499,119501,119514,119515,119516,119518,119519,119521,119522); #All the illusion stones
     my $total = $items[ rand @items ]; #Randomize
     quest::summonitem($total);
     quest::exp(5000);
     quest::ding();
     return 1;
  }
-elsif (plugin::check_handin((\%itemcount, 119499 => 2) || (\%itemcount, 119501 => 2) || (\%itemcount, 119514 => 2) || (\%itemcount, 119515 => 2) || (\%itemcount, 119516 => 2) || (\%itemcount, 119518 => 2) || (\%itemcount, 119519 => 2))) {
+elsif (plugin::check_handin((\%itemcount, 119499 => 2) || (\%itemcount, 119501 => 2) || (\%itemcount, 119514 => 2) || (\%itemcount, 119515 => 2) || (\%itemcount, 119516 => 2) || (\%itemcount, 119518 => 2) || (\%itemcount, 119519 => 2) || (\%itemcount, 119521 => 2) || (\%itemcount, 119522 => 2))) {
         $client->Message(14,"Thank you $class , I will exchange the 2 double ones for 1 new random illusion stone. enjoy...");
-my @items = (119499,119501,119514,119515,119516,119518,119519); #All the illusion stones
+my @items = (119499,119501,119514,119515,119516,119518,119519,119521,119522); #All the illusion stones
     my $total = $items[ rand @items ]; #Randomize
     quest::summonitem($total);
     return 1;
