@@ -9,6 +9,7 @@
 		
 		<!-- Loginserver information.  -->
 		<!-- You can add more Login Servers  -->
+		<!-- AXClassic LS registration is obligatory -->
 		<!-- PM Angelox at AXClassic forums for AXCLassic LS registration -->
         	<loginserver1>
 			<host>login.axclassic.com</host>
