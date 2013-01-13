@@ -9,7 +9,7 @@
 		
 		<!-- Loginserver information.  -->
 		<!-- You can add more Login Servers  -->
-		<!-- Your own login server still retains the same account/passwords -->
+		<!-- PM Angelox at AXClassic forums for AXCLassic LS registration -->
         	<loginserver1>
 			<host>login.axclassic.com</host>
 			<port>5999</port>
@@ -17,12 +17,13 @@
 			<password>myPassword</password>
 		</loginserver1>
 
-		<loginserver2>
+		<!-- Unquote and set up for use with eqmu LS or Both LS -->
+		<!-- <loginserver2>
 			<host>eqemulator.net</host>
 			<port>5998</port>
 			<account>myOtherAccount</account>
 			<password>myOtherPassword/password>
-		</loginserver2>
+		</loginserver2> -->
 		
 		<unlocked></unlocked>
 		<!-- Sets the shared key used by zone/launcher to connect to world -->
