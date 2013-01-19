@@ -3,7 +3,7 @@
 ## Zone: Plane of Knowledge          ##
 ## Quest: Illusion Feign Death stone ##
 ## Created by Caved for AXClassic    ##
-## EQWorld Server     11-08-2012     ##
+## EQWorld Server     16-01-2013     ##
 #######################################
 sub EVENT_SAY {
 my $make = quest::saylink("make", 1); 
