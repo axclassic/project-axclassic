@@ -190,6 +190,3 @@ sub EVENT_COMBINE_SUCCESS
         $client->Message(1,"Success");
     }
 }
-}
-
-}
