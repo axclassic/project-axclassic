@@ -1,5 +1,31 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==1/24/2013==
+Angelox: Redid the mana-bar update methods. Should work better now.
+Angelox: Pet buff slots methods updated.
+Angelox: Fixed HT/LoH in newer clients.  
+
+==1/23/2013==
+Angelox: Bots will update their mana bar in the group window. 
+	 Can also update mana bar with #bot mana command.  
+
+==1/22/2013==
+Angelox: Fixed Bard buffs not showing problem - also pet buffs tweak.
+Angelox: Newer clients will properly show targets buffs when targeting bots and pets.
+
+==1/19/2013==
+Angelox: Hopefully fixed the Underfoot buff-display problem.
+Angelox: More ports to all the clients.
+
+==1/14/2013==
+Fez_Ajer: Underfoot clients will display buffs.
+
+==1/13/2013==
+Angelox: Eqemu conf xml file brought up to date.
+
+==1/11/2013==
+Angelox: added a bundle of UF, HoT, SoD ports.
+
 ==1/10/2013==
 Angelox: Reverted to rev 390. 
 
