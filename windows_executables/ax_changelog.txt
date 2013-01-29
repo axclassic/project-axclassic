@@ -1,5 +1,9 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==1/28/2013==
+Angelox: Facelift started to AA, HT/LoH in newer clients still not working.
+Angelox: Minor fixes, memleak, unitiliazed data.
+
 ==1/24/2013==
 Angelox: Redid the mana-bar update methods. Should work better now.
 Angelox: Pet buff slots methods updated.

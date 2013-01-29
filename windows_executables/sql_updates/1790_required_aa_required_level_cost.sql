@@ -1,3 +1,5 @@
+ALTER TABLE `ax_classic`.`aa_required_level_cost` ENGINE = InnoDB;
+
 -- 
 -- Table structure for table `aa_required_level_cost`
 -- 
