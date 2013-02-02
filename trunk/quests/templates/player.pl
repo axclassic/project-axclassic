@@ -127,7 +127,8 @@ elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
     }
     ## Angelox: This is for anouncing events
    my $random_result = int(rand(100));
-   if ($random_result<=2){
+   $clientver = $client->GetClientVersion();
+   if ($random_result<=2 && $clientver > 3){ ##Need to fix this in the hard code
     $client->Message(14,"If you spot a bug while playing, you can send the report to us with the /bug command.");
     $client->Message(14,"Petitions are monitored constantly."); 
     }
