@@ -7,7 +7,7 @@ sub EVENT_ATTACK{
 }
 
 sub EVENT_DEATH {
-  quest::emote("'s corpse falls back, its legs jerking spastically.");
+  quest::emote("'s corpse falls back, its legs jerking spasmodically.");
  }
 
 sub EVENT_ITEM {
