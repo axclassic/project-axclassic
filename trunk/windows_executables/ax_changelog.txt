@@ -1,5 +1,21 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==2/02/2013==
+Angelox: Bot mana-bar updates better
+Angelox: Disabled battlerez, might be crashing zones.  
+
+==2/01/2013==
+Angelox: Cleaned up my bot disband, disbandgroup mess- everything is bundled into Disbandgroup() now. 
+
+==1/31/2013==
+Angelox: Reverted the run/follow animations fix was causing zone crashes (last svn commit).
+Angelox: Run/attack animation smoothed out in a new attempt(this commit).
+
+==1/29/2013==
+Angelox: Bot run/follow animations should look better.
+Angelox: World containers won't swallow items anymore.
+Angelox: Opcode manager fix.
+
 ==1/28/2013==
 Angelox: Facelift started to AA, HT/LoH in newer clients still not working.
 Angelox: Minor fixes, memleak, unitiliazed data.
