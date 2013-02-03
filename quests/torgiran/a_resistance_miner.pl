@@ -7,29 +7,29 @@ sub EVENT_ATTACK{
 }
 
 sub EVENT_DEATH {
-  quest::emote("'s corpse falls back, its legs jerking spasmodically.");
+  quest::emote("'s corpse falls back, its legs jerking spasmodically");
  }
 
 sub EVENT_ITEM {
  if (plugin::check_handin(\%itemcount, 2485 => 1)) {
       quest::signalwith(226200,23,0);
       quest::exp("100000");
-      quest::depop_withtimer();
+      quest::depop();
 }
  elsif (plugin::check_handin(\%itemcount, 2485 => 2)) {
       quest::signalwith(226200,24,0);
       quest::exp("200000");
-      quest::depop_withtimer();
+      quest::depop();
 }
  elsif (plugin::check_handin(\%itemcount, 2485 => 3)) {
       quest::signalwith(226200,25,0);
       quest::exp("300000");
-      quest::depop_withtimer();
+      quest::depop();
 }
  elsif (plugin::check_handin(\%itemcount, 2485 => 4)) {
       quest::signalwith(226200,26,0);
       quest::exp("400000");
-      quest::depop_withtimer();
+      quest::depop();
 }
 plugin::return_items(\%itemcount);
  }
