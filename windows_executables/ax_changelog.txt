@@ -1,8 +1,12 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==2/04/2013==
+Angelox: Changes to follow methods (less warping), interrupt spell tweaks.
+
 ==2/03/2013==
 Angelox: Bot will interrupt spell casting before attacking (possible zone-crash bug). 
 Angelox: Created RaidInterruptSpells() to insure all bots in raid are interrupting spells on changeover.
+Angelox: Tweaks and bug fixes.
 
 ==2/02/2013==
 Angelox: Bot mana-bar updates better
