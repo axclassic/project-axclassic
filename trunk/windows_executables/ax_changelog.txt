@@ -1,7 +1,11 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==2/05/2013==
+Angelox: Removing/adding bots to group will not pile them up on follow.
+
 ==2/04/2013==
 Angelox: Changes to follow methods (less warping), interrupt spell tweaks.
+Angelox: Removed/re-did most of the warp methods, any warp methods left followed by SendPosition();
 
 ==2/03/2013==
 Angelox: Bot will interrupt spell casting before attacking (possible zone-crash bug). 
