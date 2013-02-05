@@ -2,6 +2,7 @@ AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
 ==2/05/2013==
 Angelox: Removing/adding bots to group will not pile them up on follow.
+Angelox: AA AdvancedTracking.
 
 ==2/04/2013==
 Angelox: Changes to follow methods (less warping), interrupt spell tweaks.
