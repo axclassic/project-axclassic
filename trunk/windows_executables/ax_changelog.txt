@@ -1,8 +1,17 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==2/09/2013==
+Angelox: Botgroups spawn with mana they had before they were de-spawned.
+	 New bots to the group add with zero mana.
+	 Removed randomized warps, altered some SendPosition's.
+
+==2/06/2013==
+Angelox: Finished up/renamed to CoolDownTriggers. 
+
 ==2/05/2013==
 Angelox: Removing/adding bots to group will not pile them up on follow.
-Angelox: AA AdvancedTracking.
+Angelox: Derisions AA AdvancedTracking. 
+Angelox: For more info on EqEmu ports see attached EqEmuChangelog.txt.  
 
 ==2/04/2013==
 Angelox: Changes to follow methods (less warping), interrupt spell tweaks.
