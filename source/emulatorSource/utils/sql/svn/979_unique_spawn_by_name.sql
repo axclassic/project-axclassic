@@ -1,1 +1,0 @@
-ALTER TABLE `npc_types` ADD `unique_spawn_by_name` TINYINT UNSIGNED DEFAULT '0' NOT NULL AFTER `private_corpse`;

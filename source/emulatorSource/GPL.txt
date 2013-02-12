@@ -1,3 +1,0 @@
-GPL can be read at:
-
-http://www.opensource.org/licenses/gpl-license.php
