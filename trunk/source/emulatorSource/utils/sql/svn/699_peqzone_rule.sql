@@ -1,1 +1,0 @@
-INSERT INTO `rule_values` VALUES ('1', 'Zone:PEQZoneReuseTime', '300', 'Amount of time, in seconds, before you can reuse the #peqzone command');
