@@ -338,7 +338,7 @@ quest::level(30); #Set level to 30
 quest::shout2("Please congratulate!! $name is now working on the 3.0 Necromancer Epic!")
 }
 ######################################################################--BEGIN WARRIOR--####################################################################################
-elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 66177 => 1 or 66176 => 1)) { #Warrior epic 1.0 to 1.5
+elsif($ulevel == 65 && $class == 'warrior' && (plugin::check_handin(\%itemcount, 66177 => 1) | plugin::check_handin(\%itemcount, 66176 => 1))) { #Warrior epic 1.0 to 1.5
 $client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 $client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 $client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
@@ -449,7 +449,7 @@ quest::level(30); #Set level to 30
 quest::shout2("Please congratulate!! $name is now working on the 3.0 Monk Epic!")
 }
 ######################################################################--BEGIN BEASTLORD--####################################################################################
-elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 8495 => 1 or 8496 => 1)) { #Beastlord epic 1.0 to 1.5
+elsif($ulevel == 65 && $class == 'beastlord' && (plugin::check_handin(\%itemcount, 8495 => 1) | plugin::check_handin(\%itemcount, 8496 => 1))) { #Beastlord epic 1.0 to 1.5
 $client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 $client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 $client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
@@ -597,7 +597,7 @@ quest::level(30); #Set level to 30
 quest::shout2("Please congratulate!! $name is now working on the 3.0 Berserker Epic!")
 }
 ######################################################################--BEGIN RANGER--####################################################################################
-elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 20488 => 1 or 20487 => 1)) { #Ranger epic 1.0 to 1.5 || plugin::check_handin(\%itemcount, 204887 => 1)
+elsif($ulevel == 65 && $class == 'ranger' && (plugin::check_handin(\%itemcount, 20488 => 1) | plugin::check_handin(\%itemcount, 20487 => 1))) { #Ranger epic 1.0 to 1.5  
 $client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 $client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 $client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
