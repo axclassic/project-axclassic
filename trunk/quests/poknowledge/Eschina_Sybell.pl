@@ -37,6 +37,7 @@ return 1;
 quest::movepc(233, -610.42, -359.91, 6.08);
   }
 }
+
 sub EVENT_ITEM {
 
 if (plugin::check_handin(\%itemcount, 119517 => 4)) {
@@ -48,13 +49,20 @@ my @items = (119499,119501,119514,119515,119516,119518,119519,119521,119522); #A
     quest::ding();
     return 1;
  }
-elsif (plugin::check_handin((\%itemcount, 119499 => 2) || (\%itemcount, 119501 => 2) || (\%itemcount, 119514 => 2) || (\%itemcount, 119515 => 2) || (\%itemcount, 119516 => 2) || (\%itemcount, 119518 => 2) || (\%itemcount, 119519 => 2) || (\%itemcount, 119521 => 2) || (\%itemcount, 119522 => 2))) {
+ 
+elsif (plugin::check_handin(\%itemcount, 119499 => 2) | plugin::check_handin(\%itemcount, 119501 => 2) | 
+       plugin::check_handin(\%itemcount, 119514 => 2) | plugin::check_handin(\%itemcount, 119515 => 2) | 
+       plugin::check_handin(\%itemcount, 119516 => 2) | plugin::check_handin(\%itemcount, 119518 => 2) | 
+       plugin::check_handin(\%itemcount, 119519 => 2) | plugin::check_handin(\%itemcount, 119521 => 2) | 
+       plugin::check_handin(\%itemcount, 119522 => 2)) {
         $client->Message(14,"Thank you $class , I will exchange the 2 double ones for 1 new random illusion stone. enjoy...");
+        
 my @items = (119499,119501,119514,119515,119516,119518,119519,119521,119522); #All the illusion stones
     my $total = $items[ rand @items ]; #Randomize
     quest::summonitem($total);
     return 1;
  }
+ 
 else {
         $client->Message(14,"I don't need this $name. Take it back.");
         plugin::return_items(\%itemcount);
