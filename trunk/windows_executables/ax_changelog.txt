@@ -1,5 +1,14 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==2/24/2013==
+Angelox: /raidinvite disabled (was being used for exploit). 
+
+==2/18/2013==
+Angelox: Changes to launcher updater, should write to the database after an hour. 
+
+==2/13/2013==
+Angelox: Renamed petAI.cpp to botPetAI.cpp since its only used for the bots.
+
 ==2/09/2013==
 Angelox: Botgroups spawn with mana they had before they were de-spawned.
 	 New bots to the group add with zero mana.
