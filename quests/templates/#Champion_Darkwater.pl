@@ -23,7 +23,7 @@ my $second = quest::saylink("second", 1);
     $client->Message(15,"You should start your new character on or after the starting date.");
     return; 
   }
-  if ($text=~/Hail/i) && ($charid > 3167)){  #set
+  if (($text=~/Hail/i) && ($charid > 3167)){  #set
     $client->Message(14,"Hail, $name! I am Darkwater the Ladder Guide, and will be observing and rewarding you for your advancement on the Ladder."); 
     $client->Message(14,"I will $reward you for advancement to levels 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title\, and I will provide it for you, in addition to your reward.");
      if (($year2012a <= 0) && ($event1==1)){ #Angelox New Years event earring item.
