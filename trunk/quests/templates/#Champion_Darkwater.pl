@@ -16,14 +16,14 @@ my $possession = quest::saylink("possession", 1);
 my $prove = quest::saylink("prove", 1);
 my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
-  if(($text=~/Hail/i) && ($charid < 1)) { #set
+  if(($text=~/Hail/i) && ($charid < 3168)) { #set
     #$client->Message(14,"Your character ID is $charid ");
     $client->Message(14,"Your character is too old for this ladder, start a new character!");
-    $client->Message(15,"This ladder began on January 26th, 2012, ending date posted at the AX Classic forums..");
+    $client->Message(15,"This ladder begins on January 1st, 2013, ending date posted at the AX Classic forums..");
     $client->Message(15,"You should start your new character on or after the starting date.");
     return; 
   }
-  if ($text=~/Hail/i){ # && ($charid > 0)){  #set
+  if ($text=~/Hail/i) && ($charid > 3167)){  #set
     $client->Message(14,"Hail, $name! I am Darkwater the Ladder Guide, and will be observing and rewarding you for your advancement on the Ladder."); 
     $client->Message(14,"I will $reward you for advancement to levels 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title\, and I will provide it for you, in addition to your reward.");
      if (($year2012a <= 0) && ($event1==1)){ #Angelox New Years event earring item.
@@ -49,7 +49,7 @@ my $second = quest::saylink("second", 1);
       }
     return;
   }
-  if (($text=~/join/i)&& ($charid > 0)){ #set
+  if (($text=~/join/i)&& ($charid > 3167)){ #set
     $client->Message(14,"Glad to have you with us ");
     return; 
   }
@@ -63,17 +63,17 @@ my $second = quest::saylink("second", 1);
     $client->SetAATitle("Ladder Champion");
     return;
   }
-  if (($text=~/title/i) && ($charid > 0) && ($ulevel > 64)) { #set
+  if (($text=~/title/i) && ($charid > 3167) && ($ulevel > 64)) { #set
     $client->Message(14,"Well done $name! Here is your title.");
     $client->SetAATitle("Ladder Champion");
     return;
   }
-  if (($text=~/title/i) && ($charid > 0) && ($ulevel < 65)) { #set
+  if (($text=~/title/i) && ($charid > 3167) && ($ulevel < 65)) { #set
     $client->Message(14,"You need to be level 65 on the Ladder for this.");
     $client->Message(15,"Ladder title is available during the time period posted.");
     return;
   }
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 19) &&  ($ulevel < 35) && ($ladder_trophy < 1)) { #set LadderTrophy1
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 19) &&  ($ulevel < 35) && ($ladder_trophy < 1)) { #set LadderTrophy1
     $client->Message(14,"Well done $name! Here is your trophy.");
     quest::summonitem(409);
     $client->Message(6,"You recieved the Ladder Players Trophy!");
@@ -82,12 +82,12 @@ my $second = quest::saylink("second", 1);
     $ladder_trophy=undef;
     return;
 	}
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 19) &&  ($ulevel < 35) && ($ladder_trophy==1)) {
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 19) &&  ($ulevel < 35) && ($ladder_trophy==1)) {
 	$client->Message(14,"You already have your level 20 trophy.");
 	$client->Message(14,"Do you still travel by ship? I have $items in my possession that can help you with your travels.");
 	return;
 	}
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 34) &&  ($ulevel < 45) && ($ladder_trophy < 2)) { #set LadderTrophy2
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 34) &&  ($ulevel < 45) && ($ladder_trophy < 2)) { #set LadderTrophy2
     $client->Message(14,"Well done $name! Here is your trophy.");
     quest::summonitem(410);
     $client->Message(6,"You recieved the Dedicated Ladder Players Trophy!");
@@ -95,11 +95,11 @@ my $second = quest::saylink("second", 1);
     $ladder_trophy=undef;
     return;
 	}
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 34) &&  ($ulevel < 45) && ($ladder_trophy==2)) {
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 34) &&  ($ulevel < 45) && ($ladder_trophy==2)) {
 	$client->Message(14,"You already have your level 35 trophy.");
 	return;
 	}
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 44) &&  ($ulevel < 55) && ($ladder_trophy < 3)) { #set LadderTrophy3
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 44) &&  ($ulevel < 55) && ($ladder_trophy < 3)) { #set LadderTrophy3
     $client->Message(14,"Well done $name! Here is your trophy.");
     quest::summonitem(411);
     $client->Message(6,"You recieved the Advanced Ladder Players Trophy!");
@@ -107,11 +107,11 @@ my $second = quest::saylink("second", 1);
     $ladder_trophy=undef;
     return;
 	}
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 44) &&  ($ulevel < 55) && ($ladder_trophy==3)) {
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 44) &&  ($ulevel < 55) && ($ladder_trophy==3)) {
 	$client->Message(14,"You already have your level 45 trophy.");
 	return;
 	}
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 54) &&  ($ulevel < 65) && ($ladder_trophy < 4)) { #set LadderTrophy4
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 54) &&  ($ulevel < 65) && ($ladder_trophy < 4)) { #set LadderTrophy4
     $client->Message(14,"Well done $name! Here is your trophy.");
     quest::summonitem(412);
     $client->Message(6,"You recieved the Master's Ladder Players Trophy!");
@@ -119,10 +119,10 @@ my $second = quest::saylink("second", 1);
     $ladder_trophy=undef;
     return;
 	}
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 54) &&  ($ulevel < 65) && ($ladder_trophy==4)) {
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 54) &&  ($ulevel < 65) && ($ladder_trophy==4)) {
 	$client->Message(14,"You already have your level 55 trophy.");
 	return;}
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 64) && ($ladder_trophy < 5)) { #set LadderTrophy5
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 64) && ($ladder_trophy < 5)) { #set LadderTrophy5
     $client->Message(14,"Well done $name! Here is your trophy.");
     quest::summonitem(413);
     $client->Message(6,"You recieved the Champion's Ladder Players Trophy!");
@@ -130,7 +130,7 @@ my $second = quest::saylink("second", 1);
     $ladder_trophy=undef;
     return;
 	}
-  if (($text=~/reward/i) && ($charid > 0) && ($ulevel > 64) && ($ladder_trophy==5)) {
+  if (($text=~/reward/i) && ($charid > 3167) && ($ulevel > 64) && ($ladder_trophy==5)) {
 	$client->Message(14,"You already have your level 65 trophy.");
 	return;
 	}
@@ -190,7 +190,7 @@ my $second = quest::saylink("second", 1);
     return;
 	}
 #End Moonstone - rest in EVENT_ITEM
-  if (($text=~/reward/i) && ($charid > 0)) { #set
+  if (($text=~/reward/i) && ($charid > 3167)) { #set
     $client->Message(14,"You need to get to level 20!");
     return;
   }
@@ -201,7 +201,7 @@ my $second = quest::saylink("second", 1);
 }
 
 sub EVENT_ITEM{
-  if ($charid < 1) { #set
+  if ($charid < 3168) { #set
     #quest::say("Your character ID is $charid ");
     $client->Message(14,"Your character is too old for this ladder, start a new character!");
     $client->Message(15,"This ladder began on January 26th, 2012, ending date posted at the AX Classic forums.");
