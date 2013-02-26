@@ -1,5 +1,12 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==2/26/2013==
+Angelox: Most of the bot commands will adivise when not enough mana. 
+
+==2/25/2013==
+Angelox: Pets can also recieve #bot skin, sow, and temperance. 
+	 More bots will announce when they're out of mana, instead of cast and nothing happens.  
+
 ==2/24/2013==
 Angelox: /raidinvite disabled (was being used for exploit). 
 
