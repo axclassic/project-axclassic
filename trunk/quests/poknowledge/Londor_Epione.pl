@@ -17,7 +17,7 @@ my $port = quest::saylink("port", 1);
   }
   
   if ($text=~/port/i && $ulevel >= 65) {
-    $client->Message(14,"Just hand me 250pp and I will port you to the Arena.");
+    $client->Message(14,"Just hand me 25pp and I will port you to the Arena.");
   }
 }
 
