@@ -29,9 +29,9 @@ my $random_result = int(rand(100));
   if ($random_result<=2){
     $client->Message(14,"If you spot a bug while playing, you can send the report to us with the /bug command.");
   }
-  elsif ($random_result<=4){
-    $client->Message(14,"Don't forget: Rathe server restarts daily at 4:01am eastern time, server will stay down minutes for maintenance, then start again - make sure you're in a safe spot before the restart.");
-  }
+ # elsif ($random_result<=4){
+ #   $client->Message(14,"Don't forget: Rathe server restarts daily at 4:01am eastern time, server will stay down minutes for maintenance, then start again - make sure you're in a safe spot before the restart.");
+ # }
  # elsif ($random_result<=15){
  #   $client->Message(14,"The new ladder started on New Years 2012, New characters created on or after this date should talk to Champion Darkwater.");
  # }
