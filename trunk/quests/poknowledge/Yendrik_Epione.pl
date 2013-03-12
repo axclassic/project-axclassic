@@ -7,45 +7,60 @@
 #######################################
 sub EVENT_SAY {
 my $open = quest::saylink("open", 1);
-my $recovery = quest::saylink("recovery", 1); 
+my $back = quest::saylink("back", 1);
+my $here = quest::saylink("here", 1);
 
-  if ($text=~/hail/i && $ulevel >= 65) {
-    $client->Message(14,"Hello $name , I am Yendrik Epione. I am here to tell you about Tier 2 armor, it is called Rathe Armor (Tier 2) it can be found in a special instanced dungeon. You can find all the pieces there exept for the chest pieces. You wil have to bring me 3 The Rathe Server Doll (Tier 2)'s and I wil give you a random Tier 2 chestpiece, either Leather, Plate, Chain or Silk. These dolls drop in this quest dungeon to occasionaly. If you want I can $open a zone instance for you to begin your Tier 2 challenge, it will stay open for 3 hours. I charge 1000pp per zone instance."); 
-$client->Message(12,"In the event that you would die in the quest instance I can port you to the corpse $recovery instance. Your corpse will end up here after the zone instance closes. Corpse recovery is off course free of charge.");
+  if ($text=~/hail/i && $ulevel >= 64) {
+    $client->Message(14,"Hello $name , I am Yendrik Epione. I am here to tell you about Tier 2 armor, it is called Rathe Armor (Tier 2) it can be found in a special instanced dungeon. You can find all the pieces there exept for the chest pieces. You wil have to bring me 3 The Rathe Server Doll (Tier 2)'s and I wil give you a random Tier 2 chestpiece, either Leather, Plate, Chain or Silk. These dolls drop in this quest dungeon to occasionaly. If you want I can $open a zone instance for you to begin your Tier 2 challenge, it will stay open for 3.5 hours. I charge 1000pp per zone instance. You can purchase a new instance after the old one has expired.");
+$client->Message(12,"In the event that you would die in your Tier 2 quest instance I can port you $back for as long as the instance is active. In case your instance has already expired, your corpse will end up $here.");
   }
 
-  if ($text=~/hail/i && $ulevel < 65) {
+  if ($text=~/hail/i && $ulevel < 64) {
     $client->Message(14,"Hello $name , the Tier 2 server challenge and quest I am offering is for level 65++ people only. Come back when you reach level 65.");
   }
-  
+
   if ($text=~/open/i && $ulevel >= 65) {
     $client->Message(14,"Just hand me 1000pp and i will create the instance for your challenge and port you there.");
   }
-  if ($text=~/recovery/i && $ulevel >= 65) {
-    $client->Message(14,"Going to send you to the corpse recovery instance now. Remember there is only 1 player allowed in this instance, if there already is a player you will have to wait until this player leaves.");
-quest::movepc(308, 0.00, 0.00, -0.21);
-return 1;
-  }
-}
+  if ($text=~/back/i && $ulevel >= 64) {
+   if (defined($qglobals{$name."chambersf"})) {
 
+     $client->Message(14,"Going to send you back to your instance now.");
+     my $QGlobalValue = $qglobals{$name."chambersf"};
+     quest::MovePCInstance(309, $QGlobalValue, 0.00, 0.00, -0.21);
+}
+else {
+ $client->Message(14,"You seem to have no Tier 2 instance.");
+}
+return 1;
+}
+if ($text=~/here/i && $ulevel >= 64) {
+$client->Message(14,"Going to send you to the corpse recovery instance now. Remember there is only 1 player allowed in this instance, if there already is a player you will have to wait until this player leaves. Your corpse will end up here after your instance has expired.");
+quest::movepc(309, 0.00, 0.00, -0.21);
+
+
+}
+}
 
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 119592 => 3)) {
-    $client->Message(14,"Thank you $class , here is your Tier 1 chest piece."); #random tier 1 chest piece handin.
+    $client->Message(14,"Thank you $class , here is your Tier 2 chest piece."); #random tier 2 chest piece handin.
     my @items = (119584,119591,119599,119606); #All BP's
     my $total = $items[ rand @items ]; #Randomize
     quest::summonitem($total);
     return 1;
  }
- 
-elsif (($platinum == 1000) && $ulevel >= 65) {
+
+elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"})) {
     $client->Message(14,"Thank you $class , you are on the way to your Tier 2 Challenge, good luck!"); #Money handin fr port.
+
     my $instanceID = quest::CreateInstance("chambersf", 0, 12800);
-quest::AssignToInstance($instanceID);
-quest::MovePCInstance(309, $instanceID, 0.00, 0.00, -0.21, 150);        
+    quest::AssignToInstance($instanceID);
+    quest::setglobal($name."chambersf",$instanceID,7,M213);
+    quest::MovePCInstance(309, $instanceID, 0.00, 0.00, -0.21, 150);
 return 1;
  }
- 
+
 else {
     $client->Message(14,"I don't need this $name. Take it back.");
     plugin::return_items(\%itemcount);
