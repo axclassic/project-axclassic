@@ -23,7 +23,7 @@ $client->Message(12,"In the event that you would die in the quest instance I can
   }
   if ($text=~/recovery/i && $ulevel >= 65) {
     $client->Message(14,"Going to send you to the corpse recovery instance now. Remember there is only 1 player allowed in this instance, if there already is a player you will have to wait until this player leaves.");
-quest::movepc(309, 0.00, 0.00, -0.21);
+quest::movepc(308, 0.00, 0.00, -0.21);
 return 1;
   }
 }
