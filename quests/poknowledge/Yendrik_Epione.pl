@@ -64,7 +64,7 @@ return 1;
  }
  elsif (($platinum == 1000) && $ulevel >= 65 && defined($qglobals{$name."chambersf"})) {
     $client->Message(14,"You already have an instance that hasn't expired yet, here is your money back $name."); #Instance exists Money back.
-    quest::givecash(1000,0,0,0);
+    quest::givecash(0,0,0,1000);
 return 1;
  }
 
