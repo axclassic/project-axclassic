@@ -23,7 +23,7 @@ $client->Message(12,"In the event that you would die in your Tier 2 quest instan
     $client->Message(14,"Just hand me 1000pp and i will create the instance for your challenge and port you there.");
   }
   if ($text=~/open/i && $ulevel >= 65 && defined($qglobals{$name."chambersf"})) {
-    $client->Message(14,"You already have an existing Tier 2 zone instance. You can't purchase a newone till it has expired,but I can port you $back to it if you like.");
+    $client->Message(14,"You already have an existing Tier 2 zone instance. You can't purchase a newone until it has expired, but I can port you $back to it if you like.");
 }
   if ($text=~/back/i && $ulevel >= 64) {
    if (defined($qglobals{$name."chambersf"})) {
@@ -63,7 +63,7 @@ elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chamber
 return 1;
  }
  elsif (($platinum == 1000) && $ulevel >= 65 && defined($qglobals{$name."chambersf"})) {
-    $client->Message(14,"You already have an instance that hasn't expired yet, here is your money back $name."); #Instance exists Money back.
+    $client->Message(14,"You already have a Tier 2 instance that hasn't expired yet, here is your money back $name."); #Instance exists Money back.
     quest::givecash(0,0,0,1000);
 return 1;
  }
