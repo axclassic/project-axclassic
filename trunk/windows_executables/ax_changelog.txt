@@ -1,5 +1,12 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==3/14/2013==
+Angelox: Some work on raid-attack logic in zones with no pathing.
+Angelox: Tank should not get hung up on walls for long, if zone pathing is bad.
+
+==3/05/2013==
+Angelox: #Bot Spawn, SpawnGroup, SpawnRaid timer-delay reduced to 5 and 10 seconds in non combat zones.
+
 ==2/26/2013==
 Angelox: Most of the bot commands will adivise when not enough mana. 
 
