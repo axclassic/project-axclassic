@@ -4,7 +4,7 @@ sub EVENT_CLICKDOOR {
 	if (defined($qglobals{potimeLockout}) && $qglobals{potimeLockout} > 0 && !defined($qglobals{potime_canzone})) {
 		quest::shout("I AM HERE");
 	} elsif ($instance > 0) {
-		if ($d_id == 8) { 
+		if ($d_id == 8) {
 			quest::MovePCInstance(223, $instance, -36, 1352, 496);
 			$client->Message(10, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(10, "The portal flashes briefly, then glows steadily.");
@@ -33,20 +33,30 @@ sub EVENT_CLICKDOOR {
 		} elsif($d_id == 13) {
 			quest::MovePCInstance(223, $instance, 865, -150, 395);
 			$client->Message(10, "The portal, dim at first, begins to glow brighter.");
-			$client->Message(10, "The portal flashes briefly, then glows steadily.");	
+			$client->Message(10, "The portal flashes briefly, then glows steadily.");
 		}
 	}
-}  
+}
 
 sub EVENT_ENTERZONE {
-	if(!defined($qglobals{time_enter}) && $status < 10){
+if (defined($qglobals{$name."potimea"})) {
+     my $QGlobalValue = $qglobals{$name."potimea"};
+     quest::MovePCInstance(219, $QGlobalValue, 233.00, 140.00, 9.12, 150);
+}
+if (!defined($qglobals{$name."potimea"})) {
+    my $instanceID = quest::CreateInstance("potimea", 0, 10000);
+    quest::AssignToInstance($instanceID);
+    quest::setglobal($name."potimea",$instanceID,7,M166);
+    quest::MovePCInstance(219, $instanceID, 233.00, 140.00, 9.12, 150);
+}
+if(!defined($qglobals{time_enter}) && $status < 10){
 		quest::we(15, "The earth rumbles, sky thunders, volcanoes erupt, and tidal waves crash as the Gods prepare their armies for battle. The first of the mortals have obtained the power to cross into the Plane of Time!");
 		quest::setglobal("time_enter",1,7,"F");
 	}
 if (defined $qglobals{whimsy}) {
 quest::delglobal("whimsy");
 }
-if($hasitem{69059}) { 
+if($hasitem{69059}) {
   quest::settimer(1,72);
   }
 }
@@ -83,4 +93,4 @@ if($whimsy_count == 10) {
  quest::setglobal("whimsy",10,5,"F");
  quest::stoptimer(1);
  }
-}  
+}
