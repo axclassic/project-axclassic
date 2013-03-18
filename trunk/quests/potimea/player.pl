@@ -39,16 +39,7 @@ sub EVENT_CLICKDOOR {
 }
 
 sub EVENT_ENTERZONE {
-if (defined($qglobals{$name."potimea"})) {
-     my $QGlobalValue = $qglobals{$name."potimea"};
-     quest::MovePCInstance(219, $QGlobalValue, 233.00, 140.00, 9.12, 150);
-}
-if (!defined($qglobals{$name."potimea"})) {
-    my $instanceID = quest::CreateInstance("potimea", 0, 10000);
-    quest::AssignToInstance($instanceID);
-    quest::setglobal($name."potimea",$instanceID,7,M166);
-    quest::MovePCInstance(219, $instanceID, 233.00, 140.00, 9.12, 150);
-}
+
 if(!defined($qglobals{time_enter}) && $status < 10){
 		quest::we(15, "The earth rumbles, sky thunders, volcanoes erupt, and tidal waves crash as the Gods prepare their armies for battle. The first of the mortals have obtained the power to cross into the Plane of Time!");
 		quest::setglobal("time_enter",1,7,"F");
