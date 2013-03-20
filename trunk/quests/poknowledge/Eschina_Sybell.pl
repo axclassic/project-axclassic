@@ -38,19 +38,16 @@ $client->Message(12,"If you die during this quest, I can send you $back to your 
         $client->Message(14,"You already have an active instance. You can't get a new one before the old one expires. But I can port you $back to your own instance.");
         return 1;
 }
-    if ($text=~/back/i && $ulevel >= 59) {
-     if (defined($qglobals{$name."mmca"})) {
+    if ($text=~/back/i && $ulevel >= 59 && defined($qglobals{$name."mmca"})) {
      $client->Message(14,"Going to send you back to your quest instance now.");
      my $QGlobalValue = $qglobals{$name."mmca"};
      quest::MovePCInstance(233, $QGlobalValue, -610.42, -359.91, 6.08, 150);
 }
-else {
- $client->Message(14,"You seem to have no quest instance.");
-}
-return 1;
+    if ($text=~/back/i && $ulevel >= 59 && !defined($qglobals{$name."mmca"}) ) {
+      $client->Message(14,"You seem to have no quest instance.");
 }
       if ($text=~/send/i && $ulevel >= 59 && !defined($qglobals{$name."mmca"})) {
-        $client->Message(14,"I am sending you to the regular Forlorn zone instance. Your corpse will be available there after your quest instance has expired, not before..");
+        $client->Message(14,"I am going to send you to the regular Forlorn zone instance. Your corpse will be available there after your quest instance has expired, not before..");
 quest::movepc(233, -610.42, -359.91, 6.08);
   }
       if ($text=~/send/i && $ulevel >= 59 && defined($qglobals{$name."mmca"})) {
