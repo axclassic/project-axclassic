@@ -20,7 +20,7 @@ $client->Message(12,"In the event that you would die in your Tier 2 quest instan
   }
 
   if ($text=~/open/i && $ulevel >= 65 && !defined($qglobals{$name."chambersf"})) {
-    $client->Message(14,"Just hand me 1000pp and i will create the instance for your challenge and port you there.");
+    $client->Message(14,"Just hand me 1000pp and I will create the instance for your challenge and port you there.");
   }
   if ($text=~/open/i && $ulevel >= 65 && defined($qglobals{$name."chambersf"})) {
     $client->Message(14,"You already have an existing Tier 2 zone instance. You can't purchase a newone until it has expired, but I can port you $back to it if you like.");
