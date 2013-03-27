@@ -38,17 +38,21 @@ $client->Message(12,"If you die during this quest, I can send you $back to your 
         $client->Message(14,"You already have an active instance. You can't get a new one before the old one expires. But I can port you $back to your own instance.");
         return 1;
 }
-    if ($text=~/back/i && $ulevel >= 59 && defined($qglobals{$name."mmca"})) {
+  if ($text=~/back/i && $ulevel >= 59) {
+   if (defined($qglobals{$name."mmca"})) {
      $client->Message(14,"Going to send you back to your quest instance now.");
      my $QGlobalValue = $qglobals{$name."mmca"};
      quest::MovePCInstance(233, $QGlobalValue, -610.42, -359.91, 6.08, 150);
 }
-    if ($text=~/back/i && $ulevel >= 59 && !defined($qglobals{$name."mmca"}) ) {
-      $client->Message(14,"You seem to have no quest instance.");
+
+  else {
+     $client->Message(14,"You seem to have no quest instance.");
+}
 }
       if ($text=~/send/i && $ulevel >= 59 && !defined($qglobals{$name."mmca"})) {
         $client->Message(14,"I am going to send you to the regular Forlorn zone instance. Your corpse will be available there after your quest instance has expired, not before..");
-quest::movepc(233, -610.42, -359.91, 6.08);
+       quest::movepc(233, -610.42, -359.91, 6.08);
+       return 1;
   }
       if ($text=~/send/i && $ulevel >= 59 && defined($qglobals{$name."mmca"})) {
         $client->Message(14,"You have a quest instance open you can go $back to recover your corpse.")
@@ -65,7 +69,7 @@ my @items = (119499,119501,119514,119515,119516,119518,119519,119521,119522,1196
     quest::ding();
     return 1;
  }
-elsif (plugin::check_handin((\%itemcount, 119499 => 2) || (\%itemcount, 119501 => 2) || (\%itemcount, 119514 => 2) || (\%itemcount, 119515 => 2) || (\%itemcount, 119516 => 2) || (\%itemcount, 119518 => 2) || (\%itemcount, 119519 => 2) || (\%itemcount, 119521 => 2) || (\%itemcount, 119522 => 2)  || (\%itemcount, 119666 => 2) || (\%itemcount, 119667 => 2))) {
+elsif (plugin::check_handin(\%itemcount, 119499 => 2) || plugin::check_handin(\%itemcount, 119501 => 2) || plugin::check_handin(\%itemcount, 119514 => 2) || plugin::check_handin(\%itemcount, 119515 => 2) || plugin::check_handin(\%itemcount, 119516 => 2) || plugin::check_handin(\%itemcount, 119518 => 2) || plugin::check_handin(\%itemcount, 119519 => 2) || plugin::check_handin(\%itemcount, 119521 => 2) || plugin::check_handin(\%itemcount, 119522 => 2) || plugin::check_handin(\%itemcount, 119666 => 2) || plugin::check_handin(\%itemcount, 119667 => 2)) {
         $client->Message(14,"Thank you $class , I will exchange the 2 double ones for 1 new random illusion stone. enjoy...");
 my @items = (119499,119501,119514,119515,119516,119518,119519,119521,119522,119666,119667); #All the illusion stones
     my $total = $items[ rand @items ]; #Randomize
