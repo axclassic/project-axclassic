@@ -231,7 +231,6 @@ else {
      if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
       quest::givecash($copper, $silver, $gold, $platinum);
   }
- }
 }
 
 
