@@ -1,5 +1,7 @@
 # Resqu Miplez
 # Plane patterns
+
+
 sub EVENT_SAY{
   if($text=~/hail/i) {
     quest::say("Hello $name, Feel free to browse my wares. Or prehaps you would be interested in making a [deal]?");
@@ -10,6 +12,7 @@ sub EVENT_SAY{
   elsif($text=~/planes/i) {
     quest::say("Come on you know! Ornate or Elemental they are used by the guards to renew their armor. Now what do you say you head off and find me some?");
   }
+}
 
 ## cash Ornate ##
 sub EVENT_ITEM {
