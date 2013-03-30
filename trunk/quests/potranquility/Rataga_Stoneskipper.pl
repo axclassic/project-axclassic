@@ -1,5 +1,5 @@
-## Resqu Miplez
-## Plane patterns
+# Resqu Miplez
+# Plane patterns
 sub EVENT_SAY{
   if($text=~/hail/i) {
     quest::say("Hello $name, Feel free to browse my wares. Or prehaps you would be interested in making a [deal]?");
@@ -12,7 +12,8 @@ sub EVENT_SAY{
   }
 
 ## cash Ornate ##
-  elsif($itemcount{16290} == 1){
+sub EVENT_ITEM {
+  if($itemcount{16290} == 1)){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
@@ -217,7 +218,7 @@ sub EVENT_SAY{
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif($itemcount{16389} == 1){
+ elsif($itemcount{16389} == 1){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
