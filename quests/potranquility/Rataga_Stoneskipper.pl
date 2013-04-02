@@ -16,212 +16,212 @@ sub EVENT_SAY{
 
 ## cash Ornate ##
 sub EVENT_ITEM{
-  if(item1 == 16290){
+  if($item1 == 16290){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16291){
+  elsif($item1 == 16291){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16292){
+  elsif($item1 == 16292){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16293){
+  elsif($item1 == 16293){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16294){
+  elsif($item1 == 16294){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16295){
+  elsif($item1 == 16295){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16296){
+  elsif($item1 == 16296){
     quest::say("Thank you!");
    quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16297){
+  elsif($item1 == 16297){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16298){
+  elsif($item1 == 16298){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16299){
+  elsif($item1 == 16299){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16343){
+  elsif($item1 == 16343){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16344){
+  elsif($item1 == 16344){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16345){
+  elsif($item1 == 16345){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16346){
+  elsif($item1 == 16346){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16347){
+  elsif($item1 == 16347){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16348){
+  elsif($item1 == 16348){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16349){
+  elsif($item1 == 16349){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16350){
+  elsif($item1 == 16350){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16351){
+  elsif($item1 == 16351){
     quest::say("Thank you!");
    quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16352){
+  elsif($item1 == 16352){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16353){
+  elsif($item1 == 16353){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16354){
+  elsif($item1 == 16354){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16355){
+  elsif($item1 == 16355){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16356){
+  elsif($item1 == 16356){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }  
-  elsif(item1 == 16357){
+  elsif($item1 == 16357){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16358){
+  elsif($item1 == 16358){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16359){
+  elsif($item1 == 16359){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
-  elsif(item1 == 16360){
+  elsif($item1 == 16360){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 200);
   }
  ## Elemental Patterns ##
-  elsif(item1 == 16362){
+  elsif($item1 == 16362){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16364){
+  elsif($item1 == 16364){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16365{
+  elsif($item1 == 16365{
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16366){
+  elsif($item1 == 16366){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16367){
+  elsif($item1 == 16367){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16368){
+  elsif($item1 == 16368){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16369){
+  elsif($item1 == 16369){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16370){
+  elsif($item1 == 16370){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16371){
+  elsif($item1 == 16371){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16372){
+  elsif($item1 == 16372){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16373){
+  elsif($item1 == 16373){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16374){
+  elsif($item1 == 16374){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16376){
+  elsif($item1 == 16376){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16378){
+  elsif($item1 == 16378){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16379){
+  elsif($item1 == 16379){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16380){
+  elsif($item1 == 16380){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16381){
+  elsif($item1 == 16381){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16382){
+  elsif($item1 == 16382){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16383){
+  elsif($item1 == 16383){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16385){
+  elsif($item1 == 16385){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16386){
+  elsif($item1 == 16386){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16387){
+  elsif($item1 == 16387){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16388){
+  elsif($item1 == 16388){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
-  elsif(item1 == 16389){
+  elsif($item1 == 16389){
     quest::say("Thank you!");
     quest::givecash(0, 0, 0, 400);
   }
