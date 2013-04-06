@@ -8,7 +8,7 @@ sub EVENT_SAY{
 
   if($text=~/hail/i) {
 
-    quest::say("Hello $name, Feel free to browse my wares. Or prehaps you would be interested in making a [deal]?");
+    quest::say("Hello $name, I conduct trade with the Planes Guards, prehaps you would be interested in making a [deal]?");
 
   }
 
