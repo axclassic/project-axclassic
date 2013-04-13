@@ -3,7 +3,7 @@
 ## 4/13/2013 ##
 
 sub EVENT_SAY{
- if ($text =~ /Hail/i && $ulevel = 65){
+ if ($text =~ /Hail/i && $ulevel >= 65){
      quest::say("Necklace, Betrayed so betrayed, so many needs, so lost so so so...");
 }
 else {

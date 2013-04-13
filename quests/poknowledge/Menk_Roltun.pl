@@ -7,7 +7,7 @@ my $Betrayal = quest::saylink("Betrayal", 1);
 my $work = quest::saylink("work",1);
 my $new = quest::saylink("new",1);
 
-	if ($text =~ /Hail/i && $ulevel = 65){
+	if ($text =~ /hail/i && $ulevel >= 65){
  $client->Message(14,"Hello $class , I am very busy researching the Halls of $Betrayal.");
 	}
 	if ($text =~ /betrayal/i){
