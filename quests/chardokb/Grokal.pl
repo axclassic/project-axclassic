@@ -18,6 +18,7 @@ my $box = quest::saylink("box",1);
 	}
 	if ($text =~ /box/i){
 	$client->Message(14,"Find the one named Nox. He is filled with Hate but he maybe willing for alittle payment if you ask him about the box.");
+	}
 	else{
 	quest::say("I knew I should keep my secrets to myself.");
 	}
