@@ -20,7 +20,7 @@ if ($text=~/assist/i && $ulevel >= 65) {
     return 1;
 }
 else {
-        $client->Message(14,"Begone with you. I am to busy for idle chit chat.");
+
         plugin::return_items(\%itemcount);
 	    return 1;
 }
