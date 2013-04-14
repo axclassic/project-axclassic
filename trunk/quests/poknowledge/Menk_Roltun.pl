@@ -18,8 +18,9 @@ my $new = quest::saylink("new",1);
 	}
 	elsif ($text =~ /new/i && $ulevel >= 65){
 	$client->Message(14,"Now that's what I am trying to find out the clerics in freeport have the information but refuse to share it.");
+	}
 	else{
-	quest::say("Excuse me I am busy reading. Can you not see!");
+	quest::say();
 	}
 }
 
