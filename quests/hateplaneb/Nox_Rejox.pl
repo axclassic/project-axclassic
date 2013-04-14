@@ -7,10 +7,10 @@ sub EVENT_SAY{
 	quest::say("Shh the master does not know I am here so leave before you give me away and we both die.");
 	}
 	elsif ($text =~ /box/i){
-	quest::say("Why should I just give you that information. If ypu want it that bad then pay up 1000K then I will tell you.");
+	quest::say("Why should I just give you that information. If you want it that bad then pay up 1000K then I will tell you.");
 	}
 	else{
-	quest::say("Beat it or we both are done for.");
+	quest::say();
 	}
 }
 
@@ -29,5 +29,5 @@ else {
         quest::givecash($copper,$silver,$gold,$platinum); #Return money
         }
      }
-
+}
 
