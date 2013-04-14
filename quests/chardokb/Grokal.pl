@@ -7,7 +7,7 @@ my $secrets = quest::saylink("secrets", 1);
 my $restored = quest::saylink("restored",1);
 my $box = quest::saylink("box",1);
 
-	if ($text =~ /Hail/i && $ulevel >= 65){
+	if ($text =~ /hail/i && $ulevel >= 65){
  $client->Message(14,"Hello $class , I have been hear a long time. I know many $secrets about this place and wish to share.");
 	}
 	if ($text =~ /secrets/i){
