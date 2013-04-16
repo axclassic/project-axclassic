@@ -37,8 +37,8 @@ if ($text=~/necklace/i && $ulevel >= 65) {
 }
 if ($text=~/assist/i && $ulevel >= 65) {
     $client->Message(14,"Wonderful I am sure she will snap out of it once she gets it.");
-    quest::faction(2767,300,0);
     quest::summonitem(119783);
+    quest::faction(26389,300,0);
     quest::exp(5000);
     return 1;
 }
