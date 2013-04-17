@@ -34,7 +34,7 @@ my $reinforcing = quest::saylink("reinforcing",1);
 my $weaken = quest::saylink("weaken",1);
 my $crushed = quest::saylink("crushed",1);
 
-if ($itemcount{119803} => 1){
+if (plugin::check_handin(\%itemcount, 119803 => 1)){
 	$client->Message(14,"By Marr! You have $found the very proof I need. I knew he has not betrayed us.");
 }
 if($text =~ /found/i){
