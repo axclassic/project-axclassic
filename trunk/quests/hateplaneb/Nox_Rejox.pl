@@ -18,7 +18,7 @@ sub EVENT_SAY{
 sub EVENT_ITEM {
   
 if (($platinum =>1000) && ($ulevel>= 65)){
-	quest::say("Hmmff, Ok then. This will do nicely. Pay attention I will only say this once. You'll have to pay to here it again. The box is crafted from the wood that only storms and nightmares can bring you. Eight in total split right down the middle. That wood is to be worked just as you would metal. Then go find Menk in the place of all knowledge.");
+	quest::say("Hmmff, Ok then. This will do nicely. Pay attention I will only say this once. You'll have to pay to hear it again. The box is crafted from the wood that only storms and nightmares can bring you. Eight in total split right down the middle. That wood is to be worked just as you would metal. Then go find Menk in the place of all knowledge.");
 	}
 elsif($platinum >= 1001) {
 	quest::say("Good, I will always take some extra cash. And you pay the price for not paying attention.");
