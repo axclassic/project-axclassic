@@ -10,6 +10,10 @@ my $thought = quest::saylink("thought", 1);
 my $lord = quest::saylink("Lord", 1);
 my $him = quest::saylink("him", 1);
 my $proof = quest::saylink("proof",1);
+my $found = quest::saylink("found",1);
+my $reinforcing = quest::saylink("reinforcing",1);
+my $weaken = quest::saylink("weaken",1);
+my $crushed = quest::saylink("crushed",1);
 
 if($text =~ /hail/i && $ulevel >= 65){
 	$client->Message(14,"Good day $class. Pardon me, I am just busy in $thought.");
@@ -26,17 +30,6 @@ if($text =~ /him/i){
 if($text =~ /proof/i && $ulevel >= 65){
 	$client->Message(14,"I need proof! There must be some corrupution taken control of him. I need to think more on this, the fate of the clergy depends on it! Please leave me to my thoughts");
 }
-}
-
-sub EVENT_ITEM{
-my $found = quest::saylink("found",1);
-my $reinforcing = quest::saylink("reinforcing",1);
-my $weaken = quest::saylink("weaken",1);
-my $crushed = quest::saylink("crushed",1);
-
-if (plugin::check_handin(\%itemcount, 119803 => 1)){
-	$client->Message(14,"By Marr! You have $found the very proof I need. I knew he has not betrayed us.");
-}
 if($text =~ /found/i){
 	$client->Message(14,"You indeed deserve an award for your great deed. So in turn, I will tell you about $reinforcing the Betrayal Items.");
 }
@@ -51,6 +44,13 @@ if($text =~ /crushed/i){
  	quest::summonitem(119804);
     	return 1;
 }
+}
+
+sub EVENT_ITEM{
+if (plugin::check_handin(\%itemcount, 119803 => 1)){
+	$client->Message(14,"By Marr! You have $found the very proof I need. I knew he has not betrayed us.");
+}
+
 else {
    
         plugin::return_items(\%itemcount);
