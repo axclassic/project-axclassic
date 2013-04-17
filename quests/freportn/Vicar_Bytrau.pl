@@ -29,7 +29,7 @@ if($text =~ /proof/i && $ulevel >= 65){
 }
 
 sub EVENT_ITEM{
-my $item = quest::saylink("found",1);
+my $found = quest::saylink("found",1);
 my $reinforcing = quest::saylink("reinforcing",1);
 my $weaken = quest::saylink("weaken",1);
 my $crushed = quest::saylink("crushed",1);
@@ -52,7 +52,7 @@ if($text =~ /crushed/i){
     	return 1;
 }
 else {
-        $client->Message(14,"You're like the rest of them! Go Away!");
+   
         plugin::return_items(\%itemcount);
 	    return 1;
 }
