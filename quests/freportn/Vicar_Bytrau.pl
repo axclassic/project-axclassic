@@ -10,7 +10,6 @@ my $thought = quest::saylink("thought", 1);
 my $lord = quest::saylink("Lord", 1);
 my $him = quest::saylink("him", 1);
 my $proof = quest::saylink("proof",1);
-my $found = quest::saylink("found",1);
 my $reinforcing = quest::saylink("reinforcing",1);
 my $weaken = quest::saylink("weaken",1);
 my $crushed = quest::saylink("crushed",1);
@@ -47,8 +46,11 @@ if($text =~ /crushed/i){
 }
 
 sub EVENT_ITEM{
+my $found = quest::saylink("found",1);
+
 if (plugin::check_handin(\%itemcount, 119803 => 1)){
 	$client->Message(14,"By Marr! You have $found the very proof I need. I knew he has not betrayed us.");
+	return 1;
 }
 
 else {
