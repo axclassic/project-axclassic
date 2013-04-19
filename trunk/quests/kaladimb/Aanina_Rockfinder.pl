@@ -17,7 +17,7 @@ if($text =~ /help/i){
 	$client->Message(14,"So you want to know about crushing the magic stone? I don't just spread that around. But, you helped out a good friend so I think I can $share.");
 }
 if($text =~ /share/i){
-	$client->Message(14,"Alright, so the first thing you need ia a Glyphed Smithing $hammer, a Celestial Essence, a forge. You will need about eight stones to create the amount of dust you need.");
+	$client->Message(14,"Alright, so the first thing you need is a Glyphed Smithing $hammer, a Celestial Essence, a forge. You will need about eight stones to create the amount of dust you need.");
 }
 if($text =~ /hammer/i){
 	$client->Message(14,"I haven't seen one of those in ages. Even longer since I $made one, might not even remember the recipe.");
