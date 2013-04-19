@@ -39,7 +39,7 @@ if($text =~ /weaken/i){
 	$client->Message(14,"I am sorry I am rambling. If you take a simple item from Betrayal and add a couple of $crushed Glyph runes, you can increase their power.");
 }
 if($text =~ /crushed/i){
-	$client->Message(14,"Personally, I do not know how to complete the process. However, I do someone who does. Her name is Aanina. She works at the best forge in Norrath, in the dirty little hole they call a city. Here take this to prove your friendship and my Marr guild you on your journey.");
+	$client->Message(14,"Personally, I do not know how to complete the process. However, I do know someone who does. Her name is Aanina. She works at the best forge in Norrath, in the dirty little hole they call a city. Here take this to prove your friendship and may Marr guide you on your journey.");
  	quest::summonitem(119804);
     	return 1;
 }
