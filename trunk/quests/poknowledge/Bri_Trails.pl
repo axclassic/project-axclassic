@@ -38,7 +38,7 @@ return 1;
 }
  if ($text=~/here/i && $ulevel >= 64 && !defined($qglobals{$name."chardokb"})) {
 $client->Message(14,"Going to send you to the regular zone instance now. Your corpse will end up here after your instance has expired.");
-quest::movepc(223, -39.13, 1092.13, 495.53);
+quest::movepc(277, -188, 288, 6.03);
 }
 if ($text=~/here/i && $ulevel >= 64 && defined($qglobals{$name."chardokb"})) {
 $client->Message(14,"You have an open Betrayal instance and can recover your corpse there. I can send you $back.");
@@ -52,7 +52,7 @@ if (($platinum == 366) && $ulevel >= 65 && !defined($qglobals{$name."chardokb"})
     my $instanceID = quest::CreateInstance("chardokb", 0, 46800);
     quest::AssignToInstance($instanceID);
     quest::setglobal($name."chardokb",$instanceID,7,H13);
-    quest::MovePCInstance(223, $instanceID, -39.13, 1092.13, 495.53, 150);
+    quest::MovePCInstance(277, $instanceID,-188, 288, 6.03, 150);
 return 1;
  }
  elsif (($platinum == 366) && $ulevel >= 65 && defined($qglobals{$name."chardokb"})) {
