@@ -66,10 +66,15 @@ if ($text =~ /step/i){
 
 sub EVENT_ITEM{
 if ($text =~ /teach/i){
-  if(plugin::check_handin(\%itemcount,{119820} == 1)){
+  if(plugin::check_handin(\%itemcount,{119820} => 1)){
     quest::say("Ho!Ho! You have managed to complete it. Indeed my hat is off to you! Well, I guess it is my turn to keep my part of the bargain. So I will $teach you how to create the elemental lacquer to coat the betrayal items which will imbue them with power.");
 quest::faction(2767,120);
 quest::exp(20000)
     return 1;
   }
+else {
+        $client->Message(14,"Why are you giving me this?");
+        plugin::return_items(\%itemcount);
+	    return 1;
+}
 }
