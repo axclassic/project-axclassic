@@ -34,7 +34,8 @@ if(plugin::check_handin(\%itemcount, 119804 => 1)){
 	return 1;
 }
 elsif(plugin::check_handin(\%itemcount, 119802 => 1)){
-	$client->Message(14,"Good Work! Not as good as I would do of course. I guess it will do the trick though. If you ever find yourself in the sister city, you should see Tuggin, he enjoys all things on the halls. Oh before I forget!");
+	$client->Message(14,"Good Work! Not as good as I would do of course. I guess it will do the trick though. If you ever find yourself in the sister city, you should see Tuggin, he enjoys all things on the halls. Oh before I forget, here is your hammer!");
+	quest::faction(2767,120);
 	quest::summonitem(119802);
 	return 1;
 }
