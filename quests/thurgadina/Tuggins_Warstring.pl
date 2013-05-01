@@ -15,7 +15,8 @@ my $loyalty = quest::saylink("loyalty",1);
 my $restored = quest::saylink("restored",1);
 my $deserving = quest::saylink("deserving",1);
 my $shall = quest::saylink("Shall",1);
-my $teach = quest::saylink("teach",1);
+my $step = quest::saylink("step",1);
+
 
 if ($text =~ /hail/i && $faction <= 3){
  $client->Message(14,"Good day $name! What brings you to these parts? Perhaps some time away from the world or maybe looking for a good $story?");
@@ -65,7 +66,9 @@ if ($text =~ /step/i){
 }
 
 sub EVENT_ITEM{
-  if(plugin::check_handin(\%itemcount,{119820} => 1)){
+my $teach = quest::saylink("teach",1);
+
+if(plugin::check_handin(\%itemcount,119820 => 1)){
     quest::say("Ho!Ho! You have managed to complete it. Indeed my hat is off to you! Well, I guess it is my turn to keep my part of the bargain. So I will $teach you how to create the elemental lacquer to coat the betrayal items which will imbue them with power.");
 quest::faction(2767,120);
 quest::exp(20000);
