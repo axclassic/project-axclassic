@@ -1,5 +1,24 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==7/9/2013==
+Angelox: Typo fix in Bot name creation.
+
+==4/16/2013==
+Angelox: Bot raids should spawn and group much faster.
+	 Less database queries while zoning and spawning groups.
+	 Raid bots don't look so color washed-out on first spawn.  
+
+==4/1/2013==
+Angelox: Changes to attack and follow ai should be less cpu intensive.
+
+==3/2/2013==
+Angelox: Added checks to ensure spawnraid and groupraid use the same group spawned.
+Angelox: Started a botCommand.h file.
+
+==3/23/2013==
+Angelox: Added more phrases to bot chat array.
+Angelox: Put in checks for bots attack command mobs while mezzed.
+
 ==3/14/2013==
 Angelox: Some work on raid-attack logic in zones with no pathing.
 Angelox: Tank should not get hung up on walls for long, if zone pathing is bad.
