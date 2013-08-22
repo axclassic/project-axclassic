@@ -1,5 +1,8 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==8/20/2013==
+Angelox: Fix for HT and other DDs occasionally crashing zone when mob dies.
+
 ==7/9/2013==
 Angelox: Typo fix in Bot name creation.
 
