@@ -1,5 +1,8 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==9/10/2013==
+Angelox: Fixed #bot sow dialog, bot will tell you if it doesn't have the right level.
+
 ==9/02/2013==
 Angelox: Fix for the #bot mana zone crash. 
 
