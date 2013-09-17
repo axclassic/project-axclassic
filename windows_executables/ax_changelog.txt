@@ -1,5 +1,19 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==9/16/2013==
+Angelox: Hopefully fixed bugs with zone crashing with different  forms of grouping. 
+
+==9/16/2013==
+Angelox: #bot list optimized to only pull the needed bots to list, instead of searching through all 9000 bots. 
+
+==9/15/2013==
+Angelox: Some fixes to the bot ids start from 500000 to 5000000 and #bot list fixed to work faster.
+Angelox: Fix for zone crash when swapping out more than 2 bots from group.
+Angelox: Attempt to bring back SoD and up Mana bar updates to bots. 
+
+==9/14/2013==
+Angelox: Fixed #bot levitate  dialog, bot will tell you if it doesn't have the right level.
+
 ==9/10/2013==
 Angelox: Fixed #bot sow dialog, bot will tell you if it doesn't have the right level.
 
