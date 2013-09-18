@@ -19,7 +19,7 @@ my $random_result = int(rand(100));
        $client->Message(14,"There are updated client files posted at AXClassic Forums; http://forums.axclassic.com."); 
        $client->Message(14,"You will not be able to board the ship that sails from Freeport to Butcher and back without these files.");}
 	elsif($random_result<=75){
-       $client->Message(14,"Petitions are monitored constantly."); 
+       $client->Message(14,"Post petitions and requests at http://forums.axclassic.com."); 
        $client->Message(14,"You first bot-helper is free (no quest needed), find and talk to Aediles Thrall about it.");}
 	elsif($random_result<=100){
        $client->Message(14,"Most travel in AXClassic is done by looted or quested moonstones and quested gates or portals for your Druid or Wizard Mercenary Bot."); 
@@ -27,7 +27,7 @@ my $random_result = int(rand(100));
 ## Angelox: This is for anouncing events
    }
   if ($random_result<=2){
-    $client->Message(14,"If you spot a bug while playing, you can send the report to us with the /bug command.");
+    $client->Message(14,"If you spot a bug while playing, please post the bug report at http://forums.axclassic.com.");
   }
  # elsif ($random_result<=4){
  #   $client->Message(14,"Don't forget: Rathe server restarts daily at 4:01am eastern time, server will stay down minutes for maintenance, then start again - make sure you're in a safe spot before the restart.");
@@ -129,8 +129,8 @@ elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
    my $random_result = int(rand(100));
    $clientver = $client->GetClientVersion();
    if ($random_result<=2 && $clientver > 3){ ##Need to fix this in the hard code
-    $client->Message(14,"If you spot a bug while playing, you can send the report to us with the /bug command.");
-    $client->Message(14,"Petitions are monitored constantly."); 
+    $client->Message(14,"If you spot a bug while playing, please post it at http://forums.axclassic.com.");
+    $client->Message(14,"Petitions can be posted at http://forums.axclassic.com."); 
     }
    elsif ($random_result<=4){
     $client->Message(14,"This server restarts daily at 4:01am eastern time, server will stay down a few minutes for maintenance, then start again - make sure you're in a safe spot before the restart.");
@@ -138,12 +138,12 @@ elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
   }
     ## Both Database advisories
     #
-    ## Advise the new SoD and newer players that Titanium/SoF  are the best.
+    ## Advise the players about our client status.
     if ($ulevel == 1){
       $clientver = $client->GetClientVersion();
       if($clientver > 3){
-	$client->Message(15,"The most compatible client for AXClassic is the Titanium era client.");
-	$client->Message(15,"Your client will work, but is oriented to the Titanium era.");
+	$client->Message(15,"AXClassic is compatible with Titanium, SoF, SoD, and Underfoot clients.");
+	$client->Message(15,"Since AXClassic is based on the Titanium era, some features with newer clients will be disabled.");
 	$client->Message(15,"We hope you find AXClassics custom content interesting and stay with us.");
 	$client->Message(15,"Thank you for trying us out!");
       }
