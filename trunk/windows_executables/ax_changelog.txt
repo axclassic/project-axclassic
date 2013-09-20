@@ -1,6 +1,9 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
-==9/16/2013==
+==9/20/2013==
+Angelox: Mana bar updates in newer clients should be working right for all bot classes, under all circumstances.
+
+==9/18/2013==
 Angelox: Hopefully fixed bugs with zone crashing with different  forms of grouping. 
 
 ==9/16/2013==
