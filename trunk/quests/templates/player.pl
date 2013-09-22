@@ -101,25 +101,25 @@ elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
     $client->Message(6,"You receive a character flag!");
     $client->Message(14,"You have one bot available for creation, use the '#bot create' command.");
     }
-   elsif (($ulevel >= 10)&&($ulevel <= 19)&&($qglobals{bot_spawn_limit} <= 1)){ 
+   elsif (($ulevel >= 5)&&($ulevel <= 9)&&($qglobals{bot_spawn_limit} <= 1)){ 
     quest::setglobal("bot_spawn_limit", 2, 5, "F");
     $bot_spawn_limit = undef;
     $client->Message(6,"You receive a character flag!");
     $client->Message(14,"You have your second bot available for creation, use the '#bot create' command.");
     }
-   elsif (($ulevel >= 20)&&($ulevel <= 29)&&($qglobals{bot_spawn_limit} <= 2)){ 
+   elsif (($ulevel >= 10)&&($ulevel <= 14)&&($qglobals{bot_spawn_limit} <= 2)){ 
     quest::setglobal("bot_spawn_limit", 3, 5, "F");
     $bot_spawn_limit = undef;
     $client->Message(6,"You receive a character flag!");
     $client->Message(14,"You have your third bot available for creation, use the '#bot create' command.");
     }
-   elsif (($ulevel >= 30)&&($ulevel <= 39)&&($qglobals{bot_spawn_limit} <= 3)){ 
+   elsif (($ulevel >= 15)&&($ulevel <= 19)&&($qglobals{bot_spawn_limit} <= 3)){ 
     quest::setglobal("bot_spawn_limit", 4, 5, "F");
     $bot_spawn_limit = undef;
     $client->Message(6,"You receive a character flag!");
     $client->Message(14,"You have your fourth bot available for creation, use the '#bot create' command.");
     }
-   elsif (($ulevel >= 40)&&($ulevel <= 49)&&($qglobals{bot_spawn_limit} <= 1)){ 
+   elsif (($ulevel >= 20)&&($ulevel <= 50)&&($qglobals{bot_spawn_limit} <= 4)){ 
     quest::setglobal("bot_spawn_limit", 5, 5, "F");
     $bot_spawn_limit = undef;
     $client->Message(6,"You receive a character flag!");
