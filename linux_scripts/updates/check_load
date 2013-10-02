@@ -5,7 +5,7 @@ echo
 echo checking for run-away process ...
  
 CPU_LOAD=$(uptime | cut -d"," -f4 | cut -d":" -f2 | cut -d" " -f2 | sed -e "s/\.//g")
-CPU_THRESHOLD=700
+CPU_THRESHOLD=700 #This setting is pending your system and load - my 64 bit PC is set to  1900.
 PROCESS=$(ps -Czone -o pid -o pcpu -o command | sort -k 2 -r | grep -v PID)
 #TOPPROCESS=$(ps -eo pid -eo pcpu -eo command | sort -k 2 -r | grep -v PID | head -n 1) #Get top cpu-active any
 TOPPROCESS=$(ps -Czone -o pid -o pcpu -o command | sort -k 2 -r | grep -v PID | head -n 1) #Get top cpu-active zone
