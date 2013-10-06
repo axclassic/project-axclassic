@@ -13,6 +13,7 @@ my $ghost = quest::saylink("ghost", 1);
 
 if($text=~/Hail/i){
 $client->Message(14,"Pleasure to meet you. Keep your eye out for the $ship. You don't want to miss it.");
+$npc->CastSpell(261,$userid);
 }
 elsif($text=~/ship/i){
 quest::emote("looks up dreamily");
@@ -28,6 +29,7 @@ $client->Message(14,"All that's left of her now, is a $ghost of a memory ....");
 }
 elsif($text=~/ghost/i){
 $client->Message(14,"Walk into the ghost, she might help you get on your way - and don't ever forget the SirensBane ...");
+$npc->CastSpell(269,$userid);
 }
 }
 #END of FILE Zone:butcher ID:68064 -- Glorin_Binfurr
