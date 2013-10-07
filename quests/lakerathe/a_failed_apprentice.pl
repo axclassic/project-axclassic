@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH {
 
-    quest::spawn2(51144,0,0,-921,210,72.3,31);
+    quest::spawn2(51144,0,0,-1558,370,53.3,31);
 
  }
 
