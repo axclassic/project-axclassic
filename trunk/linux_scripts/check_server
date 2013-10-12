@@ -1,0 +1,41 @@
+#!/bin/bash
+
+echo
+echo "checking AXClassic Server ..."
+ 
+PROCESS=$(ps -ef|grep world)
+PIDWORLD=`ps -eo 'tty pid args' | grep 'world' | grep -v grep | tr -s ' ' | cut -f2 -d ' '`
+PIDSTART=`ps -eo 'tty pid args' | grep 'run_server' | grep -v grep | tr -s ' ' | cut -f2 -d ' '`
+
+if [ -z "$PIDWORLD" ]; then
+  echo "Process world not running!!"
+  echo 
+  if [ -z "$PIDSTART" ]; then
+    echo "Nothing started..."
+    echo 
+    echo "Starting the Server..."
+    /eqemu/server/run_server
+    # send an email using mail
+    NEWPIDWORLD=`ps -eo 'tty pid args' | grep 'world' | grep -v grep | tr -s ' ' | cut -f2 -d ' '`  
+    SUBJECT="Process AXClassic Server (Rathe) Restarted"
+    # Email To ?
+    EMAIL="email@address"
+    # Email text/message
+    EMAILMESSAGE="/tmp/emailmessage.txt"
+    echo "Rathe Server was down and re-started."> $EMAILMESSAGE
+    echo "Search Result..." >>$EMAILMESSAGE
+    echo "$PROCESS" >>$EMAILMESSAGE
+    echo "New PIDWORLD is $NEWPIDWORLD" >>$EMAILMESSAGE
+    mail -s "$SUBJECT" "$EMAIL" < $EMAILMESSAGE
+  else
+    echo "Start script run_server is already started." 
+    echo "run_server PID is $PIDSTART"
+  fi
+
+else
+ echo
+ echo "run_server process (if still running) PIS=$PIDSTART"
+ echo "Process up and running with PIS=$PIDWORLD"
+ echo 
+fi
+exit 0

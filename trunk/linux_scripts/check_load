@@ -1,0 +1,47 @@
+#!/bin/bash
+
+## Note: will kill the top-most process if the $CPU_LOAD is greater than the $CPU_THRESHOLD.
+## Note: this will look and compare the zone executable only.
+echo
+echo checking for run-away process ...
+ 
+CPU_LOAD=$(uptime | cut -d"," -f4 | cut -d":" -f2 | cut -d" " -f2 | sed -e "s/\.//g")
+CPU_THRESHOLD=1500
+PROCESS=$(ps -Czone -o pid -o pcpu -o command | sort -k 2 -r | grep -v PID)
+#TOPPROCESS=$(ps -eo pid -eo pcpu -eo command | sort -k 2 -r | grep -v PID | head -n 1) #Get top cpu-active any
+TOPPROCESS=$(ps -Czone -o pid -o pcpu -o command | sort -k 2 -r | grep -v PID | head -n 1) #Get top cpu-active zone
+
+if [ $CPU_LOAD -gt $CPU_THRESHOLD ] ; then
+  # kill -9 $(ps -eo pid | sort -k 1 -r | grep -v PID | head -n 1) #original
+  # kill -9 $(ps -eo pcpu | sort -k 1 -r | grep -v %CPU | head -n 1)
+  kill -9 $TOPPROCESS
+  echo system overloading!
+  echo load average is at $CPU_LOAD
+  echo 
+  echo Loaded Zones...
+  ps -Czone -o pid -o pcpu -o command | sort -k 2 -r | grep -v PID
+  #ps aux r
+
+  # send an email using mail
+  SUBJECT="Runaway Process Report at Marysol"
+  # Email To ?
+  EMAIL="email@address"
+  # Email text/message
+  EMAILMESSAGE="/tmp/emailmessage.txt"
+  echo "System overloading, possible runaway process."> $EMAILMESSAGE
+  echo "Top-most zone-process killed $TOPPROCESS" >>$EMAILMESSAGE
+  echo "Load average was at $CPU_LOAD" >>$EMAILMESSAGE
+  echo "Loaded Zones..." >>$EMAILMESSAGE
+  echo "$PROCESS" >>$EMAILMESSAGE
+  mail -s "$SUBJECT" "$EMAIL" < $EMAILMESSAGE
+
+else
+ echo
+ echo no run-aways. 
+ echo load average is at $CPU_LOAD
+ echo
+ echo Active Processes...
+ ps aux r
+ #ps -Czone -o pid -o pcpu -o command | sort -k 2 -r | grep -v PID
+fi
+exit 0
