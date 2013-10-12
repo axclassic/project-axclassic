@@ -2,7 +2,7 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("What be it you want! Go away before I eat you for dinner!");
   }
-  if ($text=~/wenden sent me/i) {
+  if ($text=~/wenden/i) {
     quest::say("Did he? Perhaps you would like to trade for some Rejesiam ore? Bring me the monocle from the patriarch that wanders around the Dreadlands. I've always wanted one of those."); # made up dialogue - will replace with correct dialogue once found from live servers
   }
 }

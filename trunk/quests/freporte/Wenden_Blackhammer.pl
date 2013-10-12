@@ -35,11 +35,12 @@
 # *** QUESTS AVAILABLE TO ***
 #
 #1 - Warrior
+# Any class for their warrior bot
 ############################################
 
 
 sub EVENT_SAY { 
-  if ($class eq "Warrior") {
+ # if ($class eq "Warrior") {
     if ($text=~/Hail/i) {
       quest::say("What do you need?  Be specific. I'm busy right now!");
     }
@@ -62,7 +63,7 @@ If I try to put the wrong kind of gems in these slots. it may be ruined forever.
     if ($text=~/rejesiam/i) {
       quest::say("Rejesiam ore is from the lands of Kunark. The mountain giants in the frontier mountains control the only known mine of this great ore. They have built a vast fortress around the mine to protect it. The giants don't particularly like to trade with us smaller folks, but there is one old miner  named Mentrax Mountainbone who has traded with me in the past. Go find him and tell him Wenden sent you.");
     }
-  }
+  #}
 }
 
 sub EVENT_ITEM {
