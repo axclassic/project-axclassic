@@ -100,7 +100,7 @@ echo "Booting up World ..."
   #So always restart your LS when you restart the server.
   echo "Sending signal to restart the login server...."
   /eqemu/source/EQEmuLoginServer/start_login </dev/null >nohup.out 2>&1 &
-  #ssh -p22 angelox@nahunta.org /eqemu/source/EQEmuLoginServer/start_login </dev/null >nohup.out 2>&1 &
+  #ssh -p22 email@address /eqemu/source/EQEmuLoginServer/start_login </dev/null >nohup.out 2>&1 &
   sleep 20
 else
   echo "CANNOT LOCK WORLD!"

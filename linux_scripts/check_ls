@@ -1,0 +1,34 @@
+#!/bin/bash
+
+echo
+echo checking Login Server ...
+ 
+PROCESS=$(ps -ef|grep EQEmuLoginServer)
+PID=`ps -eo 'tty pid args' | grep 'EQEmuLoginServer' | grep -v grep | tr -s ' ' | cut -f2 -d ' '`
+
+if [ -z "$PID" ]; then
+  echo Process EQEmuLoginServer not running!!
+  echo 
+  #echo $PROCESS
+  echo 
+  echo Starting Login Server...
+  /home/eqemu/source/EQEmuLoginServer/start_login
+  # send an email using mail
+NEWPID=`ps -eo 'tty pid args' | grep 'EQEmuLoginServer' | grep -v grep | tr -s ' ' | cut -f2 -d ' '`  
+  SUBJECT="Process EQEmuLoginServer Restarted"
+  # Email To ?
+  EMAIL="email@address"
+  # Email text/message
+  EMAILMESSAGE="/tmp/emailmessage.txt"
+  echo "EQEmuLoginServer was down and re-started."> $EMAILMESSAGE
+  echo "Search Result..." >>$EMAILMESSAGE
+  echo "$PROCESS" >>$EMAILMESSAGE
+  echo "New PID is $NEWPID" >>$EMAILMESSAGE
+  mail -s "$SUBJECT" "$EMAIL" < $EMAILMESSAGE
+
+else
+ echo
+ echo Process up and running with PIS=$PID
+ echo 
+fi
+exit 0
