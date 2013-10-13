@@ -1,44 +1,45 @@
 # First berz. epic conversaion.
 # Lake of Ill Omen
 # Only for berz. Class
+#fixed for the bots  too
 # 9/13/07
 
 
 
 
 sub EVENT_SAY {
-	if($text=~/Hail/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef) {
+	if($text=~/Hail/i && $ulevel > 45 && $dragon == undef && $imp == undef) {
 		quest::say("Aye, I see a familiar look in yer eye. Ye are much like me, friend. If ye truly wish to [master the fires] within ye and become a true berserker, ye must learn many lessons.");
 		}
-	if($text=~/master the fires/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef) {
+	if($text=~/master the fires/i && $ulevel > 45 && $dragon == undef && $imp == undef) {
 		quest::say("Much as ye are now, I was once saddled with unbridled rage, and now with age and experience, I have learned to master the power that comes with my anger.");
 		quest::say("Once ye have mastered yer abilities, ye will be rewarded with a gift that only a true berserker can control. It is a gift that will harness yer rage and use it to yer advantage. This is why ye must walk the same path I did in me youth. Do ye wish to take this [great stride]?");
 		}
-	if($text=~/great stride/i && $class eq "Berserker" && $ulevel > 45 && $dragon == undef && $imp == undef) {
+	if($text=~/great stride/i && $ulevel > 45 && $dragon == undef && $imp == undef) {
 		quest::say("Ye do understand there is no turning back? I hope so. This is a journey -- and sometimes a long one -- depending on what ye've leared so far. Yer skills and wisdom in battle will be tested. Go talk to an old, fallen friend of mine, Lingering Axefall. We call him that because he reguses to let his spirit rest. He failed his task and remains bound here to lead others into the trial he lost. Be wary, though. He is elusive.");
 		quest::say("The foe he stood against and lost to still wishes to extinguish his spirit. Take this axe and give it to him so he will know that ye are ready for the test and that I sent ye. Also, take this medal with you. It will help me keep track of your progress. Best of luck, friend.");
 		quest::summonitem("60189");
 		quest::summonitem("60190");
 		}
-	if($text=~/Hail/i && $ulevel < 46 && $class eq "Berserker" && $dragon == undef && $imp == undef) {
+	if($text=~/Hail/i && $ulevel < 46 && $dragon == undef && $imp == undef) {
 		quest::say("Return once you have trained more, young Berzerker.");
 		}
 
-	if($text=~/strategize in battle/i && $ulevel > 45 && $class eq "Berserker" && $dragon == 1) {
+	if($text=~/strategize in battle/i && $ulevel > 45 && $dragon == 1) {
 		quest::say("One of the best strategists I've ever met is ready and willing to help any who attempt to prove their skills in battle. Seek out Treanik Ireblade. She won't give ye any advantage, however. This is yer fight to win, not hers, though she'll be itchin' to get her blade bloodied. Take this note and give it to her.");
 		quest::summonitem(60199);
 		$dragon=undef;
       		}
-	if($text=~/ready/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1){
+	if($text=~/ready/i && $ulevel > 45 && $imp == 1){
 		quest::say("Eager one, aren't ye? Good to see, but do not underestimate how volatile our rage is. In me youth, it snuck up on me and in a blind rage, I had slain me sparring partner. It was then that I knew I was different and shouldn't keep close friends until I'ad my rage under control. There are some, though, that will [never control the rage].");
 		}
-	if($text=~/never controll the rage/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1){
+	if($text=~/never controll the rage/i && $ulevel > 45 && $imp == 1){
 		quest::say("Well, you see, the fire that drives the rage through us and into our muscles and minds can burn out of control in come creatures. I have encountered several in my travels, aye. They are merciless and blind to the rage, which makes 'em poor at strategy, but deadly in combat. Ye will have to [face one] of 'em so that ye may learn how dangerous ye can truly become if ye do not complete these trials and master the rage. I do 'ope ye appreciate this lesson.");
 		}
-	if($text=~/face one/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1){
+	if($text=~/face one/i && $ulevel > 45 && $imp == 1){
 		quest::say("This creature is unlike any you have seen wandering the lands. this beast is fearsome and ethereal. It strikes out with its rage without thought or care. Ye must learn to recognize this type of beast if ye are to learn how to master it and yer own abilities. It will try to disguise itself so ye don't recognize the fury it holds within it -- it has an [enraged essence] within it and I want ye to bring it to me. Remember, $name, do not be fooled and always be aware.");
 		}
-	if($text=~/enraged essence/i && $ulevel > 45 && $class eq "Berserker" && $imp == 1){
+	if($text=~/enraged essence/i && $ulevel > 45 && $imp == 1){
 		quest::say("I will give ye no more hints. Ye must seek this creature out alone. Look far and use your mind and brawn to beat it. Yer noggin will give ye an advantage o'er this un.");
 		$imp=undef;
 		}
