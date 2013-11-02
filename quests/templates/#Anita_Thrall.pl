@@ -1,11 +1,11 @@
-######################################
-## NPC: #Anita_Thrall               ##
-## Zone: All Starter Zones          ##
-##       PoK and Bazaar             ##
-## By:    Angelox                   ##
-## Revised by caved for AXClassic   ##
-## EQWorld Server     19-12-2010    ##
-######################################
+#################################
+## NPC: #Anita_Thrall				 ##
+## Zone: All Starter Zones         		 ##
+## By:    Angelox                   		  	 ##
+## Revised by caved for AXClassic	 ##
+## Revised by Aardil  ( Mage Epic)	 ##
+## EQWorld Server     19-12-2010   	 ##
+#################################
 sub EVENT_SAY {
 my $spells = quest::saylink("spells", 1);
 my $circle = quest::saylink("Circle", 1);
@@ -23,11 +23,13 @@ my $proof = quest::saylink("proof", 1);
 my $gunthak = quest::saylink("Gunthak", 1);
 my $selos = quest::saylink("Selos", 1);
 my $special = quest::saylink("special", 1);
+my $magician = quest::saylink("magician", 1);
+my $magepic = quest::saylink("magepic", 1);
   if ($text=~/hail/i){
     $client->Message(14,"Hello $name! I can scribe certain $spells your bots may require.");
     }
   elsif ($text=~/spells/i){
-   $client->Message(14,"I can scribe $circle or $portal spells, Also $temperance , $lesser Summon Corpse, $summon Corpse, $conjure Corpse, $tash, $selos - But you need to bring me the spell.");
+   $client->Message(14,"I can scribe $circle or $portal spells, Also $temperance , $lesser Summon Corpse, $summon Corpse, $conjure Corpse, $tash, $selos, $magician epic - But you need to bring me the spell.");
    }
   elsif ($text=~/lesser|tashan/i){
    $client->Message(14,"Buy it from the spell merchant and hand it to me. I'll scribe the spell for your bot.");
@@ -42,6 +44,18 @@ my $special = quest::saylink("special", 1);
      }
      else{
       $client->Message(14,"Speak to Lislia Goldtune in Highkeep.");
+     }
+   }
+     elsif ($text=~/magician/i){
+   $client->Message(14,"Ahh yes, The Orb of Mastery! The League of Magicians will authorize me only if you have proof of their $magepic quest.");
+   }
+  elsif ($text=~/magepic/i){
+     if(defined ($mag_epic_1)){
+     $client->Message(14,"You already have The Mage Epic 1.0.");
+     return;
+     }
+     else{
+      $client->Message(14,"Speak to Rykas in Lake Rathetear.");
      }
    }
   elsif ($text=~/summon/i){
@@ -481,6 +495,19 @@ elsif ($itemcount{202} == 1){
     $bard_spell_1 = undef;
      }
    plugin::return_items(\%itemcount);
+   return;
+  }
+  elsif ($itemcount{19436} == 1){
+      if($mage_epic_1 == 1){
+	$client->Message(14,"You already have this, try the command \"#bot magepic\" to summon your Magician Epic Weapon");
+	quest::summonitem(19436);
+     }
+      else{
+	$client->Message(14,"Well done! You may now use the command  \"#bot magepic\".");
+	$client->Message(6,"Your Magician Epic scroll have been scribed!");
+	quest::setglobal("mage_epic_1",1,5,"F");
+	$mage_epic_1 = undef;
+     }
    return;
   }
   else {
