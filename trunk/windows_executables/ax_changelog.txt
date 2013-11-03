@@ -1,5 +1,14 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==11/02/2013== 
+Angelox:  Command "#bot magepic" added (requires epic quest).   
+
+==10/31/2013== 
+Angelox:  Manabar updater tweak. 
+
+==9/24/2013== 
+Angelox: Added optional  BotFaceTarget(),  which sends no SendPosition() spam. 
+
 ==9/20/2013==
 Angelox: Mana bar updates in newer clients should be working right for all bot classes, under all circumstances.
 
