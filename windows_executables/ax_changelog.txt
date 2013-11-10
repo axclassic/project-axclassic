@@ -1,5 +1,10 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==11/10/2013== 
+Angelox: Bot saved raidgroups fixes, some bugs found and hopefully fixed.
+Angelox: Bots will spawn with HP and MANA from any group ID - 
+		    player should use at least one #bot saveraid  to agroup after  raid is buffed for initialization.
+
 ==11/02/2013== 
 Angelox:  Command "#bot magepic" added (requires epic quest).   
 
