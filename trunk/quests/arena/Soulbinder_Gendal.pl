@@ -1,4 +1,4 @@
-# Generic soulbinder quest
+# Generic soulbinder quest testing
 sub EVENT_SAY {
     plugin::soulbinder_say($text, $name);
 }
