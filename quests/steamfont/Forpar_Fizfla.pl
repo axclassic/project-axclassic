@@ -1,10 +1,13 @@
-#Zone: Steamfont Mountains
-#Short Name: steamfont
-#Zone ID: 56
-#
-#NPC Name: Forpar Fizfla
-#NPC ID: 56130
-#Quest Status: finished
+##############################
+##Zone: Steamfont Mountains ##
+##Short Name: steamfont     ##
+##Zone ID: 56               ##
+##    Edited By Aardil      ##
+##  For missing dialogue    ##
+##      11-18-2013          ##
+## NPC Name: Forpar Fizfla  ##
+##     NPC ID: 56130        ##
+##############################
 
 sub EVENT_SAY { 
   if ($text=~/hail/i) {
@@ -19,6 +22,9 @@ sub EVENT_SAY {
   if ($text=~/next pieces/i) {
     quest::say("The next pieces are a little harder to come by than the last set. To make the body of an instrument that will last for ages to come, I need something very special. The scales of a big red dragon and the scales of a big white dragon will make it unbreakable, as well as giving it a unique look. Some metal bits will allow me to hold the body together. Please, if you gather up these things, bring them to me as soon as possible. I have not felt this good in years!");
   }
+   if ($text=~/one more piece to go/i) {
+    quest::say("The lute has a head and a body. The only thing Missing is a set of strings that will never break! I have heard rumors of a living dead poison dragon in the lands of Kunark. If you were somehow able to get your hands onhis guts, I could finish the lute. You would have to bring me the head, the body and the dragon gut for lute strings!
+");
 }
 
 sub EVENT_ITEM {
@@ -46,6 +52,5 @@ sub EVENT_ITEM {
     quest::say("I do not need this.");
     plugin::return_items(\%itemcount);
   }
+ }
 }
-
-#END of FILE Zone:steamfont  ID:56130 -- Forpar_Fizfla
