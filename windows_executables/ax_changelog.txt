@@ -1,5 +1,8 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==11/17/2013== 
+Angelox: Extra clients zoning while grouped with bots will not crash the zone anymore.
+
 ==11/10/2013== 
 Angelox: Bot saved raidgroups fixes, some bugs found and hopefully fixed.
 Angelox: Bots will spawn with HP and MANA from any group ID - 
