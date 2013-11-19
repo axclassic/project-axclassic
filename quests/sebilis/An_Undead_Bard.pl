@@ -19,11 +19,11 @@ sub EVENT_SAY {
   if ($text=~/quest/i) {
     quest::say("Excellent. I have stayed here far too long, and I wish to go to my eternal slumber. But before I do so, I ask for one [last request].");
   }
-  if ($text=~/last request/i) {
-    quest::say("Well then, I would ask you a favor for one in return. If I bring that cursed dragon here, will you [kill it] for me?");
-  }
-  if ($text=~/kill it/i) {
+if ($text=~/kill it/i) {
     quest::say("Give me the Mystical Lute Body you have. I will return it, don't worry. I only wish to hold an instrument one last time before I leave.");
+  }
+if ($text=~/last request/i) {
+    quest::say("Well then, I would ask you a favor for one in return. If I bring that cursed dragon here, will you [kill it] for me?");
   }
 }
 
