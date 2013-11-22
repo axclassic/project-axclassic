@@ -9,7 +9,8 @@ if ($text=~/What Sickness/i) {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 20690 => 1, 20689 => 1, 20688 => 1)){
-  quest::say("My heart cleansed of Corruption can interrupt the Flow of the corruption between the priest and his dark god, force it upon him quickly, I can sense him, he is in the Karana's somewhere.");
+  quest::emote("withered treant lets out a sigh like a slow stormover the plains of Karana. It's skin begins to slough off into piles at its base.");
+    quest::say("This step is done. Now, take my heart, pure symbol of Antonica. My heart cleansed of Corruption can interrupt the Flow of the corruption between the priest and his dark god, force it upon him quickly, I can sense him, he is in the Karana's somewhere.");
 quest::summonitem(20695);
 }
 
