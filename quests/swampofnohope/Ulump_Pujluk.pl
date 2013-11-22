@@ -1,5 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
+quest::emote("Ulump Pujluk croaks slowly and wipes a filthy muck from its eyes as it tries to look at you.");
 quest::say("Something come to talk to Ulump. Too much pain. Just go. It goes back to scratching and wiping at its muck and filth covered body."); 
 }
 if($text=~/What pain/i){
