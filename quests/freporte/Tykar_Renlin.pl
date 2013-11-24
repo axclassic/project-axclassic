@@ -1,3 +1,8 @@
+######################
+## Edited responses ##
+##    By Aardil     ##
+##   11-24-2013     ##
+######################
 sub EVENT_SAY
 {
   if($text=~/Lucan/i)
