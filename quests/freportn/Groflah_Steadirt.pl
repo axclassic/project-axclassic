@@ -2,10 +2,10 @@ sub EVENT_SAY
 {
   if($text=~/Hail/i)
   {
-    quest::say("Greetings, $name!Greetings, adventurer! Certainly a person who looks as hardened as yourself deserves a fine blade to match your prowess. Here at Groflah's Forge, we supply you with only the finest quality weapons.");
+    quest::say("Greetings, $name! Greetings, adventurer! Certainly a person who looks as hardened as yourself deserves a fine blade to match your prowess. Here at Groflah's Forge, we supply you with only the finest quality weapons.");
   }
 
-  if($text=~/Do you know Ariska Zimel/i)
+  if($text=~/Ariska Zimel/i)
   {
     quest::say("Zimel!! I do not know who you mean. Now go away. I am very busy. I will not talk here!!");
   }
