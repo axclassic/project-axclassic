@@ -1,16 +1,21 @@
+######################
+## Edited responses ##
+##    By Aardil     ##
+##   11-24-2013     ##
+######################
 sub EVENT_SAY
 {
   if($text=~/Hail/i)
   {
-    quest::say("Greetings, $name! Join in the [celebration]! Have a few drinks. Alas, there are no [Tumpy Tonics].");
+    quest::say("Greetings, $name! Join in the celebration! Have a few drinks. Alas, there are no [Tumpy Tonics].");
   }
 
-  if($text=~/Who is Ariska/i)
+  if($text=~/Ariska/i)
   {
     quest::say("Ariska Zimel was my best friend. He and I learned our knowledge of metal from such places as Halas and Kaladim. When he disappeared, it seemed to involve foul play. He must be alive somewhere in the city. I pray this is not the work of [Pietro Zarn].");
   }
 
-  if($text=~/Who is Pietro Zarn/i)
+  if($text=~/Pietro Zarn/i)
   {
     quest::say("While we were traveling through the Lavastorm Mountains, we happened upon a caravan. They wore emblems in honor of the evil god, Innoruuk. They did not see us, but we saw them. And most importantly of all, Ariska saw the apparent leader's sword. It was glowing with great energy. Suddenly, the evil knights were in a battle. The knights gave chase, leaving their camp unattended. The knight who owned the sword left it behind, opting to fight with another, leading me to believe it was not his to begin with. It was at this point that Ariska ran down and grabbed the sword. A few weeks later, we were to learn that the knight was a powerful man by the name of Pietro Zarn and that he was looking for a sword stolen from him. He called it .. Soulfire. I believe Zarn must have finally found Ariska.");
   }
