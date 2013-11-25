@@ -8,6 +8,9 @@ sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("Hail. good citizen!  You have entered the Hall of Truth.  What is it you seek?  Many citizens come to request aid in dealing with the local rogues or the oppression of our sworn enemies. the Freeport Militia.  A few valiant ones have been summoned to the Hall of Truth.");
 }
+if($text=~/token/i){
+quest::say("This is good news indeed!, You need to bring to me a spider venom sac to continue on your path.");
+}
 if($text=~/summoned/i){
 quest::say("Work on the ways of valor before we discuss such things. You are on the righteous path of the Truthbringer, but there is more work to do."); }
 quest::summonitem(18896);}
