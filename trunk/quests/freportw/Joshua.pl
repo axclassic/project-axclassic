@@ -1,58 +1,25 @@
-############################################
-# ZONE: West Freeport (freportw)
-# DATABASE: PEQ-Velious
-# LAST EDIT DATE: May 1,2005
-# VERSION: 1.0
-# DEVELOPER: MWMDRAGON
-#
-# *** NPC INFORMATION ***
-#
-# NAME: Joshua
-# ID: 9121
-# TYPE: Warrior
-# RACE: Human
-# LEVEL: 5
-#
-# *** ITEMS GIVEN OR TAKEN ***
-#
-# bucket of water ID-29008
-# bucket of pure water ID-29009
-#
-# *** QUESTS INVOLVED IN ***
-#
-#
-#
-# *** QUESTS AVAILABLE TO ***
-#
-#
-#
-# *** NPC NOTES ***
-#
-#
-#
-############################################
+################################
+##      Paladin Epic 1.0      ##
+##      Created by Aardil     ##
+##        11-24-2013          ##
+##     NPCID: 10207 Joshua    ##
+##      Zone: freporte        ##
+################################
 
-sub EVENT_SAY
-{
-if($text=~/Hail/i)
- {
- quest::say("Welcome to freeport $name.");
- }
-
-
-}
-
-sub EVENT_ITEM
-{
-   # bucket of water ID-29008
-   if($itemcount{29008} == 1)
-   {
-   quest::me("Joshua dips his emaciated hand into the bucket and brings the water to his mouth. As he does, you hear a soft thump from outside and notice that through the window his sister has collapsed. A glimmer enfolds her body, and you notice the water in Joshua's hand gleam a pure, bright light for a moment. 'Thank you, sir. I hope my sister returns soon. I feel better for some reason.");
-
-   
-   # bucket of pure water ID-29009
-   quest::summonitem("29009");
+sub EVENT_SAY {
+  if ($text=~/Hail/i) {
+    quest::say("Water, I need Water!.'");
    }
+} 
+sub EVENT_ITEM {
+  if (plugin::check_handin(\%itemcount, 29008 => 1)) { #Bucket of Water
+    quest::emote("dips his emaciated hand into the bucket and brings the water to his mouth. As he does, you hear a soft voice in your head.... Thank you $name, Joshua will be fine now because of you.");
+    $client->Message(14,"You notice the water in Joshua's hand gleam a pure bright light for a moment.");
+	quest::say("Thank you $name. I hope my sister returns soon. I feel better for some reason.");
+    quest::summonitem(29009); #Bucket of Pure Water
+	}
+  else {	
+	quest::say("I do not need this.");
+    plugin::return_items(\%itemcount);
+  }
 }
-
-#END of FILE Zone:freportw  ID:9121 -- Joshua
