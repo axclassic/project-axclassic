@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 	quest::faction("10103","1");
  }
   #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
+  plugin::try_tome_handins(\%itemcount,);
   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:freportn  ID:8036 -- Merko_Quetalis 
