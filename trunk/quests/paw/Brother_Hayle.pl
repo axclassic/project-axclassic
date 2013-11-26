@@ -1,3 +1,8 @@
+##############################
+##     Edited by aardil     ##
+## Removed Faction for bots ##
+##       11-26-2013         ##
+##############################
 sub EVENT_SAY
 {
   if($text=~"Hail")
@@ -39,17 +44,11 @@ sub EVENT_ITEM
   }
   if(plugin::check_handin(\%itemcount, 18937 => 1, 13947 => 1, 18828 => 1, 12197 => 1 ))
   {
-    if($faction <= 2)
-    {
-      quest::say("You have proven yourself worthy to hold Soulfire. Do not let her slip into the hands of evil. There are many who wish to free the many trapped souls of shadowknights and necromancers trapped inside the blade. The power of the blade can be called upon to heal you if need be. May Rodcet Nife and the twins of Marr hold you in their glory.");
+  quest::say("You have proven yourself worthy to hold Soulfire. Do not let her slip into the hands of evil. There are many who wish to free the many trapped souls of shadowknights and necromancers trapped inside the blade. The power of the blade can be called upon to heal you if need be. May Rodcet Nife and the twins of Marr hold you in their glory.");
 
       quest::summonitem(5504);
     }
-    else
-    {
-      quest::say("You have not yet proven yourself");
-    }
   }
-  plugin::return_items(\%itemcount);
-}
+ 
+
 #END of File Zone:paw ID:18071 -- Brother_Hayle
