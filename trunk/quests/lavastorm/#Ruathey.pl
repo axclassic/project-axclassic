@@ -20,7 +20,7 @@ sub EVENT_SAY {
   # Only responds with text if hand-in was completed or if $client already has quest item.
   elsif($qglobals{"note"} == 1 || plugin::check_hasitem($client, 17878)) {
     if($text=~/sword/i) {
-      quest::say("I've heard stories about a holy sword. There are many rumored to be hidden all throughout the world, yet only a few have actually been found. Amstaf had one of these swords. It is known for its ability to dismiss the undead. Perhaps by having this sword it'll bring you closer to finding your friend. Gather a ghoul's heart, Amstaf's Scroll, the Blade of Nobility, and a noblemans hilt and place them in this [bag].");
+      quest::say("I've heard stories about a holy sword. There are many rumored to be hidden all throughout the world, yet only a few have actually been found. Amstaf had one of these swords. It is known for its ability to dismiss the undead. Perhaps by having this sword it'll bring you closer to finding your friend. Gather a ghoul's heart, Amstaf's Scroll, the Blade of Nobility, and a noblemans hilt and place them in this bag.");
     }
     elsif($text=~/bag/i) {
       quest::say("Take this bag and gather the items I've mentioned. I've been told that the Ghoul's Heart can be found in the estate of the undead, while the scroll can be found in the Keep not far from the Karanas. One of the others are rumored to be found near the dwarven city among the goblins. While the last should be found in the caverns of Najena.");
