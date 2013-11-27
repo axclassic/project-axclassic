@@ -3,23 +3,18 @@ sub EVENT_SAY {
 if($text=~/Hail/i){
   quest::say("Greetings, $name.  Are you [pure of heart and soul]?");
   }
-if(($text=~/pure of heart and soul/i) && ($class eq "Paladin")) {
+if($text=~/pure/i) {
   quest::say("Then choose. Do you wish your purity to be tested by Gregori or Dirkog?");
   }
-if(($text=~/Gregori/i) && ($class eq "Paladin")){
+if($text=~/Gregori/i) {
         quest::say("Gregori's tale is one of virtue. Read this book and return it to me if you are ready for your own virtues to be tested.");
         quest::summonitem(18526);
         
         }
-if(($text=~/Dirkog/i) && ($class eq "Paladin")){
+if($text=~/Dirkog/i){
         quest::say("Dirkog is a gruff one, but his faith is what all paladins should strive to equal. Please read this book and return it when ready for your test.");
         quest::summonitem(18527);
         }
-if(($text=~/pure of heart and soul/i) && ($class ne "Paladin")) {
-  quest::say("It is unfortunate that you are mistaken in your calling, for you are no paladin. I cannot assist you like another might.");
-  quest::depop();
-  }
-
 }
 
 sub EVENT_ITEM {

@@ -1,7 +1,7 @@
 #Inte Akera, paladin Epic quest turn-in NPC
 
 sub EVENT_SPAWN {
-  quest::settimer("depop",600);
+  quest::settimer("depop",1200);
 }
 
 sub EVENT_SAY {
@@ -14,17 +14,17 @@ sub EVENT_SAY {
   if ($text=~/blessing/i) {
     quest::say("Many come seeking my blessings. No matter how minor the blessing they ask, all must prove that they embody the qualities of a paladin before I bless them.");
     }
-  if ($text=~/prove myself/i) {
+  if ($text=~/prove/i) {
     quest::say("I believe the two most important qualities of a paladin are nobility and sacrifice. Hand me an item of yours that proves you understand what nobility and sacrifice are. Be warned however, if I do not think as you do, I will simply accept the item as a gift, and give you no blessing.");
     }
   if ($text=~/nobility/i) {
-    quest::say("Ah nobility. A true measure of a paladin. If you are wondering what to bring me, then perhaps you should look within yourself. Look into your soul for a great, burning fire of nobility and you will know.");
+    quest::say("Ah nobility. A true measure of a paladin. If you are wondering what to bring me, then perhaps you should look within yourself. Look into your soul for a great burning fire of nobility and you will know.");
     }
   if ($text=~/sacrifice/i) {
     quest::say("Sacrifice is a virtue all paladins should strive for. The sacrifice of something dear to you will show your devotion. Perhaps something you use to smite the unholy undead.");
     }
   if ($text=~/accomplish/i) {
-    quest::say("I accomplished many great deeds; far too many to name. I saved kings and kingdoms; I helped the weak and destitue; I accomplished all I sought to do, save one at which I failed.");
+    quest::say("I accomplished many great deeds, far too many to name. I saved kings and kingdoms, I helped the weak and destitute. I accomplished all I sought to do, save one at which I failed.");
     }
   if ($text=~/failed/i) {
     quest::say("No.. I was unable to kill my most hated foe, Miragul. The head of this wretched, foul necromancer is forever out of the reach of justice. It would be worth restoring him to his former state for the chance to take his head as a trophy.");
@@ -35,20 +35,20 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if($faction == 1 && plugin::check_handin(\%itemcount, 5504 => 1)) {  #soulfire       
+  if(plugin::check_handin(\%itemcount, 5504 => 1)) {  #soulfire       
     quest::summonitem(18033); #inte's first blessing
      quest::ding(); 
      quest::exp(841790);
     quest::say("You have chosen wisely, my friend. Take this note as a token of my blessing upon you.");
     }
-  elsif($faction == 1 && plugin::check_handin(\%itemcount, 5403 => 1)){
+  elsif(plugin::check_handin(\%itemcount, 5403 => 1)){
   #ghoulbane
     quest::summonitem(18034); #inte's second blessing
      quest::ding(); 
      quest::exp(841790);
     quest::say("You have chosen wisely, my friend. Take this note as a token of my blessing upon you.");
     }
-  elsif($faction == 1 && plugin::check_handin(\%itemcount, 18033 => 1, 18034 => 1, 19073 => 1, 1254 => 1)) { #inte's first blessing, inte's second blessing, miragul's head, miragul's robe
+  elsif(plugin::check_handin(\%itemcount, 18033 => 1, 18034 => 1, 19073 => 1, 1254 => 1)) { #inte's first blessing, inte's second blessing, miragul's head, miragul's robe
     quest::summonitem(11050); #fiery avenger
      quest::ding(); 
      quest::exp(841790);
