@@ -92,6 +92,7 @@ if($text=~/lost/i){
 sub EVENT_ITEM {
 
 if(plugin::check_handin(\%itemcount, 18302 => 1)){ # Book of Scale
+	quest::say("Thank thee for the Book of Scale, here is the artifact I promised you.");
 	quest::summonitem(19072); # Miragul's Phylactery
 	}
 
