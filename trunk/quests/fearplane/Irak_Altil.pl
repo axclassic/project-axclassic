@@ -6,7 +6,7 @@ sub EVENT_SAY {
     if ($text=~/Hail/i) {
         quest::emote("turns its head upon its dried, cracked spine to look at you with a rictus grin. After staring through you it continues to walk on.");
     }
-    if ($text=~/what are you mumbling about/i) {
+    if ($text=~/mumbling/i) {
         quest::emote("turns its rotted eyesockets towards you. 'Fallen light, upon this ground I fell. Left to rot, cast out. My holy arms stripped and my soul cast out of the halls. Twisted, failed, disgraced.'");
     }
     if ($text=~/disgraced/i) {
