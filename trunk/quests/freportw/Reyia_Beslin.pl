@@ -100,7 +100,7 @@ quest::say("Enough history for one day. Are you ready for your final $task?");
 }
 if($text=~/task/i)
 {
-quest::say("The $task I have for you is to bring me the two parts that make up the wand of the Burning Dead, before they can be assembled and used for evil once again. Bring me Marnek's wand and the Sapphire of Souls, along with your orange sash, and you will have proven yourself a loyal member of the Ashen Order, worthy of receiving the red sash.");
+quest::say("The task I have for you is to bring me the two parts that make up the wand of the Burning Dead, before they can be assembled and used for evil once again. Bring me Marnek's wand and the Sapphire of Souls, along with your orange sash, and you will have proven yourself a loyal member of the Ashen Order, worthy of receiving the red sash.");
 }
 
 }
