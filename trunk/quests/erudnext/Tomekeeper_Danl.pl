@@ -1,18 +1,19 @@
 sub EVENT_SAY {
-  if(($ulevel >= 46) && ($class eq "Monk")) {
+my $rare = quest::saylink("rare", 1);
+  if($ulevel >= 46) {
     if($text=~/hail/i) {
       # Monk Epic 1.0
-      quest::say("Good day, citizen. Please remember to keep your voice down in our library. Feel free to browse the extensive collection of books we have on display. Learning is all about you. Our library is the greatest collection of educational literature in the world, as you can no doubt see. If you come across any [rare finds] we may be interested in purchasing them.");
+      quest::say("Good day, citizen. Please remember to keep your voice down in our library. Feel free to browse the extensive collection of books we have on display. Learning is all about you. Our library is the greatest collection of educational literature in the world, as you can no doubt see. If you come across any $rare finds we may be interested in purchasing them.");
     }
-    elsif($text=~/rare finds/i) {
+    elsif($text=~/rare/i) {
       # Monk Epic 1.0
       quest::say("Yes, any rare books, tomes, essays, or other literature you find may be of interest to me. Although the finds I am interested in are quite high profile and would most likely only be found in the possession of very powerful or influential beings. Give me what you find and I will pay you what it is worth to us.");
     }
-    elsif($text=~/lheao/i) {
+    elsif($text=~/Lheao/i) {
       # Monk Epic 1.0
       quest::say("Lheao was my predecessor here at the library of Erudin. He has since retired, just a few years ago. Im sure he would be most impressed with your find and other insightful conversation on the subject. Although Im not sure one of your profession would be interested in such a scholarly endeavor, no offense. If you are interested, find him and tell him you found the book Immortals. Im not sure where he has retired to, but I hear it is near an ocean somewhere.");
     }
-    elsif($text=~/power of the immortals/i) {
+    elsif($text=~/power/i) {
       # Monk Epic 1.5
       quest::say("Power of the Immortals? Hmmm... well of course I know about that, but at the moment I have more pressing issues at hand. Im sorry I could not be of more help, but maybe after my assistant has returned I can help you.");
     }
@@ -37,15 +38,16 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+my $Lheao = quest::saylink("Lheao", 1);
   # Handin: Immortals (book)
-  if((plugin::check_handin(\%itemcount, 18195 => 1)) && ($ulevel >= 46) && ($class eq "Monk")) {
+  if(plugin::check_handin(\%itemcount, 18195 => 1) && ($ulevel >= 46)) {
     # Monk Epic 1.0
     quest::emote("gasps at the sight of the rare book.");
-    quest::say("This is a great find indeed! I can only imagine who you had to.. persuade to give you the book. Our library would be very interested in acquiring this and I am prepared to give you this referral that marks you as a friend of the library. If only [Lheao] could see this.");
+    quest::say("This is a great find indeed! I can only imagine who you had to.. persuade to give you the book. Our library would be very interested in acquiring this and I am prepared to give you this referral that marks you as a friend of the library. If only $Lheao could see this.");
     quest::summonitem(1682); #Danl's Reference
   }
   # Handin: Danl's Missing Book
-  elsif((plugin::check_handin(\%itemcount, 48132 => 1)) && ($ulevel >=46) && ($class eq "Monk")) {
+  elsif(plugin::check_handin(\%itemcount, 48132 => 1) && ($ulevel >=46)) {
     # Monk Epic 1.5
     quest::say("Whats this? How did you know I was missing these pages? I still do not know how you always find a way to help but you have again. Now what is it you can to ask me before? Ah yes, it was regarding the Immortals. It is no coincidence that the pages you just brought me came from the very book you are referring to.");
     quest::emote("mumbles a few words you do not understand and the pages magically are inserted back into the book and become legible again.");
