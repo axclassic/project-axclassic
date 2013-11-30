@@ -2,7 +2,7 @@ sub EVENT_SAY {
  if($text=~/hail/i){
   quest::emote("ignores you.");
  }
- if(($text=~/prepared/i) && ($ulevel>=46) && ($class eq "Monk")){
+ if(($text=~/prepared/i) && ($ulevel>=46)){
   # Monk Epic 1.0
   quest::attack($name);
  }

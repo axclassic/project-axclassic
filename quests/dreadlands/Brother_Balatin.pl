@@ -1,14 +1,15 @@
+my $drape = quest::saylink("drape", 1);
 sub EVENT_SAY {
  if($text=~/hail/i){
   # ROTWF [Part 1]
   quest::me("Brother Balatin turns to you. A transparent human face materalizes upon the skull. As he speaks the smell of rotted rat corpses rushes into your face. You must fight the urge to vomit.");
   quest::say("What discipline do you follow?");
  }
- elsif($text=~/lost circle/i){
+ elsif($text=~/circle/i){
   # ROTWF [Part 2]
-  quest::say("Then we are one. The rebirth of our circle shall start with you. I have waited decades for your arrival. You should seek the living brothers within Tunaria. When you have earned your garb then you will be ready for the [true drape].");
+  quest::say("Then we are one. The rebirth of our circle shall start with you. I have waited decades for your arrival. You should seek the living brothers within Tunaria. When you have earned your garb then you will be ready for the true $drape.");
  }
- elsif($text=~/true drape/i){
+ elsif($text=~/drape/i){
   # ROTWF [Part 3]
   quest::say("Seek the broken flute of our master. Taken from us by the Iksar twins of Vistrei. To me they will come and to me your robe and you will come the dawning of the new brotherhood.");
  }
