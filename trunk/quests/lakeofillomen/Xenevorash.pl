@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
- if(($class eq "Monk") && ($ulevel>=46)){
+ if(($class eq "Warrior","Paladin", "Ranger", "Druid", "Cleric", "Berserker", "Bard", "Magician", "Shadowknight", "Necromancer". "Rogue", "Beastlord", "Enchanter", "Monk", "Shaman", "Wizard") && ($ulevel>=46)){
   # Monk Epic 1.0
   quest::attack($name);
  }
