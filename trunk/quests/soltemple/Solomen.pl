@@ -1,12 +1,15 @@
 sub EVENT_SAY {
+my $history = quest::saylink("history", 1);
+my $wizards = quest::saylink("wizards", 1);
+my $agree = quest::saylink("agree", 1);
 if($text=~/Hail/i){
-quest::say("Ah, I see you have found my study.  This is where I study and scribe the [history] of magic in Norrath.");
+quest::say("Ah, I see you have found my study.  This is where I study and scribe the $history of magic in Norrath.");
 }
 if($text=~/history/i){
-quest::say("I have worked to chronicle everything from the beginnings of magic to what we consider the modern day of magic.  Solusek Ro has been very generous to those who wield magic in Norrath.  But throughout history there is one thing I have noticed - too much power corrupts the soul.  I have seen and documented that the strongest [wizards] and those closest to Solusek Ro become corrupted by their power.");
+quest::say("I have worked to chronicle everything from the beginnings of magic to what we consider the modern day of magic.  Solusek Ro has been very generous to those who wield magic in Norrath.  But throughout history there is one thing I have noticed - too much power corrupts the soul.  I have seen and documented that the strongest $wizards and those closest to Solusek Ro become corrupted by their power.");
 }
 if($text=~/wizards/i){
-quest::say("Unfortunately, I don't have time to speak of such things right now.  But I could use your help since you are here.  I have here an envelope that I need delivered to one Camin.  You can find him near the wizard tower in the city of Erudin.  He is a sage like myself whose knowledge rivals my own.  Do you [agree] to undertake my task?");
+quest::say("Unfortunately, I don't have time to speak of such things right now.  But I could use your help since you are here.  I have here an envelope that I need delivered to one Camin.  You can find him near the wizard tower in the city of Erudin.  He is a sage like myself whose knowledge rivals my own.  Do you $agree to undertake my task?");
 }
 if($text=~/agree/i){
 quest::say("Here you are, then.  Good luck on your journey.");
