@@ -1,7 +1,7 @@
 my $headbands = quest::saylink("headbands", 1);
 my $Red = quest::saylink("Red", 1);
 my $Dareb = quest::saylink("Dareb", 1);
-my $splitpaws = quest::saylink("splitpaws", 1);
+my $splitpaw = quest::saylink("splitpaw", 1);
 my $powerful = quest::saylink("powerful", 1);
 my $Purple = quest::saylink("Purple", 1);
 my $Bring = quest::saylink("Bring", 1);
