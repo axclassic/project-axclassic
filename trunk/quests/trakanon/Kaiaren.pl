@@ -1,15 +1,17 @@
 sub EVENT_SAY {
+my $chat = quest::saylink("chat", 1);
+my $this = quest::saylink("this", 1);
    if($text=~/Lheao/i) {
       if((defined $qglobals{MnkEpcBook}) && ($qglobals{MnkEpcBook}==2)) {
-         quest::say("Hmmm, never heard of him. Well, it doesn't matter, the book is here now. Curse that idiot for writing it in the first place. Not even sure why I let him stick around. If you ever see that clown monk Aradiel kick him in the shins for me! At any rate, I suppose you'd like to find the Fists and [have a nice chat with them], eh? Their master owes me much. I would reward you well if you were to bring me proof of the master's defeat");
+         quest::say("Hmmm, never heard of him. Well, it doesn't matter, the book is here now. Curse that idiot for writing it in the first place. Not even sure why I let him stick around. If you ever see that clown monk Aradiel kick him in the shins for me! At any rate, I suppose you'd like to find the Fists and have a nice $chat with them, eh? Their master owes me much. I would reward you well if you were to bring me proof of the master's defeat");
       }
    }
-   elsif($text=~/chat with/i) {
+   elsif($text=~/chat/i) {
       if((defined $qglobals{MnkEpcBook}) && ($qglobals{MnkEpcBook}==2)) {
-         quest::say("Yes, I suppose you would. All you children looking for fame and glory will eventually learn the poison of ambition. But how will you find them? They are able to meld with their elements seamlessly and they certainly have no interest in fooling with the likes of you. No, you will need to get their attention. Fortunately, I know [how you can do this].");
+         quest::say("Yes, I suppose you would. All you children looking for fame and glory will eventually learn the poison of ambition. But how will you find them? They are able to meld with their elements seamlessly and they certainly have no interest in fooling with the likes of you. No, you will need to get their attention. Fortunately, I know how you can do $this.");
       }
    }
-   elsif($text=~/do this/i) {
+   elsif($text=~/this/i) {
       if((defined $qglobals{MnkEpcBook}) && ($qglobals{MnkEpcBook}==2)) {
          quest::say("My guess is that the weakest of the Fists will be the easiest to draw out. He is egotistical and arrogant. How he came to master the Discipline of Fire, I do not know. He will most likely be in another form, one of his element. When you find the one you believe to be the Fist, you must challenge him. If you use his true name, Eejag, in your formal challenge, he will respond. A flame can burn intensely but it cannot last for long. Know this when you battle him.");
          quest::depop();
@@ -25,7 +27,7 @@ sub EVENT_SAY {
          quest::depop();
       }
    }
-   elsif($text=~/celestial fists/i) {
+   elsif($text=~/fists/i) {
       if((defined $qglobals{MnkEpcBook}) && ($qglobals{MnkEpcBook}==2)) {
          quest::say("Eh? Whats that? Bah! That was destroyed long ago. Dont waste my time with fairy taAAAAAGGHH GET IT AWAY!!! HELP!!! Theyre all over MEHEHEHEEEEEee!!");
       }
