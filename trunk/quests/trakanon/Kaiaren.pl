@@ -21,12 +21,12 @@ sub EVENT_ITEM {
    # Handin: Celestial Fists (book) to Mad Kaiaren
    if(plugin::check_handin(\%itemcount, 1683 => 1)) {
       quest::spawn(95105, 0, 0, 2470, 306, -339);
-      quest::summonitem(1689);
+      quest::summonitem(119829);
       quest::emote("eyes open wide and he attacks you!");
       quest::attack($name);
    }
     # Handin: Celestial Fists (book) to True Kaiaren
-    if(plugin::check_handin(\%itemcount, 1689 => 1)) {
+    elsif(plugin::check_handin(\%itemcount, 119829 => 1)) {
     # Return: Book of Celestial Fists
       quest::summonitem(1689);
       quest::say("Now, then. Where did you find this, monk? This is not just some light reading to be borrowed from the town library. Who gave this to you?");
@@ -53,7 +53,7 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_DEATH {
-   quest::say("Not bad.. Now lets see if you can find my trueform, If you do, we can discuss this further.");
+   quest::say("Not bad.. Now lets see if you can find my trueform, If you do, I will return to you the real book and we can discuss this further.");
 }
 # End of File
 
