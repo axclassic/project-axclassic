@@ -4,6 +4,11 @@ my $this = quest::saylink("this", 1);
    if($text=~/hail/i) {
       quest::say("AHHH! Get it away from me. Go away. ..Leave me alone.");
       }
+   elsif($text=~/real/i) {
+      quest::say("Very well, find my true form where it was before.");
+   	  quest::spawn(95105, 0, 0, 2470, 306, -339);
+	  quest::depop()
+	  }
    elsif($text=~/Lheao/i) {
       quest::say("Hmmm, never heard of him. Well, it doesn't matter, the book is here now. Curse that idiot for writing it in the first place. Not even sure why I let him stick around. If you ever see that clown monk Aradiel kick him in the shins for me! At any rate, I suppose you'd like to find the Fists and have a nice $chat with them, eh? Their master owes me much. I would reward you well if you were to bring me proof of the master's defeat");
       }
