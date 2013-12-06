@@ -19,8 +19,8 @@ if ($text=~/help/i) {
 if ($text=~/begin/i) {
    if($x == -1234) {
    quest::say("To arms, now! Rush into the heart of the beast and emerge victorious, as we have discussed! Charge!");
-  ## quest::unique_spawn(167663,0,0,-1228,200,37);  #counter spawn #NPC NOT THERE
-  ## quest::unique_spawn(167662,0,0,-1247,535,40);   #untargetable #Ukigit NPC NOT THERE
+  quest::unique_spawn(167963,0,0,-1228,200,37);
+  quest::unique_spawn(167964,0,0,-1247,535,40);
   quest::settimer("return",600); #need to figure out return trip including pause
   }
  }
