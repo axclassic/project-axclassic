@@ -1,21 +1,21 @@
-# Shaman Epic 1.0
-# Srafen the Soaked
-# Erud's Crossing (erudsxing)
-# Aramid September 2006
-
 sub EVENT_SPAWN {
   quest::settimer("depop",600);
 }
 
 sub EVENT_SAY {
+my $here = quest::saylink("here", 1);
+my $wait = quest::saylink("wait", 1);
+my $us = quest::saylink("us", 1);
+my $wait = quest::saylink("wait", 1);
+my $else = quest::saylink("else", 1);
   if($text=~/hail/i) {
-   quest::say("Why hello there! Ahh, it's good to see a new face down [here]. So you've come to [wait] with [us] eh? That is splendid! It's been getting very boring lately.");
+   quest::say("Why hello there! Ahh, it's good to see a new face down $here. So you've come to $wait with $us eh? That is splendid! It's been getting very boring lately.");
   }
   if($text=~/here/i) {
-   quest::say("Oh! Well this is where [we wait]. It's not much for looks but if you're lucky, a pretty fish will swim by. Oh, and once Dillon said he saw one of those fish women, a mermaid, he called it! Although, I'm not so sure of his state of mind, hehehe. He's been waiting here much longer than I.");
+   quest::say("Oh! Well this is where $we wait. It's not much for looks but if you're lucky, a pretty fish will swim by. Oh, and once Dillon said he saw one of those fish women, a mermaid, he called it! Although, I'm not so sure of his state of mind, hehehe. He's been waiting here much longer than I.");
   }
   if($text=~/us/i) {
-   quest::say("Well, there's me, Srafen. I've been down here for, can't quite remember, a number of years, I guess. If my wife saw the condition my clothes are in, she'd whack me, I'm sure, heheh. Although I'd bet she's long since dead, probably. Then there's Dillon. He says he's been here since those people up top in Erud blew that big hole in the ground. Not sure what happened but I guess it was a long time ago. Hmmmm, who [else]?");
+   quest::say("Well, there's me, Srafen. I've been down here for, can't quite remember, a number of years, I guess. If my wife saw the condition my clothes are in, she'd whack me, I'm sure, heheh. Although I'd bet she's long since dead, probably. Then there's Dillon. He says he's been here since those people up top in Erud blew that big hole in the ground. Not sure what happened but I guess it was a long time ago. Hmmmm, who $else?");
    quest::signalwith(98009,199);
   }
   if($text=~/wait/i) {
@@ -55,10 +55,3 @@ sub EVENT_SIGNAL {
     quest::depop();
   }
 }
-
-sub EVENT_TIMER {
-  quest::depop();
-  quest::stoptimer("depop");
-}
-
-# End of File - NPCID 98046 - Srafen_the_Soaked
