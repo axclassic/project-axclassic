@@ -22,7 +22,7 @@ quest::say("Allow me to be the first to welcome you to the Khati Sha. lords of t
 quest::summonitem("2877");
 } else {
   #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
+  plugin::try_tome_handins(\%itemcount);
   plugin::return_items(\%itemcount);
 }
 }

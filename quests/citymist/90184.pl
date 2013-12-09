@@ -15,8 +15,7 @@ my $mob1attack;
 
 
 sub EVENT_ITEM {
- if ($class eq "Shaman") {
-  if (plugin::check_handin(\%itemcount, 1681 => 1)) {
+   if (plugin::check_handin(\%itemcount, 1681 => 1)) {
    quest::say("Nothing is left to hide now. You shall have the truth. But truth is not won easily and if you cannot defeat me, you have not the ability to see that vengeance is served. Brace yourself!");
    $x = $npc->GetX();
    $y = $npc->GetY();
