@@ -2,11 +2,16 @@
 # 
 
 sub EVENT_SAY {
+my $diamond = quest::saylink("diamond", 1);
+my $sapphire = quest::saylink("sapphire", 1);
+my $ruby = quest::saylink("ruby", 1);
+my $emerald = quest::saylink("emerald", 1);
   if ($text=~/hail/i) {
     quest::say("Hello my dear. I am quite pleased to make your acquaintance. Perhaps even charmed!");
   }
   if ($text=~/gems/i) {
-    quest::say("I have prepared some gems that you will need to trap the essence. You will need to force a diamond, sapphire, ruby and emerald onto special creatures to obtain their essence.");
+    quest::say("I have prepared some gems that you will need to trap the essence. You will need to force a $diamond, $sapphire, $ruby and $emerald onto special creatures to obtain their essence.");
+    quest::summonitem(17861);
   }
   if ($text=~/diamond/i) {
     quest::say("Here is the diamond that I have prepared for you. Its only purpose is to trap the essence of a particular book worm. If you should fail in your first attempt, do not worry. I will provide you with another.");
@@ -28,8 +33,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+my $gems = quest::saylink("gems", 1);
   if (plugin::check_handin(\%itemcount, 10604 => 1)) {
-    quest::say("Oh it must be time to reveal the staff! The piece I will help you craft is encrusted with magical gems. These gems contain the essence of various creatures. Alone they have very little power. Combined together they are much more powerful. They must be combined in a sack. Just ask if you don't have one.");
+    quest::say("Oh it must be time to reveal the staff! The piece I will help you craft is encrusted with magical gems. These $gems contain the essence of various creatures. Alone they have very little power. Combined together they are much more powerful. They must be combined in a sack. Just ask if you don't have one.");
     quest::summonitem(10604);
     quest::summonitem(17861);
   }

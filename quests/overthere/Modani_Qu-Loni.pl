@@ -3,29 +3,34 @@
 
 
 sub EVENT_SAY {
+my $Chalice = quest::saylink("Chalice", 1);
+my $Rod = quest::saylink("Rod", 1);
+my $blossoms = quest::saylink("blossoms", 1);
+my $Word = quest::saylink("Word", 1);
   if ($text=~/hail/i) {
     quest::say("The hidden self inside a myriad of magic is one that walks quite softly. Yes, that is what you must seek.");
   }
   if ($text=~/ready/i) {
-    quest::say("Scattered throughout the world are various items. To prove your worth, go collect these and return them to me. The Xolion Rod, Innoruuk's Word, Chalice of Kings, and snow blossoms.");
+    quest::say("Scattered throughout the world are various items. To prove your worth, go collect these and return them to me. The Xolion $Rod, Innoruuk's $Word, $Chalice of Kings, and snow $blossoms.");
   }
-  if ($text=~/chalice of kings/i) {
+  if ($text=~/Chalice/i) {
     quest::say("The Chalice of Kings is the chalice of elven kings. Previously thought to be lost to the ages, it was recently discovered. I need its magical powers to create a magical liquid.");
   }
-  if ($text=~/xolion rod/i) {
+  if ($text=~/Rod/i) {
     quest::say("This is the rod of an ancient civilization found on this continent. Nothing is known of it other than that the scaled ones discovered it years ago.");
   }
-  if ($text=~/snow blossoms/i) {
+  if ($text=~/blossoms/i) {
     quest::say("These are flowers that are also used in the creation process. They were once widespread, but now I am told they only grow in select places.");
   }
-  if ($text=~/innoruuks word/i) {
+  if ($text=~/Word/i) {
     quest::say("The strict doctrine of the priests of Innoruuk is used as a material component in the crafting. The power of their hate must not be underestimated.");
   }
 }
 
 sub EVENT_ITEM {
+my $ready = quest::saylink("ready", 1);
   if (plugin::check_handin(\%itemcount, 10604 => 1)) {
-    quest::say("Ah yes, Jeb's seal. The time to craft a Serpent must have come. I will need components collected to craft the first of the pieces. I will also provide you with a sack in which you must combine the items. Are you ready to collect them?");
+    quest::say("Ah yes, Jeb's seal. The time to craft a Serpent must have come. I will need components collected to craft the first of the pieces. I will also provide you with a sack in which you must combine the items. Are you $ready to collect them?");
     quest::summonitem(10604);
     quest::summonitem(17861);
   }
