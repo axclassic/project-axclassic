@@ -1,14 +1,20 @@
 # white paper portion of enchanter epic quest lead-in
 
 sub EVENT_SAY {
+my $materials = quest::saylink("materials", 1);
+my $paper = quest::saylink("paper", 1);
+my $quill = quest::saylink("quill", 1);
   if ($text=~/hail/i) {
     quest::emote("slowly lifts her head.");
-    quest::say("Have you brought any writing materials for me? The last few supplies I had were stolen.");
+    quest::say("Have you brought any writing $materials for me? The last few supplies I had were stolen.");
   }
-  if ($text=~/writing materials/i) {
-    quest::say("A passing illusionist gave me some enchanted writing materials. He said they would help inspire me to capture my mind's images on paper. If you would just be so kind as to bring me plain old paper and a quill from Qeynos, I can get back to writing.");
+  if ($text=~/materials/i) {
+    quest::say("A passing illusionist gave me some enchanted writing materials. He said they would help inspire me to capture my mind's images on $paper. If you would just be so kind as to bring me plain old $paper and a $quill, I can get back to writing.");
   }
   if ($text=~/paper/i) {
+    quest::say("I don't know who might be selling those these days. Just ask around. I am sure someone will know.");
+  }
+  if ($text=~/quill/i) {
     quest::say("I don't know who might be selling those these days. Just ask around. I am sure someone will know.");
   }
 }

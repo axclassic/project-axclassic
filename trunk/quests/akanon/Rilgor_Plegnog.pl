@@ -2,7 +2,7 @@
 # 
 
 sub EVENT_SAY {
-  if ($text=~/mechanical pen/i) {
+  if ($text=~/pen/i) {
     quest::say("Why do you want one of those contraptions. You will spend more time repairing it then you will writing with it. But if you insist on getting one, you are going to have to do a small favor.");
     quest::emote("tugs at your robe and grins evilly. 'Mighty nice outfit you have there. Sure beats these drab robes us three are wearing. Hmm...my favorite color is purple, in fact a shiny metallic purple would do nicely. How bad did you want that pen?'");
   }
