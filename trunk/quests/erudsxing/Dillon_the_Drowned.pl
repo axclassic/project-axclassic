@@ -29,8 +29,9 @@ my $disastrous = quest::saylink("disastrous", 1);
 }
 
 sub EVENT_SIGNAL {
+my $bore = quest::saylink("bore", 1);
   if ($signal == 299) {
-    quest::say("Again? Oh I don't know Srafen, I don't want to [bore] our company, even if it is an illusion.");
+    quest::say("Again? Oh I don't know Srafen, I don't want to $bore our company, even if it is an illusion.");
   }
   if($signal == 399) {
     quest::depop();
