@@ -22,7 +22,7 @@ my $spirits = quest::saylink("spirits", 1);
   if($text=~/Combine/i) {
     quest::emote("shakes his head in amusement and says, 'Heheheh, yeah, you'd think so, wouldn't you? But I guess not.");
   }
-  if($text=~/broken arrow/i) {
+  if($text=~/arrow/i) {
     quest::emote("eyes suddenly come into focus, looking deep into your own and says, 'There was a time when we cared for the world and trod with the spirits along the paths of the cosmos. We built many great things and worked to preserve what was. I came here to wait for an answer when we began to die off.");
     quest::say(" We could not figure why this was and I was chosen to come here and commune with our friends. We carved an arrow, and everyone who was left shaved a sliver of wood from it. We let it drop to hallowed ground and our highest shaman stepped on it, breaking it. I've been waiting here for so long. So, so long, to give it to the $spirits, and thank them.");
     quest::signalwith(98046,250,25000);
