@@ -1,19 +1,12 @@
 sub EVENT_SAY {
-  if ($text=~/hail/i) {
-    quest::emote("Bibsy Gakdoo stares at you, it is obvious he is ignoring you.");
-  }
-}
-
-sub EVENT_ITEM {
-my $story = quest::saylink("story", 1);
 my $awake = quest::saylink("awake", 1);
 my $hear = quest::saylink("hear", 1);
 my $continue = quest::saylink("continue", 1);
 my $agree = quest::saylink("agree", 1);
-  if (plugin::check_handin(\%itemcount, 55031 => 1)) {
-    quest::say("Bibsy Gakdoo at your service, milord. I do have an extensive background in the art of jewel crafting and the full ranges of my services are at your disposal most noble one. Come take a seat if you may and listen to a $story.");
-     }
-     if ($text=~/story/i) {
+  if ($text=~/hail/i) {
+    quest::emote("Bibsy Gakdoo stares at you, it is obvious he is ignoring you.");
+  }
+  if ($text=~/story/i) {
        quest::say("Legends tell of a human paladin of Marr named Arthikus. This paladin was the most devout of Marr's followers and the keeper of the sacred Marr's Emerald. Marr's emerald was a beautiful gem, blessed by Marr and given to only his most devout and pious of followers. Arthikus was the only paladin ever known to wield this item. Bearing this proud relic, Arthikus was frequently seen wandering the Oasis of Marr destroying all undead that he could find. One day on one of his excursions into the desert he met a beautiful gypsy girl named Evaa, the daughter of a gypsy merchant. It was well known to the Paladins of Marr that this Gypsy family made shady deals with various necromancers to keep the undead from attacking their merchant caravan. Despite this, Arthikus continued to see Evaa and eventually fell in love with her. Are you still $awake, sire?");
      }
      if ($text=~/awake/i) {
@@ -27,8 +20,15 @@ my $agree = quest::saylink("agree", 1);
      }
      if ($text=~/agree/i) {
        quest::say("They say that Arthikus still wanders the Oasis, attacking all those who come near him. If he still has any of the pieces of Marr's Emerald on him, I believe I could use them to imbue your Ring with more power. If you do find a piece of the Emerald, please come back to see me and hand me a piece of the Emerald and your Ring, and I will see what I can do for you, milord.");
+}
+}
+sub EVENT_ITEM {
+my $story = quest::saylink("story", 1);
+  if (plugin::check_handin(\%itemcount, 55031 => 1)) {
+    quest::say("Bibsy Gakdoo at your service, milord. I do have an extensive background in the art of jewel crafting and the full ranges of my services are at your disposal most noble one. Come take a seat if you may and listen to a $story.");
      }
-     if (plugin::check_handin(\%itemcount, 55033 => 1)) {
+    
+  elsif (plugin::check_handin(\%itemcount, 55033 => 1)) {
        quest::say("So the legend was true! Er, uh not that I doubted the validity of Marr's legends, milord.' Bibsy takes the Ring and the piece of the Emerald and sets them on the table. He then pulls out a small set of tools and begins to place the Emerald into the Ring. After a short while he hands the Ring back to you. 'Here you are. I do believe it is my finest work yet. Marr's blessing to you, milord!");
        quest::faction( 35, 10);
        quest::faction( 264, 10);
