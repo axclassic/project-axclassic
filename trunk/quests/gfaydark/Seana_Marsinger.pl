@@ -39,7 +39,7 @@ my $Monk = quest::saylink("Monk", 1);
    quest::say("Our parents are back in Qeynos assisting Jusean with all that needs to be verified and ensuring that the League's network contacts are all still viable. They will need to stay there in case we must get the word out quickly. I do not believe that any of the residents of Tanaan would approve of our little quest, and would view it as biased. Thus we are here alone. Does this type of project $interest you?");
  }
  if($text=~/interest/i) {
-   quest::say("Do you want to collect the reward for a $Ranger, $Paladin, $Shadowknight, $Beastlord, $Bard, $Wizard, $Magician, $Necromancer or $Enchanter, $Cleric, $Shaman, $Druid, $Warrior, $Rogue or $Monk?");
+   quest::say("Do you want to collect the reward for a $Ranger, $Paladin, $Shadowknight, $Beastlord, $Bard, $Wizard, $Magician, $Necromancer, $Enchanter, $Cleric, $Shaman, $Druid, $Warrior, $Rogue or $Monk?");
    }
  if(($text=~/Ranger/i)||($text=~/Paladin/i)||($text=~/Shadowknight/i)||($text=~/Beastlord/i)||($text=~/Bard/i)||($text=~/Wizard/i)||($text=~/Magician/i)||($text=~/Necromancer/i)||($text=~/Enchanter/i)) {
    quest::say("Please speak to my brother, Stefan, for further information. He will be your primary contact for any tasks you perform for us in Innoruuk's realm. The League of Antonican Bards and I commend you for your efforts.");
