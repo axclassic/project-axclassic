@@ -26,28 +26,30 @@ my $second = quest::saylink("second", 1);
   if (($text=~/Hail/i) && ($charid > 3167)){  #set
     $client->Message(14,"Hail, $name! I am Darkwater the Ladder Guide, and will be observing and rewarding you for your advancement on the Ladder."); 
     $client->Message(14,"I will $reward you for advancement to levels 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title\, and I will provide it for you, in addition to your reward.");
-     if (($year2012a <= 0) && ($event1==1)){ #Angelox New Years event earring item.
+    if ($ulevel <= 2){
+     if (($year2014a <= 0) && ($event1==1)){ #Angelox New Years event earring item.
        $client->Message(14,"I see you started with the New Year. Glad to have you here again! Here,take my special reward for your dedication.");
        quest::summonitem(625);
        $client->Message(6,"You recieved Darkwater's Earring of Travel!");
-       quest::setglobal("year2012a",1,5,"F");
-       $year2012a=undef; }
-     if (($year2012b <= 0) && ($event1==1)){ #Caveds New Years event item.
-	if ($year2012a > 0){ 
+       quest::setglobal("year2014a",1,5,"F");
+       $year2014a=undef; }
+     if (($year2014b <= 0) && ($event1==1)){ #Caveds New Years event item.
+	if ($year2014a > 0){ 
 	  $client->Message(14,"I see you started with the New Year. Glad to have you here again! Here,take my special reward for your dedication.");
 	  quest::summonitem(119503);
 	  $client->Message(6,"You recieved The Stone of the Ladder!");
-	  quest::setglobal("year2012b",1,5,"F");
-	  $year2012b=undef;
+	  quest::setglobal("year2014b",1,5,"F");
+	  $year2014b=undef;
 	 }else{
 	  quest::summonitem(119503);
 	  $client->Message(6,"You recieved The Stone of the Ladder!");
-	  quest::setglobal("year2012b",1,5,"F");
-	  $year2012b=undef;
+	  quest::setglobal("year2014b",1,5,"F");
+	  $year2014b=undef;
 	  }
 	return;
       }
     return;
+    }
   }
   if (($text=~/join/i)&& ($charid > 3167)){ #set
     $client->Message(14,"Glad to have you with us ");
