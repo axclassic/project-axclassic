@@ -14,7 +14,7 @@ $h = $npc->GetHeading();
  	quest::set_proximity( $x-10,$x+10,$y-10,$y+10,$z-10,$z+10);
 	}
 sub EVENT_ENTER {
-	quest::spawn2(163472,0,0,3443.6,-230.0,-9.0,251.3);
+	quest::spawn2(163015,0,0,3443.6,-230.0,-9.0,251.3);
 	quest::depop;
     }
 
