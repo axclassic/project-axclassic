@@ -19,7 +19,7 @@ my $second = quest::saylink("second", 1);
   if(($text=~/Hail/i) && ($charid < 3168)) { #set
     #$client->Message(14,"Your character ID is $charid ");
     $client->Message(14,"Your character is too old for this ladder, start a new character!");
-    $client->Message(15,"This ladder begins on January 1st, 2013, ending date posted at the AX Classic forums..");
+    $client->Message(15,"This ladder began on January 1st, 2013, ending date posted at the AX Classic forums..");
     $client->Message(15,"You should start your new character on or after the starting date.");
     return; 
   }
