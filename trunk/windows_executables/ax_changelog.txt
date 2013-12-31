@@ -1,5 +1,11 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==12/31/2013==
+ Angelox:  Fix for merchant money exchange bug.
+
+==12/02/2013==
+ Angelox: "loot all" feature disabled for character corpses (possibly crashing the zone and bugging the character).
+
 ==11/17/2013== 
 Angelox: Extra clients zoning while grouped with bots will not crash the zone anymore.
 
