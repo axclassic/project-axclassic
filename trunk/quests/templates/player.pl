@@ -20,7 +20,8 @@ my $random_result = int(rand(100));
        $client->Message(14,"You will not be able to board the ship that sails from Freeport to Butcher and back without these files.");}
 	elsif($random_result<=75){
        $client->Message(14,"Post petitions and requests at http://forums.axclassic.com."); 
-       $client->Message(14,"You first bot-helper is free (no quest needed), find and talk to Aediles Thrall about it.");}
+       $client->Message(14,"You first bot-helper is free (no quest needed), find and talk to Aediles Thrall about adding more bots.");
+       $client->Message(14,"Use the command '#bot create help' for creating your bot.");}
 	elsif($random_result<=100){
        $client->Message(14,"Most travel in AXClassic is done by looted or quested moonstones and quested gates or portals for your Druid or Wizard Mercenary Bot."); 
        $client->Message(14,"Use your \"Find\" button and look for the Anita Thrall for gate or portal quests. ");}
@@ -74,7 +75,15 @@ my $random_result = int(rand(100));
   }
   elsif ((!plugin::check_hasitem($client, 138)) && (defined ${$name}==2)){
     quest::summonitem(140);
-   }
+  }
+ ## Angelox: First bot is free  
+ if (!defined $bot_spawn_limit){
+    quest::setglobal("bot_spawn_limit", 1, 5, "F");
+    $bot_spawn_limit = undef;
+    $client->Message(6,"You receive a character flag!");
+    $client->Message(14,"You have one bot available for creation, use the '#bot create' command.");
+    $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
+ }
   #elsif (!defined($tswitch)) {
    # quest::setglobal("tswitch",6,5,"F");
    # $taunt_switch = undef;
@@ -139,7 +148,7 @@ elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
     ## Both Database advisories
     #
     ## Advise the players about our client status.
-    if ($ulevel == 1){
+    if (($ulevel == 1) && (defined $bot_spawn_limit)){
       $clientver = $client->GetClientVersion();
       if($clientver > 3){
 	$client->Message(15,"AXClassic is compatible with Titanium, SoF, SoD, and Underfoot clients.");
