@@ -1,5 +1,8 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==01/12/2014==
+ Angelox:  Fix for horse dismount.
+ 
 ==12/31/2013==
  Angelox:  Fix for merchant money exchange bug.
 
