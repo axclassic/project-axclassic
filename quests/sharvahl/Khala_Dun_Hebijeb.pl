@@ -10,6 +10,7 @@ sub EVENT_ITEM {
 quest::emote("looks at you with an expression of approval");
     quest::say("Your completion of the assigned task has been noted. Accept this weapon as a token of the Khala Dun's gratitude. You will find the Khala Dun to be very generous to it's humble students, quick to reward obedience. I have been notified that one of our citizens needs some assistance, bring me proof that you have aided Dronqam Runghi.");
     quest::summonitem(3445);
+	quest::summonitem(2877);
     quest::exp(1000);
     quest::faction(132,10 );
   }
