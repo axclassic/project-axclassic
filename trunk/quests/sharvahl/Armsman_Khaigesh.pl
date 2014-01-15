@@ -1,6 +1,10 @@
 #Armsman_Khaigesh  ID 155058
 
 sub EVENT_SAY {
+my $lesson = quest::saylink("lesson", 1);
+  if ($text=~/hail/i) {
+    quest::say("Hail and well met young recruit $name. I see you have been sent tome by Khala Dun Hebijeb, are you ready to learn a $lesson?");
+	}
   if ($text=~/lesson/i) {
     quest::say("A warrior must learn to be patient and pay attention to detail. Take the bag that I've just given you and fill it with Acrylia flecked nuggets. When hunting the moor, we often found rocks and ore wedged in the shells of the beetles that roam there. Kill the beetles that walk near the city's gates and pry their shells apart. You should be able to gather a decent amount of ore that way. Once you've filled the bag that I've given you, return here with the bag and your Skeletonbane short sword and I'll teach you something new.");
   }
