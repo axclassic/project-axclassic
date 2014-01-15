@@ -7,8 +7,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+my $lesson = quest::saylink("lesson", 1);
   if (plugin::check_handin(\%itemcount, 3452 => 1)) {
-    quest::say("I can see by your armaments, that Hebijeb has started you along the path of bravery. That's a very good foundation for a young Khala Dun recruit to build upon. Bravery is an important trait, but you will need to learn discipline and patience. The blacksmithing that we do as Khala Dun helps to reinforce and reflect upon those traits. Take this bag and I will help you with your next [lesson].");
+    quest::say("I can see by your armaments, that Hebijeb has started you along the path of bravery. That's a very good foundation for a young Khala Dun recruit to build upon. Bravery is an important trait, but you will need to learn discipline and patience. The blacksmithing that we do as Khala Dun helps to reinforce and reflect upon those traits. Take this bag and I will help you with your next $lesson.");
     quest::summonitem(17604);  
     quest::summonitem(3452);  
   }
