@@ -17,6 +17,7 @@ sub EVENT_ITEM {
   quest::say("Thanks for the Bag of Bolts $name.");
   quest::say("Thank you for making those for me. I was almost out. I'll modify your buckler immediately after I finish what I am doing here. Meanwhile, take this shopping list to Friaz. Do what you can to assist her. I need the bag of beetle horns she will give you if I am to work on your shield today.");
   quest::summonitem(18321);
+  quest::summonitem(5546);
     
   }
   if (plugin::check_handin(\%itemcount, 5549 =>1 )) {
