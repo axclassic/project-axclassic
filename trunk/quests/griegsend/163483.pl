@@ -1,11 +1,14 @@
-sub EVENT_DEATH{
- my $random_result = int(rand(100));
-  if ($random_result<=50){
-quest::signalwith(163075,400);
-quest::delglobal("grieg_event");
-quest::setglobal("grieg_event",3,3,"F");
-$grieg_event=undef;
-  }else{
-  #do nothing
+sub EVENT_DEATH {
+ quest::signalwith(163489,400,0); #signal to invis_man #
  }
-}
+
+ #merchant.pl
+ # empty no script needed
+
+ #Wizard.pl 163156.pl
+
+ sub EVENT_SPAWN {
+
+ quest::setnexthpevent(25);
+
+ }
