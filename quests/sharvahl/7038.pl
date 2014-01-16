@@ -1,8 +1,6 @@
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Greetings traveler. if you are headed through these gates you should be aware that there are many [dangers] you may encounter.");
-quest::say("Greetings traveler. if you are headed through these gates you should be aware that there are many [dangers] you may encounter.");
-quest::say("Greetings traveler. if you are headed through these gates you should be aware that there are many [dangers] you may encounter.");
 }
 if($text=~/what dangers?/i){
 quest::say("Recently there have been numerous [brigand] encounters. the [Shak Dratha] have also taken arms against our people.");
