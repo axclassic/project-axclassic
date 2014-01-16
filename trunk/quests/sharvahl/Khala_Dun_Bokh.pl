@@ -17,9 +17,6 @@ sub EVENT_SAY {
   if($text=~/loda kai/i){
     quest::say("[Loda Kai] was a strong member of the Taruun. he was off to investigate the spirit deaths in shadeweavers thicket when a strong explosion was felt throughout the thickets. He has not been seen since. It was around the time of his disappearance that the brigands began to raid our trade route to shadow haven.");
   }
-  if($text=~/loda kai/i){
-    quest::say("[Loda Kai] was a strong member of the Taruun. he was off to investigate the spirit deaths in shadeweavers thicket when a strong explosion was felt throughout the thickets. He has not been seen since. It was around the time of his disappearance that the brigands began to raid our trade route to shadow haven."); 
-  }
 }
   
 sub EVENT_ITEM { 

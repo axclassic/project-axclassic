@@ -7,7 +7,7 @@ quest::say("Hello. $name. I am Mignah. a humble acrylia specialist. If you have 
     quest::say("This may hurt a bit, but it'll heal.");
     quest::emote("etches your name and the date into the slate and plunges it into a bucket of water before placing it into your stinging palm. ");
     # Acrylia Slate
-    quest::summonitem("2876");
+    quest::summonitem(2876);
   }
   }
 
