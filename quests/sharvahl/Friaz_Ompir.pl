@@ -1,5 +1,9 @@
 #Friaz_Ompir  ID 155060
-
+sub EVENT_SAY { 
+if($text=~/Hail/i){
+quest::say("Well met. friend.  May I be of assistance?"); 
+}
+}
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18321 =>1 )) {
     quest::say("Ahhh... I see that Noril is trying to get out of work. That lad is a lazy one. Not a problem though... you'll do all the same. Here, let me add a few more things to that list, since you look nice and strong. Take this list and my grocery bag and I'll see about scrounging up the beetle horns that Noril's been bugging me about.");
