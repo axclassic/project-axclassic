@@ -20,7 +20,7 @@ my $lesson = quest::saylink("lesson", 1);
     quest::exp(2000);
     quest::faction(132,10);
   }
-  elsif (plugin::check_handin(\%itemcount, 5550 => 1, 5554 => 1, 3453 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 5550 => 1, 5545 => 1, 3453 => 1)) {
     quest::say("Excellent work! You're progressing nicely, young warrior. You are well suited to the path of the Khala Dun. Take this new cloak and wear it proudly. You have earned the right to consider yourself an Apprentice of the Khala Dun. Please speak to Guard Kuash and show him your new buckler.");
     quest::shout("Citizens and travelers, please welcome, $name to the rank of Apprentice to the noble Khala Dun! We should all serve our people in such an honorable fashion!");
     quest::exp(3000);
@@ -28,7 +28,7 @@ my $lesson = quest::saylink("lesson", 1);
     quest::ding();
     quest::summonitem(5557);
     quest::summonitem(5550);
-    quest::summonitem(5554);
+    quest::summonitem(5545);
   }
   else {
     quest::say("I do not want this.");
