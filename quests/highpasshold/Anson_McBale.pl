@@ -33,7 +33,7 @@ sub EVENT_SAY {
       quest::say("Just who the flip do you THINK I am? Oh, you want my biography? $name, you are standing on my last nerve. Old man delight in telling tales about themselves. Me, I'm busy living those tales at the moment. If I am still here in thirty years, ask me then.");
   }
 		
-  if($text=~/i need to s(ee|peak).*?stanos/i){
+  if($text=~/stanos/i){
     # To make Rogue only, add in ($class eq "Rogue") to the if statement
     if($ulevel >= 50) {
 	  quest::say("This better be important.");
