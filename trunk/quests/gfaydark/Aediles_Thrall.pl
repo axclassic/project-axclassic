@@ -14,6 +14,8 @@
 ## REVISED BY CAVED!
 ## Revised to make ClickLinks available.
 #
+## Angelox: Third revision for some code clean up
+#
 # *** NPC INFORMATION ***
 #
 # NAME: Aediles Thrall
@@ -123,114 +125,114 @@ my $show = quest::saylink("show", 1);
          if($text=~/show/i) {
             $client->Message(14,"Well, ya gotta tell'm what ya $want , and they don't know everything!");
          }
-         if(($text=~/want/i) || ($text=~/command/i)) {
+         elsif(($text=~/want/i) || ($text=~/command/i)) {
             $client->Message(14,"They answer these commands that start with #bot (fer example, '#bot create'); $create, $delete, $list, $spawn, $add, $order. Want to $hear more or need me to explain $macros ?");
          }
-         if(($text=~/create/i) || ($text=~/spawn/i)) {
+         elsif(($text=~/create/i) || ($text=~/spawn/i)) {
             $client->Message(14,"First you have to create the bot; '#bot help create' will show you related class and race numbers you will have to provide, and you have to make a name - for example, this command will make you a female cleric, high elf with the name of Sissy; '#bot create Sissy 2 5 female'. If the creation is successful, you will see a message; 'Bot created'  you'll need its name for spawning the bot with the command #bot spawn'");
          }
-         if(($text=~/list/i)|| ($text=~/inventory/i)) {
+         elsif(($text=~/list/i)|| ($text=~/inventory/i)) {
             $client->Message(14,"'#bot list' will show you what bots are yours and their ID numbers.");
             $client->Message(14,"'#bot inventory list', will show you what the targeted bot has on, and their ID numbers.");
             $client->Message(14,"'#bot remove [slotid]' or '#bot remove [slot name]' will remove the item at the given slot in the inventory of the targetted bot.");
          }
-         if($text=~/delete/i) {
+         elsif($text=~/delete/i) {
             $client->Message(14,"#bot delete will completely destroy forever the targeted bot and all its items, so be careful with this one.");
          }
-         if($text=~/add/i) {
+         elsif($text=~/add/i) {
             $client->Message(14,"Target the bot you spawned and use '#bot add' so he will join your group.");
          }
-         if($text=~/remove/i) {
+         elsif($text=~/remove/i) {
             $client->Message(14,"Target the bot and use '#bot group remove' will remove it from the group and it will die.");
          }
-         if($text=~/order/i) {
+         elsif($text=~/order/i) {
             $client->Message(14,"Use #bot follow, #bot guard, or #bot attack (target), and the bots will do as told.");
          }
-         if($text=~/hear/i) {
+         elsif($text=~/hear/i) {
             $client->Message(14,"Ok, but ya gots ta remember to start with #bot when ya try the command (fer example'#bot update'); here's some more; $inventory list, $inventory remove , $update [group summon], $summon , $raid , and I $got more too!");
          }
-         if($text=~/summon/i) {
+         elsif($text=~/summon/i) {
             $client->Message(14,"'#bot summon' will summon one targeted bot to you.");
             $client->Message(14,"'#bot group summon' summons all your grouped bots to you");
             $client->Message(14,"'#bot corpse summon' Necromancers will summon your corpse for resurrect.");
          }
-         if($text=~/update/i) {
+         elsif($text=~/update/i) {
             $client->Message(14,"Enter '#bot update' when you gain a level, so the bot ups his level too");
          }
-         if($text=~/raid/i) {
+         elsif($text=~/raid/i) {
             $client->Message(14," You can also form multiple groups of bots and form your own raids, '#bot raid [commands]' has a whole slew of more commands. I might teach you those later, but '#bot raid help' will show help.");
          }
-         if($text=~/got/i) {
+         elsif($text=~/got/i) {
             $client->Message(14,"These commands are for special spells or skills you want the bot to use; ai $mez , $picklock , $cure , $track , target $calm , $evac , $resurrectme , corpse $summon, $sow , $invis , $levitate , $resist , $shrinkme , $endureb , $charm ,$gate , $runeme ");
          }
-         if($text=~/mez/i) {
+         elsif($text=~/mez/i) {
             $client->Message(14,"'#bot ai mez' will mez your target, If you're grouped with an enchanter.");
          }
-         if($text=~/picklock/i) {
+         elsif($text=~/picklock/i) {
             $client->Message(14,"For '#bot picklock', You must have a targeted rogue bot in your group and be right on the door.");
          }
-         if($text=~/cure/i) {
+         elsif($text=~/cure/i) {
             $client->Message(14,"#bot cure has the following options (If you use a cleric with the right level); poison, disease, curse, and blindness.");
          }
-         if($text=~/track/i) {
+         elsif($text=~/track/i) {
             $client->Message(14,"'#bot track' is for looking at mobs in the zone a ranger has rare tracking oprion.");
          }
-         if($text=~/calm/i) {
+         elsif($text=~/calm/i) {
             $client->Message(14,"'#bot target calm' is pacify spell for mob control");
          }
-         if($text=~/evac/i) {
+         elsif($text=~/evac/i) {
             $client->Message(14,"'#bot evac' will transport your pc group to safe location in the current zone.");
          }
-         if($text=~/resurrectme/i) {
+         elsif($text=~/resurrectme/i) {
             $client->Message(14,"#bot resurrectme is so your bot Cleric will rez you.");
          }
-         if($text=~/sow/i) {
+         elsif($text=~/sow/i) {
             $client->Message(14,"'#bot sow' for bot class that can sow, Druid can also sow wolf, and sow indoors when she gets the right level");
          }
-         if($text=~/invis/i) {
+         elsif($text=~/invis/i) {
             $client->Message(14,"'#bot invis' will provide you with invisiblity (must have proper class in group)");
          }
-         if($text=~/levitate/i) {
+         elsif($text=~/levitate/i) {
             $client->Message(14,"'#bot levitate' gives you levitation (must have proper class in group)");
          }
-         if($text=~/resist/i) {
+         elsif($text=~/resist/i) {
             $client->Message(14,"For '#bot resist', the bot wil ask you which restist you want (must have proper class in group)");
          }
-         if($text=~/shrinkme/i) {
+         elsif($text=~/shrinkme/i) {
             $client->Message(14,"'#bot shrinkme' You need a Shaman for this, he'll make you smaller");
          }
-         if($text=~/endureb/i) {
+         elsif($text=~/endureb/i) {
             $client->Message(14,"'#bot endureb' You won't need to hold your breath under water (must have proper class in group)");
          }
-         if($text=~/charm/i) {
+         elsif($text=~/charm/i) {
             $client->Message(14," There's '#bot charm' and there's '#bot dire charm', these are for turning the enemy into your bot's pet. Be sure to remove the bots pet first with '#bot pet remove'.");
          }
-         if($text=~/gate/i) {
+         elsif($text=~/gate/i) {
             $client->Message(14,"'#bot gate' works with a Druid or a Wizard in your group.");
          }
-         if($text=~/runeme/i) {
+         elsif($text=~/runeme/i) {
             $client->Message(14,"'#bot runeme', your Enchanter Bot cast Rune spell on you");
          }
-        if($text=~/macros/i) {
+        elsif($text=~/macros/i) {
             $client->Message(14,"A macro will make your bot command always be ready to use with a click of your mouse, on your keyboard press the <alt> and the <m> keys- that will bring up your $action window.");
          }
-         if($text=~/action/i) {
+         elsif($text=~/action/i) {
             $client->Message(14,"Your action window has four tabs, you need the fourth one called ' $socials Page', another way to get to it, is with keyboard strokes <ctrl> and <o>");
          }
-         if($text=~/socials/i) {
+         elsif($text=~/socials/i) {
             $client->Message(14,"When you get to the Socials Page, click on the '>' $button tell you find and empty page.");
          }
-         if($text=~/button/i) {
+         elsif($text=~/button/i) {
             $client->Message(14,"Right-click on an empty button, that will bring up your 'Edit Social' window. Wanna see an $example ?");
          }
-         if($text=~/example/i) {
+         elsif($text=~/example/i) {
             $client->Message(14,"Okay, in the Edit Social window, you'll see six spaces, one for the name of the button (Social Name), and five more that will take a command on each line. Do you want to see a $single command or a $combo of commands? ");
          }
-         if($text=~/single/i) {
+         elsif($text=~/single/i) {
             $client->Message(14,"I'll use the bot attack command for this one; for the first line under 'Social Name' put in the label 'Attack', then you only need one more line in one of the five larger spaces, type in '#bot group order attack', then click the <accept> button.");
             $client->Message(14,"When you zone or camp out, these macros will be saved with your character.");
          }
-         if($text=~/combo/i) {
+         elsif($text=~/combo/i) {
             $client->Message(14,"For this combo, I'll show you how to spawn a bot, then add him to your group.");
             $client->Message(14,"For 'Social Name', you can call it the class it is, this will be called 'Cleric'.");
             $client->Message(14,"You'll need all five remaining comand spaces, and for a bot named Sissy would look like this;");
@@ -241,37 +243,38 @@ my $show = quest::saylink("show", 1);
             $client->Message(14,"Line five; '#bot group add'");
             $client->Message(14,"Click on the <accept> button and you're ready");
          }
-         if($text=~/assistance/i) {
+         elsif($text=~/assistance/i) {
             $client->Message(14,"I can help ya with $command s or $macros .");
          }
-         if($text=~/bot/i) {
+         elsif($text=~/bot/i) {
             $client->Message(14,"A bot is another name we give to your NPC helpers or Mercenaries. You can use them so you don't have to venture alone.");
          }
+         
          if(($ulevel >= $firstbotlevel) && ($qglobals{bot_spawn_limit} <= 0)) {
 	   #quest::settimer("face", 25);
            if($text=~/Hail/i) {
             $client->Message(14,"Aediles Thrall says, \"Hey der youngster.  Lookin' fer a bit o' $help with yer adventurin'?\"");
            }
-           if($text=~/help/i) {
+           elsif($text=~/help/i) {
             quest::emote("looks around the room and pauses a few seconds");
             $client->Message(14,"Well, I kin sell ye a $product ye can't find no place else.");
            }
-           if($text=~/product/i) {
+           elsif($text=~/product/i) {
             quest::emote("looks around the room again");
             $client->Message(14,"Shhh, i'm involved in wut I like ta call A.I.D., I kin $aid ye in yer adventurin'");
            }
-           if($text=~/aid/i) {
+           elsif($text=~/aid/i) {
             quest::emote("looks around the room again");
             $client->Message(14,"It be 'Acquired Individuals Delivery' and it means I kin supply ye with $individuals .");
            }
-            if($text=~/individuals/i) {
+            elsif($text=~/individuals/i) {
               quest::emote("looks around the room again");
               $client->Message(14,"Shhh, not too loud... I kin deliver ye an Individual if yer $interested ?");
            }
-           if($text=~/interested/i) {
+           elsif($text=~/interested/i) {
             $client->Message(14,"Let me tell ye, keepin' up a supply o' Individuals can be a costly endeavor and so's I kin feed 'em I need ye ta be collectin' up sum $supplies fer me.");
            }
-           if(($text=~/supplies/i) && ($qglobals{bot_spawn_limit} <= 0)) {
+           elsif(($text=~/supplies/i) && ($qglobals{bot_spawn_limit} <= 0)) {
 	      my $success1 = 0;
               $success1 = $qglobals{bot_spawn_limit}+1;
               $client->Message(14,"First one's on da house! Now if ya need me to $show you how to work these things, or want to learn how to make $macros of your bot $command\Qs\E, Even if ya don't know how to $spawn a bot, just say so.");
@@ -288,26 +291,25 @@ my $show = quest::saylink("show", 1);
            }
         }
       elsif(($ulevel >= $secondbotlevel) && ($qglobals{bot_spawn_limit} <= 1)) {
-my $interested = quest::saylink("interested", 1);
-my $supplies = quest::saylink("supplies", 1);
+	my $interested = quest::saylink("interested", 1);
+	my $supplies = quest::saylink("supplies", 1);
          if($text=~/Hail/i) {
             $client->Message(14,"Ahh, a returnin' customer. Are ye $interested in another Individual?");
          }
 #spider legs, spiderling legs, fine mosquito wing, fire beetle leg, Sabertooth Cub Canine
-         if(($text=~/supplies/i) && ($race eq 'Froglok')) {
-            quest::emote("looks around the room");
-            $client->Message(14,"The Individual will cost ye $secondbotcost platinum pieces an' 4 fine mosquito wings.");
-        return;
-         }
-         if(($text=~/supplies/i) && ($race eq 'Iksar')) {
-            quest::emote("looks around the room");
-            $client->Message(14,"The Individual will cost ye $secondbotcost platinum pieces an' 4 Sabertooth Cub Canines.");
-        return;
-         }
-         if(($text=~/supplies/i) && ($race eq 'Human')) {
-            quest::emote("looks around the room");
-            $client->Message(14,"The Individual will cost ye $secondbotcost platinum pieces an' 4 fire beetle legs.");
-        return;
+         elsif ($text=~/supplies/i){ 
+	    if ($race eq 'Froglok') {
+	      quest::emote("looks around the room");
+	      $client->Message(14,"The Individual will cost ye $secondbotcost platinum pieces an' 4 fine mosquito wings.");
+	    }
+	    elsif ($race eq 'Iksar') {
+	      quest::emote("looks around the room");
+	      $client->Message(14,"The Individual will cost ye $secondbotcost platinum pieces an' 4 Sabertooth Cub Canines.");
+	    }
+	    elsif(($text=~/supplies/i) && ($race eq 'Human')) {
+	      quest::emote("looks around the room");
+	      $client->Message(14,"The Individual will cost ye $secondbotcost platinum pieces an' 4 fire beetle legs.");
+            }
          }
         if($text=~/interested/i) {
             quest::emote("looks around the room");
@@ -359,7 +361,7 @@ my $interested = quest::saylink("interested", 1);
          if($text=~/Hail/i) {
             $client->Message(14,"Ahh, a returnin' customer. Are ye $interested in another Individual?");
          }
-         if($text=~/interested/i) {
+         elsif($text=~/interested/i) {
             quest::emote("looks around the room");
             $client->Message(14,"Shhh, I kin deliver ye another Individual for $twentyninebotcost platinum an' da wife wants a nice Blue Diamond cause she tinks she's so cute!, and I gotta keep her happy!");
          }
@@ -369,7 +371,7 @@ my $interested = quest::saylink("interested", 1);
          if($text=~/Hail/i) {
             $client->Message(14,"Ahh, a returnin' customer. Are ye $interested in another Individual?");
          }
-         if($text=~/interested/i) {
+         elsif($text=~/interested/i) {
             quest::emote("looks around the room");
             $client->Message(14,"Shhh, I kin deliver ye another Individual for $fortyfourbotcost platinum an' da wife wants to collect Fire Emerald Rings, so get me one a dose ... I gotta keep her happy!");
          }
@@ -379,7 +381,7 @@ my $interested = quest::saylink("interested", 1);
          if($text=~/Hail/i) {
             $client->Message(14,"Ahh, a returnin' customer. Are ye $interested in another Individual?");
          }
-         if($text=~/interested/i) {
+         elsif($text=~/interested/i) {
             quest::emote("looks around the room");
             $client->Message(14,"Shhh, I kin deliver ye another Individual for $sixtyfourbotcost platinum - an' I needs flowstones, so I can pimp me an me wife's gear! Ill take any kind: Bloodflow, Starflow, Boneflow, Fireflow, Waterflow, Mudflow, Voidflow, Emberflow, Stormflow, Mossflow, or Shadowflow.");
          }
@@ -388,33 +390,34 @@ my $interested = quest::saylink("interested", 1);
 my $command = quest::saylink("command ", 1);
 my $macros = quest::saylink("macros", 1);
          if (($text=~/Hail/i) && ($ulevel < $secondbotlevel)) {
-            $client->Message(14,"Yer not ready yet, come back when you get level $secondbotlevel .");
+	   $client->Message(14,"Ya already gots yer first bot, try the \"#bot create help\" command.");
+            $client->Message(14,"Come sees me again when ya gets level $secondbotlevel .");
             $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
-         if (($text=~/Hail/i) && ($ulevel >= $secondbotlevel) && ($ulevel < $thirdbotlevel)) {
+         elsif(($text=~/Hail/i) && ($ulevel >= $secondbotlevel) && ($ulevel < $thirdbotlevel)) {
             $client->Message(14,"Yer not ready yet, come back when you get level $thirdbotlevel");
             $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
-         if (($text=~/Hail/i) && ($ulevel >= $thirdbotlevel) && ($ulevel < $fourthbotlevel)) {
+         elsif(($text=~/Hail/i) && ($ulevel >= $thirdbotlevel) && ($ulevel < $fourthbotlevel)) {
             $client->Message(14,"Yer not ready yet, come back when you get level $fourthbotlevel .");
             $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
-         if (($text=~/Hail/i) && ($ulevel >= $fourthbotlevel) && ($ulevel < $fifthbotlevel)) {
+         elsif(($text=~/Hail/i) && ($ulevel >= $fourthbotlevel) && ($ulevel < $fifthbotlevel)) {
             $client->Message(14,"Yer not ready yet, come back when you get level $fifthbotlevel .");
             $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
-         if (($text=~/Hail/i) && ($ulevel >= $fifthbotlevel) && ($ulevel < $nineteenbotlevel)) {
+         elsif(($text=~/Hail/i) && ($ulevel >= $fifthbotlevel) && ($ulevel < $nineteenbotlevel)) {
             $client->Message(14,"Yer not ready yet, come back when you get level $nineteenbotlevel .");
             $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
-         if (($text=~/Hail/i) && ($ulevel >= $nineteenbotlevel) && ($ulevel < $twentyninebotlevel)) {
+         elsif(($text=~/Hail/i) && ($ulevel >= $nineteenbotlevel) && ($ulevel < $twentyninebotlevel)) {
             $client->Message(14,"Yer not ready yet, come back when you get level $twentyninebotlevel");
             $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
-         if (($text=~/Hail/i) && ($ulevel >= $twentyninebotlevel) && ($ulevel < $fortyfourbotlevel)) {
+         elsif(($text=~/Hail/i) && ($ulevel >= $twentyninebotlevel) && ($ulevel < $fortyfourbotlevel)) {
             $client->Message(14,"Yer not ready yet, come back when you get level $fortyfourbotlevel .");
             $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
-         if (($text=~/Hail/i) && ($ulevel >= $fortyfourbotlevel) && ($ulevel < $sixtyfourbotlevel)) {
+         elsif(($text=~/Hail/i) && ($ulevel >= $fortyfourbotlevel) && ($ulevel < $sixtyfourbotlevel)) {
             $client->Message(14,"Yer not ready yet, come back when you get level $sixtyfourbotlevel .");
             $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
-         if (($text=~/Hail/i) && (($ulevel >= $sixtyfourbotlevel) && ($qglobals{bot_spawn_limit} >= 64 ))) {
+         elsif(($text=~/Hail/i) && (($ulevel >= $sixtyfourbotlevel) && ($qglobals{bot_spawn_limit} >= 64 ))) {
             $client->Message(14,"Ya already got all da bots ya can get!");
             $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
-         #if (($text=~/Hail/i) && ($ulevel >= $sixtyfourbotlevel) && ($ulevel < $nextbotlevel)) {
+         #elsif(($text=~/Hail/i) && ($ulevel >= $sixtyfourbotlevel) && ($ulevel < $nextbotlevel)) {
          #   $client->Message(14,"Yer not ready yet, come back when you get level $nextbotlevel .");
          #   $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");}
        }
