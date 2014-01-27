@@ -33,12 +33,7 @@ sub EVENT_ITEM {
     return;
    }
  }
-  else {
-    quest::emote("will not take this item.");
-    plugin::return_items(\%itemcount);
-    return;
-   }
- }
+  
 
 
 # End of File - NPCID 90184 - #Neh`Ashiir
