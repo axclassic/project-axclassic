@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cvs update
+chmod 777 */
+chmod 777 */*.pl
+chmod 777 changelog.txt
