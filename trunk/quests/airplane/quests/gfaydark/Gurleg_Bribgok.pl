@@ -1,8 +1,0 @@
-#npc - Gfaydark Guard Protectors
-#zone - Gfaydark
-#by Angelox
-
-sub EVENT_ATTACK {
-    quest::say("For the defense of Kelethin!!");
-    quest::say("For the protection of all Fier'Dal, there shall be no mercy for your kind.");
- }
