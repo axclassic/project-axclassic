@@ -1,0 +1,8 @@
+sub EVENT_ITEM(){
+  if ($itemcount{19203} && $itemcount{19205) && $itemcount{19209} && $itemcount{19212} == 1){
+  quest::say("Here is the scroll that I promised. We have both gained
+much knowledge today. I hope to do business with you again soon. Farewell!");
+  $random=int(rand 19210+19213+19420+19206);
+  quest::summonitem($random);
+  quest::exp(1000);  }
+}
