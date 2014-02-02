@@ -7,17 +7,17 @@
 
 sub EVENT_SAY{
 
-if ($text =~ /hail/i){
- quest::say (" Go $race! I have no time for you.")
+if ($text=~/hail/i){
+ quest::say (" Go $race! I have no time for you.");
 }
-if ($text =~ /know/i){ 
+if ($text=~/know/i){ 
  quest::say ("You know nothing! But what you do know will be lost to this world!");
- quest::depop_withtimer() 
+ quest::depop_withtimer(); 
  quest::spawn2(87157,0,0,$x,$y + 5,$z,$h); #Grokal
 }
-if ($text =~ /grokal/i){ 
+if ($text=~/grokal/i){ 
  quest::say ("You know nothing! But what you do know will be lost to this world!");
- quest::depop_withtimer() 
+ quest::depop_withtimer();
  quest::spawn2(87157,0,0,$x,$y + 5,$z,$h); #Grokal
 }
 }
