@@ -45,9 +45,7 @@ if ($text =~ /him/i){
 }
 
 sub EVENT_ITEM{
-if {
         $client->Message(14,"Why are you giving me this?");
         plugin::return_items(\%itemcount);
 	    return 1;
-}
 }
