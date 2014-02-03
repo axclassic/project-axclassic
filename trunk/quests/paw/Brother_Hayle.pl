@@ -42,13 +42,20 @@ sub EVENT_ITEM
     #Give a note ID:18937
     quest::summonitem(18937);
   }
-  if(plugin::check_handin(\%itemcount, 18937 => 1, 13947 => 1, 18828 => 1, 12197 => 1 ))
+  elsif(plugin::check_handin(\%itemcount, 18937 => 1, 13947 => 1, 18828 => 1, 12197 => 1 ))
   {
   quest::say("You have proven yourself worthy to hold Soulfire. Do not let her slip into the hands of evil. There are many who wish to free the many trapped souls of shadowknights and necromancers trapped inside the blade. The power of the blade can be called upon to heal you if need be. May Rodcet Nife and the twins of Marr hold you in their glory.");
 
       quest::summonitem(5504);
-    }
   }
+  else{
+     quest::say("Sorry, I can't use this.");
+    plugin::return_items(\%itemcount);
+     if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+        quest::givecash($copper, $silver, $gold, $platinum);
+     }
+  }
+}
  
 
 #END of File Zone:paw ID:18071 -- Brother_Hayle
