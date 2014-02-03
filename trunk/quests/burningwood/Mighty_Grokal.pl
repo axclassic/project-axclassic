@@ -5,6 +5,9 @@
 #Date 5/5/13                    #
 #################################
 
+sub EVENT_SPAWN{
+    quest::settimer("Mgrokal",7200); #depop after 2 hours
+}
 sub EVENT_DEATH {
     my $x = $npc->GetX();
     my $y = $npc->GetY();
@@ -14,3 +17,9 @@ sub EVENT_DEATH {
     quest::shout("I'm done toying with you, $class. Let us see if you can defeat my might.");
     quest::spawn2(87160,0,0,$x,$y + 5,$z,$h); #death Grokal
 }
+
+sub EVENT_TIMER {
+if ($timer eq "Mgrokal") {
+quest::depop();
+}
+ }
