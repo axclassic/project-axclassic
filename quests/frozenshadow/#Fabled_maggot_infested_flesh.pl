@@ -3,7 +3,7 @@
 
 sub EVENT_AGGRO
 {
-	if($ulevel <= 44)
+	if($ulevel <= 24)
 {
 	my $x = $npc->GetX();
     	my $y = $npc->GetY();
