@@ -21,7 +21,7 @@ $h = $npc->GetHeading();
 
 sub EVENT_ENTER
 {
-	if($ulevel <= 34)
+	if($ulevel <= 9)
 {
 	quest::shout("We shall meet again $name! When you are a worthy opponent!");
 	quest::depop;	
