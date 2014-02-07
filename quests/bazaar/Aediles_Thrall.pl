@@ -1,4 +1,7 @@
 ############################################
+# ONLY EDIT THE  AEDILES SCRIPT IN  TEMPLATES!!!!
+# THEN  USE THE "COPY_AEDILES" SCRIPT
+#
 # ZONE: All Starter Zones, PoK and Bazaar
 # DATABASE: AX_CLASSIC Custom
 # LAST EDIT DATE: Febuary 4th, 2009 (Angelox)
@@ -640,5 +643,7 @@ my $bot = quest::saylink("bot", 1);
   }
  }
 }
-
+# ONLY EDIT THE  AEDILES SCRIPT IN  TEMPLATES!!!!
+# THEN  USE THE "COPY_AEDILES" SCRIPT
+#
 # END of FILE Zone:many -- Aediles_Thrall.pl
