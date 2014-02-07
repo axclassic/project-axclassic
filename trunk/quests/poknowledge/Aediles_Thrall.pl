@@ -453,8 +453,8 @@ my @itemx = (3402,6705,7162,17381,17388,19551,19552,19553,20185,20196,20412,5598
       }
    if($itemcount{200} == 1){
     $client->Message(14,"Nice to meets ya! Here's a little somtin' ta get ya started. It's me own lucky charm!");
-    $client->Message(14,"You gots work ta do! Ya can have one of me Bots already, but I needs to see yer gonna stay wit me.");
-    $client->Message(14,"Go get me 4 bat wings an one platinum piece - don't weigh me down with dat copper and silver or gold! Just one platium piece and da bat wings.");
+    $client->Message(14,"You gots work ta do! Take yer help wid ya an go do some fightn!");
+    $client->Message(14,"Go gets me 4 spider legs an two platinum pieces - don't weigh me down with dat copper and silver or gold! Just two platium pieces and da spider legs. An don't come back tell yer level five!");
     quest::summonitem(620);  #Aediles Mark of the Bots Charm
     return;
     }
