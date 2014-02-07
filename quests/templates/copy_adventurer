@@ -1,0 +1,3 @@
+#!/bin/sh
+#This script is for copying #Norrath_Adventurer.pl accross the starter zones
+echo ../misty ../nektulos ../everfrost ../tox ../butcher ../rathemtn ../freportw ../gfaydark  ../oggok ../qeytoqrg ../qeynos2 ../cabeast ../cabwest ../kerraridge ../swampofnohope ../paineel ../innothule ../feerrott ../steamfont ../fieldofbone | xargs -n 1 cp -v '#Norrath_Adventurer.pl'
