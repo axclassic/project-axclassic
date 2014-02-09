@@ -1,0 +1,4 @@
+#!/bin/sh
+#This script is for copying Anita_Thrall.pl accross the starter zones
+#since it seems to work better i f script resides with her.
+echo ../akanon ../bazaar ../cabeast ../cabwest ../erudnint ../felwithea ../felwitheb ../freporte ../freportw ../gfaydark ../grobb ../gukta ../halas ../kaladima ../kaladimb ../kerraridge ../neriaka ../neriakc ../oggok ../paineel ../poknowledge ../qeynos ../qeynos2 ../qrg ../rathemtn ../rivervale ../shadeweaver ../sharvahl ../swampofnohope ../tutorialb | xargs -n 1 cp -v '#Anita_Thrall.pl'
