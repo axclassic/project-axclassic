@@ -1,5 +1,11 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==02/07/2014==
+ Angelox:  Fix for some possible exploits that involved trading while bots were engaged.  
+ 
+==01/29/2014==
+ Angelox:  Some fixes for corpse looting , see if it  helps with bugged corpses.  
+ 
 ==01/12/2014==
  Angelox:  Fix for horse dismount.
  
