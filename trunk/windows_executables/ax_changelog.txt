@@ -1,5 +1,8 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==02/09/2014==
+ Angelox: Removed #bot mana command while in raid mode (was causing random zone crash). 
+ 
 ==02/07/2014==
  Angelox:  Fix for some possible exploits that involved trading while bots were engaged.  
  
