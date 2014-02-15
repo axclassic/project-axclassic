@@ -18,10 +18,10 @@ my $shall = quest::saylink("Shall",1);
 my $step = quest::saylink("step",1);
 
 
-if ($text =~ /hail/i && $faction <= 3){
+if ($text =~ /hail/i && $faction >= 3){
  $client->Message(14,"Good day $name! What brings you to these parts? Perhaps some time away from the world or maybe looking for a good $story?");
 }
-if ($text =~ /hail/i && $faction > 3){
+if ($text =~ /hail/i && $faction < 3){
  $client->Message(14,"Good day $name! I am just here writing a bit of history down maybe I can talk to you later.");
 }
 if ($text =~ /story/i){
