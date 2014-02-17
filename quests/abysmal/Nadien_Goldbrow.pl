@@ -1,6 +1,6 @@
 # Ranger Abysmal Sea armor
 # Created by Gonner
-
+# Edited by Resqu for bots
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail $race, I am seeking an archer. A forest stalker of the wilds, one who calls themselves [ranger]. Are you such a person?");
@@ -32,7 +32,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Ranger") {
+  
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54170); # reworked Bracer
     }
@@ -58,9 +58,6 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");   
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
+ 
 }
 #END of FILE zone:abysmal ID:279014 -- Nadien_Goldbrow.pl

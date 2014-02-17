@@ -1,6 +1,6 @@
 # Wizard Abysmal Sea armor
 # Created by Gonner
-
+# Edited by Resqu for bots
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello there! Are you a manipulator of fire, ice, and magic? Are you the most powerful of those that claim to be casters? Are you a [wizard]?");
@@ -32,7 +32,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Wizard") {
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54191); # reworked Bracer
     }
@@ -58,9 +57,5 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
 }
 #END of FILE zone:abysmal ID:279021 -- Nunkin_Coggrinder.pl

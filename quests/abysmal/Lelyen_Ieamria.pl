@@ -1,6 +1,6 @@
 # Enchanter Abysmal Sea armor
 # Created by Gonner
-
+# Edited by Resqu for bots
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello there High Elf, or are you? I am seeking those like myself that study the deceptive arts -- an [enchanter]. Is this your calling?");
@@ -32,7 +32,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Enchanter") {
+  
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54156); # reworked Bracer
     }
@@ -58,9 +58,6 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");   
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
+
 }
 #END of FILE zone:abysmal ID:279013 -- Lelyen_Ieamria.pl

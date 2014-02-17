@@ -1,6 +1,6 @@
 # Magician Abysmal Sea armor
 # Created by Gonner
-
+# Edited by Resqu for bots
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hello there! Are you a friend of the elementalkin? Great master of the elements? Conjurer extraordinaire? [Magician]? If so you are just what I have been looking for!");
@@ -32,7 +32,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Magician") {
+  
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54135); # reworked Bracer
     }
@@ -58,9 +58,6 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
+
 }
 #END of FILE zone:abysmal ID:279020 -- Jennu_Mennea.pl

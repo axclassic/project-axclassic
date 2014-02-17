@@ -1,6 +1,6 @@
 # Shadowknight Abysmal Sea armor
 # Created by Gonner
-
+# Edited by Resqu for bots
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I need a dark knight, one who walks in the land of the shadow. Would you be thus, a [shadowknight]?");
@@ -32,7 +32,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Shadowknight") {
+ 
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54198); # reworked Bracer
     }
@@ -58,9 +58,6 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
+
 }
 #END of FILE zone:abysmal ID:279025 -- Rayin_Yvain.pl

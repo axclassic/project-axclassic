@@ -1,6 +1,6 @@
 # Druid Abysmal Sea armor
 # Created by Gonner
-
+# Edited by Resqu for bots
 sub EVENT_SAY {
   if($text=~/hail/i) {
     quest::say("Greetings $name, I am looking for those protectors of the woodland, the most noble of all classes, the [druid]. You wouldn't happen to be one would you?");
@@ -32,7 +32,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Druid") {
+  
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54121); # reworked Bracer
     }
@@ -58,9 +58,6 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");     
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
+ 
 }
 #END of FILE zone:abysmal ID:279015 -- Gaelin_Valekeeper.pl
