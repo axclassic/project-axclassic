@@ -1,6 +1,6 @@
 # Cleric Abysmal Sea armor
 # Created by Gonner
-
+# Edited by Resqu for bots
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail there! Welcome aboard! There is never enough time to care for all the ill in such a place. You wouldn't happen to be a [cleric] as well would you?");
@@ -32,7 +32,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Cleric") {
+  
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54114); # reworked Bracer
     }
@@ -58,9 +58,5 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");   
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
 }
 #END of FILE zone:abysmal ID:279017 -- Dakkamor_Ironspirit.pl

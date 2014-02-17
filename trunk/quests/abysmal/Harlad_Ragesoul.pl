@@ -1,7 +1,7 @@
 # Berserker Abysmal Sea armor
 # Created by Gonner
 # quest text was missing so used Shaman text.
-
+# Edited by Resqu for bots
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail $race, I am seeking a [berserker]. One of those few brave souls that show no fear regardless of the enemy. Is such bravery within you?");
@@ -33,7 +33,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Berserker") {
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54128); # reworked Bracer
     }
@@ -59,9 +58,5 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");   
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
 }
 #END of FILE zone:abysmal ID:279012 -- Harlad_Ragesoul.pl

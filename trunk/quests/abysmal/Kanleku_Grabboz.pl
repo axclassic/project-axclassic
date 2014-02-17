@@ -1,5 +1,6 @@
 # Shaman Abysmal Sea armor
 # Created by Gonner
+# Edited by Resqu for bots
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
@@ -32,7 +33,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Shaman") {
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54142); # reworked Bracer
     }
@@ -58,9 +58,5 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");   
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
 }
 #END of FILE zone:abysmal ID:279022 -- Kanleku_Grabboz.pl

@@ -1,6 +1,6 @@
 # Bard Abysmal Sea armor
 # Created by Gonner
-
+# Edited by Resqu for bots
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail, adventurer. Welcome aboard! Should you be a bard like myself, I am sure you have collected quite a few stories thus far in your travels. Would you be a [bard]?"); 

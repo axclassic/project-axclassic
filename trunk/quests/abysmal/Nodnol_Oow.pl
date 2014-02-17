@@ -1,6 +1,7 @@
 # Rogue Abysmal Sea armor
 # Created by Gonner
 # Quest text missing Used the same as ranger
+# Edited by Resqu for bots
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
@@ -33,7 +34,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($class eq "Rogue") {
+  
     if (plugin::check_handin(\%itemcount, 68222 => 1)) { # Bracer
       quest::summonitem(54177); # reworked Bracer
     }
@@ -59,9 +60,6 @@ sub EVENT_ITEM {
       quest::say("I have no use for this.");   
       plugin::return_items(\%itemcount);
     }
-  } else {
-    quest::say("I have no use for this.");   
-    plugin::return_items(\%itemcount);
-  }
+
 }
 #END of FILE zone:abysmal ID:279024 -- Nodnol_Oow.pl
