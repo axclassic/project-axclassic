@@ -2,7 +2,7 @@ sub EVENT_SPAWN
 {
    $counter = 0;
    $counterone = 0;
-   quest::settimer(30,60);
+   quest::settimer(30,3600);
 }
 
 sub EVENT_TIMER 
