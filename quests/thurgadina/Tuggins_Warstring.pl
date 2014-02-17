@@ -60,8 +60,9 @@ elsif ($text =~ /teach/i){
 elsif ($text =~ /step/i){
  $client->Message(14,"All I know about that is you will have to be powerful and patient in order to complete it. I believe the only person to possess that knowledge would be Xo Nieng's youngest brother which resides somewhere in their home city.");
  }
-else($text =~ /hail/i){
- $client->Message(14,"Good day $name! I am just here writing a bit of history down maybe I can talk to you later.");
+else{
+ $client->Message(14,"Could you come back later if you want to talk about those matters, I am just here writing a bit of history down.");
+}
 }
 
 sub EVENT_ITEM{
