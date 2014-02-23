@@ -73,7 +73,7 @@ sub EVENT_SIGNAL
 	}
      	elsif ($signal == 4  && !defined($qglobals{dust_done})) 
      	{
-     		quest::setglobal("dust_done",1,3,"D2");
+     		quest::setglobal("dust_done",1,3,"M20");
      	}
      	elsif ($signal == 5 && !defined($qglobals{dust_event_start}) && !defined($qglobals{dust_done})) 
      	{
