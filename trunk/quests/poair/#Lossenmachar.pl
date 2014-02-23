@@ -1,5 +1,5 @@
-sub EVENT_AGGRO{
-	if (defined($qglobals{dust_done}){
+sub EVENT_COMBAT{
+	if (defined $qglobals{dust_done}){
 	quest::shout("Dust Done is active so I won't do anything!")
 }
 }

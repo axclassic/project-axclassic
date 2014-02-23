@@ -1,6 +1,6 @@
 sub EVENT_SPAWN 
 {
-	if (defined($qglobals{dust_done}){
+	if (defined $qglobals{dust_done}){
 	quest::shout(" I AM NOT READY TO FIGHT!");
 	}
    $counter = 0;
