@@ -1,8 +1,5 @@
 sub EVENT_SPAWN 
 {
-	if (defined $qglobals{dust_done}){
-	quest::shout(" I AM NOT READY TO FIGHT!");
-	}
    $counter = 0;
    $counterone = 0;
    quest::settimer(30,3600);
@@ -78,6 +75,7 @@ sub EVENT_SIGNAL
      	elsif ($signal == 4  && !defined($qglobals{dust_done})) 
      	{
      		quest::setglobal("dust_done",1,3,"M20");
+		quest::delglobal("dust_event_start");
      	}
      	elsif ($signal == 5 && !defined($qglobals{dust_event_start}) && !defined($qglobals{dust_done})) 
      	{
