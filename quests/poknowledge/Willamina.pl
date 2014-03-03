@@ -21,8 +21,10 @@ sub EVENT_ITEM {
     quest::summonitem(28745);#Planar Traveler's Manual
      quest::ding(); quest::exp(250);
   }
+else {
    quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
-  
+   return 1;
+  }
 }#END of FILE Zone:poknowledge  ID:202054 -- Willamina 
 
