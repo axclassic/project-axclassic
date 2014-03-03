@@ -18,10 +18,11 @@ sub EVENT_ITEM {
     quest::summonitem(28086);#Letter to Elisha
      quest::ding(); quest::exp(250);
   }
-
+else {
    quest::say("I don't need this."); #text made up
    plugin::return_items(\%itemcount);
- 
-    
-}#END of FILE Zone:poknowledge  ID:202086 -- Boiron_Ston 
+   return 1;
+  }
+}
+#END of FILE Zone:poknowledge  ID:202086 -- Boiron_Ston 
 
