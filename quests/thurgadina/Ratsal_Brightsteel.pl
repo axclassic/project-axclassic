@@ -13,10 +13,10 @@ my $stronger = quest::saylink("stronger", 1);
 if ($text=~/hail/i && $ulevel >= 64) {
     $client->Message(14,"Hello $name , You seem plenty strong enough, maybe you can $help with the cause.");
 }
-elsif ($help=~/help/i && $ulevel >= 64) {
+elsif ($text=~/help/i && $ulevel >= 64) {
     $client->Meassage(14." As you know the dragons of Norrath have grown stronger and begun to populate the Western Waste. If they are not stopped then our homes will be in danger. We need $stronger weapons and this my friend is were you can help.");
 }
-elsif ($help=~/stronger/i && $ulevel >= 64) {
+elsif ($text=~/stronger/i && $ulevel >= 64) {
     $client->Meassage(14."Those dragons are made of some tough material so I bet, they will make excellent weapons. I'll tell you what! If you bring one of their heads, I will fiddle around with it and see what I can make from them. Better yet bring me four and I will give you one of the weapons I can make from them.");
 }
 else {
