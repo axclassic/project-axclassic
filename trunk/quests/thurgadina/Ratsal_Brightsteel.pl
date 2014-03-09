@@ -1,28 +1,27 @@
 ############################################
-## NPC: Hakon Brightsteel                 ##
+## NPC: Ratsal Brightsteel                 ##
 ## Zone: Thurgidan A                      ##
 ## Quest: Server Challenge Tier Weapons   ##
-## Created by Resqi for AXClassic         ##
+## Created by Resqu for AXClassic         ##
 ##                    07-03-2014          ##
 ############################################
 sub EVENT_SAY {
 my $help = quest::saylink("help", 1);
 my $stronger = quest::saylink("stronger", 1);
 
-
-if ($text=~/hail/i && $ulevel >= 64) {
+if ($text=~/hail/i && $ulevel >= 65) {
     $client->Message(14,"Hello $name , You seem plenty strong enough, maybe you can $help with the cause.");
-}
-elsif ($text=~/help/i && $ulevel >= 64) {
+			}
+if ($text=~/hail/i && $ulevel < 65) {
+    $client->Message(14,"Take a look around. We have plenty to buy. Maybe one you will be strong enough to help the cause.");
+			}
+if ($text=~/help/i) {
     $client->Meassage(14." As you know the dragons of Norrath have grown stronger and begun to populate the Western Waste. If they are not stopped then our homes will be in danger. We need $stronger weapons and this my friend is were you can help.");
-}
-elsif ($text=~/stronger/i && $ulevel >= 64) {
+			}
+if ($text=~/stronger/i) {
     $client->Meassage(14."Those dragons are made of some tough material so I bet, they will make excellent weapons. I'll tell you what! If you bring one of their heads, I will fiddle around with it and see what I can make from them. Better yet bring me four and I will give you one of the weapons I can make from them.");
-}
-else {
- $client->Message(14,"Take a look. I have plenty to buy. Maybe one you will be strong enough to help the cause.");
-}
- return 1;
+			}
+
 }
 
 sub EVENT_ITEM {
