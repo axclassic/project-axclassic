@@ -1,3 +1,3 @@
 #!/bin/sh
 #This script is for copying Ranger_Band.pl accross the starter zones
-echo ../rivervale ../nektulos ../everfrost ../tox ../butcher ../fieldofbone ../felwithea ../freporte ../freportw ../gfaydark  ../oggok ../qeynos ../qrg ../shadeweaver ../swampofnohope ../tutorialb | xargs -n 1 cp -v 'Ranger_Band.pl'
+echo ../rivervale ../nektulos ../everfrost ../tox ../butcher ../fieldofbone ../felwithea ../freporte ../freportw ../gfaydark  ../oggok ../qeynos ../qrg ../shadeweaver ../swampofnohope ../tutorialb ../paineel | xargs -n 1 cp -v 'Ranger_Band.pl'
