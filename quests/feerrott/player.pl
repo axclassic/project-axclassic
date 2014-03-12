@@ -31,8 +31,7 @@ my $random_result = int(rand(100));
     $client->Message(14,"If you spot a bug while playing, please post the bug report at http://forums.axclassic.com.");
   }
  elsif ($random_result<=4){
-   $client->Message(14,"Ranger Band will upgrade your loose change to the highest coinage possible, but beware he will round it down if you give him too much, or the wrong amounts.");
-   $client->Message(14,"Be  sure to  use exact amounts.");
+   $client->Message(14,"Ranger Band will upgrade your loose change to the highest coinage possible, hand him what you want converted.");
  }
  # elsif ($random_result<=4){
  #   $client->Message(14,"Don't forget: Rathe server restarts daily at 4:01am eastern time, server will stay down minutes for maintenance, then start again - make sure you're in a safe spot before the restart.");
