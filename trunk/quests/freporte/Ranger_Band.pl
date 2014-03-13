@@ -331,6 +331,77 @@ $npc->SetAppearance(0);
          $client->Message(14,"Ranger Band says,\"I am interested in spider silks for creating something different, I'll trade you one of my hand-made colorful bags for four spider silks of any kind.\"");}
 }
 
+sub convert_utility { #Angelox: for converting to higher coinage 
+   do{
+      my $amount = 0;
+        if ($_[1] == 1) { #copper
+          if ($_[0] < 100){
+              $amount =10;
+            }
+          elsif ($_[0] < 1000){
+              $amount =100;
+            }
+          elsif ($_[0] < 1000000){
+              $amount =1000;
+            }
+        } elsif ($_[1] == 2) { #silver
+           if ($_[0] < 100){
+               $amount =10;
+           }
+           elsif ($_[0] < 1000000){
+              $amount =100;
+           }
+        } elsif ($_[1] == 3) { #gold
+           if ($_[0]< 1000000){
+              $amount =10;
+           }
+        }
+
+      my @array =();
+        for (my $i=0; $i<1000001;$i+=$amount){
+            push  ( @array,$i);
+            }
+      my $itr=0;
+      foreach my $number (@array){
+        $itr++ and next if  $_[0] >= $number;
+      }
+      #my $nearest = $array[$itr-1];
+      $change =  $_[0] -$array[$itr-1];
+      #$client->Message (14,"your closest $nearest");
+     # $client->Message (14,"your change $change");
+
+          $myplatinum = (($copper/1000) + ($silver/100) + ($gold/10) + $platinum);
+          $mygold = (($copper/100) + ($silver/10) + $gold + (10*$platinum));
+          $mysilver = (($copper/10) + $silver + (10*$gold) + (100*$platinum));
+          $mycopper = ($copper + (10*$silver) + (100*$gold) + (1000*$platinum));
+          if ((($mycopper >= 10) && ($mycopper < 100)) || (($mysilver >= 1) && ($mysilver < 10))){
+              $client->Message (14,"Here's $mysilver silver...");
+              quest::givecash(0,$mysilver,0,0);
+          }
+          elsif ((($mycopper >= 100) &&($mycopper < 1000)) || (($mysilver >= 10)&& ($mysilver < 100)) || (($mygold >= 1) && ($mygold < 10))){
+              $client->Message(14,"Here's $mygold gold...");
+              quest::givecash(0,0,$mygold,0);
+          }
+          elsif (($mycopper >= 1000) || ($mysilver >= 100) || ($mygold >= 10) || ($myplatinum >= 1)){
+              $client->Message(14,"Here's $myplatinum platinum...");
+              quest::givecash(0,0,0,$myplatinum);
+            }
+           $_[0] = $change;
+            if ($_[0] < 10){
+                  if ($_[1] == 1) {
+                     quest::givecash($_[0],0,0,0);
+                  } elsif ($_[1] == 2) {
+                     quest::givecash(0,$_[0],0,0);
+                  } elsif ($_[1] == 3) {
+                     quest::givecash(0,0,$_[0],0);
+                  }
+		  $client->Message (14,"Here's the excess...");
+                  plugin::return_items(\%itemcount);
+                  $MoneyFlag =  0;
+            }
+      }while ($_[0] >10);
+}
+
 sub EVENT_ITEM {
 my @itemz = (1000 .. 1036,30670 .. 30680,94000,94001,10152,42984);
 my $total = 0;
@@ -410,13 +481,11 @@ if ($event2==1){
 my $owner = $npc->GetOwnerID();
 if ($owner > 0) {
 }
-
-#start money exchange
+#Angelox: start money exchange (uses convert_utility)
 my $MoneyFlag =  0;
 if (($copper > 0 )|| ($silver > 0 )|| ($gold > 0 )|| ($platinum > 0)){
 $MoneyFlag = 1;
 }
-
 if  ($platinum > 0){
       $client->Message(14,"Platinum doesn't need converting.");
 	  if (($itemcount{ $item1} == 1) || ($itemcount{ $item2} == 1)||
@@ -428,7 +497,6 @@ if  ($platinum > 0){
       $MoneyFlag =  0;
       return;
 }
-
 if (( ($copper > 0 )&& ($silver > 0 )&& ($gold > 0 ))||
     (($copper > 0 )&& ($silver > 0 ))|| ( ($copper > 0 )&&  ($gold > 0 ))
     ||( ($copper > 0 )&& ($gold > 0 ))|| ( ($silver > 0 )&&  ($gold > 0 ))){
@@ -442,151 +510,15 @@ if (( ($copper > 0 )&& ($silver > 0 )&& ($gold > 0 ))||
     $MoneyFlag =  0;
       return;
   }
-    
-  if (($copper  >=1) &&  ($copper <= 1000000)){
-    do{
-      my $amount = 0;
-	if ($copper < 100){
-	    $amount =10;
-	  }
-	elsif ($copper < 1000){
-	    $amount =100;
-	  }
- 	elsif ($copper < 1000000){
-	    $amount =1000;
-	  }
- 
-      my @array =();
-	for (my $i=0; $i<1000001;$i+=$amount){
-	    push  ( @array,$i);
-	    }
-      my $itr=0;
-      foreach my $number (@array){
-	$itr++ and next if  $copper >= $number;
-      }
-      #my $nearest = $array[$itr-1];
-      $change =  $copper -$array[$itr-1];
-      #$client->Message (14,"your closest $nearest");
-     # $client->Message (14,"your change $change");
-      
-	  $myplatinum = (($copper/1000) + ($silver/100) + ($gold/10) + $platinum);
-	  $mygold = (($copper/100) + ($silver/10) + $gold + (10*$platinum));
-	  $mysilver = (($copper/10) + $silver + (10*$gold) + (100*$platinum));
-	  $mycopper = ($copper + (10*$silver) + (100*$gold) + (1000*$platinum));
-	  if ((($mycopper >= 10) && ($mycopper < 100)) || (($mysilver >= 1) && ($mysilver < 10))){
-	      $client->Message (14,"You gave me coins worth a total value of $mysilver silver. Here you go:");
-	      quest::givecash(0,$mysilver,0,0);
-	  }
-	  elsif ((($mycopper >= 100) &&($mycopper < 1000)) || (($mysilver >= 10)&& ($mysilver < 100)) || (($mygold >= 1) && ($mygold < 10))){
-	      $client->Message(14,"You gave me coins worth a total value of $mygold gold. Here you go:");
-	      quest::givecash(0,0,$mygold,0);
-	  }
-	  elsif (($mycopper >= 1000) || ($mysilver >= 100) || ($mygold >= 10) || ($myplatinum >= 1)){
-	      $client->Message(14,"You gave me coins worth a total value of $myplatinum platinum. Here you go:");
-	      quest::givecash(0,0,0,$myplatinum);
-	    }
-	   $copper = $change;
-	    if ($copper < 10){  
-		  quest::givecash($copper,0,0,0);
-		  plugin::return_items(\%itemcount);
-		  $MoneyFlag =  0;
-	    }
-      }while ($copper >10);	
-  }
-  
-   elsif (($silver  >=1) &&  ($silver <=1000000) ){
-    do{
-      my $amount = 0;
-	if ($silver < 100){
-	    $amount =10;
-	  }
-	elsif ($silver < 1000000){
-	    $amount =100;
-	  }
- 
-      my @array =();
-	for (my $i=0; $i<1000001;$i+=$amount){
-	    push  ( @array,$i);
-	    }
-      my $itr=0;
-      foreach my $number (@array){
-	$itr++ and next if  $silver >= $number;
-      }
-     # my $nearest = $array[$itr-1];
-      $change =  $silver -$array[$itr-1];
-      #$client->Message (14,"your closest $nearest");
-      #$client->Message (14,"your change $change");
-      
-	  $myplatinum = (($copper/1000) + ($silver/100) + ($gold/10) + $platinum);
-	  $mygold = (($copper/100) + ($silver/10) + $gold + (10*$platinum));
-	  $mysilver = (($copper/10) + $silver + (10*$gold) + (100*$platinum));
-	  $mycopper = ($copper + (10*$silver) + (100*$gold) + (1000*$platinum));
-	if ((($mycopper >= 10) && ($mycopper < 100)) || (($mysilver >= 1) && ($mysilver < 10))){
-		$client->Message (14,"You gave me coins worth a total value of $mysilver silver. Here you go:");
-		quest::givecash(0,$mysilver,0,0);
-	}
-	elsif ((($mycopper >= 100) &&($mycopper < 1000)) || (($mysilver >= 10)&& ($mysilver < 100)) || (($mygold >= 1) && ($mygold < 10))){
-		$client->Message(14,"You gave me coins worth a total value of $mygold gold. Here you go:");
-		quest::givecash(0,0,$mygold,0);
-	}
-	elsif (($mycopper >= 1000) || ($mysilver >= 100) || ($mygold >= 10) || ($myplatinum >= 1)){
-		$client->Message(14,"You gave me coins worth a total value of $myplatinum platinum. Here you go:");
-		quest::givecash(0,0,0,$myplatinum);
-	}
-	$silver = $change;
-	if ($silver < 10){  
-	    quest::givecash(0,$silver,0,0);
-	    plugin::return_items(\%itemcount);
-	    $MoneyFlag =  0;
-	}
-    }while ($silver >10);
-}
- 
-  elsif ($gold  >=1 &&  $gold <= 1000000){
-    do{
-      my $amount = 0;
- 	if ($gold< 1000000){
-	    $amount =10;
-	  }
-        my @array =();
-	for (my $i=0; $i<1000001;$i+=$amount){
-	    push  ( @array,$i);
-	    }
-      my $itr=0;
-      foreach my $number (@array){
-	$itr++ and next if  $gold >= $number;
-      }
-      #my $nearest = $array[$itr-1];
-      $change =  $gold -$array[$itr-1];
-      #$client->Message (14,"your closest $nearest");
-      #$client->Message (14,"your change $change");
-      
-	  $myplatinum = (($copper/1000) + ($silver/100) + ($gold/10) + $platinum);
-	  $mygold = (($copper/100) + ($silver/10) + $gold + (10*$platinum));
-	  $mysilver = (($copper/10) + $silver + (10*$gold) + (100*$platinum));
-	  $mycopper = ($copper + (10*$silver) + (100*$gold) + (1000*$platinum));
-	if ((($mycopper >= 10) && ($mycopper < 100)) || (($mysilver >= 1) && ($mysilver < 10))){
-		$client->Message (14,"You gave me coins worth a total value of $mysilver silver. Here you go:");
-		quest::givecash(0,$mysilver,0,0);
-	}
-	elsif ((($mycopper >= 100) &&($mycopper < 1000)) || (($mysilver >= 10)&& ($mysilver < 100)) || (($mygold >= 1) && ($mygold < 10))){
-		$client->Message(14,"You gave me coins worth a total value of $mygold gold. Here you go:");
-		quest::givecash(0,0,$mygold,0);
-	}
-	elsif (($mycopper >= 1000) || ($mysilver >= 100) || ($mygold >= 10) || ($myplatinum >= 1)){
-		$client->Message(14,"You gave me coins worth a total value of $myplatinum platinum. Here you go:");
-		quest::givecash(0,0,0,$myplatinum);
-	}
-	$gold = $change;
-	 if ($gold < 10){  
-		quest::givecash(0,0,$gold,0);
-		plugin::return_items(\%itemcount);
-		$MoneyFlag =  0;
-	  }
-      }while ($gold >10);	
-  }
-  #end money exchange
-  
+   if (($copper >=1 ) && ($copper <= 1000000)) {
+      convert_utility($copper, 1);
+  } 
+  elsif (($silver >= 1) && ($silver <= 1000000)) {
+      convert_utility($silver, 2);
+  } 
+  elsif ($gold >= 1 && $gold <= 1000000) {
+      convert_utility($gold, 3);
+  } 
   elsif ($MoneyFlag ==1){
   $client->Message(14,"Ranger Band says,\"You gave me too much.\" ");
 	  if (($itemcount{ $item1} == 1) || ($itemcount{ $item2} == 1)||
@@ -596,9 +528,7 @@ if (( ($copper > 0 )&& ($silver > 0 )&& ($gold > 0 ))||
    quest::givecash($copper, $silver, $gold, $platinum);
    plugin::return_items(\%itemcount);
   $MoneyFlag = 1;
-  }
-  
-  elsif ($MoneyFlag ==0){ 
+  } elsif ($MoneyFlag ==0){ 
 	$client->Message(14,"Ranger Band says,\"I have no use for this.\" ");
 	plugin::return_items(\%itemcount);
   }
