@@ -8,38 +8,25 @@ sub EVENT_SAY{
   }
   if($text=~/theft/i) {
     quest::emote("saddens and lets out a sigh.");
-    quest::say("My unhatched sibling was stolen from our nest by a nasty kobold. I'm afraid the worst might have happened. Would you please search for the [egg] during your journeys in the mines?");
+    quest::say("My unhatched siblings were stolen from our nest by a nasty kobold. I'm afraid the worst might have happened. Would you please search for the [eggs] during your journeys in the mines?");
   }
-  if($text=~/egg/i) {
-    quest::say("Well of course an egg $class. How do you think us dragons are born? If you would return this egg to me or what is left, I will reward you.");
+  if($text=~/eggs/i) {
+    quest::say("Well of course they are eggs $class. How do you think us dragons are born? If you would return these eggs to me or what is left, I will reward you and  your group.");
   }
 }
 
 sub EVENT_ITEM{
-  if($itemcount{54603} == 1) {
+  my @itemt = (38005,38173,38089,38110,38068,38194,38026,38152,38047,38215,38299,38236,38257,38278,38131,38320); ## All the rings random for bots reward.
+  my $total3 = $itemt[ rand @itemt ];
+   if($itemcount{54603} == 1) {
     quest::emote("beams with glee.");
     quest::say("Oh $name how can I ever repay such kindness. I will not be alone in this dreadful place after all. Please accept this small token.");
-     quest::ding(); quest::exp(25);
-    if($class eq 'Warrior'){quest::summonitem(38005);}
-    elsif($class eq 'Cleric'){quest::summonitem(38173);}
-    elsif($class eq 'Paladin'){quest::summonitem(38089);}
-    elsif($class eq 'Ranger'){quest::summonitem(38110);}
-    elsif($class eq 'Shadowknight'){quest::summonitem(38068);}
-    elsif($class eq 'Druid'){quest::summonitem(38194);}
-    elsif($class eq 'Monk'){quest::summonitem(38026);}
-    elsif($class eq 'Bard'){quest::summonitem(38152);}
-    elsif($class eq 'Rogue'){quest::summonitem(38047);}
-    elsif($class eq 'Shaman'){quest::summonitem(38215);}
-    elsif($class eq 'Necromancer'){quest::summonitem(38299);}
-    elsif($class eq 'Wizard'){quest::summonitem(38236);}
-    elsif($class eq 'Magician'){quest::summonitem(38257);}
-    elsif($class eq 'Enchanter'){quest::summonitem(38278);}
-    elsif($class eq 'Beastlord'){quest::summonitem(38131);}
-    elsif($class eq 'Berserker'){quest::summonitem(38320);}
+    quest::ding(); quest::exp(25);
+    quest::summonitem($total3);
   }
-else {
-quest::say("I have no use for this");
-plugin::return_items(\%itemcount);}
+  else {
+    quest::say("I have no use for this");
+    plugin::return_items(\%itemcount);}
 }
 
 sub EVENT_COMBAT{
