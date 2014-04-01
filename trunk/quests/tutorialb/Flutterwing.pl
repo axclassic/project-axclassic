@@ -21,6 +21,7 @@ sub EVENT_ITEM{
    if($itemcount{54603} == 1) {
     quest::emote("beams with glee.");
     quest::say("Oh $name how can I ever repay such kindness. I will not be alone in this dreadful place after all. Please accept this small token.");
+    quest::say("If I could get all the eqqs that were stolen...");
     quest::ding(); quest::exp(25);
     quest::summonitem($total3);
   }
