@@ -1,5 +1,22 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==04/24/2014==
+ Angelox: pet and botAI revision work.
+ 
+==04/23/2014==
+ Angelox: botAI revision work.
+ 
+==04/20/2014==
+ Angelox: Some changes to SendPosition()
+ Angelox: #botmode command removed.
+ Angelox: #botmode command should be Titanium only.
+ 
+==02/25/2014==
+ Angelox: devn00b: Partial fix (Handle_OP_Emote) to user strings aren't being correctly checked for the \0 (end of string). 
+ 
+==02/22/2014==
+ Angelox: Added checks to ensure no players on during  world shutdown. 
+ 
 ==02/09/2014==
  Angelox: Removed #bot mana command while in raid mode (was causing random zone crash). 
  
