@@ -1,5 +1,9 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==04/27/2014==
+ Angelox: Fix for #bot summon and warping routines that cause zone crash.
+ Angelox: Possible fix for player corpse loot bug.
+ 
 ==04/24/2014==
  Angelox: pet and botAI revision work.
  
