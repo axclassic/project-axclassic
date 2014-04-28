@@ -1,6 +1,6 @@
 sub EVENT_ENTERZONE {
 no warnings 'all' ;
-if (((defined $Classic2012) && ($Classic2012 < 1)) | (!defined $Classic2012)){
+if (((defined $qglobals{Classic2012}) && ($Classic2012 < 1)) | (!defined $qglobals{Classic2012})){
  #$client->Message(14,"AXClassic mode.");
  if($ulevel >= 50){
   my @zonex = (1..17,19..31,33..38,40..47,49..63,67..70,73..75,78,82..84,97,98,100,101,104,106,121,156,165,166,189); #Trivial ZoneIDs array
@@ -80,7 +80,7 @@ my $random_result = int(rand(100));
     quest::summonitem(140);
   }
  ## Angelox: First bot is free  
- if (!defined $bot_spawn_limit){
+ if(!defined $qglobals{bot_spawn_limit}) {
     quest::setglobal("bot_spawn_limit", 1, 5, "F");
     $bot_spawn_limit = undef;
     $client->Message(6,"You receive a character flag!");
@@ -92,9 +92,9 @@ my $random_result = int(rand(100));
    # $taunt_switch = undef;
  # }
  }
-elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
+elsif ((defined $qglobals{Classic2012}) && ($Classic2012 > 0)) {
  #$client->Message(14,"Classic 2011 mode.");
-   if (!defined $bot_spell_6){
+   if(!defined $qglobals{bot_spell_6}){ 
     quest::setglobal("bot_spell_1",3,5,"F");
     $bot_spell_1 = undef;
     quest::setglobal("bot_spell_5",6,5,"F");
@@ -151,7 +151,7 @@ elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
     ## Both Database advisories
     #
     ## Advise the players about our client status.
-    if (($ulevel == 1) && (defined $bot_spawn_limit)){
+    if (($ulevel == 1) && (defined $qglobals{bot_spawn_limit})){ 
       $clientver = $client->GetClientVersion();
       if($clientver > 3){
 	$client->Message(15,"AXClassic is compatible with Titanium, SoF, SoD, and Underfoot clients.");
