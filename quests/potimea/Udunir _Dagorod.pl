@@ -45,8 +45,9 @@ if ($text=~/here/i && $ulevel >= 64 && defined($qglobals{$name."potimeb"})) {
  $client->Message(14,"You have an open Time B instance and can recover your corpse there. I can send you $back.");
 }
 if ($text=~/abandon/i && defined($qglobals{$name."potimeb"})) {
- quest::delglobal(“$name."potimeb”);
- $client->Message(14,"Your instance has been deleted, you can now purchase a newone if you wish...");
+#quest::delglobal(“$name."potimeb”);
+#$client->Message(14,"Your instance has been deleted, you can now purchase a newone if you wish...");
+$client->Message(14,"Your instance has NOT been deleted, there is a bug in my script Caved is working on it atm...");
 }
 }
 
