@@ -13,7 +13,7 @@ my $abandon = quest::saylink("abandon", 1);
 
   if ($text=~/hail/i && $ulevel >= 65) {
     $client->Message(14,"Hello $name , I am Udunir Dagorod. Time B is camped again by another player huh? I know how you feel. Lucky for you I am here to make a few bucks and sell zone instances. If you want I can $open a zone instance for you to begin your Time B hunt, it will stay open for 8 hours. I charge 500pp per zone instance. You can purchase a new instance after the old one has expired or after you have $abandon ed it.");
-$client->Message(12,"In the event that you would die in your Time B instance, I can port you $back for as long as the instance is active. In case your instance has already expired, your corpse will end up $here. After some time..";
+$client->Message(12,"In the event that you would die in your Time B instance, I can port you $back for as long as the instance is active. In case your instance has already expired, your corpse will end up $here. After some time..");
   }
 
   if ($text=~/hail/i && $ulevel < 65) {
