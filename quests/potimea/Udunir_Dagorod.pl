@@ -9,10 +9,11 @@ sub EVENT_SAY {
 my $open = quest::saylink("open", 1);
 my $back = quest::saylink("back", 1);
 my $here = quest::saylink("here", 1);
+my $abandon = quest::saylink("abandon", 1);
 
   if ($text=~/hail/i && $ulevel >= 65) {
-    $client->Message(14,"Hello $name , I am Udunir Dagorod. Time B is camped again by another player huh? I know how you feel. Lucky for you I am here to make a few bucks and sell zone instances. If you want I can $open a zone instance for you to begin your Time B hunt, it will stay open for 13 hours. I charge 500pp per zone instance. You can purchase a new instance after the old one has expired.");
-$client->Message(12,"In the event that you would die in your Time B instance, I can port you $back for as long as the instance is active. In case your instance has already expired, your corpse will end up $here. After some time..");
+    $client->Message(14,"Hello $name , I am Udunir Dagorod. Time B is camped again by another player huh? I know how you feel. Lucky for you I am here to make a few bucks and sell zone instances. If you want I can $open a zone instance for you to begin your Time B hunt, it will stay open for 8 hours. I charge 500pp per zone instance. You can purchase a new instance after the old one has expired or after you have $abandon ed it.");
+$client->Message(12,"In the event that you would die in your Time B instance, I can port you $back for as long as the instance is active. In case your instance has already expired, your corpse will end up $here. After some time..";
   }
 
   if ($text=~/hail/i && $ulevel < 65) {
@@ -23,7 +24,7 @@ $client->Message(12,"In the event that you would die in your Time B instance, I 
     $client->Message(14,"Just hand me 500pp and I will create the instance for you and port you there.");
   }
   if ($text=~/open/i && $ulevel >= 65 && defined($qglobals{$name."potimeb"})) {
-    $client->Message(14,"You already have an existing Time B zone instance. You can't purchase a newone until it has expired, but I can port you $back to it if you like.");
+    $client->Message(14,"You already have an existing Time B zone instance. You can't purchase a newone until it has expired or you have $abandon ed it, but I can port you $back to it if you like.");
 }
   if ($text=~/back/i && $ulevel >= 64) {
    if (defined($qglobals{$name."potimeb"})) {
@@ -41,17 +42,20 @@ $client->Message(14,"Going to send you to the regular zone instance now. Your co
 quest::movepc(223, -39.13, 1092.13, 495.53);
 }
 if ($text=~/here/i && $ulevel >= 64 && defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"You have an open Time B instance and can recover your corpse there. I can send you $back.");
+ $client->Message(14,"You have an open Time B instance and can recover your corpse there. I can send you $back.");
+}
+if ($text=~/abandon/i && defined($qglobals{$name."potimeb"})) {
+ quest::delglobal(“$name."potimeb”);
+ $client->Message(14,"Your instance has been deleted, you can now purchase a newone if you wish...");
 }
 }
-
 sub EVENT_ITEM {
 if (($platinum == 500) && $ulevel >= 65 && !defined($qglobals{$name."potimeb"})) {
     $client->Message(14,"Thank you $class , you are on the way to your Time B instance, good luck!"); #Money handin for instance creattion and porting to it.
 
-    my $instanceID = quest::CreateInstance("potimeb", 0, 46800);
+    my $instanceID = quest::CreateInstance("potimeb", 0, 28800);
     quest::AssignToInstance($instanceID);
-    quest::setglobal($name."potimeb",$instanceID,7,H13);
+    quest::setglobal($name."potimeb",$instanceID,7,H8);
     quest::MovePCInstance(223, $instanceID, -39.13, 1092.13, 495.53, 150);
 return 1;
  }
