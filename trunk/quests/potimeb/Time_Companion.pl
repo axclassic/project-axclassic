@@ -51,7 +51,7 @@ if ($text=~/water/i) {
 ################EARTH####################################
 if ($text=~/earth/i) {
   if (defined($qglobals{$name."potimeb"})) {
-     $client->Message(14,"Going to send you back to your Time B instance now.");
+     $client->Message(14,"Good luck $name , porting you inside your instance.");
      my $QGlobalValue = $qglobals{$name."potimeb"};
      quest::MovePCInstance(223, $QGlobalValue, -39.13, 1092.13, 495.53, 150);
      return 1;
