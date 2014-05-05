@@ -53,7 +53,7 @@ if ($text=~/earth/i) {
   if (defined($qglobals{$name."potimeb"})) {
      $client->Message(14,"Good luck $name , porting you inside your instance.");
      my $QGlobalValue = $qglobals{$name."potimeb"};
-     quest::MovePCInstance(223, $QGlobalValue, -39.13, 1092.13, 495.53, 150);
+     quest::MovePCInstance(223, $QGlobalValue, -61.9, 1638.6, 496.1, 150);
      return 1;
       }
   else {
