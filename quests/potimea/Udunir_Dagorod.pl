@@ -49,6 +49,7 @@ if ($text=~/abandon/i && defined($qglobals{$name."potimeb"})) {
  $client->Message(14,"Your instance has been deleted, you can now purchase a newone if you wish...");
 }
 }
+
 sub EVENT_ITEM {
 if (($platinum == 500) && $ulevel >= 65 && !defined($qglobals{$name."potimeb"})) {
     $client->Message(14,"Thank you $class , you are on the way to your Time B instance, good luck!"); #Money handin for instance creattion and porting to it.
