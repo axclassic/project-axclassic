@@ -14,7 +14,7 @@ my $earth = quest::saylink("earth", 1);
 my $air = quest::saylink("air", 1);
 my $undead = quest::saylink("undead", 1);
 
-if ($text=~ /hail/i){
+if ($text=~ /hail/i) {
 $client->Message(14,"Please choose:| $fire | $water | $air | $undead  | $earth |  as your destination");
 }
 
