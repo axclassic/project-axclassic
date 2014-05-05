@@ -19,72 +19,67 @@ $client->Message(14,"Please choose:| $fire | $water | $air | $undead  | $earth |
 }
 
 ################FIRE#####################################
-if ($text=~/fire/i && defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name");
-my $QGlobalValue = $qglobals{$name."potimeb"};
-quest::MovePCInstance(223, $QGlobalValue, -59.1, 587.1, 493.9, 150);
-}
-elsif ($text=~/fire/i && !defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name , Porting inside regular instance"); 
-quest::movepc(223, -59.1, 587.1, 493.9, [64.6]);
+if ($text=~/fire/i) {
+   if (defined($qglobals{$name."potimeb"})) {
+     $client->Message(14,"Good luck $name , porting you inside your instance.");
+     my $QGlobalValue = $qglobals{$name."potimeb"};
+     quest::MovePCInstance(223, $QGlobalValue, -59.1, 587.1, 493.9, 150);
 }
 else {
-    $client->Message(14,"My script is totally NOT working today");
+ $client->Message(14,"Good luck $name , porting inside regular instance.");
+ quest::movepc(223, -59.1, 587.1, 493.9, [64.6]);
+ }
 }
 
 ################WATER####################################
-if ($text=~/water/i && defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name");
-my $QGlobalValue = $qglobals{$name."potimeb"};
-quest::MovePCInstance(223, $QGlobalValue, -58, 884.8, 493.7, 150);
-}
-elsif ($text=~/water/i && !defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name , Porting inside regular instance"); 
-quest::movepc(223, -58, 884.8, 493.7, [67.8]);
+if ($text=~/water/i) {
+   if (defined($qglobals{$name."potimeb"})) {
+     $client->Message(14,"Good luck $name , porting you inside your instance.");
+     my $QGlobalValue = $qglobals{$name."potimeb"};
+     quest::MovePCInstance(223, $QGlobalValue, -58, 884.8, 493.7, 150);
 }
 else {
-    $client->Message(14,"My script is totally NOT working today");
+$client->Message(14,"Good luck $name , Porting inside regular instance"); 
+quest::movepc(223, -58, 884.8, 493.7, [67.8]);
+ }
 }
 
 ################EARTH####################################
-if ($text=~/earth/i && defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name");
-my $QGlobalValue = $qglobals{$name."potimeb"};
-quest::MovePCInstance(223, $QGlobalValue, -61.9, 1638.6, 496.1, 150);
-}
-elsif ($text=~/earth/i && !defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name , Porting inside regular instance"); 
-quest::movepc(223, -61.9, 1638.6, 496.1, [65.5]);
+if ($text=~/earth) {
+   if (defined($qglobals{$name."potimeb"})) {
+     $client->Message(14,"Good luck $name , porting you inside your instance.");
+     my $QGlobalValue = $qglobals{$name."potimeb"};
+     quest::MovePCInstance(223, $QGlobalValue, -61.9, 1638.6, 496.1, 150);
 }
 else {
-    $client->Message(14,"My script is totally NOT working today");
+ $client->Message(14,"Good luck $name , Porting inside regular instance"); 
+ quest::movepc(223, -61.9, 1638.6, 496.1, [65.5]);
+ }
 }
 
 ################AIR######################################
-if ($text=~/air/i && defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name");
-my $QGlobalValue = $qglobals{$name."potimeb"};
-quest::MovePCInstance(223, $QGlobalValue, -59.2, 1333.4, 494.1, 150);
-}
-elsif ($text=~/air/i && !defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name , Porting inside regular instance"); 
-quest::movepc(223, -59.2, 1333.4, 494.1, [56.9]);
+if ($text=~/air/i) {
+   if (defined($qglobals{$name."potimeb"})) {
+     $client->Message(14,"Good luck $name , porting you inside your instance.");
+     my $QGlobalValue = $qglobals{$name."potimeb"};
+     quest::MovePCInstance(223, $QGlobalValue, -59.2, 1333.4, 494.1, 150);
 }
 else {
-    $client->Message(14,"My script is totally NOT working today");
+ $client->Message(14,"Good luck $name , Porting inside regular instance"); 
+ quest::movepc(223, -59.2, 1333.4, 494.1, [56.9]);
+ }
 }
 
 ################UNDEAD###################################
-if ($text=~/undead/i && defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name");
-my $QGlobalValue = $qglobals{$name."potimeb"};
-quest::MovePCInstance(223, $QGlobalValue, -36.5, 1092.4, 495.2, 150);
-}
-elsif ($text=~/undead/i && !defined($qglobals{$name."potimeb"})) {
-$client->Message(14,"Good luck $name , Porting inside regular instance"); 
-quest::movepc(223, -36.5, 1092.4, 495.2, [54.6]);
+if ($text=~/undead/i) {
+   if (defined($qglobals{$name."potimeb"})) {
+     $client->Message(14,"Good luck $name , porting you inside your instance.");
+     my $QGlobalValue = $qglobals{$name."potimeb"};
+     quest::MovePCInstance(223, $QGlobalValue, -36.5, 1092.4, 495.2, 150);
 }
 else {
-    $client->Message(14,"My script is totally NOT working today");
+ $client->Message(14,"Good luck $name , Porting inside regular instance");
+ quest::movepc(223, -36.5, 1092.4, 495.2, [54.6]);
+ }
 }
 }
