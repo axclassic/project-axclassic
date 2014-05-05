@@ -23,7 +23,7 @@ if ($text=~/fire/i) {
   if (defined($qglobals{$name."potimeb"})) {
      $client->Message(14,"Good luck $name , porting you inside your instance.");
      my $QGlobalValue = $qglobals{$name."potimeb"};
-     quest::MovePCInstance(223, $QGlobalValue, -59.1, 587.1, 493.9, [64.6]);
+     quest::MovePCInstance(223, $QGlobalValue, -59.1, 587.1, 493.9, 150);
      return 1; 
       }
   else {
@@ -38,7 +38,7 @@ if ($text=~/water/i) {
   if (defined($qglobals{$name."potimeb"})) {
      $client->Message(14,"Good luck $name , porting you inside your instance.");
      my $QGlobalValue = $qglobals{$name."potimeb"};
-     quest::MovePCInstance(223, $QGlobalValue, -58, 884.8, 493.7, [67.8]);
+     quest::MovePCInstance(223, $QGlobalValue, -58, 884.8, 493.7, 150);
      return 1;
       } 
   else {
@@ -53,7 +53,7 @@ if ($text=~/earth/i) {
   if (defined($qglobals{$name."potimeb"})) {
      $client->Message(14,"Going to send you back to your Time B instance now.");
      my $QGlobalValue = $qglobals{$name."potimeb"};
-     quest::MovePCInstance(223, $QGlobalValue, -39.13, 1092.13, 495.53, [65.5]);
+     quest::MovePCInstance(223, $QGlobalValue, -39.13, 1092.13, 495.53, 150);
      return 1;
       }
   else {
@@ -68,7 +68,7 @@ if ($text=~/air/i) {
   if (defined($qglobals{$name."potimeb"})) {
      $client->Message(14,"Good luck $name , porting you inside your instance.");
      my $QGlobalValue = $qglobals{$name."potimeb"};
-     quest::MovePCInstance(223, $QGlobalValue, -59.2, 1333.4, 494.1, [56.9]);
+     quest::MovePCInstance(223, $QGlobalValue, -59.2, 1333.4, 494.1, 150);
      return 1;
       }
   else {
@@ -83,7 +83,7 @@ if ($text=~/undead/i) {
   if (defined($qglobals{$name."potimeb"})) {
      $client->Message(14,"Good luck $name , porting you inside your instance.");
      my $QGlobalValue = $qglobals{$name."potimeb"};
-     quest::MovePCInstance(223, $QGlobalValue, -36.5, 1092.4, 495.2, [54.6]);
+     quest::MovePCInstance(223, $QGlobalValue, -36.5, 1092.4, 495.2, 150);
      return 1;
       }
   else {
