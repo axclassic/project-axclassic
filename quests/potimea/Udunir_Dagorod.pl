@@ -17,7 +17,7 @@ $client->Message(12,"In the event that you would die in your Time B instance, I 
   }
 
   if ($text=~/hail/i && $ulevel < 65) {
-    $client->Message(14,"Hello $name , the Time B zone instances I am offering are for level 65++ people only. Come back when you reach level 65.");
+    $client->Message(14,"Hello $name , the Time B zone instances I am offering are for level 65++ people only. Come back when you reach level 65.")
   }
 
   if ($text=~/open/i && $ulevel >= 65 && !defined($qglobals{$name."potimeb"})) {
