@@ -7,6 +7,9 @@
 sub EVENT_SAY{
 my $join = quest::saylink("join", 1);
 
+if($text =~ /complete/i){
+	quest::delglobal("GDWar");
+}
 if($text =~ /hail/i && !defined($qglobals{"GDWar"})){
 	$client->Message(14,"Greetings. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them.");
 }
@@ -37,9 +40,9 @@ if((plugin::check_handin(\%itemcount, 29062 => 3, 30200 => 1)) ||#Velium Long Sw
     $client->Message(14,"Thank you $class , you are on the way to fight the war, good luck!"); #Instance creation and porting to it.
 
     my $instanceID = quest::CreateInstance("GDWar", 0, 46800);
-    quest::AssignToInstance($WarID);
-    quest::setglobal("GDWar",$WarID,7,H13);
-    quest::MovePCInstance(118, $WarID,-965,-7720,-557);
+    quest::AssignToInstance($instanceID);
+    quest::setglobal("GDWar",$instanceID,7,H13);
+    quest::MovePCInstance(118, $instanceID,-965,-7720,-557);
 return 1;
  }
 
