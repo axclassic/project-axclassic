@@ -2,7 +2,7 @@
 # Based on input from Rightman and 10th coldain ring #
 # Author: Resqu Miplez #
 # Axclassic Rathe Server #
-# test script 3.0 # 
+# test script 3.1 # 
 
 sub EVENT_SAY{
 my $join = quest::saylink("join", 1);
@@ -23,8 +23,8 @@ if($text =~ /hail/i && !defined($qglobals{"greatdivide"})){
    if (defined($qglobals{"greatdivide"})) {
      $client->Message(14,"You may join your friends in battle!");
      my $QGlobalValue = $qglobals{"greatdivide"};
-     #quest::MovePCInstance(118, $QGlobalValue, -965,-7720,-557);
-     quest::MovePCInstance(118, $inpoka, -965,-7720,-557 );
+     quest::MovePCInstance(118, $QGlobalValue, -965,-7720,-557);
+     #quest::MovePCInstance(118, $inpoka, -965,-7720,-557 );
 }
 }
 }
