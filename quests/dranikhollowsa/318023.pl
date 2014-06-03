@@ -15,22 +15,22 @@ sub EVENT_ITEM
 
  if(plugin::check_handin(\%itemcount, 119839 => 1)){
     	quest::say("Thank you! Your actions shall be rewarded.");
-    	quest::exp(10000);
+    	quest::exp(200000);
  	}
 
   elsif(plugin::check_handin(\%itemcount, 119839 => 2)){
     	quest::say("Thank you! Your actions shall be rewarded.");
-    	quest::exp(20000);
+    	quest::exp(400000);
  	}
  
   elsif(plugin::check_handin(\%itemcount, 119839 => 3)){
     	quest::say("Thank you! Your actions shall be rewarded.");
-    	quest::exp(30000);
+    	quest::exp(600000);
  	}
 
   elsif(plugin::check_handin(\%itemcount, 119839 => 4)){
     	quest::say("Thank you! Your actions shall be rewarded.");
-    	quest::exp(40000);
+    	quest::exp(800000);
  	}
 
   else {
