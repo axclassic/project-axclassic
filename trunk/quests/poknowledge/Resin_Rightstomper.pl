@@ -2,29 +2,29 @@
 # Based on input from Rightman and 10th coldain ring #
 # Author: Resqu Miplez #
 # Axclassic Rathe Server #
-# test script 3.1 # 
+# test script 3.5 # 
 
 sub EVENT_SAY{
 my $join = quest::saylink("join", 1);
 
-$inpoka = quest::GetInstanceID("greatdivide",0);
+$inpoka = quest::GetInstanceID($name."greatdivide",0);
 
 if($text =~ /complete/i){
-	quest::delglobal("greatdivide");
+	quest::delglobal($name."greatdivide");
 	quest::say("Clearing your instance stuff");
 }
-if($text =~ /hail/i && !defined($qglobals{"greatdivide"})){
+if($text =~ /hail/i && !defined($qglobals{$name."greatdivide"})){
 	$client->Message(14,"Greetings. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them. If you return you may bring friends along to aid Thurgadin");
 }
-  if ($text=~/hail/i && defined($qglobals{"greatdivide"})) {
+  if ($text=~/hail/i && defined($name."greatdivide"})) {
     $client->Message(14,"Your friends are ready to battle for Thurgadin. Are you willing to $join?");
 }
   if ($text=~/join/i) {
-   if (defined($qglobals{"greatdivide"})) {
+   if (defined($qglobals{$name."greatdivide"})) {
      $client->Message(14,"You may join your friends in battle!");
-     my $QGlobalValue = $qglobals{"greatdivide"};
+     my $QGlobalValue = $qglobals{$name."greatdivide"};
      quest::MovePCInstance(118, $QGlobalValue, -965,-7720,-557);
-     #quest::MovePCInstance(118, $inpoka, -965,-7720,-557 );
+     quest::MovePCInstance(118, $inpoka, -965,-7720,-557 );
 }
 }
 }
@@ -43,9 +43,9 @@ if((plugin::check_handin(\%itemcount, 29062 => 3, 30200 => 1)) ||#Velium Long Sw
       {
     $client->Message(14,"Thank you $class , you are on the way to fight the war, good luck!"); #Instance creation and porting to it.
 
-    my $instanceID = quest::CreateInstance("greatdivide", 0, 46800);
+    my $instanceID = quest::CreateInstance($name."greatdivide", 0, 46800);
     quest::AssignGroupToInstance($instanceID);
-    quest::setglobal("greatdivide",$instanceID,7,H13);
+    quest::setglobal($name."greatdivide",$instanceID,7,H13);
     quest::MovePCInstance(118, $instanceID,-965,-7720,-557);
 return 1;
  }
