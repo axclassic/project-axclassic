@@ -16,7 +16,7 @@ if($text =~ /complete/i){
 if($text =~ /hail/i && !defined($qglobals{$name."greatdivide"})){
 	$client->Message(14,"Greetings. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them. If you return you may bring friends along to aid Thurgadin");
 }
-  if ($text=~/hail/i && defined($name."greatdivide"})) {
+  if ($text=~/hail/i && defined($qglobals{$name."greatdivide"})) {
     $client->Message(14,"Your friends are ready to battle for Thurgadin. Are you willing to $join?");
 }
   if ($text=~/join/i) {
@@ -24,7 +24,7 @@ if($text =~ /hail/i && !defined($qglobals{$name."greatdivide"})){
      $client->Message(14,"You may join your friends in battle!");
      my $QGlobalValue = $qglobals{$name."greatdivide"};
      quest::MovePCInstance(118, $QGlobalValue, -965,-7720,-557);
-     quest::MovePCInstance(118, $inpoka, -965,-7720,-557 );
+     #quest::MovePCInstance(118, $inpoka, -965,-7720,-557 );
 }
 }
 }
