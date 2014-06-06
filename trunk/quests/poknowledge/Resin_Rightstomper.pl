@@ -2,8 +2,8 @@
 # Based on input from Rightman and 10th coldain ring #
 # Author: Resqu Miplez #
 # Axclassic Rathe Server #
-# test script 3.9 # 
-#cant not clear varibles #
+# test script 3.10 # 
+#cant not clear varibles still#
 #This is a Forum version to test prior to revising for use#
 
 sub EVENT_SAY {
@@ -11,7 +11,7 @@ sub EVENT_SAY {
 $inpoka = quest::GetInstanceID("greatdivide",0);
 
 if ($text =~/hail/i) {
-	quest::say ("hi this is third attempt");
+	quest::say ("hi this is forth attempt");
 
 	if($inpoka == 0) {
 		$Instance = quest::CreateInstance("greatdivide", 0, 64800);
@@ -35,6 +35,8 @@ if ($text =~/return/i) {
 	}
 if ($text =~/clearme/i) {
 		quest::DestroyInstance($Instance);
+		quest::delglobal($name."greatdivide");
+		quest::delglobal($name."zone");
 		$inpoka = 0;
 		quest::say("Clearing your instance stuff");
 	}
