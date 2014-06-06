@@ -8,10 +8,10 @@
 
 sub EVENT_SAY {
 
-$inpoka = quest::GetInstanceID("greatdivide",0);
+$inpoka = quest::GetInstanceID("greatdivide",1);
 
 if ($text =~/hail/i) {
-	quest::say ("hi this is forth attempt");
+	quest::say ("hi this is fifth attempt");
 
 	if($inpoka == 0) {
 		$Instance = quest::CreateInstance("greatdivide", 1, 64800);
