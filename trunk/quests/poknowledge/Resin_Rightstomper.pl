@@ -2,12 +2,13 @@
 # Based on input from Rightman and 10th coldain ring #
 # Author: Resqu Miplez #
 # Axclassic Rathe Server #
-# test script 3.5 # 
+# test script 3.6 # 
+#Last issue Rightstomper stopped talking 2 revisions ago #
 
 sub EVENT_SAY{
 my $join = quest::saylink("join", 1);
 
-$inpoka = quest::GetInstanceID($name."greatdivide",0);
+#$inpoka = quest::GetInstanceID($name."greatdivide",0);
 
 if($text =~ /complete/i){
 	quest::delglobal($name."greatdivide");
@@ -43,7 +44,7 @@ if((plugin::check_handin(\%itemcount, 29062 => 3, 30200 => 1)) ||#Velium Long Sw
       {
     $client->Message(14,"Thank you $class , you are on the way to fight the war, good luck!"); #Instance creation and porting to it.
 
-    my $instanceID = quest::CreateInstance($name."greatdivide", 0, 46800);
+    my $instanceID = quest::CreateInstance("greatdivide", 0, 46800);
     quest::AssignGroupToInstance($instanceID);
     quest::setglobal($name."greatdivide",$instanceID,7,H13);
     quest::MovePCInstance(118, $instanceID,-965,-7720,-557);
@@ -56,4 +57,5 @@ else {
     return 1;
  }
 }
+
 
