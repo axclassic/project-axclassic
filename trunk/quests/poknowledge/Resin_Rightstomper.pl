@@ -2,60 +2,39 @@
 # Based on input from Rightman and 10th coldain ring #
 # Author: Resqu Miplez #
 # Axclassic Rathe Server #
-# test script 3.6 # 
-#Last issue Rightstomper stopped talking 2 revisions ago #
+# test script 3.7 # 
+#Last issue One one would be marked for zone #
+#This is a Forum version to test prior to revising for use#
 
-sub EVENT_SAY{
-my $join = quest::saylink("join", 1);
+sub EVENT_SAY {
 
-#$inpoka = quest::GetInstanceID($name."greatdivide",0);
+$inpoka = quest::GetInstanceID("greatdivide",0);
 
-if($text =~ /complete/i){
-	quest::delglobal($name."greatdivide");
-	quest::say("Clearing your instance stuff");
+if ($text =~/hail/i) {
+	quest::say ("hi");
+
+	if($inpoka == 0) {
+		$Instance = quest::CreateInstance("greatdivide", 0, 64800);
+		quest::AssignGroupToInstance($Instance);
+	    	quest::say("Instance added.");
+		quest::say("Your instance is: $Instance");
+
+		quest::setglobal($name."greatdivide",$Instance,7,"H18");
+		quest::setglobal($name."zone",$Instance,7,"H18");
+		quest::MovePCInstance(55, $Instance, -965,-7720,-557);
+		quest::say("I'd move you, but Cy has it commented out currently.");
+
+	} else {
+		$client->Message(13, "You are already in an instance, the ID which is $inpoka");
+		quest::say("If you wish to [return] to this instance, just say so!");
+	}
+
 }
-if($text =~ /hail/i && !defined($qglobals{$name."greatdivide"})){
-	$client->Message(14,"Greetings. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them. If you return you may bring friends along to aid Thurgadin");
+if ($text =~/return/i) {
+		quest::MovePCInstance(55, $inpoka, -965,-7720,-557);
+	}
+if ($text =~/clearme/i) {
+		quest::DestroyInstance(56);
+		quest::say("Clearing your instance stuff");
+	}
 }
-  if ($text=~/hail/i && defined($qglobals{$name."greatdivide"})) {
-    $client->Message(14,"Your friends are ready to battle for Thurgadin. Are you willing to $join?");
-}
-  if ($text=~/join/i) {
-   if (defined($qglobals{$name."greatdivide"})) {
-     $client->Message(14,"You may join your friends in battle!");
-     my $QGlobalValue = $qglobals{$name."greatdivide"};
-     quest::MovePCInstance(118, $QGlobalValue, -965,-7720,-557);
-     #quest::MovePCInstance(118, $inpoka, -965,-7720,-557 );
-}
-}
-}
-
-sub EVENT_ITEM{
-if((plugin::check_handin(\%itemcount, 29062 => 3, 30200 => 1)) ||#Velium Long Sword 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30201 => 1)) ||#Velium Two Handed Sword 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30202 => 1)) ||#Velium Short Sword 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30203 => 1)) ||#Velium Scimitar 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30204 => 1)) ||# Velium Warhammer 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30205 => 1)) ||# Velium Morning Star 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30206 => 1)) ||# Velium Great Staff 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30207 => 1)) ||#Velium Dagger 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30208 => 1)) ||#Velium Spear
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30209 => 1)))# Velium Rapier
-      {
-    $client->Message(14,"Thank you $class , you are on the way to fight the war, good luck!"); #Instance creation and porting to it.
-
-    my $instanceID = quest::CreateInstance("greatdivide", 0, 46800);
-    quest::AssignGroupToInstance($instanceID);
-    quest::setglobal($name."greatdivide",$instanceID,7,H13);
-    quest::MovePCInstance(118, $instanceID,-965,-7720,-557);
-return 1;
- }
-
-else {
-    $client->Message(14,"I don't need this $name. Take it back.");
-    plugin::return_items(\%itemcount);
-    return 1;
- }
-}
-
-
