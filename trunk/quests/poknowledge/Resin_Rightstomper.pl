@@ -2,8 +2,8 @@
 # Based on input from Rightman and 10th coldain ring #
 # Author: Resqu Miplez #
 # Axclassic Rathe Server #
-# test script 3.10 # 
-#cant not clear varibles still#
+# test script 4.0 # 
+# Test different Version Mode #
 #This is a Forum version to test prior to revising for use#
 
 sub EVENT_SAY {
@@ -14,7 +14,7 @@ if ($text =~/hail/i) {
 	quest::say ("hi this is forth attempt");
 
 	if($inpoka == 0) {
-		$Instance = quest::CreateInstance("greatdivide", 0, 64800);
+		$Instance = quest::CreateInstance("greatdivide", 1, 64800);
 		quest::AssignGroupToInstance($Instance);
 	    	quest::say("Instance added.");
 		quest::say("Your instance is: $Instance");
