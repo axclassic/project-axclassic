@@ -2,23 +2,23 @@
 # Based on input from Rightman and 10th coldain ring #
 # Author: Resqu Miplez #
 # Axclassic Rathe Server #
-# test script 5.3 # 
-# would not send partner to same instance #
+# test script 5.4 # 
+# STILL would not send partner to same instance #
 
 
 sub EVENT_SAY{
 my $join = quest::saylink("join", 1);
-my $inpoka = quest::GetInstanceID($name."greatdivide",1);
+$inpoka = quest::GetInstanceID($name."greatdivide",1);
 
 if($text =~ /clearme/i){
 	quest::delglobal($name."greatdivide");
 	quest::DestroyInstance($inpoka);
 	quest::say("Clearing your instance stuff");
 }
-elsif($text =~ /hail/i && $inpoka == 0){
-	$client->Message(14,"Greetings This is Test THREE. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them. If you return you may bring friends along to aid Thurgadin");
+elsif($text =~ /hail/i && ($inpoka == 0)){
+	$client->Message(14,"Greetings This is Test FOUR. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them. If you return you may bring friends along to aid Thurgadin");
 }
-elsif ($text=~/hail/i && $inpoka <= 1) {
+elsif ($text=~/hail/i && ($inpoka != 0)) {
     $client->Message(13, "You are already in Great Divide ($inpoka)");
     $client->Message(14,"Your friends are in battle for Thurgadin. Are you willing to $join?");
 }
