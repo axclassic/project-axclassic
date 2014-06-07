@@ -24,10 +24,14 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13128 => 1)) {
-    quest::say("Welcome. young one! I see you show interest in the circle of magic. Nowhere upon Norrath will you find a greater school than this - the Gatecallers. You shall wear this robe as a sign that you have begun the training of this circle. Remember. the power of the Gatecaller is the power of summoning. Go find Vasile. he will help teach you the basics of summoning. Good luck, friend!");
-    quest::summonitem("13548");
-    quest::ding(); quest::exp("100");
-  } elsif (plugin::check_handin(\%itemcount, 18728=> 1)) {
+  quest::say("Welcome. young one! I see you show interest in the circle of magic. Nowhere upon Norrath will you find a greater school than this - the Gatecallers. You shall wear this robe as a sign that you have begun the training of this circle. Remember. the power of the Gatecaller is the power of summoning. Go find Vasile. he will help teach you the basics of summoning. Good luck, friend!");
+    quest::summonitem(13548);
+    quest::faction( 79, 10); 	#Deepwater Knights
+    quest::faction( 145, 10); 	#High Council of Erudin
+    quest::faction( 143, -30);	#Heretics
+     quest::ding(); quest::exp(100);
+    }
+	elsif (plugin::check_handin(\%itemcount, 18728=> 1)) {
     quest::say("This is fine work, young one. You keep this up and you shall be knighted before long.");
      quest::ding(); quest::exp(2500);
     quest::faction(112,10); #gate callers
