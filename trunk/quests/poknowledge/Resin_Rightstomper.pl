@@ -2,12 +2,13 @@
 # Based on input from Rightman and 10th coldain ring #
 # Author: Resqu Miplez #
 # Axclassic Rathe Server #
-# test script 5.4 # 
+# test script 5.5 # 
 # STILL would not send partner to same instance #
 
 
 sub EVENT_SAY{
 my $join = quest::saylink("join", 1);
+my $begin = quest::saylink("begin",1);
 $inpoka = quest::GetInstanceID($name."greatdivide",1);
 
 if($text =~ /clearme/i){
@@ -16,14 +17,43 @@ if($text =~ /clearme/i){
 	quest::say("Clearing your instance stuff");
 }
 elsif($text =~ /hail/i && ($inpoka == 0)){
-	$client->Message(14,"Greetings This is Test FOUR. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them. If you return you may bring friends along to aid Thurgadin");
+	$client->Message(14,"Greetings This is Test FIVE. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them. If you return you may bring friends along to aid Thurgadin");
 }
 elsif ($text=~/hail/i && ($inpoka != 0)) {
     $client->Message(13, "You are already in Great Divide ($inpoka)");
-    $client->Message(14,"Your friends are in battle for Thurgadin. Are you willing to $join?");
+    $client->Message(14,"Your friends are in battle for Thurgadin. Are you ready to $begin?");
 }
-elsif ($text=~/join/i) {
-    quest::MovePCInstance(118, $inpoka, -965,-7720,-557);
+
+elsif ($text =~/begin/i) {
+	quest::say ("You May finally begin to prove yourself a hero.");
+
+	if($inpoka == 0) {
+		$Instance = quest::CreateInstance("greatdivide", 1, 64800);
+		quest::AssignGroupToInstance($Instance);
+	    	quest::say("Instance added.");
+		quest::say("Your instance is: $Instance");
+
+		quest::setglobal($name."greatdivide",$Instance,7,"H18");
+		quest::setglobal($name."zone",$Instance,7,"H18");
+		quest::MovePCInstance(118, $Instance, -965,-7720,-557);
+		quest::say("ON WORDS TO WAR!");
+
+	} else {
+		$client->Message(13, "You are already in a War, the ID which is $inpoka");
+		quest::say("If you wish to [return] to this instance, just say so!");
+	}
+
+}
+if ($text =~/return/i) {
+		quest::MovePCInstance(118, $inpoka, -965,-7720,-557);
+	}
+if ($text =~/clearme/i) {
+		quest::DestroyInstance($Instance);
+		quest::delglobal($name."greatdivide");
+		quest::delglobal($name."zone");
+		$inpoka = 0;
+		quest::say("Clearing your instance stuff");
+	}
 }
 }
 
@@ -41,18 +71,8 @@ if((plugin::check_handin(\%itemcount, 29062 => 3, 30200 => 1)) ||#Velium Long Sw
          (plugin::check_handin(\%itemcount, 29062 => 3, 30208 => 1)) ||#Velium Spear
          (plugin::check_handin(\%itemcount, 29062 => 3, 30209 => 1)))# Velium Rapier
       {
-
-
-  if($inpoka == 0) {
-		$Instance = quest::CreateInstance("greatdivide", 1, 14400);
-		quest::AssignGroupToInstance($Instance);
-	    	quest::say("Instance added.");
-		quest::say("Your instance is: $Instance");
-
-		quest::setglobal($name."greatdivide",$Instance,7,"H18");
-		quest::setglobal($name."zone",$Instance,7,"H18");
-		quest::MovePCInstance(118, $Instance, -965,-7720,-557);
-		$client->Message(14,"Thank you $name , you are on the way to fight the war in Great Divide ($inpoka), good luck!"); #Instance creation and porting to it.
+	    	quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+.
 
 	} else {
 		$client->Message(13,"I don't need this."); #text made up
