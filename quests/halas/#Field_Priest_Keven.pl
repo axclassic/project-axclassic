@@ -21,7 +21,7 @@ sub EVENT_ITEM {
         quest::faction(33, -3);   # Circle Of Unseen Hands
         quest::faction(48, -3); # Coalition of Tradefolk Underground
         quest::faction(90, -3); # Ebon Mask
-
+        quest::ding();
        quest::summonitem("13574");   # Soiled Gray Tunic
         quest::exp("300");        # Give exp for turning in quest
     }
