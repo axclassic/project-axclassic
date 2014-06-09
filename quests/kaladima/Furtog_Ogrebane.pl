@@ -18,11 +18,19 @@ if($text=~/who is mudtoe/i){
 quest::say("The Mudtoes were a small but mighty clan of ogres. My great father [Trondle] destroyed them. I have heard disturbing rumors of one Mudtoe surviving. Would you mind [searching for the Mudtoes] or have you other duties to perform?"); }
 }
 sub EVENT_ITEM { 
- if($itemcount{18766} == 1){
-	quest::summonitem("13515");
- } else {
-  #do all other handins first with plugin, then let it do disciplines
+   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+ if($itemcount{18766} == 1){
+    quest::say("Ah another recruit. Well then, take this apprentice tunic and wear it with pride. There is much work to do. return to me when you need training. Bring pride to the name of the Storm Guards");  #made up text
+	quest::summonitem(13515);
+	quest::ding();
+	quest::faction(169, 10);    #kazon stormhammer
+    quest::faction( 215, 10); 	#merchants of kaladim
+    quest::faction( 219, 10); 	#miners guild 249
+    quest::faction( 314, 10);	#storm guard
+	quest::exp(500);
+ } else {
+  quest::say("I have no need of this, take it back.");
   plugin::return_items(\%itemcount);
  }
 }
