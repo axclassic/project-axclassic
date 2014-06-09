@@ -18,7 +18,11 @@ quest::say("I command you to venture to Innothule and seek a beast called Jojong
 sub EVENT_ITEM { 
  if(plugin::check_handin(\%itemcount, 18781 => 1)){
 	quest::say("Greetings. young paladin!  I am Master Tynkale of the Clerics of Tunare.  Here. we shall teach and train you in the skills needed to defeat our evil and diseased enemies.  Take this, our guild tunic - it will help protect you.  Wear it with pride, for you are now one of us.");
-	quest::summonitem("13591");
+	quest::summonitem(13591);
+	quest::faction(178, 4); #King Tearis Thex
+    quest::faction(43, 4); #Clerics of Tunare
+	quest::ding();
+    quest::exp(350);
 	quest::faction("105","1");
  }
  if (plugin::check_handin(\%itemcount, 	13351 => 1)) {
