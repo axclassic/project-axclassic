@@ -39,8 +39,14 @@ quest::faction(347,-5); # -Unkempt Druids
 quest::ding(); quest::exp(10);
 }
 elsif(plugin::check_handin(\%itemcount, 18734 => 1)) { #Tattered Note
-$client->Message(14,"Welcome young druid. You will need protection while on your adventures. Take this and bring pride to our guild!"); #Text made up
+quest::say("Welcome young druid. You will need protection while on your adventures. Take this and bring pride to our guild!"); #Text made up
 quest::summonitem(58758); #Sylvan Moon Apprentice Tunic*
+quest::ding();
+quest::faction(316,5); # +Storm Reapers
+quest::faction(208,5); # +Mayor Gubbin
+quest::faction(218,5); # +Merchants of Rivervale
+quest::faction(347,-5); # -Unkempt Druids
+quest::exp(50);
 }
 else {
 $client->Message(14,"I have no need for this item $name, you can have it back.");
