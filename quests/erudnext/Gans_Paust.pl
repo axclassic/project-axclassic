@@ -9,13 +9,12 @@ if ($text=~/what of your brother/i){
 }
 sub EVENT_ITEM { 
 	if ($item1=="18724"){quest::say("Yes. welcome friend! Here is your guild tunic. You'll make a fine addition to the Deepwater Knights. Go see Dleria. she will get you started in your studies.");
-quest::summonitem("13544");
-quest::ding();
-
+    quest::summonitem("13544");
+    quest::ding();
     quest::faction( 145, 10); 	#high counsil of erudin
 	quest::faction( 79, 10); 	#Deepwater knights
     quest::faction( 143, -10);	#Heretics
- quest::exp("100"); }
+ quest::exp(100); }
 if (plugin::check_handin(\%itemcount, 1771 => 1)) {
   quest::say("Excellent! Thank you for checking on my brother, I am glad to hear that he is well.  Here is something that shall help you on your way");
   quest::summonitem(1763);
