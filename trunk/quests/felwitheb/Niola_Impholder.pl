@@ -34,13 +34,17 @@ sub EVENT_ITEM {
       quest::say("Welcome. I am Niola Impholder. Master Magician of the Keepers of the Art. Here is our guild robe. You have much to learn. so let's get started.");
       quest::summonitem(13592);
       quest::ding();
+	  quest::faction(170, 10); #Keepers of the Art
+      quest::faction(178, 10); #King Tearis Thex
+      quest::faction(99, 10); #Faydarks Champions
+	  quest::faction(322, -30); #The Dead
       quest::exp(100);
    }
    elsif($item1 == 18902) {
       quest::say("She is still alive? OH, thank you for this news.");
       quest::summonitem(1307);
       quest::ding();
-      quest::exp(30000);
+	  quest::exp(30000);
    }
    else {
       quest::emote("will not take this item.");
