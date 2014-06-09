@@ -28,6 +28,10 @@ sub EVENT_ITEM {
         quest::say("Welcome. I am Tarker Blazetoss. Master Wizard of the Keepers of the Art. Here is our guild robe. You have much to learn, so let's get started.");
         quest::summonitem(13594); # Singed Training Robe
         quest::ding();
+		quest::faction(170, 4); #Keepers of the Art
+        quest::faction(178, 4); #King Tearis Thex
+        quest::faction(99, 4); #Faydarks Champions
+        quest::faction(322, -4); #The Dead
         quest::exp(1000);
     }
 
