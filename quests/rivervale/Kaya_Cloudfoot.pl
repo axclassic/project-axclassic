@@ -32,6 +32,10 @@ quest::faction(347,-30);
   elsif(plugin::check_handin(\%itemcount, 18431 => 1)) { #Halfling Paladin Note
     quest::say("Take this and wear it with pride, $name.");
     quest::summonitem(13541); #Jumjum Sack Tunic*
+	quest::ding();
+	quest::faction(259,10); #Priests of Mischief
+	quest::faction(133,10); #Guardians of the Vale
+    quest::exp(100);
   }
   else {
     #do all other handins first with plugin, then let it do disciplines
