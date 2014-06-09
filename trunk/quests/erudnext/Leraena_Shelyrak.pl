@@ -28,7 +28,11 @@ sub EVENT_ITEM {
   if ($item1=="18723"){
     quest::say("Greetings. and welcome to the Temple of Divine Light! Here is your guild tunic. Serve Quellious well. Please see Lumi Stergnon - he has a task for you.");
     quest::summonitem("13546");
-    quest::ding(); quest::exp("100"); }
+    quest::ding();
+	quest::faction(247,10); # Peace Keepers.
+    quest::faction(145,10); # High Council of Erudin.
+    quest::faction(143,-30); # Heretics.
+	quest::exp("100"); }
 
 if (plugin::check_handin(\%itemcount, 2049 => 1)) { # rolled up strip of cloth
 quest::say("This is important news indeed. It seems there is a tribe of cat men in the Stonebrunt Mountains that wishes to form an alliance with Erudin. I must alert the High Council of this immediately, thank you for your services."); 
