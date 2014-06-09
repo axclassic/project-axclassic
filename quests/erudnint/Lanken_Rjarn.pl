@@ -24,15 +24,14 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18729 => 1)) {
     quest::say("Welcome to the Craft Keepers! You have much to learn. and I'm sure you are anxious to get started. Here's your training robe. Go see Nolusia. she'll give you your first lesson.");
-    
+    quest::summonitem(13549);
+    quest::faction( 56, 200); 	#craftkeepers
+	quest::faction(145, 10);    #High Council of Erudin
+    quest::faction(147, 100);    #High Guard of Erudin
+    quest::faction( 143, -30);	#Heretics
     quest::ding(); 
-    quest::exp("1000");
-    quest::summonitem("13549"); 
-    quest::faction("56","200");     #Craftkeepers
-    quest::faction("145","10");    #High Council of Erudin
-    quest::faction("143","-30");   #Heretics
-    quest::faction("147","100");    #High Guard of Erudin
-  }
+    quest::exp(1000);	
+   }
 }
 
 #END of FILE Zone:erudnint  ID:24032 -- Lanken_Rjarn
