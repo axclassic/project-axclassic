@@ -18,24 +18,24 @@ $client->Message(14,"You do not know of Miragul?!! You have more to learn of the
 sub EVENT_ITEM { 
     if (plugin::check_handin(\%itemcount, 18018=>1)) {
     $client->Message(14,"You are welcomed into the fold. Now go out, and prove yourself, young one. You have much to learn about the Dark Truth. Please visit Shwara Volerno, she will assist you in further training");
-    quest::ding(); quest::exp("1000");
-    quest::summonitem("13551");
-    quest::faction("56","-150");        # Craftkeepers
-    quest::faction("60","-150");        # Crimson Hands
-    quest::faction("143","450");        # Heretics
-    quest::faction("79","-150");        # Deepwater Knights
-    quest::faction("112","-150");       # Gate Callers
+    quest::ding(); quest::exp(1000);
+    quest::summonitem(13551);
+    quest::faction(56, -150);        # Craftkeepers
+    quest::faction(60, -150);        # Crimson Hands
+    quest::faction(143, 450);        # Heretics
+    quest::faction(79, -150);        # Deepwater Knights
+    quest::faction(112, -150);       # Gate Callers
     }
     
     elsif (plugin::check_handin(\%itemcount, 13068=>2, 13067=>2 )) {
     $client->Message(14,"Very good, young acolyte. Maintain your diligence in your duties and you will quickly learn the secrets of the Dark Truth.");
-    quest::ding(); quest::exp("1000");
-    quest::summonitem("15338");
-    quest::faction("56","-5");        # Craftkeepers
-    quest::faction("60","-5");        # Crimson Hands
-    quest::faction("143","2");        # Heretics
-    quest::faction("79","-5");        # Deepwater Knights
-    quest::faction("112","-5");       # Gate Callers
+    quest::ding(); quest::exp(1000);
+    quest::summonitem(15338);
+    quest::faction(56, -5);        # Craftkeepers
+    quest::faction(60, -5);        # Crimson Hands
+    quest::faction(143 ,2);        # Heretics
+    quest::faction(79, -5);        # Deepwater Knights
+    quest::faction(112, -5);       # Gate Callers
     }
   
   else {
