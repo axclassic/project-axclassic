@@ -17,7 +17,13 @@ sub EVENT_ITEM {
 	if ($item1=="18019"){
 	quest::say("You are welcomed into the fold. Now go out. and prove yourself. young one. You have much to learn about the Dark Truth.");
   quest::summonitem("13573");
-  quest::ding(); quest::exp("1000"); }
+  quest::ding();
+  quest::faction(112, -10); #gate callers
+    quest::faction( 56, -10); 	#craftkeepers
+    quest::faction( 60, -10); 	#crimson hands
+	quest::faction( 79, -10); 	#Deepwater knights
+    quest::faction( 143, 10);	#Heretics
+  quest::exp("1000"); }
 }
 #END of FILE Zone:paineel  ID:75072 -- Sern_Adolia 
 
