@@ -6,10 +6,11 @@ quest::say("Welcome to our temple.  We are the paladins of the Church of Underfo
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 18768 => 1)){
 quest::summonitem(13514);
-quest::faction(44, 4);
-quest::faction(169, 4);
-quest::faction(246, 4);
-quest::faction(351, 4);
+quest::ding();
+quest::faction(44, 4);  #clerics of underfoot
+quest::faction(169, 4);  #kazon stormhammer
+quest::faction(219, 4);  #miners guild 249
+quest::exp(100); 
 }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
