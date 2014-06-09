@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 	quest::ding();
 	quest::exp(100);
 	quest::faction(112,10); #gate callers
-    quest::faction( 79, 10); 	#Deepwater Knights
+    quest::faction( 147, 10); 	#high guard of erudin
     quest::faction( 145, 10); 	#High Council of Erudin
     quest::faction( 143, -30);	#Heretics
     }
@@ -37,6 +37,7 @@ sub EVENT_ITEM {
     quest::say("This is fine work, young one. You keep this up and you shall be knighted before long.");
     quest::ding();
     quest::exp(2500);
+	quest::faction(112,10); #gate callers
 	quest::faction(147,10); #high guard of erudin
     quest::faction(145,10); #high council of erudin
     quest::faction(143,-30); #heretics
