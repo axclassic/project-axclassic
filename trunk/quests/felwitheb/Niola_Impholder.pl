@@ -26,7 +26,7 @@ sub EVENT_ITEM {
       quest::faction(170, 4); #Keepers of the Art
       quest::faction(178, 4); #King Tearis Thex
       quest::faction(99, 4); #Faydarks Champions
-      quest::faction(322, -4); #Keepers of the Art
+      quest::faction(322, -4); #The Dead
       quest::ding();
       quest::exp(350);
    }
