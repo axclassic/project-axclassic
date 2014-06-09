@@ -2,13 +2,15 @@
 # Based on input from Rightman and 10th coldain ring #
 # Author: Resqu Miplez #
 # Axclassic Rathe Server #
-# test script 5.5 # 
+# test script 5.6 # 
 # STILL would not send partner to same instance #
+# Would not take weapons #
 
 
 sub EVENT_SAY{
 my $join = quest::saylink("join", 1);
 my $begin = quest::saylink("begin",1);
+my $return = quest::saylink("return",1);
 $inpoka = quest::GetInstanceID($name."greatdivide",1);
 
 if($text =~ /clearme/i){
@@ -16,15 +18,15 @@ if($text =~ /clearme/i){
 	quest::DestroyInstance($inpoka);
 	quest::say("Clearing your instance stuff");
 }
-elsif($text =~ /hail/i && ($inpoka == 0)){
-	$client->Message(14,"Greetings This is Test FIVE. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them. If you return you may bring friends along to aid Thurgadin");
+if($text =~ /hail/i && $inpoka == 0){
+	$client->Message(14,"Greetings This is Test SIX. The giants have put together a vast army to attack Thurgadin. This may be the most difficult battle in the history of Velious. Can you come to our aid? Show me proof that you have killed Giants before by giving me three Giant Warrior Helmets and a Velium Weapon and I will enlist you and whoever you bring to fight them. If you return you may bring friends along to aid Thurgadin");
 }
-elsif ($text=~/hail/i && ($inpoka != 0)) {
+if ($text=~/hail/i && $inpoka != 0) {
     $client->Message(13, "You are already in Great Divide ($inpoka)");
     $client->Message(14,"Your friends are in battle for Thurgadin. Are you ready to $begin?");
 }
 
-elsif ($text =~/begin/i) {
+if ($text =~/begin/i) {
 	quest::say ("You May finally begin to prove yourself a hero.");
 
 	if($inpoka == 0) {
@@ -40,7 +42,7 @@ elsif ($text =~/begin/i) {
 
 	} else {
 		$client->Message(13, "You are already in a War, the ID which is $inpoka");
-		quest::say("If you wish to [return] to this instance, just say so!");
+		$client->Message(13,"If you wish to $return to this instance, just say so!");
 	}
 
 }
@@ -60,25 +62,41 @@ if ($text =~/clearme/i) {
 
 sub EVENT_ITEM{
 
-if((plugin::check_handin(\%itemcount, 29062 => 3, 30200 => 1)) ||#Velium Long Sword 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30201 => 1)) ||#Velium Two Handed Sword 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30202 => 1)) ||#Velium Short Sword 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30203 => 1)) ||#Velium Scimitar 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30204 => 1)) ||# Velium Warhammer 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30205 => 1)) ||# Velium Morning Star 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30206 => 1)) ||# Velium Great Staff 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30207 => 1)) ||#Velium Dagger 
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30208 => 1)) ||#Velium Spear
-         (plugin::check_handin(\%itemcount, 29062 => 3, 30209 => 1)))# Velium Rapier
-      {
-	    	quest::say("Congratulations! You have proven yourself are you ready to $begin?");
-.
+if(($itemcount{29062} == 3) && ($itemcount{30200} == 1)){
+   quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
+elsif(($itemcount{29062} == 3) && ($itemcount{30201} == 1)){
+    quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
+elsif(($itemcount{29062} == 3) && ($itemcount{30202} == 1)){
+    quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
+elsif(($itemcount{29062} == 3) && ($itemcount{30203} == 1)){
+    quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
+elsif(($itemcount{29062} == 3) && ($itemcount{30204} == 1)){
+    quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
+elsif(($itemcount{29062} == 3) && ($itemcount{30205} == 1)){
+    quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
+elsif(($itemcount{29062} == 3) && ($itemcount{30206} == 1)){
+    quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
+elsif(($itemcount{29062} == 3) && ($itemcount{30207} == 1)){
+    quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
+elsif(($itemcount{29062} == 3) && ($itemcount{30208} == 1)){
+    quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
+elsif(($itemcount{29062} == 3) && ($itemcount{30209} == 1)){
+    quest::say("Congratulations! You have proven yourself are you ready to $begin?");
+  }
 
-	} else {
-		$client->Message(13,"I don't need this."); #text made up
-   		plugin::return_items(\%itemcount);
-   		return 1;
-		}
-}
+else {
+	$client->Message(13,"I don't need this."); #text made up
+   	plugin::return_items(\%itemcount);
+   	return 1;
+	}
 }
 
