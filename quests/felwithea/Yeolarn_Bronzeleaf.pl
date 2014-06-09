@@ -69,6 +69,8 @@ my $Initiate = quest::saylink("Initiate of Tunare");
   elsif (plugin::check_handin(\%itemcount, 18780 => 1)) { #Tattered Note
     quest::say("Welcome, friend, to the Clerics of Tunare. I am Yeolarn Bronzeleaf, head of the guild and devout follower of Tunare. Here is your guild tunic - it will help to protect you against this world's evils.");
     quest::summonitem(13590); #Faded Gold Training Tunic*
+	quest::ding();
+	quest::faction(43, 10);    #Clerics of Tunare
     quest::exp(2000);
   }
   else {
