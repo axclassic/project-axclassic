@@ -22,14 +22,17 @@ sub EVENT_ITEM {
         if (plugin::check_handin(\%itemcount, 18731 => 1)) {
 quest::say("Aye. Welcome. my fur-footed friend. My name is Beek Guinders. and I am guild master here at the Chapel of Mischief. Here is our guild tunic. Wear it with pride, as it will set you apart from the crowd.");
 quest::summonitem(13538);
- quest::ding(); quest::exp(100);
+        quest::faction(259,10); #Priests of Mischief
+		quest::faction(133,10); #Guardians of the Vale
+        quest::ding();
+        quest::exp(100);
 }
 	elsif (plugin::check_handin(\%itemcount, 13045 => 1, 13782 => 2, 13758 => 1)) {
 quest::say("Hey, great! You found the materials! We'll get to work right away. If you find any more, please come by again. Here's a little something for your troubles, friend.");
 		quest::summonitem(quest::ChooseRandom(15014,15201,15207,15208,16303));
-		quest::faction(259,10);
-		quest::faction(208,10);
-		quest::faction(133,10);
+		quest::faction(259,10); #Priests of Mischief
+		quest::faction(208,10); #mayor Gubbin
+		quest::faction(133,10); #Guardians of the Vale
 		 quest::ding(); quest::exp(50);
 		quest::givecash(23,13,0,0);
 	} else {
