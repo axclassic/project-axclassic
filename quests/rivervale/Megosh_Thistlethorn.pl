@@ -35,7 +35,10 @@ my $evil = quest::saylink("evil", 1);
 my $task = quest::saylink("task", 1);
 if(plugin::check_handin(\%itemcount, 18432 => 1)){ #Note turnin
 $client->Message(14,"Ah yes welcome $name, I got word that a young ranger would be coming my way. I journeyed many years ago to the Surefall Glade far to the west of our lovely shire. It was there I trained with the human and half-elven rangers that like the Storm Reapers are faithful disciples of Karana. I have returned now to Rivervale to teach our interested young people the ways of a ranger of the Storm Lord. so that we may defend our shire and the wilds of Norrath from the $evil forces that would see it destroyed.");
-quest::summonitem(13509); #Noobie tunic
+quest::summonitem(13509); #Mud Stained Tunic
+quest::ding();
+	quest::faction(316,10); #Storm Reapers
+	quest::exp(100);
 }
 
 elsif(plugin::check_handin(\%itemcount, 19627 => 1)){ #Followup weapon quest after getting the note back
