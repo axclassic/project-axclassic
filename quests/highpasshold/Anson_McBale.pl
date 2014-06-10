@@ -35,7 +35,7 @@ sub EVENT_SAY {
 		
   if($text=~/stanos/i){
     # To make Rogue only, add in ($class eq "Rogue") to the if statement
-    if($ulevel >= 50) {
+    if($ulevel >= 45) {
 	  quest::say("This better be important.");
       #Stanos Herkanor
       quest::unique_spawn(5088,0,0,336.4,10.3,45.7,225.1);
@@ -58,7 +58,7 @@ sub EVENT_SAY {
 }
 sub EVENT_ITEM {
   # To make Rogue only, add in ($class eq "Rogue") to the if statement
-  if($ulevel >= 50){
+  if($ulevel >= 45){
     #Stanos' Pouch ID:28014
     if(plugin::check_handin(\%itemcount, 28014 => 1)){
       quest::say("Ah, we have been expecting this. Let me get Stanos, he will want to inspect it first, but here are your coins.");

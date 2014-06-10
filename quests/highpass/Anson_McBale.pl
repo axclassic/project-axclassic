@@ -35,7 +35,7 @@ sub EVENT_SAY {
 		
   if($text=~/i need to s(ee|peak).*?stanos/i){
     # To make Rogue only, add in ($class eq "Rogue") to the if statement
-    if($ulevel >= 50) {
+    if($ulevel >= 45) {
 	  quest::say("This better be important.");
       #Stanos Herkanor
       quest::unique_spawn(5088,0,0,336.4,10.3,45.7,225.1);
