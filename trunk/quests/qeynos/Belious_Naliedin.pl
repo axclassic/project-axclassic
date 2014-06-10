@@ -44,15 +44,17 @@ sub EVENT_ITEM {
     quest::say("Ah! Here is that letter of introduction I was looking for! Baenar likes to frequent a serene fountain in the southern Karanas. He finds the peace there accommodating to his work. He may even sing a tale for you if the mood strikes him.");
     quest::summonitem(20373);
   }
-  if (plugin::check_handin(\%itemcount, 13775 =>1, 13776 =>1, 13777 =>1, 13778 =>1 )) {
+  elsif (plugin::check_handin(\%itemcount, 13775 =>1, 13776 =>1, 13777 =>1, 13778 =>1 )) {
    quest::summonitem(13105); 
     quest::ding(); quest::exp(1000);
    quest::say("Here is your custom lute, use it well $name.");
   }
-  
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Bard');
-  plugin::return_items(\%itemcount);
+  else {
+   #do all other handins first with plugin, then let it do disciplines
+   plugin::try_tome_handins(\%itemcount, $class, 'Bard');
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:qeynos  ID:1133 -- Belious_Naliedin 
 
