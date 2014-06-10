@@ -91,7 +91,13 @@ sub EVENT_ITEM {
 	#Guild Tunic* ID:9996
 	quest::say("Welcome young rogue. You will need protection while on your adventures. Take this and bring pride to our guild!"); #Text made up
 	quest::summonitem(9996);
-	quest::ding(); quest::exp(200);
+	quest::ding();
+	quest::faction(31, 10); #Carson McCabe
+	quest::faction(33, 10); #Circle of Unseen hands
+	quest::faction(48, 10); #Coalition of Tradefolks underground
+	quest::faction(77, 10); #Deeppockets
+	quest::faction(218, -10); #Merchants of Rivervale
+	quest::exp(200);
   }
   else {
    #do all other handins first with plugin, then let it do disciplines
