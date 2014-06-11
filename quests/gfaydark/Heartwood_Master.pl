@@ -21,10 +21,14 @@ else {
 
 sub EVENT_ITEM { 
 my $errands = quest::saylink("errands", 1);
-if(($race == 'Wood Elf') && ($class == 'druid') && plugin::check_handin(\%itemcount, 18786 => 1)) {
+if(($class == 'druid') && plugin::check_handin(\%itemcount, 18786 => 1)) {
 	$client->Message(14,"Welcome! We are the Soldiers of Tunare, the sworn protectors of Faydark. I thank you for joining our cause, we can always use the help. Here, put on this tunic, and let's get started.. you have much to learn. Go see Aliafya_Mistrunner for further training and don't forget to return to me later on to run some $errands\. ");
-	quest::summonitem("13537");
-	quest::ding(); quest::exp("100"); 
+	quest::summonitem(13537);
+	quest::ding();
+	quest::faction(99, 10); #Faydark Champions
+	quest::faction(178, 10); #King Tearis Thex
+	quest::faction(304, 10); #Soldiers of Tunare
+	quest::exp(100); 
 }
 elsif(($race == 'Wood Elf') && ($class == 'druid') && plugin::check_handin(\%itemcount, 5013 => 1, 5016 => 1, 5019 => 1, 5022 => 1)) {
 	$client->Message(14,"You have done well, child! Take this as a blessing from Tunare for doing her will.");
