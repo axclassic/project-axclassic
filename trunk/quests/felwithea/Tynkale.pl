@@ -22,7 +22,7 @@ sub EVENT_ITEM {
 	quest::faction(178, 4); #King Tearis Thex
     quest::faction(43, 4); #Clerics of Tunare
 	quest::ding();
-    quest::exp(350);
+    quest::exp(1000);
 	quest::faction("105","1");
  }
  if (plugin::check_handin(\%itemcount, 	13351 => 1)) {
