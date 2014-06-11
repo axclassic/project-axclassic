@@ -40,9 +40,10 @@ sub EVENT_ITEM {
         quest::say("Greetings and welcome aboard! My name's Kinool. Master Enchanter of the Keepers of the Art. Here is your guild tunic. Make us proud, young pupil!");
         quest::summonitem(13593); # Torn Training Robe
         quest::ding();
+		quest::faction(170, 10); #Keepers of the Art
 		quest::faction(99, 10); #Faydarks Champions
         quest::faction(322, -30); #The Dead
-        quest::exp(100);
+        quest::exp(1000);
     }
 
     # Quest: Rain Caller
