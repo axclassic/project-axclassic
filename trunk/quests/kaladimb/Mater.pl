@@ -14,7 +14,7 @@ sub EVENT_ITEM {
     quest::faction( 77, 10); 	#deeppockets
     quest::faction( 29, -30); 	#butcherblock bandits
     quest::faction( 33, -30);	#circle of unseen hands
-	quest::exp(500);
+	quest::exp(1000);
 	}
     else {
     plugin::return_items(\%itemcount);
