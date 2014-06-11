@@ -71,7 +71,7 @@ my $Initiate = quest::saylink("Initiate of Tunare");
     quest::summonitem(13590); #Faded Gold Training Tunic*
 	quest::ding();
 	quest::faction(43, 10);    #Clerics of Tunare
-    quest::exp(2000);
+    quest::exp(1000);
   }
   else {
     quest::say("I have no need for this.");
