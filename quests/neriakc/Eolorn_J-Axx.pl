@@ -13,9 +13,10 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM { 
   if (plugin::check_handin(\%itemcount, 18752 => 1)) {
-    quest::say("Thanks.");
+    quest::say("Welcone new recruit to the Hall. Take this tunic and wear it with pride $name");
+	quest::faction(137, 10); #Hall of the Ebon Mask
     quest::summonitem(13581);
-    quest::exp(100);
+    quest::exp(1000);
   }
   else {
     #do all other handins first with plugin, then let it do disciplines
