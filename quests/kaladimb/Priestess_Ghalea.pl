@@ -20,12 +20,12 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
    if(plugin::check_handin(\%itemcount,18765=> 1)){
       quest::say("Welcome to the Underfoot Cathedral. I am High Priestess Ghalea. Here is your guild tunic. Now. let's get you started helping us spread the will of Brell.");
-      quest::summonitem("13514");
+      quest::summonitem(13514);
 	  quest::ding();
-      quest::faction(44,2); # Clerics of Underfoot
-      quest::faction(169,2); #Kazon Stormhammer
-      quest::faction(219,2); #Miner's guild 249
-	  quest::exp(100); 
+      quest::faction(44, 10); # Clerics of Underfoot
+      quest::faction(169, 10); #Kazon Stormhammer
+      quest::faction(219, 10); #Miner's guild 249
+	  quest::exp(1000); 
    }
    elsif (plugin::check_handin(\%itemcount,12106=>4) && ($faction < 5)) {  # Fairy Dust -- NOT Fairy Princess Dust
       quest::say("May the mighty power of Brell saturate this soil with his divinity.  Here you are, my noble friend.  You may have a pouch of the soil of Underfoot.");
