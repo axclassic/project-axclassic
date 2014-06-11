@@ -61,7 +61,7 @@ sub EVENT_ITEM {
     quest::faction( 145, 10); 	#High Council of Erudin
     quest::faction( 143, -30);	#Heretics
      quest::ding();
-	 quest::exp(100);
+	 quest::exp(1000);
   }  
 
   #Pearls of Odus Handin: full bag of pearls

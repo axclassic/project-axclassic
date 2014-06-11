@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     quest::faction( 145, 10); 	#high counsil of erudin
 	quest::faction( 79, 10); 	#Deepwater knights
     quest::faction( 143, -10);	#Heretics
- quest::exp(100); }
+ quest::exp(1000); }
 if (plugin::check_handin(\%itemcount, 1771 => 1)) {
   quest::say("Excellent! Thank you for checking on my brother, I am glad to hear that he is well.  Here is something that shall help you on your way");
   quest::summonitem(1763);
