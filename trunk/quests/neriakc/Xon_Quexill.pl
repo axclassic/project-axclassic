@@ -50,7 +50,7 @@ quest::givecash(7,3,1,0);
 
 }
 if(plugin::check_handin(\%itemcount,18758 => 1)){
-$client->Message(14,"Hey young $class seek out Frizin Q'Tentu. He might have some tasks for you and help you with your training.");
+$client->Message(14,"Welcome to the Lodge of the Dead. May you serve our Queen with the bleeding of others. Take this Robe and wear it with pride. Hey young $class seek out Frizin Q'Tentu. He might have some tasks for you and help you with your training.");
 quest::summonitem(13587);
 quest::faction(322,10);
 quest::faction(268,10);
@@ -59,7 +59,7 @@ quest::faction(170,-30);
 quest::faction(91,-30);
 quest::faction(260,-30);
 quest::ding();
-quest::exp(100);
+quest::exp(1000);
 
 }
 }
