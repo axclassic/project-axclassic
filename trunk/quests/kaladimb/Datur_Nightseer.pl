@@ -10,7 +10,7 @@ quest::ding();
 quest::faction(44, 4);  #clerics of underfoot
 quest::faction(169, 4);  #kazon stormhammer
 quest::faction(219, 4);  #miners guild 249
-quest::exp(100); 
+quest::exp(1000); 
 }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
