@@ -16,7 +16,7 @@ $client->Message(14,"Thanks $name, yes I got note that someone was comming today
 quest::summonitem(13583);
 quest::ding();
 quest::faction(322, -30); #The Dead
-	quest::faction(331, 10); #The Spurned
+quest::faction(331, 10); #The Spurned
 quest::exp(1000);
 }
 else {

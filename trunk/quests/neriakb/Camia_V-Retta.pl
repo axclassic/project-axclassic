@@ -13,9 +13,11 @@ $client->Message(14,"Hail $name, I am CamiaV`Retta Enchanter GM, did you have a 
 sub EVENT_ITEM {
 if ($item1=="18753"){
 $client->Message(14,"Thanks $name, yes I got note that someone was comming today, ready for their training. Please seek out Morgolanth Tal'Raeloen and proof yourself to us.");
-quest::summonitem("13584");
+quest::summonitem(13584);
 quest::ding();
-quest::exp("100");
+quest::faction(322, -30); #The Dead
+quest::faction(331, 10); #The Spurned
+quest::exp(1000);
 }
 else {
 plugin::return_items(\%itemcount);
