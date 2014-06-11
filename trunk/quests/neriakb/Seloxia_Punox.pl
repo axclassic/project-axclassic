@@ -4,8 +4,9 @@ if ($text=~/Hail/i){quest::say("You may speak if you are a member of this house 
 sub EVENT_ITEM { 
  if ($item1=="18751"){
 	quest::say("Welcome to the Indigo Brotherhood. Hmmm. you're a bit scrawny. but we'll work with it. Here's your guild tunic. Defend Neriak and all her allies. For the time being this list includes our [new friends].Go see Yegek. one of our trainers. Hopefully he can mould you into something resembling a warrior.");
-	quest::summonitem("13580");
-	quest::ding(); quest::exp("100");
+	quest::summonitem(13580);
+	quest::faction(155, 10); #Indigo Brotherhood
+	quest::ding(); quest::exp(1000);
  } else {
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
