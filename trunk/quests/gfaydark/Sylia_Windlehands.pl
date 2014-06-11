@@ -14,7 +14,10 @@ if (plugin::check_handin(\%itemcount, 13099  => 4)) {
 }
  if(plugin::check_handin(\%itemcount, 18783 => 1)){
 	quest::say("Greetings. friend. I am Sylia.  I see that you wish to join our humble guild.  Good.  Here is a gift for you - your guild tunic.  Let's get started with your training. shall we?");
-	quest::summonitem("13534");
+	quest::summonitem(13534);
+	quest::ding();
+	quest::faction(306, 10); #Songweavers
+    quest::exp(100);
  } 
  #elsif(plugin::check_handin(\%itemcount, 9894 => 2, 13099 => 3)){
 	#quest::say("Well done! Do you have the rest?");
