@@ -29,7 +29,8 @@ sub EVENT_ITEM {
     quest::faction( 219, 10); 	#miners guild 249
     quest::faction( 314, 10);	#storm guard
 	quest::exp(500);
- } else {
+ } 
+  else {
   quest::say("I have no need of this, take it back.");
   plugin::return_items(\%itemcount);
  }
