@@ -33,17 +33,24 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18809 => 1)) {
     $client->Message(14,"Oh my, this must belong to Antonius Bayle! I shall see that he receives it. You have done a great service to Qeynos and Surefall Glade. I rewards you with this. May it be of good use in your future deeds.");
     quest::summonitem(15222);
-    quest::faction(159, 10);
-    quest::faction(265, 10);
-    quest::faction(267, 10);
-    quest::faction(135, 10);
-    quest::faction(347, -30);
-     quest::ding(); quest::exp(100);
+    quest::faction(159, 10); #Jagged Pine Treefolk
+    quest::faction(265, 10); #Protectors of Pine
+    quest::faction(267, 10); #QRG protected Animals
+    quest::faction(135, 10); #Guards of Qeynos
+    quest::faction(347, -30); #Unkempt Druids
+     quest::ding();
+	 quest::exp(100);
   }
   elsif (plugin::check_handin(\%itemcount, 18713 => 1)) {
     $client->Message(14,"Well met, friend of the forest. You will find power and enlightenment among these woods. Here, wear this tunic and represent the Jaggedpine with pride. Salmekia Treherth will help train you and teach you the duties of Jaggedpine Treefolk. The forests, being the soul and heart of Norrath, depend on you and your actions from this day forth.");
-    quest::summonitem("13510");
-    quest::ding(); quest::exp("100");
+    quest::summonitem(13510);
+    quest::ding();
+	quest::faction(159, 5); #Jagged Pine Treefolk
+    quest::faction(265, 5); #Protectors of Pine
+    quest::faction(267, 5); #QRG protected Animals
+    quest::faction(135, 5); #Guards of Qeynos
+    quest::faction(347, -15); #Unkempt Druids
+	quest::exp(100);
   }
   else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items
