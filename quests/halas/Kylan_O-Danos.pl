@@ -29,7 +29,7 @@ sub EVENT_ITEM {
    quest::faction(294, 10); #shaman of justice
    quest::faction(311, 10); #steel warriors
    quest::faction(361, 10); #wolves of the north
-   quest::exp(100);
+   quest::exp(1000);
  } else {
   quest::say("I have no need of this, take it back.");
   plugin::return_items(\%itemcount);
