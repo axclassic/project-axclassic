@@ -38,7 +38,7 @@ sub EVENT_ITEM {
       quest::faction(178, 10); #King Tearis Thex
       quest::faction(99, 10); #Faydarks Champions
 	  quest::faction(322, -30); #The Dead
-      quest::exp(100);
+      quest::exp(1000);
    }
    elsif($item1 == 18902) {
       quest::say("She is still alive? OH, thank you for this news.");
