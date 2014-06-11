@@ -20,7 +20,7 @@ sub EVENT_ITEM {
 	quest::ding();
 	quest::faction(213, 10);    #merchants of halas
     quest::faction(294, 10); 	#shamans of justice
-    quest::exp(500);
+    quest::exp(1000);
  }
 elsif(plugin::check_handin(\%itemcount, 13069 => 1))	{ 
     quest::say("Fine work! You are on your way to becoming an adequate combatant.");
