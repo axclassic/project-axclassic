@@ -17,6 +17,17 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+if (plugin::check_handin(\%itemcount, 18708 => 1)){
+	quest::say("So you wish to jion our guild? We are members of the Circle of Unseen hands and as such, you will not be welcomed in many places. Take this tunic for it may just save your worthless life. Stealth is you best defense and offense. Move quietly and quickly."); #text made up
+	quest::summonitem(58760); #wisperwalkers apprentice tunic
+	quest::ding();
+	quest::faction(33, 10);  #Cricle of Unseen Hands
+    quest::faction(53, 10);  #Corrupt Qeynos Guards
+    quest::faction(164, 10);  #Kane Bayle
+    quest::faction(135, -30); #Guards of Qeynos
+	quest::faction(217, -30); #Merchants of Qeynos
+	quest::exp(1000);
+	}
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
   plugin::return_items(\%itemcount);
