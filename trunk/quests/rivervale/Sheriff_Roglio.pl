@@ -22,9 +22,9 @@ sub EVENT_ITEM {
 	quest::faction(133, 10); #Guardians of the Vale
 	quest::faction(218, 10); #Merchants of Rivervale
 	quest::faction(316, 10); #Storm Reapers
-	quest::faction(88, -10); #Dreadguard outer
-    quest::exp(100);
-   }
+	quest::faction(88, -30); #Dreadguard outer
+    quest::exp(1000);
+	}
  else {
  #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

@@ -24,8 +24,9 @@ quest::say("Aye. Welcome. my fur-footed friend. My name is Beek Guinders. and I 
 quest::summonitem(13538);
         quest::faction(259,10); #Priests of Mischief
 		quest::faction(133,10); #Guardians of the Vale
+		quest::faction(102,10); #Fizzlethorpe
         quest::ding();
-        quest::exp(100);
+        quest::exp(1000);
 }
 	elsif (plugin::check_handin(\%itemcount, 13045 => 1, 13782 => 2, 13758 => 1)) {
 quest::say("Hey, great! You found the materials! We'll get to work right away. If you find any more, please come by again. Here's a little something for your troubles, friend.");
