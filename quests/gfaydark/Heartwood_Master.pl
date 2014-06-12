@@ -28,7 +28,7 @@ if(($class == 'druid') && plugin::check_handin(\%itemcount, 18786 => 1)) {
 	quest::faction(99, 10); #Faydark Champions
 	quest::faction(178, 10); #King Tearis Thex
 	quest::faction(304, 10); #Soldiers of Tunare
-	quest::exp(100); 
+	quest::exp(1000); 
 }
 elsif(($race == 'Wood Elf') && ($class == 'druid') && plugin::check_handin(\%itemcount, 5013 => 1, 5016 => 1, 5019 => 1, 5022 => 1)) {
 	$client->Message(14,"You have done well, child! Take this as a blessing from Tunare for doing her will.");
