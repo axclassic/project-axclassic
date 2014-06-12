@@ -18,18 +18,6 @@
 
     sub EVENT_ITEM {
 
-      if (plugin::check_handin(\%itemcount, 18784 => 1)) {
-
-        quest::emote("scans the note and sizes you up with a look.");
-
-        quest::say("Very well then, I thank you for assisting us. You have shown great bravery in aiding in this mission. Keep this as a symbol of our friendship.");
-
-        quest::summonitem(54022);
-
-         quest::ding(); quest::exp(100); 
-
-      }
-
       if(($gold >= 2) && (plugin::check_handin(\%itemcount, 7007 => 2))){
 
        quest::say("Well, well. I didn't think you could do it. Here's your cut and don't be surprised that it's not much because it's your first lesson. Remember. the smaller the operation. the bigger the share, and the richest rogues have the tightest lips.");
@@ -43,6 +31,15 @@
              quest::ding(); quest::exp(100);
 
       }
+	  elsif (plugin::check_handin(\%itemcount, 18784 => 1)) {
+    quest::emote('scans the note and sizes you up with a look.');
+    quest::say("So you wish to join the Scouts of Tunare eh? A hard life you have chosen for yourself but,I welcome you to our guild. Here, Take this Tunic and wear it with Pride!");
+    quest::summonitem(58760); #Whisperwalker's Apprentice Tunic
+    quest::ding();
+	quest::faction(283, 10);  #Scouts of Tunare
+    quest::exp(1000);
+	}
+	else{
 
       #do all other handins first with plugin, then let it do disciplines
 
@@ -51,7 +48,7 @@
       plugin::return_items(\%itemcount);
 
     }
-
+}
 
 
     #END of FILE Zone:gfaydark  ID:54087 -- Tylfon - Edited by Aeolwind
