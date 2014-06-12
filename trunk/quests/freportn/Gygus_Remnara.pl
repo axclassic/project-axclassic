@@ -6,11 +6,11 @@ sub EVENT_ITEM {
 	quest::say("Thanks.");
 	quest::summonitem(13554); #Faded Purple Tunic
 	quest::ding();
-	quest::faction(112, 10);  #Knights of Truth
-    quest::faction(147, 10);  #Priests of Marr
-    quest::faction(145, 10);  #Steel Warriors
-    quest::faction(143, -30); #Dismal Rage
-	quest::faction(143, -30); #The Freeport Militia
+	quest::faction(184, 10);  #Knights of Truth
+    quest::faction(258, 10);  #Priests of Marr
+    quest::faction(311, 10);  #Steel Warriors
+    quest::faction(86, -30); #Dismal Rage
+	quest::faction(105, -30); #The Freeport Militia
 	quest::exp(1000);
  }
   #do all other handins first with plugin, then let it do disciplines
