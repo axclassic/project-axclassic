@@ -45,12 +45,12 @@ sub EVENT_ITEM {
     $client->Message(14,"Well met, friend of the forest. You will find power and enlightenment among these woods. Here, wear this tunic and represent the Jaggedpine with pride. Salmekia Treherth will help train you and teach you the duties of Jaggedpine Treefolk. The forests, being the soul and heart of Norrath, depend on you and your actions from this day forth.");
     quest::summonitem(13510);
     quest::ding();
-	quest::faction(159, 5); #Jagged Pine Treefolk
-    quest::faction(265, 5); #Protectors of Pine
-    quest::faction(267, 5); #QRG protected Animals
-    quest::faction(135, 5); #Guards of Qeynos
-    quest::faction(347, -15); #Unkempt Druids
-	quest::exp(100);
+	quest::faction(159, 10); #Jaggedpine Treefolk
+    quest::faction(265, 10); #Protectors of Pine
+    quest::faction(267, 10); #QRG protected Animals
+    quest::faction(135, 10); #Guards of Qeynos
+    quest::faction(347, -30); #Unkempt Druids
+	quest::exp(1000);
   }
   else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items
