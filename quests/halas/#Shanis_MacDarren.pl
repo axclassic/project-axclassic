@@ -17,6 +17,9 @@ sub EVENT_ITEM {
 	quest::faction(311, 10); #Steel Warriors
 	quest::faction(275, -30); #Rogues of the White Rose
 	quest::exp(1000);
+	}
+	
+	else {
   plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
   plugin::return_items(\%itemcount);
 }
