@@ -97,8 +97,8 @@ sub EVENT_ITEM {
 	quest::faction(48, 10); #Coalition of Tradefolks underground
 	quest::faction(77, 10); #Deeppockets
 	quest::faction(218, -10); #Merchants of Rivervale
-	quest::exp(200);
-  }
+	quest::exp(1000);
+	}
   else {
    #do all other handins first with plugin, then let it do disciplines
    plugin::try_tome_handins(\%itemcount, $class, 'Rogue');

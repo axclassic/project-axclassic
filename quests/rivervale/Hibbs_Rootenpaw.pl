@@ -46,7 +46,7 @@ quest::faction(316,5); # +Storm Reapers
 quest::faction(208,5); # +Mayor Gubbin
 quest::faction(218,5); # +Merchants of Rivervale
 quest::faction(347,-5); # -Unkempt Druids
-quest::exp(50);
+quest::exp(1000);
 }
 else {
 $client->Message(14,"I have no need for this item $name, you can have it back.");
