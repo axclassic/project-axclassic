@@ -17,7 +17,7 @@ if (plugin::check_handin(\%itemcount, 13099  => 4)) {
 	quest::summonitem(13534);
 	quest::ding();
 	quest::faction(306, 10); #Songweavers
-    quest::exp(100);
+    quest::exp(1000);
  } 
  #elsif(plugin::check_handin(\%itemcount, 9894 => 2, 13099 => 3)){
 	#quest::say("Well done! Do you have the rest?");
