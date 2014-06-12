@@ -30,11 +30,11 @@ sub EVENT_ITEM {
     quest::summonitem(13502);
      quest::ding();
 	 quest::faction(125, 10); 	#Guards of Qeynos
-    quest::faction(184, 10);  #Knights of Truth
+    quest::faction(9, 10);  #Antonius Bayle
     quest::faction(192, 10);  #League of Antonican Bards
-    quest::faction(207, -10);  #Mayong Mistmoore
-    quest::faction(273, -10);  #Ring of Scale
-	 quest::exp(100);
+    quest::faction(207, -30);  #Mayong Mistmoore
+    quest::faction(273, -30);  #Ring of Scale
+	quest::exp(1000);
   }
   elsif (plugin::check_handin(\%itemcount, 20374 => 1)) {
     quest::say("A famous bard, you say? Why you must be seeking none other than the great Baenar Swiftsong! He is not here as you can see. Mayhap you seek an audience with him? He is a busy man and has not the time to speak with everyone who wishes to preoccupy his time with useless prattle! You are many and he is but one! Leave him be, I beg of you, to continue his songwriting in peace.");
