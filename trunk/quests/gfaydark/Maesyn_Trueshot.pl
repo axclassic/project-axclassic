@@ -59,7 +59,8 @@ my $incarnation = quest::saylink("incarnation", 1);
     quest::faction(43,10);  # Clerics of Tunare
     quest::faction(304,10); # Soldiers of Tunare
     quest::faction(63,-30); # Crushbone Orcs
-     quest::ding(); quest::exp(24); # 3/5 blue bubble at level 1
+    quest::ding();
+	quest::exp(1000); 
     quest::summonitem(13536); # Dirty Green Tunic* 
   }
    else {
