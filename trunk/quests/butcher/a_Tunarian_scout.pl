@@ -17,9 +17,9 @@ my $help = quest::saylink("help", 1);
 	quest::say("Fate, mortality, idle concepts that do not highlight my purpose. I am here for honor, and for Mother Tunare. Should our scout not turn up in a few days time I will need to go in his place and leave the coastline rather unprotected. Scouts are so few in numbers these days, there are too many who would overlook such a post in lieu of grandeur and riches. We can always use more good $help.");
  }
  if($text =~ /help/i) {
-	quest::emote("glances at you sharply, taking both eyes from the sea for the first time.");
+	quest::emote('glances at you sharply, taking both eyes from the sea for the first time.');
     quest::say("Perhaps then you can. The Scouts of Tunare have taken it upon ourselves to learn as much as we can about these Luggalds so that they may be destroyed. It is a mission of utmost danger, as you will be in unfamiliar land and surrounded by enemies on all sides. We have been slaying the Luggalds in batches and ferrying back their organs and remains to study. Thin the population a bit whilst we study");
-    quest::emote("The scout smirks and turns back to the water.");
+    quest::emote('The scout smirks and turns back to the water.');
 	quest::say("If you really wish to do this, travel to Broken Skull Rock and slay the Luggalds. Bring me back four carcasses, or evidence thereof. Should the evidence prove enlightening perhaps our leader will have a reward for you, of course that is dependent on you making it out alive. Good luck.'");
  }
 }
