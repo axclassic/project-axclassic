@@ -3,11 +3,12 @@ sub EVENT_ITEM {
 	quest::say("Welcome to the guild. here's your guild tunic. Now. let's get to work.");
 	quest::summonitem(13571); #Colorfully Patched Tunic
 	quest::ding();
-	quest::faction(322, 1); #The Dead
-	quest::faction(165, -1); #Karana
-	quest::faction(149, -1); # Highpass Guards
-	quest::faction(316, 1); #Storm Reapers
-	quest::exp(100);
+	quest::faction(135, 10); #Guards of Qeynos
+	quest::faction(184, 10); #Knights of Truth
+	quest::faction(192, 10); #League of Antonican Bards
+	quest::faction(207, -30); #Mayong Mistmoore
+	quest::faction(273, -30); #Ring of Scale
+	quest::exp(1000);
  }
    else {
    #do all other handins first with plugin, then let it do disciplines
