@@ -34,10 +34,14 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18737 => 1)) { #guild note
-    quest::summonitem(13554);
-    quest::faction(258,100); #priests of marr
-    quest::faction(105,-50); #freeport militia
-    quest::faction(184,100); #knights of truth
+    quest::summonitem(13554); #Faded Purple Tunic
+	quest::ding();
+	quest::faction(184, 10);  #Knights of Truth
+    quest::faction(258, 10);  #Priests of Marr
+    quest::faction(311, 10);  #Steel Warriors
+    quest::faction(86, -30); #Dismal Rage
+	quest::faction(105, -30); #The Freeport Militia
+	quest::exp(1000);
   }
   elsif (plugin::check_handin(\%itemcount, 6701 => 1)) { #a dusty old leg bone
     quest::say("According to this crest on the tunic, you have recovered one of the bones of a lost Paladin [Hero].");
