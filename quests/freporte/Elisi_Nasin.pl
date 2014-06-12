@@ -57,8 +57,14 @@ sub EVENT_ITEM
    quest::say("Welcome to the Coalition of Tradesfolk underground. We like to keep a low profile around here and not draw any unneeded attention to our operations. you following me? I hope so. for your sake. Anyways. Nestral T'Gaza is in charge with helping out our newest members. Go see her as soon as you get a chance.");
    
    # Brown Faded Tunic ID-13568
-   quest::summonitem("13568");
-   quest::ding(); quest::exp("50");
+   quest::summonitem(13568); #Brown Faded Tunic
+   quest::ding();
+   quest::faction(31, 10);  #Carson McCabe
+    quest::faction(47, 10);  #Coalition of Tradefolk
+    quest::faction(48, 10);  #Coalition of Tradefolk Underground
+    quest::faction(53, 10); #Corrupt Qeynos Guards
+	quest::faction(105, 10); #The Freeport Militia
+    quest::exp(1000);
  }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
