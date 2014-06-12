@@ -34,11 +34,12 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18709 => 1)) {
     $client->Message(14,"Welcome, we are the Protectors of the Pine. Wear this tunic of our guild, and help us defend our great and beautiful woods. Go to Errin Pinewhisper, he will help train you and teach you the power of the woods.");
     quest::summonitem(13509);
-    quest::ding(); quest::exp(100);
-    quest::faction(265,10); # Protectors of Pine
+    quest::ding();
+	quest::faction(265,10); # Protectors of Pine
     quest::faction(159,10); # Jaggedpine Treefolk
     quest::faction(279,-30); # Sabertooths of Blackburrow
     quest::faction(135,10); # Guards of Qeynos
+	quest::exp(1000);
   }
   elsif (plugin::check_handin(\%itemcount,13913=>1)) {
     $client->Message(14,"His days of hunting are over. In the name of the Protectors of the Pine, I offer you this reward. If you are unable to make use of it, you may sell it. I suggest you hold onto it. If you are a ranger it will come in handy.");
