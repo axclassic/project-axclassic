@@ -47,12 +47,17 @@ sub EVENT_ITEM
       quest::say("You have not yet proven yourself.");
     }
   }
-  if(plugin::check_handin(\%itemcount, 18711 => 1))
+  if(plugin::check_handin(\%itemcount, 18711 => 1)) #Tattered Note
   {
     quest::say("Welcome to the Temple of Life. You have much to learn and we have much work to do. Pain, hurt, disease and death lurk everywhere, our job is seemingly endless, but none is more gratifying. Here is our guild tunic, represent us well. Suuspa Clanim shall help you to get started. Good health be with you.");
-    quest::summonitem("13506");
-    quest::exp("100");
-  }
+    quest::summonitem(13506); #Faded Tunic
+	quest::ding();
+	quest::faction(135, 10);  #Guards of Qeynos
+    quest::faction(167, 10);  #Karana Residents
+    quest::faction(183, 10);  #Knights of Thunder
+    quest::faction(257, 10); #Priests of Life
+	quest::exp(1000);
+	}
   # Do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
   plugin::return_items(\%itemcount);
