@@ -29,7 +29,7 @@ sub EVENT_ITEM {
     quest::say("Good day friend, and welcome to the Wind Spirit's Song. Thank you for joining our cause. Go speak with Jusean Evanesque; I'm sure you'll fit in well.");
     quest::summonitem(13502);
      quest::ding();
-	 quest::faction(125, 10); 	#Guards of Qeynos
+	 quest::faction(135, 10); 	#Guards of Qeynos
     quest::faction(9, 10);  #Antonius Bayle
     quest::faction(192, 10);  #League of Antonican Bards
     quest::faction(207, -30);  #Mayong Mistmoore
