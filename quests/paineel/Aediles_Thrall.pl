@@ -631,10 +631,19 @@ sub EVENT_ENTER {
 my $assistance = quest::saylink("assistance", 1);
 my $bot = quest::saylink("bot", 1);
   #if(quest::botquest()) {
-     if(!defined $qglobals{bot_spawn_limit}) {
-        quest::setglobal("bot_spawn_limit", 0, 5, "F");
-	$bot_spawn_limit = undef;
-     }
+  
+ if (!defined $qglobals{bot_spawn_limit}) {
+    quest::setglobal("bot_spawn_limit", 1, 5, "F");
+    $bot_spawn_limit = undef;
+    $client->Message(6,"You receive a character flag!");
+    $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
+    $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
+ }
+  
+#      if(!defined $qglobals{bot_spawn_limit}) {
+#         quest::setglobal("bot_spawn_limit", 0, 5, "F");
+# 	$bot_spawn_limit = undef;
+#      }
   #}
  my $random_result2 = int(rand(100));
  if ($random_result2<=40){
