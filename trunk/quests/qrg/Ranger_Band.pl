@@ -452,7 +452,7 @@ if ($event2==1){
 
  if ($event5==1){
    if (($ulevel <= 20) && (plugin::check_handin(\%itemcount, 13791 =>1, 16174 =>1))) { #Turnin for random Moonstones
-    my @items = (125 .. 139); ## Random  Moonstone item reward
+    my @items = (125 .. 139,141,142); ## Random  Moonstone item reward
     my $total4 = $items[ rand @items ];
     $client->Message(14,"Ranger Band says,\"Well done, $name! Take this Moonstone as a reward!.\"");
     $client->Message(6,"You received a random Moonstone! In the event that you already got the Moonstone Ranger Band was about to give you, you will get nothing. Better luck next time!\"");
