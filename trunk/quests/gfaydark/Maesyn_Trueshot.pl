@@ -62,6 +62,7 @@ my $incarnation = quest::saylink("incarnation", 1);
     quest::ding();
 	quest::exp(1000); 
     quest::summonitem(13536); # Dirty Green Tunic* 
+	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
   }
    else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items
