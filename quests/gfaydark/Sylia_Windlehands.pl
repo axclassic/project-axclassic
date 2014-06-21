@@ -18,6 +18,7 @@ if (plugin::check_handin(\%itemcount, 13099  => 4)) {
 	quest::ding();
 	quest::faction(306, 10); #Songweavers
     quest::exp(1000);
+	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
  } 
  #elsif(plugin::check_handin(\%itemcount, 9894 => 2, 13099 => 3)){
 	#quest::say("Well done! Do you have the rest?");
