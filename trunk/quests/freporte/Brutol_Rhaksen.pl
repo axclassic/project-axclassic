@@ -68,14 +68,14 @@ if($text=~/next orders/i)
 
 sub EVENT_ITEM
 { 
- # A tattered note ID-18857
- if (plugin::check_handin(\%itemcount, 18857 => 1))
- {
-	
+  if (plugin::check_handin(\%itemcount, 18857 => 1)) { # A tattered note ID-18857
 	quest::say("Welcome to warriors guild of East Freeport. Take this to help you on your journeys.");
-	# Faded Crimson Tunic ID-13561
-	quest::summonitem("13561");
-	quest::ding(); quest::exp("100");
+	quest::summonitem(13561); # Faded Crimson Tunic ID-13561
+	quest::ding();
+	quest::faction(86, 10); 	#Dismal Rage
+    quest::faction(235, 10);  #Opal Dark Briar
+    quest::faction(184, -30);  #Knights of Truth
+	quest::exp(1000);
  }
  # Tarsa Yovar's Head ID-19932
  elsif (plugin::check_handin(\%itemcount, 19932 => 1))
