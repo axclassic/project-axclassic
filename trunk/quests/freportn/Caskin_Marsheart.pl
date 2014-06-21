@@ -9,6 +9,7 @@ sub EVENT_ITEM {
 	quest::faction(207, -30); #Mayong Mistmoore
 	quest::faction(273, -30); #Ring of Scale
 	quest::exp(1000);
+	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
  }
    else {
    #do all other handins first with plugin, then let it do disciplines
