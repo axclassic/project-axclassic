@@ -69,15 +69,17 @@ sub EVENT_ITEM
      quest::faction("184","4");
      return;
      }
-
-	 # A Tattered Note ID-18742
- 	 if(plugin::check_handin(\%itemcount, 18742 => 1))
-   	 {
-  	 quest::say("Welcome to the Steel Warriors. young warrior.  It is time to prove your mettle.  Look to the outskirts of Freeport and join the fray.  Show Clan Deathfist what a warrior of the bunker can do.");
-	   
-	   # Dirty Training Tunic ID-13572
-	   quest::summonitem("13572");
-	    quest::ding(); quest::exp(100);
+ if(plugin::check_handin(\%itemcount, 18748 => 1)) { # A Tattered Note ID-18748
+  	quest::say("Welcome to the Steel Warriors. young warrior.  It is time to prove your mettle.  Look to the outskirts of Freeport and join the fray.  Show Clan Deathfist what a warrior of the bunker can do.");
+	quest::say("Take This Tunic and wear it proudly. May it serve you well $name.") ;
+	quest::summonitem(13572); # Dirty Training Tunic ID-13572
+	quest::faction(135, 10); 	#Guards of Qeynos
+    quest::faction(184, 10);  #Knights of Truth
+    quest::faction(311, 10);  #Steel Warriors
+    quest::faction(53, -30);  #Corrupt Qeynos Guards
+	quest::faction(105, -30);  #Freeport Militia
+	quest::ding();
+	quest::exp(1000);
  	   }
 
   #do all other handins first with plugin, then let it do disciplines
