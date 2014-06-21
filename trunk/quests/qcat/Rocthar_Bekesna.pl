@@ -14,8 +14,34 @@ quest::say("The Priests of Life and Knights of Thunder often travel the roads fr
 }
 
 sub EVENT_ITEM {
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-  plugin::return_items(\%itemcount);
+if (plugin::check_handin(\%itemcount, 119847 => 1)) { #Bloodsabers Warrior Summons
+  quest::say("I don't know why I am allowing you to waste my time, but you do have the proper credentials.") ;
+  quest::say("Take this tunic of the Bloodsabers, I hope it serves you well, at least better than its former owner.") ;
+  quest::say("Trust no one and always have your guard up, return to me if you are in need of training $name.")  ;
+  quest::summonitem(119849);
+  quest::exp(1000);
+  quest::ding();
+  quest::faction(21,10);
+  quest::faction(135,-10);
+  quest::faction(235,-10);
+  quest::faction(257,-10);
+  quest::faction(53,10);
+   }
+  if (plugin::check_handin(\%itemcount, 20175 => 1)) { #Lukas Hurgo's Head
+    quest::say("Well done $name. Now take this Rusty Scourge Warrior Broadsword to a forge and sharpen it with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is done take the Tarnished Scourge Warrior Sword and a Giant King Snake Skin to Illie Roln and he will put the finishing touches on the weapon.");
+  quest::summonitem(20176);
+  quest::exp(100);
+  quest::faction(21,1);
+  quest::faction(135,-1);
+  quest::faction(235,-1);
+  quest::faction(257,-1);
+  quest::faction(53,1);
+  quest::ding();
+  }
+  else {
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+    plugin::return_items(\%itemcount);
+  }
 }
 #END of FILE Zone:qcat  ID:45081 -- Rocthar_Bekesna 
