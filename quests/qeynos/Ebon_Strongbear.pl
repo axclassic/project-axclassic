@@ -24,7 +24,7 @@ if (($text=~/Warrior/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("Following the way of Bertoxxulous? A Good Choice, Followers of The The Plaguebringer believe that the only truth on Norrath is that everything dies. They view the decay of flesh as a thing of ultimate beauty.");
     quest::say("On your way then, I will send you to Qeynos Catacombs. Hand this note to Rocthar Bekesna, He is your Guildmaster of the Bards."); 
 	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
-	quest::summonitem(119847);
+	quest::summonitem(18853);
 	quest::movepc(45,-374,315,-38);
   }
     if (($text=~/Erollisi_Marr/i) && ($ulevel == 1) && ($class eq "Warrior")) {
