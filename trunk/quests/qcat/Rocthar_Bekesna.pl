@@ -14,7 +14,7 @@ quest::say("The Priests of Life and Knights of Thunder often travel the roads fr
 }
 
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount, 119847 => 1)) { #Bloodsabers Warrior Summons
+if (plugin::check_handin(\%itemcount, 18853 => 1)) { #Bloodsabers Warrior Summons
   quest::say("I don't know why I am allowing you to waste my time, but you do have the proper credentials.") ;
   quest::say("Take this tunic of the Bloodsabers, I hope it serves you well, at least better than its former owner.") ;
   quest::say("Trust no one and always have your guard up, return to me if you are in need of training $name.")  ;
