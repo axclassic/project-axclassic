@@ -20,7 +20,7 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 18434 => 1) && $class eq "Shadowknight") { #Gnome Shadowknight Note
    quest::say("Hail $name, I am the Shadowknight guild master of the Dark Reflection. Take our guild tunic and wear it proudly, Return to me if you are in need of direction.") ;
-   quest::summonitem(119860); #Worn Gray Tunic
+   quest::summonitem(13505); #Old Gray Tunic
    quest::ding();
    quest::faction(71,10); #Dark Reflection
    quest::faction(76,-10); #Deep Muses
