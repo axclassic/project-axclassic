@@ -26,8 +26,8 @@ if($text=~/components/i){
 quest::say("The recipe we use to make the plague rat disease is fairly simple. We could easily extract the fluids from the infected rat livers but that would be counterproductive to our cause since it would require the deaths of our rodent carriers. Instead, I need you to collect two parts diseased bone marrow, one sprig of wormwood and one part gnomish spirits to be used as a medium. When you have combined all the components in the container I have provided, return it to me so that we may continue to spread the disease!"); }
 }
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 1 == 10263)) { #empty infectious vial
-    quest::say("I hope you enjoyed the thrill of your first lesson and the awakening of your vision. Now you must prove your utility to our society. Take this airtight container and gather the [components] for another dose of the plague rat disease.");
+  if(plugin::check_handin(\%itemcount, 10263 => 1)) { #empty infectious vial
+    quest::say("I hope you enjoyed the thrill of your first lesson and the awakening of your vision. Now you must prove your utility to our society. Take this airtight container and gather the components for another dose of the plague rat disease.");
     quest::summonitem(17357); #airtight metal box
     quest::faction(71,3); #dark reflection
     quest::faction(322,3); #the dead
@@ -36,7 +36,7 @@ sub EVENT_ITEM {
     quest::faction(179,-3); #king ak'anon
      quest::ding(); quest::exp(150);
     }
-  elsif(plugin::check_handin(\%itemcount, 1==10266)) {
+  elsif(plugin::check_handin(\%itemcount, 10266 => 1)) {
     quest::say("Ahhh good good. Thse will be put to fine use creating more disease to spread through the rodents. you have done excellent work in helping to spread the work of the Plague Bringer. Take this Symbol of Initiation as your reward.");
     quest::summonitem(1390); #Initiate symbol of Bertoxxulous
      quest::ding(); quest::exp(200);
@@ -46,7 +46,7 @@ sub EVENT_ITEM {
     quest::faction(71,3); #Dark reflection
     quest::faction(322,3); #the dead
     }
-  elsif(plugin::check_handin(\%itemcount, 1==18769)) { #Stained Note
+	elsif (plugin::check_handin(\%itemcount, 18769 => 1) && $class eq "Cleric") { #Stained Note
     quest::say("Hail $name, I am cleric Guild Master of the Dark Reflection. I see you wish to join us in following Bertoxxulous The plaguebringer.");
     quest::say("Very well then, Take our guild apprentice tunic. May it serve you until the Master calls you home.") ;
 	quest::summonitem(13518); #Tin Patched Tunic
