@@ -18,8 +18,21 @@ sub EVENT_ITEM {
     quest::say("Ah! Donlix's sword! You have done well to bring this to me... but oh! Look at your corruption seep into it. I think now this sword belongs to you. Use it well.");
     quest::summonitem(11078);
   }
- #do all other handins first with plugin, then let it do disciplines
+  elsif(plugin::check_handin(\%itemcount, 18434 => 1)) { #Gnome Shadowknight Note
+   quest::say("Hail $name, I am the Shadowknight guild master of the Dark Reflection. Take our guild tunic and wear it proudly, Return to me if you are in need of direction.") ;
+   quest::summonitem(119860); #Worn Gray Tunic
+   quest::ding();
+   quest::faction(71,10); #Dark Reflection
+   quest::faction(76,-10); #Deep Muses
+   quest::faction(115,-10); #Gem Choppers
+   quest::faction(91,-10); #Eldritch Collective
+   quest::exp(1000);
+  }
+ else {
+  #do all other handins first with plugin, then let it do disciplines
  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
+ quest::say("I have no use for this, $name.");
  plugin::return_items(\%itemcount);
+}
 }
 #END of FILE Zone:akanon  ID:55186 -- Garret_Zethkog 
