@@ -78,7 +78,7 @@ sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 9105 => 3, 9106 => 1)) {
 quest::summonitem("9107"); #Walking Staff of the Shortnoble
 }
-elsif(plugin::check_handin(\%itemcount, 18775 => 1)) { #Tattered Note
+elsif(plugin::check_handin(\%itemcount, 18775 => 1) && $class eq "Cleric") { #Tattered Note
    quest::say("Welcome to the Abbey of Deep Musing young Cleric. You are expected to serve his majesty, King Ak'Anon with pride. You have much to learn.") ;
    quest::say("You can report to any of the cleric trainers for further guidance.");
    quest::say("Go forth and serve.") ; 

@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::faction(176,-10); #King ak'anon
     quest::faction(209,3); #meldrath
   }
-  elsif(plugin::check_handin(\%itemcount, 119853 => 1)) { #Old Folded Letter
+  elsif(plugin::check_handin(\%itemcount, 119853 => 1) && $class eq "Warrior") { #Old Folded Letter
  quest::say("Welcome $name, I am the guildmaster of the warriors of Dark Reflection. Our lord and master, the Plaguebringer believes you are worthy of training. It is not my place to judge but you don't look like much to me.") ;
    quest::say("You can report to me for further guidance.");
    quest::say("Take this tunic, may it serve you better than its last owner.") ; 

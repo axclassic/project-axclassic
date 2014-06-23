@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     quest::say("Ah! Donlix's sword! You have done well to bring this to me... but oh! Look at your corruption seep into it. I think now this sword belongs to you. Use it well.");
     quest::summonitem(11078);
   }
-  elsif(plugin::check_handin(\%itemcount, 18434 => 1)) { #Gnome Shadowknight Note
+  elsif(plugin::check_handin(\%itemcount, 18434 => 1) && $class eq "Shadowknight") { #Gnome Shadowknight Note
    quest::say("Hail $name, I am the Shadowknight guild master of the Dark Reflection. Take our guild tunic and wear it proudly, Return to me if you are in need of direction.") ;
    quest::summonitem(119860); #Worn Gray Tunic
    quest::ding();
