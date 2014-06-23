@@ -57,11 +57,11 @@ my $collect = quest::saylink("collect", 1);
 }
 
 sub EVENT_ITEM {
-if(plugin::check_handin(\%itemcount, 9108 => 2, 9109 => 2)){ # Minotaur Scalp, Mountain Lion Jawbone
+if(plugin::check_handin(\%itemcount, 9108 => 2, 9109 => 2)) { #Minotaur Scalp x 2, Mountain Lion Jawbone x 2
     quest::say("Here is that dagger I promised you $name!");
     quest::summonitem(9110); # Gemmed Shadowwalkers Dagger
   }
-elsif(plugin::check_handin(\%itemcount, 119857 => 1)) { #Gnome Rogue Note
+elsif(plugin::check_handin(\%itemcount, 119857 => 1) && $class eq "Rogue") { #Gnome Rogue Note
    quest::say("Welcome to the Abbey of Deep Musing young Rogue. You are expected to serve his majesty, King Ak'Anon with pride. You have much to learn.") ;
    quest::say("You can report to any of the rogue trainers for further guidance.");
    quest::say("Go forth and serve.") ; 
@@ -81,6 +81,4 @@ else
     plugin::return_items(\%itemcount);
     }
  }
-
-
 # SQL has been submitted 
