@@ -36,7 +36,7 @@ else {
 }
 
 sub EVENT_ITEM {
- if(plugin::check_handin(\%itemcount, 18770 => 1)){ #Recruitment Summons
+ if(plugin::check_handin(\%itemcount, 18770 => 1) && $class eq "Warrior") { #Recruitment Summons
    quest::say("I Baxok, guild master, welcome you into Gemchopper Hall young warrior. You are expected to serve his majesty, King Ak'Anon with pride. You have much to learn.") ;
    quest::say("You must report to any of the trainers for further guidance.");
    quest::say("Go forth and serve.") ; 

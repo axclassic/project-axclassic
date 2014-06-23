@@ -70,7 +70,7 @@ sub EVENT_ITEM {
   quest::summonitem(9104);
    quest::ding(); quest::exp(500);    
   }
-  elsif (plugin::check_handin(\%itemcount, 18433 => 1)) { #Gnome note
+  elsif (plugin::check_handin(\%itemcount, 18433 => 1) && $class eq "Paladin") { #Gnome note
     quest::say("Hail, $name, and welcome.. I am Lewis Reldnok. first Paladin of the Deep Muses. When I was just a young lad I journeyed to Kaladim. the home of our cousins the Dwarves. At the Temple of the Duke of Below I studied the ways of a Paladin of our creator Brell Serilis. I have returned to Ak'Anon to train interested young gnomes the ways I have mastered so that we may defend Ak'Anon and Brells disciples everywhere from the threats that would see us destroyed. If you are a Paladin of the Deep Muses I have some [armor quests] for you to complete.");
     quest::summonitem(13517); # Worn felt tunic*
 	quest::ding();

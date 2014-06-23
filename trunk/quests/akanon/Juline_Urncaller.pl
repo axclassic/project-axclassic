@@ -12,7 +12,7 @@ if ($text=~/Hail/i){
 quest::say("Hail."); }
 }
 sub EVENT_ITEM { 
-if(plugin::check_handin(\%itemcount, 18773 => 1)) { #Registration Letter
+if(plugin::check_handin(\%itemcount, 18773 => 1) && $class eq "Enchanter") { #Registration Letter
    quest::say("Welcome to the Library Mechanamagica young Enchanter. You are expected to serve his majesty, King Ak'Anon with pride. You have much to learn.") ;
    quest::say("You can report to any of the enchanter trainers for further guidance.");
    quest::say("Go forth and serve.") ; 
