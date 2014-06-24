@@ -14,8 +14,9 @@ sub EVENT_SAY {
 sub EVENT_ITEM { 
   if (plugin::check_handin(\%itemcount, 18752 => 1)) {
     quest::say("Welcone new recruit to the Hall. Take this tunic and wear it with pride $name");
+	quest::summonitem(13581);
 	quest::faction(137, 10); #Hall of the Ebon Mask
-    quest::summonitem(13581);
+    quest::ding();
     quest::exp(1000);
   }
   else {
