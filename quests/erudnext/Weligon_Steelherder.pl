@@ -91,9 +91,11 @@ sub EVENT_ITEM {
     #Text made up
     quest::say("Ah, an aspiring Deepwater Knight. I bid you welcome to our order, brother.  Wear this tunic with pride.");
     quest::summonitem(13544);
+	quest::ding();
     quest::faction(79, 200);
     quest::faction( 145, 200); 	
-    quest::faction( 143, -300);	
+    quest::faction( 143, -300);
+    quest::exp(1000);	
   }
 
   #do all other handins first with plugin, then let it do disciplines      
