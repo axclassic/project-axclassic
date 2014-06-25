@@ -109,7 +109,7 @@ if (plugin::check_handin(\%itemcount, 18784 => 1) && $class eq "Rogue") {
              quest::ding(); quest::exp(100);
 
       }
-	  elsif (plugin::check_handin(\%itemcount, 18784 => 1)) {
+	  elsif (plugin::check_handin(\%itemcount, 119848 => 1)) {
     quest::emote('scans the note and sizes you up with a look.');
     quest::say("So you wish to join the Scouts of Tunare eh? A hard life you have chosen for yourself but,I welcome you to our guild. Here, Take this Tunic and wear it with Pride!");
     quest::summonitem(58760); #Whisperwalker's Apprentice Tunic
