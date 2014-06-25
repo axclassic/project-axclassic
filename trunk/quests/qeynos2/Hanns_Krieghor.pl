@@ -84,7 +84,7 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
 
 sub EVENT_ITEM {
 my $Rogue = quest::saylink("Rogue", 1);
-if (plugin::check_handin(\%itemcount, 18784 => 1) && $class eq "Rogue") { 
+if (plugin::check_handin(\%itemcount, 18708 => 1) && $class eq "Rogue") { 
   quest::say("I am Hanns Krieghor of the Circle of the Unseen Hands. A few years ago, The Rathe server was created in order to bring back the feel of the orginal EQ zones. Many things have changed over the years and with those changes, some things could not be done anymore.");
     quest::say("You were sent to me because there is a problem with getting you to the correct city with the correct guild summons.");
 	quest::say("Since you are talking to me I must assume you are a $Rogue?");
