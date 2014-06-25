@@ -64,7 +64,7 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
   if (($text=~/North_Qeynos/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
 	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
-	quest::summonitem(18708);
+	quest::summonitem(119867);
 	quest::movepc(2,287,82,-16);
   }
   if (($text=~/Greater_Faydark/i) && ($ulevel == 1) && ($class eq "Rogue")) {
