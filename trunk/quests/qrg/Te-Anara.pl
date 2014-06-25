@@ -61,7 +61,7 @@ my $special = quest::saylink("special", 1);
 
 sub EVENT_ITEM { 
 my $Druid = quest::saylink("Druid", 1);
-if (plugin::check_handin(\%itemcount, 18713 => 1) && $class eq "Druid") { 
+if (plugin::check_handin(\%itemcount, 18709 => 1) && $class eq "Druid") { 
   quest::say("I am the Te'Anara of the Jagged Pine. A few years ago, The Rathe server was created in order to bring back the feel of the orginal EQ zones. Many things have changed over the years and with those changes, some things could not be done anymore.");
     quest::say("You were sent to me because there is a problem with getting you to the correct city with the correct guild summons.");
 	quest::say("Since you are talking to me I must assume you are a $Druid?");
