@@ -27,7 +27,7 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
   }
   if (($text=~/Bristlebane/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of The Bristlebane? A Good Choice, Followers of The King of thieves believe in having fun at the expense of nearly all else.");
-    quest::say("One more question for you $name, What city would you prefer to be sent to? $East_Freeport, $North_Qeynos or Greater_Faydark.");
+    quest::say("One more question for you $name, What city would you prefer to be sent to? $East_Freeport, $North_Qeynos or $Greater_Faydark.");
   }
   if (($text=~/Karana/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of The Karana? A Good Choice, Followers of The Rainkeeper believe in the absolute power of storms.");
