@@ -20,7 +20,7 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of Bertoxxulous? A Good Choice, Followers of The Plaguebringer believe the only truth on Norrath is that everything dies. They view the decay of flesh as a thing of ultimate beauty .");
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
 	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
-	quest::summonitem(18708);
+	quest::summonitem(119867);
 	quest::movepc(2,287,82,-16);
   }
   if (($text=~/Bristlebane/i) && ($ulevel == 1) && ($class eq "Rogue")) {
@@ -38,14 +38,14 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of The Karana? A Good Choice, Followers of The Rainkeeper believe in the absolute power of storms.");
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
 	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
-	quest::summonitem(18708);
+	quest::summonitem(119867);
 	quest::movepc(2,287,82,-16);
   }
    if (($text=~/Rodcet_Nife/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of The Rodcet Nife? A Good Choice, Followers of The Prime Healer take oath to fight disease and death until one or the other takes them.");
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
 	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
-	quest::summonitem(18708);
+	quest::summonitem(119867);
 	quest::movepc(2,287,82,-16);
   }
    if (($text=~/Tunare/i) && ($ulevel == 1) && ($class eq "Rogue")) {
