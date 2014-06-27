@@ -1,6 +1,6 @@
 sub EVENT_SAY {
   if($text=~/Hail/i) {
-    quest::say("Um, you.  Hi..  You Shaman of War now, right?  You gotta learns war and war spells.  We fights all and makes the Warlord likes us.  You [gonna help] or me gonna feed you fat stoopid boddie to doggies.");
+    quest::say("Um, you.  Hi..  You Shaman of War now, right?  You gotta learns war and war spells.  We fights all and makes the Warlord likes us.  You gonna [help] or me gonna feed you fat stoopid boddie to doggies.");
   }
   if($text=~/help/i) {
     quest::say("Good.  Warlord need many boddie.. I means Shamans of War.. to kill and gets killed.. no, ummm.. kill and smoosh for Him and makes Him happy.  You goes show me you can smoosh tings good.  Gets me four froglok tadpole fleshies for me to munchings on and me be happy.. um, He, the Warlord be so berry happy.  Helping our tuff friends de Greenbloods but be watching for dem scummy Crakneks, dumb ogres dey is.  No good, no our friends.  Go now. Me.. er.. he waiting and hungry.");
@@ -11,7 +11,14 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 13187 => 4)) {
+  if (plugin::check_handin(\%itemcount, 18788 => 1)) {
+    quest::say("What? You tinks you's gud enough to join Da Shamen of War? Gud! Take dis and wear it $name.");
+    quest::summonitem(13526);
+    quest::faction(295, 10); #Shaman of War
+    quest::ding(); 
+    quest::exp(1000);
+  }
+  elsif (plugin::check_handin(\%itemcount, 13187 => 4)) {
     quest::say("Oh, me.. um.. Warlord VERY happy.  Very like dese.  Gimme.  Uh, why is you still here?  Take dis and gets more kills.  You learning good, come sees me. I teaches you bout stuff.  Make you [bedder shaman].  Go.  He and me watching.");
     quest::summonitem(15093);
     quest::faction(295, 10); #Shaman of War
