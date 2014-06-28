@@ -14,6 +14,7 @@ if (plugin::check_handin(\%itemcount, 18792 => 1)){
 	quest::faction(106,-30); #Frogloks of Guk
     quest::ding();
 	quest::exp(1000);
+	quest::rebind(52,68.4,76.1,2.2)
     }
 else {
 plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
