@@ -1,5 +1,46 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==06/27/2014==
+ Angelox: Paladin LoH and ShadowKnight HT made available for UF via hashtag command(case sensitive): #HarmTouch and #LayOnHands.
+ Angelox: Two new bot commands added: #bot HarmTouch and #bot LayOnHands.  
+ 
+==06/24/2014==
+ Angelox: Fix for dual-weild animations on client-character.
+ Angelox: Some updates to Client detection (possible fix for Titanium crashing). 
+ 
+==06/22/2014==
+ Angelox: Fix to MQzone detection.
+ 
+==06/10/2014==
+ Angelox: Fixed #bot offtank exploit in trivial zones.
+ Angelox: Fixed some crash problems while mixing bots and other players in the group.
+ 
+==06/07/2014==
+ Angelox: Fixed bug with "bot set primary" was crashing the zone.  
+ 
+==05/30/2014==
+ Angelox: Took away #bot mana while in #bot guard mode, as it random crashes the zone.
+ 
+==05/29/2014==
+ Angelox: Added command #bot charisma
+ 
+==05/27/2014==
+ Angelox: Newbe bot was not adding to botleader table. 
+ 
+==05/26/2014==
+ Angelox: Put a timer on '#bot mana' as spamming it will crash the client.
+ 
+==05/24/2014==
+ Angelox: The starter bot will give some help info.
+ Angelox: Bots will have proper hp and mana when zoning
+ Angelox: New players with first time charcaters will start grouped with a bot.
+ 
+==05/06/2014==
+ Angelox: Timers added for #bot summon group control.
+ 
+==04/29/2014==
+ Angelox: added BotWarp() - less intrusive. 
+ 
 ==04/27/2014==
  Angelox: Fix for #bot summon and warping routines that cause zone crash.
  Angelox: Possible fix for player corpse loot bug.
