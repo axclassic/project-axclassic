@@ -8,7 +8,7 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 119870 => 1)){
     quest::say("Why you here $name? GO HOME!");
 	quest::summonitem(119870);
-	quest::movepc(52,118.5,243.5,-5.3);	
+	quest::movepc(52,119.0,239.0,-5.3);	
     }
 else {
 plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
