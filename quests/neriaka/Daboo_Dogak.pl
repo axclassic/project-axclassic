@@ -5,10 +5,10 @@ if($text =~ /Hail/i) {
  }
 }
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount, 18792 => 1)){
+if (plugin::check_handin(\%itemcount, 119870 => 1)){
     quest::say("Why you here $name? GO HOME!");
-	quest::summonitem(18792);
-	quest::movepc(52,124.5,238.3,-7.8);	
+	quest::summonitem(119870);
+	quest::movepc(52,118.5,243.5,-5.3);	
     }
 else {
 plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
