@@ -5,7 +5,7 @@ if($text =~ /Hail/i) {
  }
 }
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount, 18792 => 1)){
+if (plugin::check_handin(\%itemcount, 119870 => 1)){
     quest::say("Haaah!! Cower befor the mighty Daboo!! Daboo make you feared.. make you powered! Dark power flow through you! Hate and Fear in your blood!");
  	quest::say("You want to be like Daboo? Ok, take dis and wear it. come back here when you kill some stuff $name.");
 	quest::summonitem(13530);
