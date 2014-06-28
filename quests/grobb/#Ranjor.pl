@@ -24,6 +24,7 @@ if (plugin::check_handin(\%itemcount, 18790 => 1)){
 	quest::faction(22,-30); #Broken Skull Clan
     quest::ding();
 	quest::exp(1000);
+	quest::rebind(52,68.4,76.1,2.2)
 }
 elsif (plugin::check_handin(\%itemcount, 5014 => 2)){ #Handin: 2x Rusty Ax
 quest::say("Gud Job $name. here take dis, it is better to kill dem froggies with dan dem old rusty tings");
