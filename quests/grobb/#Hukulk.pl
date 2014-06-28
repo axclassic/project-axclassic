@@ -18,6 +18,7 @@ if (plugin::check_handin(\%itemcount, 18792 => 1)){
 	quest::faction(106,-30); #Frogloks of Guk
     quest::ding();
 	quest::exp(1000);
+	quest::rebind(52,68.4,76.1,2.2)
     }
 elsif (plugin::check_handin(\%itemcount, 13073 =>4 )) {
     quest::say("You good. Take dis. Make much pain and hurt. Make tings bleeds. Kill, hurt all. Innoruuk and me say do, now go. You do much, come bak. Teach you how more hurt and pain make. Go.");
