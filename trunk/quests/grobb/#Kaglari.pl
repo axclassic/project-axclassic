@@ -20,6 +20,7 @@ if (plugin::check_handin(\%itemcount, 18791 => 1)) {
 	quest::faction(106,-30); #Frogloks of Guk
     quest::ding();
 	quest::exp(1000);
+	quest::rebind(52,68.4,76.1,2.2)
  }
 elsif (plugin::check_handin(\%itemcount, 13187 => 2 &&  13073 => 2)){ #Handin: 2x Froglok Tadpole Flesh & 2x Bone Chip
     quest::say("SNORT!! Good. Innoruuk get special gift. Not you, dis time. Here. Learning majik wid dis. You more want $help Innoruuk?"); 
