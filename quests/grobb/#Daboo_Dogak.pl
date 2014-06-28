@@ -17,7 +17,7 @@ if (plugin::check_handin(\%itemcount, 18792 => 1)){
 	quest::rebind(52,68.4,76.1,2.2)
     }
 else {
-plugin::try_some_handins(\%itemcount, $class, 'Berserker');
+plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
 quest:say("Me can not eat this... Take back!");
 plugin::return_items(\%itemcount);
  }
