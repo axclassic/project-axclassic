@@ -8,7 +8,7 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 18845 => 1)){
     quest::say("Haaah!! Why you here? GO HOME $name!");
 	quest::summonitem(18845);
-    quest::movepc(52,-458.8,57.4,52.2);
+    quest::movepc(52,-457.7,56.9,52.2);
     }
 }
 #END of FILE Zone:grobb  ID:6084 -- Gardunk 
