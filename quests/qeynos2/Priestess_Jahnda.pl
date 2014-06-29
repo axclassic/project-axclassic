@@ -13,10 +13,11 @@ quest::say("Brother Hayle Mool is one of our finest clerics. He could convert an
 
 }
 sub EVENT_ITEM {
-	if($item1 == "18714"){
-		quest::say("Welcome to the Temple of Life. I am Jahnda. the High Priestess of the Clerics of Nife. Wear this tunic with pride and carry out the will of Nife. Please. see Tonmerk Plorsin or Nomsoe Jusagta. They will help get you started spreading the will of The Prime Healer.");
-		quest::summonitem("13506");
-		quest::ding(); quest::exp("100");
+	if(plugin::check_handin(\%itemcount, 18714 => 1)){
+	quest::say("Welcome to the Temple of Life. I am Jahnda. the High Priestess of the Clerics of Nife. Wear this tunic with pride and carry out the will of Nife. Please. see Tonmerk Plorsin or Nomsoe Jusagta. They will help get you started spreading the will of The Prime Healer.");
+	quest::summonitem(13506);
+	quest::ding();
+	quest::exp(1000);
 	}
 	 if($itemcount{13911} == 1)
   {
