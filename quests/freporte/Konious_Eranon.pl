@@ -55,7 +55,11 @@ sub EVENT_ITEM
    {
    
    quest::say("Take this $name, to help you in your journeys.");
-   quest::ding(); quest::exp("100");
+   quest::ding();
+   quest::exp("1000");
+   quest::faction(86, 10);  #Dismal Rage
+   quest::faction(235, 10);  #Opal Dark Briar
+   quest::faction(184, -30);  #Knights of Truth
    #quest::givecash("0","0","0","0");
 
    ### Random Item choosing if needed
