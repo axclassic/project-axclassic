@@ -45,10 +45,15 @@ sub EVENT_ITEM
  if ($itemcount{18741} == 1)
 {
 
-quest::say("Thanks.");
+quest::say("So you wish to join the Arcane Scientits? You have much to learn my young friend and I will be happy to tutor you along the way. Here is your guild robe, wear it proudly and return to me if you are in need of further training.");
 # Old Violet Robe ID-13560
 quest::summonitem("13560");
-quest::ding(); quest::exp("100");
+quest::ding();
+quest::faction(11, 10);  #Arcane Scientists
+quest::faction(184, 10);  #Knights of Truth
+quest::faction(105, -30);  #Freeport Militia
+quest::faction(235, -30);  #Opal Dark Briar
+ quest::exp("1000");
 }
 
 }
