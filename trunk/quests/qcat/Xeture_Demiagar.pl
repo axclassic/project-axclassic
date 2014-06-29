@@ -38,13 +38,13 @@ quest::summonitem(20198);
 if (plugin::check_handin(\%itemcount, 18716 =>1 )) {
 $client->Message(14,"Good work $name, Thank you for the note, yes i had received word that a young Cleric was coming to join our realms. I am here to see to it that you start your training as soon as possible.");
 quest::ding();
-quest::exp(500);
+quest::exp(1000);
 quest::faction(21,1);
 quest::faction(135,-1);
 quest::faction(235,-1);
 quest::faction(257,-1);
 quest::faction(53,1);
-quest::givecash(0,3,3,0);
+quest::summonitem(13598);
 }
 
 else {
