@@ -11,9 +11,8 @@ if ($text=~/crusade/i){quest::say("In the year of thirty one hundred fifty. the 
 }
 sub EVENT_ITEM { 
 if (plugin::check_handin(\%itemcount, 18736 => 1)){
-    quest::say("I am so thrilled you have chosen to join this regal and fearsome crew. You will find that as a member of the Ireblood Ragers, you have a strong and proud force backing you. Now you must complete your first task.");
-	quest::say("Take this application to Registrah Bindarah and return to me with proof of your citizenship.");
-	quest::say("I know that you may be nervous right now... after all, this should be a very exciting first step for you. If you happen to get lost while looking for the registrah, just ask one of the other citizens or guards for directions. They will most likely know where to find the place or person that you are looking for.");
+    quest::say("I am so thrilled you have chosen to join the Temple of  Marr and follow our Goddess Erolisi Marr in the belief that love conquers all.");
+	
 	quest::summonitem(13556);
 	quest::ding();
 	quest::faction(258,10); #Priests of Marr
