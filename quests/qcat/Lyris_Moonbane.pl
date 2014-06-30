@@ -19,14 +19,14 @@ $client->Message(14,"Yes! The little note u got when u started, hand it over to 
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 18721 =>1 )) {
 $client->Message(14,"Good work $name, Thank you for the note, yes i had received word that a young Necromancer was coming to join our realms. I am here to see to it that you start your training as soon as possible. Please go and talk to Bruax Grengar....");
+quest::summonitem(13552);
 quest::ding();
-quest::exp(500);
+quest::exp(1000);
 quest::faction(21,1);
 quest::faction(135,-1);
 quest::faction(235,-1);
 quest::faction(257,-1);
 quest::faction(53,1);
-quest::givecash(0,3,3,0);
 }
 plugin::return_items(\%itemcount);
 }
