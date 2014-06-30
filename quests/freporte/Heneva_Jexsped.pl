@@ -52,7 +52,11 @@ if($itemcount{18855} == 1)
 quest::say("Take this to help you on your journeys.");
 # Dirty Torn Robe ID-13564
 quest::summonitem("13564");
-quest::ding(); quest::exp("50");
+quest::ding();
+quest::faction(86, 10);
+quest::faction(235, 10);
+quest::faction(184, -30);
+quest::exp("1000");
 }
 
 }
