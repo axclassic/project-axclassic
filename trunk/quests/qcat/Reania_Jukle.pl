@@ -18,11 +18,11 @@ if (plugin::check_handin(\%itemcount, 18851 => 1) && $class eq "Enchanter") {
    quest::say("So you think you are a Bloodsaber eh? Well he is your robe, Mind you many outside our order won't understand you and will think the world would be better off without you in it. Be careful where you go and who you talk to young recruit.");
    quest::summonitem(13562);
    quest::ding();
-   quest::faction(282,10); #Bloodsabers
-   quest::faction(193,10); #Corrupt Qeynos Guards
-   quest::faction(282,10); #Opal Dark Briar
-   quest::faction(193,-10); #Guards of Qeynos
-   quest::faction(193,-10); #Priests of Life
+   quest::faction(282,10);
+   quest::faction(193,10);
+   quest::faction(282,10);
+   quest::faction(193,-10);
+   quest::faction(193,-10);
    quest::exp(1000);
    }
  else {
