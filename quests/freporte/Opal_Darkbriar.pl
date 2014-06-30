@@ -51,10 +51,16 @@ sub EVENT_ITEM
   # A tattered note ID-18739
   if ($item1=="18739")
   {
-  quest::say("Thanks.");
+  quest::say("welcome young wizard to the order of Dismal Rage. Be careful where you go and who you talk to as our presents in these parts are frowned upon by most. Take this robe and wear it proudly $name.");
   # Patched Violet Robe ID-13558
   quest::summonitem("13558");
-  exp("100");
+  quest::ding();
+  quest::faction(21, 10);
+  quest::faction(71, 10);
+  quest::faction(322,10);
+  quest::faction(86, 10);
+  quest::faction(235, 10);
+  quest::exp("1000");
   }
 
 }
