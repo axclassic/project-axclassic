@@ -9,7 +9,11 @@ quest::summonitem("10116");
 sub EVENT_ITEM { 
  if ($item1=="18712"){quest::say("Greetings, and welcome to the Silent Fist Clan. Don our guild tunic, purge your mind and soul, and begin your lifelong devotion to the Clan. Brother Esrinap will introduce you to our lifestyle and begin your training. Be sound, allow your spirit to open up and guide you.");
 	quest::summonitem("13507");
-	quest::ding(); quest::exp("100");
+	quest::ding();
+    quest::faction(12,10);
+    quest::faction(135,10);
+    quest::faction(300,10);
+	quest::exp("1000");
  } else {
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Monk');
