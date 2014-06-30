@@ -10,8 +10,8 @@ if (plugin::check_handin(\%itemcount, 18735 => 1)){
 	quest::ding();
 	quest::faction(258,10); #Priests of Marr
     quest::faction(184,10); #Knights of Truth
-    quest::faction(105,10); #Steel Warriors
-	quest::faction(184,-30); #Dismal Rage
+    quest::faction(311,10); #Steel Warriors
+	quest::faction(86,-30); #Dismal Rage
     quest::faction(105,-30); #Freeport Militia
 	quest::exp(1000);	
 }
