@@ -93,7 +93,7 @@ sub EVENT_ITEM
         quest::faction("184","2");
         # Silent Fist Clan Faction ID-300
         quest::faction("300","2");
-        quest::exp("100");
+        quest::exp("1000");
     }
     # Tattered Parchment ID-28055
     elsif (plugin::check_handin(\%itemcount, 28055 => 1))
