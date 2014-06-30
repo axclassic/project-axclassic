@@ -52,7 +52,11 @@ sub EVENT_ITEM {
     elsif(plugin::check_handin(\%itemcount, 18740 => 1)) { #A Tattered Note
       quest::say("Thanks. Please take this robe to help you on your journeys.");
       quest::ding();
-      quest::exp(100);
+	  quest::faction(11, 10);
+	  quest::faction(184, 10);
+	  quest::faction(105, -30);
+	  quest::faction(235, -30);
+      quest::exp(1000);
       quest::summonitem(13559); #Used Violet Robe
     }
     else {
