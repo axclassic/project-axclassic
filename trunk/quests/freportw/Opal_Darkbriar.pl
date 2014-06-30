@@ -51,11 +51,15 @@ sub EVENT_ITEM
   # A tattered note ID-18739
   if ($item1=="18739")
   {
-  quest::say("Thanks.");
+  quest::say("Welcome young wizard to the order of the Arcane Scientists. Here is your guild robe, wear it proudly. Study hard and one day you will be a powerful wizard!");
   # Patched Violet Robe ID-13558
   summonitem("13558");
-  exp("100");
+  quest::ding();
+quest::faction(11, 10);
+quest::faction(184, 10);
+quest::faction(105, -30);
+quest::faction(235, -30);
+quest::exp("1000");
   }
-
 }
 #END of FILE Zone:freportw  ID:9073 -- Opal_Darkbriar
