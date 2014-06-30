@@ -54,8 +54,12 @@ sub EVENT_ITEM
    if(plugin::check_handin(\%itemcount, 18854 => 1))
    {
    
-   quest::say("Thanks");
-   quest::ding(); quest::exp("100");
+   quest::say("welcome to The Dismal Rage young wizard! Tread lightly as you travel many do not believe as we do. Take this robe and wear it proudly.");
+   quest::ding();
+   quest::faction(86, 10);
+   quest::faction(235, 10);
+   quest::faction(184, -30);
+   quest::exp("1000");
 
    # Dark Stained Robe ID-13562
    quest::summonitem("13562");
