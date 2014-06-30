@@ -49,11 +49,11 @@ sub EVENT_SAY
 sub EVENT_ITEM
 {
   # A tattered note ID-18739
-  if ($item1=="18739")
+  if ($item1=="18742")
   {
-  quest::say("welcome young wizard to the order of Dismal Rage. Be careful where you go and who you talk to as our presents in these parts are frowned upon by most. Take this robe and wear it proudly $name.");
+  quest::say("welcome young necromancer to the order of Dismal Rage. Be careful where you go and who you talk to as our presents in these parts are frowned upon by most. Take this robe and wear it proudly $name.");
   # Patched Violet Robe ID-13558
-  quest::summonitem("13558");
+  quest::summonitem("13566");
   quest::ding();
   quest::faction(21, 10);
   quest::faction(71, 10);
