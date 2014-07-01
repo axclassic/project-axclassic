@@ -8,16 +8,22 @@
 #zone: qeynos2
 
 sub EVENT_SAY { 
+my $Agnostic = quest::saylink("Agnostic", 1);
 my $Bertoxxulous = quest::saylink("Bertoxxulous", 1);
 my $Bristlebane = quest::saylink("Bristlebane", 1);
+my $Erollisi_Marr = quest::saylink("Erollisi_Marr", 1);
+my $Innoruuk = quest::saylink("Innoruuk", 1);
 my $Karana = quest::saylink("Karana", 1);
 my $Rodcet_Nife = quest::saylink("Rodcet_Nife", 1);
 my $East_Freeport = quest::saylink("East_Freeport", 1);
 my $North_Qeynos = quest::saylink("North_Qeynos", 1);
-my $Greater_Faydark = quest::saylink("Greater_Faydark", 1);
 if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
-    quest::say("A Fine choice, the Way of the Rogue, but I have a few more questions for you. Which Deity did you choose? $Agnostic, $Bertoxxulous, $Bristlebane, $Erollisi_Marr, $Karana, $Rodcet_Nife, or $Tunare?");
+    quest::say("A Fine choice, the Way of the Rogue, but I have a few more questions for you. Which Deity did you choose? $Agnostic, $Bertoxxulous, $Bristlebane, $Erollisi_Marr, $Innoruuk, $Karana or $Rodcet_Nife?");
   }
+  if (($text=~/Agnostic/i) && ($ulevel == 1) && ($class eq "Rogue")) {
+    quest::say("Following the way of The Agnostic? A Good Choice, So you will not commit to the existence or non-existence of any Deity. This is your choice.");
+    quest::say("One more question for you $name, What city would you prefer to be sent to? $East_Freeport or $North_Qeynos.");
+	}
   if (($text=~/Bertoxxulous/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of Bertoxxulous? A Good Choice, Followers of The Plaguebringer believe the only truth on Norrath is that everything dies. They view the decay of flesh as a thing of ultimate beauty .");
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
@@ -28,7 +34,21 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
   if (($text=~/Bristlebane/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of The Bristlebane? A Good Choice, Followers of The King of thieves believe in having fun at the expense of nearly all else.");
     quest::say("One more question for you $name, What city would you prefer to be sent to? $East_Freeport, $North_Qeynos or $Greater_Faydark.");
+    }
+  if (($text=~/Erollisi_Marr/i) && ($ulevel == 1) && ($class eq "Rogue")) {
+    quest::say("Following the way of The Erollisi Marr? A Good Choice, Followers of The Queen of Love believe that love can conquer all, while not being naive about it.");
+    quest::say("On your way then, I will send you to East Freeport. Hand this note to Elisi Nasin. She is your Guildmaster of the Rogues."); 
+	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
+	quest::summonitem(18747);
+	quest::movepc(10,-864,-321,-108.2);
   }
+  if (($text=~/Innoruuk/i) && ($ulevel == 1) && ($class eq "Rogue")) {
+    quest::say("Following the way of Innoruuk? A Good Choice, Followers of the Prince of hate believe hate is THE creative force of the universe.It isthe honest belief that if they hate strong enough they could destroy all of Norrath.");
+    quest::say("On your way then, I will send you to East Freeport. Hand this note to Elisi Nasin. She is your Guildmaster of the Rogues."); 
+	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
+	quest::summonitem(18745);
+	quest::movepc(10,-864,-321,-108.2);
+	}
   if (($text=~/Karana/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of The Karana? A Good Choice, Followers of The Rainkeeper believe in the absolute power of storms.");
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
@@ -55,13 +75,7 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
 	quest::summonitem(119867);
 	quest::movepc(2,287,82,-16);
   }
-  if (($text=~/Greater_Faydark/i) && ($ulevel == 1) && ($class eq "Rogue")) {
-    quest::say("On your way then, I will send you to Kelethin. Hand this note to Tylfon. He is your Guildmaster of the Rogues."); 
-	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
-	quest::summonitem(119848);
-	quest::movepc(54,-210,-501,161);
-	}
-    if($text=~/hail/i){
+  if($text=~/hail/i){
     quest::say("You [dare] to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away while you still can.");
     }
     if($text=~/dare/i){
@@ -91,13 +105,13 @@ if (plugin::check_handin(\%itemcount, 18708 => 1) && $class eq "Rogue") {
 	}
 elsif (plugin::check_handin(\%itemcount, 119867 => 1)){
 	quest::say("So you wish to join our guild? We are members of the Circle of Unseen hands and as such, you will not be welcomed in many places. Take this tunic for it may just save your worthless life. Stealth is you best defense and offense. Move quietly and quickly."); #text made up
-	quest::summonitem(58760); #wisperwalkers apprentice tunic
+	quest::summonitem(58760);
 	quest::ding();
-	quest::faction(33, 10);  #Cricle of Unseen Hands
-    quest::faction(53, 10);  #Corrupt Qeynos Guards
-    quest::faction(164, 10);  #Kane Bayle
-    quest::faction(135, -30); #Guards of Qeynos
-	quest::faction(217, -30); #Merchants of Qeynos
+	quest::faction(33, 10);
+    quest::faction(53, 10);
+    quest::faction(164, 10);
+    quest::faction(135, -30);
+	quest::faction(217, -30);
 	quest::exp(1000);
 	}
   else{
