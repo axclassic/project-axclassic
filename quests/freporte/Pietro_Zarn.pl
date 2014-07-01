@@ -59,7 +59,7 @@ sub EVENT_ITEM
    {
    
    quest::say("A new member to carry the rage of Innoruuk into the city and beyond. How wonderful. I must admit that you do not appear to carry the rage within. Hopefully you shall color the battlefields with the blood of many knights from the Hall of Truth. Here. Wear this tunic with pride. Ha ha ha!! We shall see young one. We shall see.");
-   quest::ding(); quest::exp("50");
+   quest::ding(); quest::exp("1000");
 
    # Faded Crimson Tunic ID- 13561
    quest::summonitem("13561");
