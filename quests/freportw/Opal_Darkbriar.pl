@@ -53,7 +53,7 @@ sub EVENT_ITEM
   {
   quest::say("Welcome young wizard to the order of the Arcane Scientists. Here is your guild robe, wear it proudly. Study hard and one day you will be a powerful wizard!");
   # Patched Violet Robe ID-13558
-  summonitem("13558");
+  quest::summonitem("13558");
   quest::ding();
 quest::faction(11, 10);
 quest::faction(184, 10);
