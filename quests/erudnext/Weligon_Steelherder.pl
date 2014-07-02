@@ -65,7 +65,7 @@ sub EVENT_ITEM {
   }  
 
   #Pearls of Odus Handin: full bag of pearls
-  if (plugin::check_handin(\%itemcount, 13879 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 13879 => 1)) {
     quest::say("Fine work, Deepwater Knight. You have proven yourself an excellent addition to our ranks. These shall be used to create more Peacekeeper staffs. Oh yes, I almost forgot your reward. Here you are. Now, go, and serve Prexus.");
     quest::summonitem(quest::ChooseRandom(2104, 2106, 2108, 2111, 2112));
     quest::faction( 79, 10);
@@ -77,7 +77,7 @@ sub EVENT_ITEM {
   }
 
   #Bridge Quest Handin: 3 heads + sealed list
-  if (plugin::check_handin(\%itemcount, 18835 => 1, 13838 => 1, 13839 => 1, 13840 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 18835 => 1, 13838 => 1, 13839 => 1, 13840 => 1)) {
     quest::say("It is done!! I pray to Prexus that the knowledge of the bridge's design has departed from this world with the passing of these intelligent men. A pity they had to die. As for you, the other states may not tolerate your presence any longer, but you have proven that allegiance to Erudin is paramount among all Erudites. I am afraid the [harpoon is no more]!! I bestow upon you Deep Six, my personal cutlass!! May you wield it in the name of Erudin.");
     quest::summonitem(5377);
     quest::faction( 79, 10);
@@ -87,7 +87,7 @@ sub EVENT_ITEM {
   }
 
   #Paladin Newbie Note
-  if (plugin::check_handin(\%itemcount, 18725 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 18725 => 1)) {
     #Text made up
     quest::say("Ah, an aspiring Deepwater Knight. I bid you welcome to our order, brother.  Wear this tunic with pride.");
     quest::summonitem(13544);
@@ -97,9 +97,10 @@ sub EVENT_ITEM {
     quest::faction( 143, -300);
     quest::exp(1000);	
   }
-
-  #do all other handins first with plugin, then let it do disciplines      
-  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');      
+  	else {
+	quest::say("I cant use this.");
+    plugin::return_items(\%itemcount); 
+}     
 }
 
 #END of FILE Zone:erudnext  ID:24065 -- Weligon_Steelherder
