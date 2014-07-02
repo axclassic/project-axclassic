@@ -19,6 +19,10 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 1771 => 1)) {
   quest::say("Excellent! Thank you for checking on my brother, I am glad to hear that he is well.  Here is something that shall help you on your way");
   quest::summonitem(1763);
+  }
+  	else {
+	quest::say("I cant use this.");
+    plugin::return_items(\%itemcount); 
 }
 }
 #END of FILE Zone:erudnext  ID:98061 -- Gans_Paust 
