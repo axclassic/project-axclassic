@@ -32,8 +32,11 @@ sub EVENT_ITEM {
     quest::ding(); 
     quest::exp(1000);	
    }
+   	else {
+	quest::say("I cant use this.");
+    plugin::return_items(\%itemcount); 
 }
-
+}
 #END of FILE Zone:erudnint  ID:24032 -- Lanken_Rjarn
 #Quest by Solid11
 
