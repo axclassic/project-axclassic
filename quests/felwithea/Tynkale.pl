@@ -25,16 +25,17 @@ sub EVENT_ITEM {
 	quest::faction(105, 10); #Freeport militia
 	quest::exp(1000);
 	}
- if (plugin::check_handin(\%itemcount, 	13351 => 1)) {
+ elsif (plugin::check_handin(\%itemcount, 	13351 => 1)) {
    quest::say("So you have proven yourself to be a great slayer of beasts.Now it is time to prove yourself to be an asset to the Crown. You are to meet a man named Tolon Nurbyte.He will be at the local inn. Go to him and repeat the phrase, 'The glory of the Mother shines bright.' I can say no more. Oh.. and here. This may help you on your upcoming adventure.");
    quest::faction( 8, 10);
    quest::faction( 43, 10);
    quest::faction( 178, 10);
    quest::exp(150); 
  }
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-  plugin::return_items(\%itemcount);
+  	else {
+	quest::say("I cant use this.");
+    plugin::return_items(\%itemcount); 
+}
 }
 #END of FILE Zone:felwithea  ID:61018 -- Tynkale 
 
