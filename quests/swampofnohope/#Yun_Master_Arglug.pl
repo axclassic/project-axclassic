@@ -47,7 +47,7 @@ quest::say("Are you $new to the area? Or have I seen you $before?");
   }
 
   if($text=~/Boots/i) {
-	quest::say("A pair of boots would be a wise choice for a young recruit. Our training grounds are often dangerous, and plagued with various perils. Boots would offer some excellent protection for your feet, as well as some protection from the elements. To create the material needed to craft your boots, you will need to gather two kobold talons, an amulet from an undead froglok, and a ball of pulpy fungus, and combine them in your assembly kit. Once you have the correct material, you will need to forge the items together, along with this mold, to craft your Boots of the Yun Initiate.");
+	quest::say("A pair of boots would be a wise choice for a young recruit. Our training grounds are often dangerous, and plagued with various perils. Boots would offer some excellent protection for your feet, as well as some protection from the elements. To create the material needed to craft your boots, you will need to gather two kobold talons, an Undead Froglok's Talisman, and a ball of pulpy fungus, and combine them in your assembly kit. Once you have the correct material, you will need to forge the items together, along with this mold, to craft your Boots of the Yun Initiate.");
 	quest::summonitem(51066);
   }
 
