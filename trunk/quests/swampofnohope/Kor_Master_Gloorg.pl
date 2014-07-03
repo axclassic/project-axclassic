@@ -1,13 +1,34 @@
 sub EVENT_SAY {
-  if ($text=~/hail/i) {
-    quest::say("Welcome back, young Kor. I hope your training is going well. Unfortunately I have been unable to keep up to date on your progress, but should you need advanced training in any individual skills, I am here to help you with that. As well, I am here to guide you through your growth as a Cleric in the Guktan Army. With the skills that you learn here, you will be better prepared to serve the Army. If you do indeed plan on following the path of a [Cleric], I have some tasks that you will need to complete, if it suits your interest.");
+my $new = quest::saylink("new", 1);
+my $before = quest::saylink("before", 1);
+my $cleric = quest::saylink("cleric", 1);
+my $kit = quest::saylink("kit", 1);
+my $Helm = quest::saylink("Helm", 1);
+my $Bracers = quest::saylink("Bracers", 1);
+my $Boots = quest::saylink("Boots", 1);
+my $Armguards = quest::saylink("Armguards", 1);
+my $Leggings = quest::saylink("Leggings", 1);
+my $Gloves = quest::saylink("Gloves", 1);
+my $Breastplate = quest::saylink("Breastplate", 1);
+my $task = quest::saylink("task", 1);
+my $journal = quest::saylink("journal", 1);
+  if($text=~/Hail/i) {
+    quest::say("Hail $name, I am Kor Master Gloorg Cleric Guildmaster of the Guktan Army.");
+    quest::say("Are you $new to the area? Or have I seen you $before?");
+    }
+  if($text=~/new/i) {
+	quest::say("Well then I welcome you to our new home $name. I feel we can make this place our own while we plan the invaison and recapturing of our dear old Gutka.");
+	quset::say("Do you have something for me?");
+	}
+  if($text=~/before/i) {
+	quest::say("Welcome back, young Kor. I hope your training is going well. Unfortunately I have been unable to keep up to date on your progress, but should you need advanced training in any individual skills, I am here to help you with that. As well, I am here to guide you through your growth as a Cleric in the Guktan Army. With the skills that you learn here, you will be better prepared to serve the Army. If you do indeed plan on following the path of a $Cleric, I have some tasks that you will need to complete, if it suits your interest.");
   }
   if ($text=~/cleric/i) {
-    quest::say("Excellent! I will give you a list of items to collect, and then combine in this magical assembly kit. This will create a material that you will use to craft a suit of armor that will protect you from the various dangers of Norrath, for years to come. If you are ready to begin your task, I will give you the assembly kit, as well as instructions for collecting the necessary items to craft your armor. Are you ready to receive your [assembly kit]?'");
+    quest::say("Excellent! I will give you a list of items to collect, and then combine in this magical assembly kit. This will create a material that you will use to craft a suit of armor that will protect you from the various dangers of Norrath, for years to come. If you are ready to begin your task, I will give you the assembly kit, as well as instructions for collecting the necessary items to craft your armor. Are you ready to receive your assembly $kit?'");
   }
   
-  if ($text=~/assembly kit/i) {
-    quest::say("Here you are $name, take this assembly kit, it is what you will use to combine the different items required to craft your own Kor Initiate's armor. Different items will be required to craft the different pieces of armor. These items will be available from both our outpost, as well as the training grounds near here. When you are ready to receive a recipe for a specific material, simply tell me which armor piece you [wish to craft]. I hold the recipe's for Kor Initiates [Helms], [Bracers], [Boots], [Armguards], [Legplates], [Gloves] and [Breastplates]. Keep in mind that the items required to make some of the larger pieces of armor will be a bit more difficult to get. You may want to wait until you are more experienced before attempting to obtain the components.");
+  if ($text=~/kit/i) {
+    quest::say("Here you are $name, take this assembly kit, it is what you will use to combine the different items required to craft your own Kor Initiate's armor. Different items will be required to craft the different pieces of armor. These items will be available from both our outpost, as well as the training grounds near here. When you are ready to receive a recipe for a specific material, simply tell me which armor piece you wish to craft. I hold the recipe's for Kor Initiates $Helm, $Bracers, $Boots, $Armguards, $Legplates, $Gloves and $Breastplate. Keep in mind that the items required to make some of the larger pieces of armor will be a bit more difficult to get. You may want to wait until you are more experienced before attempting to obtain the components.");
     quest::summonitem(17393);
   }
   if ($text=~/helm/i) {
@@ -38,24 +59,39 @@ sub EVENT_SAY {
         quest::summonitem(51056);
       }
       if ($text=~/breastplate/i) {
-        quest::say("So, you think yourself skilled enough to obtain the components necessary to craft your breastplate? I sure hope that you aren't wrong, it would be a very sad day to know that we lost such a promising young recruit because they were a bit overzealous. Regardless, as you have asked, I will give you the recipe to craft the breastplate. To create the material needed to craft your breastplate, you will need to gather two pristine bull alligator hides, larvae skin, and two pristine moccasin scales, and combine them in your assembly kit. Once you have the correct material, you will need to forge the items together, along with this mold, to craft your Breastplate of the Kor Initiate. After you have completed your breastplate, I may have another [task] for you to complete.");
+        quest::say("So, you think yourself skilled enough to obtain the components necessary to craft your breastplate? I sure hope that you aren't wrong, it would be a very sad day to know that we lost such a promising young recruit because they were a bit overzealous. Regardless, as you have asked, I will give you the recipe to craft the breastplate. To create the material needed to craft your breastplate, you will need to gather two pristine bull alligator hides, larvae skin, and two pristine moccasin scales, and combine them in your assembly kit. Once you have the correct material, you will need to forge the items together, along with this mold, to craft your Breastplate of the Kor Initiate. After you have completed your breastplate, I may have another $task for you to complete.");
         quest::summonitem(51060);
       }
       if ($text=~/task/i) {
-        quest::say("If you are asking me about the task I spoke of earlier, then you must have surely completed the full suit of Kor Initiates Armor! You have proven your worth, and moved past the stages of recruitment. Moving along in your training, this task that I wish you to complete will be dangerous, and you may perish, but know that it will greatly help our cause. Enough of my chatter, the task I need you to complete is to recover a [lost journal] from the person who stole it. ");
+        quest::say("If you are asking me about the task I spoke of earlier, then you must have surely completed the full suit of Kor Initiates Armor! You have proven your worth, and moved past the stages of recruitment. Moving along in your training, this task that I wish you to complete will be dangerous, and you may perish, but know that it will greatly help our cause. Enough of my chatter, the task I need you to complete is to recover a lost $journal from the person who stole it. ");
         }
-        if ($text=~/lost journal/i) {
+        if ($text=~/journal/i) {
           quest::say("This journal was very important to a friend of mine, and a fellow recruit of yours. It also had some very detailed notes on a mission that he was on, however, it got lost during an attack on his camp one night. He managed to escape with his life, but the journal was lost. The only information that we have is that it was a band of undead abominations that attacked the camp. If you could perhaps return to us with this journal, I would be greatly appreciative.");
         }
-     
-    
-}
+     }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 51094 =>1 )) {
+if (plugin::check_handin(\%itemcount, 51637 => 1) && $class eq "Cleric") { 
+  quest::say("I welcome you $name to the order of Kor, followers of our father Innoruuk");
+  quest::say("Take this Tunic and wear it with pride! May it protect you as you grow young Kor.");  
+  quest::summonitem(119878);
+  quest::ding();
+  quest::exp(1000);
+   }
+elsif (plugin::check_handin(\%itemcount, 18364 => 1) && $class eq "Cleric") { 
+  quest::say("I welcome you $name to the order of Kor, followers of Mithaniel Marr");
+  quest::say("Take this Tunic and wear it with pride! May it protect you as you grow young Kor.");  
+  quest::summonitem(119879);
+  quest::ding();
+  quest::exp(1000);
+   }
+elsif(plugin::check_handin(\%itemcount, 51094 =>1 )) {
 quest::say("Great work.  These notes will help us in our cause.");
   quest::summonitem(51096);
      quest::ding(); quest::exp(1000);
-  }
-  plugin::return_items(\%itemcount);
+   }
+  	else {
+	quest::say("I cant use this.");
+    plugin::return_items(\%itemcount); 
+}
 }
