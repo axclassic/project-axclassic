@@ -14,7 +14,7 @@ my $Helm = quest::saylink("Helm", 1);
 my $Leggings = quest::saylink("Leggings", 1);
 my $task = quest::saylink("task", 1);
   if($text=~/Hail/i) {
-    quest::say("Hail $name, I am Bok Master Thragnog, Shadowknight Guildmaster of the Guktan Army.");
+    quest::say("Hail $name, I am Dar Master Griblok, Warrior Guildmaster of the Guktan Army.");
     quest::say("Are you $new to the area? Or have I seen you $before?");
     }
   if($text=~/new/i) {
@@ -31,40 +31,40 @@ my $task = quest::saylink("task", 1);
     quest::say("Ah, good. The Army and its reserve are always in need of fresh courage. Every new warrior must attempt the training I personally oversee. I say attempt because these exercises will test you to the very limit. Now, if you have enough of the courage we seek, we may $begin."); 
   }
   if($text=~/begin/i) {
-    quest::say("Good. Take this Corrupt Field Armorer Kit. It will allow you to use the looted $valuables and even bodies of your enemies to form basic armor materials. These basic materials will prove quite valuable. When placed into a forge along with the proper mold, it will allow you to craft your own Armor of the Dar Initiate."); 
+    quest::say("Good. Take this Field Armorer Kit. It will allow you to use the looted $valuables and even bodies of your enemies to form basic armor materials. These basic materials will prove quite valuable. When placed into a forge along with the proper mold, it will allow you to craft your own Armor of the Dar Initiate."); 
     quest::ding();
-	quest::summonitem(119892);
+	quest::summonitem(17830);
 	}
   if($text=~/valuables/i) {
     quest::say("As I said, spoils of war and bodies will provide the supplies you need. Innothule Swamp, the murky land just beyond the city gates, holds some of the items you seek. You may also have to talk to local merchants to locate the odd piece. When you are ready to attempt these quests, you need only tell me what you want and I will provide further instruction. I can teach you the recipes and give you the armor molds for the Armor of the Dar Initiate $Helm, $Breastplate, $Armplates, $Bracer, $Gauntlets, $Leggings and $Boots."); 
     }
   if($text=~/Armplates/i) {
     quest::say("To make your armplates, you'll need a Moccassin Eggs, a Bleeder Wings, a Moccasin Scales and a Kobold Talisman. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Armplates of the Dar Initiate.");
-    quest::summonitem(51371);
+    quest::summonitem(38929);
 	}
   if($text=~/Boots/i) {
     quest::say("A soldier's life is a life of travel. For your boots you'll need a Kobold Scalp, two Chunks of Digested Earth, and an Undead Froglok Talisman. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Boots of the Dar Initiate.");
-    quest::summonitem(51374);
+    quest::summonitem(38931);
 	}
   if($text=~/Bracer/i) {
     quest::say("Ah, the quick defense against bloodthirsty blades. You'll need a Crab Spider's Carapace, two Spiderling Silks and a Malleable Bleeder Skin. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Bracer of the Dar Initiate.");
-    quest::summonitem(51372);
+    quest::summonitem(38928);
     }
   if($text=~/Breastplate/i) {
     quest::say("The final shield. Yes. But its construction will not be easy. Go and seek some Pristine Moccasin Scales, Burly Kobold Ears, a Pristine Bull Alligator Hide and some Moccasin Poison. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Breastplate of the Dar Initiate. Once so armored, you'll be well prepared for a greater $task.");
-    quest::summonitem(51376);
+    quest::summonitem(38933);
     }
   if($text=~/Gauntlets/i) {
     quest::say("You'll need a Bleeder's Poison Sack, Blackened Fungus and two Bleeder Carapaces. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Gauntlets of the Dar Initiate."); 
-    quest::summonitem(51373);
+    quest::summonitem(38930);
     }
   if($text=~/Helm/i) {
-    quest::say("A shadowknight's second skull, I always say. You'll need an Alligator Hide, a Ball of Pulpy Fungus, a Cracked Skeleton Skull and a Giant Moccasin Fang. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Helm of the Dar Initiate.");
-    quest::summonitem(51370);
+    quest::say("A warrior's second skull, I always say. You'll need an Alligator Hide, a Ball of Pulpy Fungus, a Cracked Skeleton Skull and a Giant Moccasin Fang. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Helm of the Dar Initiate.");
+    quest::summonitem(38932);
     }
   if($text=~/Leggings/i) {
     quest::say("Wise. To make the leggings you'll need a Giant Moccasin Eye, two Kobold Livers and a Larval Carapace. Combine these ingredients in your kit. When you have the proper basic material in hand, take it to a forge along with this mold to finish your Leggings of the Dar Initiate.");
-    quest::summonitem(51375);
+    quest::summonitem(38934);
     }
   if($text=~/task/i) {
     quest::say("War often brings out the worst, it is said. Sadly one of our very own grew greedy when he saw the trolls' treasure. Sergeant Herptol fell to temptation, ignoring the voice of our Lord that had commanded us to ignore the tainted loot. He fled the city and his rightful punishment. I've learned he's hiding out in the northern reaches of the Innothule. Go. Find him. Slay him and recover what he stole. Bring me a Larvae Skin and some Bull Alligator Spines. When you return the recovered loot and these items, I shall craft you a sword.");
@@ -72,16 +72,16 @@ my $task = quest::saylink("task", 1);
 }
 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 51635 => 1) && $class eq "Shadowknight") { 
-    quest::say("I welcome you $name to the order of Bok, followers of our father Innoruuk.");
-    quest::say("Take this Tunic and wear it with pride! May it protect you as you grow young Bok.");  
-    quest::summonitem(119878);
+  if (plugin::check_handin(\%itemcount, 18363 => 1) && $class eq "Warrior") { 
+    quest::say("I welcome you $name to the order of Dar, followers of Mithaniel Marr.");
+    quest::say("Take this Tunic and wear it with pride! May it protect you as you grow young Dar.");  
+    quest::summonitem(119882);
     quest::ding();
     quest::exp(1000);
   }
   elsif(plugin::check_handin(\%itemcount,  63088=>1, 51019=>2, 51038=>1  )) { 
-    quest::say("I can't Believe my eyes!. Well done $name, Here is the sword I promised you.");
-    quest::summonitem(51654);
+    quest::say("I can't Believe my eyes!. Well done $name, Here is the sword I promised you.");  
+    quest::summonitem(63063);
     quest::ding();
     quest::exp(1000);
    }
