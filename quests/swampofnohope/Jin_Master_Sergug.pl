@@ -39,7 +39,7 @@ my $him = quest::saylink("him", 1);
     quest::say("These are not the usual components used in spells. Look instead in Innothule Swamp for your pieces. The many enemies and vermin that stalk that bog hold items which are only trash to others. But to you they will eventually become treasures. When you are ready to attempt making your armor, return and tell me what you wish to make and I will instruct you. I can teach you the recipes and give you the proper molds for the Armor of the Jin Initiate $Headband, $Vestment, $Armwraps, $Bracer, $Handwraps, $Leggings, and $Sandals.");
   }
   if ($text=~/Headband/i) {
-    quest::say("Wise. Your mind is your greatest weapon and you must protect it. You'll need a Malleable Bleeder Skin, a Pristine Bleeder Skin and two Mushroom Spores. Combine these components in your crucible. When you have the proper basic mesh in hand, take it to a forge along with this mold to finish your Headband of the Jin Initiate ");
+    quest::say("Wise. Your mind is your greatest weapon and you must protect it. You'll need a Malleable Bleeder Skin, a Pristine Bleeder Skin and two of a Mushroom Spore. Combine these components in your crucible. When you have the proper basic mesh in hand, take it to a forge along with this mold to finish your Headband of the Jin Initiate ");
     quest::summonitem(63080);
   }
   if ($text=~/Vestment/i) {
