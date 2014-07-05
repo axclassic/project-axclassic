@@ -23,35 +23,30 @@ if (($text=~/Warrior/i) && ($ulevel == 1) && ($class eq "Warrior")) {
   if (($text=~/Bertoxxulous/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("Following the way of Bertoxxulous? A Good Choice, Followers of The The Plaguebringer believe that the only truth on Norrath is that everything dies. They view the decay of flesh as a thing of ultimate beauty.");
     quest::say("On your way then, I will send you to Qeynos Catacombs. Hand this note to Rocthar Bekesna, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
-	quest::summonitem(18853);
+    quest::summonitem(18853);
 	quest::movepc(45,-374,315,-38);
   }
     if (($text=~/Erollisi_Marr/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("Following the way of The Erollisi Marr? A Good Choice, Followers of The Queen of Love believe that love can conquer all, while not being naive about it.");
     quest::say("On your way then, I will send you to East Freeport. Hand this note to Brutol Rhaksen, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18747);
 	quest::movepc(8,566,-136,17);
   }
   if (($text=~/Innoruuk/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("Following the way of The Innoruuk? A Good Choice, Followers of The Duke of below believe that the surface world is a waste of space and prefer to explore caves and caverns.");
     quest::say("On your way then, I will send you to East Freeport. Hand this note to Brutol Rhaksen, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18747);
 	quest::movepc(8,566,-136,17);
   }
   if (($text=~/Karana/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("Following the way of The Karana? A Good Choice, Followers of The Rainkeeper believe in the absolute power of storms.");
     quest::say("On your way then, I will send you to South Qeynos. Hand this note to Ebon Strongbear, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119852);
 	quest::movepc(1,-513,48,31);
   }
   if (($text=~/Mithaniel_Marr/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("Following the way of The Mithaniel Marr? A Good Choice, Followers of The Lightbearer believe that valor is what separates civilized beings from beasts. You must have a strict moral code that prizes truth, honor and charity.");
     quest::say("On your way then, I will send you to West Freeport. Hand this note to Cain Darkmoore, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18748);
 	quest::movepc(9,-43,-305,-11);
   }
@@ -66,7 +61,6 @@ if (($text=~/Warrior/i) && ($ulevel == 1) && ($class eq "Warrior")) {
   if (($text=~/Rodcet_Nife/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("Following the way of The Rodcet Nife? A Good Choice, Followers of The Prime Healer take oath to fight disease and death until one or the other takes them.");
     quest::say("On your way then, I will send you to South Qeynos. Hand this note to Ebon Strongbear, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119852);
 	quest::movepc(1,-513,48,31);
   }
@@ -77,25 +71,21 @@ if (($text=~/Warrior/i) && ($ulevel == 1) && ($class eq "Warrior")) {
   if (($text=~/Tunare/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("Following the way of Tunare? A Good Choice, Followers of the Mother of all believe we are all Tunare's children and seek to help Norrath.");
     quest::say("On your way then, I will send you to Kelethin. Hand this note to Regren, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18782);
 	quest::movepc(54,278,339,77);
   }
   if (($text=~/East_Freeport/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("On your way then, I will send you to West Freeport. Hand this note to Cain Darkmoore, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18748);
 	quest::movepc(9,-43,-305,-11);
   }
   if (($text=~/South_Qeynos/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("On your way then, I will send you to South Qeynos. Hand this note to Ebon Strongbear, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119852);
-	quest::movepc(1,-513,48,31);
+	quest::movepc(1,-510,57,31);
   }
   if (($text=~/Greater_Faydark/i) && ($ulevel == 1) && ($class eq "Warrior")) {
     quest::say("On your way then, I will send you to Kelethin. Hand this note to Regren, He is your Warrior Guildmaster."); 
-	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18782);
 	quest::movepc(54,278,339,77);
 	}
@@ -163,14 +153,13 @@ if (plugin::check_handin(\%itemcount, 18707 => 1) && $class eq "Warrior") {
   quest::faction(217,10); #Merchants of Qeynos
   quest::faction(105,-10); #Freeport Militia
   quest::exp(1000);
+  quest::rebind(1,-510,57,31);
    }
   elsif ($itemcount{27421} == 3 && $itemcount{27422} == 1){
     quest::say("I salute you young warrior! Take this reward with pride.");
     quest::summonitem(27492);
 	}
 else {
-   #do all other handins first with plugin, then let it do disciplines
-   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
    quest::say("I have no use for this.");
    plugin::return_items(\%itemcount);
    }

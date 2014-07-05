@@ -39,7 +39,7 @@ my $special = quest::saylink("special", 1);
     quest::say("On your way then, I will send you to Surefall Glade. Hand this note to Te'Anara, She is your Guildmaster of the Druids."); 
 	quest::say("Be sure you find Soulbinder Saela and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119845);
-	quest::movepc(3,-402,-203,4);
+	quest::movepc(3,-429,-199,6);
 	}
   if ($text=~/Hail/i){
     $client->Message(14,"Welcome, friend. I hope your stay in Surefall Glade will enlighten your soul. While you are here we ask you to abide by the $laws of the Jaggedpine.");
@@ -111,6 +111,7 @@ if (plugin::check_handin(\%itemcount, 18713 => 1) && $class eq "Druid") {
     quest::faction(135, 10); #Guards of Qeynos
     quest::faction(347, -30); #Unkempt Druids
 	quest::exp(1000);
+	quest::rebind(3,-429,-199,6);
   }
   else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items

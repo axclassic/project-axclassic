@@ -22,7 +22,6 @@ if (($text=~/Ranger/i) && ($ulevel == 1) && ($class eq "Ranger")) {
   if (($text=~/Karana/i) && ($ulevel == 1) && ($class eq "Ranger")) {
     quest::say("Following the way of The Karana? A Good Choice, Followers of The Rainkeeper believe in the absolute power of storms.");
     quest::say("On your way then, I will send you to Surefall Glade. Hand this note to Hagar Sureshot, He is your Guildmaster of the Rangers."); 
-	quest::say("Be sure you find Soulbinder Saela in Surefall Glade and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119846);
 	quest::movepc(3,78,76,3);
 	}
@@ -32,13 +31,11 @@ if (($text=~/Ranger/i) && ($ulevel == 1) && ($class eq "Ranger")) {
   }
   if (($text=~/Surefall_Glade/i) && ($ulevel == 1) && ($class eq "Ranger")) {
     quest::say("On your way then, I will send you to Surefall Glade. Hand this note to Hagar Sureshot, He is your Guildmaster of the Rangers."); 
-	quest::say("Be sure you find Soulbinder Saela in Surefall Glade and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119846);
 	quest::movepc(3,78,76,3);
 	}
 if (($text=~/Greater_Faydark/i) && ($ulevel == 1) && ($class eq "Ranger")) {
     quest::say("On your way then, I will send you to Kelethin. Hand this note to Maesyn Trueshot. He is your Guildmaster of the Rangers."); 
-	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18785);
 	quest::movepc(54,521,-450,118);
 	}
@@ -77,6 +74,7 @@ if (plugin::check_handin(\%itemcount, 18709 => 1) && $class eq "Ranger") {
     quest::faction(279,-30); # Sabertooths of Blackburrow
     quest::faction(135,10); # Guards of Qeynos
 	quest::exp(1000);
+	quest::rebind(3,78,76,3);
   }
   elsif (plugin::check_handin(\%itemcount,13913=>1)) {
     $client->Message(14,"His days of hunting are over. In the name of the Protectors of the Pine, I offer you this reward. If you are unable to make use of it, you may sell it. I suggest you hold onto it. If you are a ranger it will come in handy.");
@@ -91,7 +89,6 @@ if (plugin::check_handin(\%itemcount, 18709 => 1) && $class eq "Ranger") {
    else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items
     plugin::return_items(\%itemcount);
-    plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
     return 1;
   }
 }

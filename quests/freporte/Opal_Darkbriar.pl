@@ -61,8 +61,12 @@ sub EVENT_ITEM
   quest::faction(86, 10);
   quest::faction(235, 10);
   quest::exp("1000");
+  quest::rebind(10,-188,-69,-94);
   }
-
+    else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:freporte  ID:9073 -- Opal_Darkbriar
 

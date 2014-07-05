@@ -62,13 +62,11 @@ my $incarnation = quest::saylink("incarnation", 1);
     quest::ding();
 	quest::exp(1000); 
     quest::summonitem(13536); # Dirty Green Tunic* 
-	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
+	quest::rebind(54,521,-450,118);
   }
-   else {
-    $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items
-    plugin::return_items(\%itemcount);
-    plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
-    return 1;
-  }
+       else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 

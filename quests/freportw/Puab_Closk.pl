@@ -102,13 +102,14 @@ sub EVENT_ITEM
         quest::say("You have performed a great service to one who is your brother. Your loyalty shines brightly, as does your skill. Take the treant fists. They are yours now.");
         # Treant Fists ID-12344
         quest::summonitem("12344");
-        quest::exp("100");
+        quest::exp("1000");
         # Ashen Order Faction ID-12
         quest::faction("12","10");
         # Knights of Truth Faction ID-184
         quest::faction("184","10");
         # Silent Fist Clan Faction ID-300
         quest::faction("300","10");
+		quest::rebind(9,-807,-239,-10);
     }
     #do all other handins first with plugin, then let it do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Monk');

@@ -17,7 +17,7 @@ $client->Message(14,"Excellent news $name. You need to seek out Miltiades Tal-Az
 }
 sub EVENT_ITEM {
 if ($item1=="18710"){
-$client->Message(14,"Thanks $name. Now you need to seek out Miltiades Tal-Azroth. He is right here in the Paladin Guild.");
+$client->Message(14,"Thanks $name and welcome to the the Knights of Thunder. Take this tunic and wear it proudly as you follow the ways of Karana!");
     quest::summonitem(13505); #Old Gray Tunic
 	quest::ding();
     quest::faction( 135, 10);  #Guards of Qeynos
@@ -26,6 +26,7 @@ $client->Message(14,"Thanks $name. Now you need to seek out Miltiades Tal-Azroth
     quest::faction( 21, -30);  #Bloodsabers
    	quest::exp(1000);
 	quest::rebind(1,-510,-145,6);
+	$client->Message(14,"Now you need to seek out Miltiades Tal-Azroth. He is right here in the Paladin Guild.");
 	}
   else {
    quest::say("I have no use for this.");
