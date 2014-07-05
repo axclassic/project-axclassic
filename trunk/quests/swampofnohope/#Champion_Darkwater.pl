@@ -209,6 +209,12 @@ sub EVENT_ITEM{
 	$client->Message(6,"You recieved the Moonstone of the Karanas!");
 	quest::summonitem(128);
       }
+      # Darkwater's Gift
+      elsif ($itemcount{119925} == 1) {
+	$client->Message(14,"Welcome $name to the Rathe Ladder! Here is your Earring.");
+	$client->Message(6,"You recieved the Darkwater's Gift!");
+	quest::summonitem(119924);
+      } 
   }
   else{
     $client->Message(14,"Sorry, I can't use this.");
