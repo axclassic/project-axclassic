@@ -10,7 +10,8 @@ quest::say("Take this note to Illie Roln. She will help get you outfitted in a s
 quest::summonitem("20205");
 }
 if($text=~/small task/i){
-quest::say("The Priests of Life and Knights of Thunder often travel the roads from Qeynos carrying messages for the farmers of the Plains of Karana and the Knights of Truth in Freeport on the opposite coast of Antonica. We have recently been sending Bloodsabers to the Plains of Karana in search of a possible location for a new hidden temple should the need arise. One of the messengers of the Knights of Thunder has alerted the peasants of the plains the possibility of a Bloodsaber presence there and is using them to track our motions. Find the messenger. Lukas Hergo. and bring me his head."); }
+quest::say("The Priests of Life and Knights of Thunder often travel the roads from Qeynos carrying messages for the farmers of the Plains of Karana and the Knights of Truth in Freeport on the opposite coast of Antonica. We have recently been sending Bloodsabers to the Plains of Karana in search of a possible location for a new hidden temple should the need arise. One of the messengers of the Knights of Thunder has alerted the peasants of the plains the possibility of a Bloodsaber presence there and is using them to track our motions. Find the messenger. Lukas Hergo. and bring me his head."); 
+}
 }
 
 sub EVENT_ITEM {
@@ -26,8 +27,9 @@ if (plugin::check_handin(\%itemcount, 18853 => 1)) { #Bloodsabers Warrior Summon
   quest::faction(235,-10);
   quest::faction(257,-10);
   quest::faction(53,10);
+  quest::rebind(45,-374,315,-38);
    }
-  if (plugin::check_handin(\%itemcount, 20175 => 1)) { #Lukas Hurgo's Head
+  elsif (plugin::check_handin(\%itemcount, 20175 => 1)) { #Lukas Hurgo's Head
     quest::say("Well done $name. Now take this Rusty Scourge Warrior Broadsword to a forge and sharpen it with a sharpening stone. It may take you several attempts if you are unfamiliar with the process. Once that is done take the Tarnished Scourge Warrior Sword and a Giant King Snake Skin to Illie Roln and he will put the finishing touches on the weapon.");
   quest::summonitem(20176);
   quest::exp(100);
@@ -39,9 +41,8 @@ if (plugin::check_handin(\%itemcount, 18853 => 1)) { #Bloodsabers Warrior Summon
   quest::ding();
   }
   else {
-    #do all other handins first with plugin, then let it do disciplines
-    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-    plugin::return_items(\%itemcount);
-  }
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:qcat  ID:45081 -- Rocthar_Bekesna 

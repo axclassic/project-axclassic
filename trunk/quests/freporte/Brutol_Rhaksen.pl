@@ -76,6 +76,7 @@ sub EVENT_ITEM
     quest::faction(235, 10);  #Opal Dark Briar
     quest::faction(184, -30);  #Knights of Truth
 	quest::exp(1000);
+	quest::rebind(8,566,-136,17);
  }
  # Tarsa Yovar's Head ID-19932
  elsif (plugin::check_handin(\%itemcount, 19932 => 1))

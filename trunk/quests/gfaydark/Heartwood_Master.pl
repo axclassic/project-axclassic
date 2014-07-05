@@ -26,7 +26,7 @@ if (plugin::check_handin(\%itemcount, 18786 => 1) && ($class == 'druid') && ($ul
 	quest::faction(178, 10); #King Tearis Thex
 	quest::faction(304, 10); #Soldiers of Tunare
 	quest::exp(1000); 
-	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
+	quest::rebind(54,227,-628,76);
 }
 elsif (plugin::check_handin && ($class == 'druid') && (\%itemcount, 5013 => 1, 5016 => 1, 5019 => 1, 5022 => 1)) {
 	$client->Message(14,"You have done well, child! Take this as a blessing from Tunare for doing her will.");

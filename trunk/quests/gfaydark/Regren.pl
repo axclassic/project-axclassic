@@ -10,11 +10,12 @@ sub EVENT_ITEM {
   quest::say("Welcome. young one! I see you show interest in the Emerald Warriors.  Wear this tunic as a sign that you have begun the training of our guild. Return to me when you are in need of futher training!");  # made up text
     quest::summonitem(13533);
 	quest::ding();
-	quest::exp(100);
+	quest::exp(1000);
 	quest::faction(92,10); #emerald warriors
 	quest::faction(174,10); #kelethin merchants
 	quest::faction(212,10); #merchants of felwithe
 	quest::faction( 155, -30); #indigo brotherhood
+	quest::rebind(54,278,339,77);
 	}
 	elsif (plugin::check_handin(\%itemcount,13073=>1,13782=>1,13253=>1,13069=>1)) {
     quest::say("Fine work! You are on your way to becoming an adequate combatant.");

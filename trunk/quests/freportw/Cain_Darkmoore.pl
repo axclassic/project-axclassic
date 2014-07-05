@@ -80,11 +80,12 @@ sub EVENT_ITEM
 	quest::faction(105, -30);  #Freeport Militia
 	quest::ding();
 	quest::exp(1000);
+	quest::rebind(9,-43,-305,-11);
  	   }
-
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-  plugin::return_items(\%itemcount);
+  else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:freportw  ID:9092 -- Cain_Darkmoore
 

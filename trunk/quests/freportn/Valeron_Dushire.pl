@@ -34,7 +34,8 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 18737 => 1)) { #guild note
-    quest::summonitem(13554); #Faded Purple Tunic
+    quest::say("Welcome $name to The knights of Truth. Wear this tunic proudly and follow the ways of Mithaniel Marr!");
+	quest::summonitem(13554); #Faded Purple Tunic
 	quest::ding();
 	quest::faction(184, 10);  #Knights of Truth
     quest::faction(258, 10);  #Priests of Marr
@@ -42,6 +43,7 @@ sub EVENT_ITEM {
     quest::faction(86, -30); #Dismal Rage
 	quest::faction(105, -30); #The Freeport Militia
 	quest::exp(1000);
+	quest::rebind(8,-183,241,3);
   }
   elsif (plugin::check_handin(\%itemcount, 6701 => 1)) { #a dusty old leg bone
     quest::say("According to this crest on the tunic, you have recovered one of the bones of a lost Paladin [Hero].");
@@ -52,9 +54,10 @@ sub EVENT_ITEM {
     # Brilliant Sword of Faith
     quest::summonitem(13947);
   }
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-  plugin::return_items(\%itemcount);
+      else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 
 # EOF zone: freportn ID: 8077 NPC: Valeron_Dushire

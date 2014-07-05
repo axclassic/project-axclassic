@@ -158,7 +158,7 @@ if (plugin::check_handin(\%itemcount, 18717 => 1) && $class eq "Bard") {
     quest::ding(); quest::exp(1000);
    quest::say("Here is your custom lute, use it well $name.");
   }
-  else {
+      else {
    quest::say("I have no use for this.");
    plugin::return_items(\%itemcount);
    }
