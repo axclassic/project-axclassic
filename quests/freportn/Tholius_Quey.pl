@@ -18,13 +18,13 @@ if (plugin::check_handin(\%itemcount, 18736 => 1)){
 	quest::faction(258,10); #Priests of Marr
     quest::faction(184,10); #Knights of Truth
     quest::faction(105,-30); #The Freeport Militia
-	quest::exp(1000);	
+	quest::exp(1000);
+    quest::rebind(8,342,142,73);	
 }
-else {
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Cleric');
-  plugin::return_items(\%itemcount);
-  }
+  else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
   #END of FILE Zone:freportn  ID:8046 -- Tholius_Quey 
 

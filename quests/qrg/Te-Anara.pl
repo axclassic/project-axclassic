@@ -66,7 +66,7 @@ if (plugin::check_handin(\%itemcount, 18713 => 1) && $class eq "Druid") {
     quest::say("You were sent to me because there is a problem with getting you to the correct city with the correct guild summons.");
 	quest::say("Since you are talking to me I must assume you are a $Druid?");
 	}
-  if (plugin::check_handin(\%itemcount, 18809 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 18809 => 1)) {
     $client->Message(14,"Oh my, this must belong to Antonius Bayle! I shall see that he receives it. You have done a great service to Qeynos and Surefall Glade. I rewards you with this. May it be of good use in your future deeds.");
     quest::summonitem(15222);
     quest::faction(159, 10); #Jagged Pine Treefolk
@@ -76,6 +76,30 @@ if (plugin::check_handin(\%itemcount, 18713 => 1) && $class eq "Druid") {
     quest::faction(347, -30); #Unkempt Druids
      quest::ding();
 	 quest::exp(100);
+  }
+    elsif (plugin::check_handin(\%itemcount, 119927 => 1)) {
+    $client->Message(14,"Thank you $name, I have been waiting for this. I am sure Gharin was drunk again... I don't know why Antonious Bayle keeps using him.");
+    quest::summonitem(15222);
+    quest::faction(159, 10); #Jagged Pine Treefolk
+    quest::faction(265, 10); #Protectors of Pine
+	quest::faction(347, 10); #Unkempt Druids
+    quest::faction(267, -30); #QRG protected Animals
+    quest::faction(135, -30); #Guards of Qeynos
+    quest::ding();
+	quest::exp(2000);
+	quest::givecash(0,2,8,0);
+  }
+    elsif (plugin::check_handin(\%itemcount, 119926 => 1)) {
+    $client->Message(14,"Aye! This is good news. We shall try to supply Qeynos with a limited number of acres to begin their lumberyard. Here, my good messenger. A token to share in the good news.");
+    quest::summonitem(15222);
+    quest::faction(159, 10); #Jagged Pine Treefolk
+    quest::faction(265, 10); #Protectors of Pine
+	quest::faction(347, 10); #Unkempt Druids
+    quest::faction(267, -30); #QRG protected Animals
+    quest::faction(135, -30); #Guards of Qeynos
+    quest::ding();
+	quest::exp(2000);
+	quest::givecash(0,2,8,0);
   }
   elsif (plugin::check_handin(\%itemcount, 119845 => 1)) {
     $client->Message(14,"Well met, friend of the forest. You will find power and enlightenment among these woods. Here, wear this tunic and represent the Jaggedpine with pride. Salmekia Treherth will help train you and teach you the duties of Jaggedpine Treefolk. The forests, being the soul and heart of Norrath, depend on you and your actions from this day forth.");

@@ -60,9 +60,17 @@ sub EVENT_ITEM
    {
    
    quest::say("Take this to help you on your journeys #name.");
-   quest::ding(); quest::exp("50");
+   quest::ding(); quest::exp("1000");
    # Faded Crimson Tunic ID-13561
    quest::summonitem("13561");
+   quest::faction(86, 10);
+    quest::faction(235, 10);
+    quest::faction(184, -30);
+	quest::rebind(10,-199,-30,-94)
+   }
+     else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
    }
 }
 

@@ -37,21 +37,18 @@ if (($text=~/Bard/i) && ($ulevel == 1) && ($class eq "Bard")) {
   if (($text=~/Erollisi_Marr/i) && ($ulevel == 1) && ($class eq "Bard")) {
     quest::say("Following the way of The Erollisi Marr? A Good Choice, Followers of The Queen of Love believe that love can conquer all, while not being naive about it.");
     quest::say("On your way then, I will send you to North Freeport. Hand this note to Caskin Marsheart, He is your Guildmaster of the Bards."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18747);
 	quest::movepc(8,318,554,4);
   }
   if (($text=~/Karana/i) && ($ulevel == 1) && ($class eq "Bard")) {
     quest::say("Following the way of The Karana? A Good Choice, Followers of The Rainkeeper believe in the absolute power of storms.");
     quest::say("On your way then, I will send you to South Qeynos. Hand this note to Belious Naliedin, He is your Guildmaster of the Bards."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119843);
 	quest::movepc(1,-140,521,3);
   }
   if (($text=~/Mithaniel_Marr/i) && ($ulevel == 1) && ($class eq "Bard")) {
     quest::say("Following the way of The Mithaniel Marr? A Good Choice, Followers of The Lightbearer believe that valor is what separates civilized beings from beasts. You must have a strict moral code that prizes truth, honor and charity.");
     quest::say("On your way then, I will send you to North Freeport. Hand this note to Caskin Marsheart, He is your Guildmaster of the Bards."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18747);
 	quest::movepc(8,318,554,4);
   }
@@ -70,7 +67,6 @@ if (($text=~/Bard/i) && ($ulevel == 1) && ($class eq "Bard")) {
   if (($text=~/Rodcet_Nife/i) && ($ulevel == 1) && ($class eq "Bard")) {
     quest::say("Following the way of The Rodcet Nife? A Good Choice, Followers of The Prime Healer take oath to fight disease and death until one or the other takes them.");
     quest::say("On your way then, I will send you to South Qeynos. Hand this note to Belious Naliedin, He is your Guildmaster of the Bards."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119843);
 	quest::movepc(1,-140,521,3);
   }
@@ -92,19 +88,16 @@ if (($text=~/Bard/i) && ($ulevel == 1) && ($class eq "Bard")) {
   }
   if (($text=~/North_Freeport/i) && ($ulevel == 1) && ($class eq "Bard")) {
     quest::say("On your way then, I will send you to North Freeport. Hand this note to Caskin Marsheart, He is your Guildmaster of the Bards."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18747);
 	quest::movepc(8,566,-136,17);
   }
   if (($text=~/South_Qeynos/i) && ($ulevel == 1) && ($class eq "Bard")) {
     quest::say("On your way then, I will send you to South Qeynos. Hand this note to Belious Naliedin, He is your Guildmaster of the Bards."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119843);
 	quest::movepc(1,-140,521,3);
   }
   if (($text=~/Greater_Faydark/i) && ($ulevel == 1) && ($class eq "Bard")) {
     quest::say("On your way then, I will send you to Kelethin. Hand this note to Sylia Windlehands. She is your Guildmaster of the Bards."); 
-	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18783);
 	quest::movepc(54,248,-239,76);
 	}
@@ -150,17 +143,9 @@ if (plugin::check_handin(\%itemcount, 18717 => 1) && $class eq "Bard") {
     quest::faction(207, -30);  #Mayong Mistmoore
     quest::faction(273, -30);  #Ring of Scale
 	quest::exp(1000);
+	quest::rebind(1,-140,521,3);
   }
-   else {
-   #do all other handins first with plugin, then let it do disciplines
-   plugin::try_tome_handins(\%itemcount, $class, 'Bard');
-   quest::say("I have no use for this.");
-   plugin::return_items(\%itemcount);
-   }
-  }
- 
-  
-  if (plugin::check_handin(\%itemcount, 20374 => 1)) {
+  elsif (plugin::check_handin(\%itemcount, 20374 => 1)) {
     quest::say("A famous bard, you say? Why you must be seeking none other than the great Baenar Swiftsong! He is not here as you can see. Mayhap you seek an audience with him? He is a busy man and has not the time to speak with everyone who wishes to preoccupy his time with useless prattle! You are many and he is but one! Leave him be, I beg of you, to continue his songwriting in peace.");
      quest::ding(); quest::exp(100);
   }
@@ -174,12 +159,10 @@ if (plugin::check_handin(\%itemcount, 18717 => 1) && $class eq "Bard") {
    quest::say("Here is your custom lute, use it well $name.");
   }
   else {
-   #do all other handins first with plugin, then let it do disciplines
-   plugin::try_tome_handins(\%itemcount, $class, 'Bard');
    quest::say("I have no use for this.");
    plugin::return_items(\%itemcount);
    }
-
+}
 
 #END of FILE Zone:qeynos  ID:1133 -- Belious_Naliedin 
 

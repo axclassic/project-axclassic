@@ -60,6 +60,7 @@ sub EVENT_ITEM
    quest::faction(86, 10);  #Dismal Rage
    quest::faction(235, 10);  #Opal Dark Briar
    quest::faction(184, -30);  #Knights of Truth
+   quest::rebind(10,-252,-37,-94.2);
    #quest::givecash("0","0","0","0");
 
    ### Random Item choosing if needed
@@ -71,6 +72,10 @@ sub EVENT_ITEM
 
    # factionname Faction ID - factionid
    #quest::faction("0","1");
+   }
+     else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
    }
 }
 

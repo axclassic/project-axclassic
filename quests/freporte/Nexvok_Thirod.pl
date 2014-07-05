@@ -59,15 +59,15 @@ sub EVENT_ITEM
    quest::faction(86, 10);
    quest::faction(235, 10);
    quest::faction(184, -30);
-   quest::exp("1000");
-
+   quest::exp(1000);
+   quest::rebind(10,-250,-38,-94.2);
    # Dark Stained Robe ID-13562
-   quest::summonitem("13562");
+   quest::summonitem(13562);
    }
-
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Wizard');
-  plugin::return_items(\%itemcount);
+  else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 
 ### EQEmu Quest Template By: MWMDRAGON

@@ -53,8 +53,12 @@ quest::faction(11, 10);  #Arcane Scientists
 quest::faction(184, 10);  #Knights of Truth
 quest::faction(105, -30);  #Freeport Militia
 quest::faction(235, -30);  #Opal Dark Briar
- quest::exp("1000");
+ quest::exp(1000);
+ quest::rebind(9,-779.2,54.1,-56.1);
 }
-
+  else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:freportw  ID:9069 -- Romiak_Jusathorn

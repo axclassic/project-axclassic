@@ -13,7 +13,8 @@ if (plugin::check_handin(\%itemcount, 18735 => 1)){
     quest::faction(311,10); #Steel Warriors
 	quest::faction(86,-30); #Dismal Rage
     quest::faction(105,-30); #Freeport Militia
-	quest::exp(1000);	
+	quest::exp(1000);
+    quest::rebind(8,-127,194,17);	
 }
 }
 #END of FILE Zone:freportn  ID:8045 -- Eestyana_Naestra 

@@ -57,7 +57,8 @@ sub EVENT_ITEM {
 	  quest::faction(105, -30);
 	  quest::faction(235, -30);
       quest::exp(1000);
-      quest::summonitem(13559); #Used Violet Robe
+	  quest::summonitem(13559); #Used Violet Robe
+	  quest::rebind(9,-748.9,143.7,30.2);
     }
     else {
       quest::say("I do not need this.");

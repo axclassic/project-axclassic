@@ -18,6 +18,7 @@ sub EVENT_ITEM {
 	quest::summonitem(13506);
 	quest::ding();
 	quest::exp(1000);
+	quest::rebind(2,-667,-75,-10);
 	}
 	 if($itemcount{13911} == 1)
   {

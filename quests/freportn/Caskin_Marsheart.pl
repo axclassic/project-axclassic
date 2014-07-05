@@ -1,4 +1,9 @@
-sub EVENT_ITEM { 
+sub EVENT_SAY {
+if (($text=~/Hail/i)
+quest::say("Hail $name, I am Caskin Marsheart the owner and guildmaster of Marsheart's Chords. This is my music shop and the bard guild in Freeport.");
+  }
+  
+  sub EVENT_ITEM { 
  if(plugin::check_handin(\%itemcount, 18747 => 1)){
 	quest::say("Welcome to the guild. here's your guild tunic. Now. let's get to work.");
 	quest::summonitem(13571); #Colorfully Patched Tunic
@@ -9,11 +14,9 @@ sub EVENT_ITEM {
 	quest::faction(207, -30); #Mayong Mistmoore
 	quest::faction(273, -30); #Ring of Scale
 	quest::exp(1000);
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
- }
-   else {
-   #do all other handins first with plugin, then let it do disciplines
-   plugin::try_tome_handins(\%itemcount, $class, 'Bard');
+	qust::rebind(8,318,554,4);
+	 }
+    else {
    quest::say("I have no use for this.");
    plugin::return_items(\%itemcount);
    }

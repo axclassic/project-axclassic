@@ -25,12 +25,12 @@ $client->Message(14,"Thanks $name. Now you need to seek out Miltiades Tal-Azroth
     quest::faction( 257, 10);  #Priests of Life
     quest::faction( 21, -30);  #Bloodsabers
    	quest::exp(1000);
+	quest::rebind(1,-510,-145,6);
 	}
-else {
-#do all other handins first with plugin, then let it do disciplines
-plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-plugin::return_items(\%itemcount);
-}
+  else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:qeynos ID:1136 -- Runethar_Hamest
 
