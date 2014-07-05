@@ -27,7 +27,6 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
   if (($text=~/Bertoxxulous/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of Bertoxxulous? A Good Choice, Followers of The Plaguebringer believe the only truth on Norrath is that everything dies. They view the decay of flesh as a thing of ultimate beauty .");
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119867);
 	quest::movepc(2,287,82,-16);
   }
@@ -38,40 +37,34 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
   if (($text=~/Erollisi_Marr/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of The Erollisi Marr? A Good Choice, Followers of The Queen of Love believe that love can conquer all, while not being naive about it.");
     quest::say("On your way then, I will send you to East Freeport. Hand this note to Elisi Nasin. She is your Guildmaster of the Rogues."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18747);
 	quest::movepc(10,-864,-321,-108.2);
   }
   if (($text=~/Innoruuk/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of Innoruuk? A Good Choice, Followers of the Prince of hate believe hate is THE creative force of the universe.It isthe honest belief that if they hate strong enough they could destroy all of Norrath.");
     quest::say("On your way then, I will send you to East Freeport. Hand this note to Elisi Nasin. She is your Guildmaster of the Rogues."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18745);
 	quest::movepc(10,-864,-321,-108.2);
 	}
   if (($text=~/Karana/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of The Karana? A Good Choice, Followers of The Rainkeeper believe in the absolute power of storms.");
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119867);
 	quest::movepc(2,287,82,-16);
   }
    if (($text=~/Rodcet_Nife/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("Following the way of The Rodcet Nife? A Good Choice, Followers of The Prime Healer take oath to fight disease and death until one or the other takes them.");
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119867);
 	quest::movepc(2,287,82,-16);
   }
    if (($text=~/East_Freeport/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("On your way then, I will send you to East Freeport. Hand this note to Elisi Nasin, She is your Guildmaster of the Rogues."); 
-	quest::say("Be sure you find Soulbinder Grunson in East Freeport and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(18745);
 	quest::movepc(10,-869,-315,-108);
   }
   if (($text=~/North_Qeynos/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("On your way then, I will send you to North Qeynos. Hand this note to Hanns Krieghor, He is your Guildmaster of the Rogues."); 
-	quest::say("Be sure you find Soulbinder Novalu in South Qeynos and have yourself bound to the area before you venture out. Good luck $name.");
 	quest::summonitem(119867);
 	quest::movepc(2,287,82,-16);
   }
@@ -113,12 +106,12 @@ elsif (plugin::check_handin(\%itemcount, 119867 => 1)){
     quest::faction(135, -30);
 	quest::faction(217, -30);
 	quest::exp(1000);
+	quest::rebind(2,287,82,-16);
 	}
-  else{
-      #do all other handins first with plugin, then let it do disciplines
-      plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
-      plugin::return_items(\%itemcount);
-    }
+       else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 sub EVENT_SIGNAL {
    if ($signal == 1) {

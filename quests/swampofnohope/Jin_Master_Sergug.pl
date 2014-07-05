@@ -83,6 +83,7 @@ sub EVENT_ITEM {
     quest::summonitem(119884);
     quest::ding();
     quest::exp(1000);
+	quest::rebind(83,-1080,-1382,27);
   }
   elsif (plugin::check_handin(\%itemcount,  63089=>1, 51036=>2, 51019=>1  )) {
     quest::say("You have done me a great favor and shown mercy to own of our own.  Here is you reward, use it well and remember your lessons.");

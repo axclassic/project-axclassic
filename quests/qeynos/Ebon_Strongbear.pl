@@ -65,7 +65,7 @@ if (($text=~/Warrior/i) && ($ulevel == 1) && ($class eq "Warrior")) {
 	quest::movepc(1,-513,48,31);
   }
   if (($text=~/The_Tribunal/i) && ($ulevel == 1) && ($class eq "Warrior")) {
-    quest::say("Following the way of The Six Hammers? The Tribunal seelone thing above all else, justice.");
+    quest::say("Following the way of The Six Hammers? The Tribunal seek one thing above all else, justice.");
     quest::say("One more question for you $name, What city would you prefer to be sent to? $East_Freeport, $South_Qeynos or $Greater_Faydark.");
   }
   if (($text=~/Tunare/i) && ($ulevel == 1) && ($class eq "Warrior")) {

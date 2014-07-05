@@ -81,6 +81,7 @@ sub EVENT_ITEM {
     quest::summonitem(119884);
     quest::ding();
     quest::exp(1000);
+	quest::rebind(83,-1419,-1230,27);
   }
   elsif (plugin::check_handin(\%itemcount,  63089=>1, 51036=>2, 51019=>1  )) {
     quest::say("You have done me a great favor and ridding the world of that weakling.  Here is you reward, use it well and remember your lessons.");

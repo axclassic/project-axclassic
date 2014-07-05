@@ -73,6 +73,7 @@ sub EVENT_ITEM {
     quest::summonitem(119881);
     quest::ding();
     quest::exp(1000);
+	quest::rebind(83,-1649,-1072,27);
   }
   elsif (plugin::check_handin(\%itemcount, 55017 =>)) {
     quest::say("In the name of The Truthbringer! You have done it! Excellent work! Take this Blade of the Shin Initiate. May it aid you in your future battles!' ");
