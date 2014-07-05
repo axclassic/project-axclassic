@@ -78,6 +78,7 @@ sub EVENT_ITEM {
     quest::summonitem(119882);
     quest::ding();
     quest::exp(1000);
+	quest::rebind(83,-1005,-1513,27);
   }
   elsif(plugin::check_handin(\%itemcount,  63088=>1, 51019=>2, 51038=>1  )) { 
     quest::say("I can't Believe my eyes!. Well done $name, Here is the sword I promised you.");  

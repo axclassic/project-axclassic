@@ -86,9 +86,8 @@ if (plugin::check_handin(\%itemcount, 18709 => 1) && $class eq "Ranger") {
     quest::faction(279,-30); # Sabertooths of Blackurrow
     quest::faction(135,10); # Guards of Qeynos
   }
-   else {
-    $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
+       else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }

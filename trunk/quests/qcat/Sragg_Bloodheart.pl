@@ -17,10 +17,10 @@ if (plugin::check_handin(\%itemcount, 18706 => 1)) { #Bloodsabers Shadowknight S
   quest::faction(235,-10);
   quest::faction(257,-10);
   quest::faction(53,10);
+  quest::rebind(45,-314,414,-38
    }
-   else {
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
-  plugin::return_items(\%itemcount);
-}
+       else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }

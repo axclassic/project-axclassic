@@ -65,11 +65,12 @@ sub EVENT_ITEM
    quest::summonitem("13561");
 
    # Opal Dark Briar Faction ID - 235
-   quest::faction("235","1");
+   quest::faction("235","10");
    # Dismal Rage Faction ID - 86
-   quest::faction("86","1");
+   quest::faction("86","10");
    # Knights of Truth Faction ID - 184
-   quest::faction("184","-1");
+   quest::faction("184","-30");
+   quest::rebind(10,-303,-220,-108);
   }
 
   # Translated Parchment ID- 18961
@@ -83,9 +84,10 @@ sub EVENT_ITEM
 
   }
 
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
-  plugin::return_items(\%itemcount);
+       else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 
 ### EQEmu Quest Template By: MWMDRAGON

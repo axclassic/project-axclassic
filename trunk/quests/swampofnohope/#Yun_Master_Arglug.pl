@@ -85,6 +85,7 @@ if (plugin::check_handin(\%itemcount, 18366 => 1) && $class eq "Shaman") {
   quest::summonitem(119876);
   quest::ding();
   quest::exp(1000);
+  quest::rebind(83,-1888,-1367,27);
    }
   elsif($itemcount{51093} == 1) {
 	#text made up

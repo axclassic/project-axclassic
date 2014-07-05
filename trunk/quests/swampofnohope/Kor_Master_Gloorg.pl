@@ -84,6 +84,7 @@ elsif (plugin::check_handin(\%itemcount, 18364 => 1) && $class eq "Cleric") {
   quest::summonitem(119879);
   quest::ding();
   quest::exp(1000);
+  quest::rebind(83,-1833,-1151,27);
    }
 elsif(plugin::check_handin(\%itemcount, 51094 =>1 )) {
 quest::say("Great work.  These notes will help us in our cause.");

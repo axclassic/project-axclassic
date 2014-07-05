@@ -78,6 +78,7 @@ if (plugin::check_handin(\%itemcount, 51636 => 1) && $class eq "Rogue") {
   quest::summonitem(119880);
   quest::ding();
   quest::exp(1000);
+  quest::rebind(83,-1542,-1221,42);
   }
   elsif(plugin::check_handin(\%itemcount,  63088=>1, 51019=>2, 51038=>1  )) { 
     quest::say("I can't Believe my eyes!. Well done $name, Here is the sword I promised you.");
