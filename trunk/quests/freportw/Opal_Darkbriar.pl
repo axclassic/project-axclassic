@@ -59,7 +59,12 @@ quest::faction(11, 10);
 quest::faction(184, 10);
 quest::faction(105, -30);
 quest::faction(235, -30);
-quest::exp("1000");
+quest::exp(1000);
+quest::rebind(9,-710,138,17.7);
   }
+    else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:freportw  ID:9073 -- Opal_Darkbriar

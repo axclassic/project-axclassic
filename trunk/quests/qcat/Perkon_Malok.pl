@@ -1,6 +1,7 @@
 sub EVENT_SAY {
   if ($text=~/Hail/i) {
    quest::say("Why are you talking to me? Don't you know where you are? Don't make me release my pet upon you or shall I call the guards and let them take into the next life? Unless you have something for me I suggest you run for your life!");  
+    }
   }
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 18850 => 1) && $class eq "Magician") { 
@@ -13,12 +14,11 @@ if (plugin::check_handin(\%itemcount, 18850 => 1) && $class eq "Magician") {
    quest::faction(193,-10); #Guards of Qeynos
    quest::faction(193,-10); #Priests of Life
    quest::exp(1000);
+   quest::rebind(45,-370,-389,-38.2);
    }
- else {
-   #do all other handins first with plugin, then let it do disciplines
-   plugin::try_tome_handins(\%itemcount, $class, 'Magician');
+   else {
    quest::say("I have no use for this.");
    plugin::return_items(\%itemcount);
-   }  
-
+   }
+}
 # EOF Zone: qcat ID: 45081 NPC: Perkon Malok

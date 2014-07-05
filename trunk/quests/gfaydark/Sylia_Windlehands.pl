@@ -18,19 +18,18 @@ if (plugin::check_handin(\%itemcount, 13099  => 4)) {
 	quest::ding();
 	quest::faction(306, 10); #Songweavers
     quest::exp(1000);
-	quest::say("Be sure you find Soulbinder Oakstout in Kelethin and have yourself bound to the area before you venture out. Good luck $name.");
- } 
+	quest::rebind(54,248,-239,76);
+	 } 
  #elsif(plugin::check_handin(\%itemcount, 9894 => 2, 13099 => 3)){
 	#quest::say("Well done! Do you have the rest?");
 	#quest::say("Splendid job!  Now if you can just keep a tune. you'll be a fine bard.");
 	#quest::summonitem("13000");
 	#quest::givecash("0","0","1","0");
 	#quest::faction("0","1");
- else {
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Bard');
-  plugin::return_items(\%itemcount);
- }
+  else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:gfaydark  ID:54088 -- Sylia_Windlehands 
 

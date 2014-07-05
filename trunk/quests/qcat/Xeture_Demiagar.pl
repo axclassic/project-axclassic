@@ -45,6 +45,7 @@ quest::faction(235,-1);
 quest::faction(257,-1);
 quest::faction(53,1);
 quest::summonitem(13598);
+quest::rebind(45,-548,353,-38)
 }
 
 else {

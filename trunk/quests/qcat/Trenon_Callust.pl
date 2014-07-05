@@ -14,12 +14,11 @@ if (plugin::check_handin(\%itemcount, 18852 => 1) && $class eq "Wizard") {
    quest::faction(193,-10); 
    quest::faction(193,-10); 
    quest::exp(1000);
+   quest::rebind(45,-353,309,-38.2);
    }
- else {
-   #do all other handins first with plugin, then let it do disciplines
-   plugin::try_tome_handins(\%itemcount, $class, 'Wizard');
+   else {
    quest::say("I have no use for this.");
    plugin::return_items(\%itemcount);
-   }  
+   }
 }
 # EOF Zone: qcat ID: 45081 NPC: Trenon Callust
