@@ -23,7 +23,13 @@ sub EVENT_ITEM {
     quest::faction( 60, -10); 	#crimson hands
 	quest::faction( 79, -10); 	#Deepwater knights
     quest::faction( 143, 10);	#Heretics
-  quest::exp(1000); }
+    quest::exp(1000); 
+	quest::rebind(75,510,1140,-37
+}
+      else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:paineel  ID:75072 -- Sern_Adolia 
 

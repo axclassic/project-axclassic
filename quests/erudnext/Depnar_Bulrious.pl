@@ -10,10 +10,13 @@ sub EVENT_ITEM {
     quest::faction(145, 10); #High Council Of Erudin
 	quest::faction(247, 10); #Peace Keepers
 	quest::exp(1000);
+	quest::rebind(24,-54,-945,68);
  }
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-  plugin::return_items(\%itemcount);
+       else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
+
 #END of FILE Zone:erudnext  ID:98062 -- Depnar_Bulrious 
 
