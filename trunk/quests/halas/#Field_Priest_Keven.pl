@@ -12,8 +12,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-#do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
    if($itemcount{18847} == 1){
        quest::say("Welcome $name! The blood of our brothers the wolves run strong through your veins. You must learn to control your spiritual link with our canine brothers. Wear this tunic so that others may recognize you as a Field Priest of the Tribunal, the claws and fangs of justice! Talk to my friend Hoyce and he can get you started.");
        quest::summonitem(13574);   # Soiled Gray Tunic
