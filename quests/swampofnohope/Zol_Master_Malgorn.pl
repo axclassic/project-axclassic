@@ -1,5 +1,4 @@
 sub EVENT_SAY {
-  sub EVENT_SAY {
 my $new = quest::saylink("new", 1);
 my $before = quest::saylink("before", 1);
 my $Necromancer = quest::saylink("Necromancer", 1);

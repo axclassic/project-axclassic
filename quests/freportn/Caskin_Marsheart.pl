@@ -1,8 +1,8 @@
 sub EVENT_SAY {
-if (($text=~/Hail/i)
+if ($text=~/Hail/i) {
 quest::say("Hail $name, I am Caskin Marsheart the owner and guildmaster of Marsheart's Chords. This is my music shop and the bard guild in Freeport.");
   }
-  
+  }
   sub EVENT_ITEM { 
  if(plugin::check_handin(\%itemcount, 18747 => 1)){
 	quest::say("Welcome to the guild. here's your guild tunic. Now. let's get to work.");

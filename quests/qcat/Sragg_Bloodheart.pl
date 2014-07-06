@@ -17,7 +17,7 @@ if (plugin::check_handin(\%itemcount, 18706 => 1)) { #Bloodsabers Shadowknight S
   quest::faction(235,-10);
   quest::faction(257,-10);
   quest::faction(53,10);
-  quest::rebind(45,-314,414,-38
+  quest::rebind(45,-314,414,-38);
    }
        else {
    quest::say("I have no use for this.");

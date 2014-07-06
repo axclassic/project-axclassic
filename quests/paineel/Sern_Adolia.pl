@@ -24,7 +24,7 @@ sub EVENT_ITEM {
 	quest::faction( 79, -10); 	#Deepwater knights
     quest::faction( 143, 10);	#Heretics
     quest::exp(1000); 
-	quest::rebind(75,510,1140,-37
+	quest::rebind(75,510,1140,-37);
 }
       else {
    quest::say("I have no use for this.");
