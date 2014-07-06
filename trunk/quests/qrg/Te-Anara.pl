@@ -79,7 +79,6 @@ if (plugin::check_handin(\%itemcount, 18713 => 1) && $class eq "Druid") {
   }
     elsif (plugin::check_handin(\%itemcount, 119927 => 1)) {
     $client->Message(14,"Thank you $name, I have been waiting for this. I am sure Gharin was drunk again... I don't know why Antonious Bayle keeps using him.");
-    quest::summonitem(15222);
     quest::faction(159, 10); #Jagged Pine Treefolk
     quest::faction(265, 10); #Protectors of Pine
 	quest::faction(347, 10); #Unkempt Druids
@@ -91,7 +90,6 @@ if (plugin::check_handin(\%itemcount, 18713 => 1) && $class eq "Druid") {
   }
     elsif (plugin::check_handin(\%itemcount, 119926 => 1)) {
     $client->Message(14,"Aye! This is good news. We shall try to supply Qeynos with a limited number of acres to begin their lumberyard. Here, my good messenger. A token to share in the good news.");
-    quest::summonitem(15222);
     quest::faction(159, 10); #Jagged Pine Treefolk
     quest::faction(265, 10); #Protectors of Pine
 	quest::faction(347, 10); #Unkempt Druids
