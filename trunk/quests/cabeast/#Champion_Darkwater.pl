@@ -187,6 +187,12 @@ sub EVENT_ITEM{
     $client->Message(6,"You recieved the Moonstone of the Ice!");
     quest::summonitem(133);
   }
+ # Darkwater's Gift
+  elsif ($itemcount{119925} => 1) {
+    $client->Message(14,"Welcome $name to the Rathe Ladder! Here is your Earring.");
+    $client->Message(6,"You recieved the Darkwater's Gift!");
+    quest::summonitem(119924);
+  } 
   # Bone Barbs, Water Ring (both types),Sarnak Head,Tool Kit
   elsif (($itemcount{19037} == 1) | ($itemcount{69246} == 1) | ($itemcount{10546} == 1) | ($itemcount{12911} == 1) | ($itemcount{17057} == 1)) {
     $client->Message(14,"Well done $name! Here is your Moonstone.");
@@ -209,13 +215,7 @@ sub EVENT_ITEM{
 	$client->Message(6,"You recieved the Moonstone of the Karanas!");
 	quest::summonitem(128);
       }
-      # Darkwater's Gift
-      elsif ($itemcount{119925} == 1) {
-	$client->Message(14,"Welcome $name to the Rathe Ladder! Here is your Earring.");
-	$client->Message(6,"You recieved the Darkwater's Gift!");
-	quest::summonitem(119924);
-      } 
-  }
+   }
   else{
     $client->Message(14,"Sorry, I can't use this.");
     plugin::return_items(\%itemcount);
