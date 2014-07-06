@@ -4,6 +4,9 @@ sub EVENT_SAY
  if($text=~/Hail/i){
  quest::say("Welcome to Crow's! If you're thirsty, we have a fine selection of brews and ales.");
 }
+if($text=~/Crows/i){
+quest::say("Oh, so you know of the good stuff eh? Well I will gladly sell you my Special Brew but I don't give it away. Each bottle will cost you 5 silver.");
+ }
  }
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount, 17600 => 1)){
@@ -17,6 +20,13 @@ if(plugin::check_handin(\%itemcount, 17600 => 1)){
       quest::faction(164,10); # Kane Bayle
        quest::ding(); quest::exp(200);
       }
-plugin::return_items(\%itemcount);
+elsif($silver >= 5) {
+    quest::summonitem(13799);
+	quest::say("There ya go. Hope you enjoy it!");    
+    }
+	     else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:qeynos2  ID:2054 -- Crow.pl
