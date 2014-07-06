@@ -30,7 +30,8 @@ sub EVENT_ITEM {
     quest::faction(147, 100);    #High Guard of Erudin
     quest::faction( 143, -30);	#Heretics
     quest::ding(); 
-    quest::exp(1000);	
+    quest::exp(1000);
+quest::rebind(23,-768,536,85);	
    }
    	else {
 	quest::say("I cant use this.");

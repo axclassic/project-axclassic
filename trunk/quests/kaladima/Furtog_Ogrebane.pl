@@ -18,9 +18,7 @@ if($text=~/who is mudtoe/i){
 quest::say("The Mudtoes were a small but mighty clan of ogres. My great father [Trondle] destroyed them. I have heard disturbing rumors of one Mudtoe surviving. Would you mind [searching for the Mudtoes] or have you other duties to perform?"); }
 }
 sub EVENT_ITEM { 
-   #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
- if($itemcount{18766} == 1){
+   if($itemcount{18766} == 1){
     quest::say("Ah another recruit. Well then, take this apprentice tunic and wear it with pride. There is much work to do. return to me when you need training. Bring pride to the name of the Storm Guards");  #made up text
 	quest::summonitem(13515);
 	quest::ding();
@@ -29,11 +27,12 @@ sub EVENT_ITEM {
     quest::faction( 219, 10); 	#miners guild 249
     quest::faction( 314, 10);	#storm guard
 	quest::exp(1000);
+	quest::rebind(60,302,63,14);
  } 
-  else {
-  quest::say("I have no need of this, take it back.");
-  plugin::return_items(\%itemcount);
- }
+       else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 #END of FILE Zone:kaladima  ID:60008 -- Furtog_Ogrebane 
 

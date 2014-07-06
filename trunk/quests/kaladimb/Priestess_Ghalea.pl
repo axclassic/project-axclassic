@@ -26,6 +26,7 @@ sub EVENT_ITEM {
       quest::faction(169, 10); #Kazon Stormhammer
       quest::faction(219, 10); #Miner's guild 249
 	  quest::exp(1000); 
+	  quest::rebind(67,133,778,2);
    }
    elsif (plugin::check_handin(\%itemcount,12106=>4) && ($faction < 5)) {  # Fairy Dust -- NOT Fairy Princess Dust
       quest::say("May the mighty power of Brell saturate this soil with his divinity.  Here you are, my noble friend.  You may have a pouch of the soil of Underfoot.");

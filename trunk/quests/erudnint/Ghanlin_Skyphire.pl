@@ -14,7 +14,13 @@ sub EVENT_ITEM {
     quest::faction( 143, -10);	#Heretics
      quest::ding(); 
      quest::exp(1000);
+	 quest::rebind(23,724,888,84);
   }
+        else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
+
 
 #END of FILE Zone:erudnint  ID:24040 -- Ghanlin_Skyphire 

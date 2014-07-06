@@ -32,7 +32,9 @@ sub EVENT_ITEM {
 	quest::faction(247, 10); # Peace Keepers.
     quest::faction(145, 10); # High Council of Erudin.
     quest::faction(143, -30); # Heretics.
-	quest::exp(1000); }
+	quest::exp(1000);
+    quest::rebind(24,-80,-653,68);
+	}
 
 if (plugin::check_handin(\%itemcount, 2049 => 1)) { # rolled up strip of cloth
 quest::say("This is important news indeed. It seems there is a tribe of cat men in the Stonebrunt Mountains that wishes to form an alliance with Erudin. I must alert the High Council of this immediately, thank you for your services."); 
@@ -75,6 +77,11 @@ if (plugin::check_handin(\%itemcount, 1780 => 1, 1781 => 1, 1565 => 1)) {
   quest::faction( 145, 20);
   quest::faction( 143, -20);
 }
+      else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
+
 #END of FILE Zone:erudnext  ID:98079 -- Leraena_Shelyrak 
 
