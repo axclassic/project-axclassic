@@ -17,6 +17,7 @@ sub EVENT_ITEM {
     quest::faction(295, 10); #Shaman of War
     quest::ding(); 
     quest::exp(1000);
+	quest::rebind(49,990,636,82);
   }
   elsif (plugin::check_handin(\%itemcount, 13187 => 4)) {
     quest::say("Oh, me.. um.. Warlord VERY happy.  Very like dese.  Gimme.  Uh, why is you still here?  Take dis and gets more kills.  You learning good, come sees me. I teaches you bout stuff.  Make you [bedder shaman].  Go.  He and me watching.");
@@ -33,7 +34,6 @@ sub EVENT_ITEM {
     quest::exp(1850);
   }
   else {
-    plugin::try_tome_handins(\%itemcount, $class, 'Shaman');
     quest:say("Me not need this... Take back!");
     plugin::return_items(\%itemcount);
   }

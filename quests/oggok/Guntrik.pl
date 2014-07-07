@@ -25,6 +25,7 @@ sub EVENT_ITEM {
   quest::faction(57,101); # Craknek Warriors
   quest::faction(128,-70); # Greenblood Knights
 	quest::summonitem(13525); #Mud Stained Skin Tunic
+	quest::rebind(49,65,32,-25);
  }
    elsif (plugin::check_handin(\%itemcount, 13361 => 1)) { 
     quest::say("One less torulbe. Hunhuh!! You do good work. Keep up.");
@@ -38,8 +39,7 @@ sub EVENT_ITEM {
     }
   
  else {
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+  quest::say("Me no need dis.. Take back!");
   plugin::return_items(\%itemcount);
  }
 }

@@ -10,10 +10,10 @@ if (plugin::check_handin(\%itemcount, 18846 => 1)){
     quest::summonitem(13576);
 	quest::ding();
 	quest::exp(1000);
+	quest::rebind(49,1148,258,82);
 	}
 else {
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
+  quest::say("Me can not eat dis... Take it back!");
   plugin::return_items(\%itemcount);
 }
 }
