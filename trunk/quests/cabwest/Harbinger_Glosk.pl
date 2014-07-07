@@ -1,18 +1,23 @@
 sub EVENT_SAY { 
+my $new = quest::saylink("new", 1);
+my $dalnir = quest::saylink("dalnir", 1);
+my $Gems = quest::saylink("Gems", 1);
+my $menace = quest::saylink("menace", 1);
+
  if ($text=~/Hail/i){
 	quest::emote("halts his chanting.");
-	quest::say("You dare to interrupt me? You had best have a good reason. I care not for small talk.");
+	quest::say("You dare to interrupt me? You had best have a good reason. I care not for small talk. Are you a $new revenant?");
  }
- if ($text=~/new revenant/i) {
-	quest::say("Yes. You are. You shall do as I command. Take this. It is incomplete and must be ready for the emperor within the half season. You must find the [Four Missing Gems]. When you have them, then you will have to Quest for the [Grand Forge of Dalnir]. Within it's fire, all shall combine. Return the Sceptre to me with your Revenant Skullcap. Go. "); 
+ if ($text=~/new/i) {
+	quest::say("Yes. You are. You shall do as I command. Take this. It is incomplete and must be ready for the emperor within the half season. You must find the Four Missing $Gems. When you have them, then you will have to Quest for the Grand Forge of $Dalnir. Within it's fire, all shall combine. Return the Sceptre to me with your Revenant Skullcap. Go. "); 
         quest::summonitem(12873);
  }
- if ($text=~/forge of dalnir/i){
+ if ($text=~/dalnir/i){
 	quest::emote("scratches his chin.");
-	quest::say("I know little of it other than that it once belonged to the ancient Haggle Baron, Dalnir. From what I have read, its fires require no skill, but will melt any common forge hammer used. Dalnir was said to have called upon the ancients for a hammer which could tolerate the magickal flames.");
+	quest::say("I know little of it other than that it once belonged to the ancient Haggle Baron, Dalnir. From what I have read, its fires require no skill, but will melt any common forge hammer used. Dalnir was said to have called upon the ancients for a hammer which could tolerate the magical flames.");
 }
-if($text=~/gem of reflection/i) {
-quest::say("I have not been asked that in ages but I can recall the last person that asked me. If you are in league with that scoundrel Ixpacan, I will slay you where you stand! But if you are not, you will not mind ridding your kin of a [menace] as of late.");
+if($text=~/Gems/i) {
+quest::say("I have not been asked that in ages but I can recall the last person that asked me. If you are in league with that scoundrel Ixpacan, I will slay you where you stand! But if you are not, you will not mind ridding your kin of a $menace as of late.");
 }
 if($text=~/menace/i) {
 quest::say("It seems as though a rogue marauder in a jungle near here has attacked several of our trade suppliers. If you can bring me back his head I will gladly share the information you have asked for.");
@@ -38,7 +43,10 @@ if (plugin::check_handin(\%itemcount, 48037 => 1)) {
 quest::say("You have done well in doing what I have asked. To make a gem of reflection you will need some Mt Death mineral salts, a green goblin skin, spiroc bone dust, essence of rathe, blue slumber fungus, and a vial of pure essence. Combine all of these in this container and you will have what it is you seek.");
 quest::summonitem(48039);
 }
-plugin::return_items(\%itemcount); # return unused items
+      else {
+   quest::say("I have no use for this.");
+   plugin::return_items(\%itemcount);
+   }
 }
 
 #END of FILE Zone:cabwest  ID:2517 -- Harbinger_Glosk 
