@@ -14,7 +14,12 @@ if (plugin::check_handin(\%itemcount, 18845 => 1)){
 	quest::faction(292,10); #Shadowknights of Night Deep
 	quest::faction(106,-30); #Frogloks of Guk
 	quest::exp(1000);
+	quest::rebind(52,-446,54,54);
     }
+	 else{
+    quest:say("Me can not eat this... Take back!");
+    plugin::return_items(\%itemcount);
+ }
 }
 #END of FILE Zone:grobb  ID:6084 -- Gardunk 
 
