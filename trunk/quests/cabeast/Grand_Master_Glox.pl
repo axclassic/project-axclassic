@@ -18,10 +18,13 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 18204 => 1)){
   quest::emote('breaks his meditation and quickly grabs your forearms. You feel the raw power in his heavily callused hands. Out of nowhere, his tail sweeps forward and places a shackle upon your wrist. He then points south towards Master Bain and returns to his meditation.');
-  quest::summonitem('4190');
+  quest::summonitem(4190);
+  quest::ding();
+  quest::exp(1000);
+  quest::rebind(106,-40,420,7);
  }
  else{
-  plugin::try_tome_handins(\%itemcount, $class, 'Monk');
+  quest::say("I have no need of this.. Take it back!");
   plugin::return_items(\%itemcount);
  }
 }
