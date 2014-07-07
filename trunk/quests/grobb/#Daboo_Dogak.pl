@@ -5,7 +5,7 @@ if($text =~ /Hail/i) {
  }
 }
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount, 119870 => 1)){
+  if (plugin::check_handin(\%itemcount, 119870 => 1)){
     quest::say("Haaah!! Cower befor the mighty Daboo!! Daboo make you feared.. make you powered! Dark power flow through you! Hate and Fear in your blood!");
  	quest::say("You want to be like Daboo? Ok, take dis and wear it. come back here when you kill some stuff $name.");
 	quest::summonitem(13505);
@@ -14,11 +14,10 @@ if (plugin::check_handin(\%itemcount, 119870 => 1)){
 	quest::faction(106,-30); #Frogloks of Guk
     quest::ding();
 	quest::exp(1000);
-	quest::rebind(52,68.4,76.1,2.2)
+	quest::rebind(52,130,238,-5);
     }
-else {
-plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
-quest:say("Me can not eat this... Take back!");
-plugin::return_items(\%itemcount);
+  else {
+    quest:say("Me can not eat this... Take back!");
+    plugin::return_items(\%itemcount);
  }
 }
