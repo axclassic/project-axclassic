@@ -23,6 +23,7 @@ sub EVENT_ITEM {
 	quest::ding(); 
 	quest::exp(1000);
 	quest::say("Oh yeah, go see Bonlarg....NOW!");
+	quest::rebind(49,-33,334,15);
   } 
   if ((plugin::check_handin(\%itemcount, 13410 => 4)) && ($race eq "Ogre") && ($class eq "Shadowknight")) {
   quest::emote("gobbles down four lizard cutlets as if in one bite.");
@@ -38,8 +39,7 @@ sub EVENT_ITEM {
 	quest::say("Oh yeah, go see Bonlarg....NOW!");
   } 
  else {
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
+  quest::say("Me no need dis.. Take back!");
   plugin::return_items(\%itemcount);
  }
 }

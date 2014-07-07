@@ -9,10 +9,10 @@ if (plugin::check_handin(\%itemcount, 119869 => 1)){ #Tattered Note
     quest::summonitem(13505);
 	quest::ding();
 	quest::exp(1000);
+	quest::rebind(49,-255,292,5);
 }
 else {
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
+  quest::say("me no need this.. Take back!");
   plugin::return_items(\%itemcount);
 }
 }
