@@ -15,7 +15,7 @@ sub EVENT_ITEM {
 	quest::faction(174,10); #kelethin merchants
 	quest::faction(212,10); #merchants of felwithe
 	quest::faction( 155, -30); #indigo brotherhood
-	quest::rebind(54,278,339,77);
+	quest::rebind(54,272,349,77);
 	}
 	elsif (plugin::check_handin(\%itemcount,13073=>1,13782=>1,13253=>1,13069=>1)) {
     quest::say("Fine work! You are on your way to becoming an adequate combatant.");
@@ -29,6 +29,7 @@ sub EVENT_ITEM {
     quest::exp(500);
   }
   else {
+    quest::say("I have no need of this.. Take it back!");
     plugin::return_items(\%itemcount);
   }
 }
