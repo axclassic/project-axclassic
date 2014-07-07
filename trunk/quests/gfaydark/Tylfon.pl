@@ -116,12 +116,11 @@ if (plugin::check_handin(\%itemcount, 18784 => 1) && $class eq "Rogue") {
     quest::ding();
 	quest::faction(283, 10);  #Scouts of Tunare
     quest::exp(1000);
+	quest::rebind(51,-223,-511,161);
 	}
 	else{
 
-      #do all other handins first with plugin, then let it do disciplines
-
-      plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+      quest::say("I have no need for this. Take it back!");
 
       plugin::return_items(\%itemcount);
 
