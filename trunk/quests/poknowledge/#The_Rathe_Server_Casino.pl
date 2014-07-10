@@ -12,14 +12,14 @@ sub EVENT_SAY {
   }
 }
 
-sub EVENT_ENTER
-{
+sub EVENT_ENTER {
 	$npc->SetAppearance(1);
 	my $random_result = int(rand(100));
-	if ($random_result<=10){
+	
+if ($random_result<=10) {
 	quest::shout("Come place your bets next to the main bank, give me 1 small gold token and lets roll. Do you have what it takes? ARE you a WINNER? You KNOW you want me to roll the diece... GREAT prices PLAY now!");
 	}
-else{
+else {
 	#Do Nothing
  }
 }
@@ -27,7 +27,8 @@ else{
 
 sub EVENT_SIGNAL {
     my $random_result = int(rand(100));
-    if($random_result<=20){
+    
+if($random_result<=20){
     quest::shout("Come place your bets next to the main bank, give me 1 small gold token and lets roll. Do you have what it takes? ARE you a WINNER? You KNOW you want me to roll the diece... GREAT prices PLAY now!");
     }
 else{
