@@ -8,7 +8,7 @@
 sub EVENT_SAY { 
 
   if ($text=~/hail/i) {
-    $client->Message(14,"Hello $name , WELCOME to the Casino, in the future I will roll the diece for you so you can win grand prices. You will need to give me 1 small gold token (you can buy them from the vendor on the right) to spin the diece. I am now fully functional!");
+    $client->Message(14,"Hello $name , WELCOME to the Casino, in the future I will roll the diece for you so you can win grand prices. You will need to give me 1 small gold token (you can buy them from the vendor on the right) to spin the diece. I am not 100% fully functional!");
   }
   else {
    return 1;
