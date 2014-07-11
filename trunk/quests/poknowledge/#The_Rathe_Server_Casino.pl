@@ -43,12 +43,12 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 59970 => 1)) {
     $client->Message(14,"Thank you $class , ROLLING the Diece..."); #Small Gold Token Handin
     my $random_lot = int(rand(1000));
-     if ($random_lot < 500) {
-        $client->Message(14,"BAD luck $name , unfortunatly you didnt win anything. better luck next time...");
+     if ($random_lot < 750) {
+        $client->Message(14,"BAD luck $name , unfortunatly you rolled: $random_lot But you need to roll 750+ for a price. Better luck next time...");
         return 1;
         } 
-     elsif ($random_lot >= 500) {
-        $client->Message(14,"Good roll $name , you are a winner!");
+     elsif ($random_lot >= 750) {
+        $client->Message(14,"Good roll Your lucky number: $random_lot $name , you are a winner!");
          my $win_win = int(rand(40));
               
               #####0 tm 20 Gem win########################################################
@@ -84,7 +84,7 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
               elsif ($win_win == 37) { quest::summonitem(139); }
               elsif ($win_win == 38) { quest::summonitem(139); }
               elsif ($win_win == 39) { quest::summonitem(139); }
-              elsif ($win_win == 40) { quest::summonitem(139); }
+              elsif ($win_win == 40) { quest::summonitem(21823); } #Huge bag of platinum pieces 36 Kpp
               ####end main price item win 35 tm 40######################################
               quest::exp(1000);
               quest::ding();
