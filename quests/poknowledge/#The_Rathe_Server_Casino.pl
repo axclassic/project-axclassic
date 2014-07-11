@@ -22,7 +22,7 @@ sub EVENT_ENTER {
 	if ($random_result<=10) {
 	quest::shout("Come place your bets next to the main bank, give me 1 small gold token and lets roll. Do you have what it takes? ARE you a WINNER? You KNOW you want me to roll the diece... GREAT prices PLAY now!");
 	}
-else{
+else {
 	#Do Nothing
  }
 }
@@ -34,7 +34,7 @@ sub EVENT_SIGNAL {
 if($random_result<=20) {
     quest::shout("Come place your bets next to the main bank, give me 1 small gold token and lets roll. Do you have what it takes? ARE you a WINNER? You KNOW you want me to roll the diece... GREAT prices PLAY now!");
     }
-else{
+else {
     #say nothing
  }
 }
@@ -43,23 +43,15 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 59970 => 1)) {
     $client->Message(14,"Thank you $class , ROLLING the Diece..."); #Small Gold Token Handin
     my $random_result = int(rand(1000));
-     if ($random_result <= 950) {
+    }
+     if ($random_result < 950) {
         $client->Message(14,"BAD luck $name , unfortunatly you didnt win anything. better luck next time...");
         return 1;
         } 
-     if ($random_result > 950) {
+     elsif ($random_result >= 950) {
         $client->Message(14,"Good roll $name , you are a winner!");
          my $random_result = int(rand(30));
-
-    
-
-
-
-quest::summonitem(119544);
-    quest::exp(5000);
-    quest::ding();
-    return 1;
- }
+        }
  
  
 else {
