@@ -55,7 +55,7 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
               if ($win_win <= 20){
               my @itemgem = (10031,10032,10033,10034,10035,10036,10037,22503,10053,10049);            
               my $cashgem = $itemt[ rand @itemgem ];
-              $client->Message(14,"YOU WON! "$name! Here is your price. You won a gem!");
+              $client->Message(14,"YOU WON! $name! Here is your price. You won a gem!");
               quest::summonitem($cashgem);
               quest::exp(1000);
               quest::ding();
