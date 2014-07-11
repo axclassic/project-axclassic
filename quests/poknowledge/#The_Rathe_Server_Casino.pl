@@ -44,21 +44,20 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
     $client->Message(14,"Thank you $class , ROLLING the Diece..."); #Small Gold Token Handin
     my $random_lot = int(rand(1000));
     }
-     if ($random_lot < 950) {
+     if ($random_lot < 900) {
         $client->Message(14,"BAD luck $name , unfortunatly you didnt win anything. better luck next time...");
         return 1;
         } 
-     elsif ($random_lot >= 950) {
+     elsif ($random_lot >= 900) {
         $client->Message(14,"Good roll $name , you are a winner!");
          my $win_win = int(rand(30));
-
-           if ($win_win <= 10){
-           my @itemgem = (10031,10032,10033,10034,10035,10036,10037,22503,10053,10049);            my $cashgem = $itemt[ rand @itemgem ];
-             $client->Message(14,"YOU WON! "$name! Here is your price. You won a gem!");
-             my cashgem = $items[ rand @itemgem ];
-             quest::summonitem($cashgem);
-             return 1;
-        }
+              if ($win_win <= 10){
+              my @itemgem = (10031,10032,10033,10034,10035,10036,10037,22503,10053,10049);            my $cashgem = $itemt[ rand @itemgem ];
+              $client->Message(14,"YOU WON! "$name! Here is your price. You won a gem!");
+              my $cashgem = $items[ rand @itemgem ];
+              quest::summonitem($cashgem);
+              return 1;
+              }
 
 
   }
