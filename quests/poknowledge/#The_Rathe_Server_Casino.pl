@@ -19,7 +19,7 @@ sub EVENT_ENTER {
 	$npc->SetAppearance(1);
 	my $random_result = int(rand(100));
 
-	if ($random_result<=10) {
+	if ($random_result<=20) {
 	quest::shout("Come place your bets next to the main bank, give me 1 small gold token and lets roll. Do you have what it takes? ARE you a WINNER? You KNOW you want me to roll the diece... GREAT prices PLAY now!");
 	}
         else {
@@ -43,7 +43,6 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 59970 => 1)) {
     $client->Message(14,"Thank you $class , ROLLING the Diece..."); #Small Gold Token Handin
     my $random_lot = int(rand(1000));
-    }
      if ($random_lot < 500) {
         $client->Message(14,"BAD luck $name , unfortunatly you didnt win anything. better luck next time...");
         return 1;
