@@ -78,11 +78,19 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
               elsif ($win_win == 33) { quest::summonitem(139); }
               elsif ($win_win == 34) { quest::summonitem(139); }
               elsif ($win_win == 35) { quest::summonitem(139); }
+              ####end item win 21 tm 35#################################################
+              ####begin main price item win 35 tm 40####################################
+              elsif ($win_win == 36) { quest::summonitem(139); }
+              elsif ($win_win == 37) { quest::summonitem(139); }
+              elsif ($win_win == 38) { quest::summonitem(139); }
+              elsif ($win_win == 39) { quest::summonitem(139); }
+              elsif ($win_win == 40) { quest::summonitem(139); }
+              ####end main price item win 35 tm 40######################################
               quest::exp(1000);
               quest::ding();
               return 1;
               }
-              ####end item win 21 tm 35#################################################
+
 
 }
 
