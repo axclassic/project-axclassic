@@ -54,36 +54,38 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
               #####0 tm 20 Gem win########################################################
               if ($win_win <= 20){
               my @itemgem = (10031,10032,10033,10034,10035,10036,10037,22503,10053,10049);            
-              my $cashgem = $itemt[ rand @itemgem ];
+              my $cashgem = $itemgem[ rand @itemgem ];
               $client->Message(14,"YOU WON! $name! Here is your price. You won a gem!");
               quest::summonitem($cashgem);
               quest::exp(1000);
               quest::ding();
               return 1;
               }
+
+                        
               ####end gem win#############################################################
               ####begin item win 21 tm 35#################################################
-              elsif ($win_win == 21) { quest::summonitem(127); }
-              elsif ($win_win == 22) { quest::summonitem(128); }
-              elsif ($win_win == 23) { quest::summonitem(129); }
-              elsif ($win_win == 24) { quest::summonitem(130); }
-              elsif ($win_win == 25) { quest::summonitem(131); }
-              elsif ($win_win == 26) { quest::summonitem(132); }
-              elsif ($win_win == 27) { quest::summonitem(133); }
-              elsif ($win_win == 28) { quest::summonitem(134); }
-              elsif ($win_win == 29) { quest::summonitem(135); }
-              elsif ($win_win == 30) { quest::summonitem(136); }
-              elsif ($win_win == 31) { quest::summonitem(137); }
-              elsif ($win_win == 32) { quest::summonitem(138); }
-              elsif ($win_win == 33) { quest::summonitem(139); }
-              elsif ($win_win == 34) { quest::summonitem(139); }
-              elsif ($win_win == 35) { quest::summonitem(139); }
+              elsif ($win_win == 21) { quest::summonitem(29648); } #White Dragon Helm
+              elsif ($win_win == 22) { quest::summonitem(25201); } #Velium Encrusted Gauntlets
+              elsif ($win_win == 23) { quest::summonitem(25209); } #Helmet of Rallos Zek
+              elsif ($win_win == 24) { quest::summonitem(68698); } #Trusik Cloak of Carnage
+              elsif ($win_win == 25) { #quest::summonitem(); }
+              elsif ($win_win == 26) { #quest::summonitem(); }
+              elsif ($win_win == 27) { #quest::summonitem(); }
+              elsif ($win_win == 28) { #quest::summonitem(); }
+              elsif ($win_win == 29) { #quest::summonitem(); }
+              elsif ($win_win == 30) { #quest::summonitem(); }
+              elsif ($win_win == 31) { #quest::summonitem(); }
+              elsif ($win_win == 32) { #quest::summonitem(); }
+              elsif ($win_win == 33) { #quest::summonitem(); }
+              elsif ($win_win == 34) { #quest::summonitem(138); }
+              elsif ($win_win == 35) { #quest::summonitem(139); }
               ####end item win 21 tm 35#################################################
               ####begin main price item win 35 tm 40####################################
-              elsif ($win_win == 36) { quest::summonitem(139); }
-              elsif ($win_win == 37) { quest::summonitem(139); }
-              elsif ($win_win == 38) { quest::summonitem(139); }
-              elsif ($win_win == 39) { quest::summonitem(139); }
+              elsif ($win_win == 36) { #quest::summonitem(); }
+              elsif ($win_win == 37) { #quest::summonitem(); }
+              elsif ($win_win == 38) { #quest::summonitem(); }
+              elsif ($win_win == 39) { #quest::summonitem(); }
               elsif ($win_win == 40) { quest::summonitem(21823); } #Huge bag of platinum pieces 36 Kpp
               ####end main price item win 35 tm 40######################################
               quest::exp(1000);
