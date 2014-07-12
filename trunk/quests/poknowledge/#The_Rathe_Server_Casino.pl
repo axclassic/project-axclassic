@@ -8,13 +8,18 @@
 sub EVENT_SAY { 
 
   if ($text=~/hail/i) {
-    $client->Message(14,"Hello $name , WELCOME to the Casino, in the future I will roll the diece for you so you can win grand prices. You will need to give me 1 small gold token (you can buy them from the vendor on the right) to spin the diece. I am not 100 percent fully functional! But Jackpots are in place.");
+    $client->Message(14,"Hello $name , WELCOME to the Casino, in the future I will roll the diece for you so you can win grand prices. You will need to give me 1 small gold token (you can buy them from the vendor on the right) to spin the diece.");
   }
   else {
    return 1;
 }
 }
-
+sub EVENT_SPAWN
+{
+	$x = $npc->GetX();
+	$y = $npc->GetY();
+	quest::set_proximity($x - 90, $x + 90, $y - 90, $y + 90);
+}
 sub EVENT_ENTER {
 	$npc->SetAppearance(1);
 	my $random_result = int(rand(100));
@@ -73,13 +78,13 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
               elsif ($win_win == 36) { quest::summonitem(50187); } #Elaborate Defiant Breastplate
               elsif ($win_win == 37) { quest::summonitem(119499); } #Stone of the Dark Elf
               elsif ($win_win == 38) { quest::summonitem(119667); } #Stone of the Gnome
-              #elsif ($win_win == 39) { quest::summonitem(); }
-              #elsif ($win_win == 40) { quest::summonitem(); }
-              #elsif ($win_win == 41) { quest::summonitem(); }
+              elsif ($win_win == 39) { quest::summonitem(131); } #Greater Moonstone of Circles
+              elsif ($win_win == 40) { quest::summonitem(132); } #Greater Moonstone of Portals
+              elsif ($win_win == 41) { quest::summonitem(614); } #Fabled Lodizal Shell Shield
               #elsif ($win_win == 42) { quest::summonitem(); }
-              elsif ($win_win == 43) { #quest::summonitem(131); } #Greater Moonstone of Circles
-              elsif ($win_win == 44) { quest::summonitem(132); } #Greater Moonstone of Portals
-              elsif ($win_win == 45) { quest::summonitem(614); } #Fabled Lodizal Shell Shield
+              #elsif ($win_win == 43) { #quest::summonitem(); } 
+              #elsif ($win_win == 44) { quest::summonitem(); } 
+              #elsif ($win_win == 45) { quest::summonitem(); } 
               ####end item win 31 tm 45#################################################
               
               ####begin main price item win 45 tm 50####################################
