@@ -23,8 +23,9 @@ sub EVENT_ITEM {
        quest::faction(90, -30); # Ebon Mask
        quest::exp(1000);
     }
-	else {
+else {
+	plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
   quest::say("I have no need of this, take it back.");
   plugin::return_items(\%itemcount);
  }
-}
+ }
