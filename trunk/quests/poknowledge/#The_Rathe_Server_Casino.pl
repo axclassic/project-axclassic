@@ -8,7 +8,7 @@
 sub EVENT_SAY { 
 
   if ($text=~/hail/i) {
-    $client->Message(14,"Hello $name , WELCOME to the Casino, in the future I will roll the diece for you so you can win grand prices. You will need to give me 1 small gold token (you can buy them from the vendor on the right) to spin the diece. I am not 100 percent fully functional!");
+    $client->Message(14,"Hello $name , WELCOME to the Casino, in the future I will roll the diece for you so you can win grand prices. You will need to give me 1 small gold token (you can buy them from the vendor on the right) to spin the diece. I am not 100 percent fully functional! But Jackpots are in place.");
   }
   else {
    return 1;
@@ -53,7 +53,7 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
               
               #####0 tm 30 Gem win########################################################
               if ($win_win <= 30){
-              my @itemgem = (10031,10032,10033,10034,10035,10036,10037,22503,10053,10049);            
+              my @itemgem = (10031,10032,10033,10034,10035,10036,10037,22503,10053,10049,59970,59970,59970,59970,59970);            
               my $cashgem = $itemgem[ rand @itemgem ];
               $client->Message(14,"YOU WON! $name! Here is your price. You won a gem!");
               quest::summonitem($cashgem);
@@ -69,22 +69,28 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
               elsif ($win_win == 32) { quest::summonitem(25201); } #Velium Encrusted Gauntlets
               elsif ($win_win == 33) { quest::summonitem(25209); } #Helmet of Rallos Zek
               elsif ($win_win == 34) { quest::summonitem(68698); } #Trusik Cloak of Carnage
-              #elsif ($win_win == 35) { quest::summonitem(); }
-              #elsif ($win_win == 36) { quest::summonitem(); }
-              #elsif ($win_win == 37) { quest::summonitem(); }
-              #elsif ($win_win == 38) { quest::summonitem(); }
+              elsif ($win_win == 35) { quest::summonitem(14730); } #Circlet of Shadow
+              elsif ($win_win == 36) { quest::summonitem(50187); } #Elaborate Defiant Breastplate
+              elsif ($win_win == 37) { quest::summonitem(119499); } #Stone of the Dark Elf
+              elsif ($win_win == 38) { quest::summonitem(119667); } #Stone of the Gnome
               #elsif ($win_win == 39) { quest::summonitem(); }
               #elsif ($win_win == 40) { quest::summonitem(); }
               #elsif ($win_win == 41) { quest::summonitem(); }
               #elsif ($win_win == 42) { quest::summonitem(); }
-              #elsif ($win_win == 43) { #quest::summonitem(); }
-              #elsif ($win_win == 44) { quest::summonitem(138); }
-              #elsif ($win_win == 45) { quest::summonitem(139); }
+              elsif ($win_win == 43) { #quest::summonitem(131); } #Greater Moonstone of Circles
+              elsif ($win_win == 44) { quest::summonitem(132); } #Greater Moonstone of Portals
+              elsif ($win_win == 45) { quest::summonitem(614); } #Fabled Lodizal Shell Shield
               ####end item win 31 tm 45#################################################
               
               ####begin main price item win 45 tm 50####################################
-              #elsif ($win_win == 46) { quest::summonitem(); }
-              #elsif ($win_win == 47) { quest::summonitem(); }
+              elsif ($win_win == 46) { 
+                 #quest::summonitem(); 
+                 quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this price for myself!");
+                 }
+              elsif ($win_win == 47) { 
+                 #quest::summonitem(); 
+                 quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this price for myself!");
+                 }
               
               elsif ($win_win == 48) { 
                  quest::summonitem(7867); #Black Ornate Chain Bridle
