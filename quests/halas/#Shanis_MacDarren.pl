@@ -20,11 +20,12 @@ sub EVENT_ITEM {
 	elsif (plugin::check_handin(\%itemcount, 59892 => 1)) {
 	quest::addskill(51,1);
 	quest::ding();
-	quest::say("welldone $name! You must now practice your throwing to increase the skill.");
+	quest::say("well done $name! You must now practice your throwing to increase the skill.");
 	quest::exp(500);
 	}
-     else {
-   quest::say("I have no use for this.");
-   plugin::return_items(\%itemcount);
-   }
-}
+    else {
+	plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
+  quest::say("I have no need of this, take it back.");
+  plugin::return_items(\%itemcount);
+ }
+ }

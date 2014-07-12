@@ -11,9 +11,10 @@ sub EVENT_ITEM {
     quest::faction(275, 10);    #rogues of the white rose
     quest::exp(1000);
  }
-      else {
-   quest::say("I have no use for this.");
-   plugin::return_items(\%itemcount);
-   }
-}
+else {
+	plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+  quest::say("I have no need of this, take it back.");
+  plugin::return_items(\%itemcount);
+ }
+ }
 #END of FILE Zone:halas  ID:29069 -- Dun_McDowell 
