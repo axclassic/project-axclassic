@@ -28,11 +28,13 @@ sub EVENT_ITEM {
    quest::faction(311, 10); #steel warriors
    quest::faction(361, 10); #wolves of the north
    quest::exp(1000);
- } else {
- plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-  quest::say("I have no need of this, take it back.");
-  plugin::return_items(\%itemcount);
+ } 
+ else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no need of this, take it back.");
  }
-}
+ }
 #END of FILE Zone:halas  ID:29057 -- Kylan_O`Danos 
 

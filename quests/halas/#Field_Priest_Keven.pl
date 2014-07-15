@@ -13,19 +13,20 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
    if($itemcount{18847} == 1){
-       quest::say("Welcome $name! The blood of our brothers the wolves run strong through your veins. You must learn to control your spiritual link with our canine brothers. Wear this tunic so that others may recognize you as a Field Priest of the Tribunal, the claws and fangs of justice! Talk to my friend Hoyce and he can get you started.");
-       quest::summonitem(13574);   # Soiled Gray Tunic
-	   quest::ding();
-       quest::faction(294, 10);   # Shamen of Justice
-       quest::faction(213, 10);   # Merchants of Halas
-       quest::faction(33, -30);   # Circle Of Unseen Hands
-       quest::faction(48, -30); # Coalition of Tradefolk Underground
-       quest::faction(90, -30); # Ebon Mask
-       quest::exp(1000);
+    quest::say("Welcome $name! The blood of our brothers the wolves run strong through your veins. You must learn to control your spiritual link with our canine brothers. Wear this tunic so that others may recognize you as a Field Priest of the Tribunal, the claws and fangs of justice! Talk to my friend Hoyce and he can get you started.");
+    quest::summonitem(13574);   # Soiled Gray Tunic
+	quest::ding();
+    quest::faction(294, 10);   # Shamen of Justice
+    quest::faction(213, 10);   # Merchants of Halas
+    quest::faction(33, -30);   # Circle Of Unseen Hands
+    quest::faction(48, -30); # Coalition of Tradefolk Underground
+    quest::faction(90, -30); # Ebon Mask
+    quest::exp(1000);
     }
-else {
-	plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
-  quest::say("I have no need of this, take it back.");
-  plugin::return_items(\%itemcount);
+  else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no need of this, take it back.");
  }
  }
