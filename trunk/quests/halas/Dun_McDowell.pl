@@ -11,10 +11,11 @@ sub EVENT_ITEM {
     quest::faction(275, 10);    #rogues of the white rose
     quest::exp(1000);
  }
-else {
-	plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
-  quest::say("I have no need of this, take it back.");
-  plugin::return_items(\%itemcount);
+else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no need of this, take it back.");
  }
  }
 #END of FILE Zone:halas  ID:29069 -- Dun_McDowell 

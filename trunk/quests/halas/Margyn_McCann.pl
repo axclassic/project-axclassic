@@ -34,10 +34,12 @@ elsif(plugin::check_handin(\%itemcount, 13069 => 1))	{
     quest::faction(137, -10);  #hall of the ebon mask
     quest::exp(1000);
   }
-  else {
-  quest::say("I have no need of this, take it back.");
-  plugin::return_items(\%itemcount);
+else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Shaman');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no need of this, take it back.");
  }
-}
+ }
 #END of FILE Zone:halas  ID:29059 -- Margyn_McCann 
 
