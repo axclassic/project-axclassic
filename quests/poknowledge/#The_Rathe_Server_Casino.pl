@@ -8,7 +8,7 @@
 sub EVENT_SAY { 
 
   if ($text=~/hail/i) {
-    $client->Message(14,"Hello $name , WELCOME to the Casino, in the future I will roll the diece for you so you can win grand prices. You will need to give me 1 small gold token (you can buy them from the vendor on the right) to spin the diece.");
+    $client->Message(14,"Hello $name , WELCOME to the Casino, I will roll the dice for you so you can win grand prizes. You will need to give me 1 small gold token (you can buy them from the vendor on the right) to spin the dice.");
   }
   else {
    return 1;
@@ -25,7 +25,7 @@ sub EVENT_ENTER {
 	my $random_result = int(rand(100));
 
 	if ($random_result<=20) {
-	quest::shout("Come place your bets next to the main bank, give me 1 small gold token and lets roll. Do you have what it takes? ARE you a WINNER? You KNOW you want me to roll the diece... GREAT prices PLAY now!");
+	quest::shout("Come place your bets next to the main bank, give me 1 small gold token and lets roll. Do you have what it takes? ARE you a WINNER? You KNOW you want me to roll the dice... GREAT prizes PLAY now!");
 	}
         else {
 	#Do Nothing
@@ -37,7 +37,7 @@ sub EVENT_SIGNAL {
     my $random_result = int(rand(100));
     
        if($random_result<=20) {
-    quest::shout("Come place your bets next to the main bank, give me 1 small gold token and lets roll. Do you have what it takes? ARE you a WINNER? You KNOW you want me to roll the diece... GREAT prices PLAY now!");
+    quest::shout("Come place your bets next to the main bank, give me 1 small gold token and lets roll. Do you have what it takes? ARE you a WINNER? You KNOW you want me to roll the dice... GREAT prizes PLAY now!");
     }
        else {
     #say nothing
@@ -46,10 +46,10 @@ sub EVENT_SIGNAL {
 
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 59970 => 1)) {
-    $client->Message(14,"Thank you $class , ROLLING the Diece..."); #Small Gold Token Handin
+    $client->Message(14,"Thank you $class , ROLLING the Dice..."); #Small Gold Token Handin
     my $random_lot = int(rand(1000));
      if ($random_lot < 750) {
-        $client->Message(14,"BAD luck $name , unfortunatly you rolled: $random_lot But you need to roll 750+ for a price. Better luck next time...");
+        $client->Message(14,"BAD luck $name , unfortunatly you rolled: $random_lot But you need to roll 750+ for a prize. Better luck next time...");
         return 1;
         } 
      elsif ($random_lot >= 750) {
@@ -60,7 +60,7 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
               if ($win_win <= 30){
               my @itemgem = (10031,10032,10033,10034,10035,10036,10037,22503,10053,10049,59970,59970,59970,59970,59970);            
               my $cashgem = $itemgem[ rand @itemgem ];
-              $client->Message(14,"YOU WON! $name! Here is your price. You won a gem!");
+              $client->Message(14,"YOU WON! $name! Here is your prize. You won a gem!");
               quest::summonitem($cashgem);
               quest::exp(1000);
               quest::ding();
@@ -90,11 +90,11 @@ if (plugin::check_handin(\%itemcount, 59970 => 1)) {
               ####begin main price item win 45 tm 50####################################
               elsif ($win_win == 46) { 
                  #quest::summonitem(); 
-                 quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this price for myself!");
+                 quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this prize for myself!");
                  }
               elsif ($win_win == 47) { 
                  #quest::summonitem(); 
-                 quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this price for myself!");
+                 quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this prize for myself!");
                  }
               
               elsif ($win_win == 48) { 
