@@ -22,10 +22,12 @@ if (plugin::check_handin(\%itemcount, 1771 => 1)) {
   quest::say("Excellent! Thank you for checking on my brother, I am glad to hear that he is well.  Here is something that shall help you on your way");
   quest::summonitem(1763);
   }
-  	else {
-	quest::say("I cant use this.");
-    plugin::return_items(\%itemcount); 
-}
+else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Cleric');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no need of this, take it back.");
+ }
 }
 #END of FILE Zone:erudnext  ID:98061 -- Gans_Paust 
 
