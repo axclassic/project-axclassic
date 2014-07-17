@@ -5,21 +5,24 @@
 #Author: RealityIncarnate
 #####################################
 
-sub EVENT_SAY {   
+sub EVENT_SAY { 
+my $new = quest::saylink("new", 1); 
+my $protect = quest::saylink("protect", 1);
+my $convert = quest::saylink("convert", 1);
   if ($text=~/Hail/i) {
-    quest::say("Hail! You appear to be a [new priest]. Ah, I so enjoy the presence of youth within Deepwater Temple. I am sure Prexus is smiling upon us as we speak.");
+    quest::say("Hail! You appear to be a $new priest. Ah, I so enjoy the presence of youth within Deepwater Temple. I am sure Prexus is smiling upon us as we speak.");
   }
 
-  if ($text=~/new priest/i) {
-    quest::say("As I suspected. I shall assist you with your training and you shall assist the temple with your service. A young priest can help out by asking to [convert fishermen in Qeynos] or maybe even something truly great such as requesting to [protect the depths].");
+  if ($text=~/new/i) {
+    quest::say("As I suspected. I shall assist you with your training and you shall assist the temple with your service. A young priest can help out by asking to $convert fishermen in Qeynos or maybe even something truly great such as requesting to $protect the depths.");
   }
 
-  if($text=~/protect the depths/i) { 
+  if($text=~/protect/i) { 
     quest::say("We have heard of zombies inhabiting the depths of Erud's Crossing. Go and seek them out. Destroy them. This evil should not exist within the realm of the Ocean Lord. Take this bag. Fill it with their rotting flesh. combine it and return it to me. May Prexus guide you."); 
     quest::summonitem(17939);
   }
 
-  if ($text=~/convert fishermen in Qeynos/i) {
+  if ($text=~/convert/i) {
     quest::say("So you wish to journey to Qeynos? So be it. Go to Qeynos and find me a willing convert. Ask them if they wish the blessing of Prexus. If so, they should snap their pole in two and you will return it to me. Do this and be rewarded.");
   }
 }
