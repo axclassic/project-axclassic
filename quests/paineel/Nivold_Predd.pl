@@ -20,7 +20,7 @@ if($text=~/brain/i){
 quest::say("Deep within the area known as Infected Paw is where Ishva Mal can be found, he is well guarded and will prove to be quite a challenge for you."); 
 }
 if($text=~/toes/i){
-quest::say("Frost Giants are in the frozen tundra, they guard the entrance to the lair of Lady Vox."); 
+quest::say("Ice Giants are in the frozen tundra, they guard the entrance to the lair of Lady Vox."); 
 }
 }
 sub EVENT_ITEM {
