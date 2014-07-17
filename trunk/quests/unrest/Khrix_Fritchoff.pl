@@ -3,21 +3,18 @@ sub EVENT_SAY {
  if($text =~ /Hail/i) {
 	quest::say('Close the door and be gone fool !! You are going to give away my hiding spot!!');
  }
- if($text =~ /powder of reanimation/i) {
-	#wrong:
-	quest::say('I can help you get the powder you ask of, if you would supply me with a greater lightstone so that I may see my way out of this place.');
- }
-
 }
 
 sub EVENT_ITEM {
  if($itemcount{10400} == 1) {
 	quest::say('At last I may leave this place!! Good luck destroying my abomination, you will surely need it against my most powerful yet uncontrolable creation!');
-#Your faction standing with DarkReflection got better
-#Your faction standing with EldritchCollective got worse
-#Your faction standing with GemChoppers got worse
-	 quest::ding(); quest::exp(500);
-	quest::say('SORRY, Khrixs Abomination is not in the DB right now!');
-	#TODO: spawn the abomination.
+    quest::ding();
+	quest::faction(71,-10)
+    quest::faction(91,10)
+    quest::faction(115,10)
+    quest::faction(76,10) 
+    quest::exp(2500);	
+	quest::spawn2(63098,0,0,60.9,597.3,19.8,124.9);
+	quest::depop();
  }
 }
