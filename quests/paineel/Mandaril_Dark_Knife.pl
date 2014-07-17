@@ -8,10 +8,13 @@ sub EVENT_ITEM {
 	quest::ding();
 	quest::faction(143, 10); #Heretics
 	quest::exp(1000);
- } else {
-  #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
-  plugin::return_items(\%itemcount);
+ } 
+ 
+ else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no need of this, take it back.");
  }
 }
 #END of FILE Zone:paineel  ID:75111 -- Mandaril_Dark_Knife 
