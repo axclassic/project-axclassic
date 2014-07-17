@@ -43,11 +43,12 @@ sub EVENT_ITEM {
      quest::ding(); quest::exp(100);
     quest::givecash(0,12,4,0);
   }
-  else {
-    #Text made up
-    quest::say("You have my thanks, but I have no need for this.");
+ else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Cleric');
     plugin::return_items(\%itemcount);
-  }
+    quest::say("I have no need of this, take it back.");
+ }
 }
 
 #END of FILE Zone:erudnext  ID:24050 -- Dleria_Mausrel
