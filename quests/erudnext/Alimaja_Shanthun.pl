@@ -6,7 +6,7 @@ my $cleric = quest::saylink("cleric", 1);
 my $armor = quest::saylink("armor", 1);
 my $items = quest::saylink("items", 1);
 my $Helm = quest::saylink("Helm", 1);
-my $Bracer = quest::saylink("Bracer", 1);
+my $Bracers = quest::saylink("Bracers", 1);
 my $Armguards = quest::saylink("Armguards", 1);
 my $Boots = quest::saylink("Boots", 1);
 my $Greaves = quest::saylink("Greaves", 1);
@@ -24,7 +24,7 @@ my $final = quest::saylink("final", 1);
     quest::summonitem(61092);
   }
   if ($text=~/items/i) {
-    quest::say("The many items that you need to locate can be found out in the forest or here in town. When you are ready to attempt a specific piece please let me know what piece you wish to craft and I will give you the necessary mold along with the recipe. I have the recipe for Divine Protector $Helms, $Bracers, $Armguards, $Boots, $Greaves, $Gauntlets and $Breastplate.");
+    quest::say("The many items that you need to locate can be found out in the forest or here in town. When you are ready to attempt a specific piece please let me know what piece you wish to craft and I will give you the necessary mold along with the recipe. I have the recipe for Divine Protector $Helm, $Bracers, $Armguards, $Boots, $Greaves, $Gauntlets and $Breastplate.");
   }
   if ($text=~/Helm/i) {
     quest::say("To create your helm material you will need to combine 2 Bricks of Crude Bronze, 1 Rat Tooth, 1 Fire Beetle Eye and 1 Water Flask in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Divine Protector's Helm.");
