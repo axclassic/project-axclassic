@@ -9,7 +9,7 @@
 sub EVENT_SAY {
 my $miragul = quest::saylink("miragul", 1);
 if($text=~/Hail/i){
-$client->Message(14,"Greetings, young one! There are many tasks to be performed aside from your studies to truly harness the powers passed down to us by our ancestor $miragul\. The most basic of these tasks is the gathering of bat wings and snake fangs from the yard outside our city. I will reward you for every two bat wings and two snake fangs you bring to me.");
+$client->Message(14,"Greetings, young one! There are many tasks to be performed aside from your studies to truly harness the powers passed down to us by our ancestor $miragul. The most basic of these tasks is the gathering of bat wings and snake fangs from the yard outside our city. I will reward you for every two bat wings and two snake fangs you bring to me.");
 }
 if($text=~/miragul/i){
 $client->Message(14,"You do not know of Miragul?!! You have more to learn of the heritage of the Dark Truth than at first I thought. Miragul was the first High Man to unlock the secrets of necromancy and is the founder of our city as well as the creator of the treacherous Hole.");
@@ -39,9 +39,11 @@ sub EVENT_ITEM {
     quest::faction(112, -5);       # Gate Callers
     }
   
-  else {
-    $client->Message(14,"I have no need for this $name\. Take it back...");
+ else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Necromancer');
     plugin::return_items(\%itemcount);
-  }
+    quest::say("I have no need of this, take it back.");
+ }
 }
 
