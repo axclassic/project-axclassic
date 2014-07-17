@@ -1,6 +1,5 @@
 sub EVENT_SPAWN {
-  quest::settimer(1,1); #Pulse timer every second
-  quest::settimer(2,600); #Timer to depop after 10 minutes
+  quest::settimer("depop",300); 
   quest::shout("'Grrrraaaaarrrrrg!! The stench of fear permeates the walls of this city! I will forge one item for the faithful of our Lord Cazic-Thule!! Make haste! My time here is short!");
  }
 sub EVENT_ITEM {
@@ -17,3 +16,7 @@ sub EVENT_ITEM {
   quest::depop();
  }
  }
+ sub EVENT_TIMER {
+  quest::depop();
+  quest::stoptimer("depop");
+}
