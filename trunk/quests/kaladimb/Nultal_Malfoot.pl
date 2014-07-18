@@ -24,9 +24,11 @@ sub EVENT_ITEM {
     quest::exp(2000);
     quest::givecash(0,5,0,0); #Silver x 5
   }
-  else {
-    quest::say("There shall be no scroll until I see four skunk scent glands.");
+  else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Cleric');
     plugin::return_items(\%itemcount);
-  }
+    quest::say("I have no need of this, take it back.");
+ }
 }
 #END of FILE Zone:kaladimb  ID:67023 -- Nultal_Malfoot

@@ -35,10 +35,12 @@ sub EVENT_ITEM {
       quest::faction(169,2); #Kazon Stormhammer
       quest::faction(219,2); #Miner's guild 249
    }
-   else {
-       quest::say("I do not need this, friend.");
-       plugin::return_items(\%itemcount);
-   }   
+   else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Cleric');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no need of this, take it back.");
+ }
 }
 #END of FILE Zone:kaladimb  ID:67024 -- Priestess_Ghalea
 
