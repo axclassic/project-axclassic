@@ -5,7 +5,7 @@
 
     sub EVENT_SAY {
     if($text=~/Hail/i){
-    quest::say("How are you?  Please rest.  Have you [been wounded by the beasts] of this region.");
+    quest::say("How are you?  Please rest.  Have you been [wounded] by the beasts of this region.");
     }
     if($text=~/wounded/i){
     $npc->CastSpell(200,$userid);
