@@ -1,20 +1,21 @@
 sub EVENT_SAY { 
+my $serve = quest::saylink("serve", 1);
+my $orcs = quest::saylink("orcs", 1);
+my $Trondle = quest::saylink("Trondle", 1);
+my $Mudtoes = quest::saylink("Mudtoes", 1);
 if($text=~/Hail/i){
-quest::say("Step forward and speak up. young $name! Kaladim can always use another warrior. Are you [ready to serve Kaladim] or has a yellow streak appeared down your back?");
+quest::say("Step forward and speak up. young $name! Kaladim can always use another warrior. Are you ready to $serve Kaladim or has a yellow streak appeared down your back?");
 }
-if($text=~/i am ready to serve kaladim/i){
-quest::say("Then serve you shall. Let your training begin on the battlefields of Faydwer. Seek out and destroy all [Crushbone orcs]. Return their belts to me.  I shall also reward you for every two orc legionnaire shoulder pads returned.  A warrior great enough to slay one legionnaire shall surely have no problem with another.  Go. and let the cleansing of Faydwer begin.");
+if($text=~/serve/i){
+quest::say("Then serve you shall. Let your training begin on the battlefields of Faydwer. Seek out and destroy all Crushbone $orcs. Return their belts to me.  I shall also reward you for every two orc legionnaire shoulder pads returned.  A warrior great enough to slay one legionnaire shall surely have no problem with another.  Go. and let the cleansing of Faydwer begin.");
 }
-if($text=~/what crushbone orcs/i){
-quest::say("The army of the Crushbone orcs is deadly indeed. They are great military strategists. It was a legion of them that brought down the great [Trondle Ogrebane]. Speak with Furtog Ogrebane about the Crushbones. He has need of warriors such as you.");
+if($text=~/orcs/i){
+quest::say("The army of the Crushbone orcs is deadly indeed. They are great military strategists. It was a legion of them that brought down the great $Trondle Ogrebane. Speak with Furtog Ogrebane about the Crushbones. He has need of warriors such as you.");
 }
-if($text=~/who is crushbone orcs/i){
-quest::say("The army of the Crushbone orcs is deadly indeed. They are great military strategists. It was a legion of them that brought down the great [Trondle Ogrebane]. Speak with Furtog Ogrebane about the Crushbones. He has need of warriors such as you.");
+if($text=~/Trondle/i){
+quest::say("Trondle Ogrebane is the legendary dwarven warrior who single-handedly exterminated the ogre clan called the $Mudtoes. He was recently killed in battle. It took an entire legion of Crushbone orcs to bring him down. Furtog is still fuming about that.");
 }
-if($text=~/who is trondle ogrebane/i){
-quest::say("Trondle Ogrebane is the legendary dwarven warrior who single-handedly exterminated the ogre clan called the [Mudtoes]. He was recently killed in battle. It took an entire legion of Crushbone orcs to bring him down. Furtog is still fuming about that.");
-}
-if($text=~/who are the mudtoes/i){
+if($text=~/Mudtoes/i){
 quest::say("The Mudtoes were a small clan of ogres. They lived somewhere in the Butcherblock Mountains. They had an insatiable appetite for dwarves. They were finally destroyed by the hand of Trondle Ogrebane.");
 }
 }
@@ -65,6 +66,7 @@ sub EVENT_ITEM {
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   plugin::return_items(\%itemcount);
+  quest::say("I have no need of this, take it back.");
  }
 }
 #END of FILE Zone:kaladima  ID:60005 -- Canloe_Nusback 
