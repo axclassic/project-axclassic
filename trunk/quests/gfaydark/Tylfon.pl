@@ -9,6 +9,8 @@ my $Tunare = quest::saylink("Tunare", 1);
 my $East_Freeport = quest::saylink("East_Freeport", 1);
 my $North_Qeynos = quest::saylink("North_Qeynos", 1);
 my $Greater_Faydark = quest::saylink("Greater_Faydark", 1);
+my $dare = quest::saylink("dare", 1);
+my $Elmion = quest::saylink("Elmion", 1);
 if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
     quest::say("A Fine choice, the Way of the Rogue, but I have a few more questions for you. Which Deity did you choose? $Agnostic, $Bertoxxulous, $Bristlebane, $Erollisi_Marr, $Karana, $Rodcet_Nife, or $Tunare?");
   }
@@ -74,13 +76,13 @@ if (($text=~/Rogue/i) && ($ulevel == 1) && ($class eq "Rogue")) {
 	quest::movepc(54,-210,-501,161);
 	}
     if($text=~/hail/i){
-    quest::say("You [dare] to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away while you still can.");
+    quest::say("You $dare to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away while you still can.");
     }
     if($text=~/dare/i){
     quest::say("So. you think you have what it takes to be a Scout of Tunare? Come back with 2 [gold] and 2 [rusty dagger]s and I'll make it worth your while.");
     }
-    if($text=~/Gem of Tunare/i){
-    quest::say("The bright green Gem of Tunare was discovered by the Scouts of Tunare in a trunk of a great tree. The lightning streaked down and split the tree in two and there was the gem , Tunare's gift to the people of Kelethin. It has no magical properties , but it represents the glory of Tunare. It appears as a small Emerald Shard. Alas , now it has been stolen by Faldor Hendrys and only his brother [Elmion Hendrys] could know of his whereabouts.");
+    if($text=~/Gem/i){
+    quest::say("The bright green Gem of Tunare was discovered by the Scouts of Tunare in a trunk of a great tree. The lightning streaked down and split the tree in two and there was the gem , Tunare's gift to the people of Kelethin. It has no magical properties , but it represents the glory of Tunare. It appears as a small Emerald Shard. Alas , now it has been stolen by Faldor Hendrys and only his brother $Elmion Hendrys could know of his whereabouts.");
     }
     if($text=~/Elmion/i){
     quest::say("Seek out the Feir'Dal, Elmion. He was last heard telling the local bar patrons that he was off to do some adventuring at the lake near the Estate. What that is, I do not know.");
@@ -118,13 +120,12 @@ if (plugin::check_handin(\%itemcount, 18784 => 1) && $class eq "Rogue") {
     quest::exp(1000);
 	quest::rebind(51,-223,-511,161);
 	}
-	else{
-
-      quest::say("I have no need for this. Take it back!");
-
-      plugin::return_items(\%itemcount);
-
-    }
+	else { 
+    #do all other handins first with plugin, then let it do disciplines
+    plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no need of this, take it back.");
+ }
 }
 
 
