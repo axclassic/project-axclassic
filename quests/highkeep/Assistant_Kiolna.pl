@@ -9,14 +9,19 @@ sub EVENT_SAY
 sub EVENT_ITEM
 {
   # Check for H. K. 102 ID: 12143
-  if(plugin::check_handin(\%itemcount, 12143 => 1))
-  {
+  if(plugin::check_handin(\%itemcount, 12143 => 1))  {
     quest::say("I am sorry to see you check out. Here is all you had in your box. We hope to serve you again. Have a nice day!! Next!");
     # Summon Item A Sealed Note (Zimel's letter from Hayle) ID: 18936
     quest::summonitem(18936);
   }
-  else
-  {
+  elsif(plugin::check_handin(\%itemcount, 12193 => 1))  {
+    quest::say("'I am sorry to see you check out. Here is all you had in your box. We hope to serve you again. Have a nice day! Next!");
+	quest::ding();
+	quest::summonitem(13323);
+	quest::givecash(2,0,4,1);
+	quest::exp(2000);
+	}
+  else {
   	quest::say("I have not use for this.");
   	
   	# Return players items
