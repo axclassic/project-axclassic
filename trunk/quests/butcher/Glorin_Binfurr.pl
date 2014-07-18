@@ -31,5 +31,8 @@ elsif($text=~/ghost/i){
 $client->Message(14,"Walk into the ghost, she might help you get on your way - and don't ever forget the SirensBane ...");
 $npc->CastSpell(269,$userid);
 }
+elsif($text=~/mudtoes/i){
+quest::say("Mudtoes!! I have heard tales of that foul clan of ogres. A few of the passengers aboard the ships have claimed to have seen one of them, off and on, amongst pirates in the Ocean of Tears!");
+}
 }
 #END of FILE Zone:butcher ID:68064 -- Glorin_Binfurr
