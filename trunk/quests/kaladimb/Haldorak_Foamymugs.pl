@@ -83,9 +83,13 @@ sub EVENT_ITEM {
   #Handin: 2 Aqua Goblin Blood, 2 Green Goblin Blood
   if(plugin::check_handin(\%itemcount, 28062 => 2, 28061 => 2)){
     #Quest: Brells Blessed Platemail Help (End)
-#    quest::say("");
+    quest::say("Dese are the exact samples I needed, I am sure my alchemist will be pleased! Yer good deeds will surely not go unnoticed $name, please take this weapon as a symbol of my gratitude!");
      #Blessed Brellium Warhammer
      quest::summonitem(26075);
+	 quest::faction(44,20);
+	 quest::faction(169,20);
+	 quest::faction(219,15);
+	 quest::exp(3000);
   }
   else { 
     #do all other handins first with plugin, then let it do disciplines
@@ -94,6 +98,3 @@ sub EVENT_ITEM {
     quest::say("I have no need of this, take it back.");
  }
 }
-
-
-#Please note turning in blood vials will give warhammer but wont display handin text until it gets collected from live, when it does please remove the # infront of quest::say. 
