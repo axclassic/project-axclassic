@@ -18,7 +18,12 @@ my $Veeshan = quest::saylink("Veeshan", 1);
 my $North_Freeport = quest::saylink("North_Freeport", 1);
 my $South_Qeynos = quest::saylink("South_Qeynos", 1);
 my $Greater_Faydark = quest::saylink("Greater_Faydark", 1);
-
+my $working = quest::saylink("working", 1);
+my $building = quest::saylink("building", 1);
+my $parts = quest::saylink("parts", 1);
+my $seek = quest::saylink("seek", 1);
+my $Baenar = quest::saylink("Baenar", 1);
+my $letter = quest::saylink("letter", 1);
 if (($text=~/Bard/i) && ($ulevel == 1) && ($class eq "Bard")) {
     quest::say("A Fine choice, the Way of the Bard, but I have a few more questions for you. Which Deity did you choose? $Agnostic, $Brell_Serilis, $Bristlebane, $Erollisi_Marr, $Karana, $Mithaniel_Marr, $Prexus, $Quellious, $Rallos_Zek, $Rodcet_Nife, $Solusek_Ro, $The_Tribunal, $Tunare or $Veeshan?");
   }
@@ -102,25 +107,25 @@ if (($text=~/Bard/i) && ($ulevel == 1) && ($class eq "Bard")) {
 	quest::movepc(54,248,-239,76);
 	}
   if ($text=~/Hail/i){
-    quest::say("Welcome, my name is Belious Naliedin of the League of Antonican Bards. A few years ago, I had finally saved up the money, and I bought this place. I settled in, and have been [working] here ever since.");
+    quest::say("Welcome, my name is Belious Naliedin of the League of Antonican Bards. A few years ago, I had finally saved up the money, and I bought this place. I settled in, and have been $working here ever since.");
   }
   if ($text=~/working/i) {
-    quest::say("Ah, this is my shop. I am a musician, well known for my ability both in tuning, and [building instruments.]");
+    quest::say("Ah, this is my shop. I am a musician, well known for my ability both in tuning, and $building instruments.");
   }
   if ($text=~/building/i) {
-    quest::say("Young bards are often not the wealthiest people in Norrath, and oftentimes, they have nothing to accompany their beautiful voices when they sing. If young bards are able to locate, and bring to me the [various parts] to assemble a lute with, I provide the labor for free.");
+    quest::say("Young bards are often not the wealthiest people in Norrath, and oftentimes, they have nothing to accompany their beautiful voices when they sing. If young bards are able to locate, and bring to me the various $parts to assemble a lute with, I provide the labor for free.");
   }
   if ($text=~/parts/i) {
-    quest::say("If you are able to find an unfinished lute body, an unfinished lute neck, a box of lute strings, and a set of fine lute tuners I will be able to craft for you one of the best sounding lutes that you have ever heard in your young life, and it will be yours, free of charge. It has long been my desire to help out any young men and women who wish to explore the bardic arts.");
+    quest::say("If you are able to find an unfinished lute body, an unfinished lute neck, a box of lute strings, and a set of fine lute tuners I will be able to craft for you one of the best sounding lutes that you have ever heard in your young life, and it will be yours, free of charge. It has long been my desire to help out any young men and women who wish to explore the bardic arts. Or is there someone else you $seek?");
   }
-  if ($text=~/i seek a famous bard/i) {
-    quest::say("A famous bard, you say? Why you must be seeking none other than the great Baenar Swiftsong! He is not here as you can see. Mayhap you seek an audience with him? He is a busy man and has not the time to speak with everyone who wishes to preoccupy his time with useless prattle! You are many and he is but one! Leave him be, I beg of you, to continue his songwriting in peace.");
+  if ($text=~/seek/i) {
+    quest::say("A famous bard, you say? Why you must be seeking none other than the great $Baenar Swiftsong! He is not here as you can see. Mayhaps you seek an audience with him? He is a busy man and has not the time to speak with everyone who wishes to preoccupy his time with useless prattle! You are many and he is but one! Leave him be, I beg of you, to continue his songwriting in peace.");
   }
-  if ($text=~/i seek an audience with him/i) {
-    quest::say("Ah! In order to gain an audience with him, you must have a letter of introduction from me, otherwise he will not give you the time of day.");
+  if ($text=~/Baenar/i) {
+    quest::say("Ah! In order to gain an audience with him, you must have a $letter of introduction from me, otherwise he will not give you the time of day.");
     quest::emote("laughs briefly.");
   }
-  if ($text=~/give me a letter of introduction/i) {
+  if ($text=~/letter/i) {
     quest::emote("looks around.");
     quest::say("Well, you want a letter of introduction, eh? I think that fifty shiny platinum pieces sounds like a good introduction to me, my friend.");
   }
@@ -159,8 +164,9 @@ if (plugin::check_handin(\%itemcount, 18717 => 1) && $class eq "Bard") {
    quest::say("Here is your custom lute, use it well $name.");
   }
       else {
-   quest::say("I have no use for this.");
-   plugin::return_items(\%itemcount);
+   plugin::try_tome_handins(\%itemcount, $class, 'Bard');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
    }
 }
 
