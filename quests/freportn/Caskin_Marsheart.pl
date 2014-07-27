@@ -17,9 +17,10 @@ quest::say("Hail $name, I am Caskin Marsheart the owner and guildmaster of Marsh
 	qust::rebind(8,318,554,4);
 	 }
     else {
-   quest::say("I have no use for this.");
-   plugin::return_items(\%itemcount);
-   }
+	plugin::try_tome_handins(\%itemcount, $class, 'Bard');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+ }
 }
 #END of FILE Zone:freportn  ID:8066 -- Caskin_Marsheart 
 
