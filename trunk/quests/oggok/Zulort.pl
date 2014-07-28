@@ -34,6 +34,7 @@ sub EVENT_ITEM {
     quest::exp(1850);
   }
   else {
+    plugin::try_tome_handins(\%itemcount, $class, 'Shaman');
     quest:say("Me not need this... Take back!");
     plugin::return_items(\%itemcount);
   }

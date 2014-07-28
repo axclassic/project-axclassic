@@ -39,6 +39,7 @@ sub EVENT_ITEM {
 	quest::say("Oh yeah, go see Bonlarg....NOW!");
   } 
  else {
+  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
   quest::say("Me no need dis.. Take back!");
   plugin::return_items(\%itemcount);
  }
