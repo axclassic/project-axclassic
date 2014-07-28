@@ -2,7 +2,7 @@ sub EVENT_SAY {
 my $berserker = quest::saylink("berserker", 1);
 my $armor = quest::saylink("armor", 1);
 my $Boots = quest::saylink("Boots", 1);
-my $Bracer = quest::saylink("Bracer", 1);
+my $Bracers = quest::saylink("Bracers", 1);
 my $Coif = quest::saylink("Coif", 1);
 my $Gloves = quest::saylink("Gloves", 1);
 my $Gorget = quest::saylink("Gorget", 1);
@@ -16,7 +16,7 @@ my $ting = quest::saylink("ting", 1);
   quest::say("You weak! Me teach you to be strong! Wot you think about that? Me teach you to make starting $armor.");
  }
  if($text=~/armor/i){
-  quest::say("Dis be armor only for strong berserker ogres. Me not sure if you are good enough, but we soon find out. If you pass, you get armor. If you fail, you die. Take dis kit. You put stuff in there and combine it to make Strongbear Armor. Wot you want to craft first? I can teach how to make $Boots, $Bracers], $Coif, $Gloves, $Gorget, $Leggings, and $Tunic. Da tunic be hardest to make.");
+  quest::say("Dis be armor only for strong berserker ogres. Me not sure if you are good enough, but we soon find out. If you pass, you get armor. If you fail, you die. Take dis kit. You put stuff in there and combine it to make Strongbear Armor. Wot you want to craft first? I can teach how to make $Boots, $Bracers, $Coif, $Gloves, $Gorget, $Leggings, and $Tunic. Da tunic be hardest to make.");
   # Summon: Strongbear Chain Assembly Kit
   quest::summonitem(55398);
  }
@@ -25,7 +25,7 @@ my $ting = quest::saylink("ting", 1);
   # Summon: Strongbear Boots Mold
   quest::summonitem(55394);
  }
- if($text=~/Bracer/i){
+ if($text=~/Bracers/i){
   quest::say("To make a Strongbear Bracer, youz need to get one small piece of ore, two bone chips, and one yellow lizard scale. Mebba youz can find da animal partz out in Feerrott. For da ore, mebbe you can find somewhere here in da city. Once you have all of da itemz, combine dem in your assembly kit and take da Strongbear Bracer Material to a forge, with dis mold to make your new bracer.");
   # Summon: Strongbear Bracer Mold
   quest::summonitem(55392);
