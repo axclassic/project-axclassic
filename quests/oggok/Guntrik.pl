@@ -39,6 +39,7 @@ sub EVENT_ITEM {
     }
   
  else {
+  plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
   quest::say("Me no need dis.. Take back!");
   plugin::return_items(\%itemcount);
  }
