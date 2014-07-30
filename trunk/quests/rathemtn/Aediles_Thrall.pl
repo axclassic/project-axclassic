@@ -454,6 +454,12 @@ my @itemx = (3402,6705,7162,17381,17388,19551,19552,19553,20185,20196,20412,5598
     foreach my $vitem (@itemx) {
       $total3 += $itemcount{$vitem}
       }
+my @itema = (10038,13731,13928);  #Assorted Silver Ring IDs
+#Fifth bot items
+    my $total4 = 0;
+    foreach my $bitem (@itema) {
+      $total4 += $itemcount{$bitem}
+      }
    if($itemcount{200} == 1){
     $client->Message(14,"Nice to meets ya! Here's a little somtin' ta get ya started. It's me own lucky charm!");
     $client->Message(14,"You gots work ta do! Take yer help wid ya an go do some fightn!");
@@ -516,7 +522,7 @@ my @itemx = (3402,6705,7162,17381,17388,19551,19552,19553,20185,20196,20412,5598
     }
       }
       elsif(($ulevel >= $fifthbotlevel) && ($qglobals{bot_spawn_limit} <= 4)) {
-         if(($platinum == $fifthbotcost) && plugin::check_handin(\%itemcount, 10038 => 1)) { #silver ring
+         if(($platinum == $fifthbotcost) &&  ($total4 >= 1)) { #silver rings
             $success = $qglobals{bot_spawn_limit}+1;
             $client->Message(14,"Thanks $name!");
          }
