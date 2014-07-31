@@ -57,7 +57,10 @@ sub EVENT_ITEM {
         quest::exp(5000);
         quest::summonitem(8402); # Rain Caller
     }
-
-    plugin::return_items(\%itemcount); # Return unused items
+     else {
+   plugin::try_tome_handins(\%itemcount, $class, 'Enchanter');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }
 }
 #END of FILE Zone:felwitheb  ID:62020 -- Kinool_Goldsinger

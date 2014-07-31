@@ -11,6 +11,11 @@ my $trueshot = quest::saylink("Trueshot", 1);
 my $gather = quest::saylink("gather", 1);
 my $correct = quest::saylink("correct", 1);
 my $incarnation = quest::saylink("incarnation", 1);
+my $enchanted = quest::saylink("enchanted", 1);
+my $Caller = quest::saylink("Caller", 1);
+my $deal = quest::saylink("deal", 1);
+my $dust = quest::saylink("dust", 1);
+my $remaining = quest::saylink("remaining", 1);
   if($text=~/hail/i) {
     $client->Message(14,"Welcome to Kelethin, $name! I am Maesyn Trueshot, commander of Faydark's Champions. We are the finest marksmen in all of Norrath. With our trusty $trueshot longbows we can miss no target regardless of the distance or the conditions.");
   }
@@ -30,9 +35,9 @@ my $incarnation = quest::saylink("incarnation", 1);
     $client->Message(14,"Now that I have crafted the Treant Bow Staff, you shall need one Planing Tool, one Treant Bow Staff, one Micro Servo and one spool of Dwarven Wire. These items will be used with your Fletching Kit as all other bows. Be forewarned, only a Master Fletcher can create such a bow and even a master fails from time to time. Good Luck. If you feel you don't have the skill for this, hand me the items and I will make the combine for you.");
   }
   elsif($text=~/incarnation/i) {
-    $client->Message(14,"The Trueshot Longbow was once enchanted by the Koada'Dal enchanters.  Once it was enchanted now it is no more. I am sure if you were ask the Koada'Dal [where the enchanted bows] are you will get an answer.");
+    $client->Message(14,"The Trueshot Longbow was once enchanted by the Koada'Dal enchanters.  Once it was enchanted now it is no more. I am sure if you were ask the Koada'Dal where the $enchanted bows are you will get an answer.");
   }
-}
+ }
 
 sub EVENT_ITEM {
 my $correct = quest::saylink("correct", 1);
@@ -65,6 +70,7 @@ my $incarnation = quest::saylink("incarnation", 1);
 	quest::rebind(54,521,-450,118);
   }
        else {
+	plugin::try_tome_handins(\%itemcount, $class, 'Ranger');
    quest::say("I have no use for this.");
    plugin::return_items(\%itemcount);
    }
