@@ -82,25 +82,15 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 
- ## # Clumps of Hair ID- MISSING - Mermaid Hair ID- MISSING - Tattered Toupee ID- 12337
- ## if($itemcount{MISSING} == 2) && ($itemcount{MISSING} == 1) && ($itemcount{12337} == 1)
- ## {
- ##  quest::say("You are a good helper. Here you go. One genuine, charismatic, lady magnet, zero to hero making Mane Attraction!! Guarnteed to lower prices world wide. Guarnteed to last forever.. Err.. Well,.. It has a 1000 year warranty at least.");
-
- ##  
- ##  exp("200");
- ##  # Mane Attraction ID-12254
- ##  quest::summonitem(12254);
- ##  # Faction Coalition of Trade Folk ID-47
- ##  quest::faction("47","3");
- ##  # Faction Knights of Truth ID-184
- ##  quest::faction("184","3");
- ##  # Faction Merchants of Qeynos ID-217
- ##  quest::faction("217","3");
- ##  # Faction Merchants of Qeynos ID-217
- ##  quest::faction("217","3");
- ##  }
-
+  if($itemcount{12335} == 2) && ($itemcount{12338} == 1) && ($itemcount{12337} == 1){
+   quest::say("You are a good helper. Here you go. One genuine, charismatic, lady magnet, zero to hero making Mane Attraction!! Guarnteed to lower prices world wide. Guarnteed to last forever.. Err.. Well,.. It has a 1000 year warranty at least.");
+   quest::exp(200);
+   quest::summonitem(12254);
+   quest::faction(47,3);
+   quest::faction(184,3);
+   quest::faction(217,3);
+   quest::faction(217,3);
+   }
 }
 
 #END of FILE Zone:freportw  ID:9133 -- Ping_Fuzzlecutter

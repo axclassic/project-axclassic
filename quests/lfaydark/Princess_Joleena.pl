@@ -11,7 +11,7 @@ sub EVENT_SAY {
 }
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 12339 => 1)) {
-    quest::say("My wing!! I am so happy!! Thank you Milky. You have proved that I can trust giants once again. Please take a Pouch of Fairie Gold Dust. Its magical properties are desired by all.");
+    quest::say("My wing!! I am so happy!! Thank you $name. You have proved that I can trust giants once again. Please take a Pouch of Fairie Gold Dust. Its magical properties are desired by all.");
      quest::ding(); quest::exp(1500);
     quest::summonitem(12333);
   }
