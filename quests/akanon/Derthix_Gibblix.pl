@@ -5,18 +5,16 @@
 
 
 sub EVENT_SAY {
-
-my $serve = quest::saylink("serve as a cleric");
-my $next = quest::saylink("next task");
-
-  if($text =~ /Hail, Derthix Gibblix/i) {
+my $serve = quest::saylink("serve", 1);
+my $task = quest::saylink("task", 1);
+  if($text =~ /hail/i) {
     quest::say("Greetings Clinical. It is my duty to train young gnomes that have been called to they ways of Bertoxxulous, the Plague Bringer, and wish to $serve of the Dark Reflection. The faithful of the Plague Bringer are gifted with the sight of the Dark Reflection. The ability to recognize the importance of the powerful forces of disease and decay, and the role they play in the cycles of deterioration and renewal, death and life, destruction and creation.");
   }
-  if($text =~ /serve as a cleric/i) {
-    quest::say("We have been blessed by Bertoxxulous with the vision of the Dark Reflection. We are the prophet and protectors of all who serve the Plague Bringer and have devoted our lives to spreading disease and decay for the glory of Bertoxxulous and the balances that must be maintained. Take this parchment to Glerbella Gibblix, she will assist you with the construction of a suit of armor to aid in protecting you from the weapons of those who would see us destroyed. When you have been properly outfitted return to me for your $next.");
+  if($text =~ /serve/i) {
+    quest::say("We have been blessed by Bertoxxulous with the vision of the Dark Reflection. We are the prophet and protectors of all who serve the Plague Bringer and have devoted our lives to spreading disease and decay for the glory of Bertoxxulous and the balances that must be maintained. Take this parchment to Glerbella Gibblix, she will assist you with the construction of a suit of armor to aid in protecting you from the weapons of those who would see us destroyed. When you have been properly outfitted return to me for your $next task.");
     quest::summonitem(10989);
   }
-  if ($text=~/next task/i) {
+  if ($text=~/task/i) {
     quest::say("We faithful of Bertoxxulous are misunderstood even by the majority of the gnomes of Ak'Akanon. The Eldrich Collective and the Deep Muses would have us chased from the Mines of Malfunction and exiled from these lands. They are not gifted with the vision of the Dark Reflection and thus are blind to the necessity of our actions. In the Steamfont Mountains you will find a Cleric of the Deep Muses, Vyntok Bonkle. Vyntok has been aiding others of our enemies in their mission to eliminate the Dark Reflection from Ak'Anon. Find Vyntok and slay him. When you have accomplished this task return to me with Vyntok's Mace.");
   }
 }
@@ -26,5 +24,9 @@ sub EVENT_ITEM {
     quest::summonitem(11080);
      quest::ding(); quest::exp(1000);
   }
-  plugin::return_items(\%itemcount);
+        else {
+   plugin::try_tome_handins(\%itemcount, $class, 'cleric');
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }
 }
