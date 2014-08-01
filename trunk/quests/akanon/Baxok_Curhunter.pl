@@ -9,12 +9,9 @@
 
 
 sub EVENT_SAY {
-
-my $new = quest::saylink("new");
-my $outsider = quest::saylink("outsider");
-my $serve = quest::saylink("serve");
-
-
+my $new = quest::saylink("new", 1);
+my $outsider = quest::saylink("outsider", 1);
+my $serve = quest::saylink("serve", 1);
 
 if($text=~/Hail/i){
 quest::say("Hail, $name. I invite you to serve the mighty state of Ak'Anon by becoming a Gemchopper. We gnomes are not known for our warrior skills, but those few who endure and survive to become elite amongst our warriors soon find that the technology of the gnomes has found its way into our halls. You must be a $new or an $outsider, perhaps?");
