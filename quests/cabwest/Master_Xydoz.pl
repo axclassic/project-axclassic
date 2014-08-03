@@ -1,7 +1,6 @@
 sub EVENT_SAY {
 my $new = quest::saylink("new", 1);
 my $sarnak = quest::saylink("sarnak", 1);
-my $second = quest::saylink("second", 1);
 my $faded = quest::saylink("faded", 1);
 my $tailoring = quest::saylink("tailoring", 1);
   if ($text=~/hail/i) {
@@ -28,8 +27,9 @@ my $tailoring = quest::saylink("tailoring", 1);
 # 4 sarnak hatchling brains, returns necro skull cap 1, raises brood of kotiz and legions of cabilis
 # mended tapestry + necro skull cap1, raises brood of kotiz and legions of cabilis
 sub EVENT_ITEM {
+my $second = quest::saylink("second", 1);
   if ($itemcount{12408}==4) { 
-    quest::say("Good work, my young apprentice. You will make a fine addition to our ranks. Here is your first apprentice skullcap. Wear it as a sign of our circle. Do not lose it. Someday you shall wear a necromancer skullcap, but next shall come the [second rank skullcap]."); 
+    quest::say("Good work, my young apprentice. You will make a fine addition to our ranks. Here is your first apprentice skullcap. Wear it as a sign of our circle. Do not lose it. Someday you shall wear a necromancer skullcap, but next shall come the $second rank skullcap."); 
      quest::ding(); quest::exp(100); 
     quest::faction(193,20);
     quest::faction(24,20);
@@ -44,6 +44,7 @@ sub EVENT_ITEM {
     quest::summonitem(4261);
   }
   else {
+  plugin::try_tome_handins(\%itemcount, $class, 'Necromancer');
    quest::say("I have no use for this.");
    plugin::return_items(\%itemcount);
    }

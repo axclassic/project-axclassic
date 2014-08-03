@@ -29,6 +29,7 @@ sub EVENT_ITEM {
     quest::givecash(0,0,10,0);
   }
       else {
+   plugin::try_tome_handins(\%itemcount, $class, 'Necromancer');
    quest::say("I have no use for this.");
    plugin::return_items(\%itemcount);
    }  
