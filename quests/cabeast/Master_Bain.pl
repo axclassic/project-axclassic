@@ -27,20 +27,21 @@ sub EVENT_ITEM {
  if(plugin::check_handin(\%itemcount, 18468 => 1, 22923 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
   quest::summonitem(7881);
-   quest::ding(); quest::exp(20000);
-  
+  quest::ding();
+  quest::exp(20000);
   quest::faction(317,20);
   quest::faction(193,10);
  }
  elsif(plugin::check_handin(\%itemcount, 18467 => 1, 22922 => 1)){
   quest::emote("smiles at your dedication to Cazic Thule and hands you a small gem.");
   quest::summonitem(7881);
-   quest::ding(); quest::exp(20000);
-  
+  quest::ding();
+  quest::exp(20000);
   quest::faction(317,20);
   quest::faction(193,10);
  }
     else {
+	plugin::try_tome_handins(\%itemcount, $class, 'Monk');
     quest::say("I have no need of this.. Take it back!");
     plugin::return_items(\%itemcount);
   }
