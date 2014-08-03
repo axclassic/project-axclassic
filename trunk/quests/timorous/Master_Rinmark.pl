@@ -12,6 +12,7 @@ sub EVENT_TIMER {
   my $h = $npc->GetHeading();
   quest::emote("stares off into the horizon, lost in his thoughts.");
   quest::spawn2(96327,0,0,$x,$y,$z,$h);
+  quest::say("Good, your sense of timing is correct. Now begin! Show me that your training has not been wasted");
   quest::stoptimer("Depop2");
   quest::depop();
  }

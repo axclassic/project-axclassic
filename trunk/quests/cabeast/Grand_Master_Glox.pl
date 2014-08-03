@@ -6,8 +6,8 @@ sub EVENT_SAY {
  if($text=~/hail/i){
   quest::emote('shows no reaction to your greeting.');
   }
- elsif($text=~/trial of agility/i){
-  quest::say('I knew you were not the whiff others claimed you to be, are you sure you are [ready] to be tested in agility?');
+ elsif($text=~/agility/i){
+  quest::say('I knew you were not the whiff others claimed you to be, are you sure you are $ready to be tested in agility?');
   }
  elsif($text=~/ready/i){
   quest::say('We shall spar then, I hope you are as prepared as you think you are.');
@@ -21,6 +21,8 @@ sub EVENT_ITEM {
   quest::summonitem(4190);
   quest::ding();
   quest::exp(1000);
+  quest::faction(193,1);
+  quest::faction(317,1);
   quest::rebind(106,-40,420,7);
  }
  else{
