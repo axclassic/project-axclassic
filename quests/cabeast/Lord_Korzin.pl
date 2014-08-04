@@ -8,7 +8,7 @@ my $accept = quest::saylink("accept", 1);
   quest::say("What is it you seek? Eternal $suffering?");
   }
  elsif($text=~/suffering/i){ #Test of Suffering (Greenmist Quest 3/8)
-  quest::say("Then follow the words of Cazic-Thule and may his blessed curses rain upon your soul as they shall on all of his faithful servants. Were you [sent] to me by Gikzic?");
+  quest::say("Then follow the words of Cazic-Thule and may his blessed curses rain upon your soul as they shall on all of his faithful servants. Were you $sent to me by Gikzic?");
   }
  elsif($text=~/sent/i){ #Test of Suffering (Greenmist Quest 3/8)
   quest::say("Then you must be the squire who found the ancient tome, 'The Origins of Pain'. I can use a talented crusader such as yourself. In my dreams, Cazic-Thule has spoken to me. He instructed me to seek out the 'Skull of Torture' which was last reported to be within the torture tower of the ancient Lord of Pain, Kurn. Will you $accept the calling?");
