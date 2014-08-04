@@ -1,19 +1,27 @@
 #Lord Qyzar is for the Greenmist quest and administers the fourth, fifth, and sixth quests in the line.
 
 sub EVENT_SAY {
+my $khukri = quest::saylink("khukri", 1);
+my $diagram = quest::saylink("diagram", 1);
+my $rescue = quest::saylink("rescue", 1);
  if($text=~/hail/i){
-  quest::emote("looks upon you with a sneer. 'What is the year of our birth and who was our Father?'");
+  quest::emote('looks upon you with a sneer.');
+  quest::say("What is the year of our birth?");
   }
- elsif($text=~/the year is 371 AG and our father is Rile/i){ #Test of the Zealot (Greenmist Quest 4/8)
-  quest::say("You are a student of our ways? I would hope so. I seek a knight in search of a way to prove his allegiance and a way to earn his [zealot khukri].");
+ if($text=~/371 AG/i){ #Test of the Zealot (Greenmist Quest 4/8)
+ quest::say("Good and who is our father?");
+ }
+  if($text=~/Rile/i){
+  quest::say("You are a student of our ways? I would hope so. I seek a knight in search of a way to prove his allegiance and a way to earn his zealot $khukri.");
   }
- elsif($text=~/zealot khukri/i){ #Test of the Zealot (Greenmist Quest 4/8)
-  quest::say("In search of a zealot khukri? I have heard much of your deeds to aid us. I offer it to you in exchange for your service. I have dispatched a knight named Grizzle to seek out the Kromdul fortress called Chalp. He was to secretly map Chalp and return with a [Chalp diagram]. He has yet to return. Perhaps you can [rescue Grizzle].");
+ elsif($text=~/khukri/i){ #Test of the Zealot (Greenmist Quest 4/8)
+  quest::say("In search of a zealot khukri? I have heard much of your deeds to aid us. I offer it to you in exchange for your service. I have dispatched a knight named Grizzle to seek out the Kromdul fortress called Chalp. He was to secretly map Chalp and return with a Chalp $diagram. He has yet to return. Perhaps you can $rescue Grizzle.");
   }
- elsif($text=~/chalp diagram/i){ #Test of the Zealot (Greenmist Quest 4/8)
-  quest::emote("grimaces in pure disgust. 'I have been awaiting the Chalp diagram from a knight named Grizzle, but alas, he has proven himself weak. He has been taken prisoner by one of the Kromdul of Chalp. If only there were another knight I could send to [rescue Grizzle] and return the Chalp diagram...'");
+ elsif($text=~/diagram/i){ #Test of the Zealot (Greenmist Quest 4/8)
+  quest::emote('grimaces in pure disgust.');
+  quest::say("I have been awaiting for the Chalp diagram from a knight named Grizzle, but alas, he has proven himself weak. He has been taken prisoner by one of the Kromdul of Chalp. If only there were another knight I could send to $rescue Grizzle and return the Chalp diagram...'");
   }
- elsif($text=~/rescue grizzle/i){ #Test of the Zealot (Greenmist Quest 4/8)
+ elsif($text=~/rescue/i){ #Test of the Zealot (Greenmist Quest 4/8)
   quest::say("If you can find the knight in Chalp and have him hand you the Chalp diagram, you shall become a zealot and wield a zealot khukri. All I need are the Chalp diagram and your knight khukri.");
   }
  elsif($text=~/matter of betrayal/i){ #Test of the Betrayal (Greenmist Quest 5/8)
