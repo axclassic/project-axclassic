@@ -11,7 +11,7 @@ my $ready = quest::saylink("ready", 1);
   quest::emote("clicks his heels together at attention. 'Hail, follower of Pain. Have you been $sent to me?'");
   }
  elsif($text=~/sent/i){ #Test of Betrayal (Greenmist Quest 5/8)
-  quest::emote("spies the khukri sheath at your side. 'This cannot be. I was told a duke would attend the matter. Still, if the Lords have sent you, then you must be able to complete the task. The $traitor most certainly must be stopped from delivering the Charasis $Tome]. The $recipients appear quite formidable and I cannot handle such a deed, not single-handed.'");
+  quest::emote("spies the khukri sheath at your side. 'This cannot be. I was told a duke would attend the matter. Still, if the Lords have sent you, then you must be able to complete the task. The $traitor most certainly must be stopped from delivering the Charasis $Tome. The $recipients appear quite formidable and I cannot handle such a deed, not single-handed.'");
   }
  elsif($text=~/traitor/i){ #Test of Betrayal (Greenmist Quest 5/8)
   quest::say("I am afraid I do not know. The babble is that he is from Cabilis, but he could have been a disguised sarnak. Who knows? The tink is that at night within the Outland territory, near the old skinless outpost, they are to meet. We should depart at once. Go get outfitted and let me know when you are $ready to depart.");
