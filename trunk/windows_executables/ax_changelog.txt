@@ -1,5 +1,12 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==08/04/2014==
+ Angelox: added GM command #setkarma - also players with Karma of over 10000 will have trival(IsClassic) zone code removed.
+ 
+==07/31/2014==
+ Angelox: Finally figured out why BotDepop() wasn't working right, 
+	  lots of work on the multi-player/bot grouping, but not ready yet.   
+ 
 ==06/27/2014==
  Angelox: Paladin LoH and ShadowKnight HT made available for UF via hashtag command(case sensitive): #HarmTouch and #LayOnHands.
  Angelox: Two new bot commands added: #bot HarmTouch and #bot LayOnHands.  
