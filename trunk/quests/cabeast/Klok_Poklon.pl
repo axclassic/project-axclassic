@@ -10,7 +10,7 @@ my $Steelhead = quest::saylink("Steelhead", 1);
    if($text=~/sisters/i) {
       quest::say("Hmm, yes, the Babble around here is that one of the Kloks in the Lake Garrison has one of the Sisters of Scale Skull up for Auction. The Temple will bury him when they hear of it!");
    } 
-   if ($text=~/Sebilis/i) {
+   if ($text=~/memory/i) {
      quest::emote(' takes a sip of Legion Lager.');
      quest::say("Puhh...lease!! That's the little trophy the War Baron brought back from Sebilis. He got it stolen from him by some thieves!! I say it was the $Steelhead gang. They were waltzing in and out of Cabilis like it was a blasted public vomitorium!!");
    }
