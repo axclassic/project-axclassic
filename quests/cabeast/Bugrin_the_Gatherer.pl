@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-  quest::say("You will never take me alive!!");
+  quest::shout("You will never take me alive!!");
 }
 
 sub EVENT_DEATH {

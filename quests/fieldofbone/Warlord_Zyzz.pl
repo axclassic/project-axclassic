@@ -1,8 +1,9 @@
 sub EVENT_SAY {
+my $invaders = quest::saylink("invaders", 1);
  if($text=~/hail/i){
-  quest::say("There is little time for talk. There are plenty of [tiny invaders]. Do your part and exterminate as many as you can. All of Cabilis shall look favorably upon you in the long run.");
+  quest::say("There is little time for talk. There are plenty of tiny $invaders. Do your part and exterminate as many as you can. All of Cabilis shall look favorably upon you in the long run.");
  }
- elsif($text=~/tiny invaders/i){
+ elsif($text=~/invaders/i){
   quest::say("The small scorpions have been turning up everywhere!! One can hardly sleep when thinking of the little monsters. Please crush as many as you can for the greater good. I will even pay a bounty for every four Scorpion Pincers you return.");
  }
 }
@@ -19,6 +20,14 @@ sub EVENT_ITEM {
   quest::givecash(4,2,0,0);
    quest::ding(); quest::exp(10);  
  }
+  elsif (plugin::check_handin(\%itemcount, 18213 =>1 )) {
+    quest::say("Ah!! Good to have you on board. We lack strong young recruits such as yourself. Take this box. Your task is to seek milita skeletons near this gate. Apparently, someone or something has been raising militia corpses and they now walk the land not knowing the difference between friend or foe. They even continue using their old call, 'Halt Who goes there?'. Fill and combine within the box their charred bone shards and return the filled box to me for your geozite tool.");
+    quest::summonitem(17996);
+  }
+  elsif (plugin::check_handin(\%itemcount, 12668 =>1 )) {
+    quest::say("Great work!! You have helped keep the gate safe. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.");  #text not from live
+    quest::summonitem(12657);
+  }
  else {
   quest::say("I have no need for this item $name, you can have it back.");
   plugin::return_items(\%itemcount);
