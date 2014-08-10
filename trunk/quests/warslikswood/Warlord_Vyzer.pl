@@ -18,7 +18,7 @@ my $thieves = quest::saylink("thieves", 1);
     quest::summonitem(17995);
   }
   elsif (plugin::check_handin(\%itemcount, 12667 => 1)) {
-    quest::say("Great work!! You have saved me from disgrace. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.");
+    quest::say("Great work!! You have saved me from disgrace. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one. Be sure to visit the legion weaponsmith to learn how to use it.");
     quest::summonitem(12657);
     quest::exp(1000);
     quest::faction(30,2);
