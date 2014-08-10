@@ -31,21 +31,18 @@ my $spirits = quest::saylink("spirits", 1);
     quest::emote("removes a quiver slung across his shoulder and solemnly hands it to you without a word.");
     quest::summonitem(1680);
     quest::pause(300);
+	quest::say("Shaman? My time will soon be at hand and I fear I will never see our friends again. But the arrow must be given, our holy broken arrow. Shaman, will you bear our obligation and give them the arrow? You will know who to give it to when it is time.");
+	quest::pause(300);
     quest::emote("suddenly gasps and says, 'I have found it! I know the answer! Come with me and I will tell you. Eyes are everywhere and this knowledeg is not for everyone. Finally my centuries of waiting are over hahahaha! Follow me Shaman!");
-    quest::signalwith(98046,299,20000);
-    quest::moveto(3000,-1600,-250);
-    quest::spawn2(98058,0,0,4219.4,-1586.2,-292.7,128.1);
+    quest::signalwith(98046,299,2);
+    quest::start(65);
+    quest::spawn2(98057,0,0,4219.4,-1586.2,-292.7,128.1);
   }
 }
-
-sub EVENT_SIGNAL {
-  if ($signal == 399) {
-    quest::depop();
-  }
-  if ($signal == 500) {
-    quest::say("Shaman? My time will soon be at hand and I fear I will never see our friends again. But the arrow must be given, our holy broken arrow. Shaman, will you bear our obligation and give them the arrow? You will know who to give it to when it is time.");
-    quest::signalwith(98047,399);
-  }
+sub EVENT_WAYPOINT {
+if($wp == 1){
+quest::depop();
+ }
 }
 
 # End of File - NPCID 98050 - Abe_the_Abandoned

@@ -26,14 +26,12 @@ my $Abe = quest::saylink("Abe", 1);
   if($text=~/Abe/i) {
     quest::say("Yeah, Abe's an old guy. Well, he's kinda beyond bein' old if ye know what I mean. Not all together either. His mind floats all over like the sea around us. But he's got enough sense to wait here like he's done fer, well, fer dang near ever. If ye see him, and he ain't much fer talkin' straight, ask him about a broken arrow. Not sure what it means to him but it seems to bring him around.");
     quest::emote("sighs heavily and says, 'Looks like it's not comin'. You know, Abe told me of a great treasure a ways away from here, guarded by one o' them girls with fish tails. I always wanted to go but those two jokers, Dillon and the other young one, never had the guts. Why don't ye come with me, shaman? We'll split the treasure fifty-fifty, fair and square.");
-    quest::signalwith(98046,300,15000);
-    quest::moveto(3000,-1600,-250);
-	quest::depop()
-#    quest::spawn2(98050,0,0,4201.3,-1599.1,-292.7,70.5);
-  }
+    quest::spawn2(98050,0,0,4201.3,-1599.1,-292.7,70.5);
+	quest::start(66);
+ }
 }
-  sub EVENT_SIGNAL {
-    if ($signal == 399) {
+sub EVENT_WAYPOINT {
+    if ($wp == 1) {
       quest::depop();
     }
   }

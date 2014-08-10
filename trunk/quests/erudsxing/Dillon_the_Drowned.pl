@@ -12,7 +12,7 @@ my $enhancements = quest::saylink("enhancements", 1);
 my $disastrous = quest::saylink("disastrous", 1);
   if($text=~/hail/i) {
    quest::say("Hey Srafen, who is this weirdo talking to me? Or is it another one of those funny illusions Froham keeps talking about?");
-   #quest::signalwith(98046,199,500);
+   quest::signalwith(98046,199,2);
   }
   if($text=~/bore/i) {
    quest::say("Well ok, I was sent here a long time ago to wait. When I got here, I couldn't believe all the violence going on. Why would the spirits send me here to wait when all this fighting and commotion was going on, I wondered. There were great battles on the ocean in splendid ships made of pine and shining with magical $enhancements. While I was waiting below, blasted, bloody body parts were floating down to the bottom of the ocean all around me.");
@@ -23,8 +23,7 @@ my $disastrous = quest::saylink("disastrous", 1);
   if($text=~/disastrous/i) {
    quest::say("Well, one time, I was here waiting as usual. The fighting was particularly heavy up top, lots of banging and rumbling around. And suddenly there was a tremendous screech! I had to cover my ears, it was so loud, even down here. It felt like the water itself was being torn asunder; I could imagine what was happening above. After a few seconds of the screeching came a terrible tremor and rumbling.");
    quest::say("Great cracks opened up around me and water rushed to fill them, almost dragging me down into the gods know what. It calmed down a little while after that and there hasn't been any real fighting ever since. I suspect they're all dead now. For weeks afterwards, the water had a kind of dead taste to it. I became ill during that time.");
-   quest::signalwith(98046,298,10000);
-#   quest::spawn2(98047,0,0,4220.0,-1610.0,-287.3,0.0);
+   quest::signalwith(98046,298,5);
   }
 }
 
