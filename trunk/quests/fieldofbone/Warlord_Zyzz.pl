@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     quest::summonitem(17996);
   }
   elsif (plugin::check_handin(\%itemcount, 12668 =>1 )) {
-    quest::say("Great work!! You have helped keep the gate safe. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.");  #text not from live
+    quest::say("Very fine work, young $name. You will make a fine trooper, should you survive long enough. As promised, here is your geozite tool. Be sure to visit the legion weaponsmith to learn how to use it. Farewell."); 
     quest::summonitem(12657);
   }
  else {
