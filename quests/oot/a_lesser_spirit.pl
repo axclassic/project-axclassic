@@ -23,7 +23,7 @@ my $more = quest::saylink("more", 1);
    quest::attack($name);
   }
   if($text=~/threaten/i) {
-   quest::say("I see. It brings me sadness to see another die, but his heart was black and a great nothingness. His body will become the grass now. Thank you for what you have done, shaman... Whats? Do you not know $who I am?");
+   quest::say("I see. It brings me sadness to see another die, but his heart was black and a great nothingness. His body will become the grass now. Thank you for what you have done, shaman... What? Do you not know $who I am?");
   }
   if($text=~/who/i) {
    quest::say("What, or who, I am isn't as important as what, or who, WE are. Do you wish to know $more, shaman?");
