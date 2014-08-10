@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     quest::summonitem(17994);
   }
   if (plugin::check_handin(\%itemcount, 12661 =>1 )) {
-    quest::say("Great work!! You have kept the frogloks from returning home. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one."); #not live text
+    quest::say("Great work!! You have kept the frogloks from returning home. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.  Be sure to visit the legion weaponsmith to learn how to use it."); #not live text
     quest::summonitem(12657);
 	quest::faction( 30,2);
    quest::faction( 193,2);
