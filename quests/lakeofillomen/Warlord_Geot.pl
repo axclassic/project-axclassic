@@ -1,6 +1,6 @@
 sub EVENT_SAY {
 my $speak = quest::saylink("speak", 1);
-my $search = quest::saylink("search", 1);
+my $metal = quest::saylink("metal", 1);
   if ($text=~/hail/i) {
     quest::say("Greetings!! You look like an adventurer. I have a bit of a problem with which you might be able to help. You see, there have been reports of sarnak hatchlings near the lake. I do not know why they are here, but I do know we need them exterminated. Here is the deal.. You bash them good and return their brains to me. For every four brains, I shall reward you.");
   }
@@ -9,17 +9,17 @@ my $search = quest::saylink("search", 1);
     quest::summonitem(17044);
   }
   if ($text=~/Xyzith/i) {
-    quest::say("Warlord Xyzith was one of the Legion's most honored. He lead his troops into countless battles and never suffered a loss. He was sent out on this mission many say because his thirst for war had grown large. He vowed to bring back a metal so powerful that it would bring fear to those that laid eyes upon it.");
+    quest::say("Warlord Xyzith was one of the Legion's most honored. He lead his troops into countless battles and never suffered a loss. He was sent out on this mission many say because his thirst for war had grown large. He vowed to bring back a $metal so powerful that it would bring fear to those that laid eyes upon it.");
   }
   if ($text=~/metal/i) {
     quest::say("I wish I knew. I can't understand why he turned on us like that. I have since seen him in my dreams, or rather nightmares. He is not right and I will not believe that he is the same Xyzith I once knew.");
     quest::say("I did get a report a while back that said he was headed to the mines of Nurga, he had information that the legendary metal was being mined there.");
-	quest::say("Since you are trying to find Xyzith for War Baron Eator, I would suggest starting your $search there.");
+	quest::say("Since you are trying to find Xyzith for War Baron Eator, I would suggest starting your search there.");
   }
   if ($text=~/communicate/i) {
     quest::say("That is a good question deserving of an answer. Go seek out members of brood with necromantic origin and see if any of them know how to $speak to the dead.");
   }
-  if ($text=~/search/i) {
+  if ($text=~/medal/i) {
     quest::say("There was another report that said he had traveled to the Temple of Droga, there was one item that you did not find, it was a medal, a gift from myself to Xyzith when he bagan his travels.");
 	quest::say("Find this medal and return it to me, I would like to have it as a keepsake");
   }
