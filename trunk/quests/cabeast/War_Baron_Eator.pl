@@ -1,4 +1,8 @@
 sub EVENT_SAY {
+my $helped = quest::saylink("helped", 1);
+my $information = quest::saylink("information", 1);
+my $brethren = quest::saylink("brethren", 1);
+my $Warlord = quest::saylink("Warlord", 1);
  if($text =~ /Hail/i) {
 	quest::emote(' turns to you and snorts in anger. Some mucus lands on your cheek.');
         quest::say("Troopers! I thought I ordered you to keep all new recruits away from this chamber! Go, child. The War Baron of Cabilis has no time for games. See this intruder out!!");
@@ -19,7 +23,11 @@ sub EVENT_SAY {
    quest::say("Yes. . . yes you have. I am sorry but time has grown short in our latest attempts to locate the $Warlord I sent to gather $information."); 
 }
   if ($text=~/information/i) {
-   quest::say("You do not need to know the information he sought. All you need to know is that you must $find our brethren."); 
+   quest::say("You do not need to know the information he sought. All you need to know is that you must find our $brethren."); 
+}
+  if ($text=~/brethren/i) {
+   quest::emote(' salutes you');
+   quest::say("May you either be victorious in your efforts or die courageous in battle."); 
 }
   if ($text=~/Warlord/i) {
    quest::say("That is for you to find out for us now if you choose to. Last we heard was that he had been in contact with another of our warlords."); 
