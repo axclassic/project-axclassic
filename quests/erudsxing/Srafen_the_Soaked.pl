@@ -16,8 +16,7 @@ my $else = quest::saylink("else", 1);
   }
   if($text=~/us/i) {
    quest::say("Well, there's me, Srafen. I've been down here for, can't quite remember, a number of years, I guess. If my wife saw the condition my clothes are in, she'd whack me, I'm sure, heheh. Although I'd bet she's long since dead, probably. Then there's Dillon. He says he's been here since those people up top in Erud blew that big hole in the ground. Not sure what happened but I guess it was a long time ago. Hmmmm, who $else?");
-   quest::signalwith(98009,199);
-  }
+   }
   if($text=~/wait/i) {
    quest::say("We've been waiting quite some time, really. I have been here the least amount of time, but that doesn't help keep the boredom away, heheh. What are we waiting for, you ask? HehehHAahahah! What are we waiting for?? Heheheh, what a silly question! It's quite obvious if you take the time to think about it. Heh. Ummm.. I'm really not sure.");
   }
@@ -40,16 +39,16 @@ my $illusion = quest::saylink("illusion", 1);
    quest::doanim(12);
    quest::say("Ohhh, them! Hehehe! This is a friend of mine come to wait with us. Isn't that exciting, Dillon? And it's not just an illusion, I don't think! Say, are you an $illusion, shaman?");
   }
-  if ($signal == 298) {
-    quest::spawn2(98047,0,0,4220.0,-1610.0,-287.3,0);
+    if ($signal == 299) {
+    quest::spawn2(98057,0,0,4219.4,-1586.2,-292.7,128.1);
   }
-  if ($signal == 300) {
-    quest::spawn2(98050,0,0,4201.3,-1599.1,-292.7,70.5);
+      if ($signal ==499) {
+    quest::signalwith(98050,599,40000);
   }
-  if ($signal == 250) {
-    quest::signalwith(98050,500,1);
+        if ($signal == 699) {
+    quest::signalwith(98050,799,40000);
   }
-  if ($signal == 399) {
+   if ($signal == 399) {
     quest::depop();
   }
 }
