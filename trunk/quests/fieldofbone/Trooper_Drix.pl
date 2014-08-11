@@ -22,7 +22,7 @@ my $calling = quest::saylink("calling", 1);
     quest::say("Let me see now.");
     quest::emote("Trooper Drix uses the mixture you brought him and spreads it evenly across your document. It settles into all the wrinkles and with the speed of a Master, Trooper Drix uses the sarnak braid to seal the pieces as one.");
     quest::summonitem(48008);
-    quest::say("Take this sealed note back to whoever you need to. I dare not say what it reads out loud.");
+    quest::say("Take this Sealed Message back to whoever you need to. I dare not say what it reads out loud.");
   }
   plugin::return_items(\%itemcount);
 }
