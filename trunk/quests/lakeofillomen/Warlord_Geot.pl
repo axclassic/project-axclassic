@@ -65,7 +65,7 @@ my $communicate = quest::saylink("communicate", 1);
   elsif (plugin::check_handin(\%itemcount, 48027 =>1 )) {
     quest::say("Where did you find this?! No matter. This was the present I gave Xyzith when he first left on his final mission. Hmm, it seems as though there is a stone hidden inside of it.");
     quest::emote(' opens the medal and finds a Black Stone inside.');
-	quest::say("Take this stone and see if you can find someone who knows more about it. Perhaps a shaman would kow something about this type of stone.");
+	quest::say("Take this stone and see if you can find someone who knows more about it. Perhaps a shaman would know something about this type of stone.");
 	quest::say("I will send you Timorous Deep seek out Izatri, if anyone would know it would be her.");
 	quest::exp(2000);
     quest::summonitem(48029);
