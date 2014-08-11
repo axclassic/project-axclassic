@@ -17,6 +17,9 @@ if ($text=~/hail/i) {
  if ($text=~/champions/i) {
    quest::say("To forge a Champion mancatcher a blacksmith of great skill would need a steel rod, a forge hammer, and a forged Champion mancatcher crown. That crown is forged with a geozite tool, crown plans, a raw crown, and an opal.");
  }
+ if ($text=~/warlord/i) {
+   quest::say("To forge a Warlord Mancatcher a blacksmith of great skill would need the titanium rod, a forge hammer, and a forged Warlord mancatcher crown. The crown is forged with a geozite tool, crown plans, a raw crown, and a black pearl.");
+ }
   if ($text=~/legions/i) {
    quest::say("You must be special indeed to have gained the Baron's prize possession, the Pride of the Legion. To forge Pride of the Legion, a blacksmith of great skill would need a titanium rod, a forge hammer, and an unfinished mancatcher. The unfinished mancatcher is forged with a geozite tool, a blue diamond, Pride of the Legion Plans, and a Warlord's Mancatcher.");
  }
