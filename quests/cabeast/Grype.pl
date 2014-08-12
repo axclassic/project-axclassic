@@ -7,17 +7,20 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("I will give you the Foot if you get the stein from that Halfling rogue, all in black, from Firiona Vie.");  
   }
-if($text=~/blue talon/i)   {
+if($text=~/Talon/i)   {
     quest::emote("takes a swipe at you. 'We used to be the bruisers of the west side. We didn't take nothin' from no one!! Fist and mind was our motto. Now get lost before I introduce my fist to your face. Hmpf. Too late, I see.'");
    }
     }
 sub EVENT_ITEM {
+my $Talon = quest::saylink("Talon", 1);
   if ($itemcount{30146}==1) { 
-    quest::say("Well, as promised, here's your Foot of the candlestick."); 
-    quest::summonitem(12852);
-  }
+    quest::say("Well, as promised, here's your Foot.");
+    quest::emote(' Kicks in the rear!!');
+    quest::say("Sucker!!!");	
+    }
   if (plugin::check_handin(\%itemcount, 12609 => 4)) {
-    quest::emote("swallows the whole bottle in one gulp. 'Here, go buy yourself a brain. What?!! You expecting something? How about this.. <BUUURRRPPPP!!> Thanks for helping me get through my dry spell, croak!! Never mess with a Blue Talon!!");
+    quest::emote(' swallows the whole bottle in one gulp.');
+	quest::say("Here, go buy yourself a brain. What?!! You expecting something? How about this.. <BUUURRRPPPP!!> Thanks for helping me get through my dry spell, croak!! Never mess with a Blue $Talon!!");
     quest::givecash(1,0,0,0);
      quest::ding(); quest::exp(100);
   }
