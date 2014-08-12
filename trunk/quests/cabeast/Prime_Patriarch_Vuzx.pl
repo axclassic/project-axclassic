@@ -86,6 +86,7 @@ my $aid = quest::saylink("aid", 1);
   }
   elsif(plugin::check_handin(\%itemcount, 12409 => 1, 12431 => 1, 12428 => 1, 12727 => 1)){ #Claw of the Cub Quest (Claw of the Spiritual Elder Quest Line 1/6)
    quest::say("You have done well on your way to becoming a great patriarch. Now I must tend to other pressing issues. Take your reward and wear it proudly.");
+   quest::say("Seek out Elder Patriarch Ixthal to continue your traing.");
    quest::summonitem(48045);
    quest::ding();
    quest::exp(80000);
@@ -102,6 +103,7 @@ my $aid = quest::saylink("aid", 1);
   else {
   plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
   plugin::return_items(\%itemcount);
+  quest::say("I have no use for this.");
   }
 }
  
