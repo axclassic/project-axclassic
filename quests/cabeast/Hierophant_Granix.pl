@@ -2,11 +2,11 @@
 #Shaman Skull Quest 7
 
 sub EVENT_SAY {
-my $Visions = quest::saylink("Visions", 1);
+my $visions = quest::saylink("visions", 1);
    if($text=~/Hail/i) {
       quest::say("Leave me in peace $name, I have little desire for company now. The Faceless sends $visions to me that may hold the fate of our race in sway.");
    }
-   if($text=~/Visions/i) {
+   if($text=~/visions/i) {
       quest::say("The spirits tell me of strange happenings around the ancient city of Charasis. None of the mystics that have been sent to investigate have returned. Something is surely happening in the ancient tombs of that city. I pray to our lord for some way to calm the tortured spirits of our fallen brothers that haunt the Howling Stones.");
    }
    if($text=~/dreams/i) {
