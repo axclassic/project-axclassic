@@ -23,10 +23,10 @@ my $Tynnonium = quest::saylink("Tynnonium", 1);
   quest::say("I have been waiting for a Nihilist to return. His name was Ryx and I fear his love of ale and the high seas has kept him from his mission. All I want you to do is find him. He should be disguised as a worker and he will give you a tome to bring to me. Return it with your Dark Binder Cap. I am sure that is simple enough for one as simple as you. Be sure to give him this.");
   quest::summonitem(12848);
   }
- if(($text=~/master tynn/i) && ($Brew == 1)){
+ if($text=~/master tynn/i) {
   quest::say("Supreme Master Tynn was the only one that has even seen the weapon. I do not know its origin. I tell you though, you would need to be as powerful as he was to be able to wield the weapon. Only an Iksar of the last rung would be able to use it, come back and show me you have earned your $Tynnonium Shackle and I will discuss with you what I know.");
  }
- if(($text=~/Tynnonium/i) && ($Brew == 1)){
+ if($text=~/Tynnonium/i){
   quest::say("Veltar was one with the ways of Tynn. He did return to Cabilis, I know you have rescued him from his cell. He has traveled afar to clear his mind of his torture in the mines. He did not say where his travels would take him. You will have to find him once more and ask him about the Tynnonium Shackle he still wears.");
  }
 }
