@@ -3,6 +3,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
+my $ready = quest::saylink("ready", 1);
  if($text=~/hail/i){
   quest::emote('shows no reaction to your greeting.');
   }
