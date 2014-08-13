@@ -1,12 +1,18 @@
 sub EVENT_SAY { 
+my $protect = quest::saylink("protect", 1);
+my $armor = quest::saylink("armor", 1);
+my $chest = quest::saylink("chest", 1);
+my $hands = quest::saylink("hands", 1);
+my $legs = quest::saylink("legs", 1);
+my $head = quest::saylink("head", 1);
   if($text=~/Hail/i){
-    quest::say("Be careful around here. $name. Injured broodlings are no use to anyone. Many of these structures are yet unstable and could fall at any time. If you're a mystic, I can teach you how to [protect] yourself.");
+    quest::say("Be careful around here. $name. Injured broodlings are no use to anyone. Many of these structures are yet unstable and could fall at any time. If you're a mystic, I can teach you how to $protect yourself.");
   }
   if($text=~/protect/i) {
-    quest::say("Yes indeed. As a broodling, you will need some protection to avoid any... unfortunate accidents. Should you wish, I can fashion some [armor] for you from some basic components. Provided you risk your life gathering them for me first.");
+    quest::say("Yes indeed. As a broodling, you will need some protection to avoid any... unfortunate accidents. Should you wish, I can fashion some $armor for you from some basic components. Provided you risk your life gathering them for me first.");
   }
   if($text=~/armor/i) {
-    quest::say("Armor, indeed. I can fashion protection for your [chest], [hands], [legs], or [head].");
+    quest::say("Armor, indeed. I can fashion protection for your $chest, $hands, $legs, or $head.");
   }
   if($text=~/chest/i) {
     quest::say("To make a breastplate for you, you will have to bring me some banded mail, a star ruby, some watchman's spectacles, and some nectar of isolation. Now hurry back.");
@@ -57,8 +63,11 @@ sub EVENT_ITEM {
     quest::faction(282,10);
     quest::faction(193,5);
     quest::faction(30,5);
-    
   }
+        else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }
 }
 #END of FILE Zone:cabeast  ID:5756 -- Shezlie_Furscale 
 
