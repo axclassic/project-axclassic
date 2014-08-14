@@ -1,6 +1,7 @@
 sub EVENT_SAY {
+my $interested = quest::saylink("interested", 1);
    if($text=~/hail/i)   {
-	quest::say("Greetings $name. Lately the creatures of Lake of Ill Omen have be causing problems for us. Are you [interested] in helping me reduce the threat from this creatures?");
+	quest::say("Greetings $name. Lately the creatures of Lake of Ill Omen have be causing problems for us. Are you $interested in helping me reduce the threat from this creatures?");
    }
    if($text=~/interested/i)   {
 	quest::say("Good. Bring me a Brittle Iksar Skull, a Sabertooth Cub Canine, and a Large Scorpion Pincer. And i shall reward you with a spell.");
@@ -16,6 +17,7 @@ sub EVENT_ITEM {
   }
   else {
     plugin::return_items(\%itemcount);
+	quest::say("I have no use for this.");
   }
 }
 
