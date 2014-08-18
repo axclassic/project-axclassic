@@ -19,7 +19,7 @@ my $send = quest::saylink("send", 1);
 		}
 		if  ($text=~/send/i) {
 		quest::say("On your way then $name");
-		quest::movepc(209,237,188,-1626);
+		quest::movepc(209,214,216,-1627);
 	}
 
 {
