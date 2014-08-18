@@ -20,6 +20,6 @@ my $Torden = quest::saylink("Torden", 1);
     quest::spawn2(209110,0,0,-833.8,-1717.9,1266.2,64);
    }
 }
-
+	
 #End of File zone:bothunder ID: unassigned -- Askr the Lost
 #By Kovou
