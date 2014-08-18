@@ -17,6 +17,7 @@ my $tower = quest::saylink("tower", 1);
    }
    if($text=~/tower/i)   {
 	quest::say("Aye, we must wake the Rainkeeper. If you have the key to the tower then meet me in the tower and I shall guide your path. You must destroy the Stormlord and his minions who are keeping Karana under thier spells.");
+    quest::spawn2(209110,0,0,-1702,-777,1266);
    }
 }
 
