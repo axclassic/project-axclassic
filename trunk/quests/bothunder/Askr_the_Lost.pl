@@ -17,7 +17,7 @@ my $Torden = quest::saylink("Torden", 1);
    }
    if($text=~/Torden/i)   {
 	quest::say("Aye, we must wake the Rainkeeper. If you have the key to the tower then meet me in the tower and I shall guide your path. You must destroy the Stormlord and his minions who are keeping Karana under thier spells.");
-    quest::spawn2(209110,0,0,-833.8,-1717.9,1266.2);
+    quest::spawn2(209110,0,0,-833.8,-1717.9,1266.2,64);
    }
 }
 
