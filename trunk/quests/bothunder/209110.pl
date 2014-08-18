@@ -1,9 +1,9 @@
 sub EVENT_SPAWN {
-   quest::settimer("depop",600);
+   quest::settimer("depop",300);
 }
 sub EVENT_SAY {
     if($text=~/hail/i) {
-     quest::say("Glad you could help me. Evynd Firestorm must die!!");
+     $client->Message(14,"Glad you could help me. Evynd Firestorm must die!!");
 	 quest::depop();
  }
 }

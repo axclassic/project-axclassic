@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-quest::say("All to me!");
+quest::shout("All to me!");
 quest::settimer(1,600);
 }
 
