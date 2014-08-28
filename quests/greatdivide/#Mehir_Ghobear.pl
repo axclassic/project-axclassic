@@ -26,8 +26,8 @@ if (plugin::check_handin(\%itemcount, 119933 => 1) && $ulevel == 65) {
     quest::spawn("118173","0","0","2286.250000","-5496.649902","-162.460007");
  }
 elsif (plugin::check_handin(\%itemcount, 119928 => 1, 119929 => 1, 119930 => 1, 119931 => 1) && $ulevel == 65) {
-    $client->Message(14,"Wow $sname , You really DID pull it off I commend you. Please seek out Andy in the Karanas to proceed! Give him this token together with:  ");
-    quest::summonitem("119934");
+    $client->Message(14,"Wow $sname , You really DID pull it off I commend you. Please seek out Melvin in the Karanas to proceed! Give him this token.");
+    quest::summonitem("119946");
  }
 else {
     $client->Message(14,"I don't need this $name. Take it back.");
