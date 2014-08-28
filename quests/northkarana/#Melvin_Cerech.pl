@@ -8,7 +8,7 @@
 sub EVENT_SAY {
 
   if ($text=~/hail/i && $ulevel >= 65) {
-    $client->Message(14,"Howdy $name I am Melvin. Howm can I help you?, ");
+    $client->Message(14,"Howdy $name I am Melvin. How can I help you?, ");
   }
   elsif  ($text=~/hail/i && $ulevel < 65) {
   $client->Message(14,"I dont think I should talk to you. Laterz!!");
