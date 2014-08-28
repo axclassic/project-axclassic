@@ -23,7 +23,7 @@ if (plugin::check_handin(\%itemcount, 119954 => 1) && $ulevel == 65) {
     quest::summonitem("119955");
 
  }
-elsif (plugin::check_handin(\%itemcount, 119955 => 1, 119592 => 1, 119592 => 1, 119592 => 1) && $ulevel == 65) {
+elsif (plugin::check_handin(\%itemcount, 119955 => 1, 119592 => 3) && $ulevel == 65) {
     $client->Message(14,"WOW $sname , I thank you so very much for the dolls. Go bring this coin to my sister she is trapped inside the Twilight zone. She needs your help to...");
     quest::summonitem("119956");
 
