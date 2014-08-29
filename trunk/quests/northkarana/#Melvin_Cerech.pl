@@ -19,7 +19,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 119946 => 1) && $ulevel == 65) {
-    $client->Message(14,"Ah hello $class , I see you helped Mehir catch those vultures. Man let me tell you he is hunting those for years now. Glad to see he finally succeeded. You seem to have atleast SOME potential. Ok I put you to work and see what you are made off, but first I need you to run an aron for me. Take this dagger to Kevan McPherson He will sharpen it for you. Bring the sharpened dagger back to me along with a Superior Green Dragonscale, a Superior Red Dragonscale and a Superior White Dragonscale");
+    $client->Message(14,"Ah hello $class , I see you helped Mehir catch those vultures. Man let me tell you he is hunting those for years now. Glad to see he finally succeeded. You seem to have atleast SOME potential. Ok I put you to work and see what you are made off, but first I need you to run an errand for me. Take this dagger to Kevan McPherson He will sharpen it for you. Bring the sharpened dagger back to me along with a Superior Green Dragonscale, a Superior Red Dragonscale and a Superior White Dragonscale");
     quest::summonitem("119947");
 
  }
