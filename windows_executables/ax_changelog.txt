@@ -1,5 +1,25 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==08/28/2014==
+ Angelox: Character deletion will also remove characters bots too.
+ Angelox: #bot delete was leaving the bot in some of the newer tables.
+ 
+==08/21/2014==
+ Angelox: Necro bot can mez undead.
+ 
+==08/20/2014==
+ Angelox: Bot mezzer bot should not try to mez what you're attacking anymore. 
+ 
+==08/16/2014==
+ Angelox: Mostly code clean up and GCC compiler warning fixes (past few updates)
+ 
+==08/07/2014==
+ Angelox: Raiding bots can be disbanded one at a time for swapping via the disband button (/target the bot, click "disband").
+ Angelox: #bot unequip/remove will not default to removing charm on typos.
+ 
+==08/06/2014==
+ Angelox: Code clean up - set most bot depoppers to depop via BotAI. 
+ 
 ==08/04/2014==
  Angelox: added GM command #setkarma - also players with Karma of over 10000 will have trival(IsClassic) zone code removed.
  
