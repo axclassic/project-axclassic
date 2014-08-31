@@ -36,8 +36,8 @@ sub EVENT_ITEM {
   }
 
   if($gold == 550) {
-    quest::say("Here is your prize - a lambent star ruby.");
-    quest::summonitem("10117","1");
+    quest::say("Thank you $name, here is your fire opal.");
+    quest::summonitem("10031","1");
     quest::faction("320","15");
     quest::faction("291","-15");
   }
