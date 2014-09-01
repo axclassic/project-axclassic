@@ -7,6 +7,7 @@ my $ready = quest::saylink("ready", 1);
 	if($text=~/ready/i) {
 	quest::say("And so it begins");
 	quest::spawn2(338167,0,0,71.1,-12.7,-30.4,216.1);
+	quest::signalwith(338167,421,0);
 	quest::signalwith(338167,422,0);
 	quest::depop();
     }
