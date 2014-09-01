@@ -1,4 +1,5 @@
 sub EVENT_SAY { 
+my $ready = quest::saylink("ready", 1);
     if($text=~/Hail/i) {
     quest::emote(' sniffs the air.');
 	quest::say("I smell weakness. You may think you are strong to have ventured this far, but we shall see. It is my duty to give the Trial of Perseverance. Tel me when you are $ready and the trial will begin. We will then see how you heroes fare.");
