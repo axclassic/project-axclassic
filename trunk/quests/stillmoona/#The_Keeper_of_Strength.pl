@@ -10,4 +10,8 @@ sub EVENT_ITEM {
 	quest::spawn2(338163,0,0,-8.5,936.5,39.6,130.6);
 	quest::depop();
 	}
+	else {
+	plugin::return_items(\%itemcount);
+    quest::say("These are not the Scrolls I aked you to find.");
+   }
  }	
