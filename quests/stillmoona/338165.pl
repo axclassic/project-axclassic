@@ -17,6 +17,7 @@ sub EVENT_SIGNAL {
 	if ($signal == 323) {
     if ($strength_event == 5){ # looks for 5 dead#
     quest::spawn2(338166,0,0,-8.5,936.5,39.6,130.6);
+	quest::depop();
     } 
   }
  } 
