@@ -4,8 +4,10 @@ my $perseverance_event = 0;
   $perseverance_event = 0;
   }
 sub_EVENT_SIGNAL {
-  	if ($signal == 422) {
-	 $perseverance_event += 1; # adds one to spawn variable # 
+  	if ($signal == 421) {
+	 $perseverance_event += 1 # adds one to spawn variable # 
+    }
+    if ($signal == 422) {
 	quest::spawn2(388001,0,0,8.4,36.6,-31.7,175.9);
 	quest::spawn2(388168,0,0,-27,36.6,-31.7,76.6);
 	quest::spawn2(388169,0,0,-27,51,-32.9,110.5);
