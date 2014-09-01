@@ -3,7 +3,7 @@ my $strength_event = 0;
   sub EVENT_SPAWN {
   $strength_event = 0;
   }
-sub_EVENT_SIGNAL {
+sub EVENT_SIGNAL {
     if ($signal == 321) {
    	quest::spawn2(338164,0,0,-27.1,942.8,39.6,94.4);
 	quest::spawn2(338164,0,0,7.5,942.8,39.6,165.1);
