@@ -3,7 +3,7 @@ my $perseverance_event = 0;
   sub EVENT_SPAWN {
   $perseverance_event = 0;
   }
-sub_EVENT_SIGNAL {
+sub EVENT_SIGNAL {
   	if ($signal == 421) {
 	 $perseverance_event += 1 # adds one to spawn variable # 
     }
