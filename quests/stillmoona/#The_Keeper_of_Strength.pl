@@ -5,7 +5,7 @@ sub EVENT_SAY {
     }
  }
 sub EVENT_ITEM {
-    if(plugin::check_handin(\%itemcount, 49007 == 1, 49008 == 1, 49009 == 1, 49010 == 1 )) { 
+    if (plugin::check_handin(\%itemcount, 49007 =>1, 49008 =>1, 49009 =>1, 49010 =>1 )) {
 	quest::say("very well then $name, seek out a Spirit Keeper within this temple and he will start your trial of strength.");
 	quest::spawn2(338163,0,0,-8.5,936.5,39.6,130.6);
 	quest::depop();
