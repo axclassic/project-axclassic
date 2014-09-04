@@ -30,7 +30,9 @@ sub EVENT_ITEM {
 
  } if(plugin::check_handin(\%itemcount,13915 => 4)){
 	quest::say("Very good!  One less gnoll the people of Qeynos need to fear.  Here is your bounty as promised.");
-	quest::summonitem("10070","1");
+	   my @items = (50011,50018,50039);
+      my $total = $items[ rand @items ];
+      quest::summonitem($total);
 		quest::faction(135,1);
 	quest::faction(9,1);
    quest::faction( 53,-1 );
