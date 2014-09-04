@@ -26,41 +26,41 @@ sub EVENT_ITEM {
 	quest::say("Good work. warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
 	quest::summonitem("2124");
 	quest::givecash("0","8","0","0");
-	 quest::ding(); quest::exp(1500);
+	 quest::ding(); quest::exp(4000);
 } elsif($itemcount{13318} == 2){
 	quest::say("Good work. warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
 	quest::summonitem("2120");
-	 quest::ding(); quest::exp(3000);
+	 quest::ding(); quest::exp(8000);
 	quest::givecash("0","16","0","0");
 } elsif($itemcount{13318} == 3){
 	quest::say("Good work. warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
 	quest::summonitem("2120");
-	 quest::ding(); quest::exp(4500);
+	 quest::ding(); quest::exp(12000);
 	quest::givecash("0","32","0","0");
  } elsif($itemcount{13318} == 4){
 	quest::say("Good work. warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
-	 quest::ding(); quest::exp(6000);
+	 quest::ding(); quest::exp(17000);
 	quest::summonitem("2113");
 	quest::givecash("0","48","0","0");
  } elsif($itemcount{13319} == 2){
 	quest::say("Good work. warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
 	quest::summonitem("2117");
-	 quest::ding(); quest::exp(4500);
+	 quest::ding(); quest::exp(20000);
 	quest::givecash("0","4","0","0");
  } elsif($itemcount{13319} == 4){
 	quest::say("Good work. warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
 	quest::summonitem("2117");
-	 quest::ding(); quest::exp(9000);
+	 quest::ding(); quest::exp(40000);
 	quest::givecash("0","8","0","0");
  } elsif($itemcount{13318} == 2 && $itemcount{13319} == 2){
 	quest::say("Good work. warrior! Now continue with your training. Only on the battlefield can one become a great warrior.");
 	quest::summonitem("2117");
-	 quest::ding(); quest::exp(7500);
+	 quest::ding(); quest::exp(28000);
 	quest::givecash("0","20","0","0");
  } elsif($itemcount{13319} == 1 && $itemcount{13917} == 1){
 	quest::say("Aha!! You have downed a Crushbone legionnaire!! You have shown yourself to be a strong warrior. Take this. This is more becoming of a great warrior such as yourself. Let no creature stand in the way of the Stormguard!");
 	quest::summonitem("10017","1");
-	 quest::ding(); quest::exp(2000);
+	 quest::ding(); quest::exp(20000);
 	quest::givecash("0","0","1","0");
  } else {
   #do all other handins first with plugin, then let it do disciplines
