@@ -100,6 +100,8 @@ sub EVENT_ITEM {
 already.");
       quest::summonitem(2905);
       $give_faction = 1;
+    } elsif ($platinum == 1)) {
+      quest::summonitem(13915);
 
    } else {
       plugin::return_items(\%itemcount);
