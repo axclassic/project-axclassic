@@ -5,13 +5,16 @@
 #Items Involved: Bardic letters: 18150-18167
 #################
 
-sub EVENT_SAY { 
+sub EVENT_SAY {
+my $interested = quest::saylink("interested", 1);
+my $High = quest::saylink("Highpass", 1);
+my $Free = quest::saylink("Freeport", 1);
 if($text=~/Hail/i){
-quest::say("Hail, $name - Are you [interested] in helping the League of Antonican Bards by delivering some mail?");
+quest::say("Hail, $name - Are you $interested in helping the League of Antonican Bards by delivering some mail?");
 }
 
 if($text=~/interested/i){
-quest::say("I have messages that need to go to Highpass and to Freeport.  Will you deliver mail to [Highpass] or [Freeport] for me?");
+quest::say("I have messages that need to go to Highpass and to Freeport.  Will you deliver mail to $High or $Free for me?");
 }
 
 if($text=~/highpass/i){
@@ -25,7 +28,7 @@ quest::summonitem("18155");
 }
 
 if($text=~/mail/i){
-quest::say("The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more distant offices.  Are you [interested]?"); }
+quest::say("The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more distant offices.  Are you $interested?"); }
 
 }
 
