@@ -26,7 +26,7 @@ my $final = quest::saylink("final", 1);
   }
 
   if($text=~/begin/i){
-    quest::say("Here is your Wind Spirits Assembly Kit. In this kit you will collect a different items that will be combined in certain quantities to create infused armor materials. These armor materials that you create can then be taken to a forge along with the applicable armor mold to fashion together a piece of Wind Spirits Armor. When you would like to craft an armor piece you must simply tell me what piece you want to craft. I will then provide you with the recipe and mold necessary for creating Wind Spirits $Helms, $Bracers, $Armguards, $Boots, $Greaves, $Gauntlets and $Breastplates.");
+    quest::say("Here is your Wind Spirits Assembly Kit. In this kit you will collect a different items that will be combined in certain quantities to create infused armor materials. These armor materials that you create can then be taken to a forge along with the applicable armor mold to fashion together a piece of Wind Spirits Armor. When you would like to craft an armor piece you must simply tell me what piece you want to craft. I will then provide you with the recipe and mold necessary for creating Wind Spirits $Helms, $Bracers, $Armguards, $Boots, $Greaves, $Gauntlets and $Breastplate.");
     quest::summonitem(17269);
   }
 
