@@ -1,11 +1,13 @@
-sub EVENT_SAY { 
+sub EVENT_SAY {
+my $tunic = quest::saylink("tunic", 1);
+
 if($text=~/Hail/i){
-quest::say("Shadowknight master me be!!  $name prove to me that $name be worthy to be one with Greenblood and me give $name black shadow tunic.  You [want black shadow tunic]?");
+quest::say("Shadowknight master me be!!  $name prove to me that $name be worthy to be one with Greenblood and me give $name black shadow tunic.  You want black shadow $tunic?");
 }
-if(($text=~/black shadow tunic/i) && ($faction>5)) {
+if(($text=~/tunic/i) && ($faction>5)) {
 quest::say("Help Greenbloods you will. Give lizard tails to Grevak.  Den maybe we trust."); 
   }
-elsif(($text=~/black shadow tunic/i) && ($faction<=5)) {
+elsif(($text=~/tunic/i) && ($faction<=5)) {
   quest::say("Dem Lizards make me mad wit their Do-duh-Doo pipes. They sneak around, and when I go to get them, they blow in pipes and call for reinformers.  Bring me three Do-duh-Doo pipes from those Lizards, and I'll give you real Black Shadow Tunic!");
   }
 }
