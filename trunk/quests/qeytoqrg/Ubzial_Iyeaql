@@ -1,0 +1,6 @@
+sub EVENT_SAY {
+if($text=~/Hail/i){
+quest::say("Welcome to the hills, they have eyes everywhere. Quick give me all your money or your soul, either way I always win and you will always end up dead.");
+}
+}
+
