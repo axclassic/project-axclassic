@@ -4,6 +4,7 @@
 #Zone: qeynos
 #Original Author Unknown
 #Modified by RealityIncarnate
+#edited farther by Aardil
 #####################################
 
 sub EVENT_SAY { 
