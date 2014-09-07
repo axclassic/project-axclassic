@@ -1,0 +1,24 @@
+
+CC=g++
+LINKER=g++ -bundle
+OUT=-o 
+NOLINK=-c
+
+#For FreeBSD uncomment these, comment the matching ones further down.
+MYSQL_CFLAGS=-I'/usr/local/include/mysql'
+DFLAGS=-DDEBUG=1 -DSHAREMEM -DCATCH_CRASH -DEMUSHAREMEM -DFREEBSD
+
+WFLAGS=-Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wno-deprecated -Wcomment -Wcast-align
+
+#linux threads
+COPTS=$(WFLAGS) $(DFLAGS) -g -fPIC -dynamic -O2 $(MYSQL_CFLAGS)
+LINKOPTS=-L. -L/usr/local/lib -lc
+
+LIB=libEMuShareMem.so
+LINKRES=-g -o $(LIB)
+
+all: $(LIB)
+
+include makefile.common
+
+

@@ -1,0 +1,160 @@
+MMFMutex.o: MMFMutex.cpp MMFMutex.h ../common/types.h MMF.h
+Doors.o: Doors.cpp ../common/debug.h ../common/logsys.h ../common/types.h \
+ ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/unix.h Doors.h \
+ ../common/types.h ../zone/zonedump.h ../zone/faction.h \
+ ../zone/../common/types.h ../zone/features.h \
+ ../zone/../common/eq_packet_structs.h ../zone/../common/types.h \
+ ../zone/../common/../common/version.h ../zone/../common/eq_constants.h \
+ ../zone/../common/skills.h ../zone/../common/eq_old_structs.h \
+ ../zone/../common/Item.h ../zone/../common/../common/eq_packet_structs.h \
+ ../zone/../common/../common/eq_constants.h \
+ ../zone/../common/../common/item_struct.h \
+ ../zone/../common/../common/eq_constants.h \
+ ../zone/../common/item_fieldlist.h ../common/EMuShareMem.h \
+ ../common/../common/unix.h ../common/../common/eq_packet_structs.h \
+ ../common/../zone/zonedump.h ../common/../zone/loottable.h \
+ ../common/../zone/zonedump.h ../common/../zone/../common/linked_list.h \
+ ../common/../zone/../common/types.h ../common/SharedLibrary.h \
+ ../common/timer.h MMF.h
+Items.o: Items.cpp ../common/unix.h Items.h ../common/types.h \
+ ../common/eq_packet_structs.h ../common/types.h \
+ ../common/../common/version.h ../common/eq_constants.h \
+ ../common/skills.h ../common/eq_old_structs.h ../common/EMuShareMem.h \
+ ../common/../common/unix.h ../common/../common/eq_packet_structs.h \
+ ../common/../zone/zonedump.h ../common/../zone/faction.h \
+ ../common/../zone/../common/types.h ../common/../zone/features.h \
+ ../common/../zone/../common/eq_packet_structs.h \
+ ../common/../zone/../common/Item.h \
+ ../common/../zone/../common/../common/eq_packet_structs.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/../common/item_struct.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/item_fieldlist.h \
+ ../common/../zone/loottable.h ../common/../zone/zonedump.h \
+ ../common/../zone/../common/linked_list.h \
+ ../common/../zone/../common/types.h ../common/SharedLibrary.h \
+ ../common/timer.h MMF.h
+Spells.o: Spells.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/unix.h Spells.h \
+ ../common/types.h ../zone/spdat.h ../zone/../common/classes.h \
+ ../zone/../common/../common/types.h ../zone/../common/skills.h \
+ ../common/EMuShareMem.h ../common/../common/unix.h \
+ ../common/../common/eq_packet_structs.h ../common/../common/types.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/../zone/zonedump.h \
+ ../common/../zone/faction.h ../common/../zone/../common/types.h \
+ ../common/../zone/features.h \
+ ../common/../zone/../common/eq_packet_structs.h \
+ ../common/../zone/../common/Item.h \
+ ../common/../zone/../common/../common/eq_packet_structs.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/../common/item_struct.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/item_fieldlist.h \
+ ../common/../zone/loottable.h ../common/../zone/zonedump.h \
+ ../common/../zone/../common/linked_list.h \
+ ../common/../zone/../common/types.h ../common/SharedLibrary.h \
+ ../common/timer.h MMF.h
+NPCFactionLists.o: NPCFactionLists.cpp ../common/debug.h \
+ ../common/logsys.h ../common/types.h ../common/logtypes.h \
+ ../common/common_profile.h ../common/../common/Mutex.h \
+ ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/unix.h NPCFactionLists.h \
+ ../common/types.h ../zone/features.h ../zone/faction.h \
+ ../zone/../common/types.h ../zone/features.h ../common/EMuShareMem.h \
+ ../common/../common/unix.h ../common/../common/eq_packet_structs.h \
+ ../common/../common/types.h ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/../zone/zonedump.h \
+ ../common/../zone/faction.h \
+ ../common/../zone/../common/eq_packet_structs.h \
+ ../common/../zone/../common/Item.h \
+ ../common/../zone/../common/../common/eq_packet_structs.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/../common/item_struct.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/item_fieldlist.h \
+ ../common/../zone/loottable.h ../common/../zone/zonedump.h \
+ ../common/../zone/../common/linked_list.h \
+ ../common/../zone/../common/types.h ../common/SharedLibrary.h \
+ ../common/timer.h MMF.h
+MMF.o: MMF.cpp MMF.h ../common/types.h MMFMutex.h ../common/unix.h
+Loot.o: Loot.cpp ../common/debug.h ../common/logsys.h ../common/types.h \
+ ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h Loot.h ../common/types.h \
+ ../common/eq_packet_structs.h ../common/../common/version.h \
+ ../common/eq_constants.h ../common/skills.h ../common/eq_old_structs.h \
+ ../common/EMuShareMem.h ../common/../common/unix.h \
+ ../common/../common/eq_packet_structs.h ../common/../zone/zonedump.h \
+ ../common/../zone/faction.h ../common/../zone/../common/types.h \
+ ../common/../zone/features.h \
+ ../common/../zone/../common/eq_packet_structs.h \
+ ../common/../zone/../common/Item.h \
+ ../common/../zone/../common/../common/eq_packet_structs.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/../common/item_struct.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/item_fieldlist.h \
+ ../common/../zone/loottable.h ../common/../zone/zonedump.h \
+ ../common/../zone/../common/linked_list.h \
+ ../common/../zone/../common/types.h ../common/SharedLibrary.h \
+ ../common/timer.h MMF.h
+Opcodes.o: Opcodes.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/unix.h Opcodes.h \
+ ../common/types.h ../common/EMuShareMem.h ../common/../common/unix.h \
+ ../common/../common/eq_packet_structs.h ../common/../common/types.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/../zone/zonedump.h \
+ ../common/../zone/faction.h ../common/../zone/../common/types.h \
+ ../common/../zone/features.h \
+ ../common/../zone/../common/eq_packet_structs.h \
+ ../common/../zone/../common/Item.h \
+ ../common/../zone/../common/../common/eq_packet_structs.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/../common/item_struct.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/item_fieldlist.h \
+ ../common/../zone/loottable.h ../common/../zone/zonedump.h \
+ ../common/../zone/../common/linked_list.h \
+ ../common/../zone/../common/types.h ../common/SharedLibrary.h \
+ ../common/timer.h MMF.h
+SkillCaps.o: SkillCaps.cpp ../common/debug.h ../common/logsys.h \
+ ../common/types.h ../common/logtypes.h ../common/common_profile.h \
+ ../common/../common/Mutex.h ../common/../common/../common/unix.h \
+ ../common/../common/../common/types.h ../common/unix.h SkillCaps.h \
+ ../common/types.h ../common/EMuShareMem.h ../common/../common/unix.h \
+ ../common/../common/eq_packet_structs.h ../common/../common/types.h \
+ ../common/../common/../common/version.h \
+ ../common/../common/eq_constants.h ../common/../common/skills.h \
+ ../common/../common/eq_old_structs.h ../common/../zone/zonedump.h \
+ ../common/../zone/faction.h ../common/../zone/../common/types.h \
+ ../common/../zone/features.h \
+ ../common/../zone/../common/eq_packet_structs.h \
+ ../common/../zone/../common/Item.h \
+ ../common/../zone/../common/../common/eq_packet_structs.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/../common/item_struct.h \
+ ../common/../zone/../common/../common/eq_constants.h \
+ ../common/../zone/../common/item_fieldlist.h \
+ ../common/../zone/loottable.h ../common/../zone/zonedump.h \
+ ../common/../zone/../common/linked_list.h \
+ ../common/../zone/../common/types.h ../common/SharedLibrary.h \
+ ../common/timer.h MMF.h
+DLLMain.o: DLLMain.cpp
+.obj/timer.o: ../common/timer.cpp ../common/../common/debug.h \
+ ../common/../common/logsys.h ../common/../common/types.h \
+ ../common/../common/logtypes.h ../common/../common/common_profile.h \
+ ../common/../common/../common/Mutex.h \
+ ../common/../common/../common/../common/unix.h \
+ ../common/../common/../common/../common/types.h ../common/timer.h \
+ ../common/types.h
+.obj/unix.o: ../common/unix.cpp ../common/unix.h

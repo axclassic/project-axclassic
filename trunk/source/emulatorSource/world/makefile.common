@@ -1,0 +1,50 @@
+APP=world
+SF= ../common/timer.o ../common/packet_dump.o ../common/races.o ../common/unix.o \
+   ../common/Mutex.o ../common/MiscFunctions.o ../common/serverinfo.o \
+   ../common/classes.o ../common/TCPConnection.o ../common/eqtime.o ../common/crc32.o \
+   client.o net.o console.o zoneserver.o LoginServer.o ../common/md5.o ../common/dbcore.o \
+   ../common/dbasync.o ../common/EMuShareMem.o ../common/EQEMuError.o ../common/misc.o \
+   .obj/debug.o .obj/database.o .obj/Item.o ../common/extprofile.o .obj/EQStream.o \
+   .obj/EQStreamFactory.o .obj/EQPacket.o ../common/CRC16.o ../common/packet_functions.o \
+   ../common/timeoutmgr.o ../common/Condition.o ../common/opcodemgr.o ../common/emu_opcodes.o \
+   ../common/SharedLibrary.o world_logsys.o ../common/logsys.o ../common/logsys_eqemu.o \
+   ../common/EQEmuConfig.o WorldConfig.o ../common/XMLParser.o ../common/tinyxml/tinystr.o \
+   ../common/tinyxml/tinyxml.o ../common/tinyxml/tinyxmlerror.o ../common/tinyxml/tinyxmlparser.o \
+   ../common/BasePacket.o ../common/shareddb.o worlddb.o EQW.o HTTPRequest.o \
+   EQWHTTPHandler.o EQWParser.o perl_EQW.o perl_HTTPRequest.o clientlist.o \
+   zonelist.o cliententry.o LauncherList.o LauncherLink.o lfplist.o \
+   ../common/EQStreamIdent.o ../common/StructStrategy.o LoginServerList.o\
+   ../common/EQStreamProxy.o ../common/patches/patches.o \
+   ../common/patches/Client62.o ../common/patches/Titanium.o ../common/patches/Underfoot.o ../common/patches/HoT.o \
+   ../common/patches/Anniversary.o ../common/patches/SoF.o ../common/patches/SoD.o \
+   ../common/EQDB.o ../common/perl_EQDB.o EQLConfig.o perl_EQLConfig.o \
+   ../common/EQDBRes.o ../common/perl_EQDBRes.o ../common/EmuTCPServer.o \
+   ../common/TCPServer.o ../common/EmuTCPConnection.o \
+   ../common/SocketLib/Base64.o ../common/SocketLib/File.o \
+   ../common/SocketLib/HTTPSocket.o ../common/SocketLib/HttpdCookies.o \
+   ../common/SocketLib/HttpdForm.o ../common/SocketLib/HttpdSocket.o \
+   ../common/SocketLib/MemFile.o ../common/SocketLib/Mime.o \
+   ../common/SocketLib/Parse.o ../common/SocketLib/Utility.o \
+   ../common/guild_base.o wguild_mgr.o .obj/rulesys.o
+
+all: $(APP)
+
+$(APP): $(SF)
+	$(LINKER) $(LINKOUT)$@ $^ $(LINKOPTS) 
+
+clean:
+	rm -f .depend $(SF) $(APP)
+
+%.o: %.cpp
+	$(CC) $(NOLINK) $(COPTS) $< $(OUT)$@
+
+.obj/%.o: ../common/%.cpp ../common/%.h
+	mkdir -p .obj
+	$(CC) $(COPTS) $(NOLINK) $< $(OUT)$@
+	
+perl:
+	cd ../utils/perlxs; ./all_convert
+
+
+
+

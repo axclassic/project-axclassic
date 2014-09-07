@@ -1,0 +1,42 @@
+APP=ucs
+SF= ucs.o  clientlist.o ../common/timer.o ../common/packet_dump.o ../common/unix.o \
+   ../common/Mutex.o ../common/MiscFunctions.o \
+   ../common/TCPConnection.o ../common/eqtime.o ../common/crc32.o \
+   ../common/md5.o \
+   ../common/EQEMuError.o ../common/misc.o \
+   .obj/debug.o  .obj/EQStream.o \
+   .obj/EQStreamFactory.o .obj/EQPacket.o ../common/CRC16.o .obj/packet_functions.o \
+   ../common/timeoutmgr.o ../common/Condition.o .obj/opcodemgr.o .obj/emu_opcodes.o \
+   ../common/SharedLibrary.o  \
+   .obj/BasePacket.o ../common/logsys.o ../common/logsys_eqemu.o \
+   .obj/EQStreamProxy.o .obj/StructStrategy.o \
+   ../common/EmuTCPServer.o \
+   ../common/TCPServer.o ../common/EmuTCPConnection.o \
+   ../common/SocketLib/Base64.o ../common/SocketLib/File.o  \
+   ../common/dbcore.o database.o ../common/EQEmuConfig.o \
+   .obj/rulesys.o \
+   ucsconfig.o chatchannel.o \
+   ../common/XMLParser.o ../common/tinyxml/tinystr.o \
+   ../common/tinyxml/tinyxml.o ../common/tinyxml/tinyxmlerror.o ../common/tinyxml/tinyxmlparser.o 
+
+all: $(APP)
+
+$(APP): $(SF)
+	$(LINKER) $(LINKOUT)$@ $^ $(LINKOPTS) 
+
+clean:
+	rm -f $(SF) $(APP)
+
+%.o: %.cpp
+	$(CC) $(NOLINK) $(COPTS) $< $(OUT)$@
+
+.obj/%.o: ../common/%.cpp ../common/%.h
+	mkdir -p .obj
+	$(CC) $(COPTS) $(NOLINK) $< $(OUT)$@
+	
+perl:
+	cd ../utils/perlxs; ./all_convert
+
+
+
+

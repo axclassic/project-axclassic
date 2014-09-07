@@ -1,0 +1,46 @@
+
+CC=g++
+LINKER=g++
+OUT=-o 
+LINKOUT=-o 
+NOLINK=-c
+
+
+#MYSQL_FLAGS=`mysql_config --cflags`
+#MYSQL_LIB=`mysql_config --libs`
+MYSQL_FLAGS=-I'/usr/local/include/mysql'
+
+DFLAGS=-DEQDEBUG=5 -DFREEBSD -Di386
+#try commenting out the following three lines to disable embedded perl
+
+WFLAGS=-Wall -Wwrite-strings -Wcast-qual  -Wstrict-prototypes -Wno-deprecated  -Wcomment -Wcast-align -Wuninitialized
+#COPTS=$(WFLAGS) -O -g -pg -march=i686 -pthread -pipe -DEQLAUNCH $(DFLAGS) $(MYSQL_FLAGS)
+
+# BSD pthreads
+#MYSQL_LIB=-L'/usr/local/lib/mysql' -lmysqlclient -lz -lcrypt -lm
+#COPTS=$(WFLAGS) -O2 -ggdb -pthread -pipe -DEQLAUNCH $(DFLAGS) $(MYSQL_FLAGS)
+#LINKOPTS=$(COPTS) -rdynamic -L. -pthread -lstdc++ $(MYSQL_LIB)
+
+# linuxthreads
+MYSQL_LIB=-L'/usr/local/lib' -llmysqlclient -lz -lcrypt -lm
+DFLAGS+=-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
+COPTS=$(WFLAGS) -I/usr/local/include/pthread/linuxthreads -O -ggdb -pipe -D_GNU_SOURCE -DINVERSEXY -DFX -DZONE $(DFLAGS) $(MYSQL_FLAGS)
+
+#Unprofiled:
+LINKOPTS=$(COPTS) -rdynamic -L. -llthread -llstdc++ -llsupc++ -llgcc_r $(MYSQL_LIB)
+
+#to enable profiling:
+#MYSQL_LIB=-L'/usr/local/lib' -llmysqlclient_p -lz_p -lcrypt_p -lm_p
+#LINKOPTS=$(COPTS) -rdynamic -L. -lc_p -lm_p -lutil_p -lz_p -llthread_p -llstdc++_p -llsupc++_p -llgcc_r_p $(MYSQL_LIB) -pg
+#COPTS+=-pg
+
+all: eqlaunch
+
+include .depend
+
+include makefile.common
+
+.depend depend:
+	echo $(SF) "" | sed -e 's#.obj/#../common/#g' -e 's/\.o/.cpp/g' | \
+	xargs mkdep $(COPTS)
+
