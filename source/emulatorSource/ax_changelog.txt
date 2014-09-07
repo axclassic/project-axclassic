@@ -1,0 +1,1393 @@
+AX-Classic Open Source Server Changelog (Started 8/14/2009)
+|-----------------------------------------------------------|
+==08/28/2014==
+ Angelox: Character deletion will also remove characters bots too.
+ Angelox: #bot delete was leaving the bot in some of the newer tables.
+ 
+==08/21/2014==
+ Angelox: Necro bot can mez undead.
+ 
+==08/20/2014==
+ Angelox: Bot mezzer bot should not try to mez what you're attacking anymore. 
+ 
+==08/16/2014==
+ Angelox: Mostly code clean up and GCC compiler warning fixes (past few updates)
+ 
+==08/07/2014==
+ Angelox: Raiding bots can be disbanded one at a time for swapping via the disband button (/target the bot, click "disband").
+ Angelox: #bot unequip/remove will not default to removing charm on typos.
+ 
+==08/06/2014==
+ Angelox: Code clean up - set most bot depoppers to depop via BotAI. 
+ 
+==08/04/2014==
+ Angelox: added GM command #setkarma - also players with Karma of over 10000 will have trival(IsClassic) zone code removed.
+ 
+==07/31/2014==
+ Angelox: Finally figured out why BotDepop() wasn't working right, 
+	  lots of work on the multi-player/bot grouping, but not ready yet.   
+ 
+==06/27/2014==
+ Angelox: Paladin LoH and ShadowKnight HT made available for UF via hashtag command(case sensitive): #HarmTouch and #LayOnHands.
+ Angelox: Two new bot commands added: #bot HarmTouch and #bot LayOnHands.  
+ 
+==06/24/2014==
+ Angelox: Fix for dual-weild animations on client-character.
+ Angelox: Some updates to Client detection (possible fix for Titanium crashing). 
+ 
+==06/22/2014==
+ Angelox: Fix to MQzone detection.
+ 
+==06/10/2014==
+ Angelox: Fixed #bot offtank exploit in trivial zones.
+ Angelox: Fixed some crash problems while mixing bots and other players in the group.
+ 
+==06/07/2014==
+ Angelox: Fixed bug with "bot set primary" was crashing the zone.  
+ 
+==05/30/2014==
+ Angelox: Took away #bot mana while in #bot guard mode, as it random crashes the zone.
+ 
+==05/29/2014==
+ Angelox: Added command #bot charisma
+ 
+==05/27/2014==
+ Angelox: Newbe bot was not adding to botleader table. 
+ 
+==05/26/2014==
+ Angelox: Put a timer on '#bot mana' as spamming it will crash the client.
+ 
+==05/24/2014==
+ Angelox: The starter bot will give some help info.
+ Angelox: Bots will have proper hp and mana when zoning
+ Angelox: New players with first time charcaters will start grouped with a bot.
+ 
+==05/06/2014==
+ Angelox: Timers added for #bot summon group control.
+ 
+==04/29/2014==
+ Angelox: added BotWarp() - less intrusive. 
+ 
+==04/27/2014==
+ Angelox: Fix for #bot summon and warping routines that cause zone crash.
+ Angelox: Possible fix for player corpse loot bug.
+ 
+==04/24/2014==
+ Angelox: pet and botAI revision work.
+ 
+==04/23/2014==
+ Angelox: botAI revision work.
+ 
+==04/20/2014==
+ Angelox: Some changes to SendPosition()
+ Angelox: #botmode command removed.
+ Angelox: #botmode command should be Titanium only.
+ 
+==02/25/2014==
+ Angelox: devn00b: Partial fix (Handle_OP_Emote) to user strings aren't being correctly checked for the \0 (end of string). 
+ 
+==02/22/2014==
+ Angelox: Added checks to ensure no players on during  world shutdown. 
+ 
+==02/09/2014==
+ Angelox: Removed #bot mana command while in raid mode (was causing random zone crash). 
+ 
+==02/07/2014==
+ Angelox:  Fix for some possible exploits that involved trading while bots were engaged.  
+ 
+==01/29/2014==
+ Angelox:  Some fixes for corpse looting , see if it  helps with bugged corpses.  
+ 
+==01/12/2014==
+ Angelox:  Fix for horse dismount.
+ 
+==12/31/2013==
+ Angelox:  Fix for merchant money exchange bug.
+
+==12/02/2013==
+ Angelox: "loot all" feature disabled for character corpses (possibly crashing the zone and bugging the character).
+
+==11/17/2013== 
+Angelox: Extra clients zoning while grouped with bots will not crash the zone anymore.
+
+==11/10/2013== 
+Angelox: Bot saved raidgroups fixes, some bugs found and hopefully fixed.
+Angelox: Bots will spawn with HP and MANA from any group ID - 
+		    player should use at least one #bot saveraid  to agroup after  raid is buffed for initialization.
+
+==11/02/2013== 
+Angelox:  Command "#bot magepic" added (requires epic quest).   
+
+==10/31/2013== 
+Angelox:  Manabar updater tweak. 
+
+==9/24/2013== 
+Angelox: Added optional  BotFaceTarget(),  which sends no SendPosition() spam. 
+
+==9/20/2013==
+Angelox: Mana bar updates in newer clients should be working right for all bot classes, under all circumstances.
+
+==9/18/2013==
+Angelox: Hopefully fixed bugs with zone crashing with different  forms of grouping. 
+
+==9/16/2013==
+Angelox: #bot list optimized to only pull the needed bots to list, instead of searching through all 9000 bots. 
+
+==9/15/2013==
+Angelox: Some fixes to the bot ids start from 500000 to 5000000 and #bot list fixed to work faster.
+Angelox: Fix for zone crash when swapping out more than 2 bots from group.
+Angelox: Attempt to bring back SoD and up Mana bar updates to bots. 
+
+==9/14/2013==
+Angelox: Fixed #bot levitate  dialog, bot will tell you if it doesn't have the right level.
+
+==9/10/2013==
+Angelox: Fixed #bot sow dialog, bot will tell you if it doesn't have the right level.
+
+==9/02/2013==
+Angelox: Fix for the #bot mana zone crash. 
+
+==8/20/2013==
+Angelox: Fix for HT and other DDs occasionally crashing zone when mob dies.
+
+==7/9/2013==
+Angelox: Typo fix in Bot name creation.
+
+==4/16/2013==
+Angelox: Bot raids should spawn and group much faster.
+	 Less database queries while zoning and spawning groups.
+	 Raid bots don't look so color washed-out on first spawn.  
+
+==4/1/2013==
+Angelox: Changes to attack and follow ai should be less cpu intensive.
+
+==3/2/2013==
+Angelox: Added checks to ensure spawnraid and groupraid use the same group spawned.
+Angelox: Started a botCommand.h file.
+
+==3/23/2013==
+Angelox: Added more phrases to bot chat array.
+Angelox: Put in checks for bots attack command mobs while mezzed.
+
+==3/14/2013==
+Angelox: Some work on raid-attack logic in zones with no pathing.
+Angelox: Tank should not get hung up on walls for long, if zone pathing is bad.
+
+==3/05/2013==
+Angelox: #Bot Spawn, SpawnGroup, SpawnRaid timer-delay reduced to 5 and 10 seconds in non combat zones.
+
+==2/26/2013==
+Angelox: Most of the bot commands will adivise when not enough mana. 
+
+==2/25/2013==
+Angelox: Pets can also recieve #bot skin, sow, and temperance. 
+	 More bots will announce when they're out of mana, instead of cast and nothing happens.  
+
+==2/24/2013==
+Angelox: /raidinvite disabled (was being used for exploit). 
+
+==2/18/2013==
+Angelox: Changes to launcher updater, should write to the database after an hour. 
+
+==2/13/2013==
+Angelox: Renamed petAI.cpp to botPetAI.cpp since its only used for the bots.
+
+==2/09/2013==
+Angelox: Botgroups spawn with mana they had before they were de-spawned.
+	 New bots to the group add with zero mana.
+	 Removed randomized warps, altered some SendPosition's.
+
+==2/06/2013==
+Angelox: Finished up/renamed to CoolDownTriggers. 
+
+==2/05/2013==
+Angelox: Removing/adding bots to group will not pile them up on follow.
+Angelox: Derisions AA AdvancedTracking. 
+Angelox: For more info on EqEmu ports see attached EqEmuChangelog.txt.  
+
+==2/04/2013==
+Angelox: Changes to follow methods (less warping), interrupt spell tweaks.
+Angelox: Removed/re-did most of the warp methods, any warp methods left followed by SendPosition();
+
+==2/03/2013==
+Angelox: Bot will interrupt spell casting before attacking (possible zone-crash bug). 
+Angelox: Created RaidInterruptSpells() to insure all bots in raid are interrupting spells on changeover.
+Angelox: Tweaks and bug fixes.
+
+==2/02/2013==
+Angelox: Bot mana-bar updates better
+Angelox: Disabled battlerez, might be crashing zones.  
+
+==2/01/2013==
+Angelox: Cleaned up my bot disband, disbandgroup mess- everything is bundled into Disbandgroup() now. 
+
+==1/31/2013==
+Angelox: Reverted the run/follow animations fix was causing zone crashes (last svn commit).
+Angelox: Run/attack animation smoothed out in a new attempt(this commit).
+
+==1/29/2013==
+Angelox: Bot run/follow animations should look better.
+Angelox: World containers won't swallow items anymore.
+Angelox: Opcode manager fix.
+
+==1/28/2013==
+Angelox: Facelift started to AA, HT/LoH in newer clients still not working.
+Angelox: Minor fixes, memleak, unitiliazed data.
+
+==1/24/2013==
+Angelox: Redid the mana-bar update methods. Should work better now.
+Angelox: Pet buff slots methods updated.
+Angelox: Fixed HT/LoH in newer clients.  
+
+==1/23/2013==
+Angelox: Bots will update their mana bar in the group window. 
+	 Can also update mana bar with #bot mana command.  
+
+==1/22/2013==
+Angelox: Fixed Bard buffs not showing problem - also pet buffs tweak.
+Angelox: Newer clients will properly show targets buffs when targeting bots and pets.
+
+==1/19/2013==
+Angelox: Hopefully fixed the Underfoot buff-display problem.
+Angelox: More ports to all the clients.
+
+==1/14/2013==
+Fez_Ajer: Underfoot clients will display buffs.
+
+==1/13/2013==
+Angelox: Eqemu conf xml file brought up to date.
+
+==1/11/2013==
+Angelox: added a bundle of UF, HoT, SoD ports.
+
+==1/10/2013==
+Angelox: Reverted to rev 390. 
+
+==1/9/2013==
+Angelox: Complier-warning fixes.
+
+==1/8/2013==
+Angelox: More complier-warning fixes, fixed #bot summon group.
+
+==1/7/2013==
+Angelox: Corrected many GCC Warnings, also found a few bugs in the process (that's what the warnings are for). 
+
+==1/4/2013==
+Angelox: Armorcolor quest should be ready.
+
+==1/2/2013==
+Angelox: Armor tints ready for testing. 
+
+==12/31/2012==
+Angelox: Bugged raids will suggest #bot disbandgroup.
+Angelox: World won't spam packet details.
+Angelox: Ports for SoD/UF summon corpse.
+Angelox: More ports on armor tints.
+
+==12/29/2012==
+Angelox: Cleaned out botCommand.cpp a lot of old, quoted out code.
+Angelox: Made some changes to BotKill(), Kill(), and group disbanding.
+Angelox: More work on bot raid disbanding.
+
+==12/26/2012==
+Angelox: Fixed bug with group-spawning and adding bots with groupid of zero. 
+
+==12/25/2012==
+Angelox: All clients should now send new players to proper starting zones - also fixed some client bit id variables. 
+
+==12/21/2012==
+Angelox: Fix for "#bot raid disband" crashing the zone.
+Angelox: Character select will send newer clients to their towns if selected at character screen.
+Angelox: New clients character screen will not select Crescent anymore.
+
+==12/19/2012==
+Angelox: Bot chat changes.
+Angelox: SoD/Underfoot client updates.
+Angelox: Compiler fixes and client ports.
+
+==12/18/2012==
+Angelox: Tracking fixed for SoD and Underfoot clients.
+
+==12/17/2012==
+Angelox: Ports to the SoD and UF clients.
+
+==12/16/2012==
+Angelox: Door fix for Potime doors.
+Angelox: Some compiler warning fixes.
+
+==12/14/2012==
+Angelox: Fix to get players with clients greater than Titanium to a classic starter zone.
+Angelox: On going SoD/UF port.
+
+==12/13/2012==
+Angelox: More ports from project EqEmu to update the SoD/UF client for AXClassic.
+Angelox: Ports from project EqEmu to update the SoD/UF client for AXClassic.
+
+==12/12/2012==
+Angelox: Continued ports from project EqEmu to update the SoD/UF client for AXClassic.
+
+==12/11/2012==
+Angelox: Adjusted bot-chat probabilities.
+Angelox: Some work towards the Underfoot client merge.
+Angelox: Set a general zin point for highpasshold.
+
+==12/09/2012==
+Angelox: SoD Client fix.
+
+==12/07/2012==
+Angelox: Highpasshold activated for SoF and higher clients (Titanium clients will use highpass).
+Angelox: SoD Client fixed to where player can log in and play. 
+
+==12/04/2012==
+Angelox: Fixed some bugs with SoF client (see last submission).
+
+==11/06/2012==
+Angelox: Fix for gcc 4.6x version compile (as per KLS, EqEmu).
+
+==09/23/2012==
+Angelox: Possible fix to a targeting crash. 
+
+==09/17/2012==
+Angelox: Reverted some movement checks that were bugged. 
+
+==09/16/2012==
+Angelox: Fixed bug/exploit where #bot charm would just kill the target. 
+
+==09/14/2012==
+Angelox: Put in checks for movement and targeting while useing some bot commands. 
+
+==09/13/2012==
+Angelox: Fix to try and correct a bug were groups with all bots with pets appear to sometimes crash the zone. 
+
+==09/12/2012==
+Angelox: Bots will better-warn you about returning their LORE items you already have.
+
+==09/10/2012==
+Angelox: Using "#bot guard" repeatedly was crashing the zone. 
+
+==09/08/2012==
+Angelox: Revamped the #bot follow command, should be less consuming and more efficient. 
+	 #bot follow [close] or [normal].
+	 Normal mode spreads them out nicely, and is very realistic, but may cause problems for some distant raid-players, 
+	 so the "close" option is available too. 
+
+==09/04/2012==
+Angelox: Bots should follow and stay from on top each other.
+
+==09/03/2012==
+Angelox: Reverted tweak 
+Angelox: Tweaked bot pathing to spread the bots out some.
+
+==09/01/2012==
+Angelox: Added "#bot showgroups [normal] [raid]" - Displays your list of bots with their groups that are saved in the database.
+
+==08/31/2012==
+Angelox: Fix for #bot guard while moving.
+Angelox: Engaged bots and pets will maintain a distance from the mob.
+Angelox: Fixed a savegroup bug.
+Angelox: Made #bot move a little better. 
+
+==08/30/2012==
+Angelox: Possible memleak fix.
+Angelox: '#bot raid info' will properly display their current GroupID to match what's in the database.
+Angelox: Spawning a non-existent GroupID will not bug out and require disbandgroup command.
+
+==08/28/2012==
+Angelox: Pets were not pathing correctly.
+
+==08/27/2012==
+Angelox: Put follow-player pathing back to raid groups, seems to work better.
+
+==08/26/2012==
+Angelox: Cleaned up my key code changes, GMs can by-pass key usage again. 
+
+==08/25/2012==
+Angelox: Master key for keychain fixed - locks that can't be picked can't be picked by bots either.
+
+==08/24/2012==
+Angelox: Keys/master keys to doors were not working right - still need to fix keychain for master key.
+
+==08/23/2012==
+Angelox: Bots can be swapped during single group play, even with the raid(saved) groups.
+Angelox: Swapping out a bot that was duplicate in hunting groups won't delete them all.
+Angelox: #bot spawngroup should always default to 20 now (default single group hunting).
+
+==08/22/2012==
+Angelox: More changes and fixes to saving single groups vs raid groups;
+    -groups with IDs of less than 20 are raid groups and are restricted.
+    -groups with IDs 20 and over are reserved for single grouping.
+    -multiple single groups can be saved and bots can be re-used across the single groups.
+    -#bot spawngroup defaults to GroupID 20.
+
+    Required SQL:
+      ALTER TABLE `ax_classic`.`botbank` DROP PRIMARY KEY,
+      ADD PRIMARY KEY  USING BTREE(`groupid`, `botid`);
+      
+      UPDATE ax_classic.botbank SET groupid = 20;
+
+Angelox: Fixed archery bug, archers will stand back and shoot their bows as before.
+
+==08/20/2012==
+Angelox: Changed single grouping to use the raid groups table - you now can form groups 
+	 from level one, that will work with your raid. 
+   Required SQL;
+    ALTER TABLE `ax_classic`.`botgroups` ADD COLUMN `hp` INTEGER  NOT NULL DEFAULT 0 AFTER `slot`,
+    ADD COLUMN `mana` INTEGER  NOT NULL DEFAULT 0 AFTER `hp`;
+    ALTER TABLE `ax_classic`.`botgroups_b` ADD COLUMN `hp` INTEGER  NOT NULL DEFAULT 0 AFTER `slot`,
+    ADD COLUMN `mana` INTEGER  NOT NULL DEFAULT 0 AFTER `hp`;
+    ALTER TABLE `ax_classic`.`botgroups_c` ADD COLUMN `hp` INTEGER  NOT NULL DEFAULT 0 AFTER `slot`,
+    ADD COLUMN `mana` INTEGER  NOT NULL DEFAULT 0 AFTER `hp`;
+
+==08/15/2012==
+Angelox: Cleaned up some tracking code and adjusted distance to trackable bots.
+
+==08/13/2012==
+Angelox: Bards were not pathing correctly, pets shouldn't wander so far.
+
+==08/11/2012==
+Angelox: Tweak to the bot respawn timers.
+
+==08/03/2012==
+Angelox: Reverted most of the class buffing - only kept mind buff part.
+
+==08/02/2012==
+Angelox: Reverted "Raid bots now depop instead of killing themselves." fix (was crashing zones).
+Angelox: Re-added some raid buffing (see if it doesn't crash players now) 
+
+==07/30/2012==
+Angelox: Bots will stop casting before de-popping (might be cause for zone crash).
+
+==07/28/2012==
+Angelox: Cleaned up some more and fixed bot/pet attack animations with pathing (not at its best yet). 
+
+==07/27/2012==
+Angelox: Cleaned up my mess I made with the new pathing code.
+Angelox: Somewhat fixed attack animations with new pathing code.
+Angelox: Pets will also attack without LoS.
+Angelox: Raid bots will also use new pathing to find LoS.   
+
+==07/25/2012==
+Angelox: Added some method for bots that get lost while pathing - Also client can target/attack without LoS.
+Angelox: Bots will use the .path maps instead of pathing through walls (if the zone has a .path map).
+Angelox: Reverted to old method for bot raids, as it causes problems for some players.  
+
+==07/22/2012==
+Angelox: Quoted out code fix for bots attacking mobs too high or too low (not working right).  
+
+==07/21/2012==
+Angelox: Timer delay added to disband group or raid in attempt to avoid zone crash when re-forming groups.
+
+==07/20/2012==
+Angelox: Players boxing are crashing zones due to buggy client grouping - this temporary fix keeps zone from crashing.
+
+==07/17/2012==
+Angelox: Disband button doesn't break the raid (now, it disbands the raid).
+Angelox: Raid bots now depop instead of killing themselves.
+Angelox: Removed "#bot group remove", we have the disband button that works better.   
+
+==07/14/2012==
+Angelox: Update to the MGB fix.
+
+==07/13/2012==
+Angelox: Fix to make Shaman MGB work.
+Angelox: Fix to make all MGB work.
+
+==07/12/2012==
+Angelox: Gfaydark lifts will work with one or two clicks instead of three to four.
+
+==07/10/2012==
+Angelox: Bots will buff across raid-groups in raids.
+
+==07/09/2012==
+Angelox: Auto-mez works in raids again. Taunt probably wasn't working in Raids either.
+
+==07/06/2012==
+Angelox: Found/fixed a bug where zones set to be ignored and remain static (date 0), were being removed.
+
+==07/05/2012==
+Angelox: Master keys now work where needed - fixed Charasis and Frozenshadow keys.
+   Required SQL; 
+   ALTER TABLE `ax_classic`.`doors` ADD COLUMN `keyitem2` INTEGER  NOT NULL DEFAULT 0 AFTER `keyitem`;
+
+==06/24/2012==
+Fez_Ajer: Fix perl quest return_items by adding GetItemStat to perl_mob.cpp and mob.cpp/mob.h.
+Fez_Ajer: Fix the other perl error in logs from GetPlayerCorpseCount (perl_client.cpp and PlayerCorpse.cpp/zonedb.h)
+
+==06/21/2012==
+Angelox: Updated the eqemu_config.xml status (only need one now).
+
+==06/20/2012==
+Angelox: Iksar and Froglok will start in Rathemtn while in Classic2012 mode.
+
+==06/16/2012==
+Angelox: Fixed #bot automez.
+
+==06/15/2012==
+Angelox: Ported numerous fixes and mem-leak fixes from Kings & Bandits code (by Image, devN00b).
+Angelox: Altered our code to accomodate the new "Classic" database/server.
+
+==06/10/2012==
+Angelox: Added some LoS checks in attempt to correct a zone crash (me thinks its for LoS).
+
+==06/09/2012==
+Angelox: "#bot set chat off" will disable any type of chat coming from the bots.
+
+==06/06/2012==
+Angelox: Quoted out stat checker - might be crashing server.
+
+==06/05/2012==
+Angelox: Added some stat-display options to world.
+
+==06/04/2012==
+Angelox: More fixes to possible zone crashes.
+
+==06/02/2012==
+Angelox: Some changes that might possibly be causing occasional zone crashes.
+
+==05/31/2012==
+Angelox: Expansions available should were not showing on the client.
+
+==05/30/2012==
+Angelox: Ported EqEmus ls and multi-ls code. Customized for our own account creation with unique account IDs.
+
+==05/12/2012==
+Angelox: Fix for a fix! possibly 04/29/2012 fix was causing zone crashes under certain bot configurations. 
+
+==05/12/2012==
+Angelox: Fix for problem when sending bots to attack up/down stairs, ramps, etc. 
+
+==05/10/2012==
+Angelox: Fixed a bug I made with the #bot change command.
+Angelox: Added new feature to change bots appearance - #bot change [face] [haircolor] [hair] [beard] [beardcolor] [eyes]. 
+
+==05/03/2012==
+Angelox: Wizard was still getting stat buffs.
+Angelox: Shaman will not blow out his mana anymore.
+Angelox: Shamans and Druids will now reserve mana for heals.
+
+==04/30/2012==
+Angelox: SK Bot will not waste time re-casting his crappy pet during melee.
+
+==04/29/2012==
+Angelox: Fix for melee not to recieve mind buffs, and casters not to recieve haste or stat buffs. 
+
+==04/26/2012==
+Angelox: Fixed problem where not enough raid bots were being allowed to spawn (I hope).
+
+==04/25/2012==
+Angelox: #bot levitate should work properly with classes and levels now.
+
+==04/24/2012==
+Angelox: Cleaned up bard Selos switch.
+
+==04/20/2012==
+Angelox: Fix for #bot raid groups and quest to character de-level: Spawn bot-amount limits for raid groups are enforced even if you have 
+lowered your charcter level (no more level 10 raid groups).  
+
+==04/19/2012==
+Fez_Ajer: Make loottables work the way (I believe) they were intended.
+Fez_Ajer: Clean up tracking code in entity.cpp.
+Angelox: Bots, their pets and familiars, will not appear on track when close to your character. 
+Fez_Ajer: Fix tracking packet patch bug from merge of SoD tracking code.
+Angelox: Fez_Ajer's fix for other two structs files were also bugged.  
+
+==04/17/2012==
+Angelox: Syntax fix.
+
+==04/10/2012==
+Angelox: Player will camp out of a bot/player combo-group without crashing the zone. 
+
+==04/09/2012==
+Angelox: Fix for '#bot healme' command - was crashing the zone.
+
+==03/24/2012==
+Angelox: Tracking should work much better now - Also made adjustments to chat code, bots should chat less and seem more realistic.
+
+==03/21/2012==
+Angelox: Tracking fix.
+
+==03/12/2012==
+Angelox: Removed SayRandomMessage(), moved SayRandomBotMessage() to replace them. 
+
+==03/11/2012==
+Angelox: Bots will regroup when you swap one, few changes to try and avoid a zone crash.
+
+==03/06/2012==
+Angelox: Fixed "#bot set" commands, should be saving to database and applying to the whole group.
+	 Also moved "#bot taunt" to "#bot set taunt".
+
+==03/04/2012==
+Angelox: Zone saves when not engaged.
+
+==03/03/2012==
+Angelox: Added "#bot rez" to "#bot resurrectme" (both work).
+
+==02/27/2012==
+Angelox: Another fix for bot chat: when in guard mode was crashing.
+
+==02/25/2012==
+Angelox: Fixed chat-related bug that was crashing bots with pets.
+Angelox: #bot taunt was still in the ai with database queries.
+Angelox: #botmode [client] or [npc] reinstated, and is under development again.
+
+==02/22/2012==
+Angelox: Re-wrote the Bot-Chat scripts, should be a lot more efficient and better randomized.
+Angelox: Fixed a bug with #Bot Tash command.
+Angelox: Moved all database queries out of the BotAI - while settings are still stored in the DB, they are converted to memory run 
+boolean (or int) before entering the BotAI.  
+
+==01/31/2012==
+Angelox: Players can make multiple petitions without prior ones getting checkedout.
+
+==01/30/2012==
+Angelox: Increased distance to where bots stop behind character.
+
+==01/29/2012==
+Angelox: Added options to have up to three raid groups saved: #bot spawnraid, groupraid, or saveraid [agroup], [bgroup], or [cgroup].
+	 Required Sql "BotGroups.sql" is in the SVN.
+
+==01/27/2012==
+Angelox: Some typo fixes to bot invis spells chat. 
+
+==01/21/2012==
+Angelox: Added a check to move any stray bots up close to the group while on the run.
+Angelox: re-added movement timers, z-coord finder, familiars will follow bots.
+
+==01/19/2012==
+Angelox: New option: #botmode optimize [speed] or [quality] speed is for players with lag problems.
+
+==01/18/2012==
+Angelox: Removed movement timer while bot-raiding.
+
+==01/17/2012==
+Angelox: More reinstated fixes to raids, also looking to correct some follow problems.
+Angelox: Fix for bots that forget to follow.
+
+==01/16/2012==
+Angelox: Reinstated a few fixes that were not doing harm.
+Angelox: Another one that might be screwing things up (position updates in the wrong spot).
+Angelox: Removed methods for z coord fixes and warps, while in raid mode - also no taunt switch in raid mode.
+
+==01/15/2012==
+Angelox: Possible fix for raid mode: Removed all database queries in botAI.cpp while in raid mode. 
+         Changed battleheal to work by level and not with switch; bots 39 or higher wil always use it.
+Angelox: Possible fix for raid mode.
+
+==01/14/2012==
+Angelox: Reverted last changes back to what they were, since they had no effect.
+Angelox: Reverted movement checks to no-raid groups only.
+Angelox: "jumping" bots won't jump anymore on slopes either - also put in some checks to avoid movement timers while engaged.
+Angelox: "jumping" bots won't jump anymore (still jump a little while on slopes).
+
+==01/13/2012==
+Angelox: Bots will not start meditate or Bot_AI_IdleCast Checks for a few seconds to ensure they are not follow running (and lagged).
+
+==01/08/2012==
+Angelox: Work on new client mode. Bot titles won't show in new client mode for now. "jumping" bots should jump less now.
+
+==01/07/2012==
+Angelox: Work on new client mode. Also fixed some boo-boos from yesterdays update.
+
+==01/06/2012==
+Angelox: Added new option #botmode [client] or [npc] - will toggle between bots looking more like clients or the default npc look.
+
+==01/04/2012==
+Angelox: Added more options to bot med chat - taunters will chat taunting their targets and not the clients.
+Angelox: Some cleanups to the bot files.
+
+==01/03/2012==
+Angelox: Auto Mez chat was pointing mob names to clients target.
+
+==01/02/2012==
+Angelox: Fixed bug in Auto Mez that was crashing the zone, Bard will use his own mez spell (not borrow from Enchanter).
+
+==12/28/2011==
+Angelox: Added new source file botChat.cpp for random gsay consolidation.
+
+==12/27/2011==
+Angelox: Bots will now auto-select their weapon animation.
+Angelox: Converted botCommand.h, botDatabase.h to botCommand.cpp, botDatabase.cpp (probably what they should be).
+Angelox: (Trevius) Added 2 new fields (prim_melee_type and sec_melee_type) to the npc_types table to allow setting attack animations/messages to go with weapon models (Default is 28 - Hand to Hand)
+Angelox: (Trevius) Added Perl Quest Objects; GetPrimSkill(), GetSecSkill(), SetPrimSkill(skill_type), SetSecSkill(skill_type) for altering the above setting temporarily.
+Angelox: Fixed zone crash due to above fixes and bots attack code.
+
+==12/24/2011==
+Angelox: Two problems with tracking: 1-tracks "non-trackable" mobs, 2-Leaves out NPCs in the tracking window.
+Hopefully this fix made it better. 
+
+==12/19/2011==
+Angelox: Applied some documentation to the 'dynamic-static' zone operator.
+
+==12/18/2011==
+Angelox: Fix so recipe search will work in 64 bit arena.
+
+==12/17/2011==
+Angelox: LS update.
+Angelox: Small adjustment to tracking.
+Angelox: Tradskill auto-combine and find recipes should work now.
+Angelox: Disabled SoD in patches.cpp for now, since it's not working right and will crash the zone.  
+
+==12/13/2011==
+Angelox: Derisions updates in Rev 1371, uploaded separatly for the many changes.
+Angelox: SoD updates by Derision (See EqEmu changelog R1360-1370, 1372).
+Angelox: Last update omits bots from tracking.
+Angelox: Tweak to #bot track.
+
+==12/12/2011==
+Angelox: SoD updates by Derision (See EqEmu changelog R1349-1352).
+Angelox: SoD updates by Derision (See EqEmu changelog R1353-1359).
+
+==12/11/2011==
+Angelox: SoD updates by Derision, Weisres (See EqEmu changelog R1336-1346). AA Change in 1332.
+Angelox: SoD updates by Derision (See EqEmu changelog R1347-1348). Bazaar Change in 1348.
+
+==12/09/2011==
+Angelox: SoD updates by Derision (See EqEmu changelog R1330-1332). big tracking change in 1332.
+
+==12/08/2011==
+Angelox: SoD updates by Weisres and Derision (See EqEmu changelog R1318-1327).
+Angelox: SoD update by Dersion More work on groups (R1329).
+
+==12/07/2011==
+Angelox: SoD updates by Weisres and Derision (See EqEmu changelog R1310-1317).
+Angelox: All healers in BattleHeal mode will warn when not enough mana for heal and not spam so much with the warning.
+Angelox: BattleHeal mode Druids and Shamans should try to hold off heals (give chance for the Cleric CHeal to take). 
+Angelox: Randsays made less often.
+ 
+==12/06/2011==
+Angelox: (KLS) SoF)Tribute hack removed.
+Angelox: Small Fix to decrease the "not enough mana for CHeal" spam.
+Angelox: Decreased random following chat to spam less.
+
+==12/05/2011==
+Angelox: Rev 1307 -1309 changes made by Derision.
+
+==12/04/2011==
+Angelox: (Derision) SoD - Spawns work, sometimes. Client will crash randomly sometimes when receiving spawns.
+Angelox: Six SoD updates by Weisres (See EqEmu changelog R1298-1305).
+
+==12/02/2011==
+Angelox: (Derision) Fix for temporary items on merchants appearing to increase in price.
+Angelox: (Leere) Fix for purchase price of stacked items != displayed price * quantity.
+Angelox: (Derision) Begging should no longer bug the client. Still needs some work around chance/amount/skillups etc.
+Angelox: (Trevius) Saylinks should no longer cause zone crashes if used outside of EVENTs.  They should function from anywhere now.
+
+==11/30/2011==
+Angelox: (weisres)Inspecting SoF players is now possible.
+Angelox: Bots following chat-spam reduced.
+
+==11/29/2011==
+Angelox: Fixed a memory leak and started a port of SoD (Trevus first upload).
+Angelox: (Derision) Support for Discord/Norrath's Keepers and Dark Reign merchants.
+Angelox: (Derision) EVENT_POPUPRESPONSE is now passed to player.pl.
+Angelox: (Derision) Mapped out the part of the player profile used for recording recent PVP kills.
+Angelox: Might have found a bug in the aa structs.
+ 
+==11/16/2011==
+Angelox: Attempt to correct item and money exchanges while banking.
+
+==11/15/2011==
+Angelox: (Derision) Fixed /yell.
+Angelox: (JJ) Doubled buffer for tradeskill search when using experiment mode. Outputs message in error log when matches exceed buffer.
+Angelox: (JJ) Changed tradeskills to distinguish world containers in multiple recipe matches. Split invalid container vs. non-unique recipe error log entries. Allowed server to select first match for duplicate recipe contents.
+Angelox: (Danyelle) Face fix for Iksar Beastlord pet.
+Angelox: (Jaekob/Danyelle) Texture fix for Iksar Beastlord pet
+
+==11/14/2011==
+Angelox: (Akkadius) (Akkadius/Lerxst) Fixed Beastlord 1.5 and 2.0 pet clickies.
+Angelox: (sorvani) fix for bard pacify songs.
+
+==11/12/2011==
+Angelox: Possible fixes that could cause zone crashes.
+
+==11/11/2011==
+Angelox: (Akkadius) Fixed a spell crash with ExecWeaponProc when a spell or weapon procs a spell that does not exist.
+
+==11/10/2011==
+Angelox: Bot Temps will be cleared at server startup (BotTemp, BotLeader, BotBuffs).
+Angelox: Bot chat will be disabled while in raid mode.
+
+==11/09/2011==
+Angelox: Cleaned up the launcher updater method, also made it less intrusive, so as not to cause any lag while zoning in.
+Also, it should look for zones which people stay in longer, not just passing though. 
+
+==11/08/2011==
+Angelox: Fixed some "unused variable" warnings that result in errors under windows. 
+
+==11/06/2011==
+Angelox: Added level 25 Druid Bot gates to Dulak and Gunthak.
+Angelox: Added level 44 Druid Bot gate to The Maiden's Eye.
+
+==11/03/2011==
+Angelox: launcher updater has to update the zone date when player zones in.
+Angelox: Added a Rule for the time amount to static zone removal;
+         Zone:StaticZoneDecayTimeS (Deafult is 259200 or 3 days)
+
+==11/02/2011==
+Angelox: Zone launcher updater will also remove unused statics on boot up.
+
+==10/31/2011==
+Angelox: Zone launcher updater - When the player zones into a non-static zone, the updater will 
+update and insert the zone in launcher_zones as static for next server restart.
+The idea is to minimize static zone usage to only zones players use.
+Need to add column and convert to InnoDB;
+ALTER TABLE `ax_classic`.`launcher_zones` ADD COLUMN `date` INT(32)  NOT NULL AFTER `port`
+, ENGINE = InnoDB;  
+
+==10/30/2011==
+Angelox: Attempt to make Akkadius memory leak in parser.cpp fix work. 
+
+==10/29/2011==
+Angelox: Attempt to make our version of the lerxst2112 mem leak fix.
+Angelox: More clutching to the Bot chat.
+
+==10/28/2011==
+Angelox: Shared Bank bug fix
+Angelox: (Akkadius) Various memory leak fixes.
+Angelox; Reverted Congdar: fix memory leak(lerxst2112), was crashing zones when players entered.
+
+==10/27/2011==
+Angelox: (Akkadius) Another memory leak in parser.cpp, NewEventList never deallocated
+Angelox: Reverted this fix, was crashing the zones.
+
+==10/21/2011==
+Angelox: New Command: #bot set [battleheal] [on] or [off] - When on, all HoT spells are avoided.
+
+==10/19/2011==
+Angelox: Randomizing BotSays: added more random comments to the bundle, and toned them all down a little.
+
+==10/10/2011==
+Congdar: fix memory leak(lerxst2112)
+
+==09/25/2011==
+Angelox: New command: #bot set [chat] [on] or [off] - used to enable/disable bots chatting.
+Angelox: Typo fix.
+
+==09/24/2011==
+Angelox: Randomizing BotSays: started adding gender, class, race and level checks to random effects.
+Angelox: Raid groups shouldn't spam so much chit-chat - also toned down group chat.
+
+==09/23/2011==
+Angelox: Still Randomizing BotSays.
+Angelox: Small fix to #bot Resurrect command.
+
+==09/22/2011==
+Angelox: More Randomizing BotSays.
+Angelox: More Randomizing BotSays to mezzers.
+Angelox: Attempt to fix bots trying to cast while running.
+
+==09/21/2011==
+Angelox: Randomizing BotSays so they won't look so "Botty".
+
+==09/18/2011==
+Angelox: Moved tswitch (bot taunt) routine to new table.
+
+==09/17/2011==
+Angelox: New command: #bot set [primary] - Temporary sets your primary slot for range item install.
+
+==09/14/2011==
+Angelox: New command: #bot set [snare] or [root] [on] or [off] - used to enable/disable root or snare.
+
+==09/03/2011==
+Angelox: New command, #bot taunt [on/off/warrior/paladin/sk/ranger/bard] -Sets taunt skill.
+
+==09/02/2011==
+Angelox: New command, #bot selos on/off (requires quest).
+Angelox: Fixed bug in #bot selos. 
+
+==08/29/2011==
+Angelox: Reverted last fix (npc_skill_types import), zones were crashing.
+
+==08/28/2011== 
+leslamarch: imported npc_skill_types from eqemulator.
+
+==08/23/2011==
+Angelox: Fixed #bot auto info to work with bards mez.
+
+==08/21/2011==
+Angelox: #bot heal command will not crash the zone anymore.
+Angelox: #bot healme command will warn when low on mana.
+
+==08/20/2011==
+Angelox: Bard will also use #bot auto mez - also added more help info to auto mez. 
+
+==08/18/2011==
+Angelox: Gheal (Group Heal) appeared to not be working, but really it's the Bot with not enough mana: Bot will warn now when not enough mana. 
+
+==08/17/2011==
+Angelox: Added two new commands: 
+	 #bot assist - will move your group to attack your new target
+	 #bot single assist - will send one of your fighters to attack your new target.
+
+==07/25/2011==
+Angelox: Evacuate should always have mana now - Wizard casts evacuate (wizard spell) instead of succor. 
+
+==07/24/2011==
+Angelox: Druids will not interrupt evac (succor spell) for heals anymore. 
+
+==07/05/2011==
+Angelox: Fixed erroneous message/block when issuing "#bot attack" command in a "no raid" zone.
+Angelox: Healer bots will not try to heal bot under DivineAura effect.
+Angelox: Attempt to improve bot-pet healing.
+
+==07/03/2011==
+Angelox: Added command #bot subvent, Usage: #bot subvent <YourNecroBotsName> <Target> (Feeds mana to target).
+Angelox: SpellOnTarget() spells now suck mana.
+Angelox: If bot doesn't have enough mana, he will BotSay() it instead of remaining silent and try to recast it.
+Angelox: Cheal command  had a bug where it would heal before the required level.
+
+==07/02/2011==
+Angelox: Cleaned up/organized some code in botCommand.h also fixed some gcc warnings.
+Angelox: Fix for Divine Aura (wasn't working right).  
+
+==06/30/2011==
+Angelox: Organized some bot commands to work under #bot summon [bot], [group], [corpse], [food], or [drink].
+
+==06/29/2011==
+Angelox: Hopefully, a fix for Clerics "quick heals" at level 51-62.
+
+==06/28/2011==
+Angelox: Found/fixed a bug in the "#bot make" script.
+Angelox: Any bot that can bind others is capable now.
+
+==06/27/2011==
+Angelox: Clerics will cast Divine Aura when almost dead. 
+Angelox: All spawn timers are disabled in starter (home) zones, so you can equip your bots hassle-free.
+Angelox: Bots can only bind your character in zones that allow binds to others.
+
+==06/26/2011==
+Congdar: added to #bot raid help section, displaying the commands #bot saveraid #bot spawnraid #bot groupraid.
+
+==06/24/2011==
+Angelox: Added #bot make - [food/drink] for your target. (summoned food/drink).
+
+==06/23/2011==
+Angelox: Added GM check for spawn timers.
+Angelox: Added Necros and Shamans to the "quick heal" ai.
+
+==06/22/2011==
+Angelox: Added "quick heals" to the botai in attempt to improve encounter healing.  
+
+==05/20/2011==
+Angelox: Revised "#bot invis" command - also added all classes capable of casting this spell.
+
+==05/14/2011==
+Angelox: "#bot title" addition wasn't compiling under Windows (fixed). 
+
+==05/13/2011==
+Angelox: Some tweaks to "#bot title" command. 
+
+==05/12/2011==
+Angelox: Added "#bot title" whatever tag input to bots name.
+
+==04/26/2011==
+Angelox: Fixed secondary login server check as it wasn't working.
+
+==03/09/2011==
+Angelox: Fixed #bot delete sp it will warn you to be sure before the action is preformed. 
+
+==02/07/2011==
+Angelox: Re-added timer checks for group/raid respawn only if player used Feign Death.
+
+==02/04/2011==
+Angelox: Removed timer checks for bot/group/raid respawn.
+
+==01/11/2011==
+Angelox: #bot dire charm should work properly now.
+
+==01/03/2011==
+Angelox: World DUAL_SERVER work, swiched primary to eqemu in XML file.
+
+==01/02/2011==
+Congdar: Fixed Bard bot missing level 54 song. Fixed pvp bot exploit.
+
+==12/31/2010==
+Angelox: World DUAL_SERVER work
+Congdar: fix #bot magepet
+
+==12/30/2010==
+Congdar: Magicians can now give equipment to their epic pet.
+Congdar: Magician bots now remember their magepet setting
+	required sql:
+		alter table botsowners ADD COLUMN magepet int(11) NOT NULL default '0' AFTER botarchery;
+Congdar: Added Magician Epic Pet to bot pet spells. use '#bot magepet air' from level 50-60.
+	required sql:
+		update npc_spells_entries set maxlevel=49 where spellid=635 and npc_spells_id=704;
+		update npc_spells_entries set minlevel=50, maxlevel=60, spellid=1936 where spellid=1674 and npc_spells_id=704;
+		delete from npc_spells_entries where spellid=1678 and npc_spells_id=704;
+Congdar: vsnprintf changes
+
+==12/28/2010==
+Congdar: bot pets get magician summoned gear
+
+==12/27/2010==
+Angelox: dual login fix - your LS should be primary since EqEMu LS is too buggy and constantly disconnect/corrupts the connections.
+
+==12/15/2010==
+Congar: fix bot trade exploit
+
+==12/13/2010==
+Angelox: fixed #bot sow group, added #bot sow group wolf or #bot sow wolf (now single). Also #bot sow eagle works for group after level 62.
+Congdar: add wear slot check for #bot augmentitem
+Angelox: some cosmetic fixes to command listing, also moved #bot remove to same as #bot unequip. 
+
+==12/12/2010==
+Congdar: #bot unequip command fixed.
+Congdar: all bots will lose invis when attacking.
+
+==12/11/2010==
+Congdar: #bot inventory remove crashes zone on empty slots
+
+==12/07/2010==
+Angelox: Added more checks to ensure cleanups on bots zoning
+
+==12/06/2010==
+Angelox: Tweak to buff-zoning code.
+Angelox: Check to ensure buffs are clear before new spawn.
+
+==12/05/2010==
+Angelox: Work with Bots zoning without loosing their buffs pretty much finished.
+
+==12/01/2010==
+Angelox: Work with Bots zoning without loosing their buffs.
+Angelox: New bot command added "#bot buffs" displays buffs on Bot.
+  Required Sql Table;
+   CREATE TABLE  `ax_classic`.`botbuffs` (
+    `botid` int(11) NOT NULL default '0',
+    `buffid` int(11) NOT NULL default '0',
+    PRIMARY KEY  (`botid`,`buffid`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+==11/30/2010==
+Angelox: On going work with Bots zoning without loosing their buffs (not ready yet).
+Angelox: More work with Bots zoning without loosing their buffs (not ready yet).
+
+==11/28/2010==
+Angelox: Bots now will have the same Mana they had before they zoned.
+
+==11/27/2010==
+Angelox: On going work with Bots zoning without loosing their buffs (not ready yet).
+Angelox: Bots now will have the same HP they had before they zoned.
+  Required Sqls;
+  ALTER TABLE `ax_classic`.`bottemp` ADD COLUMN `hp` INTEGER  NOT NULL DEFAULT 0 AFTER `slot`;
+  ALTER TABLE `ax_classic`.`botbank` ADD COLUMN `hp` INTEGER  NOT NULL DEFAULT 0 AFTER `slot`;
+  ALTER TABLE `ax_classic`.`bottemp` ADD COLUMN `mana` INTEGER  NOT NULL DEFAULT 0 AFTER `hp`;
+  ALTER TABLE `ax_classic`.`botbank` ADD COLUMN `mana` INTEGER  NOT NULL DEFAULT 0 AFTER `hp`;
+
+==11/25/2010==
+Congdar: enforce no trading with bots while fighting
+
+==11/24/2010==
+Congdar: fix for bot dual wield trade bug
+
+==11/22/2010==
+Angelox: Began work with Bots zoning without loosing their buffs.
+Angelox: If a bot dies in a fight, he won't respawn after you zone(you have to respawn him).
+Angelox: More graceful campout for bots(no more bots getting the "killed look" when you camp).
+Angelox: More graceful zoning for bots(no more bots getting the "killed look" when you zone). 
+
+==10/26/2010==
+Congdar: fix bot heal crash bug
+
+==10/23/2010==
+Congdar: Bot MGB no longer buffs npc's.  Raid Bots will now speak in the correct channel.
+Congdar: Undo some vsnprintf changes
+
+==10/22/2010==
+cbodimer: Rules-based NPC BeneficialSpell LOS check system; code cleaned up to support builds with or without EQBOTS defined.
+cbodimer: Fixes leadership AAs being disabled after zoning with a bot group
+cbodimer: fix to Bot Group Leadership AAs.
+
+==10/20/2010==
+Congdar: fix dupe bug and vsnprinf sizes.
+
+==10/19/2010==
+Congdar: remove BotCombatMessage(), change BotSay().
+Congdar: another tweak to BotSay().
+
+==10/18/2010==
+Angelox: Congdar: Remove BotGroupSay/BotGroupBigSay, is now BotSay, and works in group or in raid mode, this also fixes. text getting cut out, and #bot inventory list bug.
+Angelox: #bot disbandgroup should work better now
+Angelox: Started a fix for the zone crash when summoning a bot and cheal is being cast.
+Angelox: Timeleft in some commands is now properly displayed.
+
+==10/16/2010==
+Angelox: Returned Congdars Fix to BotGroupSay as BotGroupBigSay,as the old method only allows around 160 characters (choose what works best).
+Angelox: Congdar: Reverted BotGroupSay, as it broke the #bot inventory list
+Angelox: Congdar: Fix to BotGroupSay possible crash; Instead of a fixed length char,it makes it the size of whatever string is sent,so there's no worry about sending a string that's too long and then deletes it when it's done. 
+Congdar: fix possible archery crash.
+
+==10/14/2010==
+Angelox: My pTimers ids were to low
+Angelox: Congdar: Fixed possible crash that may be string manipulation related.
+
+==10/11/2010==
+Congdar: fix dual wield check when trading with bots
+
+==10/09/2010==
+Congdar: fix bot inspect icon bug
+Congdar: fix secondary weapon bug
+Congdar: add lore checks for augments
+
+==10/08/2010==
+Congdar: remove some database hits when data is available in memory
+Angelox: Trivial code update/revision.
+Congdar: fix isclassic logic
+Congdar: fix zone crash from inspecting bots
+
+==10/03/2010==
+Angelox: GMs can not use #repop command with bots in the zone
+	 required sql:ALTER TABLE `ax_classic`.`botleader` ADD COLUMN `zoneid` INTEGER  NOT NULL DEFAULT 0 AFTER `zone_name`;
+
+==10/01/2010==
+Angelox: Removed most pointless GCC warnings (Linux), so we don't have to navigate through hundreds of them in order to find an error.
+Congdar: fix to bot raid main tank turning around the target
+
+==09/30/2010==
+Congdar: rogue bots will try to get behind their target for backstab.
+Congdar: bot raid maintank will try to turn the targets back to the rest of the raid.
+
+==09/25/2010==
+Congdar: new command #bot battlerez
+Congdar: Bots can now equip multi slot items in the desired slot. The first available empty slot will get the item.
+
+==09/22/2010==
+Threeflies: Fabled Chief Rokgus and Fabled Eldak Howlingbear added.
+Angelox: Added "a goblin bodyguard" to FM which can drop either version of the "Circlet of Shadow(s)". 
+
+==09/21/2010==
+Angelox: Added fabled mobs to Burningwood.
+
+==09/20/2010==
+Congdar: Inspect now works on bots from the Secrets of Faydwer client.
+Congdar: Bow capable bot classes now remember their Archery setting.
+	required sql: ALTER TABLE `botsowners` ADD COLUMN `botarchery` INTEGER NOT NULL DEFAULT 0 AFTER `botleadercharacterid`;
+Angelox: Ported KLS (eqemu) fix; Fix for non-reentrant proximity code.  Should no longer crash on msvc debug or
+cause heap corruption in gcc.
+Angelox: Fixed PoK library elevator, and around 40 more PoK "doors". 
+
+==09/19/2010==
+Angelox: Added NPC's that will enchant bars for quests;
+	   Feerrott: Illusionist LaFea by the bridge nearest Oggok
+	   Northern Felwithe: Illusionist Isabela by the water
+
+==09/18/2010==
+Congdar: Fixed bot Archery
+Congdar: Fixed bot visual items to update when using inventory remove commands
+Congdar: Added missing ? to the eqemu_config xml files.
+
+==09/14/2010==
+Angelox: Moved the NPC Ulump Pujluk (Druid Epic) out of newbee protected zone to Trakanon.
+
+==09/01/2010==
+Angelox: Fixed problem where text was getting cut out when bots replied to the #bot gate command.
+
+==08/014/2010==
+Angelox: fix for #bot remove (phase out).
+Angelox: added new command #bot unequip [slot name] or [slotid] to replace #bot inventory remove [slotid].
+
+==08/03/2010==
+Angelox: This fix will force the player to remove item from off hand before equipping primary.
+ 
+==08/01/2010==
+Angelox: Temporary fix for the shield-zone crash, and some of the weapons being duplicated while equipping bots.
+
+==06/28/2010==
+Sakkath: Bots no longer taunt when they already have aggro. Significantly reduces taunt spam :)
+
+==06/27/2010==
+Sakkath: Fix to Enchanter bot auto-mez to stop it spamming mezz on the same mob with no delay
+Sakkath: Enchanter bots won't cast mana taps on mobs that have no mana
+Sakkath: Enchanter bots won't nuke when they have less than 40% mana (to save for crowd control)
+Sakkath: Hybrid healing class bots (i.e. Ranger, Beastlord) have slightly less chance of healing to save mana for DPS
+
+==06/25/2010==
+Sakkath: Added #bot offtank command. Automatically selects what it thinks is currently the best available offtank from group/raid and has it disengage its current target and engage the targetted mob.
+Sakkath: Any bot in raid will announce heals in group say
+Sakkath: Pets turn off attack when mob enrages unless they're behind it
+
+==06/21/2010==
+Sakkath: Fixed a couple of zone crashes
+Sakkath: Changed the rules for bots to heal - now heals in order of % remaining HP and announced heals in group
+
+==05/16/2010==
+Congdar: Bots can now use items with augments
+
+==04/25/2010==
+Angelox: Changed most the "Say" to  Fez's "BotGroupSay", in botCommand.h.
+
+==04/21/2010==
+Congdar: source: Updated Monk Headband Quest to check faction
+Congdar: source: Updated Visual Studio build environment
+Congdar: source: Update to npc spawning
+
+==12/14/2009==
+leslamarch: added a new folder eqatlas, I have the site about 95% working.
+
+==11/24/2009==
+Congdar: source: Visual Studio build environment fixes.
+
+==11/11/2009==
+Angelox: More database work
+
+==11/09/2009==
+Angelox: quests: Exterminator in swampofnohope will also trade for spider legs.
+Angelox: database: I've been tweaking the DB loots as I have time, adding fabled. Added roam box in front of froggy town to improve hunting.
+
+==11/07/2009==
+Angelox: source: Added more Bot fixes (bots zone with you now), to source which is merged to 1026. This will probably be the last major merge, as it always breaks details on the bots, not just with AX Classic, but these updates break Bots in EqEmu too (small/large things like picklock and guard).
+
+==10/15/2009==
+Angelox: source: Added recent Bot fixes to source.
+
+==10/09/2009==
+Angelox: source: updated to work with 1008, with additional fixes/additions to bots, canZone option.
+Angelox: database: Updated database 3.12o is posted in "release" (I moved solid database updates to this new root).
+Angelox: database: Database SVN not up to date yet! get 3.12o posted in release.
+
+==10/03/2009==
+Angelox: Editor: Updated and compatible again.
+
+==10/02/2009==
+Angelox: Database: Lowered level requirements on three 70 fabled items.
+Angelox: Editor: Small tweak for server id on the editor.
+
+==10/01/2009==
+Angelox: Source: Updated  to AX_SOURCE-AX1004b
+
+==9/30/2009==
+Angelox: Backups: Cleaned up forums/LS backups/RatheAccounts backups directory and added fresh backups.
+
+==9/27/2009==
+Angelox: Quests: Female "an_erudite_spirit" was not spawning for the Temperance quest.
+Angelox: Quests: Added a script that will initialize the ship globals, if the database is new or the globals got deleted (boats should always work).
+
+==9/24/2009==
+Angelox: Database: Uploaded ax_classic_3.12d.zip
+Angelox: Source: Uploaded AXClassic_976d_ReleaseBots_Executables.zip
+
+==9/23/2009==
+Asram: Quests: Finished airplane quests! Yay!
+
+==9/22/2009==
+Angelox: Database: Source it in -TimorousStreamers.sql - not safe to swim in Timorous anymore :)
+Asram: Added another week of Editor log backups to keep the overall file size small...that means great work, folks! Thanks!
+
+==9/21/2009==
+Asram: Quests: More airplane quests completed!
+
+==9/20/2009==
+Angelox: Source: Bots were too spread out when following, so I brought them closer together.
+Angelox: Quests: Frankel the Pirate is talking again.
+
+==9/13/2009==
+Angelox: Source: Fixed character creation; bind points and home Cities now point to AX Classic zones.
+
+==9/13/2009==
+Angelox: Quests: Added offer to swap for batwings in the three Neriak Exterminator NPC's (No bats in Nectulos).
+
+==9/10/2009==
+Asram: Added AXClassic_976a_ReleaseBots_Executables to \executables folder (Two new SQL tables for veteran rewards)
+
+==9/09/2009==
+Angelox: Uploaded backups from Forums, LS, and Character accounts from Rathe.
+
+==9/08/2009==
+Asram: Removed ax_classic_3.12 dump as it's deprecated
+Asram: Big list of Editor fixes/updates; see that changelog for details
+
+==9/05/2009==
+Angelox: Quests: Added quest to spawn Undead Reavers in East Karana (database updated too).
+Asram: Added dump of Syrith to database\dumps\Syrith (Angelox to remove account info and repost).
+
+==9/04/2009==
+leslamarch: DB folder clean up, Removed old tables from the folder.
+leslamarch: added in the latest tested version of the login server, we prolly need to update ours.
+Angelox: updated quests in cabw, FoB, swamp no hope, kerraridge, with npcs that will exchange for batwings.
+Angelox: source: added the pop-up help routines.
+Asram: Added 974c Windows Executables (ReleaseBots Build)
+
+==8/31/2009==
+Angelox: Source: Merged to 974
+Angelox: Source: Added #bot skin (Skin like whatever) for those who like to play with druid bots.
+
+==8/30/2009==
+Angelox: Source: Fixed a nasty bug where #bot charm and dire charm was crashing the server.
+Angelox: Source: Right-click "view bot items" will show bots name in the window (not yourcharacters). 
+
+==8/30/2009==
+leslamarch: Updated the axtools to match the current DB schema, The tool will no longer use DB_items.sql just items.sql. added some more options to the main menu.
+
+==8/29/2009==
+Asram: Added AXClassic_973b_ReleaseBots_Executables
+Asram: Fixed a bunch of quests that wouldn't have compiled
+
+
+==8/28/2009==
+Asram: Added AXClassic_966a_ReleaseBots_Executables
+Asram: Added first tasks, reconfigured pet graphics in airplane, and rocked a few spawn fixes
+
+==8/27/2009==
+Asram: Added Vulak`Aerr quest scripts and database updates for templeveeshan
+Asram: Added double-doors that rise and fall together to various zones
+Asram: Editor:  Added cavedude's Updates for new npc_types fields
+
+==8/26/2009==
+Angelox: Source: Uploaded/Commited source AX961a, has the "user friendly" fixes with the new #bot slow command.
+Angelox: Source: Fixed #bot heal (some levels spells didn't work)
+Angelox: Source: Found and fixed some code I misplaced in other commands.
+Asram: Executables: Added AXClassic_961a_ReleaseBots_Executables
+Asram: Source: Created \source\SourceDrops folder for Angelox to drop sourcecode for me to compile
+ 
+==8/25/2009==
+Asram: Big Update! Updated HP to equal or improve upon classic mob difficulties; affected levels 1-55 for classic zones.  Import npc_types table for changes.
+Asram: Added standard docs for modifying HP's; Includes Raid HP's (Boss HP column) as well as statistical control limits for whether NPC's are out of whack or not with classic standard deviations.
+Asram: Added original ShowEQ logs for fixing classic mobs to match classic Live on a 1x1 basis.
+
+==8/24/2009==
+Asram: Added 959b Windows ReleaseBots Executables.
+
+==8/23/2009==
+Angelox: Source: Fixed #bot charm and #bot dire charm - also added check so charm doesn't kill the NPCs pet (could become an exploit).
+Angelox: Added a spot for backups - uploaded backups from Forums, LS accounts, and Rathe accounts.   
+
+==8/22/2009==
+Angelox: Added updated spells table
+
+==8/21/2009==
+Asram: Added Syrith Database Export to \database
+Asram: Added Les's axtools (double-check backup for all tables) and added Syrith's manual loading scripts for \database
+Angelox: Fixed Anita Thrall gate quests, added options for players over level 50.
+Angelox: Source: "#bot target calm" should work better now. #bot charm commands are broken, so I disabled tell I can figure it out (they just kill the target). Tweaked a few more of the #bot commands.
+
+==8/20/2009==
+Asram: Added 906c Windows Releasebot Executables
+
+==8/19/2009==
+leslamarch: SVN cleanup ?
+
+==8/18/2009==
+leslamarch: Reverted back to ax906a
+Asram:  Added executables for 906a
+Asram: Added axclassiceditor to utils folder. Not available anywhere else, folks!
+Angelox: Source: Bots should again stop what they are casting and give prority to your bot cast spell comand.
+Angelox: Source: Added two new commands "heal" (heals target) and "healme" (heals your client), for back up healing.
+
+==8/17/2009==
+Angelox: Updated source to 942b
+
+==8/16/2009==
+leslamarch: added everything needed for stats output of the login server(per eqemu forums)
+
+==8/15/2009==
+Angelox: Updated source with the Custom AX add-ons
+Asram:  Added 922c executables from Angelox's source above.
+
+==8/15/2009==
+Asram: Added client files for cshome (because I had them archived)
+
+==8/14/2009==
+Asram: Added cash per kill, and xp per quest standards to /docs
+Asram: Added research item ID's for spell levels 1-50 for inclusion on appropriate-leveled mobs.
+Asram: Fixed quest folder hierarchy in SVN.
+Asram: Added 922b Windows Executables

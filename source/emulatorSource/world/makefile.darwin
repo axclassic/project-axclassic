@@ -1,0 +1,32 @@
+
+MYSQL_CFLAGS=-I'/usr/local/include/mysql'
+
+OUT=-o 
+LINKOUT=-o 
+NOLINK=-c
+CC=g++
+LINKER=g++
+DFLAGS=-DFREEBSD -DEQDEBUG=5 -DSHAREMEM -DCATCH_CRASH -DNO_PIDLOG -DFIELD_ITEMS -DINVERSEXY -DWORLD -DFREEBSD -D__USE_UNIX98 -Di386
+WFLAGS=-Wall -Wuninitialized -Wwrite-strings -Wcast-qual -Wcomment -Wcast-align -Wno-deprecated
+
+#darwin/prolly any newer BSD:
+PERL_FLAGS=$(shell perl -MExtUtils::Embed -e ccopts)
+PERL_LIB=$(shell perl -MExtUtils::Embed -e ldopts)
+DFLAGS+=-DEMBPERL -DEMBPERL_PLUGIN -DHAS_UNION_SEMUN
+MYSQL_FLAGS=$(shell mysql_config --cflags)
+MYSQL_LIB=$(shell mysql_config --libs)
+COPTS=$(WFLAGS) -g -march=i686 -O -pipe -I../common/SocketLib \
+  -D_GNU_SOURCE $(DFLAGS) $(MYSQL_FLAGS) $(PERL_FLAGS)
+LINKOPTS=$(COPTS) -L. -lstdc++ -lm -lz -ldl \
+  $(MYSQL_LIB) $(PERL_LIB)
+
+
+all: world
+
+include makefile.common
+
+
+
+
+
+
