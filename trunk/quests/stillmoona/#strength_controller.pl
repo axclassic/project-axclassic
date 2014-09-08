@@ -15,6 +15,7 @@ sub EVENT_SIGNAL {
 	quest::spawn2(338164,0,0,4.5,921.7,39.6,208.9);
 	quest::spawn2(338164,0,0,-27.1,921.7,39.6,50.1);
 	quest::spawn2(338164,0,0,-8.5,914.3,41.2,254.9);
+	quest::signalwith(338164,324,5);
 	}
 	if($signal == 323) { #signal 323 is from each of the An_Ancient_Protectors 
     $counter += 1;
