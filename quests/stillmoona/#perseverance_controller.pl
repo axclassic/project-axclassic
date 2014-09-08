@@ -14,6 +14,7 @@ sub EVENT_SIGNAL {
 	quest::spawn2(338001,0,0,-27,36.6,-31.7,76.6);
 	quest::spawn2(338001,0,0,-27,51,-32.9,110.5);
 	quest::spawn2(338001,0,0,8.4,51,-32.9,135.6);
+	quest::signalwith(338001,423,5); #tell goblins to attack you
 	}
 	if($signal == 427) { #signal 427 is from each of the goblins
     $counter += 1;
@@ -22,10 +23,12 @@ sub EVENT_SIGNAL {
 	quest::spawn2(338001,0,0,-27,36.6,-31.7,76.6);
 	quest::spawn2(338001,0,0,-27,51,-32.9,110.5);
 	quest::spawn2(338001,0,0,8.4,51,-32.9,135.6);
+	quest::signalwith(338001,423,5); #tell goblins to attack you
 	}
 	if($signal == 427) { #signal 427 is from each of the goblins
       if($counter == 8) {
 	quest::spawn2(338002,0,0,-8.2,30.6,-32.9,123.6);
+	quest::signalwith(338002,423,5); #tell goblin warlord to attack you
 	quest::depop(338001);
 	quest::depop();
     } 
