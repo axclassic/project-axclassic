@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<base target="main">
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="TreeMenu.js" language="JavaScript" type="text/javascript"></script>
+<link rel="stylesheet" title="Default" href="main.css" type="text/css" />
+<link rel="stylesheet" title="Default" href="TreeMenu.css" type="text/css" />
+</head>
+
+<body class="edgebody">
+<!--
+<table class="menu" border="0" bgcolor="#12282D" width="100%" height="100%">
+<tr>
+<td class="menu" valign="top" align="left">
+	<table border="0" cellpadding="2" cellspacing="2">
+	<tr>
+		<td><img src="yellow_dot.gif" height="10" width="10"></td>
+		<td><a href="status.html">Status</a></td>
+	</tr>	<tr>
+		<td><img src="yellow_dot.gif" height="10" width="10"></td>
+		<td><a href="config.html">Config</a></td>
+	</tr>
+	<tr>
+		<td><img src="yellow_dot.gif" height="10" width="10"></td>
+		<td><a href="rules.html">Rules</a></td>
+	</tr>
+	<tr>
+		<td><img src="yellow_dot.gif" height="10" width="10"></td>
+		<td><a href="world.html">World</a></td>
+	</tr>
+	<tr>
+		<td><img src="yellow_dot.gif" height="10" width="10"></td>
+		<td><a href="zones.html">Zones</a></td>
+	</tr>
+	<tr>
+		<td><img src="yellow_dot.gif" height="10" width="10"></td>
+		<td><a href="database.html">Database</a></td>
+	</tr>
+	<tr>
+		<td><img src="yellow_dot.gif" height="10" width="10"></td>
+		<td><img src="yellow_dot.gif" height="10" width="10"><a href="accounts.html">Accounts</a></td>
+	</tr>
+	<tr>
+		<td><img src="yellow_dot.gif" height="10" width="10"></td>
+		<td><img src="yellow_dot.gif" height="10" width="10"><a href="minilogin.html">Minilogin</a></td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+-->
+
+<table class="menu" border="0" bgcolor="#12282D" cellspacing="0" cellpadding="0" width="100%" height="100%">
+<tr>
+<td class="menu" valign="top" align="left" width="100%">
+<script language="javascript" type="text/javascript">
+	EQLMenu = new TreeMenu("TMimages", "EQLMenu", "_self", "auto", true);
+	EQLMenu.linkTarget = "main";
+	EQLMenu.SetImageSize(20, 20);
+	statusmenu = EQLMenu.addItem(new TreeNode('Status', null, 'status.html', false, true, 'tmenu0text'));
+		statusmenu.addItem(new TreeNode('Players', null, 'players.html', false, true, 'tmenu1text'));
+		statusmenu.addItem(new TreeNode('Petitions', null, 'petitions.html', false, true, 'tmenu1text'));
+	worldmenu = EQLMenu.addItem(new TreeNode('World', null, 'world.html', false, true, 'tmenu0text'));
+		worldmenu.addItem(new TreeNode('Launchers', null, 'launchers.html', false, true, 'tmenu1text'));
+		worldmenu.addItem(new TreeNode('Chat', null, 'chat.html', false, true, 'tmenu1text'));
+	zonesmenu = EQLMenu.addItem(new TreeNode('Zones', null, 'zones.html', false, true, 'tmenu0text'));
+	guildmenu = EQLMenu.addItem(new TreeNode('Guilds', null, 'guilds.html', false, true, 'tmenu0text'));
+		guildmenu.addItem(new TreeNode('Search', null, 'guildsearch.html', false, true, 'tmenu1text'));
+		guildmenu.addItem(new TreeNode('Create', null, 'guildcreate.html', false, true, 'tmenu1text'));
+	dbmenu = EQLMenu.addItem(new TreeNode('Database', null, 'database.html', false, true, 'tmenu0text'));
+		dbmenu.addItem(new TreeNode('Accounts', null, 'accounts.html', false, true, 'tmenu1text'));
+		dbmenu.addItem(new TreeNode('Variables', null, 'variables.html', false, true, 'tmenu1text'));
+		dbmenu.addItem(new TreeNode('Minilogin', null, 'minilogin.html', false, true, 'tmenu1text'));
+		dbmenu.addItem(new TreeNode('Bans/Filters', null, 'filters.html', false, true, 'tmenu1text'));
+		dbmenu.addItem(new TreeNode('Commands', null, 'commands.html', false, true, 'tmenu1text'));
+	configmenu = EQLMenu.addItem(new TreeNode('Config', null, 'config.html', false, true, 'tmenu0text'));
+		configmenu.addItem(new TreeNode('Rules', null, 'rules.html', false, true, 'tmenu1text'));
+	
+	
+	/* newNode_1 = newNode.addItem(new TreeNode('Introduction to HTML_TreeMenuXL', null, '#intro', false, true, 'tmenu1text'));
+	 newNode_2 = newNode.addItem(new TreeNode('Using HTML_TreeMenuXL', null, '#chips_version', false, true, 'tmenu1text'));
+	 newNode_2_1 = newNode_2.addItem(new TreeNode('Basic TreeMenus', null, '#basic', false, true, 'tmenu2text'));
+	newNode_2_2 = newNode_2.addItem(new TreeNode('TreeMenus With Style', null, '#style', false, true, 'tmenu2text'));
+	 newNode_2_3 = newNode_2.addItem(new TreeNode('TreeMenus Without Icons', null, '#noicons', false, true, 'tmenu2text'));
+	 newNode_2_4 = newNode_2.addItem(new TreeNode('Rigid and Expanded TreeMenus', null, '#rigid', false, true, 'tmenu2text'));
+	 newNode_2_5 = newNode_2.addItem(new TreeNode('Controlling Indenting and Vertical Spacing', null, '#advanced_spacing', false, true, 'tmenu2text'));
+	 newNode_2_6 = newNode_2.addItem(new TreeNode('LinkSelect, User Images and User Styles', null, '#advanced_linkselect', false, true, 'tmenu2text'));
+	 newNode_2_7 = newNode_2.addItem(new TreeNode('Listbox Menus', null, '#listbox', false, true, 'tmenu2text'));
+	 newNode_3 = newNode.addItem(new TreeNode('History of TreeMenuXL', null, '#history', false, true, 'tmenu1text'));
+	 newNode_3_1 = newNode_3.addItem(new TreeNode('TreeMenuXL 1.1', null, '#xl11', false, true, 'tmenu2text'));
+	 newNode_3_2 = newNode_3.addItem(new TreeNode('TreeMenuXL 1.2', null, '#xl12', false, true, 'tmenu2text'));
+	 newNode_3_3 = newNode_3.addItem(new TreeNode('Summary of New Features in TreeMenuXL', null, '#summary_of_new_features', false, true, 'tmenu2text'));
+	 newNode_4 = newNode.addItem(new TreeNode('HTML_TreeMenu Reference', null, '#reference', false, true, 'tmenu1text'));
+	 newNode_5 = newNode.addItem(new TreeNode('Things To Do', null, '#thingstodo', false, true, 'tmenu1text'));
+	 newNode_6 = newNode.addItem(new TreeNode('TreeMenuXL Source Code', null, '#sourcecode', false, true, 'tmenu1text'));
+	newNode_6.iconImageWidth=20;
+	newNode_6.iconImageHeight=20;
+	newNode_6.lineImageWidth=20;
+	newNode_6.lineImageHeight=20;
+	newNode.iconImageWidth=20;
+	newNode.iconImageHeight=20;
+	newNode.lineImageWidth=20;
+	newNode.lineImageHeight=20;
+*/
+	EQLMenu.drawMenu();
+	EQLMenu.resetBranches();
+</script>
+<br/>
+</td>
+<td class="menuborder" width="1"><img src="spacer.gif"></td>
+</tr>
+<tr><td colspan="2" class="menuborder" height="1" width="100%"><img src="spacer.gif"></td></tr>
+</table>
+
+</body>
+</html>

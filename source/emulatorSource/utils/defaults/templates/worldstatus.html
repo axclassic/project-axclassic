@@ -1,0 +1,48 @@
+	my $url1 = 'http://login.axclassic.com/';
+	my $url2 = 'http://www.eqemulator.org/index.php?pageid=serverinfo&worldid=978';
+	use LWP::Simple;
+	my $content1 = get $url1;
+	my $ls1 = 'axclassic.com';
+	my $lsp1 = '5999';
+
+	my $content2 = get $url2;
+	my $ls2 = $EQW->GetConfig("LoginHost");
+	my $lsp2 = $EQW->GetConfig("LoginPort");
+
+	## Angelox; Checks for AXClassic
+	die "Couldn't get $url1" unless defined $content1;
+	  if($content1 =~ m/axclassic/i) {
+	    print "World is connected to primary login server $ls1:$lsp1.<br>";}
+	  elsif($content1 =~ m/Pending/i) {
+	    print "World is connected as \"pending\" to primary login server $ls1:$lsp1.<br>";}
+	  elsif($content1 =~ m/Locked/i) {
+	    print "World is connected as \"locked\" to primary login server $ls1:$lsp1.<br>";}
+	  elsif($content1 =~ m/Error/i) {
+	    print "World <b>NOT</b> connected to login server $ls1:$lsp1.<br>";}
+	  else {
+	    print "World <b>NOT</b> connected to login server $ls1:$lsp1.<br>";}
+
+	## Angelox; Checks the status page at EqEmu
+	die "Couldn't get $url2" unless defined $content2;
+	  if($content2 =~ m/<td>UP/i) {
+	    print "World also connected to secondary login server $ls2:$lsp2.<br>";}
+	  elsif($content =~ m/Pending/i) {
+	    print "World is connected as \"pending\" to secondary login server $ls2:$lsp2.<br>";}
+	  elsif($content =~ m/Locked/i) {
+	    print "World is connected as \"locked\" to secondary login server $ls2:$lsp2.<br>";}
+	  else {
+	    print "World <b>NOT</b> connected to login server $ls2:$lsp2.<br>";}
+	
+	if($EQW->GetConfig("Locked") eq "true") {
+		print "World is locked. <a href='world.html?action=unlock'>Unlock World</a>.<br>";
+	} else {
+		print "World is NOT locked. <a href='world.html?action=lock'>Lock World</a>.<br>";
+	}
+	
+	print "<br>\n";
+	my $zcount = $EQW->CountZones();
+	my $lcount = $EQW->CountLaunchers(1);
+	my $pcount = $EQW->CountPlayers();
+	print "There are <a href='zones.html'>$zcount zones booted</a>, <a href='launchers.html'>$lcount launchers connected</a>, and <a href='players.html'>$pcount players online.</a><br>";
+	
+	
