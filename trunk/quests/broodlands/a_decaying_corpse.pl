@@ -22,6 +22,7 @@ if($text=~/paid/i) {
 	quest::spawn2(337252,0,0,187,-910,71,240.1);
 	quest::spawn2(337253,0,0,1261,501,32.1,238.8);
 	quest::spawn2(337254,0,0,-838.6,782.7,37,165.3);
+	quest::depop();
 	}
 }
 sub EVENT_ITEM {
