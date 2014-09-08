@@ -8,13 +8,14 @@ my $Signal = quest::saylink("Signal", 1);
 my $Sudden = quest::saylink("Sudden", 1);
 my $cause = quest::saylink("cause", 1);
 my $plans = quest::saylink("plans", 1);
+my $Storm = quest::saylink("Storm", 1);
   if ($text=~/Hail/i){
    quest::say("Welcome traveler, Have you heard the news? New areas of exploration have been found. Already there are many reports that there is trouble.");
    quest::say("I am looking for adventurers that are willing to face the unknown and see if these $rumors are true.");
    }
   if ($text=~/rumors/i){ 
    quest::say("There are so many reports, I will allow you to choose which one or more you think you can handle.");
-   quest::say("Let's see, there is $Animated Statue Plans, $Best Laid Plans, $Diseased Pumas, $Scales of Justice, $Signal Fires or $Sudden Tremors. Thats the ones I know about but there may be more.");
+   quest::say("Let's see, there is $Animated Statue Plans, $Best Laid Plans, $Diseased Pumas, $Scales of Justice, $Signal Fires or $Sudden Tremors, $Storm Dragon Scale. Thats the ones I know about but there may be more.");
    }
   if ($text=~/Animated/i){ 
    quest::say("It's said that great treasures are held safely within the hallowed halls of Stillmoon Temple, guarded by powerful statues that animate when trespassers are near. Recently, one of our agents tracked down some goblin architects that seem to have the knowledge of building a new, stronger version of these juggernauts. Having some of these statues under our control would be most beneficial to our $cause.");
@@ -43,6 +44,10 @@ my $plans = quest::saylink("plans", 1);
   if ($text=~/Sudden/i){ 
    quest::say("Scouts in the northern most region of The Ascent are reporting Tremors all around them. If you are brave enough, venture to The Ascent and try to discover the cause of these tremors. bring back to me anything you should find that will help us solve this riddle.");
    }
+   if ($text=~/Storm/i){
+   quest::say("Our spies report that a handful of storm dragon scales were recently given to one of Yar'Lir's most powerful advisors, a goblin warlock know as the Storm Caller. We need you to organize an expedition to recover these scales before the goblins use their newfound power against us. Be careful, for the Storm Caller lair is high on the peaks about Stillmoon, and it is rumoured he has rudimentary control of the weather itself.");
+   quest::say("Bring me the Storm Dagon Scales and I shall reward you.");
+  }   
  }
 sub EVENT_ITEM { 
   if (plugin::check_handin(\%itemcount, 49017 => 1)) { 
@@ -80,6 +85,12 @@ sub EVENT_ITEM {
    quest::ding();
    quest::exp(100000);
    quest::say("Well done $name, that should set the Dark Reign on thier heels!");
+   quest::givecash(2,6,5,50);
+   }
+   elsif (plugin::check_handin(\%itemcount, 49035 => 1)) { 
+   quest::ding();
+   quest::exp(100000);
+   quest::say("Well done $name, You have turned the favor of power back into our hands at least for now.");
    quest::givecash(2,6,5,50);
    }
        else {
