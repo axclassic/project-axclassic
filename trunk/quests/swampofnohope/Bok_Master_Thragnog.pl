@@ -75,7 +75,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 51635 => 1) && $class eq "Shadowknight") { 
     quest::say("I welcome you $name to the order of Bok, followers of our father Innoruuk.");
     quest::say("Take this Tunic and wear it with pride! May it protect you as you grow young Bok.");  
-    quest::summonitem(119878);
+    quest::summonitem(119833);
     quest::ding();
     quest::exp(1000);
 	quest::rebind(83,-1262,-692,27);
