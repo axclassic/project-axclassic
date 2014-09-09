@@ -47,7 +47,7 @@ my $Storm = quest::saylink("Storm", 1);
    if ($text=~/Storm/i){
    quest::say("Our spies report that a handful of storm dragon scales were recently given to one of Yar'Lir's most powerful advisors, a goblin warlock know as the Storm Caller. We need you to organize an expedition to recover these scales before the goblins use their newfound power against us. Be careful, for the Storm Caller lair is high on the peaks about Stillmoon, and it is rumoured he has rudimentary control of the weather itself.");
    quest::say("Bring me the Storm Dagon Scales and I shall reward you.");
-  }   
+  }
  }
 sub EVENT_ITEM { 
   if (plugin::check_handin(\%itemcount, 49017 => 1)) { 
@@ -93,7 +93,7 @@ sub EVENT_ITEM {
    quest::say("Well done $name, You have turned the favor of power back into our hands at least for now.");
    quest::givecash(2,6,5,50);
    }
-       else {
+     else {
     plugin::return_items(\%itemcount);
     quest::say("I have no use for this.");
    }
