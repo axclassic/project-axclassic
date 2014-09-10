@@ -4,6 +4,6 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
 	}
 sub EVENT_ENTER {
-    quest::spawn2(337250,0,0,-849.7,780.2,39.3,165.3);
+    quest::spawn2(337248,0,0,-569.2,-1054.3,73,230.6);
     quest::depop();
  }
