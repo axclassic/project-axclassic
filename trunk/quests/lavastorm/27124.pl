@@ -8,7 +8,7 @@ my $Best = quest::saylink("Best", 1);
    }
   if ($text=~/rumors/i){ 
    quest::say("There are so many reports, I will allow you to choose which one or more you think you can handle.");
-   quest::say("Let's see, there is $Storm Dragon Scale. Thats the ones I know about but there may be more.");
+   quest::say("Let's see, there is $Storm Dragon Scale, $Best Laid Plans. Thats the ones I know about but there may be more.");
    }
    if ($text=~/Storm/i){
    quest::say("Our spies report that a handful of storm dragon scales were recently given to one of Yar'Lir's most powerful advisors, a goblin warlock know as the Storm Caller. We need you to organize an expedition to recover these scales before the goblins use their newfound power against us. Be careful, for the Storm Caller lair is high on the peaks about Stillmoon, and it is rumoured he has rudimentary control of the weather itself.");
