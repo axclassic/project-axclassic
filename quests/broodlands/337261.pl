@@ -8,6 +8,6 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
 	}
 sub EVENT_ENTER {
-    quest::shout("You you have entered my parameter again!");
+    quest::movepc(337,-30.6,-148.1,12.1);
  }
 
