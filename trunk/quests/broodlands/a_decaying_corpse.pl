@@ -15,7 +15,15 @@ if($text=~/Hail/i) {
     }
 if($text=~/paid/i) {
     quest::say("Many years ago a group of giants stole from me some precious artifacts. As you can tell, I have been here a long time, waiting for travelers such as yourself that might be willing to $retrieve the artifacts for me. ");
-    }
+    quest::depop(337254);
+	quest::depop(337252);
+	quest::depop(337253);
+	quest::depop(337254);
+	quest::depop(337250);
+	quest::depop(337248);
+	quest::depop(337247);
+	quest::depop(337249);
+	}
 	if($text=~/retrieve/i) {
     quest::say("There are four artifacts in all, get them from the giants anyway you can and return them to me. I will glady pay you for your trouble.");
 	quest::spawn2(337254,0,0,-553.9,-1030.9,77.2,239.6);
