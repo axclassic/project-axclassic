@@ -13,7 +13,7 @@ sub EVENT_SIGNAL {
     }
 	if($signal == 822) { #signal 822 is from each of the dead npc's
     $counter += 1;
-      if($counter == 2) {	
+      if($counter == 1) {	
 	quest::signalwith(338202,823,0);
     }
  }
