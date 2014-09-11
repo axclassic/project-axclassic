@@ -19,7 +19,7 @@ sub EVENT_ITEM {
    quest::faction( 53,-1 );
    quest::faction( 33,-1 );
    quest::faction( 217,1 );
-    quest::ding(); quest::exp(20000);
+    quest::ding(); quest::exp(500);
  } if(plugin::check_handin(\%itemcount,13915 => 2)){
 	quest::say("Very good!  One less gnoll the people of Qeynos need to fear.  Here is your bounty as promised.");
 	quest::summonitem("10070","1");
@@ -28,19 +28,16 @@ sub EVENT_ITEM {
    quest::faction( 53,-1 );
    quest::faction( 33,-1 );
    quest::faction( 217,1 );
-    quest::ding(); quest::exp(40000);
+    quest::ding(); quest::exp(1000);
 
  } if(plugin::check_handin(\%itemcount,13915 => 4)){
 	quest::say("Very good!  One less gnoll the people of Qeynos need to fear.  Here is your bounty as promised.");
-	   my @items = (50011,50018,50039);
-      my $total = $items[ rand @items ];
-      quest::summonitem($total);
-		quest::faction(135,1);
+	  		quest::faction(135,1);
 	quest::faction(9,1);
    quest::faction( 53,-1 );
    quest::faction( 33,-1 );
    quest::faction( 217,1 );
-    quest::ding(); quest::exp(80000);
+    quest::ding(); quest::exp(2000);
 
  } if(plugin::check_handin(\%itemcount,10070 => 2, 13915 => 2)){
 	quest::say("Very good!  One less gnoll the people of Qeynos need to fear.  Here is your bounty as promised.");
@@ -50,7 +47,7 @@ sub EVENT_ITEM {
    quest::faction( 53,-1 );
    quest::faction( 33,-1 );
    quest::faction( 217,1 );
- quest::ding(); quest::exp(70000);
+ quest::ding(); quest::exp(500);
  } if(plugin::check_handin(\%itemcount,6012 => 1)){
 	quest::say("Very good!  One less gnoll the people of Qeynos need to fear.  Here is your bounty as promised.");
 	quest::summonitem("10070","1");
