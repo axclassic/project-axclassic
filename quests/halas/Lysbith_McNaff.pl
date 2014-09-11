@@ -1,3 +1,4 @@
+#Remove this line when you edit it  Aardil#
 sub EVENT_SAY {
 my $serve = quest::saylink("serve", 1);
 my $orc = quest::saylink("orc", 1);
