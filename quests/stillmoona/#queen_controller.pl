@@ -8,6 +8,6 @@ sub EVENT_SIGNAL {
   quest::spawn2($a,0,0,$x,$y,$z,$h);
   }
   if($signal == 855) { 
-  quest::spawn2(338215,0,0,-657.5,1262.8,4.3,187.4);
+  quest::spawn2(338214,0,0,-657.5,1262.8,4.3,187.4);
   }
  } 
