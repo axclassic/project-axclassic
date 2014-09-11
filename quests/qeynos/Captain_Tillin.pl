@@ -4,6 +4,8 @@
 # Author:  Andrew80k, and others.
 ###############################################
 
+#remove this line when you edit it  Aardil#
+
 sub EVENT_SAY { 
 if($text=~/Hail/i){
 quest::say("Hail, $name!  Spend your time wisely in the city of Qeynos.  Do not let your mind wander to thoughts of bravado or crime.  My guards can easily put to rest any outbreaks.  Good day to you, citizen!"); }
