@@ -6,7 +6,7 @@ sub EVENT_SAY {
    }
  }
 sub EVENT_ITEM {
-   if (plugin::check_handin(\%itemcount, 120129 =>1 )) { 
+   if (plugin::check_handin(\%itemcount, 36215 =>1 )) { 
    quest::spawn2(338203,2780159,0,1072.7,598.4,11.8,57.2);
    quest::spawn2(338204,0,0,1096.7,607.2,13.1,161.1);
    quest::spawn2(338205,0,0,1094.4,586.9,12.8,238.2);
