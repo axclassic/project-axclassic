@@ -6,7 +6,7 @@ my $ready = quest::saylink("ready", 1);
   }
   if($text=~/Perseverance/i) {
     quest::say("Then prepare yourself and tell me when you are $ready the you shall begin the trial.");
-	quest::spawn2(338167);
+	quest::spawn2(338167,0,0,65.4,-1.3,30.4,201);
 	quest::signalwith(338167,421,0);
   }
   if($text=~/ready/i) {
