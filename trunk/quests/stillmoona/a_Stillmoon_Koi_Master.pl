@@ -16,6 +16,7 @@ sub EVENT_ITEM {
    quest::say("Ah, very good. Thank you for returning my gift. I shall use it to create the most beautiful koi the world has ever seen! Perhaps outsiders aren't worthless after all.");
    quest::say("here $name, it is customary for those who recive gifts also give gifts, take this to whom ever sent you to continue or friendship.");
    quest::summonitem(120130);
+   quest::signalwith(338206,825,0);
    quest::say("Do NOT eat it! This not for you the messenger, but for the one who sent me the gift!"); 
   }
  } 
