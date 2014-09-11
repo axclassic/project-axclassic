@@ -1,8 +1,8 @@
 sub EVENT_SAY {
    if ($text=~/Hail/i){
-   quest::emote(' looks at $name with great concern.');
+   quest::emote(' looks at you with great concern.');
    quest::say("Who are you and what is it you want?");
-   quest::spawn2(338206,0,0,282.6,714.6,7.3,79.6);
+   quest::spawn2(338206,0,0,1110.7,643.3,15.9,148.5);
    }
  }
 sub EVENT_ITEM {
