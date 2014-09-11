@@ -1,10 +1,10 @@
 sub EVENT_SPAWN {
  $x = $npc->GetX();
 	$y = $npc->GetY();
-	quest::set_proximity($x - 150, $x + 150, $y - 150, $y + 150);
+	quest::set_proximity($x - 250, $x + 250, $y - 250, $y + 250);
     }
 sub EVENT_ENTER {
-    quest::say("The Dragon Scales are mine! I will not give them up easily!");
+    quest::shout("The Dragon Scales are mine! I will not give them up easily!");
     quest::spawn2(339126,0,0,2055,5752.1,102.5,148.4);
 	quest::spawn2(339126,0,0,2040.7,5712.9,98.8,244.2);
 	quest::spawn2(339126,0,0,2002,5749.8,96.5,100.2);
