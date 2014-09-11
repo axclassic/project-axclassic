@@ -10,7 +10,7 @@ sub EVENT_SIGNAL {
 	 $goblin_warlord_event += 1; # adds one to spawn variable # 
 	}
 	if ($signal == 623) {
-	quest::depop(338181);
+	quest::depop(338221);
 	quest::spawn2(338182,2780155,0,-412.7,696.9,5.2,189.8,);
 	}
 	if ($signal == 625) {
