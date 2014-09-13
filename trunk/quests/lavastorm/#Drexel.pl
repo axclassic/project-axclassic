@@ -19,7 +19,7 @@ if (($text=~/Hail/i) && ($ulevel <= 15)) {
 quest::say("Hail to you young traveler, my name is Drexel and I was sent out here to keep a safe path open between the gypsy camp and Najena. Though it sounds easy for someone like myself, it can be a very tiring $task.");
 }
 if (($text=~/Hail/i) && ($ulevel >= 16)) {
-quest::say("Hail to you traveler, my name is Drexel and I was sent out here to keep a safe path open between here and Najena. I could not possibly ask for your assistance, I am sure your time is much too valuable. PLease continue on your way, if you are looking for adventure, I would suggest checking the camps on the eastern wall I am sure they will have things that you could help them with.");
+quest::say("Hail to you traveler, my name is Drexel and I was sent out here to keep a safe path open between here and Najena. I could not possibly ask for your assistance, I am sure your time is much too valuable. Please continue on your way, if you are looking for adventure, I would suggest checking the camps on the eastern wall I am sure they will have things that you could help them with.");
 }
 if (($text=~/task/i) && ($ulevel <= 15)) {
 quest::say("Did you just say that you wanted a task to do? Let me see, I do have a few tasks that you can help me with. If you are willing I need help keeping the path free of some $creatures.");
