@@ -1,3 +1,4 @@
+#Celrak_Blightblood NPC ID 27124#
 sub EVENT_SAY {
 my $rumors = quest::saylink("rumors", 1);
 my $Storm = quest::saylink("Storm", 1);
@@ -25,7 +26,7 @@ if (plugin::check_handin(\%itemcount, 49035 => 1)) {
    quest::say("Well done $name, You have turned the favor of power back into our hands at least for now.");
    quest::givecash(2,6,5,50);
    }
-   if (plugin::check_handin(\%itemcount, 36214 => 1)) { 
+   elsif (plugin::check_handin(\%itemcount, 36214 => 1)) { 
    quest::say("Good job $name. We hope the reward was worth the effort. Thank you for helping us.");
    quest::exp(100000);
    quest::ding();
