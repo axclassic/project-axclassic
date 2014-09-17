@@ -43,7 +43,7 @@ quest::say("Bring me four of the Essence of Lava Crawler as proof of your deeds 
 }
 }
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount, 120147 => 1, 120147 => 1, 120147 => 1, 120147 => 1)) {
+if (plugin::check_handin(\%itemcount, 120147 => 1, 120147 => 1, 120147 => 1, 120147 => 1) && ($ulevel <= 20) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
