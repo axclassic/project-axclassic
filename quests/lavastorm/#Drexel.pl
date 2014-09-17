@@ -49,22 +49,26 @@ quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 } 
-if (plugin::check_handin(\%itemcount, 120148 => 1, 120148 => 1, 120148 => 1, 120148 => 1) && ($ulevel <= 20)) {
+elsif (plugin::check_handin(\%itemcount, 120148 => 1, 120148 => 1, 120148 => 1, 120148 => 1) && ($ulevel <= 20)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 } 
-if (plugin::check_handin(\%itemcount, 120149 => 1, 120149 => 1, 120149 => 1, 120149 => 1) && ($ulevel <= 20)) {
+elsif (plugin::check_handin(\%itemcount, 120149 => 1, 120149 => 1, 120149 => 1, 120149 => 1) && ($ulevel <= 20)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 } 
-if (plugin::check_handin(\%itemcount, 120150 => 1, 120150 => 1, 120150 => 1, 120150 => 1) && ($ulevel <= 20)) {
+elsif (plugin::check_handin(\%itemcount, 120150 => 1, 120150 => 1, 120150 => 1, 120150 => 1) && ($ulevel <= 20)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
-} 
+}
+    else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   } 
 }
