@@ -1,3 +1,4 @@
+#Officer_Sirrikis_Ryktor NPC ID 27120#
 sub EVENT_SAY {
 my $path = quest::saylink("path", 1);
 my $collecting = quest::saylink("collecting", 1);
