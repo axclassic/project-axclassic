@@ -49,7 +49,7 @@ quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 } 
-elsif (plugin::check_handin(\%itemcount, 120148 => 4) && ($ulevel >= 21)) {
+elsif (plugin::check_handin(\%itemcount, 120147 => 4) && ($ulevel >= 21)) {
 quest::say("I will take the items but give you nothing, you are too experianced to be doing these trivial quests. Go do something worthy of your experiance.");
 }
 elsif (plugin::check_handin(\%itemcount, 120148 => 4) && ($ulevel <= 20)) {
@@ -67,7 +67,7 @@ quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 }
-elsif (plugin::check_handin(\%itemcount, 120148 => 4) && ($ulevel >= 21)) {
+elsif (plugin::check_handin(\%itemcount, 120149 => 4) && ($ulevel >= 21)) {
 quest::say("I will take the items but give you nothing, you are too experianced to be doing these trivial quests. Go do something worthy of your experiance.");
 } 
 elsif (plugin::check_handin(\%itemcount, 120150 => 4) && ($ulevel <= 20)) {
@@ -76,7 +76,7 @@ quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 }
-elsif (plugin::check_handin(\%itemcount, 120148 => 4) && ($ulevel >= 21)) {
+elsif (plugin::check_handin(\%itemcount, 120150 => 4) && ($ulevel >= 21)) {
 quest::say("I will take the items but give you nothing, you are too experianced to be doing these trivial quests. Go do something worthy of your experiance.");
 }
     else {
