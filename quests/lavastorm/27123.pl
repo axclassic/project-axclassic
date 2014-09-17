@@ -1,3 +1,4 @@
+#Kanetheus_Forestwalker NPC ID 27123#
 sub EVENT_SAY {
 my $rumors = quest::saylink("rumors", 1);
 my $Animated = quest::saylink("Animated", 1);
