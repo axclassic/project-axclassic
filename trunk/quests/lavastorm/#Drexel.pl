@@ -38,7 +38,7 @@ if (($text=~/elementals/i) && ($ulevel <= 20)) {
 quest::say("Ah Good to here! Bring me four of the Essence of Fire Elemental as proof of your deeds and I shall reward you.");
 }
 if (($text=~/crawlers/i) && ($ulevel <= 20)) {
-quest::say("The path between the gypsy camp and Najena has to be kept safe for young adventurers to travel freely. Help keep the path clear by removing any fire drakes that you come across in the area.");
+quest::say("The path between the gypsy camp and Najena has to be kept safe for young adventurers to travel freely. Help keep the path clear by removing any lava crawlers that you come across in the area.");
 quest::say("Bring me four of the Essence of Lava Crawler as proof of your deeds and I shall reward you.");
 }
 }
