@@ -49,19 +49,19 @@ quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 } 
-elsif (plugin::check_handin(\%itemcount, 120148 => 1, 120148 => 1, 120148 => 1, 120148 => 1) && ($ulevel <= 20)) {
+elsif (plugin::check_handin(\%itemcount, 120148 => 4) && ($ulevel <= 20)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 } 
-elsif (plugin::check_handin(\%itemcount, 120149 => 1, 120149 => 1, 120149 => 1, 120149 => 1) && ($ulevel <= 20)) {
+elsif (plugin::check_handin(\%itemcount, 120149 => 4) && ($ulevel <= 20)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 } 
-elsif (plugin::check_handin(\%itemcount, 120150 => 1, 120150 => 1, 120150 => 1, 120150 => 1) && ($ulevel <= 20)) {
+elsif (plugin::check_handin(\%itemcount, 120150 => 4) && ($ulevel <= 20)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
