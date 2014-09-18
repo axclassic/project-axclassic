@@ -43,40 +43,40 @@ quest::say("Bring me four of the Essence of Lava Crawler as proof of your deeds 
 }
 }
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount, 120147 => 4) && ($ulevel <= 20)) {
+if ($ulevel <= 20 && plugin::check_handin(\%itemcount, 120147 => 4)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 } 
-elsif (plugin::check_handin(\%itemcount, 120147 => 4) && ($ulevel >= 21)) {
+if ($ulevel >= 21 && plugin::check_handin(\%itemcount, 120147 => 4)) {
 quest::say("I will take the items but give you nothing, you are too experianced to be doing these trivial quests. Go do something worthy of your experiance.");
 }
-elsif (plugin::check_handin(\%itemcount, 120148 => 4) && ($ulevel <= 20)) {
+elsif ($ulevel <= 20 && plugin::check_handin(\%itemcount, 120148 => 4)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 } 
-elsif (plugin::check_handin(\%itemcount, 120148 => 4) && ($ulevel >= 21)) {
+elsif ($ulevel >= 21 && plugin::check_handin(\%itemcount, 120148 => 4)) {
 quest::say("I will take the items but give you nothing, you are too experianced to be doing these trivial quests. Go do something worthy of your experiance.");
 }
-elsif (plugin::check_handin(\%itemcount, 120149 => 4) && ($ulevel <= 20)) {
+elsif ($ulevel <= 20 && plugin::check_handin(\%itemcount, 120149 => 4)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 }
-elsif (plugin::check_handin(\%itemcount, 120149 => 4) && ($ulevel >= 21)) {
+elsif ($ulevel >= 21 && plugin::check_handin(\%itemcount, 120149 => 4)) {
 quest::say("I will take the items but give you nothing, you are too experianced to be doing these trivial quests. Go do something worthy of your experiance.");
 } 
-elsif (plugin::check_handin(\%itemcount, 120150 => 4) && ($ulevel <= 20)) {
+elsif ($ulevel <= 20 && plugin::check_handin(\%itemcount, 120150 => 4)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
 quest::exp(10000);
 quest::givecash(0,2,3,4);
 }
-elsif (plugin::check_handin(\%itemcount, 120150 => 4) && ($ulevel >= 21)) {
+elsif ($ulevel >= 21 && plugin::check_handin(\%itemcount, 120150 => 4)) {
 quest::say("I will take the items but give you nothing, you are too experianced to be doing these trivial quests. Go do something worthy of your experiance.");
 }
     else {
