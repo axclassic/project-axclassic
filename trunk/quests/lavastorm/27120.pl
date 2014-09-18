@@ -4,7 +4,6 @@ my $path = quest::saylink("path", 1);
 my $collecting = quest::saylink("collecting", 1);
 my $Army = quest::saylink("Army", 1);
 my $Blood = quest::saylink("Blood", 1);
-my $Diseased = quest::saylink("Diseased", 1);
 my $Clearing = quest::saylink("Clearing", 1);
 my $Muddy = quest::saylink("Muddy", 1);
 my $Reap = quest::saylink("Reap", 1);
@@ -28,9 +27,6 @@ my $Snowfoot = quest::saylink("Snowfoot", 1);
    quest::say("Place the seven impure goblin bloods in this container, combine them and bring to me a Vial of Impure Goblin Blood.");
    quest::summonitem(120121);
    }
-   if ($text=~/Diseased/i){  
-   quest::say("The pumas of Stillmoon Temple are said to be revered and blessed protectors. Unfortunately with the recent turmoil, some of the pumas have become infected with a mysterious virus and have passed it along to several of our members that have grown sick while traveling through the Temple. We ask you to please venture to the Temple and obtain four samples of infected puma blood so that we may perhaps find a cure for the infection. Once you find the blood samples, return them to me.");
-   } 
    if ($text=~/Clearing/i){
    quest::say("Show your alligence to the Dark Reign, go to Stillmoon temple and kill Stillmoon drakes. Loot eight drake intestines and combine them in this bag. Return to me with the finished bag and I shall reward your alligence to the Dark Reign.");
    quest::summonitem(120123);
@@ -61,12 +57,6 @@ quest::say("We shall need a few samples to work on so loot 3 Pristine Kirin Brai
    quest::say("These are exactly what we needed. Thank you $name");
    quest::givecash(2,6,5,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 49019 =>1, 49019 =>1, 49019 =>1, 49019 =>1 )) {
-   quest::ding();
-   quest::exp(100000);
-   quest::say("These are exactly what we needed. Thank you $name");
-   quest::givecash(2,6,5,50);
-   }
    elsif (plugin::check_handin(\%itemcount, 120124 =>1 )) {
    quest::ding();
    quest::exp(100000);
@@ -79,7 +69,7 @@ quest::say("We shall need a few samples to work on so loot 3 Pristine Kirin Brai
    quest::say("These are exactly what we needed. Thank you $name");
    quest::givecash(2,6,5,50);
    }
-   if (plugin::check_handin(\%itemcount, 52502 =>1, 52502 =>1, 52502 =>1 )) {
+   if (plugin::check_handin(\%itemcount, 52502 =>3 )) {
    quest::ding();
    quest::exp(100000);
    quest::say("These are exactly what we needed. Thank you $name");
