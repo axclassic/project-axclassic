@@ -15,7 +15,7 @@ my $trading = quest::saylink("trading", 1);
    }
  }
    sub EVENT_ITEM {
-  if ($ulevel <= 21 && plugin::check_handin(\%itemcount, 7882 => 1, 7885 => 1, 7886 => 1)) {
+  if (plugin::check_handin(\%itemcount, 7882 => 1, 7885 => 1, 7886 => 1)) {
    quest::say("Well done $name!,That should help in keeping our scouting parties safe.");
    $random = quest::ChooseRandom(7901,7892,7899,7898,7896);
    quest::summonitem($random);
