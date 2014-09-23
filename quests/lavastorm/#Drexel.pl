@@ -46,7 +46,7 @@ sub EVENT_ITEM {
 if ($ulevel <= 20 && plugin::check_handin(\%itemcount, 120147 => 4)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
-quest::exp(10000);
+quest::exp(200000);
 quest::givecash(0,2,3,4);
 } 
 if ($ulevel >= 21 && plugin::check_handin(\%itemcount, 120147 => 4)) {
@@ -55,7 +55,7 @@ quest::say("I will take the items but give you nothing, you are too experianced 
 elsif ($ulevel <= 20 && plugin::check_handin(\%itemcount, 120148 => 4)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
-quest::exp(10000);
+quest::exp(200000);
 quest::givecash(0,2,3,4);
 } 
 elsif ($ulevel >= 21 && plugin::check_handin(\%itemcount, 120148 => 4)) {
@@ -64,7 +64,7 @@ quest::say("I will take the items but give you nothing, you are too experianced 
 elsif ($ulevel <= 20 && plugin::check_handin(\%itemcount, 120149 => 4)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
-quest::exp(10000);
+quest::exp(200000);
 quest::givecash(0,2,3,4);
 }
 elsif ($ulevel >= 21 && plugin::check_handin(\%itemcount, 120149 => 4)) {
@@ -73,7 +73,7 @@ quest::say("I will take the items but give you nothing, you are too experianced 
 elsif ($ulevel <= 20 && plugin::check_handin(\%itemcount, 120150 => 4)) {
 quest::say("Well done $name!,That should help in keeping the path clear.");
 quest::ding();
-quest::exp(10000);
+quest::exp(200000);
 quest::givecash(0,2,3,4);
 }
 elsif ($ulevel >= 21 && plugin::check_handin(\%itemcount, 120150 => 4)) {
