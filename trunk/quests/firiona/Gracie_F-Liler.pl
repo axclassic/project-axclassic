@@ -7,12 +7,12 @@ quest::say("I have recently come into possession of some of these scrolls. They 
 }
 
 sub EVENT_ITEM(){
-  if (plugin::check_handin(\%itemcount, 19378 => 1) || # Atol's spectral shackles
-      plugin::check_handin(\%itemcount, 19269 => 1) || # Inferno of Al Kabor
-      plugin::check_handin(\%itemcount, 19384 => 1) || # Pillar of frost
-      plugin::check_handin(\%itemcount, 19374 => 1)) { # Tears of druzzil
+  if (plugin::check_handin(\%itemcount, 19378 => 1) || # Color Slant
+      plugin::check_handin(\%itemcount, 19269 => 1) || # Cripple
+      plugin::check_handin(\%itemcount, 19384 => 1) || # Dementia
+      plugin::check_handin(\%itemcount, 19374 => 1)) { # Theft of Thought
     quest::say("Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!");      
-    quest::summonitem(quest::ChooseRandom(19215,19269,19384,19374));
+    quest::summonitem(quest::ChooseRandom(19215,19381,19386,19379));
      quest::ding(); quest::exp(1000);
   }
 }
