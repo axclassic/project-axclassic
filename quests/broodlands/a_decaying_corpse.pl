@@ -37,7 +37,7 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 120143 =>1, 120144 =>1, 120145 =>1, 120146 =>1 )) {
 	quest::say("I can't believe my eye sockets! You managed to get my precious runes for me!");
 	quest::say("Here is your payment..... Umm, I seem to have left my wallet in my other skin.");
-	quest::exp(100000);
+	quest::exp(800000);
 	quest::ding();
 	}
  }
