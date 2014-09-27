@@ -38,17 +38,17 @@ sub EVENT_SIGNAL {
 	quest::spawn2(340042,0,0,-137.1,-340.7,248.9,26.9);#spawn Master of Doubt#
 	quest::spawn2(340043,0,0,-160.3,-339.8,247.7,22.6); #spawn Master of Contentment#
 	quest::signalwith(340041,109,1); #tell Master of Rage to speak and attack you#
-	quest::signalwith(340040,109,24000); #tell Master of Deceit to speak and attack you#
-	quest::signalwith(340042,109,48000); #tell Master of Doubt to speak and attack you#
-	quest::signalwith(340043,109,72000); #tell Master of Contentment to speak and attack you#
+	quest::signalwith(340040,109,12000); #tell Master of Deceit to speak and attack you#
+	quest::signalwith(340042,109,24000); #tell Master of Doubt to speak and attack you#
+	quest::signalwith(340043,109,36000); #tell Master of Contentment to speak and attack you#
 	}
 	if ($signal == 224) {
 	quest::spawn2(340044,0,0,-9.9,-344.4,248.9,215.4); #spawn Grand Master Beetle#
 	quest::spawn2(340045,0,0,-43.6,-340.9,248.9,234.6); #spawn Grand Master Puma#
 	quest::spawn2(340046,0,0,-137.1,-340.7,248.9,26.9);#spawn Grand Master Snake#
 	quest::signalwith(340044,115,1); #tell Grand Master Beetle to attack you#
-	quest::signalwith(340045,115,36000); #tell Grand Master Puma to attack you#
-	quest::signalwith(340046,115,72000); #tell Grand Master Snake to attack you#
+	quest::signalwith(340045,115,12000); #tell Grand Master Puma to attack you#
+	quest::signalwith(340046,115,18000); #tell Grand Master Snake to attack you#
 	}
 	if ($signal == 225) {
 	quest::spawn2(340047,0,0,-43.6,-300.5,248.9,190.9); #spawn Silk#
@@ -72,9 +72,7 @@ sub EVENT_SIGNAL {
     if($signal == 113) { #signal 113 is from from Silk and Steel#
       if($counter == 14) {
 	quest::signalwith(340038,120,12000); #tell Storm Reach Sensei to speak
-	quest::spawn2(340039,0,0,-92.4,334.3,253.2,2.8); #spawn Storm Reach Sensei attackable#
-	quest::depop(340038); #depop Storm Reach Sensei immune version#
-     }
+	}
     }
    }
   }

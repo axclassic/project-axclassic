@@ -32,8 +32,8 @@ quest::say("Wonderful! You have defeated all of the students of the Storm Reach 
 quest::signalwith(340049,121,8000); #tell controller needed a pause before next line#
 }
 elsif($signal == 122) { #signal 122 signal from controller to speak#
-quest::say("You have beaten all of my students, and have only had an advantage in numbers. Experience has taught me that such advantages usually lead to disaster caused by overconfidence or reliance on the lesser skills of others. Today you have proven that my experience is not always correct, a humbling moment.");
-quest::signalwith(340049,123,8000); #tell controller needed a pause before next line#
+quest::say("You have only had an advantage in numbers. Experience has taught me that such advantages usually lead to disaster caused by overconfidence or reliance on the lesser skills of others. Today you have proven that my experience is not always correct, a humbling moment.");
+quest::signalwith(340049,123,4000); #tell controller needed a pause before next line#
 }
 if($signal == 124) { #signal 124 signal from controller to speak#
 quest::say("You should return to those that sent you and tell them of your success. It will be a moment of shame for me to return to my mistress and explain the defeat of my students. I offer you my humble congratulations."); 
