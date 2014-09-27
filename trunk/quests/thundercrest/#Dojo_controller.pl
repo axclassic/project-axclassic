@@ -27,10 +27,10 @@ sub EVENT_SIGNAL {
 	quest::depop(340034); 
 	quest::depop(340037); 
 	quest::signalwith(340033,109,1); #tell Disciple of Metal to speak and attack you
-	quest::signalwith(340029,109,12000); #tell Disciple of Earth to speak and attack you
-	quest::signalwith(340031,109,24000); #tell Disciple of Fire to speak and attack you
-	quest::signalwith(340035,109,36000); #tell Disciple of Water to speak and attack you
-	quest::signalwith(340036,109,48000); #tell Disciple of Wood to speak and attack you	
+	quest::signalwith(340029,109,6000); #tell Disciple of Earth to speak and attack you
+	quest::signalwith(340031,109,12000); #tell Disciple of Fire to speak and attack you
+	quest::signalwith(340035,109,24000); #tell Disciple of Water to speak and attack you
+	quest::signalwith(340036,109,36000); #tell Disciple of Wood to speak and attack you	
 	}
 	if ($signal == 223) {
 	quest::spawn2(340041,0,0,-9.9,-344.4,248.9,215.4); #spawn Master of Rage#
@@ -38,23 +38,23 @@ sub EVENT_SIGNAL {
 	quest::spawn2(340042,0,0,-137.1,-340.7,248.9,26.9);#spawn Master of Doubt#
 	quest::spawn2(340043,0,0,-160.3,-339.8,247.7,22.6); #spawn Master of Contentment#
 	quest::signalwith(340041,109,1); #tell Master of Rage to speak and attack you#
-	quest::signalwith(340040,109,12000); #tell Master of Deceit to speak and attack you#
-	quest::signalwith(340042,109,24000); #tell Master of Doubt to speak and attack you#
-	quest::signalwith(340043,109,36000); #tell Master of Contentment to speak and attack you#
+	quest::signalwith(340040,109,6000); #tell Master of Deceit to speak and attack you#
+	quest::signalwith(340042,109,12000); #tell Master of Doubt to speak and attack you#
+	quest::signalwith(340043,109,24000); #tell Master of Contentment to speak and attack you#
 	}
 	if ($signal == 224) {
 	quest::spawn2(340044,0,0,-9.9,-344.4,248.9,215.4); #spawn Grand Master Beetle#
 	quest::spawn2(340045,0,0,-43.6,-340.9,248.9,234.6); #spawn Grand Master Puma#
 	quest::spawn2(340046,0,0,-137.1,-340.7,248.9,26.9);#spawn Grand Master Snake#
 	quest::signalwith(340044,115,1); #tell Grand Master Beetle to attack you#
-	quest::signalwith(340045,115,12000); #tell Grand Master Puma to attack you#
-	quest::signalwith(340046,115,18000); #tell Grand Master Snake to attack you#
+	quest::signalwith(340045,115,6000); #tell Grand Master Puma to attack you#
+	quest::signalwith(340046,115,12000); #tell Grand Master Snake to attack you#
 	}
 	if ($signal == 225) {
 	quest::spawn2(340047,0,0,-43.6,-300.5,248.9,190.9); #spawn Silk#
 	quest::spawn2(340048,0,0,-147,-300.9,248.9,63.4); #spawn Steel#
-	quest::signalwith(340047,115,12000); #tell Silk to attack you#
-	quest::signalwith(340048,115,24000); #tell Steel to attack you#	
+	quest::signalwith(340047,115,6000); #tell Silk to attack you#
+	quest::signalwith(340048,115,12000); #tell Steel to attack you#	
 	}
 	if($signal == 113) { #signal 113 is from each of the Disciples#
     $counter += 1;
@@ -71,7 +71,7 @@ sub EVENT_SIGNAL {
 	}
     if($signal == 113) { #signal 113 is from from Silk and Steel#
       if($counter == 14) {
-	quest::signalwith(340038,120,12000); #tell Storm Reach Sensei to speak
+	quest::signalwith(340038,120,10); #tell Storm Reach Sensei to speak
 	}
     }
    }
