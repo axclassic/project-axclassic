@@ -7,7 +7,7 @@ my $dojo_event = 0;
   }
 sub EVENT_SIGNAL {
     if ($signal == 121) {
-	quest::signalwith(340038,122,1); 
+	quest::signalwith(340038,122,1); #tell Storm Reach Sensei to speak
 	}
 	if ($signal == 123) {
 	quest::signalwith(340038,124,1); #tell Storm Reach Sensei to speak
