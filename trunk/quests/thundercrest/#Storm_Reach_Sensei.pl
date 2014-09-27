@@ -17,15 +17,15 @@ my $time = quest::saylink("time", 1);
 sub EVENT_SIGNAL {
 if($signal == 114) { #signal 114 signal from controller to speak#
 quest::shout("Congratulations! You have defeated the Disciples of the Five Elements. You have proven yourself worthy to face the Four Emotions. They have mastered their emotions and from them they gain strength. Each has become a conduit for the emotions of our kind, a paradigm, if you will. Certainly you shall defeat them, for you are the champions of your people and they are slaves. We shall begin again in two minutes. Rest and consult with each other, if you have need.");
-quest::signalwith(340049,115,96000); #tell controller round 2 in two minutes#
+quest::signalwith(340049,223,96000); #tell controller round 2 in two minutes#
 }
 elsif($signal == 116) { #signal 116 signal from controller to speak#
 quest::shout("Well Done. It is rare that an opponent is able to defeat the goblin Emotions. Your next test will be greater, I fear. You must face our three Animals. These are grandmasters of our arts and have never suffered defeat against opponents outside of these grand islands of the sky. You look weary. You shall have three minutes to prepare for the next contest.");
-quest::signalwith(340049,117,144000); #tell controller round 3 in three minutes#
+quest::signalwith(340049,224,144000); #tell controller round 3 in three minutes#
 }
 elsif($signal == 118) { #signal 118 signal from controller to speak#
 quest::shout("Amazing, simply amazing! Never before have our grandmasters been defeated by anyone other than your next opponents. Prepare yourself, for next you must face Silk and Steel. You have four minutes to prepare, use those minutes wisely.");
-quest::signalwith(340049,119,192000); #tell controller round 4 in four minutes#
+quest::signalwith(340049,225,192000); #tell controller round 4 in four minutes#
 }
 elsif($signal == 120) { #signal 120 signal from controller to speak#
 quest::say("Wonderful! You have defeated all of the students of the Storm Reach Dojo! Celebrate your victory. Remember this day."); 
