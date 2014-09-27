@@ -37,10 +37,10 @@ sub EVENT_SIGNAL {
 	quest::spawn2(340040,0,0,-43.6,-340.9,248.9,234.6); #spawn Master of Deceit#
 	quest::spawn2(340042,0,0,-137.1,-340.7,248.9,26.9);#spawn Master of Doubt#
 	quest::spawn2(340043,0,0,-160.3,-339.8,247.7,22.6); #spawn Master of Contentment#
-	quest::signalwith(340041,115,1); #tell Master of Rage to attack you#
-	quest::signalwith(340040,115,24000); #tell Master of Deceit to attack you#
-	quest::signalwith(340042,115,48000); #tell Master of Doubt to attack you#
-	quest::signalwith(340043,115,72000); #tell Master of Contentment to attack you#
+	quest::signalwith(340041,109,1); #tell Master of Rage to speak and attack you#
+	quest::signalwith(340040,109,24000); #tell Master of Deceit to speak and attack you#
+	quest::signalwith(340042,109,48000); #tell Master of Doubt to speak and attack you#
+	quest::signalwith(340043,109,72000); #tell Master of Contentment to speak and attack you#
 	}
 	if ($signal == 224) {
 	quest::spawn2(340044,0,0,-9.9,-344.4,248.9,215.4); #spawn Grand Master Beetle#
