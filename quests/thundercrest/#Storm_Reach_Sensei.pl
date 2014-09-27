@@ -11,7 +11,7 @@ my $time = quest::saylink("time", 1);
    quest::say("A winner will be declared if they are the only combatants alive in this room. Your first challenge will be to defeat the Disciples of The Five Elements. Certainly they will be easily defeated by such mighty beings, but it is within their hearts to try. Your battle will begin in one minute. Prepare yourselves.");
    quest::spawn2(340049,0,0,-205.9,-148.,251,102.9); #spawn dojo_controller#
    quest::signalwith(340049,111,1); # signal Dojo_controller to add one to spawn#
-   quest::signalwith(340049,112,60); # signal Dojo_controller to begin event#
+   quest::signalwith(340049,112,48000); # signal Dojo_controller to begin event#
    }
 }
 sub EVENT_SIGNAL {
