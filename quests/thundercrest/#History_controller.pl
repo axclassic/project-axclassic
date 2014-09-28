@@ -19,8 +19,8 @@ sub EVENT_SIGNAL {
     $counter += 1;
 	quest::shout("recieved signal 313.");
       if($counter == 3) {
-	quest::depop(340054); ##depop Artifact non attackable##
-	quest::spawn2(340055); ##spawn killable artifact##
+	quest::depop(340054); 
+	quest::spawn2(340055); 
 	}
    }
  }
