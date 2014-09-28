@@ -16,8 +16,8 @@ sub EVENT_SIGNAL {
 	if($signal == 313) { ##signal 313 is from each Guardian_of_the_Halls Protector_of_the_Halls and Defender_of_the_Halls##
     $counter += 1;
       if($counter == 3) {
-	quest::depop(340054); #depop Artifact non attackable#
-	quest::spawn2(340055); #spawn killable artifact#
+	quest::depop(340054); ##depop Artifact non attackable##
+	quest::spawn2(340055); ##spawn killable artifact##
 	}
    }
  }
