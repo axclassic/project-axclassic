@@ -20,7 +20,7 @@ sub EVENT_SIGNAL {
 	quest::shout("recieved signal 313.");
       if($counter == 3) {
 	quest::depop(340054); 
-	quest::spawn2(340055); 
+	quest::spawn2(340053); 
 	}
    }
  }
