@@ -19,6 +19,7 @@ sub EVENT_SIGNAL {
     quest::depop(340084);
     quest::depop(340085);
 	quest::depop(340086);
+	quest::depop(340087);
 	quest::depop(340080);
     quest::depop();	
     }
