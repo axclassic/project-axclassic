@@ -1,4 +1,8 @@
 sub EVENT_SAY {
+my $out = quest::saylink("out", 1);
+my $jumped = quest::saylink("jumped", 1);
+my $lead = quest::saylink("lead", 1);
+my $follow = quest::saylink("follow", 1);
 if ($text=~/Hail/i) {
    quest::say("Greetings $name, I hope you have come to get me $out of this horride place.");
    }
@@ -13,7 +17,7 @@ if ($text=~/Hail/i) {
    }
    if ($text=~/follow/i) {
    quest::say("I will follow you as best i can be careful though, I would hate for you to loose me.");
-   quest::follow($name);
+   quest::follow($userid);
    quest::spawn2(340105,-43.9,-459.5,294.7,202.2);
    quest::spawn2(340105,-43.5,-510.9,294.7,210.2);
    $client->Message(14,"You knew it was too good to be true! Two more of the Captors showed up just as you were about to leave. You let the other two know how powerful you really were, maybe it's time to do so again. But watch out, you don't want them to hurt the girl.");
