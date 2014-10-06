@@ -11,9 +11,9 @@ $x = $npc->GetX();
     }
 sub EVENT_ENTER {	
 $client->Message(14,"You must now destroy the remaining defunct sentrys.");
-quest::spawn2(340000,0,0,1932.8,-475.3,112.6,190);
-quest::spawn2(340001,0,0,2160.3,-248.3,121.9,169.8);
-quest::spawn2(340002,0,0,2081.6,699.5,121.9,21.4);
+quest::spawn2(340000,0,0,1975.6,-452.4,125.5,58.1);
+quest::spawn2(340001,0,0,2260.7,-206.9,125.5,199.1);
+quest::spawn2(340002,0,0,2259.8,-727.2,125.5,199.1);
   }
 sub EVENT_SIGNAL {
    	if ($signal == 910) {
