@@ -12,7 +12,7 @@ my $time = quest::saylink("time", 1);
    quest::spawn2(340049,0,0,-205.9,-148,251,102.9); #spawn controller#
    quest::signalwith(340049,111,1); # signal Dojo_controller to add one to spawn#
    quest::signalwith(340049,222,48000); # signal Dojo_controller to begin event#
-   quest::spawn2(340061,0,0,-92.4,-344.2,253.2,2.7); #spawn Sensei 2#
+   quest::spawn2(340038,0,0,-92.4,-344.2,253.2,2.7); #spawn Sensei 2#
    quest::depop();
    }
 }
