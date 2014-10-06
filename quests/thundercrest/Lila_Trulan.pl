@@ -14,14 +14,11 @@ if ($text=~/Hail/i) {
    }
    if ($text=~/lead/i) { 
    quest::say("Oh, Thank you! Just say the word when you are ready and I will $follow you.");
+   quest::spawn2(340106,0,0,-156.8,-453.1,394.7,219.1);
+   quest::spawn2(340107,0,0,1641,-608.3,112.7,0.1);
    }
    if ($text=~/follow/i) {
    quest::say("I will follow you as best i can be careful though, I would hate for you to loose me.");
-   quest::spawn2(340117,0,0,1639.7,-619.2,112.7,250);
-   quest::spawn2(340105,0,0,-39.9,-513.2,294.7,184.4);
-   quest::spawn2(340105,0,0,-38,-464.8,294.7,203.6);
-   quest::spawn2(340106,0,0,1090.9,-464.3,143.4,189.5);
-   $userid->Message(14,"You knew it was too good to be true! Two more of the Captors showed up just as you were about to leave. You let the other two know how powerful you really were, maybe it's time to do so again. But watch out, you don't want them to hurt the girl.");
    quest::follow($userid);
     }
    }
@@ -31,6 +28,7 @@ if ($text=~/Hail/i) {
    quest::say("You have saved the life of an otherwise helpless being for no other reason than to show the captors that they cannot take hostages like this without consequences. Their penalty was death. Well done!");
    quest::say("Give this to the person who sent you to resque me, its all I have.");
    quest::summonitem(120167);
+   quest::depop();
   }
 }
    sub EVENT_DEATH {
