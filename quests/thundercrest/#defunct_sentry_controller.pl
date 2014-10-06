@@ -10,7 +10,7 @@ $x = $npc->GetX();
 	quest::set_proximity($x - 10, $x + 10, $y - 10, $y + 10);
     }
 sub EVENT_ENTER {	
-$client->Message(14,"You must now destroy the remaining defunct sentrys.");
+$userid->Message(14,"You must now destroy the remaining defunct sentrys.");
 quest::spawn2(340000,0,0,1975.6,-452.4,125.5,58.1);
 quest::spawn2(340001,0,0,2260.7,-206.9,125.5,199.1);
 quest::spawn2(340002,0,0,2259.8,-727.2,125.5,199.1);
