@@ -27,7 +27,6 @@ if ($text=~/Hail/i) {
    quest::emote(' gives a quick kiss on the cheek to each of your party members.');
    quest::say("You have saved the life of an otherwise helpless being for no other reason than to show the captors that they cannot take hostages like this without consequences. Their penalty was death. Well done!");
    quest::say("Give this to the person who sent you to resque me, its all I have.");
-   quest::summonitem(120167);
    quest::depop();
   }
 }
