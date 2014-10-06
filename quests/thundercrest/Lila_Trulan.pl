@@ -17,12 +17,12 @@ if ($text=~/Hail/i) {
    }
    if ($text=~/follow/i) {
    quest::say("I will follow you as best i can be careful though, I would hate for you to loose me.");
-   quest::follow($userid);
    quest::spawn2(340117,1639.7,-619.2,112.7,250);
    quest::spawn2(340105,-43.9,-459.5,294.7,202.2);
    quest::spawn2(340105,-43.5,-510.9,294.7,210.2);
-   $userid->Message(14,"You knew it was too good to be true! Two more of the Captors showed up just as you were about to leave. You let the other two know how powerful you really were, maybe it's time to do so again. But watch out, you don't want them to hurt the girl.");
    quest::spawn2(340106,1090.9,-464.3,143.4,189.5);
+   $userid->Message(14,"You knew it was too good to be true! Two more of the Captors showed up just as you were about to leave. You let the other two know how powerful you really were, maybe it's time to do so again. But watch out, you don't want them to hurt the girl.");
+   quest::follow($userid);
     }
    }
    sub EVENT_SIGNAL {
@@ -37,6 +37,6 @@ if ($text=~/Hail/i) {
    quest::say("Oh no!");
    quest::depop(340105); 
    quest::depop(340106); 
-   quest::depop(340107); 
+   quest::depop(340117); 
 }
  
