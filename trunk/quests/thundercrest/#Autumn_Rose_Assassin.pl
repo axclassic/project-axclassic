@@ -12,6 +12,6 @@ quest::spawn2(340090,0,0,2246.5,-434.7,175.5,66.2);
 quest::spawn2(340090,0,0,2323.3,-56.7,156.7,149.5);
 quest::spawn2(340090,0,0,2242.3,-146.1,156.7,243.9);
 quest::signalwith(340092,870,0);
-$client->Message(14,"Your object is to destroy all members of the Autum Rose Assassin brotherhood.");
+$userid->Message(14,"Your object is to destroy all members of the Autum Rose Assassin brotherhood.");
 quest::say("Lets see if you can kill off my bretheren before they finish you off.");
 }
