@@ -18,8 +18,8 @@ if ($text=~/Hail/i) {
    if ($text=~/follow/i) {
    quest::say("I will follow you as best i can be careful though, I would hate for you to loose me.");
    quest::spawn2(340117,1639.7,-619.2,112.7,250);
-   quest::spawn2(340105,-43.9,-459.5,294.7,202.2);
-   quest::spawn2(340105,-43.5,-510.9,294.7,210.2);
+   quest::spawn2(340105,-39.9,-513.2,294.7,184.4);
+   quest::spawn2(340105,-38,-464.8,294.7,203.6);
    quest::spawn2(340106,1090.9,-464.3,143.4,189.5);
    $userid->Message(14,"You knew it was too good to be true! Two more of the Captors showed up just as you were about to leave. You let the other two know how powerful you really were, maybe it's time to do so again. But watch out, you don't want them to hurt the girl.");
    quest::follow($userid);
