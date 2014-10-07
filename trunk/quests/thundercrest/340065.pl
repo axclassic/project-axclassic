@@ -22,5 +22,5 @@ sub EVENT_HP {
 sub EVENT_DEATH {
 quest::signalwith(340063,500,0);
 quest::signalwith(340064,500,0);
-quest::spawn(340067,-3423.9,3148.5,300.9,197.4); 
+quest::spawn(340067,0,0,-3423.9,3148.5,300.9,197.4); 
 }
