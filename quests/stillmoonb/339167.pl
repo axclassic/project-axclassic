@@ -11,6 +11,8 @@ quest::depop(339163);
 quest::depop(339164);
 quest::depop(339165);
 quest::depop(339166);
-quest::depop();
+  }
 }
-}
+  if($signal == 1275) {
+  quest::depop();
+ }
