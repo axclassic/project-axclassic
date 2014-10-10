@@ -1,5 +1,6 @@
 sub EVENT_SIGNAL {
 if ($signal == 1275) {
+quest::spawn2(339140,0,0,647.9,2245.5,226.9,106.8);
 quest::depop(339154);
 quest::depop(339156);
 quest::depop(339159);
