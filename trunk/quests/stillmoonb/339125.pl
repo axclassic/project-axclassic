@@ -1,11 +1,11 @@
 sub EVENT_SIGNAL {
   if($signal == 1150) { 
-  quest::spawn2(339118,0,0,414.1,2275.2,192.8,63.8);
-  quest::spawn2(339124,0,0,456.1,2291.9,207.5,108.6);
-  quest::spawn2(339124,0,0,450,2252.8,205.9,50.5);
-  quest::depop(339141);
-  quest::depop(339144);
-  quest::depop(339145);
+  quest::spawn2(339118,0,0,451.6,2288.2,206.4,86);
+  quest::spawn2(339124,0,0,424.2,2271.8,196.9,62.8);
+  quest::spawn2(339124,0,0,448,2259.8,205.3,44.2);
+  quest::depop(339169);
+  quest::depop(339170);
+  quest::depop(339171);
   }
   if($signal == 1175) {
   quest::depop();
