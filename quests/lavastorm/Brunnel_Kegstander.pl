@@ -20,7 +20,7 @@ my $trading = quest::saylink("trading", 1);
    $random = quest::ChooseRandom(7901,7892,7899,7898,7896);
    quest::summonitem($random);
    quest::ding();
-   quest::exp(450000);
+   quest::exp(25000);
    quest::givecash(0,0,0,10);
    }
  }
