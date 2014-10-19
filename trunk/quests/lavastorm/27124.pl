@@ -42,6 +42,12 @@ sub EVENT_ITEM {
    quest::say("These are exactly what we needed. Thank you $name");
    quest::givecash(2,6,5,50);
    }
+   elsif (plugin::check_handin(\%itemcount, 49022 =>1 )) {
+   quest::ding();
+   quest::exp(6000000);
+   quest::say("This ashame that we lost an agent but now we have the egg for study. Good work $name.");
+   quest::givecash(2,6,5,100);
+   }
        else {
     plugin::return_items(\%itemcount);
     quest::say("I have no use for this.");
