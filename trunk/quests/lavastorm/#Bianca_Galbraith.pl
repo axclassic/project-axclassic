@@ -11,15 +11,11 @@ my $Contagion = quest::saylink("Contagion", 1);
    if ($text=~/Hail/i) {
    quest::say("Good Day to you $name, An opportunity to weaken the forces of Yar`Lir has presented itself if you are $interested in helping our cause."); 
    }
-   if ($text=~/interested/i && $ulevel <= 40) {
+   if ($text=~/interested/i && $ulevel <= 60) {
    quest::say("I am sorry young adventurer but you are not seasoned enough for the expedition. Seek out others in the camp that may have other tasks for you."); 
    }
-   if ($ulevel <= 50 && $ulevel >= 41 && $text=~/interested/i) {
-   quest::say("An opportunity to weaken the forces of Yar`Lir has presented itself. It seems the great dragon feels it's best to split her forces up such that a strike at one will not cripple the remainder of her forces. We intend to use this to our advantage. You're going into her garden to find and destroy her most trusted generals, those who have served her for millennia on the front lines of the Thundercrest Isles.");
-   quest::say("Bring proof to me of both her Generals demises and you shall be rewarded.");
-   }
    if ($ulevel >= 61 && $text=~/interested/i) {
-   quest::say("I have a few missions you could help us with. a $Simple task, Holy $Hour, House of $Autum Rose, Lair $Unguarded, $Scions of Thundercrest, $Splitting the Storm, The $Creator or Throes of $Contagion.");
+   quest::say("I have a few missions you could help us with. a $Simple task, Holy $Hour, House of $Autum Rose, Lair $Unguarded, $Scions of Thundercrest, $Splitting the Storm, The $Creator or Throes, $Behind Closed Doors of $Contagion.");
    }
    if ($ulevel >= 61 && $text=~/Simple/i){
    quest::say("I have for you a simple task. Bring me a flower from a garden. Sure, that garden is on a magically floating island. Yes, that island is the lair of an ancient dragon of trendous power. Of course minions will be everywhere, but all we want is one plant. How hard can that be? There is a small tree that grows a rose they call the Dark Lady. They say it has amazing powers. They also say that it is difficult to transport alive. You need to figure out how to do that. They say that if you don't transport it in the right container with the proper fertilizer it will die. No, I don't really know who "they" are, just bring me that rose alive.");
@@ -45,6 +41,10 @@ my $Contagion = quest::saylink("Contagion", 1);
   if ($ulevel >= 61 && $text=~/Creator/i){
    quest::say("We have word of a creator of statues within the isles of Thundercrest. We're not yet sure who is commissioning these creatures for the dragon that resides there, but we do not know that not all are yet functioning as they should be."); 
   }
+  if ($ulevel >= 61 && $text=~/Behind/i) {
+   quest::say("An opportunity to weaken the forces of Yar`Lir has presented itself. It seems the great dragon feels it's best to split her forces up such that a strike at one will not cripple the remainder of her forces. We intend to use this to our advantage. You're going into her garden to find and destroy her most trusted generals, those who have served her for millennia on the front lines of the Thundercrest Isles.");
+   quest::say("Bring proof to me of both her Generals demises and you shall be rewarded.");
+   }
   if ($ulevel >= 61 && $text=~/Contagion/i){
    quest::say("We've long thought that the best way to rid the lands of dragon kind is to do it from the air. Now is our chance. The majority of the minions of these isles are at rest on what they like to call Storm's Respite. If you are successful, this day of rest will be their last. To accomplish this feat, you are going to need to collect three unique poisons and place them strategically throughout the Thundercrest Isles. Be careful though, because once you've entered the last area, you'll only have 20 minutes to complete your mission and leave the area or else you will be caught in the poison's areas of effect and possibly die as well. So you don't arouse any suspicion, you're going to need to clear out some of the Isle denizens."); 
   }
@@ -80,13 +80,13 @@ my $Contagion = quest::saylink("Contagion", 1);
    quest::ding();
    quest::givecash(0,0,0,60);
    } 
-elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 120167 => 1)) {
+   elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 120167 => 1)) {
    quest::say("Well wasnt that nice of her. I guess that she is grateful for being alive.");
    quest::exp(40000000);
    quest::ding();
    quest::givecash(0,0,0,60);
    }
-elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 60257 => 1)) {
+   elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 60257 => 1)) {
    quest::say("The Crystal! The Keepers of Norrath thank you. The last thing we need is for this to fall into the hands of the Dark Reign.");
    quest::exp(40000000);
    quest::ding();
