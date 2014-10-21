@@ -40,8 +40,8 @@ my $Perseverance = quest::saylink("Perseverance", 1);
    quest::say("It is peculiar that the goblins in Thundercrest Isles have issued a challenge to Norrathians. As much as we don't often bend to threats and arrogance, we are curious what the outcome of this challenge might be -- and it's better that we find out and be prepared for it, rather than the Dark Reign. Be on your guard. It could very well be a trap.");
    quest::say("Return to me with proof of your victory and you shall be rewarded.");
    }
-   }
-   sub EVENT_ITEM (
+ }
+   sub EVENT_ITEM {
    if ($ulevel <= 30 && $ulevel >= 21 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
    quest::ding();
@@ -79,4 +79,8 @@ my $Perseverance = quest::saylink("Perseverance", 1);
    quest::exp(30000000);
    quest::givecash(0,0,0,75);
    }
-   
+           else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }
+ }  
