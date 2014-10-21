@@ -1,4 +1,7 @@
 sub EVENT_SAY {
+   if ($ulevel <= 30 && $text=~/Hail/i){
+   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+   }
    if ($ulevel <= 40 && $ulevel >= 31 && $text=~/Hail/i){
    quest::say("Should we all perform to Chieftain Aderi's expectations, the races of good and light will bring an end to the threat of evil upon Norrath.");
    quest::say("Relae must have told you that Gimblax plans to extract vengeance upon you for killing the goblins in the temple. We have learned roughly where this foul goblin is and highly recommend you find your way to him before he finds you.");
@@ -32,4 +35,8 @@ quest::ding();
 quest::exp(15000000);
 quest::givecash(0,0,0,75);
 }
+    else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }
  } 
