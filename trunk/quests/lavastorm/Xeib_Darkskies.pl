@@ -1,6 +1,6 @@
 #Xeib Darkskies ID 27121#
 sub EVENT_SAY {
-   if ($text=~/Hail/i && $ulevel <= 50 && $ulevel >= 41){
+   if ($ulevel <= 50 && $ulevel >= 41 && $text=~/Hail/i){
    quest::say("'So you've finally returned. Let's see what you've brought me."); 
    }
    }
@@ -18,4 +18,8 @@ sub EVENT_ITEM {
    quest::exp(100000);
    quest::givecash(0,0,0,50);  
   }
+      else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }
  }  
