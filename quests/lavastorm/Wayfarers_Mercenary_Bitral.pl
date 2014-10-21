@@ -18,7 +18,7 @@ my $work = quest::saylink("work", 1);
   quest::say("take this and fill it with drake-spikes, combine them and return it to me as proof, I am sure the keepers will reward us handsomely for this."); 
   quest::summonitem(17039);
   }
-  if ($ulevel <= 40 && $ulevel >= 31 && $text=~/Hail/i){
+  if ($ulevel >= 31 && $ulevel <= 50 && $text=~/Hail/i){
    quest::say("Good Day to you traveler, I am sorry but I have nothing available for someone of your experiance, check with the others as they may have something that you can do.");
    }
    if ($ulevel >= 61 && $text=~/Hail/i){
