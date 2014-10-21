@@ -1,13 +1,12 @@
 sub EVENT_SAY {
 my $helping = quest::saylink("helping", 1);
-   
    if ($ulevel <= 20 && $text=~/Hail/i){
    quest::say("I am sorry but I have nothing that someone of your experiance could possibly handle. Please check with the others in the camp, I am sure they have work that you can do to help the Norrath Keepers.");
    }
    if ($ulevel >= 31 && $text=~/Hail/i){
    quest::say("I am sorry but everything I have would be trivial to someone of your experiance. Please check with the others in the camp, I am sure they have work that you can do to help the Norrath Keepers.");
    }
-   if (($ulevel <= 30 && $ulevel >= 21 && $text=~/Hail/i){
+   if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Hail/i){
    quest::say("My orders finally came through! I have a few things that you may be able to $help me with.");
    }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/help/i){
@@ -46,53 +45,57 @@ my $helping = quest::saylink("helping", 1);
    }
  }  
 sub EVENT_ITEM {
-   if (plugin::check_handin(\%itemcount, 120152 => 1)) {  ##Lavaspinner's Map##
+   if (plugin::check_handin(\%itemcount, 120152 => 1)) {  
     quest::say("So, Greed got the better of him eh? Lets hope he has learned his lesson.");
     quest::summonitem(xxxxxx);
     quest::ding();
 	quest::exp(5000000);
     quest::givecash(0,0,0,30);	
    }
-   elsif (plugin::check_handin(\%itemcount, 56023 => 4)) {  ##Calcified Lava Rock##
+   elsif (plugin::check_handin(\%itemcount, 56023 => 4)) {
    quest::say("Not as easy as I made it sound eh? Oh well if everyone could do it there would not be any challenge.");
    quest::ding();
    quest::exp(5000000);
    quest::givecash(0,0,0,30);
    }   
-   elsif (plugin::check_handin(\%itemcount, 120179 => 1)) {  ##Full Lavaspinner's Fang Box##
+   elsif (plugin::check_handin(\%itemcount, 120179 => 1)) { 
    quest::say("Back already? These fangs will do nicely,  the Norrath Keepers use them to make thier blades even more deadly. Here is your cut.");
    quest::ding();
    quest::exp(5000000);
    quest::givecash(0,0,0,30);
    }
-   elsif (plugin::check_handin(\%itemcount, 120184 => 1)) {  ##Forbin's Elixier##
+   elsif (plugin::check_handin(\%itemcount, 120184 => 1)) {
    quest::say("");
    quest::ding();
    quest::exp(5000000);
    quest::givecash(0,0,0,30);
    }
-   elsif (plugin::check_handin(\%itemcount, 120180 => 2, 120181 => 2)) {   ##120180 Lavaspinner Spider Fang 120181 Hulking Spider Fang##
+   elsif (plugin::check_handin(\%itemcount, 120180 => 2, 120181 => 2)) {   
    quest::say("With the pests dead we can resume our activities in Lavaspinner's lair. We shall call upon you again should any further infestations be found.");
    quest::ding();
    quest::exp(5000000);
    quest::givecash(0,0,0,30);
    }
-   elsif (plugin::check_handin(\%itemcount, 85012 => 3, 85013 => 1)) {   ##Cracked Lavaspinner Eggs 85012 Pristine Lavaspinner Egg 85013##
+   elsif (plugin::check_handin(\%itemcount, 85012 => 3, 85013 => 1)) {   
    quest::say("Perfect! I will turn these over to the Dark Riegn and collect my... er I, mean our reward.");
    quest::ding();
    quest::exp(5000000);
    quest::givecash(0,0,0,30);
    }
-   elsif (plugin::check_handin(\%itemcount, 48141 => 1, 48140 => 1, 48142 => 1)) {  ##Drake Scale 48141 ionized ore 48140 magma carapace 48142##
+   elsif (plugin::check_handin(\%itemcount, 48141 => 1, 48140 => 1, 48142 => 1)) {  
    quest::say("Good work $name. I will deliver these to the alchemist myself. Here is your part of the reward.");
    quest::ding();
    quest::exp(5000000);
    quest::givecash(0,0,0,30);
    }
-   elsif (plugin::check_handin(\%itemcount, 120182 => 1, 120183 => 1)) {  ##Drake Eggshell Fragment 120182 Heart of the Matriarch 120183##
+   elsif (plugin::check_handin(\%itemcount, 120182 => 1, 120183 => 1)) {  
    quest::say("Well done $name. That should slow down the invaision. Here is you half of the reward.");
    quest::ding();
    quest::exp(5000000);
    quest::givecash(0,0,0,30);
+   }
+       else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
    }
  }	
