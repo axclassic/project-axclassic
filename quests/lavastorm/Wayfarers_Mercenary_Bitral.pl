@@ -13,12 +13,15 @@ my $work = quest::saylink("work", 1);
   if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Hail/i){
   quest::say("Good Day to you traveler, I am sorry but I have nothing available for someone of your experiance, check with the others as they may have something that you can do.");
 	 }
-  if ($ulevel >= 41 && $text=~/work/i){
+  if ($ulevel >= 51 && $ulevel <= 60 && $text=~/work/i){
   quest::say("Sadly, the creatures of the Stillmoon Temple have overrun the area. Perhaps it was always so, but it's making it dangerous even for rogues to pass through. Norrath's Keepers has been looking for aid, so now this task falls to you.");
   quest::say("take this and fill it with drake-spikes, combine them and return it to me as proof, I am sure the keepers will reward us handsomely for this."); 
   quest::summonitem(17039);
   }
-  if ($ulevel <= 40 && $text=~/Hail/i){
+  if ($ulevel <= 40 && $ulevel >= 31 && $text=~/Hail/i){
+   quest::say("Good Day to you traveler, I am sorry but I have nothing available for someone of your experiance, check with the others as they may have something that you can do.");
+   }
+   if ($ulevel >= 61 && $text=~/Hail/i){
    quest::say("Good Day to you traveler, I am sorry but I have nothing available for someone of your experiance, check with the others as they may have something that you can do.");
    }
   }
