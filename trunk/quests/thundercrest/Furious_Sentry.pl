@@ -1,4 +1,8 @@
 sub EVENT_DEATH {
+ my $x = $npc->GetX();
+  my $y = $npc->GetY();
+  my $z = $npc->GetZ();
+  my $h = $npc->GetHeading();
+  quest::spawn2(340133,0,0,$x,$y,$z,$h);
 quest::signalwith(340108,911,0);
-$client->Message(14,"Time is short but you must take the energy crystal that has been left behind. Its use is unclear just yet, but the pulsating emissions that you can sense draws you ever closer to it.");
 }
