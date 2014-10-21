@@ -3,7 +3,7 @@ my $detail = quest::saylink("detail", 1);
 my $help = quest::saylink("help", 1);
 my $undead = quest::saylink("undead", 1);
 my $goblins = quest::saylink("goblins", 1);
-my $spiderling = quest::saylink("spiderling", 1);
+my $spiderlings = quest::saylink("spiderlings", 1);
    if ($ulevel <= 40 && $text=~/Hail/i){
    quest::say("I am sorry but I have nothing that someone of your experiance could possibly handle. Please check with the others in the camp, I am sure they have work that you can do to help the Dark Reign.");
    }
