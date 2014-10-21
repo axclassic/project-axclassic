@@ -1,6 +1,6 @@
 #Tatsujiro the Serene  NPC ID 27122#
 sub EVENT_SAY {
-  if($text=~/Hail/i && $ulevel <= 50 && $ulevel >= 41){
+  if($text=~/Hail/i){
   quest::say("Hail traveler, have a look at my wares, surely there is something that peaks your interest.");
   }
 }
@@ -11,4 +11,8 @@ sub EVENT_ITEM {
   quest::exp(4500000);
   quest::givecash(0,0,0,50); 
   }
+          else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }
 }  
