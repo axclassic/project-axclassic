@@ -9,7 +9,7 @@ my $Storm = quest::saylink("Storm", 1);
    if ($ulevel <= 50 && $text=~/Hail/i){
    quest::say("I am sorry but I have nothing that someone of your experiance could possibly handle. Please check with the others in the camp, I am sure they have work that you can do to help the Dark Reign.");
    }
-   if ($ulevel <= 51 && $text=~/Hail/i){
+   if ($ulevel >= 51 && $text=~/Hail/i){
    quest::say("Welcome traveler, Have you heard the news? New areas of exploration have been found. Already there are many reports that there is trouble.");
    quest::say("I am looking for adventurers that are willing to face the unknown and see if these $rumors are true.");
    }
@@ -34,7 +34,7 @@ my $Storm = quest::saylink("Storm", 1);
    if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Tracking/i){ 
    quest::say("There is but one kirin who knows the full history of Stillmoon Temple. Finding the elusive creature has proved difficult however. We would like you to try your hand at finding him and return any knowledge of the Stillmoon Temple that you may be able to use it against the Norrath Keepers. To accomplish this you will have to cause a commotion of some sort that may bring him out of hiding. Once you've killed enough of the guards, the kirin is likely to be wandering about unseen. Dispose him and bring back the tome back to me."); 
    }
-if ($ulevel >= 61 && $text=~/Death/i){ 
+   if ($ulevel >= 61 && $text=~/Death/i){ 
    quest::say("We think that with the recent discovery of this area, the natural balance has been upset as the local spiders have begun to terrorize the entire area. We need you to find their lair and reduce their numbers back down to acceptable levels.");
    quest::say("Destroy all the spiders in the Ascent and return to me with anything you deem if value.");
    }      
@@ -42,10 +42,9 @@ if ($ulevel >= 61 && $text=~/Death/i){
    quest::say("Our spies report that a handful of storm dragon scales were recently given to one of Yar'Lir's most powerful advisors, a goblin warlock know as the Storm Caller. We need you to organize an expedition to recover these scales before the goblins use their newfound power against us. Be careful, for the Storm Caller lair is high on the peaks about Stillmoon, and it is rumoured he has rudimentary control of the weather itself.");
    quest::say("Bring me the Storm Dagon Scales and I shall reward you.");
    }
-   
-}
+ }
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount, 49017 => 1)) { ##Animated Statue Plans##
+   if (plugin::check_handin(\%itemcount, 49017 => 1)) { ##Animated Statue Plans##
    quest::say("Very nice work. We hope the reward was worth the effort. The Dark Reign thanks you Now go away.");
    quest::exp(10000000);
    quest::ding();
@@ -80,5 +79,9 @@ if (plugin::check_handin(\%itemcount, 49017 => 1)) { ##Animated Statue Plans##
    quest::exp(25000000);
    quest::say("Well done $name, You have turned the favor of power back into our hands at least for now.");
    quest::givecash(0,0,0,60);
+   }
+       else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
    }
  }
