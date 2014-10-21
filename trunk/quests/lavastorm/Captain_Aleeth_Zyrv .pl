@@ -3,7 +3,13 @@ my $tests = quest::saylink("tests", 1);
   if ($text=~/Hail/i){
    quest::say("So you wish to help The Dark Reign eh? Well then I have a few $tests for you to see if you are worthy.");
    }
-  if ($ulevel <= 30 && $ulevel >= 21 && $text=~/tests/i){
+   if ($ulevel <= 20 && $text=~/Hail/i){
+   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+   }
+   if ($ulevel >= 61 && $text=~/Hail/i){
+   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+   }
+   if ($ulevel <= 30 && $ulevel >= 21 && $text=~/tests/i){
    quest::say("Deep in the caverns of the Lavaspinner's Lair is the queen of the spiders. Her name is Volkara and hour by hour she builds her army of lavaspinners that weave and kill by spinning webs as hot and deadly as the lava that surrounds them. She has taken to the flavor of the blood and flesh of mortals and she must be stopped. You must go there in the name of Norrath's Keepers and Firiona Vie to stop the flow of blood in her caves.");
    quest::say("Bring to me her blood as proof of her demise and you shall be rewarded");
    }
@@ -14,11 +20,11 @@ my $tests = quest::saylink("tests", 1);
    if ($ulevel <= 50 && $ulevel >= 41 && $text=~/tests/i){
    quest::say("I am sorry $name, I have nothing for an explorer of your experiance. Check with the others as they may have things you can do to help the Dark Reign. Come back to me as you gain experiance and I may have other missiopns you can help with.");
    }
-  if ($ulevel <= 60 && $ulevel >= 51 && $text=~/tests/i){
+   if ($ulevel <= 60 && $ulevel >= 51 && $text=~/tests/i){
    quest::say("There have been several sightings of a massive guardian that has risen in the sand gardens of Stillmoon Temple. This guardian has been very protective of the area and we have lost contact with several scouts that were sent to gather more information. The scouts that have survived the attacks report that the guardian is allied with the sand goblins of the region. It is simply too dangerous to continue our exploration of the temple as long as that guardian is around. We need you to remove it.");
    quest::say("Bring back proof of its demise and you shall be rewarded.")
    }
-   }
+ }
 sub EVENT_ITEM {
    if ($ulevel <= 30 && $ulevel >= 21 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
@@ -38,4 +44,8 @@ sub EVENT_ITEM {
    quest::exp(30000000);
    quest::givecash(0,0,0,75);
    }
+       else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
    }
+ }
