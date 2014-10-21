@@ -2,7 +2,7 @@ sub EVENT_SAY {
 my $rumors = quest::saylink("rumors", 1);
 my $Kessdonas = quest::saylink("Kessdonas", 1);
 if ($ulevel <= 60 && $text=~/Hail/i){
-   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Dark Reign with.");
    }
   if ($ulevel >= 61 && $text=~/Hail/i){
    quest::say("Welcome traveler, Have you heard the news? New areas of exploration have been found. Already there are many reports that there is trouble.");
