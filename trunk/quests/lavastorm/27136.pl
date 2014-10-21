@@ -13,6 +13,9 @@ my $No = quest::saylink("No", 1);
 my $Eye = quest::saylink("Eye", 1);
 my $Comrades = quest::saylink("Comrades", 1);
 my $Web = quest::saylink("Web", 1);
+  if ($ulevel <= 40 && $text=~/Hail/i){
+   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+   }
   if ($text=~/Hail/i && $ulevel <= 50 && $ulevel >= 41){
    quest::say("Hail and well met $name. My orders came through and I have a few $missions that you may be able to help me with.");
    }
@@ -65,6 +68,9 @@ my $Web = quest::saylink("Web", 1);
    quest::say("We have learned that some people are attempting to gain an alliance with the goblins that live in the Nest. It seems that they are unhappy with their draconic masters attempt to use them as fodder against our assaults. The faction of fools that is trying to sway them to turn on their masters is telling them that the assaults are entirely our doing and that the Norrathians invading their lands have been urged to do so by us alone! So far the goblins have only allowed one emissary into their lair unharmed, some halfling woman. I guess she's too small to scare them or she smells like pies or something. Regardless of the reason, I need you to go in their and kill her. Then tell these goblins about the deception played on them by these fools. You just have to be convincing enough that the goblins don't kill you before you can get out. We all know that both sides are exploiting the opportunity for new loot and power, but as least we're honest about it."); 
    quest::say("bring me proof of her demise and you will be rewarded.");
    }
+   if ($ulevel >= 51 && $text=~/Hail/i){
+   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+   }
 } 
  sub EVENT_ITEM {
   if ($ulevel <= 50 && $ulevel >= 41 && plugin::check_handin(\%itemcount, 86004 => 4)) {
@@ -103,6 +109,10 @@ my $Web = quest::saylink("Web", 1);
    quest::ding();
    quest::exp(4500000);
    quest::givecash(0,0,0,50);
+   }
+       else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
    }
  }   
 
