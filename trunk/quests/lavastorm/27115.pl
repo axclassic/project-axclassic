@@ -6,10 +6,15 @@ my $Snowfoot = quest::saylink("Snowfoot", 1);
 my $Scrolls = quest::saylink("Scrolls", 1);
 my $Revover = quest::saylink("Recover", 1);
 my $Defend = quest::saylink("Defend", 1);
+    if ($ulevel <= 20 && $text=~/Hail/i){
+    quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+    }
     if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Hail/i){
     quest::say("Welcome young traveler, I have a project that someone of your bravery may be able to help me with.");
 	quest::say("I must ask you to go within the great volcano. We need to obtain a rather potent poison from the lavaspinners there in order to create an antidote. Yes, we have learned the Dark Reign intends to poison us using the lava spiders' venom somehow. Be careful and swift. We are not sure when they may execute their plans!");
     quest::say("collect 4 Boiling Lavaspinner Bloodsand return them to me.");	
+    } if ($ulevel <= 50 && $ulevel >= 31 && $text=~/Hail/i){
+    quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
     }
     if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Hail/i){
     quest::say("Welcome traveler, I have a few quests you may be able to help me with. $Turn the Tides of the Sands, $Protect the Waters nad $Greed of the Goblins.");
