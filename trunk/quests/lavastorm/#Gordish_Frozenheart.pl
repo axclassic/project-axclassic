@@ -11,7 +11,7 @@ my $Metal = quest::saylink("Metal", 1);
 my $Yes = quest::saylink("Yes", 1);
 my $No = quest::saylink("No", 1);
 my $Eye = quest::saylink("Eye", 1);
-if ($ulevel <= 40 && $text=~/Hail/i){
+  if ($ulevel <= 40 && $text=~/Hail/i){
    quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
    }
   if ($ulevel <= 50 && $ulevel >= 41 && $text=~/Hail/i){
