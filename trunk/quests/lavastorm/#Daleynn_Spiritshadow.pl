@@ -7,7 +7,7 @@ my $Scions = quest::saylink("Scions", 1);
 my $Splitting = quest::saylink("Splitting", 1);
 my $Creator = quest::saylink("Creator", 1);
    if ($ulevel <= 60 && $text=~/Hail/i){
-   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Dark Reign with.");
    }
    if ($ulevel >= 61 && $text=~/Hail/i) {
    quest::say("I have a few missions you could help us with. a $Simple task, Holy $Hour, House of $Autum Rose, Lair $Unguarded, $Scions of Thundercrest, $Splitting the Storm or The $Creator.");
