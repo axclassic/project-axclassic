@@ -34,4 +34,8 @@ sub EVENT_ITEM {
    quest::exp(6000000);
    quest::givecash(0,0,0,50);
    }
+       else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }
  }  
