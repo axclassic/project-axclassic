@@ -6,11 +6,14 @@ my $Unguarded = quest::saylink("Unguarded", 1);
 my $Scions = quest::saylink("Scions", 1);
 my $Splitting = quest::saylink("Splitting", 1);
 my $Creator = quest::saylink("Creator", 1);
+   if ($ulevel <= 60 && $text=~/Hail/i){
+   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+   }
    if ($ulevel >= 61 && $text=~/Hail/i) {
    quest::say("I have a few missions you could help us with. a $Simple task, Holy $Hour, House of $Autum Rose, Lair $Unguarded, $Scions of Thundercrest, $Splitting the Storm or The $Creator.");
    }
    if ($ulevel >= 61 && $text=~/Simple/i){
-   quest::say("I have for you a simple task. Bring me a flower from a garden. Sure, that garden is on a magically floating island. Yes, that island is the lair of an ancient dragon of trendous power. Of course minions will be everywhere, but all we want is one plant. How hard can that be? There is a small tree that grows a rose they call the Dark Lady. They say it has amazing powers. They also say that it is difficult to transport alive. You need to figure out how to do that. They say that if you don't transport it in the right container with the proper fertilizer it will die. No, I don't really know who "they" are, just bring me that rose alive.");
+   quest::say("I have for you a simple task. Bring me a flower from a garden. Sure, that garden is on a magically floating island. Yes, that island is the lair of an ancient dragon of trendous power. Of course minions will be everywhere, but all we want is one plant. How hard can that be? There is a small tree that grows a rose they call the Dark Lady. They say it has amazing powers. They also say that it is difficult to transport alive. You need to figure out how to do that. They say that if you don't transport it in the right container with the proper fertilizer it will die. No, I don't really know who they are, just bring me that rose alive.");
    }
    if ($ulevel >= 61 && $text=~/Hour/i){
    quest::say("We've heard that there is a ritual performed every day on the Thundercrest Isles. It's some sort of worship of Yar`Lir and just about every being on Thundercrest is forced to attend. They say that their combined prayer and worship helps to keep their mistress calm and any day that they do not hold this ritual terrible storms rage across the floating islands, often hitting the Broodlands as well. We've heard that many of the goblins working on Thundercrest were sent there as much to take part in this ritual as to do labor. We want you to prevent or disrupt the ritual today so that our agents can use the cover of a storm to do some work. When you are ready, go to the Broodlands and find a way into Thundercrest. We need you to stop the residents from getting across the bridge to the place they call the Halls of History where this worship takes place."); 
@@ -76,5 +79,9 @@ sub EVENT_ITEM {
    quest::exp(40000000);
    quest::ding();
    quest::givecash(0,0,0,60);
+   }
+      else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
    }
 }   
