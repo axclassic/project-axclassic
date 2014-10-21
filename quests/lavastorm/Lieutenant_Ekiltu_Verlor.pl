@@ -7,6 +7,9 @@ my $Perseverance = quest::saylink("Perseverance", 1);
    if ($text=~/Hail/i){
    quest::say("Good Day to you traveler, I recieved orders and I am looking for able bodied explorers wanting to $test thier skills.");
    }
+   if ($ulevel <= 20 && $text=~/test/i){
+   quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
+   }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/test/i){
    quest::say("Deep in the caverns of the Lavaspinner's Lair is the queen of the spiders. Her name is Volkara and hour by hour she builds her army of lavaspinners that weave and kill by spinning webs as hot and deadly as the lava that surrounds them. She has taken to the flavor of the blood and flesh of mortals and she must be stopped. You must go there in the name of Norrath's Keepers and Firiona Vie to stop the flow of blood in her caves.");
    quest::say("Bring to me her blood as proof of her demise and you shall be rewarded");
