@@ -7,6 +7,7 @@ my $Unguarded = quest::saylink("Unguarded", 1);
 my $Scions = quest::saylink("Scions", 1);
 my $Splitting = quest::saylink("Splitting", 1);
 my $Creator = quest::saylink("Creator", 1);
+my $Behind = quest::saylink("Behind", 1);
 my $Contagion = quest::saylink("Contagion", 1);
    if ($text=~/Hail/i) {
    quest::say("Good Day to you $name, An opportunity to weaken the forces of Yar`Lir has presented itself if you are $interested in helping our cause."); 
