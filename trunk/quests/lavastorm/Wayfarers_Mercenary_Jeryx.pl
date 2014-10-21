@@ -20,20 +20,27 @@ my $Taunting = quest::saylink("Taunting", 1);
    if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Taunting/i) {
    quest::say("Always coming after our goods, they are. The Dark Reign are trying to thin the population of the Stillmoon Temple to see if there is any reaction -- trying to draw dragons out. Maybe you can help them if you kill some Stillmoon creatures.");
    quest::say("Take this box and fill it with the Signet Rings that some of the Stillmoon Temple Residents must carry. Combine them in the box and return to me what you have created and I will reward you.");
-   quest::summonitem(17148); ##Unfilled Box##
+   quest::summonitem(17148); 
+   }
+   if ($ulevel >= 61 && $text=~/Hail/i) {
+   quest::say("I am sorry but I have nothing for you to do. I suggest you check with the others around here, they may have something for someone of your experiance could do.");
    }
  }
  sub EVENT_ITEM {
-   if (plugin::check_handin(\%itemcount, 54601 =>4)) { ##Mottled Goblin Meat##
+   if (plugin::check_handin(\%itemcount, 54601 =>4)) { 
    quest::say("perfect! I will hand these over to the Dark Reign. Here is your cut.");
    quest::ding();
    quest::exp(10000000);
    quest::givecash(0,0,0,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 120177 => 1)) { ##Full Stillmoon Signet Box##
+   elsif (plugin::check_handin(\%itemcount, 120177 => 1)) { 
    quest::say("The Dark Reign thanks you, these will melt down and make a nice trinket that we can sell.");
    quest::ding();
    quest::exp(10000000);
    quest::givecash(0,0,0,50);
+   }
+       else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
    }
  }
