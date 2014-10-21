@@ -15,22 +15,29 @@ my $work = quest::saylink("work", 1);
 	 }
   if ($ulevel >= 41 && $text=~/work/i){
   quest::say("Sadly, the creatures of the Stillmoon Temple have overrun the area. Perhaps it was always so, but it's making it dangerous even for rogues to pass through. Norrath's Keepers has been looking for aid, so now this task falls to you.");
-  quest::say("take this and fill it with drake-spikes, combine them and return it to me as proof, I am sure the keepers will reward us handsomely for this.") 
+  quest::say("take this and fill it with drake-spikes, combine them and return it to me as proof, I am sure the keepers will reward us handsomely for this."); 
   quest::summonitem(17039);
   }
+  if ($ulevel <= 40 && $text=~/Hail/i){
+   quest::say("Good Day to you traveler, I am sorry but I have nothing available for someone of your experiance, check with the others as they may have something that you can do.");
+   }
   }
   sub EVENT_ITEM {
   if ($ulevel <= 30 && $ulevel >= 21 && plugin::check_handin(\%itemcount, 54602 => 4)) {
   quest::say("Nice work $name. Here is your cut.");
   quest::ding();
-  quest::exp(1000000):
+  quest::exp(1000000);
   quest::givecash(0,0,0,30);
   }
   elsif ($ulevel >= 41 && plugin::check_handin(\%itemcount, 120166 => 1)) {
   quest::say("Nice work $name. Here is your cut.");
   quest::ding();
-  quest::exp(20000000):
+  quest::exp(20000000);
   quest::givecash(0,0,0,50);
   }
+          else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }
   }
   
