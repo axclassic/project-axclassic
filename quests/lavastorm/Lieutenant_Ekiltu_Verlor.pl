@@ -19,7 +19,7 @@ my $Perseverance = quest::saylink("Perseverance", 1);
    quest::say("Bring to me the fragment as proof for your reward.");
    }
    if ($ulevel <= 50 && $ulevel >= 41 && $text=~/test/i){
-   quest::sya("I have two expeditions from which you may choose, In The $Shadows and The $Curse of Ju'Rek.");
+   quest::say("I have two expeditions from which you may choose, In The $Shadows and The $Curse of Ju'Rek.");
    }
    if ($ulevel <= 50 && $ulevel >= 41 && $text=~/Shadows/i){
    quest::say("Terrible events came to pass as Yar`Lir was taken from her perch. There was a dragon that protected the Nest beneath the islands in the sky, but now that place has turned to ruin and darkness. After seeing the effects the corruption has caused the Nest, we can only guess what has happened to the dragon that inhabited it. Go now and be swift. If this dragon is a plague on our lands, it must be stopped."); 
