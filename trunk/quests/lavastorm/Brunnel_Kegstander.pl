@@ -4,7 +4,7 @@ my $trading = quest::saylink("trading", 1);
    if ($ulevel <= 21 && $text=~/Hail/i){
    quest::say("'ello there. I set sail from me home on a quest and I be happy to report I've had me a bit o' success! I found me the secret to making Forged $Firebrand Weapons. It's me own secret though and I ain't tellin'.");
    }
-    if ($ulevel <= 22 && $text=~/Hail/i){
+    if ($ulevel >= 22 && $text=~/Hail/i){
 	quest::say("I am sorry but I have nuttin' that ye would be interested in, ask the others here abouts, they may have something for ye.");
 	}
    if ($ulevel <= 21 && $text=~/Firebrand/i){
