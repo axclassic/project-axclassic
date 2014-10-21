@@ -2,7 +2,7 @@
 sub EVENT_SAY {
 my $Drake = quest::saylink("Drake", 1);
 my $Scroll = quest::saylink("Scroll", 1);
-   if ($ulevel <= 30 $text=~/Hail/i){
+   if ($ulevel <= 30 && $text=~/Hail/i){
   quest::say("Good Day to you traveler, I am sorry but I have nothing available for someone of your experiance, check with the others as they may have something that you can do.");
    }
    if ($ulevel <= 40 && $ulevel >= 31 && $text=~/Hail/i){
