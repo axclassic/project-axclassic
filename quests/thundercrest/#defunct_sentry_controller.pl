@@ -24,6 +24,9 @@ sub EVENT_SIGNAL {
 	   if($counter == 3) {
 	quest::spawn2(340027,0,0,2436,-744,176,0.0);
 	$client->CameraEffect(3000, 6);
+	quest::signalwith(340114,914,0);
+	quest::signalwith(340115,914,0);
+	quest::signalwith(340116,914,0);
 	}
 	if($signal == 911) { #signal 911 is from Furious Sentry#
       if($counter == 4) {
