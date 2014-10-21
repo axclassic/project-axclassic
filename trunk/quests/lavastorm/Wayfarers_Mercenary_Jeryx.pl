@@ -6,7 +6,7 @@ my $Taunting = quest::saylink("Taunting", 1);
    quest::say("I am sorry but I have nothing for you to do. I suggest you check with the others around here, they may have something for someone of your experiance could do.");
    }
    if ($ulevel >= 61 && $text=~/Hail/i) {
-   quest::say)"I am sorry the menial tasks I have would be a waist of your time explorer, Chack with the others around here as they may have something you may be able to help with.");
+   quest::say("I am sorry the menial tasks I have would be a waist of your time explorer, Check with the others around here as they may have something you may be able to help with.");
    }   
    if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Hail/i) {
    quest::say("So, you want to get in good with them dark crusaders, eh? I might be able to help you. If you run a few $errands for me, I can probably put in a good word.");
