@@ -7,9 +7,19 @@ my $Diseased = quest::saylink("Diseased", 1);
 my $Clearing = quest::saylink("Clearing", 1);
 my $Muddy = quest::saylink("Muddy", 1);
 my $Reap = quest::saylink("Reap", 1);
+my $Poison = quest::saylink("Poison", 1);
 my $Snowfoot = quest::saylink("Snowfoot", 1);
-   if ($ulevel <= 50 && $text=~/Hail/i){
-   quest::say("I am sorry but I have nothing for you to do, you need to gather more experiance and then return tome when you have improved your skills.");
+   if ($ulevel <= 20 && $text=~/Hail/i){
+   quest::say("$name! You dare to address me so informally? I ought to have you slain! Be gone!'");
+   }
+   if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Hail/i){
+   quest::say("I have but one job for someone of your experiance, Go to Lavaspinners Lair and collect four Caustic Lavaspinner Venom. Survive and return them to me for your reward.");
+   }
+   if ($ulevel <= 40 && $ulevel >= 31 && $text=~/Hail/i){
+   quest::say("I have but one job for someone of your experiance, Go to Tirranun's Delve and collect four Simmering Basilisk Blood. Survive and return them to me for your reward.");
+   }
+   if ($ulevel <= 50 && $ulevel >= 41 && $text=~/Hail/i){
+   quest::say("$name! You dare to address me so informally? I ought to have you slain! Be gone!'");
    }
    if ($ulevel >= 51 && $text=~/Hail/i){
    quest::say("Perhaps you will find a $path of the Dark Reign -- a place I'm sure I shall find myself someday... someday.");
@@ -19,7 +29,7 @@ my $Snowfoot = quest::saylink("Snowfoot", 1);
    }
    if ($text=~/collecting/i){
    quest::say("There are several ways you can help , I will allow you to choose which one or more you think you can handle.");
-   quest::say("Let's see, there is $Army of Stone, $Blood of Sand, $Clearing the Path, $Muddy the Waters, $Reap the Kirin Mind, $Snowfoot Attack. Thats the ones I know about but there may be more.");
+   quest::say("Let's see, there is $Army of Stone, $Blood of Sand, $Clearing the Path, $Muddy the Waters, $Reap the Kirin Mind, or $Snowfoot Attack. Thats the ones I know about but there may be more.");
    }
    if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Army/i){
    quest::say("In Stillmoon Temple there is a new form of creature. They appear to be guardians made of clay, yet when you get close to them, they spring to life and kill the poor unsuspecting soul.");
@@ -48,37 +58,49 @@ quest::say("We shall need a few samples to work on so loot 3 Pristine Kirin Brai
   }
  }
  sub EVENT_ITEM {
-   if (plugin::check_handin(\%itemcount, 52501 =>4 )) {  ##Animated Guardian Essence##
+ if (plugin::check_handin(\%itemcount, 52498 =>4 )) {  
    quest::ding();
    quest::exp(100000);
    quest::say("These are exactly what we needed. Thank you $name");
    quest::givecash(2,6,5,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 120122 =>1 )) {  ##Vial of Impure Goblin Blood##
+   elsif (plugin::check_handin(\%itemcount, 52499 =>4 )) {  
    quest::ding();
    quest::exp(100000);
    quest::say("These are exactly what we needed. Thank you $name");
    quest::givecash(2,6,5,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 120124 =>1 )) {  ##Bag of Intestines##
+   elsif (plugin::check_handin(\%itemcount, 52501 =>4 )) {  
    quest::ding();
    quest::exp(100000);
    quest::say("These are exactly what we needed. Thank you $name");
    quest::givecash(2,6,5,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 120126 =>1 )) {  ##Water Goblin Blood Bag##
+   elsif (plugin::check_handin(\%itemcount, 120122 =>1 )) {  
    quest::ding();
    quest::exp(100000);
    quest::say("These are exactly what we needed. Thank you $name");
    quest::givecash(2,6,5,50);
    }
-   if (plugin::check_handin(\%itemcount, 52502 =>3 )) {  ##Pristine Kirin Brain##
+   elsif (plugin::check_handin(\%itemcount, 120124 =>1 )) {  
    quest::ding();
    quest::exp(100000);
    quest::say("These are exactly what we needed. Thank you $name");
    quest::givecash(2,6,5,50);
    }
-   elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 120129 =>1 )) {  ##Stillmoon Goblin Skin##
+   elsif (plugin::check_handin(\%itemcount, 120126 =>1 )) {  
+   quest::ding();
+   quest::exp(100000);
+   quest::say("These are exactly what we needed. Thank you $name");
+   quest::givecash(2,6,5,50);
+   }
+   if (plugin::check_handin(\%itemcount, 52502 =>3 )) {  
+   quest::ding();
+   quest::exp(100000);
+   quest::say("These are exactly what we needed. Thank you $name");
+   quest::givecash(2,6,5,50);
+   }
+   elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 120129 =>1 )) {  
    quest::ding();
    quest::exp(1500000);
    quest::say("These are exactly what we needed. Thank you $name");
