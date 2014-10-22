@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
-$client->CameraEffect(3000, 6);
+$npc->CameraEffect(3000,6,1);
 }
 
 sub EVENT_DEATH {
