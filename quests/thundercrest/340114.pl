@@ -10,10 +10,9 @@ sub EVENT_ENTER {
 sub EVENT_SIGNAL {
     if ($signal == 9000) {
 	quest::shout("I recieved signal 9000");
-	$client->Message(14,"Something has come alive in a nearby room! Be warned!" );
-	$client->CameraEffect(3000, 6);
 	quest::signalwith(340108,9050,7500);
 	quest::shout("I sent signal 9050");
+	$client->Message(14,"Something has come alive in a nearby room! Be warned!" );
 	}
 	if ($signal == 9075) {
 	quest:;shout("I recieved signal 9075");
