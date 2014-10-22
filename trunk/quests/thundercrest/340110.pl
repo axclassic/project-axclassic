@@ -6,5 +6,4 @@ sub EVENT_DEATH {
   my $h = $npc->GetHeading();
   quest::spawn2(340108,0,0,$x,$y,$z,$h);
 quest::signalwith(340108,910,0);
-quest::shout("sending signal 910");
 }
