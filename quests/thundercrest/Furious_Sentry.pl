@@ -1,7 +1,3 @@
-sub EVENT_SPAWN {
-$npc->CameraEffect(3000,6,1);
-}
-
 sub EVENT_DEATH {
  my $x = $npc->GetX();
   my $y = $npc->GetY();
