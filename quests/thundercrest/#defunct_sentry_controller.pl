@@ -16,12 +16,7 @@ quest::spawn2(340001,0,0,2260.7,-206.9,125.5,199.1);
 quest::spawn2(340002,0,0,2259.8,-727.2,125.5,199.1);
   }
 sub EVENT_SIGNAL {
-    if($signal == 9050){
-	quest::shout("I recieved signal 9050");
-    quest::signalwith(340114,9075,0);
-    quest::shout("I am sending signal 9075");	
-    }
-   	if ($signal == 910) {
+    if ($signal == 910) {
 	 $defunct_sentry_event += 1; # adds one to spawn variable # 
 	 }
 	if($signal == 911) { ##signal 911 is from each a_Defunct_Sentry##
@@ -29,8 +24,6 @@ sub EVENT_SIGNAL {
 	   if($counter == 3) {
 	quest::spawn2(340027,0,0,2436,-744,176,0.0);
 	quest::spawn2(340141,0,0,1615.2,-673.4,112.7,18.8);
-	quest::signalwith(340114,9000,0);
-	quest::shout("sending signal 9000");
 	}
 	if($signal == 911) { #signal 911 is from Furious Sentry#
       if($counter == 4) {
