@@ -24,15 +24,11 @@ sub EVENT_SIGNAL {
 	   if($counter == 3) {
 	quest::spawn2(340027,0,0,2436,-744,176,0.0);
 	quest::signalwith(340114,914,0);
-	quest::signalwith(340115,914,0);
-	quest::signalwith(340116,914,0);
 	}
 	if($signal == 911) { #signal 911 is from Furious Sentry#
       if($counter == 4) {
 	quest::spawn2(340111,0,0,503.2,-788.3,111.5,231.9); #spawn creator proximity controller#
 	quest::depop(340114);
-	quest::depop(340115);
-	quest::depop(340116);
 	quest::depop();
 	}
    }
