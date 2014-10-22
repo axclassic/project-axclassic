@@ -28,6 +28,7 @@ sub EVENT_SIGNAL {
     $counter += 1;
 	   if($counter == 3) {
 	quest::spawn2(340027,0,0,2436,-744,176,0.0);
+	quest::spawn2(340141,0,0,1615.2,-673.4,112.7,18.8);
 	quest::signalwith(340114,9000,0);
 	quest::shout("sending signal 9000");
 	}
