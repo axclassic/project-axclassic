@@ -17,7 +17,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(340135,340079,0,240.3,1280.4,-16.3,131.9);
     }	
 	if($signal == 2010) { ##signal 2015 is from Thunderheads killed##
-      if($counter == 6) {
+      if($counter == 5) {
 	quest::spawn2(340136,340078,0,218.8,1281.4,-20.7,111); ##spawn Raging Thunderhead##
 	quest::depop(340137);
 	quest::depop();
