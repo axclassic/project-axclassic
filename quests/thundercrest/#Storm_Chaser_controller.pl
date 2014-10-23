@@ -7,18 +7,18 @@ my $storm_chaser_event = 0;
   }
 sub EVENT_SIGNAL {
   if($signal == 2005) {
-  $storm_chaser_event += 1; # adds one to spawn variable # 
+  $storm_chaser_event += 1; 
   }
-  if($signal == 2010) { ##signal 2010 is from each of the storm chasers killed##
+  if($signal == 2010) { 
     $counter += 1;
-	   if($counter == 2) {
+	   if($counter == 3) {
 	quest::spawn2(340135,340077,0,199.2,1279.1,-23.9,126.1);
     quest::spawn2(340135,340078,0,218.8,1281.4,-20.7,111);
     quest::spawn2(340135,340079,0,240.3,1280.4,-16.3,131.9);
     }	
-	if($signal == 2010) { ##signal 2015 is from Thunderheads killed##
-      if($counter == 5) {
-	quest::spawn2(340136,340078,0,218.8,1281.4,-20.7,111); ##spawn Raging Thunderhead##
+	if($signal == 2010) { 
+      if($counter == 6) {
+	quest::spawn2(340136,340078,0,218.8,1281.4,-20.7,111); 
 	quest::depop(340137);
 	quest::depop();
 	}
