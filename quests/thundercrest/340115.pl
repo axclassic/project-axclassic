@@ -4,10 +4,7 @@ $x = $npc->GetX();
 	quest::set_proximity($x - 10, $x + 10, $y - 10, $y + 10);
     }
 sub EVENT_ENTER {
-     if ($signal == 914) {
-	 $client->CameraEffect(3000, 6);
-	$client->Message(14,"Something has come alive in a nearby room! Be warned!" );
-	$client->Message(14,"The rumbling you just felt must have been a sentry that is fully automated! Judging by the magnitude of the power, it must be nearby. Search for this beast and destroy it before it has a chance to destroy you!"); 
-	quest::depop();
+    $client->Message(14,"There are others in the area search them out and destroy them."); 
+    quest::spawn2(340002,0,0,2259.8,-727.2,125.5,199.1);
+    quest::depop();
 	}
- }
