@@ -10,7 +10,7 @@ sub EVENT_SAY {
    }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Blood/i){
    quest::say("Those infernal drakes have stolen some of my supplies for the Dark Reign and now I'm short. Hurry along and loot 4 Frothing Drake Blood in Lavaspinner's Lair.");
-   quest::say("Return to me with the Frothing Drake Bloods  and I shal reward you.");
+   quest::say("Return to me with the Frothing Drake Bloods  and I shall reward you.");
    }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Spider/i){
    quest::say("There is a troll shaman charged with creating protective talismans for the Dark Reign. We'll need them against those dragons. They are looking for someone to loot 4 Lavaspinner's Silk in Lavaspinner's Lair. The job is yours is you're willing.");
