@@ -78,7 +78,7 @@ sub EVENT_ITEM {
    quest::givecash(0,0,0,30);
    }
    elsif (plugin::check_handin(\%itemcount, 85012 => 3, 85013 => 1)) {   
-   quest::say("Perfect! I will turn these over to the Dark Riegn and collect my... er I, mean our reward.");
+   quest::say("The egg sacks have been collected! Thank you for your efforts to further our research, you may have saved the lives of many people.");
    quest::ding();
    quest::exp(5000000);
    quest::givecash(0,0,0,30);
