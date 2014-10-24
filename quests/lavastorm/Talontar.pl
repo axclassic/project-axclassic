@@ -28,6 +28,7 @@ my $Drake = quest::saylink("Drake", 1);
    }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Hunting/i){
    quest::say("We have received word that the Lavaspinner eggs possess magical powers that we can't allow to fall in the hands of the wrong person. We need someone to scout the lair and recover a few samples of their eggs. If you choose to accept this mission you will need to strike the lair fast and deadly. If the Lavaspinner queen is alerted you will certainly die.");
+   quest::say("We have an acquaintance deep within the Lair who may have further information for you.");
    quest::say("Return to me with 3 Cracked Lavaspinner Eggs and 1 Pristine Lavaspinner Egg so that we may study these eggs closer.");
    }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Local/i){
