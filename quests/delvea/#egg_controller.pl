@@ -20,7 +20,7 @@ sub EVENT_SIGNAL {
     }
 if($signal == 541) { #signal 427 is from each of the goblins
       if($counter == 20) {
-	quest::spawn2(341087,0,0,-1481,-1520,-103.9,0);
+	quest::spawn2(341087,0,0,-1497,-1507.9,-102.7,114.4);
     }
 	if($signal == 541) { #signal 427 is from each of the goblins
       if($counter == 25) {
