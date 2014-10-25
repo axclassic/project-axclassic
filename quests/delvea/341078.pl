@@ -1,5 +1,5 @@
 sub EVENT_DEATH {
-  my $a = quest::ChooseRandom(341030,341900,341042,341900,341055,341900,341092,341900);
+  my $a = quest::ChooseRandom(341030,341098,341042,341098,341055,341098,341092,341098);
   my $x = $npc->GetX();
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
