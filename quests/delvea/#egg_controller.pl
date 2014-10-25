@@ -31,3 +31,5 @@ if($signal == 541) { #signal 427 is from each of the goblins
   }
  }
 }
+}
+}
