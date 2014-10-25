@@ -26,7 +26,7 @@ my $helping = quest::saylink("helping", 1);
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Grounding/i){
    quest::say("Due to their constant proximity to lava, the fangs of the drakes in the Lavaspinner's Lair have developed special properties to cut through objects. If their fangs could be studied, we could make use of those special properties in a variety of ways. Go to the lair and collect as many of their fangs as you can for study.");
    quest::say("Take this box and fill it with drake fangs,combine them and return the finished item to me for your reward.");
-   quest::summonitem(17148); ##Unfilled Box##
+   quest::summonitem(17148); 
    }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Infested/i){
    quest::say("There have been some lavarachnids troubling our agents in the Lavaspinner's Lair. Have caution when moving through the lair. We have found at least two different types of the Lavaspinners. Eliminate all of the ones you can find so we can move through unhindered.");
