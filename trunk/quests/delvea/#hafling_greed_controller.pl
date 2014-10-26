@@ -6,57 +6,17 @@ sub EVENT_SPAWN {
     $counter = undef;
 	}
 sub EVENT_SIGNAL {
-     if ($signal ==  ){
-   $client->Message(14,"
+   if ($signal == 101 ){
+
    }
-   if ($signal ==  ){
-   $client->Message(14,"
+   if ($signal == 102){
+ 
    }
-   if ($signal ==  ){
-   $client->Message(14,"
+   if ($signal == 103){
+   
    }
-   if ($signal ==  ){
-   $client->Message(14,"
+   if ($signal == 104){
+   
    }
-   if ($signal ==  ){
-   $client->Message(14,"
    }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-   if ($signal ==  ){
-   $client->Message(14,"
-   }
-  }
- }
-} 
+  
