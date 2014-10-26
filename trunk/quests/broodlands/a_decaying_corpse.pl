@@ -10,7 +10,10 @@ sub EVENT_ENTER {
 sub EVENT_SAY {
 my $paid = quest::saylink("paid", 1);
 my $retrieve = quest::saylink("retrieve", 1);
-if($text=~/Hail/i) {
+if($ulevel <= 39 && $text=~/Hail/i) {
+quest::say("Be careful young explorer, while most things here will ignore you unless you pick a fight, there are a few things here who seem to hate everyone and everything,");
+}
+if($ulevel >= 40 && $text=~/Hail/i) {
     quest::say("Hail stranger, you must be new to the area. it would be wise of you to study the area. I have a simple task for you and you might as well get $paid while you are exploring the area.");
     }
 if($text=~/paid/i) {
