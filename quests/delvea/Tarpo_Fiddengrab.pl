@@ -17,6 +17,6 @@ my $map = quest::saylink("map", 1);
    quest::say("Look at it this way, though -- you saved a life! Uhm, I gotta run!");
    $client->Message(14,"While the halfling didn't have the documents, you did aid Norrath's Keepers and will be rewarded. Hopefully, Tarpo learned a lesson");
    quest::summonitem(120152);
-   quest::depop():
+   quest::depop();
    }
  } 
