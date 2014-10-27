@@ -7,5 +7,5 @@ sub EVENT_ENTER {
     $client->Message(14,"You find: I'm not the first nor the last, but I'm second to none.");
  	}
 	sub EVENT_DEATH {
-	quest::signalwith(341071,103,0);
+	quest::signalwith(341116,133,0);
 	}

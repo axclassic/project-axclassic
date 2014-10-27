@@ -7,5 +7,5 @@ sub EVENT_ENTER {
     $client->Message(14,"You find: One step forward, and two steps back. Two steps brings you ahead, but farther back.");
  	}
 	sub EVENT_DEATH {
-	quest::signalwith(341071,104,0);
+	quest::signalwith(341114,114,0);
 	}
