@@ -1,4 +1,4 @@
-## Zoner from Broodlands to Lavaspinners Lair delvea ##
+## Zoner from Broodlands to thenest ##
 # Aardil #
 
 sub EVENT_SPAWN {
@@ -7,6 +7,6 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 10, $x + 10, $y - 10, $y + 10);
 	}
 sub EVENT_ENTER {
-    quest::movepc(341,-246,-1578,68,0);
+    quest::movepc(343,-1642.3,915.4,84.7,85.8);
  }
 
