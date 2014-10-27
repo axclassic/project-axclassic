@@ -8,7 +8,7 @@ my $map = quest::saylink("map", 1);
    if ($text=~/happened/i){  
    quest::say("Well, I've been plagued by a horrible spell. I managed to crawl back here, but I cannot leave. I tried, but the curse got stronger. I believe we need to find the answer to the treasures kept here. I have seen four chests. You must solve their mystery. I believe that you can free me of this curse if you do . . . and uhm, maybe share your findings?");
    quest:;spawn2(341071,0,0,-1161,-955.4,-20.5,103.5);
-   quest::signalwith(341071,93,20);
+   quest::signalwith(341071,91,20);
    }
    if ($text=~/map/i){    
    quest::say("Look at it this way, though -- you saved a life! Uhm, I gotta run!");
