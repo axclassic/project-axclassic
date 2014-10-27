@@ -10,9 +10,6 @@ my $map = quest::saylink("map", 1);
    quest:;spawn2(341071,0,0,-1161,-955.4,-20.5,103.5);
    quest::signalwith(341071,93,20);
    }
-   if($signal == 79){
-   quest::shout("You have solved the puzzle and cured me! I must tell you though, I know why you're here and I don't have what you're looking for. Those items were not very valuable . . . er, useful to me, so I put them in the wagon at camp. come back to me and I will give you the $map.");
-   } 
    if ($text=~/map/i){    
    quest::say("Look at it this way, though -- you saved a life! Uhm, I gotta run!");
    $client->Message(14,"While the halfling didn't have the documents, you did aid Norrath's Keepers and will be rewarded. Hopefully, Tarpo learned a lesson");
@@ -20,3 +17,9 @@ my $map = quest::saylink("map", 1);
    quest::depop();
    }
  } 
+ sub EVENT_SIGNAL {
+ my $map = quest::saylink("map", 1);
+ if($signal == 79){
+   quest::shout("You have solved the puzzle and cured me! I must tell you though, I know why you're here and I don't have what you're looking for. Those items were not very valuable . . . er, useful to me, so I put them in the wagon at camp. come back to me and I will give you the $map.");
+   } 
+   }
