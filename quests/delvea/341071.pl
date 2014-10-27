@@ -1,6 +1,6 @@
 ##Greed controller 1##
 sub EVENT_SIGNAL {
-   if ($signal == 93){
+   if ($signal == 91){
    quest::spawn2(341072,0,0,-1574,-839,21.1,29.7);
    quest::spawn2(341073,0,0,-1667,-1165,-38.7,153.8);
    quest::spawn2(341074,0,0,-964,-1339,-80,223.8);
@@ -13,7 +13,7 @@ sub EVENT_SIGNAL {
    quest::depop(341074);
    quest::depop(341075);
    quest::spawn2(341114,0,0,-1161,-955.4,-20.5,103.5);
-   quest::signalwith(341114,91,12000);
+   quest::signalwith(341114,92,12000);
    quest::depop();
    }
    elsif ($signal == 102){
