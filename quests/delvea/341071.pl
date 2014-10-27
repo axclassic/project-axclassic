@@ -6,7 +6,7 @@ sub EVENT_SIGNAL {
    quest::spawn2(341074,0,0,-964,-1339,-80,223.8);
    quest::spawn2(341075,0,0,-1263,-1681,-35.5,43);
    }
-   elsif ($signal == 101 ){
+   elsif ($signal == 101){
    quest::ze(14, "You have correctly opened the first chest in the proper order.");
    quest::depop(341072);
    quest::depop(341073);
