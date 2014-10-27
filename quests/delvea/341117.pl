@@ -7,5 +7,5 @@ sub EVENT_ENTER {
     $client->Message(14,"After gold is platinum, then silver after both.");
  	}
 	sub EVENT_DEATH {
-	quest::signalwith(341071,101,0);
+	quest::signalwith(341114,111,0);
 	}

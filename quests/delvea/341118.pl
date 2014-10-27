@@ -7,5 +7,5 @@ sub EVENT_ENTER {
     $client->Message(14,"An inscription on the chest reads: 256 - 16 - 4 –.");
  	}
 	sub EVENT_DEATH {
-	quest::signalwith(341071,102,0);
+	quest::signalwith(341114,112,0);
 	}
