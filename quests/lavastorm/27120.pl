@@ -21,15 +21,25 @@ my $Snowfoot = quest::saylink("Snowfoot", 1);
    if ($ulevel <= 50 && $ulevel >= 41 && $text=~/Hail/i){
    quest::say("$name! You dare to address me so informally? I ought to have you slain! Be gone!'");
    }
-   if ($ulevel >= 51 && $text=~/Hail/i){
+   if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Hail/i){
    quest::say("Perhaps you will find a $path of the Dark Reign -- a place I'm sure I shall find myself someday... someday.");
    }
-   if ($text=~/path/i){
+   if ($ulevel >= 61 && $text=~/Hail/i){
+   quest::say("Perhaps you will find a $path of the Dark Reign -- a place I'm sure I shall find myself someday... someday.");
+   }
+   if ($ulevel <= 60 && $ulevel >= 51 && $text=~/path/i){
    quest::say("Show your loyalty to the Dark Reign by scouting and $collecting items so that we may gain knowledge to combat our enemies.");
    }
-   if ($text=~/collecting/i){
+   if ($ulevel >= 61 && $text=~/path/i){
+   quest::say("Show your loyalty to the Dark Reign by scouting and $collecting items so that we may gain knowledge to combat our enemies.");
+   }
+   if ($ulevel <= 60 && $ulevel >= 51 && $text=~/collecting/i){
    quest::say("There are several ways you can help , I will allow you to choose which one or more you think you can handle.");
-   quest::say("Let's see, there is $Army of Stone, $Blood of Sand, $Clearing the Path, $Muddy the Waters, $Reap the Kirin Mind, or $Snowfoot Attack. Thats the ones I know about but there may be more.");
+   quest::say("Let's see, there is $Army of Stone, $Blood of Sand, $Clearing the Path or $Muddy the Waters. Thats the ones I know about but there may be more.");
+   }
+   if ($ulevel >= 61 && $text=~/collecting/i){
+   quest::say("There are several ways you can help , I will allow you to choose which one or more you think you can handle.");
+   quest::say("Let's see, there is $Reap the Kirin Mind, or $Snowfoot Attack. Thats the ones I know about but there may be more.");
    }
    if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Army/i){
    quest::say("In Stillmoon Temple there is a new form of creature. They appear to be guardians made of clay, yet when you get close to them, they spring to life and kill the poor unsuspecting soul.");
