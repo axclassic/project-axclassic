@@ -1,5 +1,11 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==10/21/2014==
+ Angelox: Ported CameraShake quest routines and command.
+ 
+==10/20/2014==
+ Angelox: Server will update 'numplayers' and 'numzones' in table 'LSStats'.  
+ 
 ==08/28/2014==
  Angelox: Character deletion will also remove characters bots too.
  Angelox: #bot delete was leaving the bot in some of the newer tables.
