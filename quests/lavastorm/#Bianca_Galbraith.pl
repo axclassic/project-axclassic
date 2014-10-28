@@ -63,7 +63,7 @@ my $Contagion = quest::saylink("Contagion", 1);
    quest::ding();
    quest::givecash(0,0,0,60);
    }   
-   elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 81009 => 1)) {
+   elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 86009 => 1)) {
    quest::say("Excellent work, my friends. Lieutenant Ekiltu hasn't rested since he found that rose in his quarters. It's too bad the Dark Reign cowards hire goblin assassins to do their dirty work; I would like to see them try to confront us directly. No matter, we will crush them on the field of battle soon enough.");
    quest::exp(40000000);
    quest::ding();
@@ -92,5 +92,9 @@ my $Contagion = quest::saylink("Contagion", 1);
    quest::exp(40000000);
    quest::ding();
    quest::givecash(0,0,0,60);
-   }   
+   } 
+    else {
+    plugin::return_items(\%itemcount);
+    quest::say("I have no use for this.");
+   }      
 }
