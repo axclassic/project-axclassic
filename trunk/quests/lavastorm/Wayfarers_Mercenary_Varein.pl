@@ -1,4 +1,7 @@
 sub EVENT_SAY {
+my $helping = quest::saylink("helping", 1);
+my $Blood = quest::saylink("Blood", 1);
+my $Spider = quest::saylink("Spider", 1);
    if ($ulevel <= 20 && $text=~/Hail/i) {
    quest::say("I am sorry but I have nothing for you to do, you need to gather more experiance and then return tome when you have improved your skills.");
    }
