@@ -17,7 +17,7 @@ $client->Message(12,"In the event that you would die in your Tier 2 quest instan
   }
 
   if ($text=~/hail/i && $ulevel < 64 || $aatotal < 75) {
-    $client->Message(14,"Hello $name , the Tier 2 server challenge and quest I am offering is for people who are lvl 65 and have spend in all 75 AA as a minimum. Come back when you meet those requirements.");
+    $client->Message(14,"Hello $name , the Tier 2 server challenge and quest I am offering is for people who are lvl 65 and have spend in all 75 AA points as a minimum. Come back when you meet those requirements.");
   }
 
   if ($text=~/open/i && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal => 75) {
