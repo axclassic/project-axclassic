@@ -19,20 +19,20 @@ $client->Message(14,"You have $aatotal AAs.");
 return 1;
   }
 
-  if ($text=~/hail/i && $ulevel < 64 || $aatotal < 75) {
+  if ($text=~/hail/i && $ulevel < 65 || $aatotal < 75) {
     $client->Message(14,"Hello $name , the Tier 2 server challenge and quest I am offering is for people who are lvl 65 and have spend in all 75 AA points as a minimum. Come back when you meet those requirements.");
 return 1;
   }
 
-  if ($text=~/open/i && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal => 75) {
+  if ($text=~/open/i && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal >= 75) {
     $client->Message(14,"Just hand me 1000pp and I will create the instance for your challenge and port you there.");
 return 1;
   }
-  if ($text=~/open/i && $ulevel >= 65 && defined($qglobals{$name."chambersf"}) && $aatotal => 75) {
+  if ($text=~/open/i && $ulevel >= 65 && defined($qglobals{$name."chambersf"}) && $aatotal >= 75) {
     $client->Message(14,"You already have an existing Tier 2 zone instance. You can't purchase a newone until it has expired, but I can port you $back to it if you like.");
 return 1;
 }
-  if ($text=~/back/i && $ulevel >= 64 && $aatotal => 75) {
+  if ($text=~/back/i && $ulevel >= 64 && $aatotal >= 75) {
    if (defined($qglobals{$name."chambersf"})) {
      $client->Message(14,"Going to send you back to your Tier 2 instance now.");
      my $QGlobalValue = $qglobals{$name."chambersf"};
@@ -44,7 +44,7 @@ else {
 }
 return 1;
 }
-if ($text=~/here/i && $ulevel >= 64 && $aatotal => 75) {
+if ($text=~/here/i && $ulevel >= 64 && $aatotal >= 75) {
 $client->Message(14,"Going to send you to the corpse recovery instance now. Remember there is only 1 player allowed in this instance, if there already is a player you will have to wait until this player leaves. Your corpse will end up here after your instance has expired.");
 quest::movepc(309, 0.00, 0.00, -0.21);
 
@@ -61,7 +61,7 @@ if (plugin::check_handin(\%itemcount, 119592 => 3)) {
     return 1;
  }
 
-elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal => 75) {
+elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal >= 75) {
     $client->Message(14,"Thank you $class , you are on the way to your Tier 2 Challenge, good luck!"); #Money handin for instance creation and porting to it.
 
     my $instanceID = quest::CreateInstance("chambersf", 0, 12800);
@@ -70,8 +70,13 @@ elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chamber
     quest::MovePCInstance(309, $instanceID, 0.00, 0.00, -0.21, 150);
 return 1;
  }
- elsif (($platinum == 1000) && $ulevel >= 65 && defined($qglobals{$name."chambersf"}) && $aatotal => 75) {
+ elsif (($platinum == 1000) && $ulevel >= 65 && defined($qglobals{$name."chambersf"}) && $aatotal >= 75) {
     $client->Message(14,"You already have a Tier 2 instance that hasn't expired yet, here is your money back $name."); #Instance exists Money back.
+    quest::givecash(0,0,0,1000);
+return 1;
+ }
+ elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal < 75) {
+    $client->Message(14,"You lack the AA requirement to enter Tier 2 $name."); #Instance exists Money back.
     quest::givecash(0,0,0,1000);
 return 1;
  }
