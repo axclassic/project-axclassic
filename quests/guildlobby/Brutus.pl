@@ -15,6 +15,7 @@ my $aatotal = $client->GetSpentAA();
   if ($text=~/hail/i && $ulevel >= 64 && $aatotal => 75) {
     $client->Message(14,"Hello $name , I am Yendrik Epione. I am here to tell you about Tier 2 armor, it is called Rathe Armor (Tier 2) it can be found in a special instanced dungeon. You can find all the pieces there exept for the chest pieces. You wil have to bring me 3 The Rathe Server Doll (Tier 2)'s and I wil give you a random Tier 2 chestpiece, either Leather, Plate, Chain or Silk. These dolls drop in this quest dungeon to occasionaly. If you are lvl 65 and have spend 75 AA points I can $open a zone instance for you to begin your Tier 2 challenge, it will stay open for 3.5 hours. I charge 1000pp per zone instance. You can purchase a new instance after the old one has expired.");
 $client->Message(12,"In the event that you would die in your Tier 2 quest instance, I can port you $back for as long as the instance is active. In case your instance has already expired, your corpse will end up $here.");
+$client->Message(14,"You have $aatotal AAs.");
 return 1;
   }
 
