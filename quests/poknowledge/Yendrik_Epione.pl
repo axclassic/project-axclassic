@@ -74,7 +74,7 @@ return 1;
     quest::givecash(0,0,0,1000);
 return 1;
  }
- elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal < 75) {
+ elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal <= 74) {
     $client->Message(14,"You lack the AA requirement to enter Tier 2 $name."); #Instance exists Money back.
     quest::givecash(0,0,0,1000);
 return 1;
