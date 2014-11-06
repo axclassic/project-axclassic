@@ -77,6 +77,7 @@ return 1;
     $client->Message(14,"You lack the AA requirement to enter Tier 4 $name."); #Instance exists Money back.
     quest::givecash(0,0,0,1000);
 return 1;
+}
 
 else {
     $client->Message(14,"I don't need this $name. Take it back.");
