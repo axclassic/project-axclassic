@@ -13,7 +13,13 @@ my $Defend = quest::saylink("Defend", 1);
     quest::say("Welcome young traveler, I have a project that someone of your bravery may be able to help me with.");
 	quest::say("I must ask you to go within the great volcano. We need to obtain a rather potent poison from the lavaspinners there in order to create an antidote. Yes, we have learned the Dark Reign intends to poison us using the lava spiders' venom somehow. Be careful and swift. We are not sure when they may execute their plans!");
     quest::say("collect 4 Boiling Lavaspinner Bloodsand return them to me.");	
-    } if ($ulevel <= 50 && $ulevel >= 31 && $text=~/Hail/i){
+    }
+	if ($ulevel <= 40 && $ulevel >= 31 && $text=~/Hail/i){
+    quest::say("Welcome traveler, I have a project that someone of your skill may be able to help me with.");
+	quest::say("In the caverns leading to the dragon's lair in Tirranun's Delve are the deadly lava goblins. We have been amassing their teeth, oddly enough, as our archers have been using them for arrowheads to drive back any advancing Dark Reign. They have proven extremely effective. Please gather more so you may aid our efforts!");
+	quest::say("I assk for you to bring to me four of the Delvian Goblin Tooth. For this our rangers will thank you and you shall be rewarded.");
+	}
+	if ($ulevel <= 50 && $ulevel >= 41 && $text=~/Hail/i){
     quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
     }
     if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Hail/i){
@@ -57,6 +63,12 @@ sub EVENT_ITEM {
     quest::say("Good. Good! The Lavaspinner Blood, I will turn these samples over to our Alchemists for further study.");
     quest::ding();
     quest::exp(5000000);
+    quest::givecash(0,0,0,30);
+   }
+   elsif ($ulevel <= 40 && $ulevel >= 31 && plugin::check_handin(\%itemcount, 52493 => 4)) {
+    quest::say("Excelent! The Norrath Keepers thank you for your continued support!.");
+    quest::ding();
+    quest::exp(10000000);
     quest::givecash(0,0,0,30);
    }
     elsif ($ulevel <= 60 && $ulevel >= 51 && plugin::check_handin(\%itemcount, 52496 => 4)) {
