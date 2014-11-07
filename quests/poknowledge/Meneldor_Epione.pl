@@ -76,7 +76,7 @@ return 1;
 }
  elsif (($platinum == 2000) && $ulevel >= 65 && !defined($qglobals{$name."chamberse"}) && $aatotal < 250) {
     $client->Message(14,"You lack the AA requirement to enter Tier 4 $name."); #Instance exists Money back.
-    quest::givecash(0,0,0,1000);
+    quest::givecash(0,0,0,2000);
 return 1;
 }
 
