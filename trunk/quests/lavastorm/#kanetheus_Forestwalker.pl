@@ -12,7 +12,6 @@ my $Death = quest::saylink("Death", 1);
 my $Signal = quest::saylink("Signal", 1);
 my $Sudden = quest::saylink("Sudden", 1);
 my $Storm = quest::saylink("Storm", 1);
-  
    if ($ulevel <= 50 && $text=~/Hail/i){
    quest::say("I am sorry but I have nothing that someone of your experiance could possibly handle. Please check with the others in the camp, I am sure they have work that you can do to help the Norrath Keepers.");
    }
@@ -46,7 +45,7 @@ my $Storm = quest::saylink("Storm", 1);
    }   
   if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Scales/i){ 
    quest::say("To establish better relations with some of the temple's inhabitants we've decided to try and give them a peace offering. Within the temple is an aqua goblin who is the keeper of the pond. Approach him slowly and carefully so he understands that you do not mean him harm. Bring him this magical food which will help to enhance the color of his koi, which should make him very pleased. There are those within the temple that do not wish for better relations and they may try to stop you so you must be careful.");
-   quest::summonitem(36215); ##Small sack of Koi Food##
+   quest::summonitem(36215); 
    }
    if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Tea/i){ 
    quest::say("Rumor is that the dragons in the newly opened lands partake of a special tea that enhances their magical ability but what remains a mystery is what makes this tea so special. We don't know if it's the ingredients, the brewing technique, or a magical tea pot. Yet we've recently heard that some agents from Dark Reign have infiltrated the temple to steal some of this tea. You must prevent this from happening and bring some of the tea back so we can see what makes it so magical. First find the tea master, greet him warmly, and make sure that he is well for surely those working for Dark Reign mean naught but harm to him. Once you have demonstrated your worthiness, he may part with the secret of the tea."); 
@@ -72,62 +71,62 @@ my $Storm = quest::saylink("Storm", 1);
   }
  }
 sub EVENT_ITEM { 
-  if (plugin::check_handin(\%itemcount, 49017 => 1)) { ##Animated Statue Plans##
+  if (plugin::check_handin(\%itemcount, 49017 => 1)) { 
    quest::say("Very nice work. We hope the reward was worth the effort. Thank you for helping us.");
    quest::exp(10000000);
    quest::ding();
    quest::givecash(0,0,0,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 36214 => 1)) { ##Temple Plans##
+   elsif (plugin::check_handin(\%itemcount, 36214 => 1)) { 
    quest::say("Very nice work. We hope the reward was worth the effort. Thank you for helping us.");
    quest::exp(10000000);
    quest::ding();
    quest::givecash(0,0,0,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 49019 =>4)) { ##Vial of Infected Puma Blood##
+   elsif (plugin::check_handin(\%itemcount, 49019 =>4)) { 
    quest::ding();
    quest::exp(10000000);
-   quest::say("These are exactly what we needed. Thank you $name");
+   quest::say("These are exactly what we needed. Thank you $name.");
    quest::givecash(0,0,0,50);
    }
-    elsif (plugin::check_handin(\%itemcount, 120130 => 1)) { ##Stillmoon Koi##
+    elsif (plugin::check_handin(\%itemcount, 120130 => 1)) { 
    quest::say("Nice work adventurer. We are sure the Goblin Koi Master will appreciate the fine magical food you brought him this day. This should help us to establish friendlier relations with the temple from now on.");
    quest::ding();
    quest::exp(10000000);
    quest::givecash(0,0,0,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 120172 => 1)) { ##Stillmoon Tea Recipe##
+   elsif (plugin::check_handin(\%itemcount, 120172 => 1)) { 
    quest::say("Well, you did bring back something and at least our relations with the temple should have improved. Good job $name, here is your reward.");
    quest::ding();
    quest::exp(10000000);
    quest::givecash(0,0,0,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 49018 => 1)) { ##Book of Knowledge##
+   elsif (plugin::check_handin(\%itemcount, 49018 => 1)) { 
    quest::say("Ah! The book we were looking for! At last now we should be able to figure out the magic of the temple.");
    quest::ding();
    quest::exp(10000000);
    quest::givecash(0,0,0,50);
    }
-   elsif (plugin::check_handin(\%itemcount, 86007 =>3)) { ##Ascent Signal Fire Fuel##
+   elsif (plugin::check_handin(\%itemcount, 86007 =>3)) { 
    quest::ding();
    quest::exp(25000000);
    quest::say("Well done $name, that should set the Dark Reign on thier heels!");
    quest::givecash(0,0,0,60);
    }
-   elsif (plugin::check_handin(\%itemcount, 48146 => 1)) { ##Ancient Note of Runes##
+   elsif (plugin::check_handin(\%itemcount, 48146 => 1)) { 
    quest::say("An Acient Golem you say? My word, well at least destroying him should put an end to the tremors.");
    quest::ding();
    quest::exp(25000000);
    quest::say("Well done $name, that should set the Dark Reign on thier heels!");
    quest::givecash(0,0,0,60);
    }
-   elsif (plugin::check_handin(\%itemcount, 49035 => 1)) { ##Storm Dragon Scales##
+   elsif (plugin::check_handin(\%itemcount, 49035 => 1)) { 
    quest::ding();
    quest::exp(25000000);
    quest::say("Well done $name, You have turned the favor of power back into our hands at least for now.");
    quest::givecash(0,0,0,60);
    }
-   elsif (plugin::check_handin(\%itemcount, 120151 => 1)) { ##Lair Mistress Venom Sack##
+   elsif (plugin::check_handin(\%itemcount, 120151 => 1)) { 
    quest::ding();
    quest::exp(25000000);
    quest::say("So an Evil Mistress was the root of all this. Well done $name.");

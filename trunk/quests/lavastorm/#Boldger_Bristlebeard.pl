@@ -3,9 +3,6 @@ my $helping = quest::saylink("helping", 1);
    if ($ulevel <= 20 && $text=~/Hail/i){
    quest::say("I am sorry but I have nothing that someone of your experiance could possibly handle. Please check with the others in the camp, I am sure they have work that you can do to help the Norrath Keepers.");
    }
-   if ($ulevel >= 31 && $text=~/Hail/i){
-   quest::say("I am sorry but everything I have would be trivial to someone of your experiance. Please check with the others in the camp, I am sure they have work that you can do to help the Norrath Keepers.");
-   }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Hail/i){
    quest::say("My orders finally came through! I have a few things that you may be able to $help me with.");
    }
@@ -44,11 +41,16 @@ my $helping = quest::saylink("helping", 1);
    quest::say("There has been news of the drakes of Lavaspinner's Lair growing in ranks. They have already started hunting near our encampment and have injured several of our agents. Please travel deep within their lair and decrease their numbers.");
    quest::say("Bring to me a Drake Eggshell Fragment and the heart of the Matriarch as proof."); 
    }
+   if ($ulevel <= 40 && $ulevel >= 31 && $text=~/Hail/i){
+   quest::say("Amaro is in dire need of your assistance. He has gone and gotten himself captured by goblins. Our scouts tell us the keys for his shackles are sealed in chests in Tirranun's Delve. Make your way there and bring him the three keys he needs to free himself."); 
+   }
+   if ($ulevel >= 41 && $text=~/Hail/i){
+   quest::say("I am sorry but everything I have would be trivial to someone of your experiance. Please check with the others in the camp, I am sure they have work that you can do to help the Norrath Keepers.");
+   }
  }  
 sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 120152 => 1)) {  
     quest::say("So, Greed got the better of him eh? Lets hope he has learned his lesson.");
-    quest::summonitem(xxxxxx);
     quest::ding();
 	quest::exp(5000000);
     quest::givecash(0,0,0,30);	
