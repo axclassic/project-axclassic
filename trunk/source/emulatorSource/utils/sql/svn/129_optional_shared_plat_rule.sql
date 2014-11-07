@@ -1,1 +1,0 @@
-INSERT INTO rule_values VALUES (0, "Character:SharedBankPlat", false);
