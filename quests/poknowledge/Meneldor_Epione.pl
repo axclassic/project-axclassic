@@ -51,6 +51,7 @@ quest::movepc(308, 0.00, 0.00, -0.21);
 }
 
 sub EVENT_ITEM {
+my $aatotal = $client->GetSpentAA();
 if (plugin::check_handin(\%itemcount, 119651 => 3)) {
     $client->Message(14,"Thank you $class , here is your Tier 4 chest piece."); #random tier 2 chest piece handin.
     my @items = (119643,119650,119658,119665); #All BP's
