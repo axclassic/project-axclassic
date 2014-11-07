@@ -1,4 +1,3 @@
-
 #######################################
 ## NPC: Yendrik Epione               ##
 ## Zone: Plane of Knowledge          ##
@@ -15,10 +14,12 @@ my $aatotal = $client->GetSpentAA();
   if ($text=~/hail/i && $ulevel == 65 && $aatotal >= 75) {
     $client->Message(14,"Hello $name , I am Yendrik Epione. I am here to tell you about Tier 2 armor, it is called Rathe Armor (Tier 2) it can be found in a special instanced dungeon. You can find all the pieces there exept for the chest pieces. You wil have to bring me 3 The Rathe Server Doll (Tier 2)'s and I wil give you a random Tier 2 chestpiece, either Leather, Plate, Chain or Silk. These dolls drop in this quest dungeon to occasionaly. If you are lvl 65 and have spend 75 AA points I can $open a zone instance for you to begin your Tier 2 challenge, it will stay open for 3.5 hours. I charge 1000pp per zone instance. You can purchase a new instance after the old one has expired.");
 $client->Message(12,"In the event that you would die in your Tier 2 quest instance, I can port you $back for as long as the instance is active. In case your instance has already expired, your corpse will end up $here.");
+return 1;
 }
 
   if ($text=~/hail/i && $ulevel < 65 || $aatotal < 75) {
     $client->Message(14,"Hello $name , the Tier 2 server challenge and quest I am offering is for people who are lvl 65 and have spend in all 75 AA points as a minimum. Come back when you meet those requirements.");
+return 1;
 }
 
   if ($text=~/open/i && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal >= 75) {
@@ -26,22 +27,32 @@ $client->Message(12,"In the event that you would die in your Tier 2 quest instan
 }
   if ($text=~/open/i && $ulevel >= 65 && defined($qglobals{$name."chambersf"}) && $aatotal >= 75) {
     $client->Message(14,"You already have an existing Tier 2 zone instance. You can't purchase a newone until it has expired, but I can port you $back to it if you like.");
+return 1;
 }
   if ($text=~/back/i && $ulevel >= 64 && $aatotal >= 75) {
    if (defined($qglobals{$name."chambersf"})) {
      $client->Message(14,"Going to send you back to your Tier 2 instance now.");
      my $QGlobalValue = $qglobals{$name."chambersf"};
      quest::MovePCInstance(309, $QGlobalValue, 0.00, 0.00, -0.21);
+return 1;
+}
+else {
+ $client->Message(14,"You seem to have no Tier 3 instance.");
+}
+return 1;
 }
 
   if ($text=~/here/i && $ulevel >= 64 && $aatotal >= 75) {
      $client->Message(14,"Going to send you to the corpse recovery instance now. Remember there is only 1 player allowed in this instance, if there already is a player you will have to wait until this player      leaves. Your corpse will end up here after your instance has expired.");
      quest::movepc(309, 0.00, 0.00, -0.21);
+return 1;
 
 }
 }
 
 sub EVENT_ITEM {
+my $aatotal = $client->GetSpentAA();
+
 if (plugin::check_handin(\%itemcount, 119592 => 3)) {
     $client->Message(14,"Thank you $class , here is your Tier 2 chest piece."); #random tier 2 chest piece handin.
     my @items = (119584,119591,119599,119606); #All BP's
