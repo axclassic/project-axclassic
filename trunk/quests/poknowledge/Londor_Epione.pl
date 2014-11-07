@@ -77,7 +77,7 @@ return 1;
     $client->Message(14,"You lack the AA requirement to enter Tier 3 $name."); #Instance exists Money back.
     quest::givecash(0,0,0,1500);
 return 1;
-
+}
 else {
     $client->Message(14,"I don't need this $name. Take it back.");
     plugin::return_items(\%itemcount);
