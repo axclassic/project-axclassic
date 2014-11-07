@@ -1,1 +1,0 @@
-ALTER TABLE `npc_types` ADD `private_corpse` TINYINT UNSIGNED DEFAULT '0' NOT NULL AFTER `scalerate`;

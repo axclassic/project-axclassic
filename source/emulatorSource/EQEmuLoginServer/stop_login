@@ -1,5 +1,0 @@
-#!/bin/bash
-
-killall EQEmuLoginServer
-sleep 3
-echo Done.
