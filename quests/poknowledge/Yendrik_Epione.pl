@@ -61,21 +61,19 @@ if (plugin::check_handin(\%itemcount, 119592 => 3)) {
     return 1;
  }
 
-elsif { 
-
-       if (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal >= 75) {
+elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal >= 75) {
        $client->Message(14,"Thank you $class , you are on the way to your Tier 2 Challenge, good luck!"); #Money handin for instance creation and porting to it.
        my $instanceID = quest::CreateInstance("chambersf", 0, 12800);
        quest::AssignToInstance($instanceID);
        quest::setglobal($name."chambersf",$instanceID,7,M213);
        quest::MovePCInstance(309, $instanceID, 0.00, 0.00, -0.21, 150);
        return 1;
-       }
-       elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal <= 74) {
+}
+       
+elsif (($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf"}) && $aatotal <= 74) {
        $client->Message(14,"You lack the AA requirement to enter Tier 2 $name."); #Instance exists Money back.
        quest::givecash(0,0,0,1000);
        return 1;
-       }
  }
 
 elsif (($platinum == 1000) && $ulevel >= 65 && defined($qglobals{$name."chambersf"}) && $aatotal >= 75) {
