@@ -9,7 +9,7 @@ sub EVENT_ITEM {
    quest::ding();
    quest::exp(10000000);
    quest::givecash(0,0,0,40);
-   $client->Message(14,"Amaro has been freed. You have earned thanks from us all.");
+   $userid->Message(14,"Amaro has been freed. You have earned thanks from us all.");
    quest::depop();
    }
  }   
