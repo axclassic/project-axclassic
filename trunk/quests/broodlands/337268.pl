@@ -7,6 +7,6 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 10, $x + 10, $y - 10, $y + 10);
 	}
 sub EVENT_ENTER {
-    quest::movepc(343,-246.2,-14.8,84.7,72.6);
+    quest::movepc(343,40.2,115.5,-40.4,135.8);
  }
 
