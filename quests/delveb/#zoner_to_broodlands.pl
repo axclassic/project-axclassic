@@ -1,3 +1,4 @@
+
 ##zoner from delveb to Broodlands##
 sub EVENT_SPAWN {
  $x = $npc->GetX();
@@ -5,5 +6,5 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 10, $x + 10, $y - 10, $y + 10);
 	}
 sub EVENT_ENTER {
-    quest::movepc(337,-1372.6,-1734.7,136,9.1);
+    quest::movepc(337,-1613,-1016,98.2,31.8);
  }
