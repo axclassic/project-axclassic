@@ -1,5 +1,4 @@
-# Zone loop fix untill we open the remaining zones
-# Zone: broodlands to nowhere it was a looping zone point
+# Zone: broodlands to Delveb
 # Aardil
 
 sub EVENT_SPAWN {
@@ -8,6 +7,6 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
 	}
 sub EVENT_ENTER {
-    quest::movepc(337,-30.6,-148.1,12.1);
+    quest::movepc(342,-150.9,-315.8,255.9);
  }
 
