@@ -1,4 +1,4 @@
-#######################################
+11#######################################
 ## NPC: Eldor_Torbele                ##
 ## Zone: East Waste                  ##
 ## Quest: The Rathe Prestige Quest   ##
