@@ -6,7 +6,7 @@ sub EVENT_SPAWN{
 
 
 sub EVENT_SIGNAL{
- if ($signal == 1){
+ if ($signal == 0){
 	quest::shout("More, smash more");
 	quest::spawn2(54298,260,0,400,0,10,0);
 }
