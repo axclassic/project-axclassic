@@ -2,12 +2,13 @@
 #Zone: butcher
 
 sub EVENT_SAY{
+  my $tears = quest::saylink("travel to Ocean of Tears", 1);
   if ($text=~/Hail/i){
-  quest::say("Hello there, $name. There seem to be some strange problems with the boats in this area. The Academy of Arcane Sciences has sent a small team of us to investigate them. If you need to [travel to Ocean of Tears] in the meantime, I can transport you to my companion there");
+  $client->Message(14,"Hello there, $name. There seem to be some strange problems with the boats in this area. The Academy of Arcane Sciences has sent a small team of us to investigate them. If you need to $tears in the meantime, I can transport you to my companion there");
   }
-  if($text=~/tears/i)
+  if($text=~/travel to Ocean of Tears/i)
   {
-  quest::say("Off you go!");   
+  $client->Message(14,"Off you go!");   
   quest::selfcast(2279);
   }
 }
