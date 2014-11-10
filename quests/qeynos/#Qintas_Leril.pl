@@ -19,7 +19,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 119963 => 1, 119962 => 1) && $ulevel == 65) {
-    $client->Message(14,"Hello $name, Desree told me that you are on the way to see me and there you are. Well met my friend. You are only moments away from getting your great quest reward. just wanted you to do 1 more thing for me. Return my Token of trust to me together with 3 Drachnid Leg tips. I need to make a half decent dagger so I can defend myself. Do this for me and I will send you to your final fight!";
+    $client->Message(14,"Hello $name, Desree told me that you are on the way to see me and there you are. Well met my friend. You are only moments away from getting your great quest reward. just wanted you to do 1 more thing for me. Return my Token of trust to me together with 3 Drachnid Leg tips. I need to make a half decent dagger so I can defend myself. Do this for me and I will send you to your final fight!");
     quest::summonitem("119964");
 
  }
