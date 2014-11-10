@@ -4,14 +4,6 @@ quest::start(260);
 quest::moveto(204,150,10,0,0);
 }
 
-sub EVENT_AGGRO{
- if ($ulevel >= 40){
-    quest::depop();
-}
- elsif($ulevel <= 39){
-    quest::emote("Die, foolish $race");
-}
-}
 sub EVENT_DEATH {
   quest::signalwith(54299,737,0);
   my $a = quest::ChooseRandom(54298,54301,54300,54298,54301,54300,54298,54301,54300,54298,54301,54300,54298,54301,54300,54298,54301);
