@@ -1,6 +1,6 @@
 ## Resqu Lower Level GM event ##
 sub EVENT_SPAWN{
-quest::moveto(204,150,0,0,0);
+quest::moveto(204,150,10,0,0);
 }
 
 sub EVENT_AGGRO{
