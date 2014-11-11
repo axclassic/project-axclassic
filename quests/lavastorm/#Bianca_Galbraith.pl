@@ -58,6 +58,12 @@ my $Contagion = quest::saylink("Contagion", 1);
    quest::givecash(0,0,0,60);
    }
    elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 81902 => 1)) {
+   quest::say("Ah, what abeautiful flower. Thank you $name.");
+   quest::exp(40000000);
+   quest::ding();
+   quest::givecash(0,0,0,60);
+   }   
+  elsif ($ulevel >= 61 && plugin::check_handin(\%itemcount, 120185 => 1)) {
    quest::say("Hopefully that will disrupt the organization and give us the fighting chance we need against Yar'Lir");
    quest::exp(40000000);
    quest::ding();
