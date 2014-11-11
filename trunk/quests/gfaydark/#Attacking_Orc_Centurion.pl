@@ -14,6 +14,9 @@ sub EVENT_DEATH {
   my $h = $npc->GetHeading();
   quest::spawn2($a,0,0,$x,$y,$z,$h);
   quest::spawn2($b,0,0,$x,$y,$z,$h);
-  
+  quest::spawn2(54298,260,0,287,2333,30,0);	
+  quest::spawn2(54298,260,0,172,2371,30,0);
+  quest::spawn2(54298,260,0,-376,2400,30,0);
+  quest::spawn2(54298,260,0,-483,2368,30,0);
 }
 
