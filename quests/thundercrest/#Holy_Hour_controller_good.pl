@@ -12,7 +12,8 @@ sub EVENT_SIGNAL {
 	if($signal == 666) { ##signal 666 is from each mob who dies before reaching the other side of bridge##
     $counter += 1;
 	   if($counter == 50) {
-	quest::shout("Well done! Return to Bianca Galbraith and collect your reward."),   
+	quest::shout("Well done! Return to Bianca Galbraith and collect your reward.");
+    quest::summonitem($userid,120185);	
 	quest::depop(340081);
 	quest::depop(340082);
 	quest::depop(340083);
