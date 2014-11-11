@@ -4,7 +4,7 @@ my $Greed = quest::saylink("Greed", 1);
 my $protect = quest::saylink("Protect", 1);
 my $Snowfoot = quest::saylink("Snowfoot", 1);
 my $Scrolls = quest::saylink("Scrolls", 1);
-my $Revover = quest::saylink("Recover", 1);
+my $Recover = quest::saylink("Recover", 1);
 my $Defend = quest::saylink("Defend", 1);
 if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Hail/i){
     quest::say("Welcome young traveler, I have a project that someone of your bravery may be able to help me with.");
@@ -15,7 +15,7 @@ if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Hail/i){
     quest::say("Welcome traveler, I have a few quests you may be able to help me with. $Turn the Tides of the Sands, $Protect the Waters nad $Greed of the Goblins.");
 	}
  if $ulevel >= 61 && $text=~/Hail/i){
-   quest::say("Welcome traveler, I have a few quests you may be able to help me with. The Sacred $Scrolls, $Snowfoot Revenge, $Defend the Kirin Contact nad $Recover the Lost Map.");
+   quest::say("Welcome traveler, I have a few quests you may be able to help me with. The Sacred $Scrolls, $Snowfoot Revenge, $Defend the Kirin Contact and $Recover the Lost Map.");
    }
  if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Turn/i){
     quest::say("The goblins of the Stillmoon Temple are still battling with us, but we believe we may have learned a way to turn the tides of their anger. It is not a pleasant task and may seem counterproductive at first, but do heed my words. Their blood seems to be made partly of earth and with that blood, we can create an enchanted potion and perhaps make them see the error of their ways. Go loot 4 Sandy Goblin Blood so we can once and for all end the danger to the Keepers."); 
