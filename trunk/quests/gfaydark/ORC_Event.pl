@@ -24,8 +24,11 @@ sub EVENT_SIGNAL{
 sub EVENT_TIMER{
     if($timer eq "Orc_attack"){
        quest::shout("RETREAT! We shall come when we regroup!");
-       quest::depop();
        quest::depop(54298);
+       quest::depop(54301);
+       quest::depop(54300);
+       quest::depop();
+       
     }
 }
 
