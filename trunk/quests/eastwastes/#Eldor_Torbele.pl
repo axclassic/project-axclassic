@@ -18,10 +18,9 @@ sub EVENT_SAY {
 
 
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount,119965 >= 1) {
+if (plugin::check_handin(\%itemcount,119965 => 1) {
     $client->Message(14,"$name , you have to seek out A Very Mean Ice Bunny and kill him, he is in this zone. He posesses the Ring of Ice.");
     quest::spawn("116909","0","0","-1345.99","-272.67","185.83");
-    return 1;
 
  }
 else {
