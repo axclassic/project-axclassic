@@ -4,6 +4,12 @@ quest::start(260);
 quest::moveto(204,150,10,0,0);
 }
 
+sub EVENT_SIGNAL{
+ if ($signal == 747){
+	quest::shout("Run, Fools, Run!");
+	quest::depop();
+}
+}
 sub EVENT_DEATH {
   quest::signalwith(54299,737,0);
   my $a = quest::ChooseRandom(54298,54301,54300,54298,54301,54300,54298,54301,54300,54298,54301,54300,54298,54301,54300,54298,54301);
@@ -13,9 +19,6 @@ sub EVENT_DEATH {
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
   quest::spawn2($a,0,0,$x,$y,$z,$h);
-  quest::spawn2($b,0,0,$x,$y,$z,$h);
-  quest::spawn2(54298,260,0,172,2371,30,0);
-  quest::spawn2(54298,260,0,-376,2400,30,0);
- 
+  quest::spawn2($b,0,0,$x,$y,$z,$h); 
 }
 
