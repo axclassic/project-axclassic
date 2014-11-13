@@ -1,6 +1,6 @@
 sub EVENT_SPAWN{
     quest::shout("Crushbone Shall pervail!");
-    quest::settimer("Orc_attack",300);
+    quest::settimer("Orc_attack",3600);
     quest::spawn2(54298,260,0,540,2357,30,0);
     quest::spawn2(54298,260,0,389,2333,30,0);
     quest::spawn2(54298,260,0,287,2333,30,0);	
