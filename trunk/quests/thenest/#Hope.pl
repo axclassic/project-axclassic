@@ -15,6 +15,17 @@ my $No = quest::saylink("No", 1);
    if($text=~/Yes/i) {
    quest::say("You must destroy the Aspects in order to test your metal against T'Shara, you have 30 minutes.");
    quest::spawn2(383184,0,0,-1470.9,-467,-175.6,194.6);
+   quest::signalwith(343184,310,0);
+   quest::depop(434233);
+   quest::depop(434234);
+   quest::depop(434235);
+   quest::depop(434236);
+   quest::depop(434237);
+   quest::spawn2(343177,0,0,-1705.5,-432.3,-178.4,54);
+   quest::spawn2(343178,0,0,-1653.7,-653.4,-178.4,16);
+   quest::spawn2(343179,0,0,-1540.9,-360.6,-177.8,181.6);
+   quest::spawn2(343180,0,0,-1481.3,-673.1,-177.8,238.8);
+   quest::spawn2(343233,0,0,-1601.2,-478.6,-179.1,243.6);
     }
 	if($text=~/No/i) {
    quest::say("I didnt think you were ready, Run along, I think I hear your mother calling you.");
