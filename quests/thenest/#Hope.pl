@@ -26,6 +26,7 @@ my $No = quest::saylink("No", 1);
    quest::spawn2(343179,0,0,-1540.9,-360.6,-177.8,181.6);
    quest::spawn2(343180,0,0,-1481.3,-673.1,-177.8,238.8);
    quest::spawn2(343233,0,0,-1601.2,-478.6,-179.1,243.6);
+   quest::depop();
     }
 	if($text=~/No/i) {
    quest::say("I didnt think you were ready, Run along, I think I hear your mother calling you.");
