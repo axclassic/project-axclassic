@@ -4,7 +4,7 @@ if ($ulevel <= 40 && $ulevel >= 31 && $text=~/Hail/i){
    }
  } 
 sub EVENT_ITEM {
-   if (plugin::check_handin(\%itemcount, 56020 => 1, 56021 => 1, 56022 => 1)) {  
+   if ($ulevel <= 40 && $ulevel >= 31 && plugin::check_handin(\%itemcount, 56020 => 1, 56021 => 1, 56022 => 1)) {  
    quest::say("I am free! Thank you $name."); 
    quest::ding();
    quest::exp(10000000);
