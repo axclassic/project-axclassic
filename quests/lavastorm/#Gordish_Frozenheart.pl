@@ -1,7 +1,7 @@
 sub EVENT_SAY {
 my $missions = quest::saylink("missions", 1);
 my $Clues = quest::saylink("Clues", 1);
-my $papers = quest::saylink("papers", 1);
+my $symbol = quest::saylink("symbol", 1);
 my $see = quest::saylink("see", 1);
 my $Monolith = quest::saylink("Monolith", 1);
 my $Drakes = quest::saylink("Drakes", 1);
@@ -23,9 +23,7 @@ my $Eye = quest::saylink("Eye", 1);
    }
   if ($ulevel <= 50 && $ulevel >= 41 && $text=~/Clues/i){
    quest::say("Reports say that the place the dragons call the Nest doesn't look much like a nest.");
-   quest::say("We know that adventurers have been in there and they tend to be pretty destructive, but from what we've heard they probably didn't cause the kind of damage that has been reported. Our agents have discovered a secret entrance into the ice lair. Get in there and see if you can find anything useful about what happened. You probably won't find any $symbols or lore, dragons live a very long time and pass their traditions down verbally. To be honest, I'm not really sure what we're looking for. Just go look and see what you can find.");
-   }
-  if ($ulevel <= 50 && $ulevel >= 41 && $text=~/papers/i){
+   quest::say("We know that adventurers have been in there and they tend to be pretty destructive, but from what we've heard they probably didn't cause the kind of damage that has been reported. Our agents have discovered a secret entrance into the ice lair. Get in there and see if you can find anything useful about what happened. You probably won't find a $symbol, dragons live a very long time and pass their traditions down verbally. To be honest, I'm not really sure what we're looking for. Just go look and see what you can find.");
    quest::say("If you do find something, return it to Tatsujiro the Serene.");
    }
   if ($ulevel <= 50 && $ulevel >= 41 && $text=~/see/i){
@@ -87,6 +85,12 @@ sub EVENT_ITEM {
    }
    elsif ($ulevel <= 50 && $ulevel >= 41 && plugin::check_handin(\%itemcount, 120161 => 1)) {
    quest::say("Well done $name!. At last our scouting parties can get back to exploring the nest.");
+   quest::ding();
+   quest::exp(30000000);
+   quest::givecash(0,0,0,50);
+   }
+   elsif ($ulevel <= 50 && $ulevel >= 41 && plugin::check_handin(\%itemcount, 81914 => 1)) {
+   quest::say("Ah, a symbol, it looks to be very old and damaged but I will give it to our scholers and see  if they can make anything out of it. Thank you $name.");
    quest::ding();
    quest::exp(30000000);
    quest::givecash(0,0,0,50);
