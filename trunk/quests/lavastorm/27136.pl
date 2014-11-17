@@ -2,7 +2,7 @@
 sub EVENT_SAY {
 my $missions = quest::saylink("missions", 1);
 my $Clues = quest::saylink("Clues", 1);
-my $papers = quest::saylink("papers", 1);
+my $cloth = quest::saylink("cloth", 1);
 my $see = quest::saylink("see", 1);
 my $Drakes = quest::saylink("Drakes", 1);
 my $Dragons = quest::saylink("Dragons", 1);
@@ -25,10 +25,8 @@ my $Web = quest::saylink("Web", 1);
    }
   if ($text=~/Clues/i && $ulevel <= 50 && $ulevel >= 41){
    quest::say("Reports say that the place the dragons call the Nest doesn't look much like a nest.");
-   quest::say("We know that adventurers have been in there and they tend to be pretty destructive, but from what we've heard they probably didn't cause the kind of damage that has been reported. Our agents have discovered a secret entrance into the ice lair. Get in there and see if you can find anything useful about what happened. You probably won't find any $papers or lore, dragons live a very long time and pass their traditions down verbally. To be honest, I'm not really sure what we're looking for. Just go look and see what you can find.");
-   }
-  if ($text=~/papers/i && $ulevel <= 50 && $ulevel >= 41){
-   quest::say("If you do find something, return it to Xeib Darkskies.");
+   quest::say("We know that adventurers have been in there and they tend to be pretty destructive, but from what we've heard they probably didn't cause the kind of damage that has been reported. Our agents have discovered a secret entrance into the ice lair. Get in there and see if you can find anything useful about what happened. You probably won't find any $cloth, dragons live a very long time and pass their traditions down verbally. To be honest, I'm not really sure what we're looking for. Just go look and see what you can find.");
+   quest::say("If you should find something return it to Xeib Darkskies, he will know what to do with it.");
    }
   if ($text=~/see/i && $ulevel <= 50 && $ulevel >= 41){
    quest::say("These missions will require you to team up with friends as they are not easy.");
