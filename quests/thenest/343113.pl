@@ -19,6 +19,9 @@ my $chips = quest::saylink("chips", 1);
    sub EVENT_ITEM {
    if ($ulevel <= 50 && $ulevel >= 41 && plugin::check_handin(\%itemcount, 86003 => 4)) {
    quest::spawn2(343159,0,0,1112,-540,-90.4,1);
+   quest::ding();
+   quest::exp(4500000);
+   quest::givecash(0,0,0,50); 
    quest::depop();
    }
    }
