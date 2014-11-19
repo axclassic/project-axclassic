@@ -5,4 +5,5 @@ sub EVENT_SPAWN {
  }
  sub EVENT_HP {
  quest::signalwith(343249,510,0);
+ quest::depop();
  }
