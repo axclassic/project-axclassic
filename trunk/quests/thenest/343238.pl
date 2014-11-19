@@ -6,9 +6,9 @@ sub EVENT_SPAWN {
 sub EVENT_SAY {
    if ($text=~/Hail/i){
    quest::say("I knew you could not be trusted! Kill the invaders!");
-   quest::spawn2(343241,0,0,752.5,-3294.4,-357.1,181.9);
-   quest::spawn2(343242,0,0,757.3,-3298.5,-356.1,174.8);
-   quest::spawn2(343243,0,0,751.3,-3284.8,-359.6,175.1);
+   quest::spawn2(343241,0,0,752.5,-3492.4,-358.3,181.9);
+   quest::spawn2(343242,0,0,757.3,-3498.5,-357.3,174.8);
+   quest::spawn2(343243,0,0,751.3,-3482.8,-359.6,175.1);
    quest::spawn2(343243,0,0,763.9,-3511.7,-359.5,163.2);
    quest::signalwith(343241,480,3);
    quest::depop(343240);
