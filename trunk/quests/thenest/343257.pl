@@ -12,7 +12,7 @@ sub EVENT_SIGNAL {
     $counter += 1;
 	   if($counter == 4) {
     quest::depop(343256)
-    quest::spawn2(343259,0,0,-4570.5,-683.4,-129.7,87);
+    quest::spawn2(343259,0,0,-4570.5,-683.5,-128.5,87);
 	}
 	}
 	}
