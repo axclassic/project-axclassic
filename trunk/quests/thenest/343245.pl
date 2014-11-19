@@ -4,7 +4,5 @@ sub EVENT_SPAWN {
 
  }
  sub EVENT_HP {
- if (hpevent == 85){
  quest::signalwith(343249,510,0);
- }
  }
