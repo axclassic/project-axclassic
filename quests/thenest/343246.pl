@@ -4,7 +4,6 @@ sub EVENT_SPAWN {
 
  }
  sub EVENT_HP {
- if (hpevent == 80){
- quest::signalwith(343249,511,0);
- }
+  quest::signalwith(343249,511,0);
+  quest::depop();
  }
