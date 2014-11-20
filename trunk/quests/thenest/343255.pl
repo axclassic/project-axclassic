@@ -6,9 +6,9 @@ if ($signal == 620){
  quest::spawn2(343163,0,0,-4488.6,692.4,128,159.9);
  quest::spawn2(343164,0,0,-4388.8,691.5,128.1,138.9);
  quest::spawn2(343165,0,0,-4559.4,599.5,128.7,34);
- quest::signalwith(343258,623,180);
- quest::signalwith(343258,624,240);
- quest::signalwith(343258,625,300);
- quest::signalwith(343258,626,360);
+ quest::signalwith(343258,623,24000);
+ quest::signalwith(343258,624,48000);
+ quest::signalwith(343258,625,60000);
+ quest::signalwith(343258,626,72000);
  }
  }
