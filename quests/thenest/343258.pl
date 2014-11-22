@@ -11,22 +11,6 @@ elsif ($signal == 625){
 elsif ($signal == 626){
  quest::spawn2(343264,0,0,-4406.7,666,128.4,171.2);
  }
- elsif ($signal == 627){
- quest::depop(343095);
- quest::spawn2(343162,0,0,-4549.5,450.2,129.6,10.6);
- }
- elsif ($signal == 628){
- quest::depop(343262);
- quest::spawn2(343162,0,0,-4406.7,666,128.4,171.2);
- }
- elsif ($signal == 629){
- quest::depop(343263);
- quest::spawn2(343162,0,0,-4406.7,666,128.4,171.2);
- }
- elsif ($signal == 630){
- quest::depop(343264);
- quest::spawn2(343162,0,0,-4406.7,666,128.4,171.2);
- }
 elsif ($signal == 631){
   quest::depop(343257);
   quest::depop(343095);

@@ -10,9 +10,9 @@ if ($signal == 620){
  quest::signalwith(343258,624,36000);
  quest::signalwith(343258,625,48000);
  quest::signalwith(343258,626,60000);
- quest::signalwith(343258,627,72000);
- quest::signalwith(343258,628,84000);
- quest::signalwith(343258,629,96000);
- quest::signalwith(343258,630,108000);
+ quest::signalwith(343095,627,72000);
+ quest::signalwith(343262,628,84000);
+ quest::signalwith(343263,629,96000);
+ quest::signalwith(343264,630,108000);
  }
  }
