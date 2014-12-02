@@ -1,5 +1,24 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==12/01/2014==
+ Angelox: One bot allowed in groups in anticipation of the one bot per player idea.
+ Angelox: Non group-leaders can disband the group too (so to avoid getting stuck in a Null group)).
+ Angelox: Re-instated bot raids not allowed in certain zones
+ Angelox: Re-instated "no raiding" in classic zones.
+ 
+==11/27/2014==
+ Angelox: Bot/multi-player groups enabled for zoning. For now, only group leader can add and control bots. 
+ 
+==11/26/2014==
+ Angelox: Lots of bot/multi-player grouping work. Bot/multi-player groups still can't zone as zone crashes on disband after zoning. 
+ 
+==11/24/2014==
+ Angelox: Found and fixed issues with saving raid groups.
+ Angelox: Found and fixed an issue with bottemp table not clearing out.
+ 
+==11/04/2014==
+ Angelox: Fix for Bot SK crashing zone with HT.  
+ 
 ==10/21/2014==
  Angelox: Ported CameraShake quest routines and command.
  
