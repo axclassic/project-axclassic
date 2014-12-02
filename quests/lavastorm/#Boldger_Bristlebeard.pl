@@ -1,5 +1,13 @@
 sub EVENT_SAY {
-my $helping = quest::saylink("helping", 1);
+my $help = quest::saylink("help", 1);
+my $Greed = quest::saylink("Greed", 1);
+my $Diving = quest::saylink("Diving", 1);
+my $Elixier = quest::saylink("Elixier", 1);
+my $Grounding = quest::saylink("Grounding", 1);
+my $Infested = quest::saylink("Infested", 1);
+my $Hunting = quest::saylink("Hunting", 1);
+my $Local = quest::saylink("Local", 1);
+my $Drake = quest::saylink("Drake", 1);
    if ($ulevel <= 20 && $text=~/Hail/i){
    quest::say("I am sorry but I have nothing that someone of your experiance could possibly handle. Please check with the others in the camp, I am sure they have work that you can do to help the Norrath Keepers.");
    }
@@ -18,7 +26,7 @@ my $helping = quest::saylink("helping", 1);
    }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Elixier/i){
    quest::say("One of our trusted researchers has come under attack by magma spiders within Lavaspinner's Lair and is in need of help. If you could aid him we would greatly appreciate it.");
-   quest::say("Forbin has ent word that he is in need of a poison sac to complete his elixer, Locate him and give him a poison sac, return to me with anything he may give you.");
+   quest::say("Forbin has sent word that he is in need of a poison sac to complete his elixer, Locate him and give him a poison sac, return to me with anything he may give you.");
    }
    if ($ulevel <= 30 && $ulevel >= 21 && $text=~/Grounding/i){
    quest::say("Due to their constant proximity to lava, the fangs of the drakes in the Lavaspinner's Lair have developed special properties to cut through objects. If their fangs could be studied, we could make use of those special properties in a variety of ways. Go to the lair and collect as many of their fangs as you can for study.");
