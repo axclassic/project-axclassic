@@ -76,7 +76,7 @@ sub EVENT_ITEM {
    quest::givecash(0,0,0,30);
    }
    elsif (plugin::check_handin(\%itemcount, 120184 => 1)) {
-   quest::say("");
+   quest::say("Thank you $name, I have indeed been waiting on this. Whats it for? That I can not tell you, lets just say Tumpy's Tonic is water compared to this stuff.");
    quest::ding();
    quest::exp(5000000);
    quest::givecash(0,0,0,30);
