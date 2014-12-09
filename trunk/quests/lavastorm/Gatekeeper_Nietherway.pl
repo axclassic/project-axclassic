@@ -1,6 +1,7 @@
 #Gatekeeper_Nietherway NPC ID 27148#
 #Lavastorm to Broodlands #
 sub EVENT_SAY {
+my $worthy = quest::saylink("worthy", 1);
    if($ulevel >= 21 && $text=~/Hail/i) {
      if ($faction >=5){
    quest::say("Halt! I am the gate keeper to the Broodlands. I care not if you are with the Norrath Keepers or thr Dark Reignm but, you still must prove to me that you are a well seasoned explorer.");
