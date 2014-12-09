@@ -29,7 +29,7 @@ sub EVENT_SIGNAL {
    quest::depop(341123);
    quest::depop(341124);
    quest::spawn2(341116,0,0,-1161,-955.4,-20.5,103.5);
-   quest::signalwith(341116,94,12000);
+   quest::signalwith(341116,94,120);
    quest::depop();
    }
    elsif ($signal == 124){

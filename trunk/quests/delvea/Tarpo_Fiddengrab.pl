@@ -19,7 +19,7 @@ my $map = quest::saylink("map", 1);
  } 
  sub EVENT_SIGNAL {
  my $map = quest::saylink("map", 1);
- if($signal == 79){
+ if ($signal == 79){
    quest::shout("You have solved the puzzle and cured me! I must tell you though, I know why you're here and I don't have what you're looking for. Those items were not very valuable . . . er, useful to me, so I put them in the wagon at camp. come back to me and I will give you the $map.");
    } 
    }
