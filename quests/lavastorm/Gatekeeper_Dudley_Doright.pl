@@ -1,6 +1,7 @@
 #Gatekeeper_Dudley_Doright NPC ID 27147#
 #Lavastorm to Broodlands Norrath Keepers camp#
 sub EVENT_SAY {
+my $worthy = quest::saylink("worthy", 1);
    if($ulevel >= 21 && $text=~/Hail/i) {
      if ($faction >=5){
    quest::say("Halt! I am the gate keeper for the Norrath Keepers. The keepers are looking for the best of the best to explore the new areas.");
