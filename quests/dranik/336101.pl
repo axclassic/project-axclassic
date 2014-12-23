@@ -4,7 +4,7 @@ my $ready = quest::saylink("ready", 1);
       quest::say("'Yes, yes, Gilina said you would be coming. I can help you in your battle against Lhranc! I have a personal vendetta against Lhranc. He killed my twin brother, Gilligno. This is going to be a tough battle. Lhranc has been reincarnated as a powerful general of the Mata Muram army. Are you $ready for me to attempt the summoning of Lhranc?");
 	  }
 	  if($text=~/ready/i) {
-	  quest::emote(' throws Lhranc's earthly anchor and the globe of discordant energy above his head. To your amazement, they begin to hover.');
+	  quest::emote(' throws Lhrancs earthly anchor and the globe of discordant energy above his head. To your amazement, they begin to hover.');
 	  quest::say("Oh mighty, Lhranc! We have slain your minions and have the blade that you seek! If you want it, come get it!");
 	  quest:;emote(' looks your way.');
       quest::say("What? You wanted a more elaborate incantion? It really doesn't take much to anger him. Trust me.");
