@@ -6,7 +6,7 @@ my $ready = quest::saylink("ready", 1);
 	  if($text=~/ready/i) {
 	  quest::emote(' throws Lhrancs earthly anchor and the globe of discordant energy above his head. To your amazement, they begin to hover.');
 	  quest::say("Oh mighty, Lhranc! We have slain your minions and have the blade that you seek! If you want it, come get it!");
-	  quest:;emote(' looks your way.');
+	  quest::emote(' looks your way.');
       quest::say("What? You wanted a more elaborate incantion? It really doesn't take much to anger him. Trust me.");
 	  quest::spawn2(336529,0,0,1050.4,2273.6,-26.1,244.4);
 	  quest::signalwith(336529,1005,12000);
