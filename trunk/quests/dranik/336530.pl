@@ -12,6 +12,7 @@ my $Lhranc_event = 0;
     $counter += 1;
 	   if($counter == 6) {
 	quest::spawn2(336531,0,0,1038.1,2367.9,-26.1,229.1);
+	quest::depop(336101);
 	quest::depop();
 	}
 	}
