@@ -11,9 +11,7 @@ sub EVENT_SAY {
     if($text=~/council/i) {
      quest::say("Very well I will grant you entrance and summon him if you can  prove to me that you are worthy of his time.");
 	 quest::say("Hand to me the item that proves you are indeed worthy.");
-	 #quest::spawn2(227145,0,0,-535.5,-391,26.4,131.1);
-	 #quest::signalwith(227145,101,0);
- }
+  }
  }
 sub EVENT_ITEM { 
 if(plugin::check_handin(\%itemcount, 52347 => 1)) { #Fatestealer 1.5 Epic
@@ -35,7 +33,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 52348 => 1)) { #Nightshade, Blade of entropy 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -56,7 +54,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119476 => 1)) { #Nightshade, Blade of entropy 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -77,7 +75,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119492 => 1)) { ##Master Nightshade, Blade of entropy 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -98,7 +96,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 62627 => 1)) { #Heartwood Blade 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -119,7 +117,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 62649 => 1)) { #Aurora The Heartwood Blade 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -140,7 +138,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119482 => 1)) { #Aurora The Heartwood Blade 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -161,7 +159,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119498 => 1)) { #Master Aurora The Heartwood Blade 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -182,7 +180,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 77631 => 1)) { #Prismatic Dragon Blade 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -203,7 +201,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 77640 => 1)) { #Blade of Vesagran 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -224,7 +222,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119479 => 1)) { #Blade of Vesagran 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -245,7 +243,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119495 => 1)) { #Master Blade of Vesagran 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -266,7 +264,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 57400 => 1)) { #Crafted talisman of the Fates 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -287,7 +285,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 57405 => 1)) { #Blessed Spiritstaff of the Heyokah 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -308,7 +306,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119470 => 1)) { #Blessed Spiritstaff of the Heyokah 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -329,7 +327,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119486 => 1)) { #Master Blessed Spiritstaff of the Heyokah 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -350,7 +348,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 62581 => 1)) { #Soulwhisper 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -371,7 +369,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 64067 => 1)) { #Deathwhisper 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -392,7 +390,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119474 => 1)) { #Deathwhisper 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -413,7 +411,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119490 => 1)) { #Master Deathwhisper 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -434,7 +432,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 19092 => 1)) { #Staff of Elemental Essence 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -455,7 +453,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 19839 => 1)) { #Focus of Primal Elements 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -476,7 +474,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119472 => 1)) { #Focus of Primal Elements 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -497,7 +495,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119488 => 1)) { #Master Focus of Primal Elements 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -518,7 +516,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 50003 => 1)) { #Innoruuk's Voice 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -539,7 +537,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 48136 => 1)) { #Innoruuk's Dark Blessing 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -560,7 +558,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119469 => 1)) { #Innoruuk's Dark blessing 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -581,7 +579,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119485 => 1)) { #Master Innoruuk's Dark blessing 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -602,7 +600,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 60321 => 1)) { #Champion's Sword of Eternal Power 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -623,7 +621,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 60332 => 1)) { #Kreljnok's Sword of Eternal Power 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -644,7 +642,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119475 => 1)) { #Kreljnok's Sword of Eternal Power 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -665,7 +663,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119491 => 1)) { #Master Kreljnok's Sword of Eternal Power 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -686,7 +684,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 64031 => 1)) { #Redemption 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -707,7 +705,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 48147 => 1)) { #Nightbane, Sword of the valiant 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -728,7 +726,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119480 => 1)) { #Nightbane, Sword of the Valiant 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -749,7 +747,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119496 => 1)) { #Master Nightbane, Sword of the Valiant 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -770,7 +768,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 52911 => 1)) { #Savage Lord's Totem 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -791,7 +789,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 57054 => 1)) { #Spiritcaller Totem of the Feral 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -812,7 +810,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119478 => 1)) { #spiritcaller Totem of the Feral 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -833,7 +831,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119494 => 1)) { #Master Spiritcaller Totem of the Feral 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -854,7 +852,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 52952 => 1)) { #Oculus of persuasion 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -875,7 +873,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 52962 => 1)) { #Staff of Eternal Eloquence 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -896,7 +894,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119473 => 1)) { #Staff of Eternal Eloquence 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -917,7 +915,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119489 => 1)) { #Master Staff of Eternal Eloquence 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -938,7 +936,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 62863 => 1)) { #Staff of living Brambles 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -959,7 +957,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 62880 => 1)) { #Staff of Everliving Brambles 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -980,7 +978,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119466 => 1)) { #Staff of living Brambles 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1001,7 +999,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119483 => 1)) { #Master Staff of living Brambles 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1022,7 +1020,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 12665 => 1)){ #Staff of Prismatic Power 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1043,7 +1041,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 16576 => 1)) { #Staff of Phenomenal Power 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1064,7 +1062,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119471 => 1)) { #Staff of Phenomenal Power 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1085,7 +1083,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119487 => 1)) { #Master Staff of Phenomenal Power 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1106,7 +1104,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 61025 => 1)) { #Fistwraps of Celestial Discipline 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1127,7 +1125,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 67742 => 1)) { #Transcended Fistwraps of Immortality 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1148,7 +1146,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119477 => 1)) { #Transcended Fistwraps of Immortality 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1169,7 +1167,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119493 => 1)) { #Master Transcended Fistwraps of Immortality 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1190,7 +1188,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 9955 => 1)) { #Harmony of the Soul 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1211,7 +1209,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 20076 => 1)) { #Aegis of Superior Divinity 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1232,7 +1230,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119467 => 1)) { #Aegis of Superior Divinity 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1253,7 +1251,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119484 => 1)) { #Master Aegis of Superior Divinity 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1274,7 +1272,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 18398 => 1)) { #Raging Taelosian Alloy Axe 1.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1295,7 +1293,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 18609 => 1)) { #Vengeful Taelosian Blood Axe 2.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1316,7 +1314,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119481 => 1)) { #Vengeful Taelosian Blood Axe 2.5 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1337,7 +1335,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 elsif(plugin::check_handin(\%itemcount, 119497 => 1)) { #Master Vengeful Taelosian Blood Axe 3.0 Epic
 quest::say("Admittance granted but that does not mean he will look favorably on you, be on your guard."); 
@@ -1358,7 +1356,7 @@ quest::spawn2(227142,0,0,-493.1,-422.7,4,126.5);
 quest::spawn2(227142,0,0,-554.5,-424,4,125.1);
 quest::spawn2(227140,0,0,-583.9,-348,15,128.1);
 quest::spawn2(227140,0,0,-486.7,-342,15,124);
-quest::depopall(227144);
+quest::depop();
 }
 else {
     $client->Message(14,"$name, This proves nothing! Take it back!");
