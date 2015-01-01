@@ -11,8 +11,8 @@ sub EVENT_SAY {
     if($text=~/council/i) {
      quest::say("Very well I will grant you entrance and summon him if you can  prove to me that you are worthy of his time.");
 	 quest::say("Hand to me the item that proves you are indeed worthy.");
-	 quest::spawn2(227145,0,0,-535.5,-391,26.4,131.1);
-	 quest::signalwith(227145,101,0);
+	 #quest::spawn2(227145,0,0,-535.5,-391,26.4,131.1);
+	 #quest::signalwith(227145,101,0);
  }
  }
 sub EVENT_ITEM { 
