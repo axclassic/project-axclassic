@@ -582,12 +582,18 @@ my @itema = (10038,13731,13928);  #Assorted Silver Ring IDs
     }
       }
       elsif(($ulevel >= $sixtyfourbotlevel) && ($qglobals{bot_spawn_limit} <= 64)) {
-         if(($platinum == $sixtyfourbotcost) && plugin::check_handin(\%itemcount, 72650 =>1) || plugin::check_handin(\%itemcount, 72651 =>1) ||
-        plugin::check_handin(\%itemcount, 72652 =>1) || plugin::check_handin(\%itemcount, 72653 =>1) ||
-        plugin::check_handin(\%itemcount, 72654 =>1) || plugin::check_handin(\%itemcount, 72655 =>1) ||
-        plugin::check_handin(\%itemcount, 72657 =>1) || plugin::check_handin(\%itemcount, 72658 =>1) ||
-        plugin::check_handin(\%itemcount, 72659 =>1) || plugin::check_handin(\%itemcount, 72660 =>1) ||
-        plugin::check_handin(\%itemcount, 72661 =>1) || plugin::check_handin(\%itemcount, 72656 =>1)) { #Flow Stones
+         if((($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72650 =>1))) || 
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72651 =>1))) ||
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72652 =>1))) || 
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72653 =>1))) ||
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72654 =>1))) || 
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72655 =>1))) ||
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72657 =>1))) || 
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72658 =>1))) ||
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72659 =>1))) || 
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72660 =>1))) ||
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72661 =>1))) || 
+         (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72656 =>1)))) { #Flow Stones
             $success = $qglobals{bot_spawn_limit}+1;
             $client->Message(14,"Thanks $name!");
          }
