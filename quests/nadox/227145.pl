@@ -1,12 +1,11 @@
 sub EVENT_SIGNAL {
 if($signal == 101) {
-quest::settimer($spiritkeeper, 30);
+quest::settimer(101, 30);
   }
 }
 
 sub EVENT_TIMER {
-if($spiritseeker == 1) {
-quest::stoptimer(1);
+quest::stoptimer(101);
 quest::depopall(227119);
 quest::depopall(227140);
 quest::depopall(227143);
