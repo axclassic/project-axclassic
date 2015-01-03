@@ -29,7 +29,7 @@ my $outlander = quest::saylink("outlander", 1);
    quest::say("It seems Klok Ephmir has encountered an outlander who was hunting the food we lizards enjoy. The legion will not act without proof of this outlanders existence. We were asked by the Baron to find this proof. We shall do this. You shall provide me with the outlanders head and the Shackles of Rock and Stone!!");
   }
   if($text=~/courier/i){
-   quest::emote('grabs a tin box resting by her feet.'):
+   quest::emote('grabs a tin box resting by her feet.');
    quest::say("Take this to Master Rinmark, he will not appear as himself, look for an Iksar master in Timorous Deep and be quick about it!!");
    quest::summonitem(12829);
   }
