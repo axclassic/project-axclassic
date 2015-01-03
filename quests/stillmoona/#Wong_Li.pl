@@ -1,4 +1,4 @@
-Wong_Li killable#
+#Wong_Li killable#
 sub EVENT_SAY {
 if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Hail/i){
    quest::say("Congratulations for finding me adventurer. I simply could not resist meeting the one who had found the perfect Cherry Blossom. I know your side wishes to unlock the secrets that lay within these temple walls but you must earn my trust before I will part with its treasures. Lately a sickness of the spirit has infected some of my brethren. Those few of us able to resist this illness are too weak to seek the cause of this malady and thus we need you to help us in this endeavor. We think that the new goblin tending to the bath house, Nethran may have something to do with this. Find him and see if he has any clues on his person. Alas, I can not tell you exactly how to bring him out of hiding except to say that he is easily angered. Perhaps you can use this to lure him out. . .");
