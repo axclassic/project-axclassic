@@ -1,5 +1,3 @@
-#The other NPC for the Iksar Shadowknight low- to mid-level armors.
-
 sub EVENT_SAY {
 my $Rile = quest::saylink("Rile", 1);
 my $armor = quest::saylink("armor", 1);
@@ -7,7 +5,7 @@ my $Helm = quest::saylink("Helm", 1);
 my $Boots = quest::saylink("Boots", 1);
 my $Gauntlets = quest::saylink("Gauntlets", 1);
 my $Vambraces = quest::saylink("Vambraces", 1);
-  if($text=~/Hail/i){
+if($text=~/Hail/i){
     quest::emote("eyes you intently. 'So, yet another hatchling approaches us. I am known as Sirtha and that is Sarth. We are children of $Rile. Who do you call your father, broodling?'");
   }
   if($text=~/Rile/i){
@@ -28,8 +26,7 @@ my $Vambraces = quest::saylink("Vambraces", 1);
   if($text=~/Vambraces/i){
     quest::say("The hideous Golra are hardy creatures. The tales indicate their ferocity almost matches our own. I wish to gain a trophy of one of these beasts. Bring me the skin of one, two blue sapphires, and banded sleeves. Then I shall give you these fine vambraces.");
   }
-}
-
+  }
 sub EVENT_ITEM {
   #Dreadscale Helm for:  Head=14822  Sword=14826  Helm=3053  Ruby=10035
   if(plugin::check_handin(\%itemcount,14822=>1,14826=>1,3053=>1,10035=>1)) {
@@ -59,11 +56,8 @@ sub EVENT_ITEM {
 	quest::ding();
 	quest::exp(10000);
   }
-     else {
-    plugin::return_items(\%itemcount);
+  else {
+     plugin::return_items(\%itemcount);
     quest::say("I have no use for this.");
-   }
-}
-
-#END of FILE Zone:cabeast  ID:106010 -- Sirtha_Scarscale
-
+  }
+  }
