@@ -526,31 +526,31 @@ elsif ($ulevel == 61 && plugin::check_handin(\%itemcount, 49035 => 1)) {
    quest::say("Well done $name, You have turned the favor of power back into our hands at least for now.");
    quest::givecash(0,0,0,60);
    }
-elsif (($ulevel == 61 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
+elsif ($ulevel == 61 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
    quest::ding();
    quest::exp(2855560);
    quest::say("So an Evil Mistress was the root of all this. Well done $name.");
    quest::givecash(0,0,0,60);
    }
-   elsif (($ulevel == 62 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
+   elsif ($ulevel == 62 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
    quest::ding();
    quest::exp(2950220);
    quest::say("So an Evil Mistress was the root of all this. Well done $name.");
    quest::givecash(0,0,0,60);
    }
-   elsif (($ulevel == 63 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
+   elsif ($ulevel == 63 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
    quest::ding();
    quest::exp(3042940);
    quest::say("So an Evil Mistress was the root of all this. Well done $name.");
    quest::givecash(0,0,0,60);
    }
-   elsif (($ulevel == 64 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
+   elsif ($ulevel == 64 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
    quest::ding();
    quest::exp(3145220);
    quest::say("So an Evil Mistress was the root of all this. Well done $name.");
    quest::givecash(0,0,0,60);
    }
-   elsif (($ulevel == 65 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
+   elsif ($ulevel == 65 && plugin::check_handin(\%itemcount, 120151 => 1)) { 
    quest::ding();
    quest::exp(3245060);
    quest::say("So an Evil Mistress was the root of all this. Well done $name.");
