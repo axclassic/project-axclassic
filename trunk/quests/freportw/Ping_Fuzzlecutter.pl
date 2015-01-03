@@ -82,7 +82,7 @@ sub EVENT_ITEM {
     plugin::return_items(\%itemcount);
   }
 
-  if($itemcount{12335} == 2) && ($itemcount{12338} == 1) && ($itemcount{12337} == 1){
+  if(plugin::check_handin(\%itemcount, 12335 == 2 && 12338 == 1 && 12337 == 1)) {
    quest::say("You are a good helper. Here you go. One genuine, charismatic, lady magnet, zero to hero making Mane Attraction!! Guarnteed to lower prices world wide. Guarnteed to last forever.. Err.. Well,.. It has a 1000 year warranty at least.");
    quest::exp(200);
    quest::summonitem(12254);
