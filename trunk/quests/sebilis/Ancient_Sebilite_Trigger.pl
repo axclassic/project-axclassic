@@ -8,7 +8,7 @@ sub EVENT_SIGNAL {
     	if($signal == 891) { ##signal 981 is from each a_sebilite_juggernaut##
     $counter += 1;
 	   if($counter == 4) {
-	   quest::settimer(11,300);
+	   quest::settimer(1,100);
 	   quest::spawn2(89196,0,0,-334,-1433.3,-105.8,255.5);
 	   quest::spawn2(89194,0,0,-307.3,-1409.9,-107,192.6);
 	   quest::spawn2(89195,0,0,-359.2,-1411.5,-107,67.8);
