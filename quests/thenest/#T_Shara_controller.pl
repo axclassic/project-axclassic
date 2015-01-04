@@ -17,6 +17,7 @@ sub EVENT_SIGNAL {
 	quest::depop();
 	}
 	sub EVENT_TIMER {
+	quest::stoptimer(1);
 	quest::depop(343179);
 	quest::depop(343180);
 	quest::depop(343177);
