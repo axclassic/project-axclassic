@@ -11,7 +11,7 @@ sub EVENT_SAY {
     if($text=~/council/i) {
      quest::say("Very well I will grant you entrance and summon him if you can  prove to me that you are worthy of his time.");
 	 quest::say("Hand to me the item that proves you are indeed worthy.");
-	 quest::settimer(22,100);
+	 quest::settimer(22,3300);
   }
  }
 sub EVENT_TIMER {
