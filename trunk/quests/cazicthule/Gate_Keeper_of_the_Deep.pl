@@ -29,6 +29,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(52347);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -48,6 +49,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(52348);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -67,6 +69,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119476);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -86,6 +89,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119492);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -105,6 +109,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(62627);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -124,6 +129,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(62649);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -143,6 +149,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119482);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -162,6 +169,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119498);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -181,6 +189,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(77631);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -200,6 +209,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(77640);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -219,6 +229,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119479);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -238,6 +249,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119495);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -257,6 +269,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(57400);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -276,6 +289,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(57405);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -295,6 +309,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119470);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -314,6 +329,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119486);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -333,6 +349,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(62581);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -352,6 +369,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(64067);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -371,6 +389,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119474);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -390,6 +409,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119490);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -409,6 +429,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(19092);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -428,6 +449,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(19839);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -447,6 +469,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119472);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -466,6 +489,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119488);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -485,6 +509,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(50003);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -504,6 +529,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(48136);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -523,6 +549,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119469);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -542,6 +569,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119485);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -561,6 +589,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(60321);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -580,6 +609,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(60332);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -599,6 +629,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119475);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -618,6 +649,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119491);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -637,6 +669,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(64031);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -656,6 +689,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(48147);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -675,6 +709,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119480);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -694,6 +729,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119496);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -713,6 +749,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(52911);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -732,6 +769,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(57054);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -751,6 +789,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119478);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -770,6 +809,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119494);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -789,6 +829,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(52952);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -808,6 +849,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(52962);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -827,6 +869,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119473);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -846,6 +889,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119489);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -865,6 +909,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(62863);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -884,6 +929,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(62880);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -903,6 +949,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119466);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -922,6 +969,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119483);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -941,6 +989,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(12665);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -960,6 +1009,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(16576);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -979,6 +1029,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119471);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -998,6 +1049,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119487);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1017,6 +1069,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(61025);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1036,6 +1089,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(67742);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1055,6 +1109,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119477);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1074,6 +1129,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119493);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1093,6 +1149,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(9955);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1112,6 +1169,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(20076);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1131,6 +1189,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119467);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1150,6 +1209,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119484);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1169,6 +1229,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(18398);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1188,6 +1249,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(18609);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1207,6 +1269,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119481);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
@@ -1226,6 +1289,7 @@ quest::say("Very well $name, You are indeed worthy, prepare yourself.");
 quest::summonitem(119497);  #returns Epic
 quest::depopall(48247);
 quest::depopall(48442);
+quest::depopall(48441);
 quest::depopall(48248);
 quest::depopall(48243);
 quest::depopall(48439);
