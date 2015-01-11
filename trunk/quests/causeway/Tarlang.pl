@@ -2,21 +2,12 @@
 #Quest file for Nobles Causeway - Tarlang (Passive): Necromancer Epic 1.5 (Soulwhisper) 
 
 sub EVENT_SAY { 
-  my $x = $npc->GetX(); 
-  my $y = $npc->GetY(); 
-  my $Z = $npc->GetZ(); 
-  my $h = $npc->GetH(); 
-
-  if(($text=~/hail/i) && ($Soulwhisper==4)) { 
-    quest::setglobal("Soulwhisper",3,0,"F"); 
-#    quest::spawn2(00000,$x,$y,$z,$h); #Tarlang (Active) 
-    quest::depop(); 
+   if($text=~/hail/i) { 
+   quest::say("Fool! You think you have what it takes to destroy me? I shall feast on your bones!");   
+   quest::spawn2(303118,0,0,1363,-146,316.8,147.5); #Tarlang (Active) 
+   quest::depop(); 
   } 
 } 
 
-sub EVENT_ITEM { 
-  quest::say("I have no use for this, $name."); 
-  plugin::return_items(\%itemcount); 
-} 
 
-#EndFile: causeway\Tarlang.pl (00000)
+#EndFile: causeway\Tarlang.pl (303046)
