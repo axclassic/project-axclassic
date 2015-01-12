@@ -3,5 +3,5 @@ sub EVENT_SPAWN {
    }
 sub EVENT_DEATH {
     quest::say("This can not be. you have bested me.");
-	quest:spawn2(37152,0,0,-79934,2380.9,-0.8,18);
+	quest:spawn2(37152,0,0,-816.8,2375.2,-2.8,21.1);
 	}
