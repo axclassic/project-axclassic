@@ -1,5 +1,5 @@
 sub EVENT_SPAWN  {
-  quest::settimer(336,100);
+  quest::settimer(336,1800);
     }
 sub EVENT_TIMER {
 	quest::stoptimer(336);
