@@ -1,5 +1,8 @@
 sub EVENT_SAY {
-if($text=~/hail/i) {
+if ($ulevel <= 50 && $text=~/Hail/i){
+   quest::say("Run away! The orcs that is holding me here would make short work of you!");
+   }
+if($ulevel >= 51 && $text=~/hail/i) {
    quest::say("$name!! Watch out, there are aggressive orcs here! Be careful. . .Aiiiieeeeeeeeee.");
    quest::spawn2(37162,0,0,1432.9,1952.3,11,255.2);
    quest::signalwith(37162,371,0);
