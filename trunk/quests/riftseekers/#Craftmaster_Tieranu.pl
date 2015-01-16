@@ -25,6 +25,7 @@ if($hpevent == 95) {
   }	
 sub EVENT_DEATH {
     quest::say("This can not be! Arrrg!");
+	quest::spawn2(334092,0,0,-3.8,1397.5,59,162.2);
     quest::depop(334089);
     quest::depop(334090);
     quest::depop(334091);
