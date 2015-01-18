@@ -4,7 +4,7 @@ if($text=~/hail/i) {
    quest::say("You know Stanos?");
    }
    if($text=~/Yes/i) {
-   (56200,0,0,-905.6,-464.2,-110.8,83.1);
+   quest::spawn2(56200,0,0,-905.6,-464.2,-110.8,93.1);
    quest::depop();
    }
    if($text=~/no/i) {
