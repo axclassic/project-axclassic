@@ -5,12 +5,15 @@ my $help = quest::saylink("help", 1);
    quest::emote(' attempts to hide the shovel behind his back');
    quest::say("I wasn't doing anything! You have to understand . . . This isn't what it looks like. It was a wonderful night for a stroll! Oh wait, you're not one of the authorities, are you? Phew. In my line of $work, you never can be too careful. Say. . . You look like you might be morally flexible. Why don't you lend old Findleznax a hand and keep a watch out while I dig. Something's buried here, I know it. I can SENSE it, and I'll be swizzle-swaggled if some other rotbag is going to get ahold of it before me. Whaddya say? Find it in your heart to $help me?"); 
    }
-   if($text=~/work/i) {
+   if($ulevel >= 55 && $text=~/work/i) {
    quest::say("Self-employed treasure seeker. I relieve the dead of their valuables after they no longer need them. My efforts aren't appreciated in many places which requires me to practice discreetly. There are some that would call me gravedigger, but I don't particularly care for the connotations associated with that moniker. You know, it's funny. . . A Wayfarer trespasses in the hallowed crypts of Mistmoore, plunders their treasure and walks away a hero. I exhume a single fresh corpse and suddenly become a criminal - does that sound like justice to you?");
    }
-   if($text=~/help/i) {
+   if($ulevel >= 55 && $text=~/help/i) {
    quest::say("Stay close and keep an eye out.");
    quest::start(193);
+   }
+   else {
+   quest::say("as I said, I am doing nothing, now run along and find your own place to do nothing.");
    }
  }
 sub EVENT_WAYPOINT {
