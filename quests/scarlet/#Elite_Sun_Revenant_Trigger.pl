@@ -10,7 +10,7 @@ sub EVENT_SAY {
    if ($text=~/gem/i){
    quest::settimer(175,600);
    quest::say("So be it the master approaches!");
-   quest::spawn2(175606,1533507,0,-384.6,1083.2,153.8,132.2);
+   quest::spawn2(175607,1533507,0,-384.6,1083.2,153.8,132.2);
   }
  }
 sub EVENT_TIMER (
