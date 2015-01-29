@@ -13,4 +13,4 @@ if($ulevel >= 51 && $text=~/hail/i) {
    quest::spawn2(37166,0,0,1426.4,2009.6,16.5,228.1);
    quest::depop();
    }
- }  
+ } 
