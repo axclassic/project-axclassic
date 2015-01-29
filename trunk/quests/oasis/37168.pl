@@ -3,5 +3,6 @@ sub EVENT_SPAWN {
    }
 sub EVENT_DEATH {
     quest::say("This can not be. you have bested me.");
-	quest:spawn2(37152,0,0,-816.8,2375.2,-2.8,21.1);
+	my $a = quest::ChooseRandom(37169,37152,37169,37169,37169,37169,37169,37169,37169,37169,37169,37169,37169,37169,37169,37169,37169,37169,37169,37169);
+    quest::spawn2($a,0,0,-816.8,2375.2,-2.8,21.1);
 	}
