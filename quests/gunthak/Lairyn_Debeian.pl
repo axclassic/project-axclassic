@@ -8,11 +8,15 @@ if ($text=~/Hail/i){
   quest::say("Greetings, $name.  I suppose you're here like everyone else in search of fame and fortune.  Good luck to you, and good day.  I have many things to attend to.");
   quest::say("Or were you $sent by Liprin to help me?");
  }
- if ($text=~/sent/i){
+ if ($ulevel >= 55 && $text=~/sent/i){
  quest::emote('  is disturbingly pale for an Erudite. He looks terribly frightened.');
  quest::say("They'll return any moment! The shadows are everywhere, always watching . . . Waiting for me to rest so they can kill me. I try to fight them off but they always return. They whisper to me when I am all alone. No one else in the gulf believes me. You must help! Please believe that what I say is true! Oh no, here they come - please don't let the shadows take me away!"); 
  quest::start(32);
 }
+else {
+   quest::say("I dont know why Liprin would have sent you, you are much to young and unskilled to be of any help to me.");
+   quest::say("Go away before the shadows find me, for it would surely be the end of both of us!");
+   }
 }
 sub EVENT_WAYPOINT {
     if ($wp == 3) {
