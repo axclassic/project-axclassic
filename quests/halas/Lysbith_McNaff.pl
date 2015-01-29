@@ -44,7 +44,7 @@ sub EVENT_ITEM {
  }
   if  (plugin::check_handin(\%itemcount, 13898 => 1)){
    quest::say("Ye've done well, me young $class .  We've gathered these to add to yer provisions.  While in the Everfrost Peaks, be on the watch fer any gnolls ye may find.  I declare there to be a [gnoll bounty].");
-    quest::ding(); quest::exp(3800);
+    quest::ding(); quest::exp(1600);
    quest::givecash("0","0","4","0");
    # Reward: Iron Ration
    quest::summonitem(13005);
@@ -60,10 +60,7 @@ sub EVENT_ITEM {
  # Gnoll Bounty - Return 3 Gnoll Fangs
    if  (plugin::check_handin(\%itemcount, 13915 => 3)){
    quest::say("Fine work, fine work!  The gnoll threat must be extinguished before it can ever fully grow.  Ye've done yer part to aid our cause.  Please allow me to repay ye with a few provisions and a wee bit o' coin.  Then, continue with yer good deeds.");
-   	my @items = (50011,50018,50039);
-			my $total = $items[ rand @items ];
-		  quest::summonitem($total);
-    quest::ding(); quest::exp(40000);
+    quest::ding(); quest::exp(1000);
    quest::givecash("0","0","5","0");
      # Wolves of the North
    quest::faction("361","10");
