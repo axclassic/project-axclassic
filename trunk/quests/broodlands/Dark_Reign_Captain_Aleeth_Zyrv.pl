@@ -41,49 +41,49 @@ if ($ulevel == 21 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::exp(138700);
    quest::givecash(0,0,0,30);
    }
-   if ($ulevel == 23 && plugin::check_handin(\%itemcount, 120163 => 1)) {
+   elsif ($ulevel == 23 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
    quest::ding();
    quest::exp(151900);
    quest::givecash(0,0,0,30);
    }
-   if ($ulevel == 24 && plugin::check_handin(\%itemcount, 120163 => 1)) {
+   elsif ($ulevel == 24 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
    quest::ding();
    quest::exp(165700);
    quest::givecash(0,0,0,30);
    }
-   if ($ulevel == 25 && plugin::check_handin(\%itemcount, 120163 => 1)) {
+   elsif ($ulevel == 25 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
    quest::ding();
    quest::exp(180100);
    quest::givecash(0,0,0,30);
    }
-   if ($ulevel == 26 && plugin::check_handin(\%itemcount, 120163 => 1)) {
+   elsif ($ulevel == 26 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
    quest::ding();
    quest::exp(195100);
    quest::givecash(0,0,0,30);
    }
-   if ($ulevel == 27 && plugin::check_handin(\%itemcount, 120163 => 1)) {
+   elsif ($ulevel == 27 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
    quest::ding();
    quest::exp(210700);
    quest::givecash(0,0,0,30);
    }
-   if ($ulevel == 28 && plugin::check_handin(\%itemcount, 120163 => 1)) {
+   elsif ($ulevel == 28 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
    quest::ding();
    quest::exp(226900);
    quest::givecash(0,0,0,30);
    }
-   if ($ulevel == 29 && plugin::check_handin(\%itemcount, 120163 => 1)) {
+   elsif ($ulevel == 29 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
    quest::ding();
    quest::exp(243700);
    quest::givecash(0,0,0,30);
    }
-   if ($ulevel == 30 && plugin::check_handin(\%itemcount, 120163 => 1)) {
+   elsif ($ulevel == 30 && plugin::check_handin(\%itemcount, 120163 => 1)) {
    quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
    quest::ding();
    quest::exp(531100);
