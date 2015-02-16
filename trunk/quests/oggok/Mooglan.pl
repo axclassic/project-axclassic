@@ -13,7 +13,7 @@ my $trust = quest::saylink("trust", 1);
     quest::say("Yuz come lookeeng to make sum armorz? Yuz come to da right place, if'n yuz be a shadowknight. Is you a $Shadowknight?");
   }
   if ($text=~/Shadowknight/i && $class eq "Shadowknight") {
-    quest::say("Mez tink dat yuz were. Letz begin yur traineeng. Da furst ting dat yuz needz to do is gather da itemz dat will be uzed in da krafteeng of da [armor] and den yuz can kraft dem in dis majikal assembly kit.");
+    quest::say("Mez tink dat yuz were. Letz begin yur traineeng. Da furst ting dat yuz needz to do is gather da itemz dat will be uzed in da krafteeng of da $armor and den yuz can kraft dem in dis majikal assembly kit.");
     quest::summonitem(51380);
   }
   if ($text=~/armor/i) { # Made up sentence about the job, rest is real text.
