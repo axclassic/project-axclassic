@@ -1,5 +1,58 @@
 sub EVENT_ENTERZONE {
 no warnings 'all' ;
+  ## Set proper spawn in dual-spawn zones
+  if ($zoneid ==  81){ ##Droga
+   if ($ulevel <=45){
+      quest::spawn_condition("droga",7,0);
+      quest::spawn_condition("droga",8,1);
+      quest::delglobal("dropop");
+      quest::setglobal("dropop",3,3,"F");}
+    elsif ($ulevel >=46){
+      quest::spawn_condition("droga",7,1);
+      quest::spawn_condition("droga",8,0);
+      quest::delglobal("dropop");
+      quest::setglobal("dropop",3,3,"F");}
+    }
+  elsif ($zoneid == 107 ){ ##Nurga
+    if ($ulevel <=45){
+      quest::spawn_condition("nurga",7,0);
+      quest::spawn_condition("nurga",8,1);
+      quest::delglobal("nurpop");
+      quest::setglobal("nurpop",3,3,"F");}
+    elsif ($ulevel >=46){ 
+      quest::spawn_condition("nurga",7,1);
+      quest::spawn_condition("nurga",8,0);
+      quest::delglobal("nurpop");
+      quest::setglobal("nurpop",3,3,"F");}
+   }
+  elsif ($zoneid == 48 ){ ##CT
+    if ($ulevel <=45){
+	quest::spawn_condition("cazicthule",7,0);
+	quest::spawn_condition("cazicthule",8,1);
+	quest::delglobal("cazpop");
+	quest::setglobal("cazpop",3,3,"F");
+    }
+    elsif ($ulevel >=46){
+	quest::spawn_condition("cazicthule",7,1);
+	quest::spawn_condition("cazicthule",8,0);
+	quest::delglobal("cazpop");
+	quest::setglobal("cazpop",3,3,"F");
+   }
+  }
+  elsif ($zoneid ==  20 ){ ##Kitchicor
+    if (($zonetime >= 0)&&($zonetime <= 800)){   #nighttime
+	quest::spawn_condition("kithicor", 2,0); #live are 2
+	quest::spawn_condition("kithicor", 1,1); #undead are 1
+	}
+    elsif (($zonetime >= 2000)&&($zonetime <= 2359)){ #nighttime
+	quest::spawn_condition("kithicor", 2,0); #live are 2
+	quest::spawn_condition("kithicor", 1,1);#undead are 1
+	}
+    else{	#daytime
+	quest::spawn_condition("kithicor",2,1);
+	quest::spawn_condition("kithicor",1,0);
+	}
+  }
 if (((defined $Classic2012) && ($Classic2012 < 1)) | (!defined $Classic2012)){
  #$client->Message(14,"AXClassic mode.");
  if($ulevel >= 50){

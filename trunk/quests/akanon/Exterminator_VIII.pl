@@ -22,7 +22,8 @@ sub EVENT_ITEM {
      if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
         quest::givecash($copper, $silver, $gold, $platinum);
      }
-} 
+  }
+}
 
 
 #ItemID: 10967 - ItemName: Clockwork Rat Leg Section
