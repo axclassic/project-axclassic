@@ -10,6 +10,7 @@ my $x = $npc->GetX();
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
+  quest::emote(' the sand at your feet explodes into violent motion!');
   quest::spawn2($a,0,0,$x,$y,$z,$h);
   quest::depop();
 }
