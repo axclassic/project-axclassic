@@ -36,7 +36,7 @@ my $red = quest::saylink("red", 1);
 
 sub EVENT_ITEM {
   #Handin:
-  if(plugin::check_handin(\%itemcount, 9240 => 1, 37902 => 1, 37903 => 1)){
+  if(plugin::check_handin(\%itemcount, 9240 => 1, 37902 => 1, 37903 => 1, 37710 => 1)){
    #White Dragonscale Cloak (END) 
    quest::say("My fiancee will be so excited! An exquisite ring for the wedding and a gorgeous necklace as my wedding gift to her. Well, as promised, here is your white dragonscale cloak.");
    #Summon: White Dragonscale Cloak
