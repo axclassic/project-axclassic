@@ -30,17 +30,20 @@ quest::say("So, you need me to enchant a platinum bar for you? That is easily do
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 16500 => 1) && ($platinum >= 50)) {
 quest::summonitem(16504);
-quest::say("Use it wisely, if you should need another, will be here, waiting.");
+quest::ding():
+quest::say("Use it wisely, if you should need another, I will be here, waiting.");
 quest::say("Farewell, $name.");
  }
   elsif (plugin::check_handin(\%itemcount, 16502 => 1) && ($platinum >= 75)) {
 quest::summonitem(16506);
-quest::say("Use it wisely, if you should need another, will be here, waiting.");
+quest::ding():
+quest::say("Use it wisely, if you should need another, I will be here, waiting.");
 quest::say("Farewell, $name.");
  }
   elsif (plugin::check_handin(\%itemcount, 16503 => 1) && ($platinum >= 100)) {
 quest::summonitem(16507);
-quest::say("Use it wisely, if you should need another, will be here, waiting.");
+quest::ding():
+quest::say("Use it wisely, if you should need another, I will be here, waiting.");
 quest::say("Farewell, $name.");
  }
       else {
