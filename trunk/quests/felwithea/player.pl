@@ -53,6 +53,9 @@ no warnings 'all' ;
 	quest::spawn_condition("kithicor",1,0);
 	}
   }
+  elsif (($zoneid ==  59 ) && ($event3 == 1)){ ##Mistmoore for William spawn
+	quest::spawn2(59161,0,0,361.0,-213.0,-136.8,126.0);
+  }
 if (((defined $Classic2012) && ($Classic2012 < 1)) | (!defined $Classic2012)){
  #$client->Message(14,"AXClassic mode.");
  if($ulevel >= 50){
