@@ -73,7 +73,10 @@ if ($event3==1){
      quest::emote("fades away into the night.");
      quest::delglobal("event3"); 
      quest::setglobal("event3",0,7,"F");
-     $event1= undef; 
+     $event1= undef;
+     quest::delglobal("williampop");
+     quest::setglobal("williampop",0,5,"F");
+     $williampop= undef;
      quest::depop;
      return;
      }

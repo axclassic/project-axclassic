@@ -15,7 +15,10 @@ sub EVENT_SPAWN
 
 sub EVENT_EXIT{
 ##Countess Event
- if ($event3 != 1){ 
+ if ($event3 != 1){
+    quest::delglobal("williampop");
+    quest::setglobal("williampop",0,5,"F");
+    $williampop= undef;
     quest::depop;
   }
 }
@@ -23,9 +26,18 @@ sub EVENT_EXIT{
 sub EVENT_ENTER{
 ##Countess Event
  if ($event3 != 1){ 
+    quest::delglobal("williampop");
+    quest::setglobal("williampop",0,5,"F");
+    $williampop= undef;
     quest::depop;
   }
 }
+
+sub EVENT_DEATH {
+    quest::delglobal("williampop");
+    quest::setglobal("williampop",1,5,"F");
+    $williampop= undef;
+  }
 
 # William only spawns level 70
 # sub EVENT_AGGRO
