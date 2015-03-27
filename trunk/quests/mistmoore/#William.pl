@@ -1,7 +1,8 @@
 # Bloodhunt Event
 # William (El Amansa-Guapos)
 # Mistmoore Castle
-# Keeps the NPC de-popped, unless event is active. Also respawns a stronger William for higher level players.
+# Keeps the NPC de-popped, unless event is active.
+# William spawns via player.pl now
 # By Angelox
 
 sub EVENT_SPAWN
@@ -26,14 +27,15 @@ sub EVENT_ENTER{
   }
 }
 
-sub EVENT_AGGRO
-{
-	if($ulevel >= 50){
-	my $x = $npc->GetX();
-    	my $y = $npc->GetY();
-    	my $z = $npc->GetZ();
-    	my $h = $npc->GetHeading();
-  	quest::spawn2(59161,0,0,$x,$y,$z,$h);
-	quest::depop;
-	}
-}
+# William only spawns level 70
+# sub EVENT_AGGRO
+# {
+# 	if($ulevel >= 50){
+# 	my $x = $npc->GetX();
+#     	my $y = $npc->GetY();
+#     	my $z = $npc->GetZ();
+#     	my $h = $npc->GetHeading();
+#   	quest::spawn2(59161,0,0,$x,$y,$z,$h);
+# 	quest::depop;
+# 	}
+# }
