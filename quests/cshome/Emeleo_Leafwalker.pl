@@ -68,7 +68,10 @@ elsif($text=~/Start Bloodhunt/i){ #event3
  quest::setglobal("event6",0,7,"F");
  quest::delglobal("event7");
  quest::setglobal("event7",0,7,"F");
- $event3 = undef; 
+ $event3 = undef;
+ quest::delglobal("williampop");
+ quest::setglobal("williampop",0,5,"F");
+ $williampop = undef;
  }
 elsif($text=~/Start Pitch Black/i){ #event4
  $client->Message(14,"Very well then, The Pitch Black event has started.");
