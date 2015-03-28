@@ -70,7 +70,7 @@ elsif($text=~/Start Bloodhunt/i){ #event3
  quest::setglobal("event7",0,7,"F");
  $event3 = undef;
  quest::delglobal("williampop");
- quest::setglobal("williampop",0,5,"F");
+ quest::setglobal("williampop",0,7,"F");
  $williampop = undef;
  }
 elsif($text=~/Start Pitch Black/i){ #event4
