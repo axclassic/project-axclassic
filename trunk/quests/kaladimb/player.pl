@@ -56,7 +56,7 @@ no warnings 'all' ;
   elsif (($zoneid ==  59 ) && ($event3 == 1) && ($williampop == 0)){ ##Mistmoore for William spawn
 	quest::spawn2(59161,0,0,361.0,-213.0,-136.8,126.0);
 	quest::delglobal("williampop");
-	quest::setglobal("williampop",2,5,"F");
+	quest::setglobal("williampop",2,7,"F");
   }
 if (((defined $Classic2012) && ($Classic2012 < 1)) | (!defined $Classic2012)){
  #$client->Message(14,"AXClassic mode.");

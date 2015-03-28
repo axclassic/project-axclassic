@@ -75,7 +75,7 @@ if ($event3==1){
      quest::setglobal("event3",0,7,"F");
      $event1= undef;
      quest::delglobal("williampop");
-     quest::setglobal("williampop",0,5,"F");
+     quest::setglobal("williampop",0,7,"F");
      $williampop= undef;
      quest::depop;
      return;

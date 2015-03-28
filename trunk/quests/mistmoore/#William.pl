@@ -17,7 +17,7 @@ sub EVENT_EXIT{
 ##Countess Event
  if ($event3 != 1){
     quest::delglobal("williampop");
-    quest::setglobal("williampop",0,5,"F");
+    quest::setglobal("williampop",0,7,"F");
     $williampop= undef;
     quest::depop;
   }
@@ -27,7 +27,7 @@ sub EVENT_ENTER{
 ##Countess Event
  if ($event3 != 1){ 
     quest::delglobal("williampop");
-    quest::setglobal("williampop",0,5,"F");
+    quest::setglobal("williampop",0,7,"F");
     $williampop= undef;
     quest::depop;
   }
@@ -35,7 +35,7 @@ sub EVENT_ENTER{
 
 sub EVENT_DEATH {
     quest::delglobal("williampop");
-    quest::setglobal("williampop",1,5,"F");
+    quest::setglobal("williampop",1,7,"F");
     $williampop= undef;
   }
 
