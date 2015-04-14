@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 -----------------------------------------------------
+==4/14/2015==
+Angelox:Initial changes for move to GitHUb Repo. 
+
 ==5/09/2012==
 Fez_Ajer: Fixes to quests in erudinit, felwithe, kithicor, lavastrorm, lfaydark and najena.
 
