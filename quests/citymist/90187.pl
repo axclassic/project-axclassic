@@ -3,6 +3,7 @@
 
 sub EVENT_SPAWN {
   quest::say("Young one, you cannot fathom how long it has been since I breathed air and felt flesh on my bones. I told you I would show you a weapon that would make you the most powerful of your kind. I said nothing of giving it to you. Feast your eyes on Innoruuk's Curse, mortal! Thank you for your service.");
+  quest::attack($name);
 }
 
 sub EVENT_DEATH {
