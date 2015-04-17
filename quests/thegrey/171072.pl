@@ -7,7 +7,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  quest::me("They Grey is void of air");
+  quest::me("The Grey is void of air");
   quest::depop();
  }
 
