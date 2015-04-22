@@ -67,7 +67,7 @@ no warnings 'all' ;
     quest::delglobal("sirens");
     quest::setglobal("sirens",0,7,"F");
     $sirens = undef;
-    quest::spawn2(68228,224,0,3680,2010,-21,153);
+    quest::spawn2(68228,224,0,3680,2010,-19,153);
   }
 }
 
