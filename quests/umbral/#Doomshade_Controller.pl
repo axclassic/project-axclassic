@@ -5,6 +5,5 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 75, $x + 75, $y - 75, $y + 75);
 	}
 sub EVENT_ENTER {
-    quest::emote(' casts a cold look upon you like something from the grave.');
-    quest::say("Welcome to Broodlands may you fare better than I.");
+    quest::spawn2(176105,0,124,2872,410,252);
  }
