@@ -6,4 +6,5 @@ sub EVENT_SPAWN {
 	}
 sub EVENT_ENTER {
     quest::spawn2(176105,0,124,2872,410,252);
+    quest::spawn2(176087,0,124,2872,410,252);
  }
