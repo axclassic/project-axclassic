@@ -14,11 +14,12 @@ sub EVENT_SIGNAL {
 	   quest::spawn2(89195,0,0,-359.2,-1411.5,-107,67.8);
 	   quest::depopall(89193);
 	 }
-	 if($signal == 900) { ##signal 900 is death of Ancient_sebilite_juggernaut##
+	 elsif($signal == 900) { ##signal 900 is death of Ancient_sebilite_juggernaut##
 	   quest::stoptimer(1);
 	   quest::depop(89194);
 	   quest::depop(89195);
 	   quest::depop();
+	 }
 	 }
 	 sub EVENT_TIMER {
 	quest::stoptimer(1); 
@@ -28,4 +29,3 @@ sub EVENT_SIGNAL {
 	quest::depop();
 	}
   }
-}  
