@@ -14,11 +14,4 @@ sub EVENT_SIGNAL {
 	   quest::depopall(89193);
 	  }
 	 }
-	 sub EVENT_TIMER {
-	quest::depop(89196);
-	quest::depop(89194);
-	quest::depop(89195);
-	quest::depop(89198);
-	quest::depop();
-	}
-  }
+	 
