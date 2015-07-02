@@ -18,13 +18,13 @@ my $possession = quest::saylink("possession", 1);
 my $prove = quest::saylink("prove", 1);
 my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
-  if(($text=~/Hail/i) && ($charid < 5010)) { #set
+  if(($text=~/Hail/i) && ($charid < 5477)) { #set
     #$client->Message(14,"Your character ID is $charid ");
     $client->Message(14,"Your character is too old for this ladder, start a new character!");
     $client->Message(15,"This ladder began on June 19th, 2014, ending date posted at the AX Classic forums.");
     $client->Message(15,"You should start your new character on or after the starting date.");
   }
- elsif (($text=~/Hail/i) && ($charid > 5009)){  #set
+ elsif (($text=~/Hail/i) && ($charid > 5476)){  #set
     $client->Message(14,"Hail, $name! I am Darkwater the Ladder Guide, and will be observing and rewarding you for your advancement on the Ladder."); 
     $client->Message(14,"I will $reward you for advancement to levels 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title\, and I will provide it for you, in addition to your reward.");
     if ($ulevel <= 2){
@@ -50,19 +50,19 @@ my $second = quest::saylink("second", 1);
        }
     }
   }
-  elsif (($text=~/join/i)&& ($charid > 5009)){ #set
+  elsif (($text=~/join/i)&& ($charid > 5476)){ #set
     $client->Message(14,"Glad to have you with us ");
   }
-  elsif (($text=~/title/i) && ($charid > 5009) && ($ulevel > 64)) { #set
+  elsif (($text=~/title/i) && ($charid > 5476) && ($ulevel > 64)) { #set
     $client->Message(14,"Well done $name! Here is your title.");
     $client->SetAATitle("Ladder Champion");
   }
-  elsif (($text=~/title/i) && ($charid > 5009) && ($ulevel < 65)) { #set
+  elsif (($text=~/title/i) && ($charid > 5476) && ($ulevel < 65)) { #set
     $client->Message(14,"You need to be level 65 on the Ladder for this.");
     $client->Message(15,"Ladder title is available during the time period posted.");
   }
   elsif ($text=~/reward/i) {
-    if ($charid > 5009) { #set
+    if ($charid > 5476) { #set
 	 if ( ($ulevel > 19) &&  ($ulevel < 35) && ($ladder_trophy < 1)) { #set LadderTrophy1
 		$client->Message(14,"Well done $name! Here is your trophy.");
 		quest::summonitem(409);
@@ -164,17 +164,17 @@ my $second = quest::saylink("second", 1);
       }
   }
 #End Moonstone - rest in EVENT_ITEM
-  elsif (($text=~/reward/i) && ($charid > 5009)) { #set
+  elsif (($text=~/reward/i) && ($charid > 5476)) { #set
     $client->Message(14,"You need to get to level 20!");
   }
-  elsif ($charid < 5010){
+  elsif ($charid < 5477){
     $client->Message(15,"Either you said the wrong thing, or you do not qualify for this Ladder.");
     $client->Message(15,"In order to qualify for this Ladder, you need to have started a character on or after the start date posted at the AX Classic forums.");
   }
 }
 
 sub EVENT_ITEM{
-  if ($charid < 5010) { #set
+  if ($charid < 5477) { #set
     #quest::say("Your character ID is $charid ");
     $client->Message(14,"Your character is too old for this ladder, start a new character!");
     $client->Message(15,"This ladder began on June 19th, 2014, ending date posted at the AX Classic forums.");
