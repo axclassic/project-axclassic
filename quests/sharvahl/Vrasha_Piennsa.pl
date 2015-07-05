@@ -1,23 +1,16 @@
 sub EVENT_SAY {
 my $tome = quest::saylink("tome", 1);
+my $S = quest::saylink("S", 1);
 	if($text =~ /hail/i) {
 		quest::say("If you are ready to join the Ireblood Ragers, read the note in your inventory and then hand it to me.  Make sure to ask me about that $tome in your inventory as well.  It will help you greatly during your adventures.");
 	}
 	if($text =~/tome/i) {
-		my $Indent = plugin::PWIndent();
-		my $Yel = plugin::PWColor("Yellow");
-		my $grn = plugin::PWColor("Lime Green");
-		quest::popup("Using Berserker Tomes", "<br> In your inventory you will see a book called 'Tome of Corroded Axe'. This tome will allow you to summon throwing axes to be used in combat.  To use your tome, complete the following steps: <br><br>
-		$Indent -Open your inventory by pressing the [$Yel I </c>] key on your keyboard. <br>
-		$Indent -Click on the 'Tome of Corroded Axe' in your inventory so that it is placed on your mouse cursor. <br>
-		$Indent -Move yoour cursor with the tome still on it over to your guildmaster and [$Yel left-click </c>] on him/her. <br>
-		$Indent -Now click the [$grn give </c>] button located near the bottom of the trade window. <br>
-		$Indent -You should now see a message in your chat window that says 'Use your new skill wisely'. <br>
-		$Indent -Press [$Yel ALT-C </c>] on your keyboard to bring up the Combat Abilities window. <br>
-		$Indent -Click on the '$grn S </c>' located near the top right corner of the Combat Abilities window.  This will open the Combat Skills window. <br>
-		$Indent -Your new skill, 'Corroded Axe' should now be displayed in the window.  Click on the name of the skill once, and then look at the bottom of the window.  Your should see a '$grn Make Hotkey </c>' button.  Clicking on this will allow you to make a hotkey for your new skill. <br>
-		$Indent -Place the new hotkey in one of the empty hotkey slots of the Combat Abilities Window. <br><br>
-		Remember to stock up on components if you wish to use your new skill and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to get one free sample of components or to buy more tomes and components.");
+		quest::say("In your inventory you will see a book called 'Tome of Corroded Axe'. This tome will allow you to summon throwing axes to be used in combat. Hand me the book and I will teach you a new disiplne.");
+		quest::say(" Call up your Combat Abilities window.");
+		quest::say("Click on the $S located near the top right corner of the Combat Abilities window.  This will open the Combat Skills window.");
+		quest::say("Your new skill, 'Corroded Axe' should now be displayed in the window.  Click on the name of the skill once, and then look at the bottom of the window.  Your should see a 'Make Hotkey' button.  Clicking on this will allow you to make a hotkey for your new skill.");
+		quest::say("Place the new hotkey in one of the empty hotkey slots of the Combat Abilities Window.");
+		quest::say("Remember to stock up on components if you wish to use your new skill and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to get one free sample of components or to buy more tomes and components.");
 	 }
 }
 
@@ -29,7 +22,14 @@ sub EVENT_ITEM {
                 quest::exp(100);
 		quest::summonitem("2873");
 	}
-	if (plugin::check_handin(\%itemcount, 2897 => 1)) {
+	elsif (plugin::check_handin(\%itemcount, 59892 => 1)) {
+	quest::say(" Call up your Combat Abilities window.");
+		quest::say("Click on the $S located near the top right corner of the Combat Abilities window.  This will open the Combat Skills window.");
+		quest::say("Your new skill, 'Corroded Axe' should now be displayed in the window.  Click on the name of the skill once, and then look at the bottom of the window.  Your should see a 'Make Hotkey' button.  Clicking on this will allow you to make a hotkey for your new skill.");
+		quest::say("Place the new hotkey in one of the empty hotkey slots of the Combat Abilities Window.");
+		quest::say("Remember to stock up on components if you wish to use your new skill and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to get one free sample of components or to buy more tomes and components.");
+	 }
+	elsif (plugin::check_handin(\%itemcount, 2897 => 1)) {
 		quest::say("$name, citizen of Shar Vahl, accept this cloak as a symbol of your loyalty and service to our noble people. It will grow with you, young initiate, and like you it has incredible potential.  If you wish to complete further tasks, you should talk to Pashir.  Farewell.");
 		quest::summonitem(2878);
                 quest::ding();
