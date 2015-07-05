@@ -11,5 +11,5 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::movepc(303,-172.2,2327.3,256.8);
+	quest::movepc(303,-141.7,2327.1,255.9);
 }
