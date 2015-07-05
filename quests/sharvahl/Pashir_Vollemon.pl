@@ -4,28 +4,35 @@
 
 
 sub EVENT_SAY {
-
+my $berserker = quest::saylink("berserker", 1);
+my $armor = quest::saylink("armor", 1);
+my $ready = quest::saylink("ready", 1);
+my $boots = quest::saylink("boots", 1);
+my $leggings = quest::saylink("leggings", 1);
+my $bracers = quest::saylink("bracers", 1);
+my $gloves = quest::saylink("gloves", 1);
+my $coif = quest::saylink("coif", 1);
+my $gorget = quest::saylink("gorget", 1);
+my $tunic = quest::saylink("tunic", 1);
+my $task = quest::saylink("task", 1);
 if($text=~/hail/i){
-	quest::say("Greetings. If you follow the ways of the [berserker], I can perhaps be of assistance.
+	quest::say("Greetings. If you follow the ways of the $berserker, I can perhaps be of assistance.
  If not, then I do not have much to say to you.");
 }
-if($text=~/I am a berserker/i){
+if($text=~/berserker/i){
 	quest::say("I thought I saw the gleam of rage in your eyes. If you are truly dedicated to our way 
 of life and embrace the primal rage that burns from within our souls, I can perhaps assist you with the
- knowledge of [armor] making passed down by our ancestors.");
+ knowledge of $armor making passed down by our ancestors.");
 }
 
 if($text=~/armor/i){
 	quest::say("It is a special suit of armor that does not constrict our ability to fight. It is not
  necessary that you acquire this armor; however, it would help you while you struggle to learn the ways of
- the berserker. When you are [ready] to begin, let me know.");
+ the berserker. When you are $ready to begin, let me know.");
 }
 
 if($text=~/ready/i){
-	quest::say("Take this assembly kit. With this kit, you will be able to combine the various components
- necessary to make your armor. I can instruct you on how to make [boots], [leggings], [bracers], 
-[gloves], a [coif], a [gorget], or a [tunic]. I suggest you wait to make the tunic last, as it is the most
- difficult item to construct.");
+	quest::say("Take this assembly kit. With this kit, you will be able to combine the various components necessary to make your armor. I can instruct you on how to make $boots, $leggings, $bracers, $gloves, a $coif, a $gorget, or a $tunic. I suggest you wait to make the tunic last, as it is the most difficult item to construct.");
 	quest::summonitem(55422);  #savageclaw chain assembly kit
 }
 
@@ -87,7 +94,7 @@ if($text=~/tunic/i){
  You should able to find the animal parts in Shadeweaver's Thicket and the ore somewhere here in town. Once
  you have combined these items in your assembly kit, take the Savageclaw Tunic Material to a forge along with
  this mold to create your new tunic. Once you have made your tunic, return to me and I may have another
- [task] for you to complete.");
+ $task for you to complete.");
 	quest::summonitem(55421);	#tunic mold
 }
 
