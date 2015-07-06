@@ -6,12 +6,7 @@ my $S = quest::saylink("S", 1);
 	}
 	if($text =~/tome/i) {
 		quest::say("In your inventory you will see a book called 'Tome of Corroded Axe'. This tome will allow you to summon throwing axes to be used in combat. Hand me the book and I will teach you a new disiplne.");
-		quest::say(" Call up your Combat Abilities window.");
-		quest::say("Click on the $S located near the top right corner of the Combat Abilities window.  This will open the Combat Skills window.");
-		quest::say("Your new skill, 'Corroded Axe' should now be displayed in the window.  Click on the name of the skill once, and then look at the bottom of the window.  Your should see a 'Make Hotkey' button.  Clicking on this will allow you to make a hotkey for your new skill.");
-		quest::say("Place the new hotkey in one of the empty hotkey slots of the Combat Abilities Window.");
-		quest::say("Remember to stock up on components if you wish to use your new skill and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to get one free sample of components or to buy more tomes and components.");
-	 }
+	}
 	 if($text =~/free/i) {
 		quest::say(" Talk to Ritra Icyclaw to recieve your sample of components.");
 	}
