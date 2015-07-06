@@ -9,3 +9,4 @@ if($ulevel <= 10 && $text=~/Hail/i) {
    quest::sumonitem(59934);
    }
 }
+}
