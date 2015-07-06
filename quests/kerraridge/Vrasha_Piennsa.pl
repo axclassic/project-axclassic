@@ -26,7 +26,8 @@ my $free = quest::saylink("free", 1);
 		quest::summonitem("2873");
 	}
 	elsif (plugin::check_handin(\%itemcount, 59892 => 1)) {
-	quest::say(" Call up your Combat Abilities window.");
+	        quest::addskill(51,1);
+	        quest::say(" Call up your Combat Abilities window.");
 		quest::say("Click on the $S located near the top right corner of the Combat Abilities window.  This will open the Combat Skills window.");
 		quest::say("Your new skill, 'Corroded Axe' should now be displayed in the window.  Click on the name of the skill once, and then look at the bottom of the window.  Your should see a 'Make Hotkey' button.  Clicking on this will allow you to make a hotkey for your new skill.");
 		quest::say("Place the new hotkey in one of the empty hotkey slots of the Combat Abilities Window.");
