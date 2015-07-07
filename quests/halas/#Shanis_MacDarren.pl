@@ -5,7 +5,7 @@ my $tome = quest::saylink("tome", 1);
 	quest::say("If you are ready to join our guild, Read the note in your inventory and then hand it to me.  Make sure to ask me about that $tome in your inventory as well. It will help you greatly during your adventures.");
  }
 if($text =~/tome/i) {
-		quest::say("In your inventory you will see a book called 'Tome of Corroded Axe'. This tome will allow you to summon throwing axes to be used in combat. Hand me the book and I will teach you a new disiplne.");
+		quest::say("In your inventory you will see a book called 'Tome of Corroded Axe'. I will give you a new Container that you can make Basic Throwing Axes in.");
 	}
 	 if($text =~/free/i) {
 		quest::say(" Talk to Boster MacHadden to recieve your sample of components.");
@@ -34,10 +34,10 @@ my $S = quest::saylink("S", 1);
 	quest::ding();
 	quest::say(" Take this container and keep it safe.");
 	quest::say("Inside this container add 1 of the Basic Axe Components.");
-	quest::say("Hit the combine butoon and you will get 20 of the Basic Throwing Axes.");
+	quest::say("Hit the combine button and you will get 20 of the Basic Throwing Axes.");
 	quest::say("well done $name! You must now practice your throwing to increase the skill.");
 	quest::exp(500);
-	quest::say("Remember to stock up on components if you wish to use your new skill and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to get one $free sample of components or to buy more tomes and components.");
+	quest::say("Remember to stock up on components if you wish to use your new container and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to get one $free sample of components or to buy more tomes and components.");
 	}
  else { 
     #do all other handins first with plugin, then let it do disciplines
