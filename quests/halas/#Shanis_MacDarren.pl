@@ -29,12 +29,12 @@ my $S = quest::saylink("S", 1);
 	quest::exp(1000);
 	}
 	elsif (plugin::check_handin(\%itemcount, 59892 => 1)) {
+	quest::summonitem(120199);
 	quest::addskill(51,1);
 	quest::ding();
-	quest::say(" Call up your Combat Abilities window.");
-	quest::say("Click on the $S located near the top right corner of the Combat Abilities window.  This will open the Combat Skills window.");
-	quest::say("Your new skill, 'Corroded Axe' should now be displayed in the window.  Click on the name of the skill once, and then look at the bottom of the window.  Your should see a 'Make Hotkey' button.  Clicking on this will allow you to make a hotkey for your new skill.");
-	quest::say("Place the new hotkey in one of the empty hotkey slots of the Combat Abilities Window.");
+	quest::say(" Take this container and keep it safe.");
+	quest::say("Inside this container add 1 of the Basic Axe Components.");
+	quest::say("Hit the combine butoon and you will get 20 of the Basic Throwing Axes.");
 	quest::say("well done $name! You must now practice your throwing to increase the skill.");
 	quest::exp(500);
 	quest::say("Remember to stock up on components if you wish to use your new skill and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to get one $free sample of components or to buy more tomes and components.");
