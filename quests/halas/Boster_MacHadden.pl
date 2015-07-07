@@ -5,7 +5,7 @@ if ($text=~/hail/i && $faction < 5 && $ulevel <= 10){
  else{
    quest::say("So you want a free sample eh? OK learn well young Berserker");
    quest::faction(2804,120);
-   quest::sumonitem(59934);
+   quest::summonitem(59934);
    }
 }
 }
