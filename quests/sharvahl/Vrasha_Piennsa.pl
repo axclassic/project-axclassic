@@ -6,7 +6,7 @@ my $no = quest::saylink("no", 1);
 		quest::say("If you are ready to join the Ireblood Ragers, read the note in your inventory and then hand it to me.  Make sure to ask me about that $tome in your inventory as well.  It will help you greatly during your adventures.");
 	}
 	if($text =~/tome/i) {
-		quest::say("In your inventory you will see a book called 'Tome of Corroded Axe'. This tome will allow you to summon throwing axes to be used in combat. Hand me the book and I will teach you a new disiplne.");
+		quest::say("In your inventory you will see a book called 'Tome of Corroded Axe'. This tome will allow you to summon throwing axes to be used in combat. I will give you a new Container that you can make Basic Throwing Axes in.");
 	}
 	 if($text =~/free/i) {
 		quest::say(" Talk to Ritra Icyclaw to recieve your sample of components.");
