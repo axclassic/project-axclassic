@@ -14,7 +14,7 @@ if($text =~/tome/i) {
 
 sub EVENT_ITEM {
 my $sample = quest::saylink("sample", 1);
-     if (plugin::check_handin(\%itemcount, 36003 => 1)) {
+     if (plugin::check_handin(\%itemcount, 119870 => 1)) {
         quest::say("I will tell you if you if you are worthy of Da Bloodwolves!");
         quest::say("Haaah!! Cower befor the mighty Daboo!! Daboo make you feared.. make you powered! Dark power flow through you! Hate and Fear in your blood!");
  	quest::say("You want to be like Daboo? Ok, take dis and wear it. come back here when you kill some stuff $name.");
