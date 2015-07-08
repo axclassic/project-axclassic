@@ -52,8 +52,10 @@ my $no = quest::saylink("no", 1);
 	quest::summonitem(2878);
         quest::ding();
         quest::exp(500);
-	}	
+	}
+	else{
 	#do all other handins first with plugin, then let it do disciplines
 	plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
 	plugin::return_items(\%itemcount);
+	}
 }
