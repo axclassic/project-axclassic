@@ -25,6 +25,7 @@ my $sample = quest::saylink("sample", 1);
 	quest::rebind(67,300,498,-33);
 	}
 	elsif (plugin::check_handin(\%itemcount, 59892 => 1)) {
+	quest::summonitem(120199);
 	quest::addskill(51,1);
 	quest::say("Take this container and keep it safe.");
 	quest::say("Inside this container add 1 of the Basic Axe Components.");
