@@ -1,9 +1,10 @@
 sub EVENT_SAY {
 if($text =~ /Hail/i) {
 	quest::say("Me guild master of Da Bloodwolves.");
-	quest::say("No time for talk!");
+	quest::say("No time for talk, if you have someting fer me, give it!.");
  }
 }
+
 sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 119870 => 1)){
     quest::say("Why you here $name? GO HOME!");
