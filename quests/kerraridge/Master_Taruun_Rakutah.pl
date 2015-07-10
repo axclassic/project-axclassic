@@ -16,6 +16,8 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 29825 => 1)) {
     quest::emote("inspects the boots for a moment and looks you square in the eyes. 'This is excellent work, $name, you do not disappoint! Would that you could outfit all of my hunters with these boots, but I must not keep your talents all to myself. Take some change for your troubles and this seal back to Barkhem - let him know that I am very impressed with his new protege.'");
     quest::faction(132,10);
+     quest::faction(175,1);
+    quest::faction(2806,1); 
      quest::ding(); quest::exp(500);
     quest::summonitem(29826); # Rakutah's Seal
   }
