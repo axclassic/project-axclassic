@@ -13,6 +13,8 @@ if($itemcount{7158} == 4 && $itemcount{2789} == 3){
 quest::say("Woohoo! Thank you so much $name! Hey, maybe you would like to try your hand at weaving as well. If you combine the silks in that loom over there, you can make some decent thread to work with. Make four of them and bring them to me. I will judge your craftsmanship.");
  quest::faction(175,1);
     quest::faction(2806,1); 
+     quest::faction(175,1);
+    quest::faction(2806,1); 
 }
 if($itemcount{2791} == 4){
 quest::say("Not bad at all! You definitely have some hidden talent there $name. Keep at it and you may just become a master tailor yourself. Here, take this with you. It will help protect you from the nasty bite of the Xakra worms.");
