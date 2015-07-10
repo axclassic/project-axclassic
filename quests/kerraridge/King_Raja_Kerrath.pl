@@ -5,7 +5,9 @@ quest::say("Greetings citizen... you are very brave to approach me in this manne
 sub EVENT_ITEM { 
 if($itemcount{18299} == 1){
 quest::say("Your humility and willingness to serve shall not be wasted. There is much to be done. $name. and our people thank you in advance for your selfless service.");
-quest::summonitem("18304"); }
+quest::summonitem("18304"); 
+ quest::faction(175,1);
+    quest::faction(2806,1); }
 }
 #END of FILE Zone:sharvahl  ID:155154 -- King_Raja_Kerrath 
 
