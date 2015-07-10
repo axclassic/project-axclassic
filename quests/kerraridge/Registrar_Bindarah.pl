@@ -61,7 +61,8 @@ sub EVENT_ITEM
 
     quest::exp(100);
     # Citizens of Sharvahl
-    quest::faction(483,10);
+    quest::faction(175,10);
+    quest::faction(2806,10);
   }
 }
 
