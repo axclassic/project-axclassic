@@ -8,6 +8,7 @@ quest::say("I can do nothing to repair this mess. but a skilled potter like you 
 quest::summonitem("5956");
  quest::faction(175,1);
     quest::faction(2806,1);
+    }
 }
 #END of FILE Zone:sharvahl  ID:155181 -- Chogar 
 
