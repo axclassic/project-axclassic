@@ -5,7 +5,9 @@ quest::summonitem("5954");
 }
 if($itemcount{5957} == 1){
 quest::summonitem("17611");
-quest::faction("Not_Found","1"); }
+ quest::faction(175,1);
+    quest::faction(2806,1); 
+    }
 }
 #END of FILE Zone:sharvahl  ID:155060 -- Hymnist_Gawfed 
 
