@@ -19,6 +19,8 @@ my $sample = quest::saylink("sample", 1);
         quest::ding();
         quest::exp(1000);
 	quest::summonitem("2873");
+	quest::faction(175,10);
+        quest::faction(2806,10);
 	}
 	elsif (plugin::check_handin(\%itemcount, 59892 => 1)) {
 	quest::summonitem(120199);
