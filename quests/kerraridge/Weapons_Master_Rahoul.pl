@@ -38,6 +38,8 @@ sub EVENT_ITEM {
     quest::say("These claws should work well for you. The design was research by Historian Qua. They should work to neutralize the magical field that protects the dark animist and allow you to tear his scaly flesh from his frame. Remember that all of this is theoretical. Those claws are an original creation. You will be the first to prove their effectiveness in combat.");
     quest::summonitem(9055);
     quest::summonitem(9056);
+    quest::faction(175,10);
+    quest::faction(2806,10);
 	quest::say("Take the claws back to Animist Dumul and show him their design. Use them well, $name. May the spirits guide you in your attack."); 
    }
 }   
