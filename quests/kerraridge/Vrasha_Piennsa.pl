@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-$tome = quest::saylink("tome", 1);
+my $tome = quest::saylink("tome", 1);
 	if($text =~ /hail/i) {
 		quest::say("If you are ready to join the Ireblood Ragers, read the note in your inventory and then hand it to me.  Make sure to ask me about that $tome in your inventory as well.  It will help you greatly during your adventures.");
 	}
