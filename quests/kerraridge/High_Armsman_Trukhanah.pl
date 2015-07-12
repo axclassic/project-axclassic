@@ -29,8 +29,7 @@ elsif (plugin::check_handin(\%itemcount, 2877 => 1, 2897 => 1)) {
 else {
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-}
-plugin::return_items(\%itemcount);
+  }
 }
 #END of FILE Zone:kerraridge  ID:74367 -- High_Armsman_Trukhanah 
 
