@@ -64,6 +64,11 @@ sub EVENT_ITEM
     quest::faction(175,10);
     quest::faction(2806,10);
   }
+  else{
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::return_items(\%itemcount);
+	}
 }
+
 
 #END of FILE ZONE:sharvahl ID:155078 -- Registrar_Bindarah
