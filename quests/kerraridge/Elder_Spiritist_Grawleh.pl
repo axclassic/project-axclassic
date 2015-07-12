@@ -5,7 +5,7 @@ sub EVENT_SAY {
 }
 sub EVENT_ITEM { 
     if(plugin::check_handin(\%itemcount,18554 => 1)){
-     quest::say("$name. welcome to the Shaman guild The Dar Khura. You have grown strong in the safety of our city and it is now time for you to register for official citizenship of Shar Vahl. I, Elder Spiritist Grawleh have granted your request of inclusion and deem you to be worthy of our training. Take this application to Registrar Bindarah and return to me with proof of your citizenship.");
+     quest::say("$name. welcome to the Shaman guild, The Dar Khura. You have grown strong in the safety of our city and it is now time for you to register for official citizenship of Shar Vahl. I, Elder Spiritist Grawleh have granted your request of inclusion and deem you to be worthy of our training. Take this application to Registrar Bindarah and return to me with proof of your citizenship.");
      quest::say("I know that you may be nervous right now... after all. this should be a very exciting first step for you.  If you happen to get lost while looking for the registrar. just ask one of the other citizens or guards for directions.  They will most likely know where to find the place or person that you are looking for.");
      quest::summonitem("2873");
      }
@@ -35,7 +35,7 @@ sub EVENT_ITEM {
     }
     else{
 	#do all other handins first with plugin, then let it do disciplines
-	plugin::try_tome_handins(\%itemcount, $class, 'Berserker');
+	plugin::try_tome_handins(\%itemcount, $class, 'Shaman');
 	plugin::return_items(\%itemcount);
 	}
 }
