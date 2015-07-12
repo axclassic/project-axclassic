@@ -10,13 +10,13 @@ quest::summonitem("2873");
  quest::faction(175,1);
     quest::faction(2806,1); 
 }
-elsif($itemcount{2877} == 1){
-quest::say("This item. by itself. means nothing to me.");
-quest::say("$name. citizen of Shar Vahl. accept this cloak as a symbol of your loyalty and service to our noble people. It will grow with you. young initiate. and like you it has incredible potential. Present your slate of citizenship to Gherik and he will guide you through your early training. May your songs inspire us all!");
-quest::summonitem("2877");
- quest::faction(175,1);
-    quest::faction(2806,1); 
-}
+elsif (plugin::check_handin(\%itemcount, 2897 => 1)) {
+	quest::say("$name, citizen of Shar Vahl, accept this cloak as a symbol of your loyalty and service to our noble people. It will grow with you, young initiate, and like you it has incredible potential.  If you wish to complete further tasks, you should talk to Pashir.  Farewell.");
+	quest::summonitem(2878);
+	quest::summonitem(2877);
+        quest::ding();
+        quest::exp(500);
+	}
  else {
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
