@@ -6,7 +6,7 @@ sub EVENT_SAY {
 }
 sub EVENT_ITEM { 
     if(plugin::check_handin(\%itemcount,18554 => 1)){
-     quest::say("$name. welcome to the Rogue guild. You have grown strong in the safety of our city and it is now time for you to register for official citizenship of Shar Vahl. The Taruun. I, Master Taruun Rakutah have granted your request of inclusion and deem you to be worthy of our training. Take this application to Registrar Bindarah and return to me with proof of your citizenship.");
+     quest::say("$name. welcome to the Rogue guild  The Taruun. You have grown strong in the safety of our city and it is now time for you to register for official citizenship of Shar Vahl. I, Master Taruun Rakutah have granted your request of inclusion and deem you to be worthy of our training. Take this application to Registrar Bindarah and return to me with proof of your citizenship.");
      quest::say("I know that you may be nervous right now... after all. this should be a very exciting first step for you.  If you happen to get lost while looking for the registrar. just ask one of the other citizens or guards for directions.  They will most likely know where to find the place or person that you are looking for.");
      quest::summonitem("2873");
      }
@@ -39,7 +39,11 @@ sub EVENT_ITEM {
      quest::ding(); quest::exp(500);
     quest::summonitem(29826); # Rakutah's Seal
   }
-  plugin::return_items(\%itemcount);
+  else{
+	#do all other handins first with plugin, then let it do disciplines
+	plugin::try_tome_handins(\%itemcount, $class, 'Rogue');
+	plugin::return_items(\%itemcount);
+	}
 }
 #END of FILE Zone:sharvahl  ID:155169 -- Master_Taruun_Rakutah
 
