@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
     if($text=~/Hail/i){
-     quest::say("Greetings $name. are you one of our new recruits?"); }
+     quest::say("Greetings $name. are you one of our new recruits?"); 
      }
 }
 sub EVENT_ITEM { 
