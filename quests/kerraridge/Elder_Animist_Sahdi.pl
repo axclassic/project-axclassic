@@ -14,7 +14,7 @@ sub EVENT_ITEM {
      quest::summonitem(2897);
      }
    elsif(plugin::check_handin(\%itemcount,2877 => 1)){
-     quest::say("This item, by itself means nothing to me.")
+     quest::say("This item, by itself means nothing to me.");
      quest::summonitem(2877);
      }
    elsif(plugin::check_handin(\%itemcount, 2897 >= 1 , 2877 >= 1){
