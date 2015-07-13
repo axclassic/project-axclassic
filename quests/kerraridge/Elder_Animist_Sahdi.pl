@@ -13,6 +13,8 @@ sub EVENT_ITEM {
     quest::say("Allow me to be the first to welcome you to the Khati Sha. lords of the beasts. Accept this cloak. young initiate. It is a symbol of your loyalty to our noble people. May it serve you as you serve us all. Present your acrylia slate to Animist Poren and he will give you instruction. May the spirits of the beasts guide you and keep you safe.");
     quest::summonitem(2878);
     quest::summonitem(2877);
+    quest::ding();
+    quest::exp(500);
     quest::faction(175,1);
     quest::faction(2806,1); 
     }
