@@ -17,7 +17,7 @@ sub EVENT_ITEM {
      quest::say("This item, by itself means nothing to me.");
      quest::summonitem(2877);
      }
-   elsif(plugin::check_handin(\%itemcount, 2897 >= 1 , 2877 >= 1){
+   elsif(plugin::check_handin(\%itemcount, 2897 => 1, 2877 => 1))
     quest::say("Allow me to be the first to welcome you to the Khati Sha. lords of the beasts. Accept this cloak. young initiate. It is a symbol of your loyalty to our noble people. May it serve you as you serve us all. Present your acrylia slate to Animist Poren and he will give you instruction. May the spirits of the beasts guide you and keep you safe.");
     quest::summonitem(2878);
     quest::summonitem(2877);
