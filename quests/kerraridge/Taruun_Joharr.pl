@@ -16,6 +16,10 @@ sub EVENT_ITEM {
    elsif(plugin::check_handin(\%itemcount,5568 => 1)){
     quest::say("Very good, $name! Elder Ternq will be very pleased with the results of your patrol. Take this regional status report to him and see if he has anything else for you to do. Your skill as a hunter is really starting to show. You can keep the daggers that I gave you. Make good use of them. I'm sure that you're going to be too busy to come back this way for a bit. Take care.");
     quest::summonitem(5564);
+    quest::daing();
+    quest::exp(1500);
+    quest::faction(175,10);
+    quest::faction(2806,10);
     }
 }
 #END of FILE Zone:sharvahl  ID:155118 -- Taruun_Joharr
