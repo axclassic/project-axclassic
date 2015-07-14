@@ -14,7 +14,7 @@ sub EVENT_ITEM {
 my $Rhinobeetle = quest::saylink("Rhinobeetle", 1);
 my $Joharr = quest::saylink("Joharr", 1);
    if (plugin::check_handin(\%itemcount, 2877 => 1)) {
-   quest::summonitem(2877); }
+   quest::summonitem(2877); 
    quest::say("Ahh, $name, I was told you'd be coming. I am Harbin, and I will oversee the next bit of your progress in the Taruun. You have bravely chosen a path that will put your every skill to the test. May your abilities be honed in the service of the noble Vah Shir. To begin, bring me the soft chitin of three of the Rhinobeetles that dwell in the crater surrounding our city.");
    quest::say("I need three Soft $Rhinobeetle Chitin to help you in your proggression. Collect these and return them to me.");
    }
@@ -29,13 +29,13 @@ my $Joharr = quest::saylink("Joharr", 1);
    quest::ding();
    quest::exp(5000);
    }
-   elsif(plugin::check_handin(\%itemcount, 3460 => 1, 3464 => 1, 18400 => 1, 2878 => 1));
+   elsif(plugin::check_handin(\%itemcount, 3460 => 1, 3464 => 1, 18400 => 1, 2878 => 1)){
    quest::say("Your hard work is pleasing to the Taruun, $name, which now accepts you as an official recruit. Wear this cloak with pride. Your buckler has been treated with a special epoxy and should protect you more effectively now. Show the buckler to Taruun $Joharr and he will continue to guide you on your sacred path. I sense a strong spirit in you, young one. May it guide you to greatness!");
-   quest::summonitem(3466):
+   quest::summonitem(3466);
    quest::summonitem(3465);
    quest::shout("Citizens of glorious Shar Vahl, lend me your ears. On this day your fellow citizen, $name, has become an official recruit of the Taruun. He has pledged an oath to hone his skills to perfection that he may better serve us all. Please join me now in celebrating his commitment to the mighty Vah Shir!");
    }
-   else(
+   else{
     plugin::return_items(\%itemcount);
    }
 }	
