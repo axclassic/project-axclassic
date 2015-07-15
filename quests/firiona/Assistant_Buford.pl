@@ -13,13 +13,16 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   # You can purchase a Star of Odus for about 115pp in the jewel shop under the Erudin palace. 
   # Giving it to Buford results in a "Tin Box" with 6 slots. 
-  if (plugin::check_handin(\%itemcount10059=>1)) {
+  if (plugin::check_handin(\%itemcount,10059 => 1)) {
     quest::say("Thank you!! I never could have gone to Odus to replace this. Perhaps now you can collect some rare coins.");
     quest::summonitem(17045);
   }
   # put the 6 coins into the tin box, combine, and return it to Bufford, get Nostrolo Tambourine
-  if (plugin::check_handin(\%itemcount,12829=>1)) {
+  if (plugin::check_handin(\%itemcount,12829 => 1)) {
     quest::summonitem(12940);
+	quest::faction(101,2); # Firiona Vie
+	quest::exp(50);
+    quest::ding();
   }
   
   plugin::return_items(\%itemcount);
