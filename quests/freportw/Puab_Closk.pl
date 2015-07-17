@@ -30,7 +30,6 @@
 # *** QUESTS AVAILABLE TO ***
 #
 # New Freeport Monks
-# Monks with good Ashen Order Faction
 #
 ############################################
 
@@ -50,32 +49,27 @@ sub EVENT_SAY
 {
     if($text=~/Hail/i)
     {
-        quest::say("Greetings. I am Puab Closk, Master of the Ashen Order.  Our home is your home, friend. Feel free to stay as long as you like.  Learn our ways as many have done in the past.  To fight like the tiger and strike like the cobra are your goals.");
+        quest::say("Greetings. I am Puab Closk, Master of the Ashen Order.  Our home is your home, friend. Feel free to stay as long as you like.  Learn our ways as many have done in the past.  To fight like the tiger and strike like the cobra are your goals. Cough- [treant fist] -Cough!");
     }
-
-    if($faction < 4)
+    if($text=~/treant fist/i)
     {
-        if($text=~/treant fists/i)
-        {
-            quest::say("You desire the treant fists?  I have them and I will offer them to any [skilled monk of the Ashen House].");
-        }
+        quest::say("You desire the treant fists?  I have them and I will offer them to any [skilled monk of the Ashen House].");
+    }
     
-        if($text=~/skilled monk of the Ashen House/i)
-        {
-            quest::say("Then you shall aid our family. My former pupil [Clawfist] has been banished by his people. You will go to him and hand him this token as proof of your origin. He shall be expecting you.");
-            # Puab's Token ID-12369
-            quest::summonitem("12369");
-        }
+    if($text=~/skilled monk of the Ashen House/i)
+    {
+        quest::say("Then you shall aid our family. My former pupil [Clawfist] has been banished by his people. You will go to him and hand him this token as proof of your origin. He shall be expecting you.");
+        # Puab's Token ID-12369
+        quest::summonitem("12369");
+    }
+    if($text=~/Clawfist/i)
+    {
+        quest::say("Clawfist is a Kerran, a catman. He braved the dangers of Norrath to reach the Ashen Order. He sought knowledge of our disiples. He learned well.");
+    }
     
-        if($text=~/Clawfist/i)
-        {
-            quest::say("Clawfist is a Kerran, a catman. He braved the dangers of Norrath to reach the Ashen Order. He sought knowledge of our disiples. He learned well.");
-        }
-    
-        if($text=~/Where is Clawfist/i)
-        {
-            quest::say("Clawfist has been banished by the Kerrans of Odus. Where they have sent him I am unsure");
-        }
+    if($text=~/Where is Clawfist/i)
+    {
+    quest::say("Clawfist has been banished by the Kerrans of Odus. Where they have sent him I am unsure");
     }
 }
 
