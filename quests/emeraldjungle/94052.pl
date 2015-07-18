@@ -38,6 +38,7 @@ my $began = quest::saylink("began", 1);
    }
    if(($text=~/began/i) && ($item1 == 1672)) {
     quest::say("Excellent! Go into the city and gather what evidence you can. The ghosts who still walk the streets may hoard precious memories that will aid us. Take this booklet and combine what you find in it. Then bring me the completed report. From there, we will know where to look next.");
+    quest::summonitem(17805);
   }      
  }
  sub EVENT_ITEM {
