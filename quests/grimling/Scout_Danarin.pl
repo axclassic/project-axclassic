@@ -15,14 +15,14 @@ if ($text=~/ready/i) {
      quest::say("We must sneak up on the encampment, rushing in this time would surely mean death for both us. Follow me.");
      quest::spawn2(167989,0,0,531.4,-831.4,13.8,15.5);
      quest::spawn2(167990,0,0,531.4,-831.4,13.8,15.5);
-     quest::signalwith(167960,7222,0);
+     quest::signalwith(167990,7222,0);
      quest::signalwith(167989,7223,10);
      quest::start(501018);
      }
 }
 sub EVENT_ITEM {
-my $ready = quest::saylink("ready", 1)
-elsif (plugin::check_handin(\%itemcount,4349=>1)) {
+my $ready = quest::saylink("ready", 1);
+if (plugin::check_handin(\%itemcount,4349 => 1)) {
      quest::say("$name, There are reports of an Encampment west of here. Get your party together and come with me. Hopfully there wont be too many of them there as we have no one to back us up."); 
      quest::say("Tell me when you are $ready to travel.");
      }
