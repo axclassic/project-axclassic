@@ -28,19 +28,7 @@ my $help = quest::saylink("help", 1);
      quest::say("Are you here to $help? You've no doubt heard of the issues with the Grimlings throughout the forest. I fear we may not be able to push them back enough this time to keep our people safe from the dastardly deeds of those vile things. Reports have come in that they may be trying to come at us from the North. While it wouldn't be unheard of, such a move might prove to be a decoy for other attacks coming from the West."); 
      quest::summonitem(3681);
      }
-     elsif (plugin::check_handin(\%itemcount,120203=>1)) {
-     quest::say("Have not had enough eh $name? Let us continue the fight. Prepare yourself for travel and I will lead you to encampment number two."); 
-     quest::summonitem(120203);
-     quest::spawn2(167983,0,0,-1170,-882,6.5,66.5);
-     quest::depop();
-     }
-     elsif (plugin::check_handin(\%itemcount,120204=>1)) {
-     quest::say("$name, There are reports of an Encampment west of here. Get your party together and come with me. Hopfully there wont be too many of them there as we have no one to back us up."); 
-     quest::summonitem(120204);
-     quest::spawn2(167991,0,0,-1170,-882,6.5,66.5);
-     quest::depop();
-     }
-    else{
+  else{
    plugin::return_items(\%itemcount);
    }
 }

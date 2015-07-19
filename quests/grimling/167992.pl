@@ -11,19 +11,10 @@ my $buffed = quest::saylink("buffed", 1);
 sub EVENT_SIGNAL {
      if($signal == 7226){
      quest::say("Well done $name! Hand me your Mauled Acrylia Sphere you no longer need it.");
-     quest::say("Remember to take all three documents and your Garrison cloak and combine them in the box Captain Darznel gave you and return the finished product to him.");
+     quest::say("Remember to take all three documents and your Garrison cloak and combine them in the bag Veteran Darznel gave you and return the finished product to him.");
+     quest::say("I am headed back to the outpost. Fare well $Name");
      quest::depop(167989);
      quest::depop(167990);
-     }
-}
-sub EVENT_ITEM {
-     if (plugin::check_handin(\%itemcount,120204=>1)) {
-     quest::say("A fine Garrison you shall be $name.");
-     quest::say("Thanks, I will reuse this for the next recruit that comes through.");
-     quest::say("Fare well $name.");
-     quest::ding();
-     quest::exp(15000);
-     quest::depop();
      }
 }
 sub EVENT_DEATH {

@@ -10,16 +10,16 @@ my $buffed = quest::saylink("buffed", 1);
 }
 sub EVENT_SIGNAL {
      if($signal == 7206){
-     quest::say("Well done $name! Hand me your Polished Acrylia Sphere and I will upgrade it, that way when you return to the outpost, I know you are ready for the next camp.");
+     quest::say("Well done $name! Hand me your Polished Acrylia Sphere and I need to inspect it for damage.");
      quest::depop(167979);
      quest::depop(167974);
      }
 }
 sub EVENT_ITEM {
      if (plugin::check_handin(\%itemcount,3681=>1)) {
-     quest::say("A fine Garrison you shall be $name.");
-     quest::summonitem(120203);
-     quest::say(" I know, its not really an upgrade, but I gotta keep track of who has done what somehow.");
+     quest::say("A fine Garrison you are turning out to be.");
+     quest::summonitem(3681);
+     quest::say(" I am not sure why I needed to inspect it but orders are orders. Fare well $name.");
      quest::depop();
      }
 }
