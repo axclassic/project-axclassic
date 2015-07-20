@@ -12,7 +12,7 @@ sub EVENT_ITEM {
      quest::faction(2806,1); 
 }
     elsif(plugin::check_handin(\%itemcount, 2897 => 1, 2877 => 1)){
-    quest::say("$name, citizen of Shar Vahl, accept this cloak as a symbol of your loyalty and service to our noble people. It will grow with you, young initiate, and like you it has incredible potential.  If you wish to complete further tasks, you should talk to Pashir.  Farewell.");
+    quest::say("$name, citizen of Shar Vahl, accept this cloak as a symbol of your loyalty and service to our noble people. It will grow with you, young initiate, and like you it has incredible potential.  If you wish to complete further tasks, you should talk to Gherik Alarhun.  Farewell.");
     quest::summonitem(2878);
     quest::summonitem(2877);
     quest::ding();
@@ -30,7 +30,7 @@ sub EVENT_ITEM {
      }
     else {
   #do all other handins first with plugin, then let it do disciplines
-  plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
+  plugin::try_tome_handins(\%itemcount, $class, 'Bard');
   plugin::return_items(\%itemcount);
   }
 }
