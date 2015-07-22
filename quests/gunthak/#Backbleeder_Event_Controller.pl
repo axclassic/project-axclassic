@@ -2,7 +2,7 @@ my $krill_event = 0;
 
  
   sub EVENT_SPAWN {
-  $jrill_event = 0;
+  $krill_event = 0;
   $counter = undef;
   }
 sub EVENT_SIGNAL {
