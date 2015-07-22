@@ -4,12 +4,12 @@ my $krill_event = 0;
   sub EVENT_SPAWN {
   $krill_event = 0;
   $counter = undef;
-  }
-sub EVENT_SIGNAL {
+    }
+sub EVENT_SIGNAL {    
     if ($signal == 224) {
-	 $history_event += 1; # adds one to spawn variable # 
+	 $krill_event += 1; # adds one to spawn variable # 
 	 }
-	if($signal == 225) { ##signal 225 is from each shadowman##
+	if($signal == 225) { 
     $counter += 1;
 	   if($counter == 3) {
 	quest::spawn2(224244,0,0,-290,-513.4,18.2,217.2);

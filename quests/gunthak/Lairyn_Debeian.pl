@@ -21,7 +21,7 @@ else {
 sub EVENT_WAYPOINT {
     if ($wp == 3) {
     quest::shout("They're still following me! Help!");
-	quest::spawn2(224248,0,0,-320,-490,18.2,0);
+	quest::spawn2(224248,0,0,-225.5,-402.2,15.5,173.1);
 	quest::signalwith(224248,224,0);
 	quest::spawn2(224244,0,0,-290,-513.4,18.2,217.2);
 	quest::spawn2(224245,0,0,-292.5,-458.2,17,154.9);
