@@ -6,6 +6,7 @@
 sub EVENT_SAY {
 my $berserker = quest::saylink("berserker", 1);
 my $armor = quest::saylink("armor", 1);
+my $recruit = quest::saylink("recruit", 1);
 my $ready = quest::saylink("ready", 1);
 my $boots = quest::saylink("boots", 1);
 my $leggings = quest::saylink("leggings", 1);
@@ -20,6 +21,10 @@ my $task = quest::saylink("task", 1);
      }
     if($text=~/berserker/i){
      quest::say("I thought I saw the gleam of rage in your eyes. If you are truly dedicated to our way of life and embrace the primal rage that burns from within our souls, I can perhaps assist you with the knowledge of $armor making passed down by our ancestors.");
+     quest::sasay("Or you are interestd in continuing along the path of the Shar Vahl and looking for your $recruit cloak?");
+     }
+    if($text=~/recruit/i){ 
+     quest::say("There are creatures that roam freely at the base of the rock in Shar Vahl on which we live. You are tasked with demonstrating a basic understanding of combat by defeating skeletons of grimlings and delivering to me four of their femurs.");
      }
     if($text=~/armor/i){
      quest::say("It is a special suit of armor that does not constrict our ability to fight. It is not necessary that you acquire this armor; however, it would help you while you struggle to learn the ways of the Ireblood Ragers. When you are $ready to begin, let me know.");
@@ -67,6 +72,49 @@ sub EVENT_ITEM {
      quest::exp(1000);
      quest::summonitem(55423);	#savageclaw axe
      }
+   elsif (plugin::check_handin(\%itemcount, 3443 =>4 )) {
+    quest::emote(' looks at you with an expression of approval');
+    quest::say("Your completion of the assigned task has been noted. I have been notified that one of our citizens needs some assistance, bring me proof that you have aided Dronqam Runghi.");
+    quest::exp(1000);
+    quest::faction(132,10 );
+    quest::faction(175,1);
+    quest::faction(2806,1); 
+    }
+    elsif (plugin::check_handin(\%itemcount, 3449 => 1)) {
+    quest::say("You are nearly finished with the task at hand, $name. Hand to me with the Dull Axe and your initiate's cloak.");
+    quest::summonitem(3450);
+    quest::exp(1000);
+    quest::faction(132,10 );
+    quest::faction(175,1);
+    quest::faction(2806,1); 
+    } 
+    elsif (plugin::check_handin(\%itemcount, 55623=>1, 2878=>1 )) {
+    quest::say("Your progress pleases our order young one, and I am proud to promote you to the rank of recruit within the Ireblood Ragers. Wear this cloak with pride, $name.");
+    quest::shout("Fellow citizens of Shar Vahl, help me welcome $name to the rank of recruit in the Ireblood Ragers. May his actions henceforth reflect the strict sense of loyalty to our king that defines our order. May he exhaust his every resource in glorious defense of our proud people!");
+    quest::say("When you are $ready to further your training Hand me your recruit cloak. Safe journey's $name."); 
+    quest::summonitem(120210);
+    quest::summonitem(55623);
+    quest::exp(2000);
+    quest::ding();
+    quest::faction( 132,10 );
+    quest::faction(175,1);
+    quest::faction(2806,1); 
+    }
+   elsif (plugin::check_handin(\%itemcount, 120210 => 1)) { 
+   quest::say("Well well... Perhaps you're looking to hunt some bigger game, eh? Earn a little scruff on your ears like Rager? I thought so. I know a good place for you to start... and it's part of your civil duty. Our scouts have always had trouble with the wolves in the moor. I'm thinkin that you can start there. Maybe break in a few of the younger wolves' paws, eh? I thought so. Here, Take back your axe and take this bag. Fill it with wolf paws and bring it back to me. Maybe then I'll give you a real challenge.");
+   quest::summonitem(17114);
+   }
+  elsif (plugin::check_handin(\%itemcount, 6217 =>1 )) {
+   quest::say("Well, you're beginning to scare me you're so tough! Just pullin your tail. Those were some scary beasts, eh? You have come a long way $name, but there is more to learn. Hand me your cloak of the Ireblood Ragers Recruit if you are brave enough to continue along the lines of our guild.");
+   quest::say("You have done well #name.  Wear this cloak with pride and enjoy the benefits of being a Ireblood Rager Journeyman.");
+   quest::say("If you wish to continue on your studies, seek out Ahom Guzhin in Hollowshade Moor and show him your cloak.");
+   quest::summonitem(120211);
+   quest::exp(3000);
+   quest::ding();
+   quest::faction(132,10);
+   quest::faction(175,1);
+   quest::faction(2806,1);
+   }
    else{
       plugin::return_items(\%itemcount);
      }
