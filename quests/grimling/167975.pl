@@ -11,8 +11,11 @@ my $buffed = quest::saylink("buffed", 1);
 sub EVENT_SIGNAL {
      if($signal == 7206){
      quest::say("Well done $name! Hand me your Polished Acrylia Sphere and I need to inspect it for damage.");
+     quest::exp(10000);
+     quest::faction(132, 10);
      quest::depop(167979);
      quest::depop(167974);
+     quest::depop();
      }
 }
 sub EVENT_ITEM {
