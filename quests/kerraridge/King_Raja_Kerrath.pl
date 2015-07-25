@@ -7,7 +7,7 @@ sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 18299 => 1 )) {
      quest::say("Your humility and willingness to serve shall not be wasted. There is much to be done. $name. and our people thank you in advance for your selfless service.");
      quest::summonitem(18304);
-     quest::ding():
+     quest::ding();
      quest::exp(50);
      quest::faction(175,1);
      quest::faction(2806,1);
