@@ -4,6 +4,7 @@ sub EVENT_SAY {
      }
 }
 sub EVENT_ITEM { 
+my $sense = quest::saylink("sense", 1);
 my $Ranger = quest::saylink("Ranger", 1);
 my $Band = quest::saylink("Band", 1);
     if(plugin::check_handin(\%itemcount,18849 => 1)){
