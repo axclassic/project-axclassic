@@ -1,6 +1,6 @@
 sub EVENT_SAY { 
     if($text=~/Hail/i){
-     quest::say("Greetings $name. it is good to see you. If you have come for the first stage of Khati Sha training please show me your acrylia slate."); }
+     quest::say("Greetings $name. it is good to see you. If you have come for the first stage of Khati Sha training please show me your acrylia slate.");
      }
     if($text=~/forged/i){
      quest::say("Visit my old friend Kagazz, he can instuct you on how to make the fasteners.");
