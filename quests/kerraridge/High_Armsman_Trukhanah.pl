@@ -17,7 +17,7 @@ my $Band = quest::saylink("Band", 1);
     elsif(plugin::check_handin(\%itemcount, 2897 => 1, 2877 => 1)){
      quest::say("Allow me to be the first to welocome you to the Khala Dun. Accept this cloak, young initiate.It is a symbol of your loyalty to our noble people. May it serve you as you serve us all. Present your acrylia slate to Khala Dun Hebijeb and he will give you instruction.");
      quest::say(" In order to return to Kerra Isle, locate the Soulbinder nearest you in the area you are huning, and them $sense. They will return you to your home city");
-     quest::say("May I also suggest that you fing $Ranger $Band, he has a quest for you that will give you a stone that will get you to Shadeweavers Thicket which is close to the old city of Shar Vahl. To return to Kerra Isle, you would need to find the stone of origin.");
+     quest::say("May I also suggest that you find $Ranger $Band, he has a quest for you that will give you a stone that will get you to Shadeweavers Thicket which is close to the old city of Shar Vahl. To return to Kerra Isle, you would need to find the stone of origin.");
      quest::summonitem(2878);
      quest::summonitem(2877);
      quest::ding();
