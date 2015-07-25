@@ -1,9 +1,9 @@
 
 sub EVENT_SAY {
-   if(($text=~/hail/i)
+   if($text=~/hail/i){
     quest::say("Hello, How may I help you?");
     }
-  if(($text=~/slate/i)
+  if($text=~/slate/i){
    quest::say("Luckily for you, someone found this stuck in a bush.");
     quest::summonitem(2877);
     }
