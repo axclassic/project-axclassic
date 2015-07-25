@@ -5,6 +5,7 @@ sub EVENT_SAY {
      }
 }
 sub EVENT_ITEM { 
+my $sense - quest::saylink("sence", 1);
 my $Ranger = quest::saylink("Ranger", 1);
 my $Band = quest::saylink("Band", 1);
     if(plugin::check_handin(\%itemcount,18554 => 1)){
@@ -16,7 +17,8 @@ my $Band = quest::saylink("Band", 1);
      }
     elsif(plugin::check_handin(\%itemcount, 2897 => 1, 2877 => 1)){
      quest::say("$name, citizen of Shar Vahl, accept this cloak as a symbol of your loyalty and service to our noble people. It will grow with you, young initiate, and like you it has incredible potential.  If you wish to complete further tasks, you should talk to Harbin Gernawl.  Farewell.");
-     quest::say("May I also suggest that you fing $Ranger $Band, he has a quest for you that will give you a stone that will get you to Shadeweavers Thicket which is close to the old city of Shar Vahl. To return to Kerra Isle, you would need to find the stone of origin.");
+     quest::say(" In order to return to Kerra Isle, locate the Soulbinder nearest you in the area you are huning, and them $sense. They will return you to your home city");
+     quest::say("May I also suggest that you find $Ranger $Band, he has a quest for you that will give you a stone that will get you to Shadeweavers Thicket which is close to the old city of Shar Vahl. To return to Kerra Isle, you would need to find the stone of origin.");
      quest::summonitem(2878);
      quest::summonitem(2877);
      quest::ding();
