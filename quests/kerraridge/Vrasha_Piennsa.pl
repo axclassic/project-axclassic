@@ -52,7 +52,7 @@ my $sample = quest::saylink("sample", 1);
      quest::say("This item, by itself means nothing to me.");
      quest::summonitem(2877);
      }
-    elsif (plugin::check_handin(\%itemcount, 59893 => 1)) {
+    elsif ($ulevel >= 5 && plugin::check_handin(\%itemcount, 59893 => 1)) {
      quest::summonitem(120200);
      quest::ding();
      quest::say("Take this container and keep it safe.");
