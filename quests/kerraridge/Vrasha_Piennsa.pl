@@ -13,6 +13,8 @@ my $tome = quest::saylink("tome", 1);
 
 sub EVENT_ITEM {
 my $sample = quest::saylink("sample", 1);
+my $Ranger = quest::saylink("Ranger", 1);
+my $Band = quest::saylink("Band", 1);
     if(plugin::check_handin(\%itemcount,36004 => 1)){
      quest::say("I am so thrilled you have chosen to join this regal and fearsome crew.  You will find that as a member of the Ireblood Ragers, you have a strong and proud force backing you. Now you must complete your first task.  Take this application to Registrar Bindarah and return to me with proof of your citizenship.");
      quest::say("I know that you may be nervous right now... after all, this should be a very exciting first step for you.  If you happen to get lost while looking for the registrar, just ask one of the other citizens or guards for directions.  They will most likely know where to find the place or person that you are looking for.");
