@@ -3,7 +3,7 @@ sub EVENT_SAY {
      quest::say("Greetings. young one.  May I help you?");
      }
     if($text=~/weapon/i){
-     quest::say("Take this small stone balde and a high quality rockhopper hide, combine them in a sewing kit or a loom to make leather straps.")
+     quest::say("Take this small stone balde and a high quality rockhopper hide, combine them in a sewing kit or a loom to make leather straps.");
      quest::summonitem(5572);
      quest::say(" Bring to me two leather straps and both of your claws, I will fashion you some new weapons."); 
      }
@@ -35,7 +35,7 @@ my $weapon = quest::saylink("weapon", 1);
      quest::emote(' opens the box and removes your old cloak. She unwraps the orb and looks at it for a moment.');
      quest::say("You have done well, youth.' She says as she picks up what appears to be a new cloak. She hands you the cloak and smiles. 'Your life as a member of our sect may not always be pleasant, but take comfort in the fact that you are performing a great service to your people. Walk the path of the Khati Sha with pride and one day may you see his face as I have. Now, seek out Kaam Rahiir in the libraries. Show him your claws and he will be able to assist you in imbuing them magically. Take care.");
      quest::shout("Citizens of Shar Vahl, take this time to welcome $name to the level of Khati Sha Apprentice. We are all in the debt of each and every citizen that works as hard as $name to improve our city!");
-     quest::summonitem(5580):
+     quest::summonitem(5580);
      quest::say("Locate Kaam Rahiir to continue your studies, he may be in or near the library. Show him your claws."); 
      quest::exp(3000);
      quest::ding();
