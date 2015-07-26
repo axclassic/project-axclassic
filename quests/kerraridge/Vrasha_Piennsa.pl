@@ -57,7 +57,7 @@ my $Band = quest::saylink("Band", 1);
      quest::summonitem(2877);
      }
     elsif ($ulevel >= 5 && plugin::check_handin(\%itemcount, 59893 => 1)) {
-     quest::summonitem(120200);
+     quest::summonitem(120215);
      quest::ding();
      quest::say("Take this container and keep it safe.");
      quest::say("Inside this container add 1 of the Basic Axe Components.");
