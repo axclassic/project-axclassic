@@ -10,12 +10,6 @@ my $tome = quest::saylink("tome", 1);
         if($text =~/sample/i) {
 		quest::say(" Talk to Boster MacHadden to recieve your sample of components.");
 	}
-	if($text =~/yes/i) {
-	quest::say("Move this new button to your hot bar, You can now Throw axes to pull mobs!");
-	quest::say("well done $name! You must now practice your throwing to increase the skill.");
-	quest::exp(500);
-	quest::say("Remember to stock up on components if you wish to use your new container and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to get one $free sample of components or to buy more tomes and components.");
-	}
 }
 
 sub EVENT_ITEM {
@@ -46,6 +40,16 @@ my $sample = quest::saylink("sample", 1);
 	quest::say("well done $name! You must now practice your throwing to increase the skill.");
 	quest::exp(500);
 	quest::say("Remember to stock up on components if you wish to use your new container and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to get your $sample of components or to buy more tomes and components.");
+	}
+	elsif (plugin::check_handin(\%itemcount, 59893 => 1)) {
+	quest::summonitem(120215);
+	quest::ding();
+	quest::say("Take this container and keep it safe.");
+	quest::say("Inside this container add 1 of the Basic Axe Components.");
+	quest::say("Hit the combine button and you will get 20 of the Blunt Axes.");
+	quest::say("Once you have the Blunt Axe, place it in your 'Range' Slot, thats the one where a bow would go.");
+	quest::exp(500);
+	quest::say("Remember to stock up on components if you wish to use your new container and create some throwing axes.  You can visit the Berserker Tome Merchants in your home town to buy more tomes and components.");
 	}
      else { 
        #do all other handins first with plugin, then let it do disciplines
