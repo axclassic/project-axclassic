@@ -12,4 +12,7 @@ sub EVENT_ITEM {
    $userid->Message(14,"Amaro has been freed. You have earned thanks from us all.");
    quest::depop();
    }
+   else{
+   quest::say(" Why are you still here? You should have moved on by now.");
+   }
  }   
