@@ -30,23 +30,25 @@ sub EVENT_ITEM {
 	$client->Message(263,"Champion Lightwater waves her hand emphatically as a random item materializes out of thin air.");	
 		my $randomroll = int(rand(100));
 		if ($randomroll < '34') {
-		quest::summonitem(17527); #satchel of legacies lost w/ items
-		quest::summonitem(40605); #5 potion of adventure
-		quest::summonitem(40605);
-		quest::summonitem(40605);
-		quest::summonitem(40605);
-		quest::summonitem(40605);
-		quest::summonitem(17523);#book of knowledge
-		quest::summonitem(14534);#10 dose blood of the wolf
-		quest::summonitem(14009);# 5 potion of moderate healing
-		quest::summonitem(14009);
-		quest::summonitem(14009);
-		quest::summonitem(14009);
-		quest::summonitem(14009);
-		quest::summonitem(21822);# big bag of platinum
-		$client->Message(263,"$name stumbles as the weight of the bag falls into your hands.");
-		$client->Message(15,"Champion Lightwater says, 'Farewell!'");
-		}
+			my @miniarray = (21820, 21821, 21822, 21823); #randomize bag O' platinum
+			my $randombag = $miniarray[rand @miniarray];
+			quest::summonitem(17527); #satchel of legacies lost w/ items
+			quest::summonitem(40605); #5 potion of adventure
+			quest::summonitem(40605);
+			quest::summonitem(40605);
+			quest::summonitem(40605);
+			quest::summonitem(40605);
+			quest::summonitem(17523);#book of knowledge
+			quest::summonitem(14534);#10 dose blood of the wolf
+			quest::summonitem(14009);# 5 potion of moderate healing
+			quest::summonitem(14009);
+			quest::summonitem(14009);
+			quest::summonitem(14009);
+			quest::summonitem(14009);
+			quest::summonitem($randombag);# big bag of platinum
+			$client->Message(263,"$name stumbles as the weight of the bag falls into your hands.");
+			$client->Message(15,"Champion Lightwater says, 'Farewell!'");
+			}
 		elsif ($randomroll < '68') {
 			my @epicarray = (10650, 8495, 14341, 11050, 20490, 68299, 28034, 14383, 10651, 10652, 11057, 20488, 5532, 20542, 10908, 20544);
 			my $randomepic = $epicarray[rand @epicarray];
