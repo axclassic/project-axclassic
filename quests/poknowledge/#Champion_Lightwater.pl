@@ -66,7 +66,7 @@ sub EVENT_ITEM {
 		}
 		
 	quest::ding();
-	#quest::depop(202389); #rathe & test is 202389
+	quest::depop(202389); #rathe & test is 202389
 	}
 	else {
 	$client->Message(15,"Champion Lightwater says, 'Now what would I do with this?'");
