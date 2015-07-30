@@ -20,13 +20,13 @@ my $possession = quest::saylink("possession", 1);
 my $prove = quest::saylink("prove", 1);
 my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
-	if(($text=~/hail/i) && ($charid < '2')) { #this checks if old or new 5477
+	if(($text=~/hail/i) && ($charid < '5477')) { #this checks if old or new 5477
 	    $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
 		$client->Message(15, "This ladder began on July 1st, 2015, check AX Classic forums.");
 		$client->Message(15, "You should start a new character on or after this date.");
 		# quest::say("Your characterid is $charid."); debugging $charid
 	}
-	elsif(($text=~/hail/i) && ($charid > '2')) { #charid must be greater than X 5476
+	elsif(($text=~/hail/i) && ($charid > '5476')) { #charid must be greater than X 5476
 		$client->Message(14, "Champion Darkwater says, 'Hail, $name! I am Darkwater the Ladder Guide, and will be observing
 		and rewarding you for your advancement on the Ladder.'");
 		$client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65.
@@ -172,7 +172,7 @@ my $second = quest::saylink("second", 1);
 }
 
 sub EVENT_ITEM {
-	if ($charid < '2') { #this charid and the one above should be the same. 5477
+	if ($charid < '5477') { #this charid and the one above should be the same. 5477
 		$client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
 		$client->Message(15, "This ladder began on July 1st, 2015, check AX Classic forums.");
 		$client->Message(15, "You should start a new character on or after this date.");
