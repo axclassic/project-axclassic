@@ -30,7 +30,20 @@ sub EVENT_ITEM {
 	$client->Message(263,"Champion Lightwater waves her hand emphatically as a random item materializes out of thin air.");	
 		my $randomroll = int(rand(100));
 		if ($randomroll < '34') {
-		quest::summonitem(21823); #big bag of platinum
+		quest::summonitem(17527); #satchel of legacies lost w/ items
+		quest::summonitem(40605); #5 potion of adventure
+		quest::summonitem(40605);
+		quest::summonitem(40605);
+		quest::summonitem(40605);
+		quest::summonitem(40605);
+		quest::summonitem(17523);#book of knowledge
+		quest::summonitem(14534);#10 dose blood of the wolf
+		quest::summonitem(14009);# 5 potion of moderate healing
+		quest::summonitem(14009);
+		quest::summonitem(14009);
+		quest::summonitem(14009);
+		quest::summonitem(14009);
+		quest::summonitem(21822);# big bag of platinum
 		$client->Message(263,"$name stumbles as the weight of the bag falls into your hands.");
 		$client->Message(15,"Champion Lightwater says, 'Farewell!'");
 		}
@@ -53,7 +66,7 @@ sub EVENT_ITEM {
 		}
 		
 	quest::ding();
-	quest::depop(202389); #rathe & test is 202389
+	#quest::depop(202389); #rathe & test is 202389
 	}
 	else {
 	$client->Message(15,"Champion Lightwater says, 'Now what would I do with this?'");
