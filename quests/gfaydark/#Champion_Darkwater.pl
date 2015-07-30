@@ -64,6 +64,7 @@ my $second = quest::saylink("second", 1);
 		$client->Message(15, "You already have your level 35 trophy.");
 		$client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession
 		that can help you with your travels.'");
+		quest::setglobal("ladder_trophy", 0, 5, "F"); #For resets
 		}
 		elsif (($ulevel < '55') && ($ladder_trophy < '3')) { #set 3rd trophy
 		$client->Message(14, "Champion Darkwater says, 'Well done $name! Here is your trophy.'");
