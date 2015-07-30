@@ -181,6 +181,13 @@ sub EVENT_ITEM {
 			quest::givecash($copper, $silver, $gold, $platinum);
 			}
 		}
+#Champion Darkwater's gift
+	elsif (plugin::check_handin(\%itemcount, 119925=>1)) {
+	$client->Message(14, "Champion Darkwater says, 'Welcome $name to the Rathe Ladder! Here is your earring.");
+	$client->Message(6, "You received a Darkwater's Gift!");
+	quest::summonitem(119924);
+	quest::ding();
+	}
 # Bone Barbs, Water Ring (both types),Sarnak Head,Tool Kit
 	elsif ((plugin::check_handin(\%itemcount, 19037 =>1)) | (plugin::check_handin(\%itemcount, 69246 => 1)) | (plugin::check_handin(\%itemcount, 10546 => 1)) | (plugin::check_handin(\%itemcount, 12911 => 1)) | (plugin::check_handin(\%itemcount, 17057 => 1))) {
 		$client->Message(14, "Champion Darkwater says, 'Well done $name! Here is your Moonstone.'");
