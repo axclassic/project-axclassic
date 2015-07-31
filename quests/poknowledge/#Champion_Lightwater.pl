@@ -14,7 +14,7 @@ sub EVENT_ENTER {
 	}
 sub EVENT_EXIT {
 	$npc->SetAppearance(0);
-	$client->Message(263,"Champion Darkwater resumes her misery.");
+	$client->Message(263,"Champion Lightwater resumes her misery.");
 	}
 sub EVENT_SAY {
 	if ($text=~/hail/i) {
