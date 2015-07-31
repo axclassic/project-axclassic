@@ -46,6 +46,7 @@ my $second = quest::saylink("second", 1);
 		$client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession
 		that can help you with your travels.'");
 		quest::setglobal("ladder_trophy", 1, 5, "F");
+		$ladder_trophy=undef;
 		}
 		elsif (($ulevel < '35') && ($ladder_trophy == '1')) {
 		$client->Message(15, "You already have your level 20 trophy.");
@@ -59,6 +60,7 @@ my $second = quest::saylink("second", 1);
 		quest::ding();
 		$client->Message(6, "You received the Dedicated Ladder Players Trophy!");
 		quest::setglobal("ladder_trophy", 2, 5, "F");
+		$ladder_trophy=undef;
 		}
 		elsif (($ulevel < '45') && ($ladder_trophy == '2')) {
 		$client->Message(15, "You already have your level 35 trophy.");
@@ -72,6 +74,7 @@ my $second = quest::saylink("second", 1);
 		quest::ding();
 		$client->Message(6, "You received the Advanced Ladder Players Trophy!");
 		quest::setglobal("ladder_trophy", 3, 5, "F");
+		$ladder_trophy=undef;
 		}
 		elsif (($ulevel < '55') && ($ladder_trophy == '3')) {
 			if ($ulevel < '53') { #This is last check for under level 53 with items
@@ -90,6 +93,7 @@ my $second = quest::saylink("second", 1);
 		quest::ding();
 		$client->Message(6, "You received the Master's Ladder Players Trophy!");
 		quest::setglobal("ladder_trophy", 4, 5, "F");
+		$ladder_trophy=undef;
 		}
 		elsif (($ulevel < '65') && ($ladder_trophy == '4')) {
 		$client->Message(15, "You already have your level 55 trophy.");
@@ -103,6 +107,7 @@ my $second = quest::saylink("second", 1);
 		quest::setglobal("ladder_trophy", 5, 5, "F");
 		$client->Message(14, "Champion Darkwater says, 'If you are not satisfied with this final reward, you can give it back to me at any time
 		and I will give you something.");
+		$ladder_trophy=undef;
 		}
 		elsif (($ulevel < '66') && ($ladder_trophy == '5')) {
 		$client->Message(15, "You already have your level 65 trophy.");
@@ -119,6 +124,7 @@ my $second = quest::saylink("second", 1);
 			quest::we(13, "Champion Darkwater shouts, 'All Hail $name for earning the title Ladder Champion!'");
 			quest::ding();
 			quest::setglobal("ladder_title", 1, 5, "F");
+			$ladder_title=undef;
 			}
 		elsif (($ulevel == '65') && ($ladder_title == '1')) {
 			$client->Message(15, "You already received your Ladder Title.");
