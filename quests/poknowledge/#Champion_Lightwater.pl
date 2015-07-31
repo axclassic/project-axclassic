@@ -10,10 +10,11 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 20, $x + 20, $y - 20, $y + 20);
 	}
 sub EVENT_ENTER {
+	$npc->SetAppearance(0);
 	$npc->SetAppearance(1);
 	}
 sub EVENT_EXIT {
-	$npc->SetAppearance(0);
+	$npc->SetAppearance(3);
 	$client->Message(263,"Champion Lightwater resumes her misery.");
 	}
 sub EVENT_SAY {
