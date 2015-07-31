@@ -7,9 +7,9 @@
 ## to make Clicklinks available     ##
 ## Angelox: Third revision          ##
 ## to improve logic                 ##
-## Date:  02-01-2011    			##
+## Date:  02-01-2011    	     ##
 ## 4th revision 7/29/2015 cleanup   ##
-## 5th rev. 7/31/2015 improved		##
+## 5th rev. 7/31/2015 improved	     ##
 ## qglobals and made sure its reset ##
 ######################################
 sub EVENT_SAY {
