@@ -35,14 +35,14 @@ my $second = quest::saylink("second", 1);
 		When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
 		quest::setglobal("ladder_trophy", 1, 5, "F");
 		quest::setglobal("ladder_title", 1, 5, "F");
-		$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
+		#$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
 		
 	}
 	elsif(($text=~/hail/i) && ($charid > '2') && (defined $qglobals{"ladder_trophy"})) { #charid must be greater than X 5476
 		$client->Message(14, "Champion Darkwater says, 'Welcome back, $name!'");
 		$client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65.
 		When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
-		$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
+		#$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
 	}
 #Rewards
 	elsif (($text=~/reward/i) && (defined $qglobals{"ladder_trophy"})) {
@@ -136,7 +136,7 @@ my $second = quest::saylink("second", 1);
 			$client->Message(15, "You already received your Ladder Title.");
 			#quest::setglobal("ladder_trophy", 0, 4, "F"); #For resets
 			#quest::setglobal("ladder_title", 0, 4, "F");  #For resets
-			$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
+			#$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
 			}
 		}
 #End Rewards
