@@ -48,7 +48,7 @@ my $second = quest::saylink("second", 1);
 		quest::setglobal("ladder_trophy", 1, 5, "F");
 		$ladder_trophy=undef;
 		}
-		elsif (($ulevel < '35') && ($ladder_trophy == '1')) {
+		elsif (($ulevel < '35') && (defined $ladder_trophy) && ($ladder_trophy == '1')) {
 		$client->Message(15, "You already have your level 20 trophy.");
 		$client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession
 		that can help you with your travels.'");
@@ -62,7 +62,7 @@ my $second = quest::saylink("second", 1);
 		quest::setglobal("ladder_trophy", 2, 5, "F");
 		$ladder_trophy=undef;
 		}
-		elsif (($ulevel < '45') && ($ladder_trophy == '2')) {
+		elsif (($ulevel < '45') && (defined $ladder_trophy) && ($ladder_trophy == '2')) {
 		$client->Message(15, "You already have your level 35 trophy.");
 		$client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession
 		that can help you with your travels.'");
@@ -76,7 +76,7 @@ my $second = quest::saylink("second", 1);
 		quest::setglobal("ladder_trophy", 3, 5, "F");
 		$ladder_trophy=undef;
 		}
-		elsif (($ulevel < '55') && ($ladder_trophy == '3')) {
+		elsif (($ulevel < '55') && (defined $ladder_trophy) && ($ladder_trophy == '3')) {
 			if ($ulevel < '53') { #This is last check for under level 53 with items
 			$client->Message(15, "You already have your level 45 trophy.");
 			$client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession
@@ -95,7 +95,7 @@ my $second = quest::saylink("second", 1);
 		quest::setglobal("ladder_trophy", 4, 5, "F");
 		$ladder_trophy=undef;
 		}
-		elsif (($ulevel < '65') && ($ladder_trophy == '4')) {
+		elsif (($ulevel < '65') && (defined $ladder_trophy) && ($ladder_trophy == '4')) {
 		$client->Message(15, "You already have your level 55 trophy.");
 		}
 		elsif (($ulevel < '66') && ($ladder_trophy < '5')) { #set 5th trophy
@@ -109,7 +109,7 @@ my $second = quest::saylink("second", 1);
 		and I will give you something.");
 		$ladder_trophy=undef;
 		}
-		elsif (($ulevel < '66') && ($ladder_trophy == '5')) {
+		elsif (($ulevel < '66') && (defined $ladder_trophy) && ($ladder_trophy == '5')) {
 		$client->Message(15, "You already have your level 65 trophy.");
 		#quest::setglobal("ladder_trophy", 1, 5, "F");
 			}
