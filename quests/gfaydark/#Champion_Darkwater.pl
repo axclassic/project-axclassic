@@ -9,6 +9,8 @@
 ## to improve logic                 ##
 ## Date:  02-01-2011    			##
 ## 4th revision 7/29/2015 cleanup   ##
+## 5th rev. 7/31/2015 improved		##
+## qglobals and made sure its reset ##
 ######################################
 sub EVENT_SAY {
 #hyperlinks
@@ -26,18 +28,28 @@ my $second = quest::saylink("second", 1);
 		$client->Message(15, "You should start a new character on or after this date.");
 		# quest::say("Your characterid is $charid."); debugging $charid
 	}
-	elsif(($text=~/hail/i) && ($charid > '5476')) { #charid must be greater than X 5476
-		$client->Message(14, "Champion Darkwater says, 'Hail, $name! I am Darkwater the Ladder Guide, and will be observing
+	elsif(($text=~/hail/i) && ($charid > '5476') && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
+		$client->Message(14, "Champion Darkwater says, 'Hail, $name! I am Champion Darkwater the Ladder Guide, and I will be observing
 		and rewarding you for your advancement on the Ladder.'");
 		$client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65.
 		When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
+		quest::setglobal("ladder_trophy", 1, 5, "F");
+		quest::setglobal("ladder_title", 1, 5, "F");
+		$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
+		
+	}
+	elsif(($text=~/hail/i) && ($charid > '2') && (defined $qglobals{"ladder_trophy"})) { #charid must be greater than X 5476
+		$client->Message(14, "Champion Darkwater says, 'Welcome back, $name!'");
+		$client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65.
+		When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
+		$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
 	}
 #Rewards
-	elsif($text=~/reward/i) {
+	elsif (($text=~/reward/i) && (defined $qglobals{"ladder_trophy"})) {
 		if ($ulevel < '20') {
 		$client->Message(14, "Champion Darkwater says, 'Come back when you have acquired the needed level.'");
 			}
-		elsif ($ulevel < '35' && ($ladder_trophy < '1')) { #set 1st trophy
+		elsif ($ulevel < '35' && ($ladder_trophy < '2')) { #set 1st trophy
 		$client->Message(14, "Champion Darkwater says, 'Well done $name! Here is your trophy.'");
 		quest::summonitem(409);
 		quest::exp(50);
@@ -45,38 +57,35 @@ my $second = quest::saylink("second", 1);
 		$client->Message(6, "You received the Ladder Players Trophy!");
 		$client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession
 		that can help you with your travels.'");
-		quest::setglobal("ladder_trophy", 1, 5, "F");
-		$ladder_trophy=undef;
+		quest::setglobal("ladder_trophy", 2, 5, "F");
 		}
-		elsif (($ulevel < '35') && (defined $ladder_trophy) && ($ladder_trophy == '1')) {
+		elsif (($ulevel < '35') && ($ladder_trophy == '2')) {
 		$client->Message(15, "You already have your level 20 trophy.");
 		$client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession
 		that can help you with your travels.'");
 		}
-		elsif (($ulevel < '45') && ($ladder_trophy < '2')) { #set 2nd trophy
+		elsif (($ulevel < '45') && ($ladder_trophy < '3')) { #set 2nd trophy
 		$client->Message(14, "Champion Darkwater says, 'Well done $name! Here is your trophy.'");
 		quest::summonitem(410);
 		quest::exp(50);
 		quest::ding();
 		$client->Message(6, "You received the Dedicated Ladder Players Trophy!");
-		quest::setglobal("ladder_trophy", 2, 5, "F");
-		$ladder_trophy=undef;
+		quest::setglobal("ladder_trophy", 3, 5, "F");
 		}
-		elsif (($ulevel < '45') && (defined $ladder_trophy) && ($ladder_trophy == '2')) {
+		elsif (($ulevel < '45') && ($ladder_trophy == '3')) {
 		$client->Message(15, "You already have your level 35 trophy.");
 		$client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession
 		that can help you with your travels.'");
 		}
-		elsif (($ulevel < '55') && ($ladder_trophy < '3')) { #set 3rd trophy
+		elsif (($ulevel < '55') && ($ladder_trophy < '4')) { #set 3rd trophy
 		$client->Message(14, "Champion Darkwater says, 'Well done $name! Here is your trophy.'");
 		quest::summonitem(411);
 		quest::exp(50);
 		quest::ding();
 		$client->Message(6, "You received the Advanced Ladder Players Trophy!");
-		quest::setglobal("ladder_trophy", 3, 5, "F");
-		$ladder_trophy=undef;
+		quest::setglobal("ladder_trophy", 4, 5, "F");
 		}
-		elsif (($ulevel < '55') && (defined $ladder_trophy) && ($ladder_trophy == '3')) {
+		elsif (($ulevel < '55') && ($ladder_trophy == '4')) {
 			if ($ulevel < '53') { #This is last check for under level 53 with items
 			$client->Message(15, "You already have your level 45 trophy.");
 			$client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession
@@ -86,50 +95,48 @@ my $second = quest::saylink("second", 1);
 			$client->Message(15, "Champion Darkwater says, 'You already have your level 45 trophy.'");
 			}
 		}
-		elsif (($ulevel < '65') && ($ladder_trophy < '4')) { #set 4th trophy
+		elsif (($ulevel < '65') && ($ladder_trophy < '5')) { #set 4th trophy
 		$client->Message(14, "Champion Darkwater says, 'Well done $name! Here is your trophy.'");
 		quest::summonitem(412);
 		quest::exp(50);
 		quest::ding();
 		$client->Message(6, "You received the Master's Ladder Players Trophy!");
-		quest::setglobal("ladder_trophy", 4, 5, "F");
-		$ladder_trophy=undef;
+		quest::setglobal("ladder_trophy", 5, 5, "F");
 		}
-		elsif (($ulevel < '65') && (defined $ladder_trophy) && ($ladder_trophy == '4')) {
+		elsif (($ulevel < '65') && ($ladder_trophy == '5')) {
 		$client->Message(15, "You already have your level 55 trophy.");
 		}
-		elsif (($ulevel < '66') && ($ladder_trophy < '5')) { #set 5th trophy
+		elsif (($ulevel < '66') && ($ladder_trophy < '6')) { #set 5th trophy
 		$client->Message(14, "Champion Darkwater says, 'Well done $name! Here is your final trophy.'");
 		quest::summonitem(413);
 		quest::exp(50);
 		quest::ding();
 		$client->Message(6, "You received the Champion's Ladder Players Trophy!");
-		quest::setglobal("ladder_trophy", 5, 5, "F");
+		quest::setglobal("ladder_trophy", 6, 5, "F");
 		$client->Message(14, "Champion Darkwater says, 'If you are not satisfied with this final reward, you can give it back to me at any time
 		and I will give you something.");
-		$ladder_trophy=undef;
 		}
-		elsif (($ulevel < '66') && (defined $ladder_trophy) && ($ladder_trophy == '5')) {
+		elsif (($ulevel < '66') && ($ladder_trophy == '6')) {
 		$client->Message(15, "You already have your level 65 trophy.");
-		#quest::setglobal("ladder_trophy", 1, 5, "F");
 			}
 		}
 #Ladder Title
-	elsif ($text=~/title/i) {
+	elsif (($text=~/title/i) && (defined $qglobals{"ladder_title"})) {
 		if ($ulevel < '65') {
 			$client->Message(14, "Champion Darkwater says, 'I'm sorry but you are not eligible for the Ladder Title at this time.'");
 			}
-		elsif (($ulevel == '65') && ($ladder_title < '1')) { #set Ladder Title
+		elsif (($ulevel == '65') && ($ladder_title == '1')) { #set Ladder Title
 			$client->SetAATitle("Ladder Champion");
 			quest::we(13, "Champion Darkwater shouts, 'All Hail $name for earning the title Ladder Champion!'");
 			quest::ding();
-			quest::setglobal("ladder_title", 1, 5, "F");
+			quest::setglobal("ladder_title", 2, 5, "F");
 			$ladder_title=undef;
 			}
-		elsif (($ulevel == '65') && ($ladder_title == '1')) {
+		elsif (($ulevel == '65') && ($ladder_title == '2')) {
 			$client->Message(15, "You already received your Ladder Title.");
-			#quest::setglobal("ladder_trophy", 0, 5, "F"); #For resets
-			#quest::setglobal("ladder_title", 0, 5, "F");  #For resets
+			#quest::setglobal("ladder_trophy", 0, 4, "F"); #For resets
+			#quest::setglobal("ladder_title", 0, 4, "F");  #For resets
+			$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
 			}
 		}
 #End Rewards
