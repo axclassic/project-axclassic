@@ -31,22 +31,21 @@ sub EVENT_ITEM {
 	$client->Message(263,"Champion Lightwater waves her hand emphatically as a random item materializes out of thin air.");	
 		my $randomroll = int(rand(100));
 		if ($randomroll < '34') {
-			my @miniarray = (21820, 21821, 21822, 21823); #randomize bag O' platinum
-			my $randombag = $miniarray[rand @miniarray];
 			quest::summonitem(17527); #satchel of legacies lost w/ items
-			quest::summonitem(40605); #5 potion of adventure
-			quest::summonitem(40605);
-			quest::summonitem(40605);
-			quest::summonitem(40605);
-			quest::summonitem(40605);
+			quest::summonitem(40605, 5); #5 potion of adventure
 			quest::summonitem(17523);#book of knowledge
 			quest::summonitem(14534);#10 dose blood of the wolf
-			quest::summonitem(14009);# 5 potion of moderate healing
-			quest::summonitem(14009);
-			quest::summonitem(14009);
-			quest::summonitem(14009);
-			quest::summonitem(14009);
-			quest::summonitem($randombag);# big bag of platinum
+			quest::summonitem(14009, 5);# 5 potion of moderate healing
+		#This outputs two items without duplicates to prevent lore bug!
+		my @miniarray = ('21820', '21821', '21822', '21823'); #This array contains 4 platinum bags
+				for (my $i = 0; $i< 2; $i++) { #This will loop twice
+				my @randomnum = splice(@miniarray, int(rand(4)-$i), 1);
+			quest::summonitem(@randomnum);
+				}
+		# This is for a random Elaborate Defiant piece 1 in 49 chance
+		my @elabarray = (50179, 50180, 50181, 50182, 50183, 50184, 50185, 50186, 50187, 50188, 50189, 50190, 50191, 50192, 50193, 50194, 50195, 50196, 50197, 50198, 50199, 50200, 50201, 50202, 50203, 50204, 50205, 50206, 50207, 50208, 50209, 50210, 50211, 50212, 50602, 50603, 50604, 50605, 50606, 50607, 50608, 50609, 50610, 50611, 50612, 50613, 50614, 50615, 50616);
+			my $final = $elabarray [rand @elabarray];
+			quest::summonitem($final);
 			$client->Message(263,"$name stumbles as the weight of the bag falls into your hands.");
 			$client->Message(14,"Champion Lightwater says, 'Farewell!'");
 			}
