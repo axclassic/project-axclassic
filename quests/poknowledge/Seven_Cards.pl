@@ -15,14 +15,17 @@ sub EVENT_ENTER {
 	}
 sub EVENT_EXIT {
 	$npc->SetAppearance(0);
-	quest::doanim(24);
-	$client->Message(263, "Seven Cards snickers.");
+	my $randomlaugh = int(rand(100));
+		if($randomlaugh < '40'){
+		quest::doanim(24);
+		$client->Message(263, "Seven Cards snickers.");
+		}
+	else {}
 	my $randomshout = int(rand(100));
 		if ($randomshout <= '1') {
 		quest::shout("Come try your luck at seven cards! I'll pay 5 to 1 odds!");
 		}
-		else {
-		}
+		else {}
 	}
 	
 sub EVENT_SAY {
@@ -395,7 +398,7 @@ elsif($counter1 < '5') {
 	$client->Message(13, "Seven Cards shouts, 'Okay, you asked for it!'");
 	quest::setglobal("counter1", 1, 5, "F");
 	$client->Message(13, "Seven Cards punches YOU for 32000 points of damage!");
-	quest::say("I'm outta here!");
+	quest::say("I'm outta here.");
 	$client->Message(263, "Seven Cards flees the scene!");
 	$client->Kill();
 	quest::depop(202390); #202390 Rathe, 202391 testing depops Seven Cards and runs into hiding until next restart
