@@ -1,7 +1,7 @@
 #######################################
 ## NPC: a_slot_machine                # 
 ## Zone: Plane of Knowledge    		  #
-## classic slots (4 symbols, 3 reels) #         
+## classic slots (4 symbols, 4 reels) #         
 ## by Patrikpatrik   				  #
 ## Aug 3rd 2015						  #
 #######################################
