@@ -1,9 +1,9 @@
 #######################################
-## NPC: a_slot_machine                # 
-## Zone: Plane of Knowledge    		  #
-## classic slots (4 symbols, 4 reels) #         
-## by Patrikpatrik   				  #
-## Aug 3rd 2015						  #
+## NPC: a_slot_machine
+## Zone: Plane of Knowledge
+## classic slots (4 symbols, 4 reels)        
+## by Patrikpatrik
+## Aug 3rd 2015
 #######################################
 
 #4 suit symbols in ascii
@@ -29,10 +29,15 @@ sub EVENT_SPAWN {
 	
 sub EVENT_ENTER {
 	$npc->SetAppearance(0);
-	$client->Message(263, "You hear the sounds and jingles of a slot machine nearby.");
+	my $randomrollsay = int(rand(100));
+	if ($randomrollsay <= 40) {
+		$client->Message(263, "You hear the sounds and jingles of a slot machine nearby.");
+		}
 	}
 	
-sub EVENT_EXIT {}
+sub EVENT_EXIT {
+	$npc->SetAppearance(0);
+	}
 	
 sub EVENT_SAY {
 	if($text=~/Hail/i) {
@@ -119,7 +124,7 @@ sub EVENT_ITEM {
 		#$client->Message(14, "peeking at @total[0] and @total[1] as well as @total[1] and @total[2].");	
 }
 else {
-		$client->Message(14,"It doesn't seem to fit.");
+		$client->Message(14,"It doesn't seem to fit. Try a 'small gold token'.");
 		plugin::return_items(\%itemcount);
 		if($platinum != 0 || $gold != 0 || $silver != 0 || $copper != 0) {
 			quest::givecash($copper, $silver, $gold, $platinum);
