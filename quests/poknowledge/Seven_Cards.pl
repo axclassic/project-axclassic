@@ -42,7 +42,6 @@ if(($text=~/Hail/i) && (!defined $qglobals{"counter1"})) {
 	} 
 elsif((($text=~/hail/i) | ($text=~/play/i) | ($text=~/yes/i)) && (defined $qglobals{"counter1"})) {
 	quest::say("I'll need some $money up front, $name.");
-	$npc->DoAnim(8, 33);
 	$client->Message(14, "Seven Cards begins to shuffle.");
 	#quest::setglobal("counter1", 1, 5, "F");
 	}
@@ -67,6 +66,7 @@ elsif(($text=~/beggar/i) && ($counter1 < '2')) {
 	#$client->Message(14, "The number rolled was $npcroll.");
 		if ($npcroll == '0') {
 			quest::say("You got it!");
+			$npc->DoAnim(8, 49);
 			$client->Message(14, "Seven Cards reveals a Beggar card! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
@@ -114,6 +114,7 @@ elsif(($text=~/castle/i) && ($counter1 < '2')) {
 	#$client->Message(14, "The number rolled was $npcroll.");
 		if ($npcroll == '1') {
 			quest::say("You got it!");
+			$npc->DoAnim(8, 49);
 			$client->Message(14, "Seven Cards reveals a Castle card! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
@@ -161,6 +162,7 @@ elsif(($text=~/joker/i) && ($counter1 < '2')) {
 	#$client->Message(14, "The number rolled was $npcroll.");
 		if ($npcroll == '2') {
 			quest::say("You got it!");
+			$npc->DoAnim(8, 49);
 			$client->Message(14, "Seven Cards reveals a Joker! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
@@ -208,6 +210,7 @@ elsif(($text=~/king/i) && ($counter1 < '2')) {
 	#$client->Message(14, "The number rolled was $npcroll.");
 		if ($npcroll == '3') {
 			quest::say("You got it!");
+			$npc->DoAnim(8, 49);
 			$client->Message(14, "Seven Cards reveals a King! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
@@ -255,6 +258,7 @@ elsif(($text=~/knight/i) && ($counter1 < '2')) {
 	#$client->Message(14, "The number rolled was $npcroll.");
 		if ($npcroll == '4') {
 			quest::say("You got it!");
+			$npc->DoAnim(8, 49);
 			$client->Message(14, "Seven Cards reveals a Knight! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
@@ -302,6 +306,7 @@ elsif(($text=~/queen/i) && ($counter1 < '2')) {
 	#$client->Message(14, "The number rolled was $npcroll.");
 		if ($npcroll == '5') {
 			quest::say("You got it!");
+			$npc->DoAnim(8, 49);
 			$client->Message(14, "Seven Cards reveals a Queen! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
@@ -349,6 +354,7 @@ elsif(($text=~/wild/i) && ($counter1 < '2')) {
 	#$client->Message(14, "The number rolled was $npcroll.");
 		if ($npcroll == '6') {
 			quest::say("You got it!");
+			$npc->DoAnim(8, 49);
 			$client->Message(14, "Seven Cards reveals a Wild card! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
