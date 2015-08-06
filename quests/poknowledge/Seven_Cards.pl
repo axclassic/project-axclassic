@@ -17,7 +17,7 @@ sub EVENT_EXIT {
 	$npc->SetAppearance(0);
 	my $randomlaugh = int(rand(100));
 		if($randomlaugh < '40'){
-		quest::doanim(24);
+		$npc->DoAnim(7, 24);
 		$client->Message(263, "Seven Cards snickers.");
 		}
 	else {}
@@ -42,6 +42,7 @@ if(($text=~/Hail/i) && (!defined $qglobals{"counter1"})) {
 	} 
 elsif((($text=~/hail/i) | ($text=~/play/i) | ($text=~/yes/i)) && (defined $qglobals{"counter1"})) {
 	quest::say("I'll need some $money up front, $name.");
+	$npc->DoAnim(8, 33);
 	$client->Message(14, "Seven Cards begins to shuffle.");
 	#quest::setglobal("counter1", 1, 5, "F");
 	}
@@ -51,10 +52,11 @@ elsif(($text=~/no/i) && ($counter1 < '3')) {
 	}
 elsif(($text=~/no/i) && ($counter1 < '4')) {
 	quest::emote("gives you a hard stare as he reshuffles his cards.");
+	$npc->DoAnim(3, 60);
 	}
 elsif(($text=~/no/i) && ($counter1 < '5')) {
-	quest::doanim(30);
 	quest::emote("glares at you threateningly.");
+	$npc->DoAnim(6, 30);
 	}
 elsif(($text=~/money/i) && (defined $qglobals{"counter1"})) {
 	quest::say("It'll be 1000 platinum pieces.");
@@ -68,6 +70,7 @@ elsif(($text=~/beggar/i) && ($counter1 < '2')) {
 			$client->Message(14, "Seven Cards reveals a Beggar card! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
+			$client->DoAnim(13, 27);
 			quest::setglobal("counter1", ($qglobals{"counter1"}+1), 5, "F");
 			quest::say("want to play again? $yes / $no");
 			}
@@ -114,6 +117,7 @@ elsif(($text=~/castle/i) && ($counter1 < '2')) {
 			$client->Message(14, "Seven Cards reveals a Castle card! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
+			$client->DoAnim(13, 27);
 			quest::setglobal("counter1", ($qglobals{"counter1"}+1), 5, "F");
 			quest::say("want to play again? $yes / $no");
 			}
@@ -160,6 +164,7 @@ elsif(($text=~/joker/i) && ($counter1 < '2')) {
 			$client->Message(14, "Seven Cards reveals a Joker! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
+			$client->DoAnim(13, 27);
 			quest::setglobal("counter1", ($qglobals{"counter1"}+1), 5, "F");
 			quest::say("want to play again? $yes / $no");
 			}
@@ -206,6 +211,7 @@ elsif(($text=~/king/i) && ($counter1 < '2')) {
 			$client->Message(14, "Seven Cards reveals a King! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
+			$client->DoAnim(13, 27);
 			quest::setglobal("counter1", ($qglobals{"counter1"}+1), 5, "F");
 			quest::say("want to play again? $yes / $no");
 			}
@@ -252,6 +258,7 @@ elsif(($text=~/knight/i) && ($counter1 < '2')) {
 			$client->Message(14, "Seven Cards reveals a Knight! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
+			$client->DoAnim(13, 27);
 			quest::setglobal("counter1", ($qglobals{"counter1"}+1), 5, "F");
 			quest::say("want to play again? $yes / $no");
 			}
@@ -298,6 +305,7 @@ elsif(($text=~/queen/i) && ($counter1 < '2')) {
 			$client->Message(14, "Seven Cards reveals a Queen! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
+			$client->DoAnim(13, 27);
 			quest::setglobal("counter1", ($qglobals{"counter1"}+1), 5, "F");
 			quest::say("want to play again? $yes / $no");
 			}
@@ -344,6 +352,7 @@ elsif(($text=~/wild/i) && ($counter1 < '2')) {
 			$client->Message(14, "Seven Cards reveals a Wild card! You found the penny. You win!");
 			quest::givecash(0, 0, 0, 5000);
 			quest::ding();
+			$client->DoAnim(13, 27);
 			quest::setglobal("counter1", ($qglobals{"counter1"}+1), 5, "F");
 			quest::say("want to play again? $yes / $no");
 			}
@@ -438,6 +447,7 @@ elsif($platinum > '1000') {
 		quest::itemlink(22297);
 		quest::itemlink(22296);
 		quest::setglobal("counter1", 1, 5, "F");
+		$npc->DoAnim(5, 70);
 		quest::say("Why thank you for the generous tip! Here are seven cards and one has a lucky penny.");
 		plugin::Whisper("Pick a card: $beggar, $castle, $joker, $king, $knight, $queen, or $wild.");
 		}
