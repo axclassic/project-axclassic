@@ -81,18 +81,22 @@ sub EVENT_ITEM {
 	if ("@spades4" eq "@total")  {
 		$client->Message(15, "You HIT $spades $spades $spades $spades jackpot! You win 1050 Platinum Pieces.");
 		quest::ding();
+		$client->DoAnim(13, 27);
 		quest::givecash(0, 0, 0, 1050);
 		}
 	elsif("@hearts4" eq "@total") {
 		$client->Message(15, "You HIT $hearts $hearts $hearts $hearts jackpot! You win 945 Platinum Pieces.");
 		quest::ding();
+		$client->DoAnim(13, 27);
 		quest::givecash(0, 0, 0, 945);
 		}
 	elsif("@clubs4" eq "@total") {
-		$client->Message(14, "So close! Unfortunately, 4 of a kind $clubs win nothing!");
+		$client->Message(14, "So close! Unfortunately, 4 of a kind $clubs win nothing.");
+		$client->DoAnim(13, 28);
 		}
 	elsif("@diamonds4" eq "@total") {
-		$client->Message(14, "So close! Unfortunately, 4 of a kind $diamonds win nothing!");
+		$client->Message(14, "So close! Unfortunately, 4 of a kind $diamonds win nothing.");
+		$client->DoAnim(13, 28);
 		}
 #End jackpot sequence
 	#This checks one of each suit
@@ -103,18 +107,21 @@ sub EVENT_ITEM {
 	elsif(((@total[0] eq @total[1]) && (@total[1] eq @total[2]) || (@total[1] eq @total[2]) && (@total[2] eq @total[3]))) {
 		$client->Message(15, "You HIT 3 of a kind! You win 210 Platinum Pieces.");
 		quest::ding();
+		$client->DoAnim(13, 27);
 		quest::givecash(0, 0, 0, 210);
 		}
 		#This checks 2 running pairs of clubs
 	elsif(((@total[0] eq "$clubs") && (@total[1] eq "$clubs")) || ((@total[1] eq "$clubs") && (@total[2] eq "$clubs")) || ((@total[2] eq "$clubs") && (@total[3] eq "$clubs"))) {
 		$client->Message(15, "You got running $clubs pair! You win 105 Platinum Pieces.");
 		quest::ding();
+		$client->DoAnim(13, 27);
 		quest::givecash(0, 0, 0, 105);
 		}
 		#This checks 2 running pairs of diamonds
 	elsif(((@total[0] eq "$diamonds") && (@total[1] eq "$diamonds")) || ((@total[1] eq "$diamonds") && (@total[2] eq "$diamonds")) || ((@total[2] eq "$diamonds") && (@total[3] eq "$diamonds"))) {
 		$client->Message(15, "You got running $diamonds pair! You win 105 Platinum Pieces.");
 		quest::ding();
+		$client->DoAnim(13, 27);
 		quest::givecash(0, 0, 0, 105);
 		}
 	else{
