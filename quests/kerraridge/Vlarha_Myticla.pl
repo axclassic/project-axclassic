@@ -13,7 +13,7 @@ sub EVENT_SAY {
     if($text=~/information/i) {
       quest::say("The Wayfarers Brotherhood is pretty particular about who they do business with. You will need to prove yourself to them. You can start gaining their gratitude by helping them. The Wayfarers Brotherhood will ask you to answer some questions when you first meet with them. They tend to call all of their assignments 'adventures.' You'd do well to keep that in mind as they'll be more likely to give you some tasks. There is other information that makes them easier to [deal with] too.");
     }
-    if($text=~/dealh/i) {
+    if($text=~/deal/i) {
       quest::say("There are several camps of Wayfarers Brotherhood explorers around the world. In each camp you'll find a trusted Wayfarers Brotherhood member that has the task of recruiting adventurers that will take on interesting, and potentially lethal, [work]. Some members will tell you stories, if they think you are worthy of learning such prized information. Others will share their treasures with you, but only if you do work for them.");
     }
     if($text=~/work/i) {
@@ -26,7 +26,7 @@ sub EVENT_SAY {
       quest::say("We've found some strange items off the dead in the dungeons. At first we just thought they were simple things -- rocks, pebbles, gems, and the like -- and then we noticed they had very unusual auras about them. Well, one day, Morden Rasp was toying with one -- a shiny green shard -- and he went to scrape it with his dagger. Suddenly, the shard began to reform and fused with his dagger. While the dagger remained as fine as ever, Morden himself felt a surge of strength! So, you will want to watch out for these strange magic pieces in the world. Now, I suggest you go talk to Selephra Giztral, Barstre Songweaver, Vual Stoutest, Teria Grinntli, or Ruanya Windleaf. They handle all of those who are interested in working for the Wayfarers Brotherhood and getting rewards. Remember well what I've told you!");
       $client->Message(15,"You have completed a step toward becoming a great adventurer. Well done!");
       quest::setglobal("Wayfarer",1,5,"F");
-      quest::faction(2807,120);
+      quest::faction(2808,120);
     }
   }
   else {
