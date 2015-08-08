@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
     }
     sub EVENT_ENTER {
      if ($ulevel >= 15 && !defined $qglobals{"Messenger"}) {
-    $client->Message(15,"A mysterious voice whispers to you, 'Ienala Eceiaiu has just joined the Wayfarers Brotherhood. He may be in the bank area. He has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
+    $client->Message(15,"A mysterious voice whispers to you, 'Blorgok Gkapbron has just joined the Wayfarers Brotherhood. He may be in the Berserker GM area. He has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
     quest::setglobal("Messenger", 1, 5, "F");
   }
    elsif ($ulevel >= 15 && defined $qglobals{"Messenger"}) {
