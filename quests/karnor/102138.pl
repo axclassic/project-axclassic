@@ -4,6 +4,11 @@ sub EVENT_SPAWN {
   }
   sub EVENT_SIGNAL {
   if ($signal == 102){
+  quest::depopall(102132);
+  quest::depopall(102008);
+  quest::depopall(102134);
+  quest::depopall(102135);
+  quest::depopall(102136);
   quest::depop();
   }
   }
