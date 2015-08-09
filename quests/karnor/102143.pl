@@ -7,8 +7,8 @@ sub EVENT_SPAWN {
   quest::depopall(102129);
   quest::depopall(102124);
   quest::depopall(102144);
+  quest::depopall(102145);
   quest::depopall(102146);
-  quest::depopall(102143);
   quest::depop();
   }
   }
