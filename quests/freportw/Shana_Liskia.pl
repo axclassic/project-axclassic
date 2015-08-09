@@ -72,56 +72,56 @@ sub EVENT_SAY
 
   if($text=~/ready to begin/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard')
   {
-  quest::say("Very well. Here you are $name. in this box you will combine specific component recipes as I mentioned before. When you are ready to attempt a specific piece you must tell me what piece you [want] to craft. For example if you had intent on crafting a cap you would say. [I want to craft a cap]. I can offer you the recipes for Arcane Scientists [Caps]. [Bracers]. [Sleeves]. [Sandals]. [Trousers]. [Gloves] and [Robes]. I must also suggest that you attempt your robe last due to the difficult nature of collecting the correct components.");
+  quest::say("Very well. Here you are $name. in this box you will combine specific component recipes as I mentioned before. When you are ready to attempt a specific piece you must tell me what piece you [want] to craft. For example if you had intent on crafting a cap you would say. [I want to craft a cap]. I can offer you the recipes for Arcane Scientists [Caps]. [Bracers]. [Sleeves]. [Sandals]. [Leggings]. [Gloves] and [Robes]. I must also suggest that you attempt your robe last due to the difficult nature of collecting the correct components.");
   # Enchanted Sewing Kit ID-17260
   quest::summonitem("17260");
   }
 
   if($text=~/I want to craft sleeves/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard')
   {
-  quest::say("Sleeves will be a great and necessary addition to your armor. To create your sleeve material you will need to combine 2 Woven Spider Silks. 2 Bone Chips. 1 Spider Legs and Cloth Sleeves in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Sleeves.");
+  quest::say("Sleeves will be a great and necessary addition to your armor. To create your sleeve material you will need to combine 2 Woven Spider Silks. 2 Bone Chips. 1 Spider Legs and Cloth Sleeves in your assembly kit. Once you have created the proper material take it to a loom along with this pattern to fashion your very own Arcane Scientists Sleeves.");
   # An Enchanted Sleeves Pattern ID-22586
   quest::summonitem("22586");
   }
 
   if($text=~/I want to craft bracer/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard' || $text=~/I want to craft bracers/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard')
   {
-  quest::say("A wise choice indeed, having the correct wrist protection is very important in spell channeling. To create your bracer material you will need to combine 1 Woven Spider Silk. 1 Desert Tarantula Chitin. 1 Armadillo Tooth and a Cloth wristband in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Bracer.");
+  quest::say("A wise choice indeed, having the correct wrist protection is very important in spell channeling. To create your bracer material you will need to combine 1 Woven Spider Silk. 1 Desert Tarantula Chitin. 1 Armadillo Tooth and a Cloth wristband in your assembly kit. Once you have created the proper material take it to a loom along with this pattern to fashion your very own Arcane Scientists Bracer.");
   # An Enchanted Bracer Pattern ID-22584
   quest::summonitem("22584");
   }
 
   if($text=~/I want to craft cap/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard')
   {
-  quest::say("A cap will keep you safe from any attackers as well as the elements. To create your cap material you will need to combine 2 Woven Spider Silks. 1 Snake Fang. 1 Chunk of Meat and a Cloth Cap in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Cap.");
+  quest::say("A cap will keep you safe from any attackers as well as the elements. To create your cap material you will need to combine 2 Woven Spider Silks. 1 Snake Fang. 1 Chunk of Meat and a Cloth Cap in your assembly kit. Once you have created the proper material take it to a loom along with this pattern to fashion your very own Arcane Scientists Cap.");
   # An Enchanted Cap Pattern ID-22583
   quest::summonitem("22583");
   }
 
   if($text=~/I want to craft gloves/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard')
   {
-  quest::say("Gloves are very important for your early training especially Isola. While you are learning your first set of incantations you should not have to worry about any injuries to your hands. To create your glove material you will need to combine 3 Woven Spider Silks. 1 Giant Scarab Brain. 1 High Quality Cat Pelt 1 Zombie Skin and 1 Large Leaf Scarab Leg in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Gloves.");
+  quest::say("Gloves are very important for your early training especially Isola. While you are learning your first set of incantations you should not have to worry about any injuries to your hands. To create your glove material you will need to combine 3 Woven Spider Silks. 1 Giant Scarab Brain. 1 High Quality Cat Pelt 1 Zombie Skin and 1 Large Leaf Scarab Leg in your assembly kit. Once you have created the proper material take it to a loom along with this pattern to fashion your very own Arcane Scientists Gloves.");
   # An Enchanted Gloves Pattern ID-22588
   quest::summonitem("22588");
   }
 
   if($text=~/I want to craft sandals/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard')
   {
-  quest::say("Sandals will keep you save from any harmful things you may walk in, it is a good idea to have them. To create your sandal material you will need to combine 3 Woven Spider Silks. 1 Coyote Pelt. 2 Black Bear Paws. 1 Urticating Hairs and Cloth Sandals in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Sandals.");
+  quest::say("Sandals will keep you save from any harmful things you may walk in, it is a good idea to have them. To create your sandal material you will need to combine 3 Woven Spider Silks. 1 Coyote Pelt. 2 Black Bear Paws. 1 Urticating Hairs and Cloth Sandals in your assembly kit. Once you have created the proper material take it to a loom along with this pattern to fashion your very own Arcane Scientists Sandals.");
   # An Enchanted Sandals Pattern ID-22585
   quest::summonitem("22585");
   }
 
-  if($text=~/I want to craft trousers/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard')
+  if($text=~/I want to craft leggings/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard')
   {
-  quest::say("I would always recommend pants to all my new students since they are a very important part of your armor set. To create your trouser material you will need to combine 4 Woven Spider Silks. 1 Embalming Dust. 1 Rotting Zombie Skull and 1 Armadillo Tail in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Trousers.");
+  quest::say("I would always recommend pants to all my new students since they are a very important part of your armor set. To create your trouser material you will need to combine 4 Woven Spider Silks. 1 Embalming Dust. 1 Rotting Zombie Skull and 1 Armadillo Tail in your assembly kit. Once you have created the proper material take it to a loom along with this pattern to fashion your very own Arcane Scientists Leggings.");
   # An Enchanted Trousers Pattern ID-22587
   quest::summonitem("22587");
   }
 
   if($text=~/I want to craft robe/i && $class == 'Magician' || $class == 'Enchanter' || $class == 'Wizard')
   {
-  quest::say("I am very pleased to see that you have progressed through your armor pieces so quickly. I am also proud to see that you are ready to attempt your robe! To create your robe material you will need to combine 5 Woven Spider Silks. 1 Darkweed Snake Bile. 1 Cutthroat Golden Tooth. 1 Shadow Wolf Tibia. 1 Orc Prayer Beads and 1 Cloth Shirt in your assembly kit. Once you have created the proper material take it to a loom along with this mold to fashion your very own Arcane Scientists Robe. Be sure to come back to see me for a [final assignment] after you have completed your robe.");
+  quest::say("I am very pleased to see that you have progressed through your armor pieces so quickly. I am also proud to see that you are ready to attempt your robe! To create your robe material you will need to combine 5 Woven Spider Silks. 1 Snake Bile. 1 Cutthroat Golden Tooth. 1 Shadow Wolf Tibia. 1 Orc Prayer Beads and 1 Cloth Shirt in your assembly kit. Once you have created the proper material take it to a loom along with this pattern to fashion your very own Arcane Scientists Robe. Be sure to come back to see me for a [final assignment] after you have completed your robe.");
   # An Enchanted Robe Pattern ID-22589
   quest::summonitem("22589");
   }
