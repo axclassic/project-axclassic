@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
     }
     sub EVENT_ENTER {
      if ($ulevel >= 15 && !defined $qglobals{"Messenger"}) {
-    $client->Message(15,"A mysterious voice whispers to you, 'Yzilimn Pxikn has just joined the Wayfarers Brotherhood. He is Aediles Thrall. He has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
+    $client->Message(15,"A mysterious voice whispers to you, 'Yzilimn Pxikn has just joined the Wayfarers Brotherhood. He is near Aediles Thrall. He has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
     quest::setglobal("Messenger", 1, 5, "F");
   }
    elsif ($ulevel >= 15 && defined $qglobals{"Messenger"}) {
