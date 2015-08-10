@@ -9,7 +9,7 @@ if($ulevel <= 40){
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
-quest::spawn2(111154,0,0,$x,$y,$z,$h);
+quest::spawn2(111271,0,0,$x,$y,$z,$h);
 quest::shout("We shall meet again $name! When you are a worthy opponent!!");
 quest::depop();
 }
@@ -20,14 +20,11 @@ sub EVENT_AGGRO{
 	my $y = $npc->GetY();
     	my $z = $npc->GetZ();
     	my $h = $npc->GetHeading();
-  	quest::spawn2(111154,0,0,$x,$y,$z,$h);
+  	quest::spawn2(111271,0,0,$x,$y,$z,$h);
 	quest::shout("We shall meet again $name! When you are a worthy opponent!!");
 	quest::depop;
 	}
 }
 sub EVENT_DEATH {
-quest::signalwith(111214,424,0);
- quest::delglobal("Tserr");
- quest::setglobal("Tserr",2,3,"F");
- $Tserr=undef;
+quest::signalwith(111207,417,0);
 }

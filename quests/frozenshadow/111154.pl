@@ -1,21 +1,6 @@
-#Tserrina_Syl`Tor Spawn
-#npc - #Tserrina_Syl`Tor (111154)
-#zone - Frozenshadow
-#Angelox
-
- sub EVENT_SPAWN {
-	$x = $npc->GetX();
-	$y = $npc->GetY();
-	quest::set_proximity($x - 100, $x + 100, $y - 100, $y + 100);
-}
-
-sub EVENT_ENTER
-{
-	quest::attack("$name");
-}
-
-sub EVENT_DEATH{
- quest::delglobal("Tserr");
+sub EVENT_DEATH {
+quest::signalwith(111214,424,0);
+quest::delglobal("Tserr");
  quest::setglobal("Tserr",2,3,"F");
  $Tserr=undef;
-  };
+}
