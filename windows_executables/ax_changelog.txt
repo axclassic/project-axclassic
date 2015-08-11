@@ -1,9 +1,38 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
+==06/11/2015==
+ Angelox: Fix for quest::depopall causing zone crash 
+ 
+==07/26/2015==
+ Angelox: Tweaks to LoH and HT bot commands, bot should warn if too far away."LayOnHands","LOH","LoH","loh" or "layonhands" works and
+           "HarmTouch","harmtouch","HT" or "ht" will work for their related #bot commands.
+           Also uploaded som "#botrez work (not finished yet).
+ 
+==04/17/2015==
+ Angelox: Some optimizations to quest globals, requres changes01_qglobal.sql. 
+ 
+==04/09/2015==
+ Lazylob: Added a check to allow bots with pet specific buffs to stack correctly.
+
+==03/31/2015==
+ Angelox: Added GM command #SummonAllCorpses, it will summon all corpses to the players feet in whatever zone he may be. 
+	  This command is full of holes, so don't use it unless you're out of options.
+	  
+==03/03/2015==
+ Angelox: Removed a few hacker checks that were not reporting correctly, probably because bots have spells/skills and player doesn't.
+ 
+==02/05/2015==
+ Angelox: Added some rules (in rule_values) for HotZone manipulation; can set randomizing zones to true or false, and also the topmost amount. 
+ 
+==02/03/2015==
+ Angelox: Random HotZone(s) will be selected on server restart. 
+ 
+==01/24/2015==
+ Angelox: Removed bugged "bot set primary" command
+ 
 ==12/01/2014==
  Angelox: One bot allowed in groups in anticipation of the one bot per player idea.
  Angelox: Non group-leaders can disband the group too (so to avoid getting stuck in a Null group)).
- Angelox: Re-instated bot raids not allowed in certain zones
  Angelox: Re-instated "no raiding" in classic zones.
  
 ==11/27/2014==
