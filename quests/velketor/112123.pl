@@ -4,17 +4,17 @@ sub EVENT_SPAWN {
   }
   sub EVENT_SIGNAL {
   if ($signal == 206){
-  quest::depopall(112128);
-  quest::depopall(112133);
-  quest::depopall(112139);
-  quest::depopall(112145);
-  quest::depopall(112151);
-  quest::depopall(112157);
-  quest::depopall(112163);
-  quest::depopall(112169);
-  quest::depopall(112175);
-  quest::depopall(112181);
-  quest::depopall(112187);
+  quest::depop(112128);
+  quest::depop(112133);
+  quest::depop(112139);
+  quest::depop(112145);
+  quest::depop(112151);
+  quest::depop(112157);
+  quest::depop(112163);
+  quest::depop(112169);
+  quest::depop(112175);
+  quest::depop(112181);
+  quest::depop(112187);
   quest::depop();
   }
   }
