@@ -21,7 +21,7 @@ quest::depop();
     	my $h = $npc->GetHeading();
   	quest::spawn2(32125,0,0,$x,$y,$z,$h);
 	quest::shout("We shall meet again $name! When you are a worthy opponent!!");
-	quest::depop;
+	quest::depop();
 	}
 }
 sub EVENT_DEATH {
