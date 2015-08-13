@@ -22,7 +22,7 @@ sub EVENT_AGGRO{
     	my $h = $npc->GetHeading();
   	quest::spawn2(102141,0,0,$x,$y,$z,$h);
 	quest::shout("We shall meet again $name! When you are a worthy opponent!!");
-	quest::depop;
+	quest::depop();
 	}
 }
 sub EVENT_DEATH {
