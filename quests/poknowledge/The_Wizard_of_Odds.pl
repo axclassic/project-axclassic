@@ -873,7 +873,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 		$i++;
 		#Assigning values for players next card
 		if($i == 1) {
-			$nextcard = splice(@onedeck, 4, 1);
+			$nextcard = splice(@onedeck, int(rand(49-$i)), 1);
 			value5;
 			#Aces function
 			if($myace == '10') {
@@ -904,7 +904,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 			}
 		}
 		elsif($i == 2) {
-			$nextcard2 = splice(@onedeck, 0, 1);
+			$nextcard2 = splice(@onedeck, int(rand(49-$i)), 1);
 			value6;
 			#Aces function
 			if($myace == '10') {
@@ -935,7 +935,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 			}
 		}
 		elsif($i == 3) {
-			$nextcard3 = splice(@onedeck, 3, 1);
+			$nextcard3 = splice(@onedeck, int(rand(49-$i)), 1);
 			value7;
 			#Aces function
 			if($myace == '10') {
@@ -966,7 +966,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 			}
 		}
 		elsif($i == 4) {
-			$nextcard4 = splice(@onedeck, 38, 1);
+			$nextcard4 = splice(@onedeck, int(rand(49-$i)), 1);
 			value8;
 			#Aces function
 			if($myace == '10') {
@@ -997,7 +997,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 			}
 		}
 		elsif($i == 5) {
-			$nextcard5 = splice(@onedeck, 5, 1); #int(rand(49-$i))
+			$nextcard5 = splice(@onedeck, int(rand(49-$i)), 1); #int(rand(49-$i))
 			value9;
 			#Aces function
 			if($myace == '10') {
