@@ -896,6 +896,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 				$mytotals = "";
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard] for a total of $mytotal$alt$mytotals and BUST!");
+				$client->Message(14, "Dealer reveals [$secondcard][$fourthcard].");
 				dealerwin;
 			}
 			else{
@@ -927,6 +928,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 				$mytotals = "";
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard2] for a total of $mytotal$alt$mytotals and BUST!");
+				$client->Message(14, "Dealer reveals [$secondcard][$fourthcard].");
 				dealerwin;
 			}
 			else{
@@ -958,6 +960,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 				$mytotals = "";
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard3] for a total of $mytotal$alt$mytotals and BUST!");
+				$client->Message(14, "Dealer reveals [$secondcard][$fourthcard].");
 				dealerwin;
 			}
 			else{
@@ -989,6 +992,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 				$mytotals = "";
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard4] for a total of $mytotal$alt$mytotals and BUST!");
+				$client->Message(14, "Dealer reveals [$secondcard][$fourthcard].");
 				dealerwin;
 			}
 			else{
