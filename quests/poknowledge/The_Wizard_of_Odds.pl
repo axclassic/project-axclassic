@@ -4,10 +4,10 @@
 ## Quest: Blackjack Dealer                
 ## by Patrikpatrik   
 ## Aug 1st 2015
-##This is 14th revision 
-##all sequences fitted in 
-##all values correctly assigned
-##Last updated 8/14/2015
+##This is 16th revision
+##seems bulletproof but needs further testing
+## all probabilities explored
+## Last updated 8/15/2015
 #######################################
 
 #symbol values
@@ -423,10 +423,10 @@ sub playerwin{
 	$i = 0; #This resets the counter once game is over
 	$myace = 0; #This resets the ace value so it doesnt repeat on $play
 	$dealerace = 0; #This resets the ace value so it doesnt repeat on $play
-	quest::givecash(0,0,0, ($platinum*2));
 	quest::setglobal("cheat", 0, 5, "F");
 	quest::setglobal("hithit", 1, 5, "F");
 	quest::setglobal("standstand", 1, 5, "F");
+	quest::givecash(0, 0, 0, ($platinum*2));
 }
 
 sub dealerwin{
@@ -455,13 +455,24 @@ sub pushtie{
 	$i = 0; #This resets the counter once game is over
 	$myace = 0; #This resets the ace value so it doesnt repeat on $play
 	$dealerace = 0; #This resets the ace value so it doesnt repeat on $play
-	quest::givecash(0,0,0, $platinum);
+	quest::givecash(0, 0, 0, $platinum);
 	quest::setglobal("cheat", 0, 5, "F");
 	quest::setglobal("hithit", 1, 5, "F");
 	quest::setglobal("standstand", 1, 5, "F");
 }
-#dealercards 10 to 17
-sub value10 {
+sub requiredends{
+	$alt = "";
+	$alt2 = "";
+	$mytotals = "";
+	$dealertotals = "";
+	$i = 0; #This resets the counter once game is over
+	$myace = 0; #This resets the ace value so it doesnt repeat on $play
+	$dealerace = 0; #This resets the ace value so it doesnt repeat on $play
+}
+
+
+#Dealercards value 10-17
+sub value10{
 		if($dealercard eq "Ace$spades" || $dealercard eq "Ace$hearts" || $dealercard eq "Ace$clubs" || $dealercard eq "Ace$diamonds") {
 			$dealer = 1;
 			$dealerace = 10; #This is to value Aces as 11
@@ -497,7 +508,7 @@ sub value10 {
 			$dealer = 10;
 			}
 }
-sub value11 {
+sub value11{
 		if($dealercard2 eq "Ace$spades" || $dealercard2 eq "Ace$hearts" || $dealercard2 eq "Ace$clubs" || $dealercard2 eq "Ace$diamonds") {
 			$dealer2 = 1;
 			$dealerace = 10; #This is to value Aces as 11
@@ -533,7 +544,7 @@ sub value11 {
 			$dealer2 = 10;
 			}
 }
-sub value12 {
+sub value12{
 		if($dealercard3 eq "Ace$spades" || $dealercard3 eq "Ace$hearts" || $dealercard3 eq "Ace$clubs" || $dealercard3 eq "Ace$diamonds") {
 			$dealer3 = 1;
 			$dealerace = 10; #This is to value Aces as 11
@@ -569,7 +580,7 @@ sub value12 {
 			$dealer3 = 10;
 			}
 }
-sub value13 {
+sub value13{
 		if($dealercard4 eq "Ace$spades" || $dealercard4 eq "Ace$hearts" || $dealercard4 eq "Ace$clubs" || $dealercard4 eq "Ace$diamonds") {
 			$dealer4 = 1;
 			$dealerace = 10; #This is to value Aces as 11
@@ -605,7 +616,7 @@ sub value13 {
 			$dealer4 = 10;
 			}
 }
-sub value14 {
+sub value14{
 		if($dealercard5 eq "Ace$spades" || $dealercard5 eq "Ace$hearts" || $dealercard5 eq "Ace$clubs" || $dealercard5 eq "Ace$diamonds") {
 			$dealer5 = 1;
 			$dealerace = 10; #This is to value Aces as 11
@@ -641,7 +652,7 @@ sub value14 {
 			$dealer5 = 10;
 			}
 }
-sub value15 {
+sub value15{
 		if($dealercard6 eq "Ace$spades" || $dealercard6 eq "Ace$hearts" || $dealercard6 eq "Ace$clubs" || $dealercard6 eq "Ace$diamonds") {
 			$dealer6 = 1;
 			$dealerace = 10; #This is to value Aces as 11
@@ -676,7 +687,7 @@ sub value15 {
 			$dealercard6 eq "King$spades" || $dealercard6 eq "King$hearts" || $dealercard6 eq "King$clubs" || $dealercard6 eq "King$diamonds") {
 			$dealer6 = 10;
 			}
-}	
+}
 sub value16{
 		if($dealercard7 eq "Ace$spades" || $dealercard7 eq "Ace$hearts" || $dealercard7 eq "Ace$clubs" || $dealercard7 eq "Ace$diamonds") {
 			$dealer7 = 1;
@@ -713,7 +724,7 @@ sub value16{
 			$dealer7 = 10;
 			}
 }
-sub value17{
+sub value17 {
 		if($dealercard8 eq "Ace$spades" || $dealercard8 eq "Ace$hearts" || $dealercard8 eq "Ace$clubs" || $dealercard8 eq "Ace$diamonds") {
 			$dealer8 = 1;
 			$dealerace = 10; #This is to value Aces as 11
@@ -749,7 +760,7 @@ sub value17{
 			$dealer8 = 10;
 			}
 }
-	
+
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
 	$y = $npc->GetY();
@@ -773,8 +784,14 @@ my $play = quest::saylink("play", 1);
 my $shuffle = quest::saylink("shuffle", 1);
 
 
-	if($text=~/Hail/i) {
+	if(($text=~/Hail/i) && ($cheat == 0)) {
 		quest::say("Hail $name. Welcome to Blackjack. Do you want to $play? Or would you like the $rules?");
+		quest::setglobal("cheat", 0, 5, "F");
+		quest::setglobal("hithit", 1, 5, "F");
+		
+	}
+	elsif(($text=~/hail/i) && ($cheat == 1)) {
+		quest::say("We're already playing, let us continue.");
 	}
 	elsif($text=~/rules/i) {
 		quest::say("The object of the game is to achieve a hand whose total points nearest to 21 than that of the dealer wins. If you go over 21, it is called
@@ -783,24 +800,30 @@ my $shuffle = quest::saylink("shuffle", 1);
 	}
 	elsif(($text=~/play/i) && ($cheat == 0)) {
 		quest::say("The minimum bet to play is 50 platinum pieces or a maximum bet of 1000 platinum pieces.");
+		
 	}
 	elsif(($text=~/play/i) && ($cheat == 2)) {
 		quest::say("We're already playing, let us continue.");
+		
 	}
 	elsif(($text=~/hit/i) && ($hithit == 1)) {
-		quest::say("You cannot hit at this point.");
+		quest::say("I'm sorry but we can't hit at this point.");
+		
 	}
-	elsif(($text=~/stand/i) && ($standstand == 1)){
-		quest::say("I'm sorry but you cannot stand right now.");
+	elsif(($text=~/stand/i) && ($standstand == 1)) {
+		quest::say("You can't stand again.");
+		
 	}
 	elsif(($text=~/play/i) && ($cheat == 1)) {
+		quest::setglobal("standstand", 0, 5, "F");
+		quest::setglobal("hithit", 0, 5, "F");
 		quest::setglobal("cheat", 2, 5, "F"); #if player decides to $play at any time, loops wont initialize
 		shuffle ( \@truedeck ); #shuffles
 		@onedeck = @truedeck;
-		$firstcard = splice(@onedeck, int(rand(52)), 1); #int(rand(52)) and decrease increments as you go down
-		$secondcard = splice(@onedeck, int(rand(51)), 1); #int(rand(51)) etc
-		$thirdcard = splice(@onedeck, int(rand(50)), 1);
-		$fourthcard = splice(@onedeck, int(rand(49)), 1);
+		$firstcard = splice(@onedeck, int(rand(52)), 1); #int(rand(52)) and lessen down
+		$secondcard = splice(@onedeck, int(rand(51)), 1); # int(rand(51))
+		$thirdcard = splice(@onedeck, int(rand(50)), 1); # int(rand(50))
+		$fourthcard = splice(@onedeck, int(rand(49)), 1); #int(rand(49)) 6
 		
 		#Assigns values here
 		value1;
@@ -843,6 +866,7 @@ my $shuffle = quest::saylink("shuffle", 1);
 			$client->Message(14, "Your hand is [$firstcard][$thirdcard] for a total of $mytotal$alt$mytotals.");
 			$client->Message(14, "Dealer reveals [$secondcard][$fourthcard] and HITS Blackjack!");
 			dealerwin;
+			#quest::setglobal("hitcounter", 1, 5, "F"); #This is in event someone tries to hit, game is over
 			}
 		#Then player
 		elsif($mytotals == '21') {
@@ -858,10 +882,11 @@ my $shuffle = quest::saylink("shuffle", 1);
 			$i = 0; #This resets the counter once game is over
 			$myace = 0; #This resets the ace value so it doesnt repeat on $play
 			$dealerace = 0; #This resets the ace value so it doesnt repeat on $play
-			quest::givecash(0,0,0, (($platinum/2)*3));
 			quest::setglobal("cheat", 0, 5, "F");
 			quest::setglobal("hithit", 1, 5, "F");
 			quest::setglobal("standstand", 1, 5, "F");
+			quest::givecash(0, 0, 0, (($platinum/2)*3));
+			#quest::setglobal("hitcounter", 1, 5, "F"); #This is in event someone tries to hit, game is over
 			}
 		else{
 		#If none of those 21 or pushes are met, game continues as normal
@@ -890,6 +915,11 @@ my $shuffle = quest::saylink("shuffle", 1);
 			if($mytotals > 21 && $mytotal < 22) { #Use lower value if higher value is greater than 21
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard] for a total of $mytotal. Would you like to $hit or $stand?");
+				#test for mytotals filter
+				$alt = "";
+				$mytotal = $first + $third + $next;
+				$mytotals = "";
+				
 			}
 			elsif($mytotal > 21) {
 				$alt = "";
@@ -897,7 +927,14 @@ my $shuffle = quest::saylink("shuffle", 1);
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard] for a total of $mytotal$alt$mytotals and BUST!");
 				$client->Message(14, "Dealer reveals [$secondcard][$fourthcard].");
-				dealerwin;
+				$client->Message(15, "Dealer WINS!");
+				$npc->DoAnim(8, 27);
+				quest::setglobal("cheat", 0, 5, "F");
+				quest::setglobal("hithit", 1, 5, "F");
+				quest::setglobal("standstand", 1, 5, "F");
+				requiredends;
+				
+				
 			}
 			else{
 			$client->Message(15, "You HIT!");
@@ -922,6 +959,10 @@ my $shuffle = quest::saylink("shuffle", 1);
 			if($mytotals > 21 && $mytotal < 22) { #Use lower value if higher value is greater than 21
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard2] for a total of $mytotal. Would you like to $hit or $stand?");
+				#test for mytotals filter
+				$alt = "";
+				$mytotal = $first + $third + $next + $next2;
+				$mytotals = "";
 			}
 			elsif($mytotal > 21) {
 				$alt = "";
@@ -929,7 +970,12 @@ my $shuffle = quest::saylink("shuffle", 1);
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard2] for a total of $mytotal$alt$mytotals and BUST!");
 				$client->Message(14, "Dealer reveals [$secondcard][$fourthcard].");
-				dealerwin;
+				$client->Message(15, "Dealer WINS!");
+				$npc->DoAnim(8, 27);
+				quest::setglobal("cheat", 0, 5, "F");
+				quest::setglobal("hithit", 1, 5, "F");
+				quest::setglobal("standstand", 1, 5, "F");
+				requiredends;
 			}
 			else{
 			$client->Message(15, "You HIT!");
@@ -954,6 +1000,11 @@ my $shuffle = quest::saylink("shuffle", 1);
 			if($mytotals > 21 && $mytotal < 22) { #Use lower value if higher value is greater than 21
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard3] for a total of $mytotal. Would you like to $hit or $stand?");
+				#test for mytotals filter
+				$alt = "";
+				$mytotal = $first + $third + $next + $next2 + $next3;
+				$mytotals = "";
+			
 			}
 			elsif($mytotal > 21) {
 				$alt = "";
@@ -961,7 +1012,12 @@ my $shuffle = quest::saylink("shuffle", 1);
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard3] for a total of $mytotal$alt$mytotals and BUST!");
 				$client->Message(14, "Dealer reveals [$secondcard][$fourthcard].");
-				dealerwin;
+				$client->Message(15, "Dealer WINS!");
+				$npc->DoAnim(8, 27);
+				quest::setglobal("cheat", 0, 5, "F");
+				quest::setglobal("hithit", 1, 5, "F");
+				quest::setglobal("standstand", 1, 5, "F");
+				requiredends;
 			}
 			else{
 			$client->Message(15, "You HIT!");
@@ -986,6 +1042,11 @@ my $shuffle = quest::saylink("shuffle", 1);
 			if($mytotals > 21 && $mytotal < 22) { #Use lower value if higher value is greater than 21
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard4] for a total of $mytotal. Would you like to $hit or $stand?");
+				#test for mytotals filter
+				$alt = "";
+				$mytotal = $first + $third + $next + $next2 + $next3 + $next4;
+				$mytotals = "";
+			
 			}
 			elsif($mytotal > 21) {
 				$alt = "";
@@ -993,7 +1054,12 @@ my $shuffle = quest::saylink("shuffle", 1);
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard4] for a total of $mytotal$alt$mytotals and BUST!");
 				$client->Message(14, "Dealer reveals [$secondcard][$fourthcard].");
-				dealerwin;
+				$client->Message(15, "Dealer WINS!");
+				$npc->DoAnim(8, 27);
+				quest::setglobal("cheat", 0, 5, "F");
+				quest::setglobal("hithit", 1, 5, "F");
+				quest::setglobal("standstand", 1, 5, "F");
+				requiredends;
 			}
 			else{
 				$client->Message(15, "You HIT!");
@@ -1020,19 +1086,30 @@ my $shuffle = quest::saylink("shuffle", 1);
 				$mytotals = "";
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "Your next card is [$nextcard5] for a total of $mytotal$alt$mytotals and BUST!");
-				$client->Message(15, "Dealer reveals [$secondcard][$fourthcard]. Dealer WINS!");
-				dealerwin;
+				$client->Message(14, "Dealer reveals [$secondcard][$fourthcard].");
+				$client->Message(15, "Dealer WINS!");
+				$npc->DoAnim(8, 27);
+				#quest::setglobal("hitcounter", 1, 5, "F"); #This is in event someone tries to hit, game is over
+				$i = 0; #This resets the counter once game is over
+				$myace = 0; #This resets the ace value so it doesnt repeat on $play
 			}
 			else{
 				$client->Message(15, "You HIT!");
 				$client->Message(14, "You've managed to hit 5 times without busting and is called a 'Five-card Charlie' rule. You automatically WIN!");
 				$client->Message(15, "Dealer reveals [$secondcard][$fourthcard].");
-				playerwin;
+				quest::ding();
+				$client->DoAnim(13, 27);
+				quest::givecash(0,0,0,$platinum);
+				quest::setglobal("cheat", 0, 5, "F");
+				quest::setglobal("hithit", 1, 5, "F");
+				quest::setglobal("standstand", 1, 5, "F");
+				requiredends;
 			}
 		}
 	} #END hit	
 	elsif($text=~/stand/i) { #once stand, you cannot hit again remember to prevent this
 		$client->Message(15, "You STAND!");
+		
 		#Dealer's totals and ace checking in hands have already been declared in hit section
 		if($dealertotals > 16){ #Dealer must stand and compare when ace in hand, higher value
 			$client->Message(14, "Dealer reveals [$secondcard][$fourthcard] for a total of $dealertotals and must STAND.");
@@ -1049,17 +1126,17 @@ my $shuffle = quest::saylink("shuffle", 1);
 			}
 			elsif($dealertotals > $mytotal) { #Otherwise if player has no ace in hand
 				dealerwin;
-				}
+			}
 			elsif($dealertotals < $mytotal) { #problem here is that if tied it goes here
 				playerwin;
-				}
+			}
 			else {
 				pushtie;
-				}
-		}
-		elsif($dealertotal > 16) {
+			}
+		}#END ACES IN HAND SECTION
+		elsif($dealertotal > 16) { #when no aces in hand or lower value and stands to compare values
 			$client->Message(14, "Dealer reveals [$secondcard][$fourthcard] for a total of $dealertotal and must STAND.");
-			if($mytotals != '0') {
+			if($mytotals != '0') { #This means if its not zero then player must have an ace.
 				if($dealertotal > $mytotals) {
 					dealerwin;
 				}
@@ -1070,116 +1147,45 @@ my $shuffle = quest::saylink("shuffle", 1);
 					pushtie;
 				}
 			}
-			elsif($dealertotal > $mytotal) {
+			elsif($dealertotal > $mytotal) { #Otherwise if player has no ace in hand
 				dealerwin;
 			}
-			elsif($dealertotal < $mytotal) {
+			elsif($dealertotal < $mytotal) { #problem here is that if tied it goes here
 				playerwin;
 			}
 			else {
 				pushtie;
-				}
-		}
-		else{
+			}
+		}#END NO ACES IN HAND SECTION
+		elsif($dealertotal < 17 || $dealertotals < 17) { #This checks if dealer has ace but less 17 then must hit and compare THERE SHOULDNT BE ANYTHING AFTER THIS NO ELSE
 			$client->Message(14, "Dealer reveals [$secondcard][$fourthcard] for a total of $dealertotal$alt2$dealertotals and must HIT!");
-			#dealercard 1st sequence goes here!
 			$i++;
-			$dealercard = splice(@onedeck, int(rand(49-$i)), 1);
-			value10;
+			$dealercard = splice(@onedeck, int(rand(49-$i)), 1); #int(rand(49-$i)) 38 face card
+			value10; #First dealers card start
+			#This total continues off =~/stand/i section
 			$dealertotal = $second + $fourth + $dealer;
 			$dealertotals = $second + $fourth + $dealer + 10;
 			
-			if($dealerace == '10' && $dealertotals < 22) {
+			if($dealerace == '10' && $dealertotals < 22) { #If higher value is less than 22 use both values
 				$alt2 = " or ";
 				$dealertotals = $second + $fourth + $dealer + 10;
 			}
-			elsif($dealerace == '10') { 
+			elsif($dealerace == '10') { #Otherwise use lower value
 				$alt2 = "";
 				$dealertotals = "";
 			}
-			else{ 
+			else{ #use lower value anyway since no ace
 				$alt2 = "";
 				$dealertotals = "";
 			}
 			
-			if($dealertotal > 21) {
+			if($dealertotal > 21) { #If dealer goes over 21 you simply bust
 				$client->Message(14, "Dealer reveals his next card [$dealercard] for a total of $dealertotal and BUSTS!");
 				playerwin;
 			}
-			elsif($dealertotals > 16){
-				$client->Message(14, "Dealer reveals his next card [$dealercard] for a total of $dealertotals and must STAND.");
-				if($mytotals != '0') {
-					if($dealertotals > $mytotals) {
-						dealerwin;
-					}
-					elsif($dealertotals < $mytotals ) {
-						playerwin;
-					}
-					else {
-						pushtie;
-					}
-				}
-				elsif($dealertotals > $mytotal) {
-					dealerwin;
-				}
-				elsif($dealertotals < $mytotal) {
-					playerwin;
-				}
-				else {
-					pushtie;
-				}
-			}
-			elsif($dealertotal > 16) {
-				$client->Message(14, "Dealer reveals his next card [$dealercard] for a total of $dealertotal and must STAND.");
-				if($mytotals != '0') {
-					if($dealertotal > $mytotals) {
-						dealerwin;
-					}
-					elsif($dealertotal < $mytotals ) {
-						playerwin;
-					}
-					else {
-						pushtie;
-					}
-				}
-				elsif($dealertotal > $mytotal) {
-					dealerwin;
-				}
-				elsif($dealertotal < $mytotal) {
-					playerwin;
-				}
-				else {
-					pushtie;
-					}
-			}#END NO ACES IN HAND SECTION
-			else{
-				$client->Message(14, "Dealer reveals his next hand [$dealercard] for a total of $dealertotal$alt2$dealertotals and must HIT!");
-				$i++;
-				$dealercard2 = splice(@onedeck, int(rand(49-$i)), 1);
-				value11;
-				$dealertotal = $second + $fourth + $dealer + $dealer2;
-				$dealertotals = $second + $fourth + $dealer + $dealer2 + 10;
-				
-				if($dealerace == '10' && $dealertotals < 22) {
-					$alt2 = " or ";
-					$dealertotals = $second + $fourth + $dealer + $dealer2 + 10;
-				}
-				elsif($dealerace == '10') { 
-					$alt2 = "";
-					$dealertotals = "";
-				}
-				else{ 
-					$alt2 = "";
-					$dealertotals = "";
-				}
-				
-				if($dealertotal > 21) {
-					$client->Message(14, "Dealer reveals his next card [$dealercard2] for a total of $dealertotal and BUSTS!");
-					playerwin;
-				}
-				elsif($dealertotals > 16){
-					$client->Message(14, "Dealer reveals his next card [$dealercard2] for a total of $dealertotals and must STAND.");
-					if($mytotals != '0') {
+			elsif($dealertotals > 16){ #Dealer must stand and compare with ace in hand, higher value
+					$client->Message(14, "Dealer reveals his next hand [$dealercard] for a total of $dealertotals and must STAND.");
+					if($mytotals != '0') { #This means if its not zero then player must have an ace.
 						if($dealertotals > $mytotals) {
 							dealerwin;
 						}
@@ -1190,19 +1196,19 @@ my $shuffle = quest::saylink("shuffle", 1);
 							pushtie;
 						}
 					}
-					elsif($dealertotals > $mytotal) {
+					elsif($dealertotals > $mytotal) { #Otherwise if player has no ace in hand
 						dealerwin;
-					}
-					elsif($dealertotals < $mytotal) {
+						}
+					elsif($dealertotals < $mytotal) { #problem here is that if tied it goes here
 						playerwin;
-					}
+						}
 					else {
 						pushtie;
-					}
-				}
-				elsif($dealertotal > 16) {
-					$client->Message(14, "Dealer reveals his next card [$dealercard2] for a total of $dealertotal and must STAND.");
-					if($mytotals != '0') {
+						}
+			}
+			elsif($dealertotal > 16) { #when no aces in hand or lower value and stands to compare values
+					$client->Message(14, "Dealer reveals his next card [$dealercard] for a total of $dealertotal and must STAND.");
+					if($mytotals != '0') { #This means if its not zero then player must have an ace.
 						if($dealertotal > $mytotals) {
 							dealerwin;
 						}
@@ -1213,44 +1219,119 @@ my $shuffle = quest::saylink("shuffle", 1);
 							pushtie;
 						}
 					}
-					elsif($dealertotal > $mytotal) {
+					elsif($dealertotal > $mytotal) { #Otherwise if player has no ace in hand
 						dealerwin;
 					}
-					elsif($dealertotal < $mytotal) {
+					elsif($dealertotal < $mytotal) { #problem here is that if tied it goes here
 						playerwin;
 					}
 					else {
 						pushtie;
+					}
+			}
+			else {
+				$client->Message(14, "Dealer reveals his next hand [$dealercard] for a total of $dealertotal$alt2$dealertotals and must HIT!");
+				
+				$i++;
+				$dealercard2 = splice(@onedeck, int(rand(49-$i)), 1); #int(rand(49-$i)) 38 face card
+				value11; #Second dealers card start
+				#This total continues off =~/stand/i section
+				$dealertotal = $second + $fourth + $dealer + $dealer2;
+				$dealertotals = $second + $fourth + $dealer + $dealer2 + 10;
+				
+				if($dealerace == '10' && $dealertotals < 22) { #If higher value is less than 22 use both values
+					$alt2 = " or ";
+					$dealertotals = $second + $fourth + $dealer + $dealer2 + 10;
+				}
+				elsif($dealerace == '10') { #Otherwise use lower value
+					$alt2 = "";
+					$dealertotals = "";
+				}
+				else{ #use lower value anyway since no ace
+					$alt2 = "";
+					$dealertotals = "";
+				}
+				
+				if($dealertotal > 21) { #If dealer goes over 21 you simply bust
+					$client->Message(14, "Dealer reveals his next card [$dealercard2] for a total of $dealertotal and BUSTS!");
+					playerwin;
+				}	
+				elsif($dealertotals > 16){ #Dealer must stand and compare with ace in hand, higher value
+					$client->Message(14, "Dealer reveals his next hand [$dealercard2] for a total of $dealertotals and must STAND.");
+					if($mytotals != '0') { #This means if its not zero then player must have an ace.
+						if($dealertotals > $mytotals) {
+							dealerwin;
+						}
+						elsif($dealertotals < $mytotals ) {
+							playerwin;
+						}
+						else {
+							pushtie;
+						}
+					}
+					elsif($dealertotals > $mytotal) { #Otherwise if player has no ace in hand
+						dealerwin;
+						}
+					elsif($dealertotals < $mytotal) { #problem here is that if tied it goes here
+						playerwin;
+						}
+					else {
+						pushtie;
 						}
 				}
-				else{
+				elsif($dealertotal > 16) { #when no aces in hand or lower value and stands to compare values
+					$client->Message(14, "Dealer reveals his next card [$dealercard2] for a total of $dealertotal and must STAND.");
+					if($mytotals != '0') { #This means if its not zero then player must have an ace.
+						if($dealertotal > $mytotals) {
+							dealerwin;
+						}
+						elsif($dealertotal < $mytotals ) {
+							playerwin;
+						}
+						else {
+							pushtie;
+						}
+					}
+					elsif($dealertotal > $mytotal) { #Otherwise if player has no ace in hand
+						dealerwin;
+					}
+					elsif($dealertotal < $mytotal) { #problem here is that if tied it goes here
+						playerwin;
+					}
+					else {
+						pushtie;
+					}
+				}
+				else { #all lower
 					$client->Message(14, "Dealer reveals his next hand [$dealercard2] for a total of $dealertotal$alt2$dealertotals and must HIT!");
+					
 					$i++;
-					$dealercard3 = splice(@onedeck, int(rand(49-$i)), 1);
-					value12;
+					$dealercard3 = splice(@onedeck, int(rand(49-$i)), 1); #int(rand(49-$i)) 38 face card
+					value12; #Third dealers card start
+					#This total continues off =~/stand/i section
 					$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3;
 					$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + 10;
 					
-					if($dealerace == '10' && $dealertotals < 22) {
+					if($dealerace == '10' && $dealertotals < 22) { #If higher value is less than 22 use both values
 						$alt2 = " or ";
 						$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + 10;
 					}
-					elsif($dealerace == '10') { 
+					elsif($dealerace == '10') { #Otherwise use lower value
 						$alt2 = "";
 						$dealertotals = "";
 					}
-					else{ 
+					else{ #use lower value anyway since no ace
 						$alt2 = "";
 						$dealertotals = "";
 					}
 					
-					if($dealertotal > 21) {
+					if($dealertotal > 21) { #If dealer goes over 21 you simply bust
 						$client->Message(14, "Dealer reveals his next card [$dealercard3] for a total of $dealertotal and BUSTS!");
 						playerwin;
 					}
-					elsif($dealertotals > 16){
-						$client->Message(14, "Dealer reveals his next card [$dealercard3] for a total of $dealertotals and must STAND.");
-						if($mytotals != '0') {
+					elsif($dealertotals > 16){ #Dealer must stand and compare with ace in hand, higher value
+						$client->Message(14, "Dealer reveals his next hand [$dealercard3] for a total of $dealertotals and must STAND.");
+						if($mytotals != '0') { #This means if its not zero then player must have an ace.
 							if($dealertotals > $mytotals) {
 								dealerwin;
 							}
@@ -1261,19 +1342,19 @@ my $shuffle = quest::saylink("shuffle", 1);
 								pushtie;
 							}
 						}
-						elsif($dealertotals > $mytotal) {
+						elsif($dealertotals > $mytotal) { #Otherwise if player has no ace in hand
 							dealerwin;
-						}
-						elsif($dealertotals < $mytotal) {
+							}
+						elsif($dealertotals < $mytotal) { #problem here is that if tied it goes here
 							playerwin;
-						}
+							}
 						else {
 							pushtie;
-						}
+							}
 					}
-					elsif($dealertotal > 16) {
+					elsif($dealertotal > 16) { #when no aces in hand or lower value and stands to compare values
 						$client->Message(14, "Dealer reveals his next card [$dealercard3] for a total of $dealertotal and must STAND.");
-						if($mytotals != '0') {
+						if($mytotals != '0') { #This means if its not zero then player must have an ace.
 							if($dealertotal > $mytotals) {
 								dealerwin;
 							}
@@ -1284,114 +1365,46 @@ my $shuffle = quest::saylink("shuffle", 1);
 								pushtie;
 							}
 						}
-						elsif($dealertotal > $mytotal) {
+						elsif($dealertotal > $mytotal) { #Otherwise if player has no ace in hand
 							dealerwin;
 						}
-						elsif($dealertotal < $mytotal) {
+						elsif($dealertotal < $mytotal) { #problem here is that if tied it goes here
 							playerwin;
 						}
 						else {
 							pushtie;
-							}
+						}
 					}
-					else {
+					else { #all lower
 						$client->Message(14, "Dealer reveals his next hand [$dealercard3] for a total of $dealertotal$alt2$dealertotals and must HIT!");
+						
 						$i++;
-						$dealercard4 = splice(@onedeck, int(rand(49-$i)), 1);
+						$dealercard4 = splice(@onedeck, int(rand(49-$i)), 1); #int(rand(49-$i)) 38 face card
+						value13; #Fourth dealers card start
+						#This total continues off =~/stand/i section
 						$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4;
 						$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + 10;
 						
-						if($dealerace == '10' && $dealertotals < 22) {
+						if($dealerace == '10' && $dealertotals < 22) { #If higher value is less than 22 use both values
 							$alt2 = " or ";
 							$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + 10;
 						}
-						elsif($dealerace == '10') { 
+						elsif($dealerace == '10') { #Otherwise use lower value
 							$alt2 = "";
 							$dealertotals = "";
 						}
-						else{ 
+						else{ #use lower value anyway since no ace
 							$alt2 = "";
 							$dealertotals = "";
 						}
-						
-						if($dealertotal > 21) {
+							
+							if($dealertotal > 21) { #If dealer goes over 21 you simply bust
 							$client->Message(14, "Dealer reveals his next card [$dealercard4] for a total of $dealertotal and BUSTS!");
 							playerwin;
-						}
-						elsif($dealertotals > 16){
-							$client->Message(14, "Dealer reveals his next card [$dealercard4] for a total of $dealertotals and must STAND.");
-							if($mytotals != '0') {
-								if($dealertotals > $mytotals) {
-									dealerwin;
-								}
-								elsif($dealertotals < $mytotals ) {
-									playerwin;
-								}
-								else {
-									pushtie;
-								}
 							}
-							elsif($dealertotals > $mytotal) {
-								dealerwin;
-							}
-							elsif($dealertotals < $mytotal) {
-								playerwin;
-							}
-							else {
-								pushtie;
-							}
-						}
-						elsif($dealertotal > 16) {
-							$client->Message(14, "Dealer reveals his next card [$dealercard4] for a total of $dealertotal and must STAND.");
-							if($mytotals != '0') {
-								if($dealertotal > $mytotals) {
-									dealerwin;
-								}
-								elsif($dealertotal < $mytotals ) {
-									playerwin;
-								}
-								else {
-									pushtie;
-								}
-							}
-							elsif($dealertotal > $mytotal) {
-								dealerwin;
-							}
-							elsif($dealertotal < $mytotal) {
-								playerwin;
-							}
-							else {
-								pushtie;
-								}
-						}
-						else{
-							$client->Message(14, "Dealer reveals his next hand [$dealercard4] for a total of $dealertotal$alt2$dealertotals and must HIT!");
-							$i++;
-							$dealercard5 = splice(@onedeck, int(rand(49-$i)), 1);
-							value14;
-							$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5;
-							$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + 10;
-							
-							if($dealerace == '10' && $dealertotals < 22) {
-								$alt2 = " or ";
-								$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + 10;
-							}
-							elsif($dealerace == '10') { 
-								$alt2 = "";
-								$dealertotals = "";
-							}
-							else{ 
-								$alt2 = "";
-								$dealertotals = "";
-							}
-							
-							if($dealertotal > 21) {
-								$client->Message(14, "Dealer reveals his next card [$dealercard5] for a total of $dealertotal and BUSTS!");
-								playerwin;
-							}
-							elsif($dealertotals > 16){
-								$client->Message(14, "Dealer reveals his next card [$dealercard5] for a total of $dealertotals and must STAND.");
-								if($mytotals != '0') {
+							elsif($dealertotals > 16){ #Dealer must stand and compare with ace in hand, higher value
+								$client->Message(14, "Dealer reveals his next hand [$dealercard4] for a total of $dealertotals and must STAND.");
+								if($mytotals != '0') { #This means if its not zero then player must have an ace.
 									if($dealertotals > $mytotals) {
 										dealerwin;
 									}
@@ -1402,19 +1415,19 @@ my $shuffle = quest::saylink("shuffle", 1);
 										pushtie;
 									}
 								}
-								elsif($dealertotals > $mytotal) {
+								elsif($dealertotals > $mytotal) { #Otherwise if player has no ace in hand
 									dealerwin;
-								}
-								elsif($dealertotals < $mytotal) {
+									}
+								elsif($dealertotals < $mytotal) { #problem here is that if tied it goes here
 									playerwin;
-								}
+									}
 								else {
 									pushtie;
-								}
+									}
 							}
-							elsif($dealertotal > 16) {
-								$client->Message(14, "Dealer reveals his next card [$dealercard5] for a total of $dealertotal and must STAND.");
-								if($mytotals != '0') {
+							elsif($dealertotal > 16) { #when no aces in hand or lower value and stands to compare values
+								$client->Message(14, "Dealer reveals his next card [$dealercard4] for a total of $dealertotal and must STAND.");
+								if($mytotals != '0') { #This means if its not zero then player must have an ace.
 									if($dealertotal > $mytotals) {
 										dealerwin;
 									}
@@ -1425,117 +1438,46 @@ my $shuffle = quest::saylink("shuffle", 1);
 										pushtie;
 									}
 								}
-								elsif($dealertotal > $mytotal) {
+								elsif($dealertotal > $mytotal) { #Otherwise if player has no ace in hand
 									dealerwin;
 								}
-								elsif($dealertotal < $mytotal) {
+								elsif($dealertotal < $mytotal) { #problem here is that if tied it goes here
 									playerwin;
 								}
 								else {
 									pushtie;
-									}
+								}
 							}
-							else{
-								$client->Message(14, "Dealer reveals his next hand [$dealercard5] for a total of $dealertotal$alt2$dealertotals and must HIT!");
-							
+							else { #all lower
+								$client->Message(14, "Dealer reveals his next hand [$dealercard4] for a total of $dealertotal$alt2$dealertotals and must HIT!");
+								
 								$i++;
-								$dealercard6 = splice(@onedeck, int(rand(49-$i)), 1);
-								value15;
-								$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6;
-								$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + 10;
+								$dealercard5 = splice(@onedeck, int(rand(49-$i)), 1); #int(rand(49-$i)) 38 face card
+								value14; #Fifth dealers card start
+								#This total continues off =~/stand/i section
+								$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5;
+								$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + 10;
 								
-								if($dealerace == '10' && $dealertotals < 22) {
+								if($dealerace == '10' && $dealertotals < 22) { #If higher value is less than 22 use both values
 									$alt2 = " or ";
-									$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + 10;
+									$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + 10;
 								}
-								elsif($dealerace == '10') { 
+								elsif($dealerace == '10') { #Otherwise use lower value
 									$alt2 = "";
 									$dealertotals = "";
 								}
-								else{ 
+								else{ #use lower value anyway since no ace
 									$alt2 = "";
 									$dealertotals = "";
 								}
-							
-								if($dealertotal > 21) {
-									$client->Message(14, "Dealer reveals his next card [$dealercard6] for a total of $dealertotal and BUSTS!");
-									playerwin;
-								}
-								elsif($dealertotals > 16){
-									$client->Message(14, "Dealer reveals his next card [$dealercard6] for a total of $dealertotals and must STAND. OK!");
-									if($mytotals != '0') {
-										if($dealertotals > $mytotals) {
-											dealerwin;
-										}
-										elsif($dealertotals < $mytotals ) {
-											playerwin;
-										}
-										else {
-											pushtie;
-										}
-									}
-									elsif($dealertotals > $mytotal) {
-										dealerwin;
-									}
-									elsif($dealertotals < $mytotal) {
+						
+									if($dealertotal > 21) { #If dealer goes over 21 you simply bust
+										$client->Message(14, "Dealer reveals his next card [$dealercard5] for a total of $dealertotal and BUSTS!");
 										playerwin;
 									}
-									else {
-										pushtie;
-									}
-								}
-								elsif($dealertotal > 16) {
-									$client->Message(14, "Dealer reveals his next card [$dealercard6] for a total of $dealertotal and must STAND.");
-									if($mytotals != '0') {
-										if($dealertotal > $mytotals) {
-											dealerwin;
-										}
-										elsif($dealertotal < $mytotals ) {
-											playerwin;
-										}
-										else {
-											pushtie;
-										}
-									}
-									elsif($dealertotal > $mytotal) {
-										dealerwin;
-									}
-									elsif($dealertotal < $mytotal) {
-										playerwin;
-									}
-									else {
-										pushtie;
-										}
-								}
-								else{
-									$client->Message(14, "Dealer reveals his next hand [$dealercard6] for a total of $dealertotal$alt2$dealertotals and must HIT!");
-								
-									$i++;
-									$dealercard7 = splice(@onedeck, int(rand(49-$i)), 1);
-									value16;
-									$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7;
-									$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + 10;
-									
-									if($dealerace == '10' && $dealertotals < 22) {
-										$alt2 = " or ";
-										$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + 10;
-									}
-									elsif($dealerace == '10') { 
-										$alt2 = "";
-										$dealertotals = "";
-									}
-									else{ 
-										$alt2 = "";
-										$dealertotals = "";
-									}
-									
-									if($dealertotal > 21) {
-										$client->Message(14, "Dealer reveals his next card [$dealercard7] for a total of $dealertotal and BUSTS!");
-										playerwin;
-									}
-									elsif($dealertotals > 16){
-										$client->Message(14, "Dealer reveals his next card [$dealercard7] for a total of $dealertotals and must STAND.");
-										if($mytotals != '0') {
+									elsif($dealertotals > 16){ #Dealer must stand and compare with ace in hand, higher value
+										$client->Message(14, "Dealer reveals his next hand [$dealercard5] for a total of $dealertotals and must STAND.");
+										if($mytotals != '0') { #This means if its not zero then player must have an ace.
 											if($dealertotals > $mytotals) {
 												dealerwin;
 											}
@@ -1546,19 +1488,19 @@ my $shuffle = quest::saylink("shuffle", 1);
 												pushtie;
 											}
 										}
-										elsif($dealertotals > $mytotal) {
+										elsif($dealertotals > $mytotal) { #Otherwise if player has no ace in hand
 											dealerwin;
-										}
-										elsif($dealertotals < $mytotal) {
+											}
+										elsif($dealertotals < $mytotal) { #problem here is that if tied it goes here
 											playerwin;
-										}
+											}
 										else {
 											pushtie;
-										}
+											}
 									}
-									elsif($dealertotal > 16) {
-										$client->Message(14, "Dealer reveals his next card [$dealercard7] for a total of $dealertotal and must STAND.");
-										if($mytotals != '0') {
+									elsif($dealertotal > 16) { #when no aces in hand or lower value and stands to compare values
+										$client->Message(14, "Dealer reveals his next card [$dealercard5] for a total of $dealertotal and must STAND.");
+										if($mytotals != '0') { #This means if its not zero then player must have an ace.
 											if($dealertotal > $mytotals) {
 												dealerwin;
 											}
@@ -1569,95 +1511,246 @@ my $shuffle = quest::saylink("shuffle", 1);
 												pushtie;
 											}
 										}
-										elsif($dealertotal > $mytotal) {
+										elsif($dealertotal > $mytotal) { #Otherwise if player has no ace in hand
 											dealerwin;
 										}
-										elsif($dealertotal < $mytotal) { 
+										elsif($dealertotal < $mytotal) { #problem here is that if tied it goes here
 											playerwin;
 										}
 										else {
 											pushtie;
-											}
+										}
 									}
-									else{
-										$client->Message(14, "Dealer reveals his next hand [$dealercard7] for a total of $dealertotal$alt2$dealertotals and must HIT! 8th");
+									else {
+										$client->Message(14, "Dealer reveals his next hand [$dealercard5] for a total of $dealertotal$alt2$dealertotals and must HIT!");
+								
 										$i++;
-										$dealercard8 = splice(@onedeck, int(rand(49-$i)), 1);
-										value17;
-										$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + $dealer8;
-										$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + $dealer8 + 10;
+										$dealercard6 = splice(@onedeck, int(rand(49)), 1); #int(rand(49-$i)) 38 face card
+										value15; #Sixth dealers card start
+										#This total continues off =~/stand/i section
+										$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6;
+										$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + 10;
 										
-										if($dealerace == '10' && $dealertotals < 22) {
+										if($dealerace == '10' && $dealertotals < 22) { #If higher value is less than 22 use both values
 											$alt2 = " or ";
-											$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + $dealer8 + 10;
+											$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + 10;
 										}
-										elsif($dealerace == '10') { 
+										elsif($dealerace == '10') { #Otherwise use lower value
 											$alt2 = "";
 											$dealertotals = "";
 										}
-										else{ 
+										else{ #use lower value anyway since no ace
 											$alt2 = "";
 											$dealertotals = "";
 										}
-										
-										if($dealertotal > 21) {
-											$client->Message(14, "Dealer reveals his next card [$dealercard8] for a total of $dealertotal and BUSTS!");
-											playerwin;
-										}
-										elsif($dealertotals > 16){
-											$client->Message(14, "Dealer reveals his next card [$dealercard8] for a total of $dealertotals and must STAND.");
-											if($mytotals != '0') { 
-												if($dealertotals > $mytotals) {
+									
+											if($dealertotal > 21) { #If dealer goes over 21 you simply bust
+												$client->Message(14, "Dealer reveals his next card [$dealercard6] for a total of $dealertotal and BUSTS!");
+												playerwin;
+											}
+											elsif($dealertotals > 16){ #Dealer must stand and compare with ace in hand, higher value
+												$client->Message(14, "Dealer reveals his next hand [$dealercard6] for a total of $dealertotals and must STAND.");
+												if($mytotals != '0') { #This means if its not zero then player must have an ace.
+													if($dealertotals > $mytotals) {
+														dealerwin;
+													}
+													elsif($dealertotals < $mytotals ) {
+														playerwin;
+													}
+													else {
+														pushtie;
+													}
+												}
+												elsif($dealertotals > $mytotal) { #Otherwise if player has no ace in hand
+													dealerwin;
+													}
+												elsif($dealertotals < $mytotal) { #problem here is that if tied it goes here
+													playerwin;
+													}
+												else {
+													pushtie;
+													}
+											}
+											elsif($dealertotal > 16) { #when no aces in hand or lower value and stands to compare values
+												$client->Message(14, "Dealer reveals his next card [$dealercard6] for a total of $dealertotal and must STAND.");
+												if($mytotals != '0') { #This means if its not zero then player must have an ace.
+													if($dealertotal > $mytotals) {
+														dealerwin;
+													}
+													elsif($dealertotal < $mytotals ) {
+														playerwin;
+													}
+													else {
+														pushtie;
+													}
+												}
+												elsif($dealertotal > $mytotal) { #Otherwise if player has no ace in hand
 													dealerwin;
 												}
-												elsif($dealertotals < $mytotals ) {
+												elsif($dealertotal < $mytotal) { #problem here is that if tied it goes here
 													playerwin;
 												}
 												else {
 													pushtie;
 												}
 											}
-											elsif($dealertotals > $mytotal) {
-												dealerwin;
-											}
-											elsif($dealertotals < $mytotal) {
-												playerwin;
-											}
-											else {
-												pushtie;
-											}
-										}
-										elsif($dealertotal > 16) {
-											$client->Message(14, "Dealer reveals his next card [$dealercard8] for a total of $dealertotal and must STAND.");
-											if($mytotals != '0') { 
-												if($dealertotal > $mytotals) {
-													dealerwin;
+											else{
+												$client->Message(14, "Dealer reveals his next hand [$dealercard6] for a total of $dealertotal$alt2$dealertotals and must HIT!");
+								
+												$i++;
+												$dealercard7 = splice(@onedeck, int(rand(49)), 1); #int(rand(49-$i)) 38 face card
+												value16; #Seventh dealers card start
+												#This total continues off =~/stand/i section
+												$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7;
+												$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + 10;
+												
+												if($dealerace == '10' && $dealertotals < 22) { #If higher value is less than 22 use both values
+													$alt2 = " or ";
+													$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + 10;
 												}
-												elsif($dealertotal < $mytotals ) {
-													playerwin;
+												elsif($dealerace == '10') { #Otherwise use lower value
+													$alt2 = "";
+													$dealertotals = "";
 												}
-												else {
-													pushtie;
+												else{ #use lower value anyway since no ace
+													$alt2 = "";
+													$dealertotals = "";
 												}
+												
+													if($dealertotal > 21) { #If dealer goes over 21 you simply bust
+														$client->Message(14, "Dealer reveals his next card [$dealercard7] for a total of $dealertotal and BUSTS!");
+														playerwin;
+													}
+													elsif($dealertotals > 16){ #Dealer must stand and compare with ace in hand, higher value
+														$client->Message(14, "Dealer reveals his next hand [$dealercard7] for a total of $dealertotals and must STAND.");
+														if($mytotals != '0') { #This means if its not zero then player must have an ace.
+															if($dealertotals > $mytotals) {
+																dealerwin;
+															}
+															elsif($dealertotals < $mytotals ) {
+																playerwin;
+															}
+															else {
+																pushtie;
+															}
+														}
+														elsif($dealertotals > $mytotal) { #Otherwise if player has no ace in hand
+															dealerwin;
+															}
+														elsif($dealertotals < $mytotal) { #problem here is that if tied it goes here
+															playerwin;
+															}
+														else {
+															pushtie;
+															}
+													}
+													elsif($dealertotal > 16) { #when no aces in hand or lower value and stands to compare values
+														$client->Message(14, "Dealer reveals his next card [$dealercard7] for a total of $dealertotal and must STAND.");
+														if($mytotals != '0') { #This means if its not zero then player must have an ace.
+															if($dealertotal > $mytotals) {
+																dealerwin;
+															}
+															elsif($dealertotal < $mytotals ) {
+																playerwin;
+															}
+															else {
+																pushtie;
+															}
+														}
+														elsif($dealertotal > $mytotal) { #Otherwise if player has no ace in hand
+															dealerwin;
+														}
+														elsif($dealertotal < $mytotal) { #problem here is that if tied it goes here
+															playerwin;
+														}
+														else {
+															pushtie;
+														}
+													}
+													else{
+														$client->Message(14, "Dealer reveals his next hand [$dealercard7] for a total of $dealertotal$alt2$dealertotals and must HIT!");
+								
+														$i++;
+														$dealercard8 = splice(@onedeck, int(rand(49-$i)), 1); #int(rand(49-$i)) 38 face card
+														value17; #Eighth dealers card start
+														#This total continues off =~/stand/i section
+														$dealertotal = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + $dealer8;
+														$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + $dealer8 + 10;
+														
+														
+														if($dealerace == '10' && $dealertotals < 22) { #If higher value is less than 22 use both values
+															$alt2 = " or ";
+															$dealertotals = $second + $fourth + $dealer + $dealer2 + $dealer3 + $dealer4 + $dealer5 + $dealer6 + $dealer7 + $dealer8 + 10;
+														}
+														elsif($dealerace == '10') { #Otherwise use lower value
+															$alt2 = "";
+															$dealertotals = "";
+														}
+														else{ #use lower value anyway since no ace
+															$alt2 = "";
+															$dealertotals = "";
+														}
+														
+														if($dealertotal > 21) { #If dealer goes over 21 you simply bust
+															$client->Message(14, "Dealer reveals his next card [$dealercard8] for a total of $dealertotal and BUSTS!");
+															playerwin;
+														}
+														elsif($dealertotals > 16){ #Dealer must stand and compare with ace in hand, higher value
+															$client->Message(14, "Dealer reveals his next hand [$dealercard8] for a total of $dealertotals and must STAND.");
+															if($mytotals != '0') { #This means if its not zero then player must have an ace.
+																if($dealertotals > $mytotals) {
+																	dealerwin;
+																}
+																elsif($dealertotals < $mytotals ) {
+																	playerwin;
+																}
+																else {
+																	pushtie;
+																}
+															}
+															elsif($dealertotals > $mytotal) { #Otherwise if player has no ace in hand
+																dealerwin;
+																}
+															elsif($dealertotals < $mytotal) { #problem here is that if tied it goes here
+																playerwin;
+																}
+															else {
+																pushtie;
+																}
+														}
+														elsif($dealertotal > 16) { #when no aces in hand or lower value and stands to compare values
+															$client->Message(14, "Dealer reveals his next card [$dealercard8] for a total of $dealertotal and must STAND.");
+															if($mytotals != '0') { #This means if its not zero then player must have an ace.
+																if($dealertotal > $mytotals) {
+																	dealerwin;
+																}
+																elsif($dealertotal < $mytotals ) {
+																	playerwin;
+																}
+																else {
+																	pushtie;
+																}
+															}
+															elsif($dealertotal > $mytotal) { #Otherwise if player has no ace in hand
+																dealerwin;
+															}
+															elsif($dealertotal < $mytotal) { #problem here is that if tied it goes here
+																playerwin;
+															}
+															else {
+																pushtie;
+															}
+														}
+													}
 											}
-											elsif($dealertotal > $mytotal) {
-												dealerwin;
-											}
-											elsif($dealertotal < $mytotal) {
-												playerwin;
-											}
-											else {
-												pushtie;
-												}
-										}
 									}
-								}
 							}
-						}
 					}
 				}
 			}
 		}
+		quest::setglobal("hithit", 1, 1, "F");
+		quest::setglobal("standstand", 1, "F");
 	} #END STAND
 } #END EVENT SAY
 sub EVENT_ITEM {
@@ -1672,8 +1765,8 @@ my $play = quest::saylink("play", 1);
 	elsif($platinum >= '50') {
 		quest::say ("Let's $play. I'll deal.");
 		quest::setglobal("cheat", 1, 5, "F");
-		quest::setglobal("hithit", 0, 5, "F");
-		quest::setglobal("standstand", 0, 5, "F");
+		quest::setglobal("hithit", 1, 5, "F");
+		quest::setglobal("standstand", 1, 5, "F");
 		}
 	elsif($platinum > '0') {
 		quest::say ("I'm sorry but the minimum bet is 50 platinum pieces.");
