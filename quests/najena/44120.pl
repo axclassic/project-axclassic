@@ -3,7 +3,7 @@ sub EVENT_SPAWN {
   quest::spawn2($a,0,0,105,353,3.7,127);
   }
   sub EVENT_SIGNAL {
-  if ($signal == 4412){
+  if ($signal == 4411){
   quest::depop(44114);
   quest::depop(44116);
   quest::depop(44118);
