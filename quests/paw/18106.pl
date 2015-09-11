@@ -4,7 +4,7 @@ sub EVENT_SPAWN{
  	quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50); 
   } 
 sub EVENT_ENTER{ 
- if($ulevel <= 35){ 
+ if($ulevel <= 45){ 
  my $x = $npc->GetX(); 
  my $y = $npc->GetY(); 
  my $z = $npc->GetZ(); 
