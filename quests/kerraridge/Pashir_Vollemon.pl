@@ -101,8 +101,9 @@ sub EVENT_ITEM {
     quest::faction(2806,1); 
     }
    elsif (plugin::check_handin(\%itemcount, 120210 => 1)) { 
-   quest::say("Well well... Perhaps you're looking to hunt some bigger game, eh? Earn a little scruff on your ears like Rager? I thought so. I know a good place for you to start... and it's part of your civil duty. Our scouts have always had trouble with the wolves in the moor. I'm thinkin that you can start there. Maybe break in a few of the younger wolves' paws, eh? I thought so. Here, Take back your axe and take this bag. Fill it with wolf paws and bring it back to me. Maybe then I'll give you a real challenge.");
+   quest::say("Well well... Perhaps you're looking to hunt some bigger game, eh? Earn a little scruff on your ears like Rager? I thought so. I know a good place for you to start... and it's part of your civil duty. Our scouts have always had trouble with the wolves in the moor. I'm thinkin that you can start there. Maybe break in a few of the younger wolves' paws, eh? I thought so. Here, Take back your cloak and take this bag. Fill it with wolf cub paws and bring it back to me. Maybe then I'll give you a real challenge.");
    quest::summonitem(17114);
+   quest::summonitem(120210);
    }
   elsif (plugin::check_handin(\%itemcount, 6217 =>1 )) {
    quest::say("Well, you're beginning to scare me you're so tough! Just pullin your tail. Those were some scary beasts, eh? You have come a long way $name, but there is more to learn. Hand me your cloak of the Ireblood Ragers Recruit if you are brave enough to continue along the lines of our guild.");
