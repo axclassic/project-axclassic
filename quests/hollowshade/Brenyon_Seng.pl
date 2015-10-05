@@ -7,6 +7,12 @@ my $young = quest::saylink("young", 1);
      quest::say("The young wolves tend to stay in the northern part of the Moor. For the most part they do not hunt in packs as they have not learned the way of the pack as of yet.");
      quest sayy("Good luck to you and good hunting.");
      quest::spawn2(166296,0,0,2913.8,-1820.5,-123.3,190.1);
+     quest::signalwith(166296,101,0);
+     quest::spawn2(166302,0,0,2856,-1781.7,-129.5,204.5);
+     quest::spawn2(166297,0,0,372.3,2168.3,137.3,103.8);
+     quest::spawn2(166298,0,0,516,1019,34.6,241.5);
+     quest::spawn2(166299,0,0,931.6,1384.9,83.1,209.5);
+     quest::spawn2(166300,0,0,268.2,2082.6,119.1,154.6);
      quest::depop();
  }
 }
