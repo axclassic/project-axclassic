@@ -6,7 +6,7 @@
 ## started on Aug 30 2015
 ## Based Upon Everquest 2's lottery system
 ## Last updated 8/28/2015
-## Completed 10/15/2015 @ revision 2553
+## Completed 10/15/2015 @ revision 2555
 #######################################
 
 #Square facing
@@ -104,12 +104,12 @@ sub EVENT_ITEM {
 		
 		#Your Lottery here
 		@lottery = @numbers;
-		$second = 15;
-		$third = 9;
-		$first = 27;
-		#$first = splice(@lottery, int(rand(31)), 1);
-		#$second = splice(@lottery, int(rand(30)), 1);
-		#$third = splice(@lottery, int(rand(29)), 1);
+		#$second = 15;
+		#$third = 9;
+		#$first = 27;
+		$first = splice(@lottery, int(rand(31)), 1);
+		$second = splice(@lottery, int(rand(30)), 1);
+		$third = splice(@lottery, int(rand(29)), 1);
 		
 		#List of all lottery results in array
 		@totals = ($first, $second, $third);
