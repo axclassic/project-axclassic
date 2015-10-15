@@ -94,7 +94,7 @@ my $lottery = quest::saylink("lottery", 1);
 	}
 	elsif($text=~/lottery/i) {
 		quest::say("Each ticket costs 5 platinum to play. If you match 2 of the 3 numbers you win 10 plat! Match
-		all 3 and you win the jackpot. Our last big winner was $none.");
+		all 3 and you win the jackpot. Our last big winner was $none!");
 	}
 }
 sub EVENT_ITEM {
