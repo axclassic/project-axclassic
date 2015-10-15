@@ -6,6 +6,7 @@
 ## started on Aug 30 2015
 ## Based Upon Everquest 2's lottery system
 ## Last updated 8/28/2015
+## Completed 10/15/2015 @ revision 2553
 #######################################
 
 #Square facing
