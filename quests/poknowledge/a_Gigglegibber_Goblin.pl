@@ -114,7 +114,7 @@ sub EVENT_ITEM {
 		#List of all lottery results in array
 		@totals = ($first, $second, $third);
 		
-		quest::say("Your ticket is $first$square$second$square$third.");
+		quest::say("Your ticket is $first$square$second$square$third. Try again!");
 		#Matches all 3 numbers
 		if ((($totals[0] == $roll1) || ($totals[0] == $roll2) || ($totals[0] == $roll3)) &&
 		   (($totals[1] == $roll1) || ($totals[1] == $roll2) || ($totals[1] == $roll3)) &&
