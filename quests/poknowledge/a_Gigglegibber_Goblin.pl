@@ -99,7 +99,7 @@ my $lottery = quest::saylink("lottery", 1);
 }
 sub EVENT_ITEM {
 	if( $platinum == '5') {
-		quest::say("Thank you! The current numbers are $roll1$square$roll2$square$roll3.");
+		quest::say("Thank you! The current numbers are ($roll1)($roll2)($roll3).");
 		quest::setglobal("jackpot", ($qglobals{"jackpot"} + 5), 7, "F");
 		
 		#Your Lottery here
@@ -114,7 +114,7 @@ sub EVENT_ITEM {
 		#List of all lottery results in array
 		@totals = ($first, $second, $third);
 		
-		quest::say("Your ticket is $first$square$second$square$third. Try again!");
+		quest::say("Your ticket is ($first)($second)($third). Try again!");
 		#Matches all 3 numbers
 		if ((($totals[0] == $roll1) || ($totals[0] == $roll2) || ($totals[0] == $roll3)) &&
 		   (($totals[1] == $roll1) || ($totals[1] == $roll2) || ($totals[1] == $roll3)) &&
