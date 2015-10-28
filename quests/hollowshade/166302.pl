@@ -1,5 +1,5 @@
 sub EVENT_SPAWN{
-quest::settimer(166,180);
+quest::settimer(166,3600);
 }
 sub EVENT_SIGNAL{
  if ($signal == 297) {
