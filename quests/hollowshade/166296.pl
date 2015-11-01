@@ -11,7 +11,7 @@ sub EVENT_SIGNAL {
 	}
 	if($signal == 102) { ##signal 102 is from each young_sonic_wolf##
     $counter += 1;
-	   if($counter == 16) {
+	   if($counter == 12) {
 	quest::depop(166297); 
 	quest::depop(166298); 
 	quest::depop(166299);
