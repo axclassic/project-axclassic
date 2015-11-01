@@ -3,33 +3,45 @@ quest::settimer(166,3600);
 }
 sub EVENT_SIGNAL{
  if ($signal == 297) {
- my $a = quest::ChooseRandom(166297,166301);
- quest::spawn2($a,0,0,372.3,2168.3,137.3,103.8);
+ quest::spawn2(166301,0,0,372.3,2168.3,137.3,103.8);
  }
  if ($signal == 298) {
- my $a = quest::ChooseRandom(166298,166303);
- quest::spawn2($a,0,0,516,1019,34.6,241.5);
+  quest::spawn2(166303,0,0,516,1019,34.6,241.5);
  }
  if ($signal == 299) {
- my $a = quest::ChooseRandom(166299,166304);
- quest::spawn2($a,0,0,931.6,1384.9,83.1,209.5);
+  quest::spawn2(166304,0,0,931.6,1384.9,83.1,209.5);
  }
  if ($signal == 300) {
- my $a = quest::ChooseRandom(166300,166305);
- quest::spawn2($a,0,0,268.2,2082.6,119.1,154.6);
+ quest::spawn2(166305,0,0,271.8,2078.3,118.7,154.6);
  }
+ if ($signal == 301) {
+ quest::spawn2(166306,0,0,372.3,2168.3,137.3,103.8);
  }
+ if ($signal == 303) {
+  quest::spawn2(166307,0,0,516,1019,34.6,241.5);
+ }
+ if ($signal == 304) {
+  quest::spawn2(166308,0,0,931.6,1384.9,83.1,209.5);
+ }
+ if ($signal == 305) {
+ quest::spawn2(166309,0,0,271.8,2078.3,118.7,154.6);
+ }
+  }
  sub EVENT_TIMER{
  if($cloaktimer == 166){
    quest::depop(166296);
-   quest::depopall(166297); 
-   quest::depopall(166298); 
-   quest::depopall(166299);
-   quest::depopall(166300);
-   quest::depopall(166301);
-   quest::depopall(166303);
-   quest::depopall(166304);
-   quest::depopall(166305);
+   quest::depop(166297); 
+   quest::depop(166298); 
+   quest::depop(166299);
+   quest::depop(166300);
+   quest::depop(166301);
+   quest::depop(166303);
+   quest::depop(166304);
+   quest::depop(166305);
+   quest::depop(166306);
+   quest::depop(166307);
+   quest::depop(166308);
+   quest::depop(166309);
    quest::stoptimer(166);
    quest::depop();
    }
