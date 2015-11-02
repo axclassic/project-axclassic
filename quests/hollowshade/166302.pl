@@ -1,5 +1,5 @@
 sub EVENT_SPAWN{
-quest::settimer(166,3600);
+#quest::settimer(166,3600);
 }
 sub EVENT_SIGNAL{
  if ($signal == 297) {
@@ -27,22 +27,22 @@ sub EVENT_SIGNAL{
  quest::spawn2(166309,0,0,271.8,2078.3,118.7,154.6);
  }
   }
-sub EVENT_TIMER{
- if($cloaktimer == 166){
-   quest::depop(166296);
-   quest::depop(166297); 
-   quest::depop(166298); 
-   quest::depop(166299);
-   quest::depop(166300);
-   quest::depop(166301);
-   quest::depop(166303);
-   quest::depop(166304);
-   quest::depop(166305);
-   quest::depop(166306);
-   quest::depop(166307);
-   quest::depop(166308);
-   quest::depop(166309);
-   quest::stoptimer(166);
-   quest::depop();
-   }
- }  
+#sub EVENT_TIMER{
+ #if($cloaktimer == 166){
+  # quest::depop(166296);
+   #quest::depop(166297); 
+   #quest::depop(166298); 
+   #quest::depop(166299);
+   #quest::depop(166300);
+   #quest::depop(166301);
+   #quest::depop(166303);
+   #quest::depop(166304);
+   #quest::depop(166305);
+   #quest::depop(166306);
+   #quest::depop(166307);
+   #quest::depop(166308);
+   #quest::depop(166309);
+   #quest::stoptimer(166);
+   #quest::depop();
+   #}
+ #}  
