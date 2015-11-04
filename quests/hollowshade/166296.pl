@@ -8,7 +8,7 @@ my $young_wolf_event = 0;
 sub EVENT_SIGNAL {
     if ($signal == 101) {
 	$young_wolf_event += 1;	# adds one to spawn variable #
-	quest::settimer(166,600);
+	quest::settimer("cloaktimer",3500);
 	}
 	if($signal == 102) { ##signal 102 is from each young_sonic_wolf##
     $counter += 1;
@@ -31,7 +31,7 @@ sub EVENT_SIGNAL {
    }
  }
  sub EVENT_TIMER{
- if($cloaktimer == 166){
+ if($timer eq "cloaktimer"){
    quest::depop(166296);
    quest::depop(166297); 
    quest::depop(166298); 
@@ -45,7 +45,7 @@ sub EVENT_SIGNAL {
    quest::depop(166307);
    quest::depop(166308);
    quest::depop(166309);
-   quest::stoptimer(166);
+   quest::stoptimer("cloaktimer");
    quest::depop();
    }
  }  
