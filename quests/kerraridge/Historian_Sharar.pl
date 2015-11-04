@@ -24,6 +24,17 @@ sub EVENT_ITEM {
      quest::faction(175,1);
      quest::faction(2806,1);
      }
+     elsif(plugin::check_handin(\%itemcount,8466 => 1)){
+     quest::say("'I see that you've found the codger. He really should settle down and come in from the weather. I often find myself worrying about him these days. Adventure takes its toll on everyone. I'd like to see him settle down before the moor takes a final toll from him.");
+     quest::say("Well, I can't say that it isn't a pleasure to have his journal. He's documented the moor with such splendid detail. I cannot wait to see what he's written in these last few seasons. It is all so very helpful. Just take a look at these earplugs. They are a product of his last set of notes. He came up with the idea, while hunting owlbear in the moor. They are supposed to keep the sound they make from harming you. You can keep them, if you take this note to General Avilah for me.");
+     quest::summonitem(4461);
+     quest::summonitem(8467);
+     quest::exp(1000);
+     quest::ding();
+     quest::faction(132,10);
+     quest::faction(175,1);
+     quest::faction(2806,1);
+     }
 }         
 	 #END of FILE Zone:kerraridge  ID:74425 -- Historian_Sharar 
 
