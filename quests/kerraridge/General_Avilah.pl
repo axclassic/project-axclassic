@@ -1,9 +1,13 @@
 sub EVENT_SAY { 
-if($text=~/Hail/i){
+ if($text=~/Hail/i){
 quest::say("Good day to you $name, may I help you?");
+}
+if($text=~/signal/i){
+  quest::say("Our scouts have learned that should the ");
 }
 }
 sub EVENT_ITEM {
+   my $signal = quest::saylink("signal", 1);
   if (plugin::check_handin(\%itemcount, 8467 =>1 )) {
     quest::say("Thank you for delivering this. While I have you here, perhaps you can help. We are in dire need of assistance in the moor. All of the reports from our Taruun are indicating the same thing. The area has to be swept clear of the factions that currently inhabit it. The land itself seems defendable, we need someone to gather some soldiers and clear the area.");
     quest::say("This mission is rather contriversial to say the least, while the moor has been cleared there are rumors that there may be an uprising.");
