@@ -1,5 +1,4 @@
 # Deck of Spontaneous Generation
-#
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
@@ -18,4 +17,3 @@ sub EVENT_ITEM {
 }
 
 # EOF zone: mischiefplane ID: 126148 NPC: Clukker_The_Crazy
-
