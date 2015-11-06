@@ -1,8 +1,17 @@
-# Deck of Spontaneous Generation Quest.
+#######################################
+## NPC: Clukker The Crazy
+## Zone: Plane of Mischief
+## Quest: Deck of Spontaneous Generation
+## Started by unknown
+## Fixed by Patrikpatrik
+## Nov 6th 2015
+#######################################
 
 sub EVENT_SAY {
+my $phrase = quest::saylink("looking for a deck", 1);
+
   if ($text=~/hail/i) {
-    quest::say("Ha ha! Hello to you too! I have got this crazy deck that I'm willing to give to those [looking for a deck]. Ha ha! Oo!");
+    quest::say("Ha ha! Hello to you too! I have got this crazy deck that I'm willing to give to those $phrase. Ha ha! Oo!");
   }
   if ($text=~/looking for a deck/i) {
      quest::say("You're looking for a DECK? Ha ha ha! Well, bring me a fishing grub, tee hee, and I'll give you a nifty deck");
