@@ -7,7 +7,7 @@ $serverName = 'AX Classic';
 // Database Information:
 $dbhost = 'localhost';
 $dbuser = 'eq';
-$dbpass = 'lansing222';
+$dbpass = 'password';
 $db = 'ax_classic';
 //$db = 'classic_2012';
 /*  Limit zone lists to a specified expansion
