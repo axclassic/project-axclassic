@@ -1,0 +1,77 @@
+AX Classic Editor Changelog (Started May 9, 2009) --Belatedly
+-----------------------------------------------------
+
+==September 8, 2009==
+Asram: (Via Cavedude) Added search by primary faction when changing a NPC's faction.
+Asram: (Via Cavedude) Clicking on the merchantid under the Merchants tab will now show you which NPC(s) are using the current list.
+Asram: Added ability to add additional spawngroups. (on Spawns tab)
+Asram: (Via Cavedude) Support for hackers table, will only show first 500 entries. (On Server tab)
+Asram: (Via cavedude) Finished implementation of admin user class.
+Asram: (Via Cavedude) Added support for admins to view reported players (on Server tab)
+
+
+==September 7,2009==
+Asram: Added "enabled" fields to spawn editor.
+
+==August 27, 2009==
+Asram: Added cavedude's Updates for new npc_types fields
+
+==August 18, 2009==
+Asram: Initial upload to closed SVN
+Asram: Added isclassic and canraid fields to Zone view
+Asram: Began work on Item Editor (still very messy due to lots and lots and lots of columns in that database)
+
+==August 7, 2009==
+Asram: Fixed NPC ID Suggestion when No NPC's in Database for that zoneid
+Asram: Added support for all expansions up to Secrets of Faydwer, but also set the expansion limit in config.php to 3 (up to and including Velious) for AX-Classic defaults.
+
+==July 27, 2009==
+Asram: Added Cavedude's Adventures and Tasks Support; Fixed open HREF; Still reviewing to fix Adventures template pages
+
+==June 10, 2009==
+Asram: Added SOF races
+Asram: Added Cavedude's LDON support (through PEQ revision 48)
+
+==June 3, 2009==
+Asram: Added class 60, LDON Adventure Recruiter, to data.php
+
+==May 22, 2009==
+Asram: Added full start_zones editor to Server menu. Admins can now set where new players spawn and bind based on their race, class, deity, etc.
+Asram: Reintegrated Alaria into main branch to include this wicked new start_zones feature.
+
+==May 21, 2009==
+Asram: Added full starting_items editor to Server menu. Enjoy!
+
+==May 19,2009==
+Added version and instancing support
+
+==5/17/2009==
+Asram: Added /bug support and server tab per Cavedude
+Asram: Created /alaria branch for editor rewrite
+
+SQL Requirements:  The /bug listings will generate errors if you don't add the following to your db:
+
+DROP TABLE IF EXISTS `bugs`;
+CREATE TABLE `bugs` (`id` int(11) unsigned NOT NULL auto_increment,
+`zone` varchar(32) NOT NULL,
+`name` varchar(64) NOT NULL,
+`ui` varchar(128) NOT NULL,
+`x` float NOT NULL default '0',
+`y` float NOT NULL default '0',
+`z` float NOT NULL default '0',
+`type` varchar(64) NOT NULL,
+`flag` tinyint(3) unsigned NOT NULL,
+`target` varchar(64) default NULL,
+`bug` varchar(1024) NOT NULL,
+`date` date NOT NULL,
+`status` tinyint(3) unsigned NOT NULL default '0',
+PRIMARY KEY  (`id`),
+UNIQUE KEY `id` (`id`) ) 
+ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8; 
+
+==May 15,2009==
+Asram: Added support for drakkin heritage, tattoo, and details settings in the NPC Edit fields.
+Asram: Added confirmation to spawn_conditions edits, and fixed table formatting for blocked spells.
+
+==May 9, 2009==
+Asram: Fixed wrong redirects after failing primary faction and npc faction hit searches. They now point back to the correct search queries.
