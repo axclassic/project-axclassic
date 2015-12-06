@@ -15,6 +15,7 @@ sub EVENT_SPAWN
 	$y = $npc->GetY();
 	quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
 }
+## Band Saystuff 
 sub EVENT_ENTER {
 my $najena = quest::saylink("Najena", 1);
 my $fishbone = quest::saylink("Fishbone", 1);
@@ -80,57 +81,58 @@ my $random_result2 = int(rand(150));
       quest::unique_spawn(189999,0,0,22,48,12,152);
       }
   }
-
+## Band Saystuff
 $npc->SetAppearance(1);
 if($random_result2<=40){
-    if($random_result<=10){
-       $client->Message(14,"Ranger Band says,\"There was a time when I camped in $najena for the Journeymans Boots...\""); }
+        if($random_result<=10){
+	  $client->Message(14,"Ranger Band says,\"There was a time when I camped in $najena for the Journeymans Boots...\""); }
 	elsif($random_result<=20){
-       $client->Message(14,"Ranger Band says,\"The $fishbone earring was my first item for underwater breathing\""); }
+	  $client->Message(14,"Ranger Band says,\"The $fishbone earring was my first item for underwater breathing\""); }
 	elsif($random_result<=30){
-       $client->Message(14,"Ranger Band says,\"Once I saw a mini-dragon living in a small pool while in The $warrens\""); }
+	  $client->Message(14,"Ranger Band says,\"Once I saw a mini-dragon living in a small pool while in The $warrens\""); }
 	elsif($random_result<=40){
-       $client->Message(14,"Ranger Band says,\"South Karana is one of my favorite hunting grounds, I got my first decent $bow there\""); }
+	  $client->Message(14,"Ranger Band says,\"South Karana is one of my favorite hunting grounds, I got my first decent $bow there\""); }
 	elsif($random_result<=50){
-       $client->Message(14,"Ranger Band says,\"Once we camped some $ogres in West Karana...\""); }
+	  $client->Message(14,"Ranger Band says,\"Once we camped some $ogres in West Karana...\""); }
 	elsif($random_result<=60){
-       $client->Message(14,"Ranger Band says,\"I found the strangest item while hunting in $everfrost\""); }
+	  $client->Message(14,"Ranger Band says,\"I found the strangest item while hunting in $everfrost\""); }
 	elsif($random_result<=70){
-       $client->Message(14,"Ranger Band says,\"I once found an entrance to to some $caverns by the Ry'Gorr fort in Eastern Wastes.\""); }
+	  $client->Message(14,"Ranger Band says,\"I once found an entrance to to some $caverns by the Ry'Gorr fort in Eastern Wastes.\""); }
 	elsif($random_result<=80){
-       $client->Message(14,"Ranger Band says,\"I remember the time we camped for the Tserrina's Robe in $tofs .\""); }
+	  $client->Message(14,"Ranger Band says,\"I remember the time we camped for the Tserrina's Robe in $tofs .\""); }
 	elsif($random_result<=90){
-       $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\Qs\E Cauldron?\""); }
+	  $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\Qs\E Cauldron?\""); }
 	elsif($random_result<=100){
-       $client->Message(14,"Ranger Band says,\"Don't let the $night catch you in Lake Rathe!.\"");}
+	  $client->Message(14,"Ranger Band says,\"Don't let the $night catch you in Lake Rathe!.\"");}
         else {
-        ##Do Nothing 
+	  ##Do Nothing 
         } 
   }
     if(($ulevel <= 3) && ($random_result2 <= 25)){
        $client->Message(14,"Ranger Band says,\"$name! Have you gotten your first bot (helper NPC) yet? Turn around and head back into the city, use your FIND button and look for Aediles Thrall. He will want to speak with you. He'll help you setup your Bots.\""); }
     if(($ulevel <= 5) && ($random_result2 <= 50) && (${$name}!=2)){
-my $thicket= quest::saylink("Thicket", 1);
+     my $thicket= quest::saylink("Thicket", 1);
        $client->Message(14,"Ranger Band says,\"If you wish to travel to Shadeweaver's $thicket , I can help you.\"");
    }
     if(($random_result2 <= 75) && ($event1==1)){
-my $year = quest::saylink("Year", 1);
+     my $year = quest::saylink("Year", 1);
        $client->Message(14,"Ranger Band says,\"Happy New $year $name! You can ask me about our New $year event.\"");
    }
     if(($random_result2 <= 75) && ($event2==1)){
-my $easter = quest::saylink("Easter", 1);
+     my $easter = quest::saylink("Easter", 1);
        $client->Message(14,"Ranger Band says,\"Happy $easter $name! You can ask me about our $easter event.\"");
    }
     if(($random_result2 <= 75) && ($event3==1)){
        $client->Message(14,"Ranger Band says,\"Countess Zellia can be found around here at night.\"");
    }
     if(($random_result2 <= 75) && ($event6==1)){
-my $different = quest::saylink("different", 1);
+     my $different = quest::saylink("different", 1);
        $client->Message(14,"Ranger Band says,\"Merry Xmas $name! I've been busy making these colorful bags for presents, I have so many and want to make something $different.\"");
    }      
  }
 
 sub EVENT_EXIT {
+## Band Saystuff
 my $oot = quest::saylink("Oot", 1);
 my $gunthak = quest::saylink("Gunthak", 1);
 my $friends = quest::saylink("friends", 1);
@@ -174,7 +176,7 @@ if($random_result2<=40){
         } 
   }
 }
-
+## Band Saystuff
 sub EVENT_SAY {
 my $easter = quest::saylink("Easter", 1);
 my $year = quest::saylink("Year", 1);
@@ -226,114 +228,116 @@ $npc->SetAppearance(0);
 	  $client->Message(14,"Ranger Band says,\"Happy $easter $name , I have $travel\Qed\E many lands, seen many things, if you're interested, I can tell you of them.\"");}
          elsif(($ulevel <= 20) && ($event5==1)){
 	  $client->Message(14,"Ranger Band says,\"$name! Have you been looking for faster ways to travel? If so, I have some rare items that might $interest you.\"");}
-	 else{
+	 else{ 
 	  $client->Message(14,"Ranger Band says,\"Well met $name, I have $travel\Qed\E many lands, seen many things, if you're interested, I can tell you of them.");}
           $client->Message(14,"Ranger Band says,\"Feel free to ask me of my $travel\Qs\E many times, as I carry much informations");
           $client->Message(14,"Ranger Band says,\"I also have some Ranger $buffs\""); }
-     if(($text=~/travel/i) && ($random_result3<=10)){
-        $client->Message(14,"Ranger Band says,\"There was a time when I camped in $najena for the Journeymans Boots...\""); }
+## Band Saystuff Starts here       
+	 if(($text=~/travel/i) && ($random_result3<=10)){
+	  $client->Message(14,"Ranger Band says,\"There was a time when I camped in $najena for the Journeymans Boots...\""); }
 	 elsif($text=~/najena/i){
-        $client->Message(14,"Ranger Band says,\"Aye Najenas dungeon, her and her $minions can put up an interesting fight.\""); }
-     elsif($text=~/minions/i){
-        $client->Message(14,"Ranger Band says,\"Drelzna is who has the Jboots, but you will need to find the $key to her room.\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye Najenas dungeon, her and her $minions can put up an interesting fight.\""); }
+	 elsif($text=~/minions/i){
+	  $client->Message(14,"Ranger Band says,\"Drelzna is who has the Jboots, but you will need to find the $key to her room.\""); }
 	 elsif($text=~/key/i){
-        $client->Message(14,"Ranger Band says,\"You need three keys to get there, Rathyl holds the one you need...\""); }
+	  $client->Message(14,"Ranger Band says,\"You need three keys to get there, Rathyl holds the one you need...\""); }
 	 elsif(($text=~/travel/i) && ($random_result3<=20)){
-        $client->Message(14,"Ranger Band says,\"The $fishbone earring was my first item for underwater breathing\""); }
+	  $client->Message(14,"Ranger Band says,\"The $fishbone earring was my first item for underwater breathing\""); }
 	 elsif($text=~/fishbone/i){
-        $client->Message(14,"Ranger Band says,\"I found mine on a barbarian that lives by a lake in Qeynos Hills\""); }
+	  $client->Message(14,"Ranger Band says,\"I found mine on a barbarian that lives by a lake in Qeynos Hills\""); }
 	 elsif(($text=~/travel/i) && ($random_result3<=30)){
-        $client->Message(14,"Ranger Band says,\"Once I saw a mini-dragon living in a small pool while in The $warrens\""); }
+	  $client->Message(14,"Ranger Band says,\"Once I saw a mini-dragon living in a small pool while in The $warrens\""); }
 	 elsif($text=~/warrens/i){
-        $client->Message(14,"Ranger Band says,\"His name is Muglwump, and he's a Shaman with an attitude. You can get to Warrens via Paineel\""); }
+	  $client->Message(14,"Ranger Band says,\"His name is Muglwump, and he's a Shaman with an attitude. You can get to Warrens via Paineel\""); }
 	 elsif(($text=~/travel/i) && ($random_result3<=40)){
-        $client->Message(14,"Ranger Band says,\"South Karana is one of my favorite hunting grounds, I got my first decent $bow there\""); }
+	  $client->Message(14,"Ranger Band says,\"South Karana is one of my favorite hunting grounds, I got my first decent $bow there\""); }
 	 elsif($text=~/bow/i){
-        $client->Message(14,"Ranger Band says,\"An angry centaur goes by the name of Coloth Meadowgreen had that bow, but beware of The $fabled Coloth! he is much stronger.\""); }
+	  $client->Message(14,"Ranger Band says,\"An angry centaur goes by the name of Coloth Meadowgreen had that bow, but beware of The $fabled Coloth! he is much stronger.\""); }
 	 elsif($text=~/fabled/i){
-        $client->Message(14,"Ranger Band says,\"Aye, Fabled with a Fabled Bow! He's not the $only Fabled minion in South Karana ...\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, Fabled with a Fabled Bow! He's not the $only Fabled minion in South Karana ...\""); }
 	 elsif($text=~/only/i){
-        $client->Message(14,"Ranger Band says,\"Well, there's also the Fabled $quillmane and the Fabled Grizzleknot\""); }
+	  $client->Message(14,"Ranger Band says,\"Well, there's also the Fabled $quillmane and the Fabled Grizzleknot\""); }
 	 elsif($text=~/quillmane/i){
-        $client->Message(14,"Ranger Band says,\"Quilmane is the prettiest horse in the game, he is a legend of his time.\""); }
+	  $client->Message(14,"Ranger Band says,\"Quilmane is the prettiest horse in the game, he is a legend of his time.\""); }
 	 elsif(($text=~/travel/i) && ($random_result3<=50)){
-        $client->Message(14,"Ranger Band says,\"Once we camped some $ogres in West Karana...\""); }
+	  $client->Message(14,"Ranger Band says,\"Once we camped some $ogres in West Karana...\""); }
 	 elsif($text=~/ogres/i){
-        $client->Message(14,"Ranger Band says,\"Aye, Ogres - they were nice to us tell we started killing them, specially $chief Goonda.\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, Ogres - they were nice to us tell we started killing them, specially $chief Goonda.\""); }
 	 elsif($text=~/chief/i){
-        $client->Message(14,"Ranger Band says,\"He gets real ornary when he gets mad, and the Fabled Chief is worse than him!\""); }
+	  $client->Message(14,"Ranger Band says,\"He gets real ornary when he gets mad, and the Fabled Chief is worse than him!\""); }
 	 elsif(($text=~/travel/i) && ($random_result3<=60)){
-        $client->Message(14,"Ranger Band says,\"I found the strangest item while hunting in $everfrost\""); }
+	  $client->Message(14,"Ranger Band says,\"I found the strangest item while hunting in $everfrost\""); }
 	 elsif($text=~/everfrost/i){
-        $client->Message(14,"Ranger Band says,\"Aye, it was at some gobbie camps on my way to the frozen river - helped lighten my load.\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, it was at some gobbie camps on my way to the frozen river - helped lighten my load.\""); }
 	 elsif(($text=~/travel/i) && ($random_result3<=70)){
-        $client->Message(14,"Ranger Band says,\"I once found an entrance to to some $caverns by the Ry'Gorr fort in Eastern Wastes.\""); }
+	  $client->Message(14,"Ranger Band says,\"I once found an entrance to to some $caverns by the Ry'Gorr fort in Eastern Wastes.\""); }
 	 elsif($text=~/caverns/i){
-        $client->Message(14,"Ranger Band says,\"They are known as Crystal Caverns, The citizens of Froststone still have a small outpost in there. There's crystal spiders, geonids, stalag terrors, and more...\""); }
+	  $client->Message(14,"Ranger Band says,\"They are known as Crystal Caverns, The citizens of Froststone still have a small outpost in there. There's crystal spiders, geonids, stalag terrors, and more...\""); }
 	 elsif(($text=~/travel/i) && ($random_result3<=80)){
-        $client->Message(14,"Ranger Band says,\"I remember the time we camped for the Tserrina's Robe in $tofs.\""); }
+	  $client->Message(14,"Ranger Band says,\"I remember the time we camped for the Tserrina's Robe in $tofs.\""); }
 	 elsif($text=~/tofs/i){
-        $client->Message(14,"Ranger Band says,\"Aye, Tower of Frozen Shadow, you can find it in Iceclad. Tserrina Syl'Tor and her minions live there, and it is infested with undead, vampires, and more.\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, Tower of Frozen Shadow, you can find it in Iceclad. Tserrina Syl'Tor and her minions live there, and it is infested with undead, vampires, and more.\""); }
 	 elsif(($text=~/travel/i) && ($random_result3<=90)){
-        $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\Qs\E Cauldron?\""); }
+	  $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\Qs\E Cauldron?\""); }
 	 elsif($text=~/dagnor/i){
-        $client->Message(14,"Ranger Band says,\"Strange place that is, over run by aqua goblins, mean little critters. There's one that carries a $prize\""); }
+	  $client->Message(14,"Ranger Band says,\"Strange place that is, over run by aqua goblins, mean little critters. There's one that carries a $prize\""); }
 	 elsif($text=~/prize/i){
-        $client->Message(14,"Ranger Band says,\"His name is Bilge Farfathom; kill the gobbies in the camp, and you'll find him.\""); }
+	  $client->Message(14,"Ranger Band says,\"His name is Bilge Farfathom; kill the gobbies in the camp, and you'll find him.\""); }
 	 elsif($text=~/travel/i){
-        $client->Message(14,"Ranger Band says,\"Don't let the $night catch you in Lake Rathe!\""); }
+	  $client->Message(14,"Ranger Band says,\"Don't let the $night catch you in Lake Rathe!\""); }
 	 elsif($text=~/mare/i){
-        $client->Message(14,"Ranger Band says,\"Aye, she has a terrible fear of snakes - woke up one morning shaking all over, told me she dreamed of a giant rattle snake whose name is 'Craven', roamed the commonlands near Freeport, attacking anyone it saw.\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, she has a terrible fear of snakes - woke up one morning shaking all over, told me she dreamed of a giant rattle snake whose name is 'Craven', roamed the commonlands near Freeport, attacking anyone it saw.\""); }
 	 elsif($text=~/night/i){
-        $client->Message(14,"Ranger Band says,\"Aye, night time brings out the undead, I seen that in $kithicor too - even seen werewolves in other places\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, night time brings out the undead, I seen that in $kithicor too - even seen werewolves in other places\""); }
 	 elsif($text=~/kithicor/i){
-        $client->Message(14,"Ranger Band says,\"Aye, a tame forest in daylight; be wary when night falls..\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, a tame forest in daylight; be wary when night falls..\""); }
 	 elsif ($text=~/gunthak/i) {
-        $client->Message(14,"Ranger Band says,\"Aye, Gunthak, Dulak, Nadox, Torgiran, a world of $pirates and $treasure ...\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, Gunthak, Dulak, Nadox, Torgiran, a world of $pirates and $treasure ...\""); }
 	 elsif ($text=~/pirates/i) {
-  	    $client->Message(14,"Ranger Band says,\"There are many evil pirates there, nasty place to be. You can get there by running though Paineels Warrens, then Stonbrunt, the entrance is at an old Pirate ship by the water.\""); }
+  	  $client->Message(14,"Ranger Band says,\"There are many evil pirates there, nasty place to be. You can get there by running though Paineels Warrens, then Stonbrunt, the entrance is at an old Pirate ship by the water.\""); }
 	 elsif ($text=~/treasure/i) {
-  	    $client->Message(14,"Ranger Band says,\"Many riches those pirates carry, you could attain an impressive status if you weren't killed first\""); }
+  	  $client->Message(14,"Ranger Band says,\"Many riches those pirates carry, you could attain an impressive status if you weren't killed first\""); }
 	 elsif($text=~/oot/i){
-        $client->Message(14,"Ranger Band says,\"Aye, night time brings out the undead, People turn into wolves and the $skeletons are everywhere\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, night time brings out the undead, People turn into wolves and the $skeletons are everywhere\""); }
 	 elsif ($text=~/skeletons/i) {
-  	    $client->Message(14,"Ranger Band says,\"Aye, Captain Kidd is one of them, and he's the meanest of them all - stay away from the pier when you see the Ghost Ship coming, Captain Kidd is riding it.\""); }
+  	  $client->Message(14,"Ranger Band says,\"Aye, Captain Kidd is one of them, and he's the meanest of them all - stay away from the pier when you see the Ghost Ship coming, Captain Kidd is riding it.\""); }
 	 elsif($text=~/friends/i){
-        $client->Message(14,"Ranger Band says,\"I met a frog in a town at Swamp of no Hope, his name is 'Exterminator Talern', and he collects mosquito wings. The more I gave him, the more he liked me - then one day I was in Sebilis; The frogs there liked me too!\""); }
+	  $client->Message(14,"Ranger Band says,\"I met a frog in a town at Swamp of no Hope, his name is 'Exterminator Talern', and he collects mosquito wings. The more I gave him, the more he liked me - then one day I was in Sebilis; The frogs there liked me too!\""); }
 	 elsif($text=~/droga/i){
-        $client->Message(14,"Ranger Band says,\"Aye, I saw  the same think happen in Nurga and Cazic-Thule too.\""); }
+	  $client->Message(14,"Ranger Band says,\"Aye, I saw  the same think happen in Nurga and Cazic-Thule too.\""); }
 	 elsif($text=~/tox/i){
-        $client->Message(14,"Ranger Band says,\"They are both near the entrance to Kerra Ridge; one leads to Hollowshade Moore, the other Mines of Glooming Deep.\""); }
+	  $client->Message(14,"Ranger Band says,\"They are both near the entrance to Kerra Ridge; one leads to Hollowshade Moore, the other Mines of Glooming Deep.\""); }
 	 elsif($text=~/croc/i){
-        $client->Message(14,"Ranger Band says,\"While I was exploring the Oasis of Marr, I spotted an alligator with an unfamiliar name. It was 'Quagmire'.\""); }
+	  $client->Message(14,"Ranger Band says,\"While I was exploring the Oasis of Marr, I spotted an alligator with an unfamiliar name. It was 'Quagmire'.\""); } 
+## Band Saystuff Ends here
 	 elsif($text=~/buffs/i){
-        $client->Message(14,"Ranger Band says,\"Good hunting!\"");
-        $npc->CastSpell(269,$userid); }
+	  $client->Message(14,"Ranger Band says,\"Good hunting!\"");
+	  $npc->CastSpell(269,$userid); }
 	 elsif(($text=~/moonstone/i) && ($zoneid == 165)){
-        $client->Message(14,"Ranger Band says,\"I see you made it to $shadeweaver ...\""); }
+	  $client->Message(14,"Ranger Band says,\"I see you made it to $shadeweaver ...\""); }
 	 elsif(($text=~/shadeweaver/i) && ($zoneid == 165)){
-        $client->Message(14,"Ranger Band says,\"I possess another Moonstone that will $transport you out of this moon in an instant. \""); }
+	  $client->Message(14,"Ranger Band says,\"I possess another Moonstone that will $transport you out of this moon in an instant. \""); }
 	 elsif($text=~/thicket/i){
-        $client->Message(14,"Ranger Band says,\"I possess a $legendary moonstone that will transport you to Shadeweaver. \""); }
+	  $client->Message(14,"Ranger Band says,\"I possess a $legendary moonstone that will transport you to Shadeweaver. \""); }
 	 elsif($text=~/legendary/i){
-        $client->Message(14,"Ranger Band says,\"I can grant you this Moonstone, but I need to be sure you have learned the way of the $sword.\""); }
+	  $client->Message(14,"Ranger Band says,\"I can grant you this Moonstone, but I need to be sure you have learned the way of the $sword.\""); }
 	 elsif($text=~/sword/i){
-        $client->Message(14,"Ranger Band says,\"Bring me four pieces of cloth armor of any type as proof of your abilities, and I will grant you the Moonstone.\""); }
+	  $client->Message(14,"Ranger Band says,\"Bring me four pieces of cloth armor of any type as proof of your abilities, and I will grant you the Moonstone.\""); }
 	 elsif(($text=~/transport/i) && ($zoneid == 165)){
-        $client->Message(14,"Ranger Band says,\"Bring me four pieces of dingy armor of any type, and I will grant you this Moonstone of the $wind.\""); }
+	  $client->Message(14,"Ranger Band says,\"Bring me four pieces of dingy armor of any type, and I will grant you this Moonstone of the $wind.\""); }
 	 elsif(($text=~/wind/i) && ($zoneid == 165)){
-        $client->Message(14,"Ranger Band says,\"Aye, Moonstone of the Wind! Fastest moonstone in Norrath, also great to have when trying to escape a dire situation");}
+	  $client->Message(14,"Ranger Band says,\"Aye, Moonstone of the Wind! Fastest moonstone in Norrath, also great to have when trying to escape a dire situation");}
 	 elsif(($ulevel <= 10) && ($text=~/year/i) && ($event1==1)){
-         $client->Message(14,"Ranger Band says,\"What I will do in the 2015 you ask? I travel around make new friends, I adventure so I can tell stories about my travels to anyone who wants to hear. Do you want to travel too? Maybe I can help you. I got a stack of Moonstones right here but you guessed it, bring what I want, and I will give you a random Moonstone - go and find me: 1 Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.\""); }
+	  $client->Message(14,"Ranger Band says,\"What I will do in the 2015 you ask? I travel around make new friends, I adventure so I can tell stories about my travels to anyone who wants to hear. Do you want to travel too? Maybe I can help you. I got a stack of Moonstones right here but you guessed it, bring what I want, and I will give you a random Moonstone - go and find me: 1 Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.\""); }
 	 elsif(($ulevel <= 20) && ($text=~/interest/i) && ($event5==1)){
-         $client->Message(14,"Ranger Band says,\"I have a collection of Moonstones I obtained while camping certain named mobs in Norrath, I haven't much need for them anymore, void to $tempt you with a quest.\"");}
+	  $client->Message(14,"Ranger Band says,\"I have a collection of Moonstones I obtained while camping certain named mobs in Norrath, I haven't much need for them anymore, void to $tempt you with a quest.\"");}
 	 elsif(($ulevel <= 20) && ($text=~/tempt/i) && ($event5==1)){
-         $client->Message(14,"Ranger Band says,\"I have always disliked the orcs, show me you dislike them too - bring me one orc scalp and one orc skull, bring me this, and I will reward you.\"");}
+	  $client->Message(14,"Ranger Band says,\"I have always disliked the orcs, show me you dislike them too - bring me one orc scalp and one orc skull, bring me this, and I will reward you.\"");}
 	 elsif(($ulevel <= 65) && ($text=~/easter/i) && ($event2==1)){
-         $client->Message(14,"Ranger Band says,\"Oh yes, Easter! I'm in a pinch with that: I'm throwing a big Easter party for all my friends, but have not enough eggs for the easter egg hunt!\"");
-	 $client->Message(14,"Ranger Band says,\"I need eggs of any type, for every four eggs you bring me, I will give you a handsome reward...\""); }
+	  $client->Message(14,"Ranger Band says,\"Oh yes, Easter! I'm in a pinch with that: I'm throwing a big Easter party for all my friends, but have not enough eggs for the easter egg hunt!\"");
+	  $client->Message(14,"Ranger Band says,\"I need eggs of any type, for every four eggs you bring me, I will give you a handsome reward...\""); }
 	 elsif(($ulevel <= 65) && ($text=~/different/i) && ($event6==1)){
-         $client->Message(14,"Ranger Band says,\"I am interested in spider silks for creating something different, I'll trade you one of my hand-made colorful bags for four spider silks of any kind.\"");}
+	  $client->Message(14,"Ranger Band says,\"I am interested in spider silks for creating something different, I'll trade you one of my hand-made colorful bags for four spider silks of any kind.\"");}
 }
 
 sub convert_utility { #Angelox: for converting to higher coinage 
