@@ -26,8 +26,8 @@ my $caverns = quest::saylink("caverns", 1);
 my $tofs = quest::saylink("ToFS", 1);
 my $dagnor = quest::saylink("Dagnor", 1);
 my $night = quest::saylink("night", 1);
-my $random_result = int(rand(200));
-my $random_result2 = int(rand(200));
+my $random_result = int(rand(150));
+my $random_result2 = int(rand(150));
 
 ##Countess Event
  if ($event3==1) {
@@ -101,9 +101,11 @@ if($random_result2<=40){
        $client->Message(14,"Ranger Band says,\"I remember the time we camped for the Tserrina's Robe in $tofs .\""); }
 	elsif($random_result<=90){
        $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\Qs\E Cauldron?\""); }
-	else{
-       $client->Message(14,"Ranger Band says,\"Don't let the $night catch you in Lake Rathe!.\"");
-    }
+	elsif($random_result<=100){
+       $client->Message(14,"Ranger Band says,\"Don't let the $night catch you in Lake Rathe!.\"");}
+        else {
+        ##Do Nothing 
+        } 
   }
     if(($ulevel <= 3) && ($random_result2 <= 25)){
        $client->Message(14,"Ranger Band says,\"$name! Have you gotten your first bot (helper NPC) yet? Turn around and head back into the city, use your FIND button and look for Aediles Thrall. He will want to speak with you. He'll help you setup your Bots.\""); }
@@ -139,8 +141,8 @@ my $caverns = quest::saylink("caverns", 1);
 my $croc = quest::saylink("croc", 1);
 my $nightmare = quest::saylink("nightmare", 1);
 my $night = quest::saylink("night", 1);
-my $random_result = int(rand(200));
-my $random_result2 = int(rand(200));
+my $random_result = int(rand(150));
+my $random_result2 = int(rand(150));
 $npc->SetAppearance(1);
 if($random_result2<=40){
     if($random_result<=10){
@@ -165,8 +167,11 @@ if($random_result2<=40){
        $client->Message(14,"Ranger Band says,\"Lockjaw wasn't the only monster $croc I found while exploring the Oasis.\""); }
 	elsif($random_result<=90){
        $client->Message(14,"Ranger Band says,\"Did I tell you about the lady's $nightmare?\""); }
-	else{
+	elsif($random_result<=100){
        $client->Message(14,"Ranger Band says,\"Don't let the $night catch you in Lake Rathe!\""); }
+        else {
+        ##Do Nothing 
+        } 
   }
 }
 
@@ -212,7 +217,7 @@ my $transport = quest::saylink("transport", 1);
 my $sword = quest::saylink("sword", 1);
 my $wind = quest::saylink("Wind", 1);
 my $legendary = quest::saylink("legendary", 1);
-my $random_result = int(rand(200));
+my $random_result = int(rand(150));
 $npc->SetAppearance(0);
      if($text=~/Hail/i){
          if(($ulevel <= 10) && ($event1==1)){
