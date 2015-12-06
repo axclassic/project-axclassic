@@ -217,7 +217,7 @@ my $transport = quest::saylink("transport", 1);
 my $sword = quest::saylink("sword", 1);
 my $wind = quest::saylink("Wind", 1);
 my $legendary = quest::saylink("legendary", 1);
-my $random_result = int(rand(150));
+my $random_result3 = int(rand(100));
 $npc->SetAppearance(0);
      if($text=~/Hail/i){
          if(($ulevel <= 10) && ($event1==1)){
@@ -230,7 +230,7 @@ $npc->SetAppearance(0);
 	  $client->Message(14,"Ranger Band says,\"Well met $name, I have $travel\Qed\E many lands, seen many things, if you're interested, I can tell you of them.");}
           $client->Message(14,"Ranger Band says,\"Feel free to ask me of my $travel\Qs\E many times, as I carry much informations");
           $client->Message(14,"Ranger Band says,\"I also have some Ranger $buffs\""); }
-     if(($text=~/travel/i) && ($random_result<=10)){
+     if(($text=~/travel/i) && ($random_result3<=10)){
         $client->Message(14,"Ranger Band says,\"There was a time when I camped in $najena for the Journeymans Boots...\""); }
 	 elsif($text=~/najena/i){
         $client->Message(14,"Ranger Band says,\"Aye Najenas dungeon, her and her $minions can put up an interesting fight.\""); }
@@ -238,15 +238,15 @@ $npc->SetAppearance(0);
         $client->Message(14,"Ranger Band says,\"Drelzna is who has the Jboots, but you will need to find the $key to her room.\""); }
 	 elsif($text=~/key/i){
         $client->Message(14,"Ranger Band says,\"You need three keys to get there, Rathyl holds the one you need...\""); }
-	 elsif(($text=~/travel/i) && ($random_result<=20)){
+	 elsif(($text=~/travel/i) && ($random_result3<=20)){
         $client->Message(14,"Ranger Band says,\"The $fishbone earring was my first item for underwater breathing\""); }
 	 elsif($text=~/fishbone/i){
         $client->Message(14,"Ranger Band says,\"I found mine on a barbarian that lives by a lake in Qeynos Hills\""); }
-	 elsif(($text=~/travel/i) && ($random_result<=30)){
+	 elsif(($text=~/travel/i) && ($random_result3<=30)){
         $client->Message(14,"Ranger Band says,\"Once I saw a mini-dragon living in a small pool while in The $warrens\""); }
 	 elsif($text=~/warrens/i){
         $client->Message(14,"Ranger Band says,\"His name is Muglwump, and he's a Shaman with an attitude. You can get to Warrens via Paineel\""); }
-	 elsif(($text=~/travel/i) && ($random_result<=40)){
+	 elsif(($text=~/travel/i) && ($random_result3<=40)){
         $client->Message(14,"Ranger Band says,\"South Karana is one of my favorite hunting grounds, I got my first decent $bow there\""); }
 	 elsif($text=~/bow/i){
         $client->Message(14,"Ranger Band says,\"An angry centaur goes by the name of Coloth Meadowgreen had that bow, but beware of The $fabled Coloth! he is much stronger.\""); }
@@ -256,25 +256,25 @@ $npc->SetAppearance(0);
         $client->Message(14,"Ranger Band says,\"Well, there's also the Fabled $quillmane and the Fabled Grizzleknot\""); }
 	 elsif($text=~/quillmane/i){
         $client->Message(14,"Ranger Band says,\"Quilmane is the prettiest horse in the game, he is a legend of his time.\""); }
-	 elsif(($text=~/travel/i) && ($random_result<=50)){
+	 elsif(($text=~/travel/i) && ($random_result3<=50)){
         $client->Message(14,"Ranger Band says,\"Once we camped some $ogres in West Karana...\""); }
 	 elsif($text=~/ogres/i){
         $client->Message(14,"Ranger Band says,\"Aye, Ogres - they were nice to us tell we started killing them, specially $chief Goonda.\""); }
 	 elsif($text=~/chief/i){
         $client->Message(14,"Ranger Band says,\"He gets real ornary when he gets mad, and the Fabled Chief is worse than him!\""); }
-	 elsif(($text=~/travel/i) && ($random_result<=60)){
+	 elsif(($text=~/travel/i) && ($random_result3<=60)){
         $client->Message(14,"Ranger Band says,\"I found the strangest item while hunting in $everfrost\""); }
 	 elsif($text=~/everfrost/i){
         $client->Message(14,"Ranger Band says,\"Aye, it was at some gobbie camps on my way to the frozen river - helped lighten my load.\""); }
-	 elsif(($text=~/travel/i) && ($random_result<=70)){
+	 elsif(($text=~/travel/i) && ($random_result3<=70)){
         $client->Message(14,"Ranger Band says,\"I once found an entrance to to some $caverns by the Ry'Gorr fort in Eastern Wastes.\""); }
 	 elsif($text=~/caverns/i){
         $client->Message(14,"Ranger Band says,\"They are known as Crystal Caverns, The citizens of Froststone still have a small outpost in there. There's crystal spiders, geonids, stalag terrors, and more...\""); }
-	 elsif(($text=~/travel/i) && ($random_result<=80)){
+	 elsif(($text=~/travel/i) && ($random_result3<=80)){
         $client->Message(14,"Ranger Band says,\"I remember the time we camped for the Tserrina's Robe in $tofs.\""); }
 	 elsif($text=~/tofs/i){
         $client->Message(14,"Ranger Band says,\"Aye, Tower of Frozen Shadow, you can find it in Iceclad. Tserrina Syl'Tor and her minions live there, and it is infested with undead, vampires, and more.\""); }
-	 elsif(($text=~/travel/i) && ($random_result<=90)){
+	 elsif(($text=~/travel/i) && ($random_result3<=90)){
         $client->Message(14,"Ranger Band says,\"Ever been to $dagnor\Qs\E Cauldron?\""); }
 	 elsif($text=~/dagnor/i){
         $client->Message(14,"Ranger Band says,\"Strange place that is, over run by aqua goblins, mean little critters. There's one that carries a $prize\""); }
