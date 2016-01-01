@@ -7,10 +7,11 @@
 ## to make Clicklinks available     ##
 ## Angelox: Third revision          ##
 ## to improve logic                 ##
-## Date:  02-01-2011    	     ##
+## Date:  02-01-2011    	        ##
 ## 4th revision 7/29/2015 cleanup   ##
-## 5th rev. 7/31/2015 improved	     ##
+## 5th rev. 7/31/2015 improved	    ##
 ## qglobals and made sure its reset ##
+## UPDATE 1/1/16: SoW Earring gift working only when new years event is ON ##
 ######################################
 sub EVENT_SAY {
 #hyperlinks
@@ -22,13 +23,15 @@ my $possession = quest::saylink("possession", 1);
 my $prove = quest::saylink("prove", 1);
 my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
-	if(($text=~/hail/i) && ($charid < '5477')) { #this checks if old or new 5477
+my $newyears = quest::saylink("special", 1);
+
+	if(($text=~/hail/i) && ($charid < '5829')) { #this is the newest charID
 	    $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
-		$client->Message(15, "This ladder began on July 1st, 2015, check AX Classic forums.");
+		$client->Message(15, "This ladder began on January 1st, 2016, check AX Classic forums.");
 		$client->Message(15, "You should start a new character on or after this date.");
 		# quest::say("Your characterid is $charid."); debugging $charid
 	}
-	elsif(($text=~/hail/i) && ($charid > '5476') && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
+	elsif(($text=~/hail/i) && ($charid > '5828') && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
 		$client->Message(14, "Champion Darkwater says, 'Hail, $name! I am Champion Darkwater the Ladder Guide, and I will be observing
 		and rewarding you for your advancement on the Ladder.'");
 		$client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65.
@@ -38,7 +41,7 @@ my $second = quest::saylink("second", 1);
 		#$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
 		
 	}
-	elsif(($text=~/hail/i) && ($charid > '2') && (defined $qglobals{"ladder_trophy"})) { #charid must be greater than X 5476
+	elsif(($text=~/hail/i) && ($charid > '5828') && (defined $qglobals{"ladder_trophy"})) { #charid must be greater than X 5476
 		$client->Message(14, "Champion Darkwater says, 'Welcome back, $name!'");
 		$client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65.
 		When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
@@ -182,12 +185,40 @@ my $second = quest::saylink("second", 1);
 		}
 	}
 #End Moonstone
+
+#Angelox's New Year's reward SoW Earring only when Event1 is ON
+	if(($text=~/hail/i) && ($event1 == 1) && ((!defined $qglobals{"newyears"}) || ($qglobals{"newyears"} == 0))) {
+		$client->Message(14,"Champion Darkwater says, 'Is it New Years already? Well, Happy New Year $name! Here, take
+		my $newyears reward for your dedication.");
+		quest::setglobal("newyears", 1, 5, "F");
+	}
+	elsif(($text=~/special/i) && ($event1 == 1) && ($qglobals{'newyears'} == 1)) {
+		quest::summonitem(625);
+		quest::ding();
+		$client->Message(6,"You received Darkwater's earring of travel!");
+		quest::setglobal("newyears", 2, 5, "F");
+	}
+	elsif(($text=~/hail/i) && ($event1 == 1) && ($qglobals{"newyears"} == 2)) {
+		$client->Message(14, "Champion Darkwater says, 'Happy New Year $name. Glad to see you again!");
+		
+		# $client->Message(14, "debugging, newyears is $newyears, or qglobals is $qglobals{'newyears'}");
+	}
+	elsif(($text=~/hail/i) && ($event1 != 1)) {
+		# $client->Message(15, "Okay trying to make event1 undefined or at least start New years again!");
+		quest::setglobal("newyears", 0, 5, "F");
+	}
+	else{
+		# Do nothing. Put msg for debugging!
+	}
+#End New Year's reward SoW Earring
 }
 
+
+
 sub EVENT_ITEM {
-	if ($charid < '5477') { #this charid and the one above should be the same. 5477
+	if ($charid < '5829') { #this charid and the one above should be the same. 5477 5829
 		$client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
-		$client->Message(15, "This ladder began on July 1st, 2015, check AX Classic forums.");
+		$client->Message(15, "This ladder began on January 1st, 2016, check AX Classic forums.");
 		$client->Message(15, "You should start a new character on or after this date.");
 		plugin::return_items(\%itemcount);
 			if($platinum != 0 || $gold != 0 || $silver != 0 || $copper != 0) {
