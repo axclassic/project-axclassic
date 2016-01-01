@@ -31,7 +31,7 @@
                  <strong>Tint:</strong> <a href="index.php?editor=npc&z=<?=$currzone?>&npcid=<?=$npcid?>&tint_id=<?=$armortint_id?>&action=33"><?=$armortint_id?></a>
                  <?endif;?>
                  <?if($armortint_id == 0):?>
-                 <strong>Tint:</strong> <a href="index.php?editor=npc&z=<?=$currzone?>&npcid=<?=$npcid?>&action=35"><?=no?></a>
+                 <strong>Tint:</strong> <a href="index.php?editor=npc&z=<?=$currzone?>&npcid=<?=$npcid?>&action=35"><?='no'?></a>
                  <?endif;?>
              </td>
            </tr>
@@ -200,7 +200,12 @@
                 <td align="left" width="33%">Melee2: <?=$d_meele_texture2?></td>
                 <td align="left" width="34%">&nbsp;</td>
               </tr>
-             </table>
+              <tr>
+               <td align="left" width="33%">Melee1 Type: <?=$prim_melee_type?></td>
+               <td align="left" width="33%">Melee2 Type: <?=$sec_melee_type?></td>
+               <td align="left" width="34%">&nbsp;</td>
+              </tr>             
+			 </table>
             </fieldset>
 
            <fieldset>
@@ -313,7 +318,9 @@
 <input type="hidden" name="scalerate" value="<?=$scalerate?>">
 <input type="hidden" name="private_corpse" value="<?=$private_corpse?>">
 <input type="hidden" name="unique_spawn_by_name" value="<?=$unique_spawn_by_name?>">
-            <td align="left" width="17%">NEW ID:<input type="text" name="id" size="10" value="<?=$suggestedid?>"></td>
+<input type="hidden" name="prim_melee_type" value="<?=$prim_melee_type?>">
+<input type="hidden" name="sec_melee_type" value="<?=$sec_melee_type?>">            
+			<td align="left" width="17%">NEW ID:<input type="text" name="id" size="10" value="<?=$suggestedid?>"></td>
             <input type="submit" value="Copy NPC">
      </center>
      </div>

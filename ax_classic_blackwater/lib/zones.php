@@ -80,6 +80,8 @@ $eqzones = array(
   array('expansion' => 1, 'zone' => 'stonebrunt'),
   array('expansion' => 1, 'zone' => 'tox'),
   array('expansion' => 1, 'zone' => 'unrest'),
+  array('expansion' => 1, 'zone' => 'tutorialb'),
+  array('expansion' => 1, 'zone' => 'tutoriala'),
 
   array('expansion' => 2, 'zone' => 'burningwood'),
   array('expansion' => 2, 'zone' => 'cabeast'),
@@ -266,8 +268,6 @@ $eqzones = array(
   array('expansion' => 8, 'zone' => 'uqua'),
   array('expansion' => 8, 'zone' => 'vxed'),
   array('expansion' => 8, 'zone' => 'yxtta'),
-  array('expansion' => 1, 'zone' => 'tutorialb'),
-  array('expansion' => 1, 'zone' => 'tutoriala'),
 
   array('expansion' => 9, 'zone' => 'anguish'),
   array('expansion' => 9, 'zone' => 'bloodfields'),

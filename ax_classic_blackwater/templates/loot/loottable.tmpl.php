@@ -74,8 +74,11 @@
               <a href="index.php?editor=loot&z=<?=$currzone?>&npcid=<?=$npcid?>&action=20&ldid=<?=$lootdrop['id']?>">
                 <img src="images/add.gif" border="0" title="Add an Item to this LootDrop Table">
               </a>
+               <a href="index.php?editor=loot&z=<?=$currzone?>&npcid=<?=$npcid?>&action=35&ldid=<?=$lootdrop['id']?>&name=<?=$lootdrop['name']?>">
+                <img src="images/last.gif" border="0" title="Copy lootdrop">
+              </a>             
               
-              <a onClick="return confirm('Really remove LootDrop <?=$lootdrop['id']?> from LootTable <?=$loottable_id?>?  All <?=$usage['count']?> NPCs that use LootTable 5370 will be affected.');" href="index.php?editor=loot&z=<?=$currzone?>&npcid=<?=$npcid?>&action=19&ltid=<?=$loottable_id?>&ldid=<?=$lootdrop['id']?>">
+			  <a onClick="return confirm('Really remove LootDrop <?=$lootdrop['id']?> from LootTable <?=$loottable_id?>?  All <?=$usage['count']?> NPCs that use LootTable 5370 will be affected.');" href="index.php?editor=loot&z=<?=$currzone?>&npcid=<?=$npcid?>&action=19&ltid=<?=$loottable_id?>&ldid=<?=$lootdrop['id']?>">
                 <img src="images/minus2.gif" border="0" title="Remove this LootDrop from LootTable <?=$loottable_id?>">
               </a>
 
@@ -99,7 +102,7 @@
 <?php foreach ($lootdrop['items'] as $item): extract($item);?>
 <?php ($total = (($chance/100) * ($lootdrop['probability']/100)) * 100);?>
         <tr bgcolor="#<? echo ($x % 2 == 0) ? "AAAAAA" : "BBBBBB";?>">
-          <td align="center"><?=$item_id?></td>
+          <td align="center"><a href="index.php?editor=items&z=<?=$currzone?>&npcid=<?=$npcid?>&id=<?=$item_id?>&action=2"><?=$item_id?></td>
           <td align="center"><?=$name?> <span>[<a href="http://lucy.allakhazam.com/item.html?id=<?=$item_id?>">lucy</a>]</span></td>
           <td align="center" width="100">
 <?php echo (($equip_item == 0)) ? "No" : "Yes";?>

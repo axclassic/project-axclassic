@@ -41,6 +41,7 @@ switch ($editor) {
     break;
   case 'items':
     $breadcrumbs = "Item Editor";
+    break;
 
 }
 
