@@ -178,6 +178,8 @@ if($random_result2<=40){
 }
 ## Band Saystuff
 sub EVENT_SAY {
+#Year used for New Year 
+my $activeYear = 2016;
 my $easter = quest::saylink("Easter", 1);
 my $year = quest::saylink("Year", 1);
 my $different = quest::saylink("different", 1);
@@ -328,7 +330,7 @@ $npc->SetAppearance(0);
 	 elsif(($text=~/wind/i) && ($zoneid == 165)){
 	  $client->Message(14,"Ranger Band says,\"Aye, Moonstone of the Wind! Fastest moonstone in Norrath, also great to have when trying to escape a dire situation");}
 	 elsif(($ulevel <= 10) && ($text=~/year/i) && ($event1==1)){
-	  $client->Message(14,"Ranger Band says,\"What I will do in the 2016 you ask? I travel around make new friends, I adventure so I can tell stories about my travels to anyone who wants to hear. Do you want to travel too? Maybe I can help you. I got a stack of Moonstones right here but you guessed it, bring what I want, and I will give you a random Moonstone - go and find me: 1 Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.\""); }
+	  $client->Message(14,"Ranger Band says,\"What I will do in the $activeYear you ask? I travel around make new friends, I adventure so I can tell stories about my travels to anyone who wants to hear. Do you want to travel too? Maybe I can help you. I got a stack of Moonstones right here but you guessed it, bring what I want, and I will give you a random Moonstone - go and find me: 1 Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.\""); }
 	 elsif(($ulevel <= 20) && ($text=~/interest/i) && ($event5==1)){
 	  $client->Message(14,"Ranger Band says,\"I have a collection of Moonstones I obtained while camping certain named mobs in Norrath, I haven't much need for them anymore, void to $tempt you with a quest.\"");}
 	 elsif(($ulevel <= 20) && ($text=~/tempt/i) && ($event5==1)){

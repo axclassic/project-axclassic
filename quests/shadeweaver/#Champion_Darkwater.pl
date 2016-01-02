@@ -24,14 +24,20 @@ my $prove = quest::saylink("prove", 1);
 my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
 my $newyears = quest::saylink("special", 1);
+#Ladder date and char settings
+my $minCharID  = 5829;
+my $maxCharID  = 5828;
+my $activeYear = 2016;
+my $activeMonth = "January";
 
-	if(($text=~/hail/i) && ($charid < '5829')) { #this is the newest charID
+
+	if(($text=~/hail/i) && ($charid < $minCharID)) { #this is the newest charID
 	    $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
-		$client->Message(15, "This ladder began on January 1st, 2016, check AX Classic forums.");
+		$client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
 		$client->Message(15, "You should start a new character on or after this date.");
 		# quest::say("Your characterid is $charid."); debugging $charid
 	}
-	elsif(($text=~/hail/i) && ($charid > '5828') && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
+	elsif(($text=~/hail/i) && ($charid > $maxCharID) && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
 		$client->Message(14, "Champion Darkwater says, 'Hail, $name! I am Champion Darkwater the Ladder Guide, and I will be observing
 		and rewarding you for your advancement on the Ladder.'");
 		$client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65.
@@ -41,7 +47,7 @@ my $newyears = quest::saylink("special", 1);
 		#$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
 		
 	}
-	elsif(($text=~/hail/i) && ($charid > '5828') && (defined $qglobals{"ladder_trophy"})) { #charid must be greater than X 5476
+	elsif(($text=~/hail/i) && ($charid > $maxCharID) && (defined $qglobals{"ladder_trophy"})) { #charid must be greater than X
 		$client->Message(14, "Champion Darkwater says, 'Welcome back, $name!'");
 		$client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65.
 		When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
@@ -216,9 +222,11 @@ my $newyears = quest::saylink("special", 1);
 
 
 sub EVENT_ITEM {
-	if ($charid < '5829') { #this charid and the one above should be the same. 5477 5829
+my $activeYear = 2016;
+my $activeMonth = "January";
+	if ($charid < $minCharID) { #this charid and the one above should be the same.
 		$client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
-		$client->Message(15, "This ladder began on January 1st, 2016, check AX Classic forums.");
+		$client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
 		$client->Message(15, "You should start a new character on or after this date.");
 		plugin::return_items(\%itemcount);
 			if($platinum != 0 || $gold != 0 || $silver != 0 || $copper != 0) {
