@@ -1,6 +1,6 @@
 sub EVENT_SIGNAL{
 if($signal == 202){
-quest::signalwith(166273,203,0);
+quest::signalwith(166959,203,0);
 }
 if($signal == 302){
 quest::signalwith(166790,303,0);
