@@ -642,7 +642,7 @@ my $eg = quest::ChooseRandom(166864,166865);
    quest::depop(166788); #a sonic tracker
    quest::depop(166789); #a sonic warwolf
    quest::depop(166794);
-   quest::spawn2(166078,498128,0,1980,979.7,31.2,57.4); #Guard Kliknaw
+   quest::spawn2(166078,498128,0,1980,979.7,31.2,117.4); #Guard Kliknaw
    quest::spawn2(166079,0,0,2011.9,991.9,34.2,111.5); #Guard Rawkkun
    quest::spawn2(166080,0,0,1921.9,1009.9,29.4,33.5); #Sergeant Tylah
    quest::spawn2(166081,0,0,2026.6,1071,25.6,93.2); #Rittuh Purrik
