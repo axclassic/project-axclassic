@@ -281,7 +281,7 @@ my $br = quest::ChooseRandom(166556,166559);
    quest::spawn2(166526,0,0,2063.2,3211,159.1,170.1); #a_grimling_conqueror
    quest::spawn2(166550,0,0,1975.4,3275.8,159.8,135.4); #a_grimling_overseer
    quest::spawn2(166552,0,0,1949.6,3431.9,150.5,211.8); #a_grimling_overseer
-   quest::spawn2(166950,4,0,934.5,2176.7,161.6,149.2); #Wiknak Grimglom
+   quest::spawn2(166950,498125,0,904,2337,245.8,155.6); #Wiknak Grimglom
    quest::signalwith(166405,206,0);
    quest::depop();
     }

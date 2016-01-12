@@ -378,7 +378,7 @@ my $ba = quest::ChooseRandom(166382,166383);
    quest::spawn2(166401,0,0,2063.2,3211,159.1,170.1); #a_sonic_warwolf
    quest::spawn2(166402,0,0,1975.4,3275.8,159.8,135.4); #a_sonic_devourer
    quest::spawn2(166404,0,0,1949.6,3431.9,150.5,211.8); #a_sonic_devourer
-   quest::spawn2(166355,4,0,934.5,2176.7,161.6,149.2); #Warpaw Dankpelt
+   quest::spawn2(166355,498125,0,904,2337,245.8,155.6); #Warpaw Dankpelt
         quest::signalwith(166405,208,0);
         quest::depop();
     }
