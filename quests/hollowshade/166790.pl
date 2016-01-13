@@ -11,7 +11,7 @@ if($signal == 608){
      $counter = 0;
    }
 if($signal == 301) { ##signal 301 is from each sonic wolf boss Fabled Ghowlik Ghowlik Dreadmaw Wolfkin Scarflank##
-    $counter += 1;
+    $counter += 2;
 	   if($counter == 3) {
    quest::depop(166081); #Rittuh Purrik
    quest::depop(166080); #Sergeant Tylah
