@@ -799,4 +799,10 @@ my $fa = quest::ChooseRandom(166944,166945);
   if($signal == 613){
    quest::spawn2(166947,0,0,-610.7,-2801.4,68.1,254.5); #an owlbear razorbeak
    }
+  if($signal == 614){
+   quest::spawn2(166084,0,0,1928,1141,25.6,77.5); #Tolah Rakknak
+   }
+  if($signal == 615){
+   quest::spawn2(166082,0,0,1993,1063,25.6,255.5); #an owlbear razorbeak
+   }
   }
