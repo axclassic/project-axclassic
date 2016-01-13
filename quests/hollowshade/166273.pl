@@ -24,8 +24,7 @@ sub EVENT_SIGNAL{
    quest::spawn2(166773,498129,0,1924.8,1096.9,25.6,170.4); #Kerr Tiparr afraid
    quest::spawn2(166774,498130,0,2026.6,1071,25.6,93.2); #Rittuh Purrik afraid
    quest::spawn2(166775,498131,0,1921.9,1009.9,29.4,33.5); #Sergeant Tylah afraid
-   quest::spawn2(166959,0,0,1910.5,995.1,31.9,138.6);
-   quest::signalwith(166783,202,5000);
+     quest::signalwith(166783,202,5000);
   }
  }
 }

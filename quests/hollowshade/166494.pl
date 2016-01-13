@@ -5,12 +5,9 @@ sub EVENT_SPAWN {
 	}
 sub EVENT_ENTER {
     quest::shout("I see you $name! Nothing but death awaits you here!");
-      quest::signalwith(166964,206,0);
+      quest::signalwith(166959,207,0);
   }
 
-sub EVENT_DEATH{
-quest::signalwith(166582,408,250000);
-}
 sub EVENT_DEATH{
 quest::signalwith(166273,609,0); #Boss_Dead_Grimlings
 quest::signalwith(166799,15,0);

@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 	}
 sub EVENT_ENTER {
     quest::shout("I see you $name! Nothing but death awaits you here!");
-      quest::signalwith(166955,307,0);
+      quest::signalwith(166963,305,0);
   }
 
 sub EVENT_DEATH{
