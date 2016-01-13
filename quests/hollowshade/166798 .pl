@@ -11,7 +11,7 @@ sub EVENT_SIGNAL{
        $counter = 0;	
     }
 if($signal == 401) { ##signal 401 is from each owlbear boss owlbear screechmaw, Skriat Chee, Skriat Chu##
-    $counter += 1;
+    $counter += 3;
 	   if($counter == 3) {
    quest::depop(166081); #Rittuh Purrik
    quest::depop(166080); #Sergeant Tylah

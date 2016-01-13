@@ -12,7 +12,7 @@ sub EVENT_SIGNAL{
     }
 
 	if($signal == 201) { ##signal 201 is from each grimling boss Gleeknot Gnitrat, Grurn No Eyes, Fabled Grurn No Eyes, Gniktar Grimwit##
-    $counter += 1;
+    $counter += 3;
 	   if($counter == 3) {
    quest::depop(166081); #Rittuh Purrik
    quest::depop(166080); #Sergeant Tylah
