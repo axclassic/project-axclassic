@@ -1,17 +1,17 @@
-##Boss_Counter_Wolves##
-my $Wolves_take_over_event = 0;
+##Boss_Counter_wolves##
+my $wolves_take_over_event = 0;
 
 sub EVENT_SPAWN{
-  $Wolves_take_over_event = 0;
+  $wolves_take_over_event = 0;
   $counter = undef;
-  $Wolves_take_over_event += 1;	# adds one to spawn variable #
+  $wolves_take_over_event += 1;	# adds one to spawn variable #
   }
 sub EVENT_SIGNAL{
 if($signal == 608){
      $counter = 0;
    }
-if($signal == 301) { ##signal 301 is from each sonic wolf boss Fabled Ghowlik Ghowlik Dreadmaw Wolfkin Scarflank##
-   $counter += 1;
+if($signal == 301) { 
+    $counter += 1;
 	   if($counter == 3) {
    quest::depop(166081); #Rittuh Purrik
    quest::depop(166080); #Sergeant Tylah
