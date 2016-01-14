@@ -9,7 +9,7 @@ sub EVENT_ENTER {
   }
 
 sub EVENT_DEATH{
-quest::signalwith(166790,608,0); #Boss_Dead_Wolves
+quest::signalwith(166960,608,0); #Boss_Dead_Wolves
 quest::signalwith(166799,20,0);
 }
 
