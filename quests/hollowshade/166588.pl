@@ -20,13 +20,8 @@ sub EVENT_AGGRO {
   my $RandomNumber = int(rand(3)) + 1;
   quest::emote("$AggroText{$RandomNumber}");
 }
-sub EVENT_SIGNAL{
-   if($signal == 3006){
-     quest::signalwith(166965,3009,0);
-}
-}
 sub EVENT_DEATH{
 my $RandomNumber = int(rand(2)) + 1;
   quest::emote("$DeathText{$RandomNumber}");
-quest::signalwith(166582,552,250000);
+
 }
