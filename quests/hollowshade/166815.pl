@@ -253,8 +253,8 @@ my $q = quest::ChooseRandom(166475,166478);
 my $r = quest::ChooseRandom(166480,166481);
 my $s = quest::ChooseRandom(166659,166479);
    quest::spawn2($a,0,0,1735.3,3406.9,166.4,145.1); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
-   quest::spawn2($b,0,0,1793.5,3391.5,,160.8,159); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
-   quest::spawn2($c,0,0,1751.2,2885.1,,163.7,199.6); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
+   quest::spawn2($b,0,0,1793.5,3391.5,160.8,159); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
+   quest::spawn2($c,0,0,1751.2,2885.1,163.7,199.6); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    quest::spawn2($d,0,0,1526.7,2495.8,164.7,112); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    quest::spawn2($e,4,0,1376.4,2167.1,163.3,48.2); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    quest::spawn2($f,0,0,1827.9,3639.5,158.3,127.1); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
