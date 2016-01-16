@@ -149,7 +149,7 @@ my $ex = quest::ChooseRandom(166938,166939);
 my $ey = quest::ChooseRandom(166940,166941);
 my $ez = quest::ChooseRandom(166942,166943);
 my $fa = quest::ChooseRandom(166944,166945);
-   quest::spawn2($ei,0,0,-620.1,-620.4,-2810.5,85.5,255.1); #an owlbear razorbeak an owlbear screechmaw an owlbear spurclaw
+   quest::spawn2($ei,0,0,-620.1,-2810.5,85.5,255.1); #an owlbear razorbeak an owlbear screechmaw an owlbear spurclaw
    quest::spawn2($ej,0,0,-493.6,-2737.4,54.8,195.9); #an owlbear bonegrinder an owlbear fleshrenderer
    quest::spawn2($ek,0,0,-506.8,-2754.4,46.1,196.9); #an owlbear hunter an owlbear ravager
    quest::spawn2($el,0,0,-505.1,-2719.4,37.7,213.5); #an owlbear razorbeak an owlbear razorclaw
