@@ -24,5 +24,4 @@ sub EVENT_AGGRO {
 sub EVENT_DEATH{
 my $RandomNumber = int(rand(2)) + 1;
   quest::emote("$DeathText{$RandomNumber}");
-quest::signalwith(166582,551,250000);
 }
