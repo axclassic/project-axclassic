@@ -344,7 +344,7 @@ my $ax = quest::ChooseRandom(166375,166376);
 my $ay = quest::ChooseRandom(166377,166378);
 my $az = quest::ChooseRandom(166379,166268,166380,166381);
 my $ba = quest::ChooseRandom(166382,166383);
-   quest::spawn2($ai,0,0,1735.3,3406.9,,166.4,145.1); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
+   quest::spawn2($ai,0,0,1735.3,3406.9,166.4,145.1); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    quest::spawn2($aj,0,0,1793.5,3391.5,,160.8,159); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    quest::spawn2($ak,0,0,1751.2,2885.1,,163.7,199.6); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    quest::spawn2($al,0,0,1526.7,2495.8,164.7,112); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
