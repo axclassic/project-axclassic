@@ -6,7 +6,7 @@ my %DeathText = (
 );
 
 sub EVENT_AGGRO { 
-   quest::emote(" Brothers and sisters, show no mercy to this outlander.");
+   quest::say("Brothers and sisters, show no mercy to this outlander.");
 }
 
 sub EVENT_DEATH{
