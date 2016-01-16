@@ -250,9 +250,9 @@ my $bo = quest::ChooseRandom(166507,166518,166537);
 my $bp = quest::ChooseRandom(166243,166797);
 my $bq = quest::ChooseRandom(166555,166558);
 my $br = quest::ChooseRandom(166556,166559);
-   quest::spawn2($bb,0,0,1735.3,3406.9,,166.4,145.1); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
-   quest::spawn2($bc,0,0,1793.5,3391.5,,160.8,159); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
-   quest::spawn2($bd,0,0,1751.2,2885.1,,163.7,199.6); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
+   quest::spawn2($bb,0,0,1735.3,3406.9,166.4,145.1); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
+   quest::spawn2($bc,0,0,1793.5,3391.5,160.8,159); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
+   quest::spawn2($bd,0,0,1751.2,2885.1,163.7,199.6); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    quest::spawn2($be,0,0,1526.7,2495.8,164.7,112); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    quest::spawn2($bf,4,0,1376.4,2167.1,163.3,48.2); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    quest::spawn2($bg,0,0,1827.9,3639.5,158.3,127.1); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
