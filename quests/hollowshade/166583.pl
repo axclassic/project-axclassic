@@ -633,9 +633,9 @@ my $eg = quest::ChooseRandom(166864,166865);
    quest::depop(166778); #a grimling thief
    quest::depop(166781); #a grimling soldier
    quest::depop(166779); #a grimling spiritist
-   quest::depop(166156); #a sonic guardian
+   quest::depopall(166156); #a sonic guardian
    quest::depop(166784); #a grimling chieftan
-   quest::depop(166147); #a sonic guardian
+   quest::depopall(166147); #a sonic guardian
    quest::depop(166785); #a sonic ravager
    quest::depop(166786); #a sonic defender
    quest::depop(166787); #a sonic defender
@@ -726,4 +726,3 @@ my $eg = quest::ChooseRandom(166864,166865);
    quest::spawn2(166209,0,0,-610.7,-2801.4,68.1,254.5); #a grimling bodyguard
    quest::depop();
    }
-
