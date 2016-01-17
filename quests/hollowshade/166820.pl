@@ -172,7 +172,7 @@ my $do = quest::ChooseRandom(166864,166865);
    quest::spawn2(166170,0,0,-626.6,-2842.3,82.8,253.4); #a grimling spiritist
    quest::spawn2(166210,0,0,-631.3,-2801.4,68.1,254.5); #a grimling bodyguard
    quest::spawn2(166209,0,0,-610.7,-2801.4,68.1,254.5); #a grimling bodyguard
-   quest::spawn2(166566,498136,0,-1017.1,-2103,-128,181.6); #Gamtoine_Cursmakk
+   quest::spawn2(166566,498136,0,-2004.8,1858.5,-72.5,115); #Gamtoine_Cursmakk
    quest::signalwith(166821,506,0);
    quest::depop();
    }
