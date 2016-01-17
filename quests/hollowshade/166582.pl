@@ -233,7 +233,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166493,0,0,1265.8,2169.8,172,371); #an_owlbear_hunter
    } 
   if($signal == 425){
-  quest::spawn2(166411,498135,0,-846.2,1337.3,285.5,113.1); #Skrietat_Chet
+  quest::spawn2(166411,498136,0,-2004.8,1858.5,-72.5,115); #Skrietat_Chet
    } 
   if($signal == 426){
    quest::spawn2(166439,0,0,1573.9,2270.5,160,208.8); #an_owlbear_razorbeak
@@ -383,7 +383,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166395,0,0,1265.8,2169.8,172,371); #a_sonic_wolf
    } 
   if($signal == 475){
-   quest::spawn2(166260,5,0,-1212,795.5,9.9,197.6); #Curfang
+   quest::spawn2(166260,498136,0,-2004.8,1858.5,-72.5,115); #Curfang
    } 
   if($signal == 476){
    quest::spawn2(166396,0,0,1573.9,2270.5,160,208.8); #a_sonic_warwolf
@@ -479,7 +479,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166596,0,0,1265.8,2169.8,172,371); #a_grimling_spiritist
    } 
   if($signal == 507){
-  quest::spawn2(166566,498136,0,-1017.1,-2103,-128,181.6); #Gamtoine_Cursmakk
+  quest::spawn2(166566,498136,0,-2004.8,1858.5,-72.5,115); #Gamtoine_Cursmakk
    } 
   if($signal == 508){
    quest::spawn2(166521,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
