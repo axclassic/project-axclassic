@@ -678,7 +678,6 @@ my $eg = quest::ChooseRandom(166864,166865);
    quest::spawn2(166665,0,0,1618.4,2593.6,162.9,153.1); #an_owlbear_razorbeak
    quest::spawn2(166492,0,0,516,1019,35.5,112.5); #an_owlbear_hunter
    quest::spawn2(166493,0,0,1265.8,2169.8,172,371); #an_owlbear_hunter
-   quest::spawn2(166411,5,0,-1212,795.5,9.9,197.6); #Skrietat_Chet
    quest::spawn2(166439,0,0,1573.9,2270.5,160,208.8); #an_owlbear_razorbeak
    quest::spawn2(166440,0,0,1525.1,2349.4,163.1,99.8); #an_owlbear_razorbeak
    quest::spawn2(166441,0,0,1671.1,2462.,158,189.8); #an_owlbear_razorbeak
@@ -687,7 +686,6 @@ my $eg = quest::ChooseRandom(166864,166865);
    quest::spawn2(166444,0,0,2063.2,3211,159.1,170.1); #an_owlbear_razorbeak
    quest::spawn2(166468,0,0,1975.4,3275.8,159.8,135.4); #an_owlbear_grappler
    quest::spawn2(166469,0,0,1949.6,3431.9,150.5,211.8); #an_owlbear_grappler
-   quest::spawn2(166412,4,0,934.5,2176.7,161.6,149.2); #Prince_Skriatat
    quest::spawn2($t,0,0,-2969.5,466.9,55.6,24.6); #Ghowlik The_Fabled_Ghowlik a_sonic_packleader
    quest::spawn2($u,0,0,-2887.4,627.4,71.1,132.4); #a_sonic_hunter a_sonic_devourer a_sonic_warwolf a_sonic_stalker
    quest::spawn2($v,0,0,-2997.8,516.2,54,35); #a_sonic_devourer a_sonic_hunter a_sonic_ravager a_sonic_stalker
