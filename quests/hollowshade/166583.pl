@@ -646,6 +646,11 @@ my $eg = quest::ChooseRandom(166864,166865);
    quest::depopall(166494);
    quest::depop(166082);
    quest::depop(166084);
+   quest::depop(166078);
+   quest::depop(166079);
+   quest::depop(166080);
+   quest::depop(166081);
+   quest::depop(166083);
    quest::spawn2(166084,0,0,1928,1141,25.6,77.5); #Tolah Rakknak
    quest::spawn2(166082,0,0,1993,1063,25.6,255.5); #Tokk Smippah
    quest::spawn2(166078,498128,0,1980,979.7,31.2,117.4); #Guard Kliknaw
