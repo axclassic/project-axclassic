@@ -286,7 +286,7 @@ my $s = quest::ChooseRandom(166659,166479);
    quest::spawn2(166444,0,0,2063.2,3211,159.1,170.1); #an_owlbear_razorbeak
    quest::spawn2(166468,0,0,1975.4,3275.8,159.8,135.4); #an_owlbear_grappler
    quest::spawn2(166469,0,0,1949.6,3431.9,150.5,211.8); #an_owlbear_grappler
-   quest::spawn2(166412,498125,0,904,2337,245.8,155.6); #Prince_Skriatat
+   quest::spawn2(166412,498125,0,934.5,2176.7,158.8,149.2); #Prince_Skriatat
     quest::signalwith(166405,207,0);
    quest::depop();
     }
