@@ -277,7 +277,7 @@ my $s = quest::ChooseRandom(166659,166479);
    quest::spawn2(166438,0,0,1618.4,2593.6,162.9,153.1); #an_owlbear_razorbeak
    quest::spawn2(166492,0,0,516,1019,35.5,112.5); #an_owlbear_hunter
    quest::spawn2(166493,0,0,1265.8,2169.8,172,371); #an_owlbear_hunter
-   quest::spawn2(166411,5,0,-1212,795.5,9.9,197.6); #Skrietat_Chet
+   quest::spawn2(166411,498135,0,-846.2,1337.3,285.5,113.1); #Skrietat_Chet
    quest::spawn2(166439,0,0,1573.9,2270.5,160,208.8); #an_owlbear_razorbeak
    quest::spawn2(166440,0,0,1525.1,2349.4,163.1,99.8); #an_owlbear_razorbeak
    quest::spawn2(166441,0,0,1671.1,2462.,158,189.8); #an_owlbear_razorbeak
