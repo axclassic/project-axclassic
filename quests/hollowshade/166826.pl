@@ -7,7 +7,7 @@ my %AggroText = (
 
 my %DeathText = (
   1 => "coughs up a bit of blood. 'You'll never escape us. . .'",
-  2 => "screams as it collapses.'",
+  2 => "screams as it collapses.",
   3 => "staggers for a moment and then collapses."
 );
 
