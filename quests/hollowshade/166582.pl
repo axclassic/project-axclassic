@@ -233,7 +233,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166493,0,0,1265.8,2169.8,172,371); #an_owlbear_hunter
    } 
   if($signal == 425){
-   quest::spawn2(166411,5,0,-1212,795.5,9.9,197.6); #Skrietat_Chet
+  quest::spawn2(166411,498135,0,-846.2,1337.3,285.5,113.1); #Skrietat_Chet
    } 
   if($signal == 426){
    quest::spawn2(166439,0,0,1573.9,2270.5,160,208.8); #an_owlbear_razorbeak
