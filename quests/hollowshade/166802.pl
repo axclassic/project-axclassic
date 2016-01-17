@@ -186,6 +186,7 @@ my $ah = quest::ChooseRandom(166646,166647,166648);
    quest::spawn2($af,0,0,-2845.7,507.9,70.4,20.9); #a_sonic_ravager a_sonic_hunter a_sonic_devourer
    quest::spawn2($ag,0,0,-2932.2,525,55.8,62.2); #a_sonic_hunter a_sonic_ravager a_sonic_stalker  
    quest::spawn2($ah,0,0,-2931.4,584.7,54.5,77.4); #a_sonic_tracker a_sonic_devourer a_sonic_warwolf
+   quest::spawn2(166260,498136,0,-2004.8,1858.5,-72.5,115); #Curfang
    quest::signalwith(166663,708,0);
    quest::depop();
    }
