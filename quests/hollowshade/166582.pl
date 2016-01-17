@@ -479,7 +479,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166596,0,0,1265.8,2169.8,172,371); #a_grimling_spiritist
    } 
   if($signal == 507){
-   quest::spawn2(166566,5,0,-1212,795.5,9.9,197.6); #Gamtoine_Cursmakk
+  quest::spawn2(166566,498136,0,-1017.1,-2103,-128,181.6); #Gamtoine_Cursmakk
    } 
   if($signal == 508){
    quest::spawn2(166521,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
