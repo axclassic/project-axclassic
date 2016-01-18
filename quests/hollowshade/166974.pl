@@ -3,7 +3,7 @@ sub EVENT_SIGNAL{
 if($signal == 814){
    quest::depop(166870);
    quest::depop(166871);
-   quest::depop(166874);
+   quest::depop(166784);
    quest::depop(166872);
    quest::depop(166873);
    quest::depop(166953);
