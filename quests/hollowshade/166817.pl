@@ -230,11 +230,13 @@ sub EVENT_SPAWN{
   quest::depop(166355);
   quest::depop(166468);
   quest::depop(166033);
+  quest::depop(166977);
+  quest::depop(166978);
    }
 sub EVENT_SIGNAL{
 if($signal == 11){
-my $bb = quest::ChooseRandom(166496,166509,166527,166538);
-my $bc = quest::ChooseRandom(166497,166510,166528,166539);
+my $bb = quest::ChooseRandom(166977,166509,166527,166538);
+my $bc = quest::ChooseRandom(166978,166510,166528,166539);
 my $bd = quest::ChooseRandom(166498,166511,166529,166540);
 my $be = quest::ChooseRandom(166499,166512,166530,166541);
 my $bf = quest::ChooseRandom(166501,166513,166531,166542);
