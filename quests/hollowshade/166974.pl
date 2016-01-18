@@ -1,0 +1,46 @@
+##South Village respawn check against wolves##
+sub EVENT_SIGNAL{
+if($signal == 814){
+   quest::depop(166870);
+   quest::depop(166871);
+   quest::depop(166874);
+   quest::depop(166872);
+   quest::depop(166873);
+   quest::depop(166953);
+   quest::depop(166875);
+   quest::depop(166876);
+   quest::depop(166877);
+   quest::depop(166878);
+   quest::depop(166879);
+   quest::depop(166880);
+   quest::depop(166881);
+   quest::depop(166882);
+   quest::depop(166883);
+   quest::depop(166884);
+   quest::depop(166885);
+   quest::depop(166886);
+   quest::depop(166887);
+   quest::depop(166888);
+   quest::depop(166889);
+   quest::depop(166890);
+   quest::depop(166891);
+   quest::depop(166892);
+   quest::depop(166893);
+   quest::depop(166894);
+   quest::depop(166895);
+   quest::depop(166896);
+   quest::depop(166897);
+   quest::depop(166898);
+   quest::depop(166899);
+   quest::depop(166900);
+   quest::depop(166901);
+   quest::depop(166902);
+   quest::depop(166903);
+   quest::depop(166904);
+   quest::depop(166905);
+   quest::depop(166906);
+   quest::depop(166907);
+   quest::depop(166147);
+   quest::depop(166156);
+   }
+}
