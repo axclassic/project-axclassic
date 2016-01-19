@@ -2,11 +2,11 @@
 sub EVENT_SIGNAL{
     if($signal == 817){
    quest::depop(166496);
-   quest::depop(166509);
+   quest::depop(166979);
    quest::depop(166527);
    quest::depop(166538);
    quest::depop(166497);
-   quest::depop(166510);
+   quest::depop(166980);
    quest::depop(166528);
    quest::depop(166539);
    quest::depop(166498);
@@ -14,12 +14,12 @@ sub EVENT_SIGNAL{
    quest::depop(166529);
    quest::depop(166540);
    quest::depop(166499);
-   quest::depop(166512);
+   quest::depop(166981);
    quest::depop(166530);
    quest::depop(166541);
    quest::depop(166501);
    quest::depop(166513);
-   quest::depop(166531);
+   quest::depop(166982);
    quest::depop(166542);
    quest::depop(166502);
    quest::depop(166514);
@@ -30,7 +30,7 @@ sub EVENT_SIGNAL{
    quest::depop(166533);
    quest::depop(166545);
    quest::depop(166516);
-   quest::depop(166534);
+   quest::depop(166983);
    quest::depop(166546);
    quest::depop(166495);
    quest::depop(166494);
@@ -60,7 +60,7 @@ sub EVENT_SIGNAL{
    quest::depop(166563);
    quest::depop(166596);
    quest::depop(166566);
-   quest::depop(166521);
+   quest::depop(166984);
    quest::depop(166522);
    quest::depop(166523);
    quest::depop(166524);
