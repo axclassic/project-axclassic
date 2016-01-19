@@ -241,14 +241,14 @@ sub EVENT_SPAWN{
    }
 sub EVENT_SIGNAL{
 if($signal == 11){
-my $bb = quest::ChooseRandom(166977,166509,166527,166538);
-my $bc = quest::ChooseRandom(166978,166510,166528,166539);
+my $bb = quest::ChooseRandom(166977,166979,166527,166538);
+my $bc = quest::ChooseRandom(166978,166980,166528,166539);
 my $bd = quest::ChooseRandom(166498,166511,166529,166540);
-my $be = quest::ChooseRandom(166499,166512,166530,166541);
-my $bf = quest::ChooseRandom(166501,166513,166531,166542);
+my $be = quest::ChooseRandom(166499,166981,166530,166541);
+my $bf = quest::ChooseRandom(166501,166513,166982,166542);
 my $bg = quest::ChooseRandom(166502,166514,166532,166544);
 my $bh = quest::ChooseRandom(166503,166515,166533,166545);
-my $bi = quest::ChooseRandom(166504,166516,166534,166546);
+my $bi = quest::ChooseRandom(166504,166516,166983,166546);
 my $bj = quest::ChooseRandom(166495,166494);
 my $bk = quest::ChooseRandom(166553,166554);
 my $bl = quest::ChooseRandom(166505,166535,166547);
@@ -281,7 +281,7 @@ my $br = quest::ChooseRandom(166556,166559);
    quest::spawn2(166563,0,0,516,1019,35.5,112.5); #a_grimling_spiritist
    quest::spawn2(166596,0,0,1265.8,2169.8,172,371); #a_grimling_spiritist
    quest::spawn2(166566,5,0,-1212,795.5,9.9,197.6); #Gamtoine_Cursmakk
-   quest::spawn2(166521,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
+   quest::spawn2(166984,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
    quest::spawn2(166522,0,0,1525.1,2349.4,163.1,99.8); #a_grimling_conqueror
    quest::spawn2(166523,0,0,1671.1,2462.,158,189.8); #a_grimling_conqueror
    quest::spawn2(166524,0,0,1698.9,2795.8,167.1,212.9); #a_grimling_conqueror
