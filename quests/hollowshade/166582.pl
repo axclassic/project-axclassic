@@ -53,14 +53,14 @@ my $ax = quest::ChooseRandom(166375,166376);
 my $ay = quest::ChooseRandom(166377,166378,166794);
 my $az = quest::ChooseRandom(166379,166268,166380,166381);
 my $ba = quest::ChooseRandom(166382,166383);
-my $bb = quest::ChooseRandom(166977,166509,166527,166538);
-my $bc = quest::ChooseRandom(166978,166510,166528,166539);
+my $bb = quest::ChooseRandom(166977,166979,166527,166538);
+my $bc = quest::ChooseRandom(166978,166980,166528,166539);
 my $bd = quest::ChooseRandom(166498,166511,166529,166540);
-my $be = quest::ChooseRandom(166499,166512,166530,166541);
-my $bf = quest::ChooseRandom(166501,166513,166531,166542);
+my $be = quest::ChooseRandom(166499,166981,166530,166541);
+my $bf = quest::ChooseRandom(166501,166513,166982,166542);
 my $bg = quest::ChooseRandom(166502,166514,166532,166544);
 my $bh = quest::ChooseRandom(166503,166515,166533,166545);
-my $bi = quest::ChooseRandom(166504,166516,166534,166546);
+my $bi = quest::ChooseRandom(166504,166516,166983,166546);
 my $bj = quest::ChooseRandom(166495,166494);
 my $bk = quest::ChooseRandom(166553,166554);
 my $bl = quest::ChooseRandom(166505,166535,166547);
@@ -482,7 +482,7 @@ my $fa = quest::ChooseRandom(166944,166945);
   quest::spawn2(166566,498136,0,-2004.8,1858.5,-72.5,115); #Gamtoine_Cursmakk
    } 
   if($signal == 508){
-   quest::spawn2(166521,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
+   quest::spawn2(166984,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
    } 
   if($signal == 509){
    quest::spawn2(166522,0,0,1525.1,2349.4,163.1,99.8); #a_grimling_conqueror
