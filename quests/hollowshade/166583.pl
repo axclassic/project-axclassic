@@ -625,6 +625,14 @@ my $eg = quest::ChooseRandom(166864,166865);
    quest::depop(166949);
    quest::depop(166441);
    quest::depop(166412);
+   quest::depop(166977);
+   quest::depop(166978);
+   quest::depop(166979);
+   quest::depop(166980);
+   quest::depop(166981);
+   quest::depop(166982);
+   quest::depop(166983);
+   quest::depop(166984);
    quest::depop(166495); #a grimling guard
    quest::depop(166792); #Prince Garzemort
    quest::depop(166594); #a grimling guard
