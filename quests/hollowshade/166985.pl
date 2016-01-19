@@ -18,7 +18,7 @@ if($signal == 1005){
 if($signal == 1006){
    quest::depop(166414);
   }
-if($signal == 1006){
+if($signal == 1007){
    quest::depop(166427);
 	}
 if($signal == 1008){   
