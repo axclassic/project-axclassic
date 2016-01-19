@@ -53,14 +53,14 @@ my $ax = quest::ChooseRandom(166375,166376);
 my $ay = quest::ChooseRandom(166377,166378,166794);
 my $az = quest::ChooseRandom(166379,166268,166380,166381);
 my $ba = quest::ChooseRandom(166382,166383);
-my $bb = quest::ChooseRandom(166977,166979,166527,166538);
-my $bc = quest::ChooseRandom(166978,166980,166528,166539);
+my $bb = quest::ChooseRandom(166977,166509,166527,166538);
+my $bc = quest::ChooseRandom(166978,166510,166528,166539);
 my $bd = quest::ChooseRandom(166498,166511,166529,166540);
-my $be = quest::ChooseRandom(166499,166981,166530,166541);
-my $bf = quest::ChooseRandom(166501,166513,166982,166542);
+my $be = quest::ChooseRandom(166499,166512,166530,166541);
+my $bf = quest::ChooseRandom(166501,166513,166531,166542);
 my $bg = quest::ChooseRandom(166502,166514,166532,166544);
 my $bh = quest::ChooseRandom(166503,166515,166533,166545);
-my $bi = quest::ChooseRandom(166504,166516,166983,166546);
+my $bi = quest::ChooseRandom(166504,166516,166534,166546);
 my $bj = quest::ChooseRandom(166495,166494);
 my $bk = quest::ChooseRandom(166553,166554);
 my $bl = quest::ChooseRandom(166505,166535,166547);
@@ -233,7 +233,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166493,0,0,1265.8,2169.8,172,371); #an_owlbear_hunter
    } 
   if($signal == 425){
-  quest::spawn2(166411,498136,0,-2004.8,1858.5,-72.5,115); #Skrietat_Chet
+   quest::spawn2(166411,498135,0,-846.2,1337.3,285.5,113.1); #Skrietat_Chet
    } 
   if($signal == 426){
    quest::spawn2(166439,0,0,1573.9,2270.5,160,208.8); #an_owlbear_razorbeak
@@ -260,7 +260,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166469,0,0,1949.6,3431.9,150.5,211.8); #an_owlbear_grappler
    } 
   if($signal == 434){
-   quest::spawn2(166412,498125,0,934.5,2176.7,158.8,149.2); #Prince_Skriatat
+   quest::spawn2(166412,4,0,934.5,2176.7,161.6,149.2); #Prince_Skriatat
    } 
   if($signal == 435){
    quest::spawn2($t,0,0,-2969.5,466.9,55.6,24.6); #Ghowlik The_Fabled_Ghowlik a_sonic_packleader
@@ -383,7 +383,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166395,0,0,1265.8,2169.8,172,371); #a_sonic_wolf
    } 
   if($signal == 475){
-   quest::spawn2(166260,498136,0,-2004.8,1858.5,-72.5,115); #Curfang
+   quest::spawn2(166260,5,0,-1212,795.5,9.9,197.6); #Curfang
    } 
   if($signal == 476){
    quest::spawn2(166396,0,0,1573.9,2270.5,160,208.8); #a_sonic_warwolf
@@ -410,7 +410,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166404,0,0,1949.6,3431.9,150.5,211.8); #a_sonic_devourer
    } 
   if($signal == 484){
-   quest::spawn2(166355,498125,0,934.5,2176.7,158.8,149.2); #Warpaw Dankpelt
+   quest::spawn2(166355,4,0,934.5,2176.7,161.6,149.2); #Warpaw Dankpelt
    } 
   if($signal == 485){
    quest::spawn2($bb,0,0,1735.3,3406.9,,166.4,145.1); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
@@ -479,10 +479,10 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166596,0,0,1265.8,2169.8,172,371); #a_grimling_spiritist
    } 
   if($signal == 507){
-  quest::spawn2(166566,5,0,-1212,795.5,9.9,197.6); #Gamtoine_Cursmakk
+   quest::spawn2(166566,5,0,-1212,795.5,9.9,197.6); #Gamtoine_Cursmakk
    } 
   if($signal == 508){
-   quest::spawn2(166984,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
+   quest::spawn2(166521,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
    } 
   if($signal == 509){
    quest::spawn2(166522,0,0,1525.1,2349.4,163.1,99.8); #a_grimling_conqueror
@@ -506,7 +506,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166552,0,0,1949.6,3431.9,150.5,211.8); #a_grimling_overseer
    } 
   if($signal == 516){
-   quest::spawn2(166950,498125,0,934.5,2176.7,158.8,149.2); #Wiknak Grimglom
+   quest::spawn2(166950,4,0,934.5,2176.7,161.6,149.2); #Wiknak Grimglom
    } 
   if($signal == 517){
    quest::spawn2($bs,0,0,-2969.5,466.9,55.6,24.6); #an owlbear fleshrender Skriat Chee an owlbear fleshrender
@@ -799,7 +799,14 @@ my $fa = quest::ChooseRandom(166944,166945);
   if($signal == 613){
    quest::spawn2(166947,0,0,-610.7,-2801.4,68.1,254.5); #an owlbear razorbeak
    }
+  if($signal == 614){
+   quest::spawn2(166084,0,0,1928,1141,25.6,77.5); #Tolah Rakknak
+   }
   if($signal == 615){
    quest::spawn2(166082,0,0,1993,1063,25.6,255.5); #an owlbear razorbeak
    }
-  }
+  if($signal == 620){
+   quest::spawn2(166985,0,0,1755.4,3598.3,156,106); #owlbear Delay depopper
+   quest::signalwith(166985,1001,0);
+   }
+}
