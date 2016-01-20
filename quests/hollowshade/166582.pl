@@ -53,8 +53,8 @@ my $ax = quest::ChooseRandom(166375,166376);
 my $ay = quest::ChooseRandom(166377,166378,166794);
 my $az = quest::ChooseRandom(166379,166268,166380,166381);
 my $ba = quest::ChooseRandom(166382,166383);
-my $bb = quest::ChooseRandom(166977,166509,166527,166538);
-my $bc = quest::ChooseRandom(166978,166510,166528,166539);
+my $bb = quest::ChooseRandom(166977,166979,166527,166538);
+my $bc = quest::ChooseRandom(166978,166980,166528,166539);
 my $bd = quest::ChooseRandom(166498,166511,166529,166540);
 my $be = quest::ChooseRandom(166499,166512,166530,166541);
 my $bf = quest::ChooseRandom(166501,166513,166531,166542);
@@ -482,7 +482,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166566,5,0,-1212,795.5,9.9,197.6); #Gamtoine_Cursmakk
    } 
   if($signal == 508){
-   quest::spawn2(166521,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
+   quest::spawn2(166980,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
    } 
   if($signal == 509){
    quest::spawn2(166522,0,0,1525.1,2349.4,163.1,99.8); #a_grimling_conqueror
@@ -806,39 +806,7 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166082,0,0,1993,1063,25.6,255.5); #an owlbear razorbeak
    }
   if($signal == 620){
-   quest::spawn2(166985,0,0,1755.4,3598.3,156,106); #owlbear Delay in north cave depopper
+   quest::spawn2(166985,0,0,1755.4,3598.3,156,106); #owlbear Delay depopper
    quest::signalwith(166985,1001,0);
    }
-  if($signal == 621){
-   quest::spawn2(166986,0,0,1755.4,3598.3,156,106); #Sonic Wolf Delay in north cave depopper
-   quest::signalwith(166986,2001,0);
-   }
-  if($signal == 622){
-   quest::spawn2(166987,0,0,1755.4,3598.3,156,106); #Grimling Delay in north cave depopper
-   quest::signalwith(166987,3001,0);
-   } 
-  if($signal == 623){
-   quest::spawn2(166988,0,0,-3027.5,602.8,71.9,73.1); #Sonic Wolf Delay in east cave depopper
-   quest::signalwith(166988,4001,0);
-   } 
-  if($signal == 624){
-   quest::spawn2(166989,0,0,-3027.5,602.8,71.9,73.1); #Owlbear Delay in east cave depopper
-   quest::signalwith(166989,5001,0);
-   } 
-  if($signal == 625){
-   quest::spawn2(166990,0,0,-3027.5,602.8,71.9,73.1); #Grimling Delay in east cave depopper
-   quest::signalwith(166990,6001,0);
-   } 
-  if($signal == 626){
-   quest::spawn2(166991,0,0,-214.3,2788,155,159.8); #Grimling Delay in south village depopper
-   quest::signalwith(166991,7001,0);
-   }
-   if($signal == 627){
-   quest::spawn2(166992,0,0,-214.3,2788,155,159.8); #Owlbear Delay in south village depopper
-   quest::signalwith(166992,8001,0);
-   }  
-   if($signal == 628){
-   quest::spawn2(166993,0,0,-214.3,2788,155,159.8); #Sonic Wolf Delay in south village depopper
-   quest::signalwith(166993,9001,0);
-   }   
 }
