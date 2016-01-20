@@ -157,7 +157,7 @@ sub EVENT_SPAWN{
 sub EVENT_SIGNAL{ 
 if($signal == 11){ 
 my $ch = quest::ChooseRandom(166233,166601,166600);
-my $ci = quest::ChooseRandom(166509,166734,166496,166735);
+my $ci = quest::ChooseRandom(166509,166734,166995,166735);
 my $cj = quest::ChooseRandom(166510,166736,166497,166737);
 my $ck = quest::ChooseRandom(166738,166739,166740);
 my $cl = quest::ChooseRandom(166512,166531,166743);
