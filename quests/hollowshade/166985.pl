@@ -1,7 +1,7 @@
 ##North Cave Delay respawn check against Owlbears##
 sub EVENT_SIGNAL{
 if ($signal == 1001) {
-   quest::settimer("delay_owlbears_owl_cave_timer",150);
+   quest::settimer("delay_owlbears_north_cave_timer",150);
   }
 if($signal == 1002){
    quest::depop(166413);
@@ -239,8 +239,8 @@ if($signal == 1079){
   }
 }
  sub EVENT_TIMER{
- if($timer eq "delay_owlbears_owl_cave_timer"){
-     quest::stoptimer("delay_owlbears_owl_cave_timer");
+ if($timer eq "delay_owlbears_north_cave_timer"){
+     quest::stoptimer("delay_owlbears_north_cave_timer");
    quest::depop();
    }
  }  
