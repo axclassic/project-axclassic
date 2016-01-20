@@ -806,11 +806,16 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166082,0,0,1993,1063,25.6,255.5); #an owlbear razorbeak
    }
   if($signal == 620){
-   quest::spawn2(166985,0,0,1755.4,3598.3,156,106); #owlbear Delay depopper
+   quest::spawn2(166985,0,0,1755.4,3598.3,156,106); #owlbear Delay depopper north cave
    quest::signalwith(166985,1001,0);
   }
   if($signal == 621){
-   quest::spawn2(166986,0,0,1755.4,3598.3,156,106); #owlbear Delay depopper
+   quest::spawn2(166986,0,0,1755.4,3598.3,156,106); #wolf Delay depopper north cave
    quest::signalwith(166986,2001,0);
+  }
+  if($signal == 622){
+   quest::spawn2(166987,0,0,1755.4,3598.3,156,106); #grimling Delay depopper north cave
+   quest::signalwith(166987,3001,0);
+  }
    }
 }
