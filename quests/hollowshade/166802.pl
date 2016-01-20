@@ -22,7 +22,7 @@ sub EVENT_SPAWN{
    quest::depop(166746);
    quest::depop(166500);
    quest::depop(166747);
-   quest::depop(166534);
+   quest::depop(166302);
    quest::depop(166748);
    quest::depop(166749);
    quest::depop(166750);
