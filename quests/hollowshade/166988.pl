@@ -159,9 +159,6 @@ if($signal == 4052){
 if($signal == 4053){
    quest::depop(166648);
   }
-if($signal == 4054){
-   quest::depop(166260);
-  }
 }
  sub EVENT_TIMER{
  if($timer eq "delay_wolves_east_cave_timer"){
