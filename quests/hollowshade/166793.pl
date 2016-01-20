@@ -8,10 +8,11 @@ sub EVENT_ENTER {
   quest::depop(166972);
   quest::depop(166973);
   quest::depop(166971);
+  quest::spawn2(166973,0,0,1721.8,3552.1,188.9,90);
   quest::spawn2(166972,0,0,1722.1,3565.5,158.1,80.4);
-  quest::spawn2(166973,0,0,1727,3583.3,158.4,91.4);
-  quest::signalwith(166972,818,0);
   quest::signalwith(166973,817,0);
+  quest::signalwith(166972,818,0);
+  quest::signalwith(166582,2001,2500);
   quest::signalwith(166963,305,0);
   }
 
