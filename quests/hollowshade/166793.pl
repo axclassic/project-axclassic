@@ -9,7 +9,7 @@ sub EVENT_SPAWN {
   quest::spawn2(166972,0,0,1722.1,3565.5,158.1,80.4);
   quest::signalwith(166973,817,0);
   quest::signalwith(166972,818,0);
-  quest::signalwith(166582,2001,2500);
+  quest::signalwith(166582,621,25000);
 	}
 sub EVENT_ENTER {
     quest::shout("I see you $name! Nothing but death awaits you here!");
