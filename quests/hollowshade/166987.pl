@@ -116,97 +116,98 @@ if ($signal == 3038) {
   }
 if ($signal == 3039) {
    quest::depop(166535);
-
-   quest::depop(166547);
   }
 if ($signal == 3040) {
-   quest::depop(166572);
+   quest::depop(166547);
   }
 if ($signal == 3041) {
-   quest::depop(166573);
+   quest::depop(166572);
   }
 if ($signal == 3042) {
-   quest::depop(166506);
+   quest::depop(166573);
   }
 if ($signal == 3043) {
-   quest::depop(166517);
+   quest::depop(166506);
   }
 if ($signal == 3044) {
-   quest::depop(166536);
+   quest::depop(166517);
   }
 if ($signal == 3045) {
-   quest::depop(166548);
+   quest::depop(166536);
   }
 if ($signal == 3046) {
-   quest::depop(166507);
+   quest::depop(166548);
   }
 if ($signal == 3047) {
-   quest::depop(166518);
+   quest::depop(166507);
   }
 if ($signal == 3048) {
+   quest::depop(166518);
+  }
+if ($signal == 3049 {
    quest::depop(166537);
   }
-if ($signal == 3049) {
+if ($signal == 3050) {
    quest::depop(166243);
   }
-if ($signal == 3050) {
+if ($signal == 3051) {
    quest::depop(166797);
   }
-if ($signal == 3051) {
+if ($signal == 3052) {
    quest::depop(166555);
   }
-if ($signal == 3052) {
+if ($signal == 3053) {
    quest::depop(166558);
   }
-if ($signal == 3053) {
+if ($signal == 3054) {
    quest::depop(166556);
   }
-if ($signal == 3054) {
+if ($signal == 3055) {
    quest::depop(166559);
   }
-if ($signal == 3055) {
+if ($signal == 3056) {
    quest::depop(166549);
   }
-if ($signal == 3056) {
+if ($signal == 3057) {
    quest::depop(166667);
   }
-if ($signal == 3057) {
+if ($signal == 3058) {
    quest::depop(166520);
   }
-if ($signal == 3058) {
+if ($signal == 3059) {
    quest::depop(166563);
   }
-if ($signal == 3059) {
+if ($signal == 3060) {
    quest::depop(166596);
   }
-if ($signal == 3060) {
+if ($signal == 3061) {
    quest::depop(166566);
   }
-if ($signal == 3061) {
+if ($signal == 3062) {
    quest::depop(166980);
   }
-if ($signal == 3062) {
+if ($signal == 3063) {
    quest::depop(166522);
   }
-if ($signal == 3063) {
+if ($signal == 3064) {
    quest::depop(166523);
   }
-if ($signal == 3064) {
+if ($signal == 3065) {
    quest::depop(166524);
   }
-if ($signal == 3065) {
+if ($signal == 3066) {
    quest::depop(166525);
   }
-if ($signal == 3066) {
+if ($signal == 3067) {
    quest::depop(166526);
   }
-if ($signal == 3067) {
+if ($signal == 3068) {
    quest::depop(166550);
   }
-if ($signal == 3068) {
+if ($signal == 3069) {
    quest::depop(166552);
   }
-if ($signal == 3069) {
+if ($signal == 3070) {
    quest::depop(166950);
   }
 }
