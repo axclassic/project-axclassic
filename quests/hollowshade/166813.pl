@@ -158,9 +158,9 @@ sub EVENT_SIGNAL{
 if($signal == 11){ 
 my $ch = quest::ChooseRandom(166233,166601,166600);
 my $ci = quest::ChooseRandom(166509,166734,166995,166735);
-my $cj = quest::ChooseRandom(166510,166736,166996,166737);
+my $cj = quest::ChooseRandom(166510,166736,166999,166737);
 my $ck = quest::ChooseRandom(166738,166739,166740);
-my $cl = quest::ChooseRandom(166512,166531,166743);
+my $cl = quest::ChooseRandom(166996,166997,166743);
 my $cm = quest::ChooseRandom(166744,166745,166746,166500);
 my $cn = quest::ChooseRandom(166747,166534,166748,166749);
 my $co = quest::ChooseRandom(166750,166751,126752,126753);
