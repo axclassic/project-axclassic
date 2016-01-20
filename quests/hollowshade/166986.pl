@@ -1,7 +1,7 @@
 ##North Cave Delay respawn check against Sonic Wolves##
 sub EVENT_SIGNAL{
 if ($signal == 2001) {
-   quest::settimer("delay_wolves_owl_cave_timer",150);
+   quest::settimer("delay_wolves_north_cave_timer",180);
   }
 if($signal == 2002){
    quest::depop(166);
@@ -239,8 +239,8 @@ if($signal == 2079){
   }
 }
  sub EVENT_TIMER{
- if($timer eq "delay_wolves_owl_cave_timer"){
-     quest::stoptimer("delay_wolves_owl_cave_timer");
+ if($timer eq "delay_wolves_north_cave_timer"){
+     quest::stoptimer("delay_wolves_north_cave_timer");
    quest::depop();
    }
  }  
