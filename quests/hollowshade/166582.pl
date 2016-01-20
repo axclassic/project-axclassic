@@ -808,5 +808,9 @@ my $fa = quest::ChooseRandom(166944,166945);
   if($signal == 620){
    quest::spawn2(166985,0,0,1755.4,3598.3,156,106); #owlbear Delay depopper
    quest::signalwith(166985,1001,0);
+  }
+  if($signal == 621){
+   quest::spawn2(166986,0,0,1755.4,3598.3,156,106); #owlbear Delay depopper
+   quest::signalwith(166986,2001,0);
    }
 }
