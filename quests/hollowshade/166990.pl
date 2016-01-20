@@ -31,7 +31,7 @@ if($signal == 3010){
    quest::depop(166736);
 	}
 if($signal == 6011){   
-   quest::depop(166497);
+   quest::depop(166999);
 	}
 if($signal == 6012){   
    quest::depop(166737);
@@ -46,10 +46,10 @@ if($signal == 6015){
    quest::depop(166740);
   }
 if($signal == 6016){
-   quest::depop(166512);
+   quest::depop(166996);
   }
 if($signal == 6017){
-   quest::depop(166531);
+   quest::depop(166997);
   }
 if($signal == 6018){
    quest::depop(166743);
