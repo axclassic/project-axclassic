@@ -19,7 +19,7 @@ if($signal == 6006){
    quest::depop(166734);
   }
 if($signal == 6007){
-   quest::depop(166496);
+   quest::depop(166995);
 	}
 if($signal == 6008){   
    quest::depop(166735);
