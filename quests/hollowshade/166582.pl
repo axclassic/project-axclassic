@@ -817,5 +817,28 @@ my $fa = quest::ChooseRandom(166944,166945);
    quest::spawn2(166987,0,0,1755.4,3598.3,156,106); #grimling Delay depopper north cave
    quest::signalwith(166987,3001,0);
   }
+  if($signal == 623){
+   quest::spawn2(166988,0,0,-3025.9,600.5,70.2,61.2); #wolf Delay depopper east cave
+   quest::signalwith(166988,4001,0);
+  }
+  if($signal == 624){
+   quest::spawn2(166989,0,0,-3025.9,600.5,70.2,61.2); #owlbear Delay depopper east cave
+   quest::signalwith(166989,5001,0);
+  }
+  if($signal == 625){
+   quest::spawn2(166990,0,0,-3025.9,600.5,70.2,61.2); #grimling Delay depopper east cave
+   quest::signalwith(166990,6001,0);
+  }
+  if($signal == 626){
+   quest::spawn2(166991,0,0,-214.2,-2787.9,155.1,155.5); #grimling Delay depopper south village
+   quest::signalwith(166991,7001,0);
+  }
+  if($signal == 627){
+   quest::spawn2(166992,0,0,-214.2,-2787.9,155.1,155.5); #owlbear Delay depopper south village
+   quest::signalwith(166992,8001,0);
+  }
+  if($signal == 628){
+   quest::spawn2(166993,0,0,-214.2,-2787.9,155.1,155.5); #wolf Delay depopper south village
+   quest::signalwith(166993,9001,0);
    }
 }
