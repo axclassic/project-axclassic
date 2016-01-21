@@ -1,3 +1,4 @@
+##East Cave respawn check against grimlings##
 sub EVENT_SIGNAL{
 if($signal == 812){
    quest::depop(166720);
