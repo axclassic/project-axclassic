@@ -1,7 +1,7 @@
 ##East Cave Delay respawn check against Grimlings##
 sub EVENT_SIGNAL{
 if ($signal == 6001) {
-   quest::settimer("delay_grimlings_east_cave_timer",180);
+   quest::settimer("delay_grimlings_east_cave_timer",300);
   }
 if($signal == 6002){
    quest::depop(166233);
