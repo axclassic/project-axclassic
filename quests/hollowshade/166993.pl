@@ -1,7 +1,7 @@
 ##South Village Delay respawn check againstSonic Wolves##
 sub EVENT_SIGNAL{
 if ($signal == 9001) {
-   quest::settimer("delay_wolves_south_village_timer",180);
+   quest::settimer("delay_wolves_south_village_timer",300);
   }
 if($signal == 9002){
    quest::depop(166870);
