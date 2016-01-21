@@ -1,7 +1,7 @@
 ##South Village Delay respawn check against Grimlings##
 sub EVENT_SIGNAL{
 if ($signal == 7001) {
-   quest::settimer("delay_grimlings_south_village_timer",180);
+   quest::settimer("delay_grimlings_south_village_timer",300);
   }
 if($signal == 7002){
    quest::depop(166177);
