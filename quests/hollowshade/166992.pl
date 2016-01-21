@@ -1,7 +1,7 @@
 ##South Village Delay respawn check against Owlbears##
 sub EVENT_SIGNAL{
 if ($signal == 8001) {
-   quest::settimer("delay_owlbears_south_village_timer",180);
+   quest::settimer("delay_owlbears_south_village_timer",300);
   }
 if($signal == 8002){
    quest::depop(166908);
