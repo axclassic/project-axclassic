@@ -1,7 +1,7 @@
 ##North Cave Delay respawn check against Grimlings##
 sub EVENT_SIGNAL{
 if ($signal == 3001) {
-   quest::settimer("delay_grimlings_north_cave_timer",180);
+   quest::settimer("delay_grimlings_north_cave_timer",300);
   }
 if ($signal == 3002) {
    quest::depop(166977);
