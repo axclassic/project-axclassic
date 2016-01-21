@@ -1,7 +1,7 @@
 ##East Cave Delay respawn check against Sonic Wolves##
 sub EVENT_SIGNAL{
 if ($signal == 4001) {
-   quest::settimer("delay_wolves_east_cave_timer",180);
+   quest::settimer("delay_wolves_east_cave_timer",300);
   }
 if($signal == 4002){
    quest::depop(166602);
