@@ -2,7 +2,6 @@ sub EVENT_SPAWN {
  $x = $npc->GetX();
 	$y = $npc->GetY();
 	quest::set_proximity($x - 75, $x + 75, $y - 75, $y + 75);
-	 quest::depop(166974);
   quest::depop(166974);
   quest::depop(166975);
   quest::depop(166976);
