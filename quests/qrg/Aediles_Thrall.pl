@@ -132,7 +132,7 @@ my $show = quest::saylink("show", 1);
             $client->Message(14,"They answer these commands that start with #bot (fer example, '#bot create'); $create, $delete, $list, $spawn, $add, $order. Want to $hear more or need me to explain $macros ?");
          }
          elsif(($text=~/create/i) || ($text=~/spawn/i)) {
-            $client->Message(14,"First you have to create the bot; '#bot help create' will show you related class and race numbers you will have to provide, and you have to make a name - for example, this command will make you a female cleric, high elf with the name of Sissy; '#bot create Sissy 2 5 female'. If the creation is successful, you will see a message; 'Bot created'  you'll need its name for spawning the bot with the command #bot spawn'");
+            $client->Message(14,"First you have to create the bot; '#bot help create' will show you related class and race numbers you will have to provide, and you have to make a name - for example, this command will make you a female cleric, high elf with the name of Sissy; '#bot create Sissy Cleric HighElf female'. If the creation is successful, you will see a message; 'Bot created'  you'll need its name for spawning the bot with the command #bot spawn Sissy'");
          }
          elsif(($text=~/list/i)|| ($text=~/inventory/i)) {
             $client->Message(14,"'#bot list' will show you what bots are yours and their ID numbers.");
