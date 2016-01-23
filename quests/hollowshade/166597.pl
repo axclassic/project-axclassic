@@ -1,6 +1,7 @@
 ##Signal for what attackers and what defenders to spawn##
 sub EVENT_SIGNAL{
 if ($signal == 1001){
+  quest::shout("Got signal 1001 spawning invaders and defenders");
   quest::depop(166487);
   quest::depop(166585);
   quest::depop(166586);
@@ -19,6 +20,7 @@ if ($signal == 1001){
    quest::depop();
    }
 if ($signal == 1002){
+  quest::shout("Got signal 1002 spawning invaders and defenders");
    quest::depop(166487);
    quest::depop(166585);
    quest::depop(166586);
@@ -38,6 +40,7 @@ if ($signal == 1002){
    quest::depop();
   }
 if ($signal == 1003){
+  quest::shout("Got signal 1003 spawning invaders and defenders");
    quest::depop(166650);
    quest::depop(166651);
    quest::depop(166652);
@@ -56,6 +59,7 @@ if ($signal == 1003){
    quest::depop(); 
   }
 if ($signal == 1004){
+  quest::shout("Got signal 1004 spawning invaders and defenders");
    quest::depop(166650);
    quest::depop(166651);
    quest::depop(166652);
@@ -74,6 +78,7 @@ if ($signal == 1004){
    quest::depop(); 
   }
 if ($signal == 1005){
+  quest::shout("Got signal 1005 spawning invaders and defenders");
    quest::depop(166567);
    quest::depop(166568);
    quest::depop(166569);
@@ -92,6 +97,7 @@ if ($signal == 1005){
    quest::depop(); 
   }
 if ($signal == 1006){
+  quest::shout("Got signal 1006 spawning invaders and defenders");
    quest::depop(166567);
    quest::depop(166568);
    quest::depop(166569);
