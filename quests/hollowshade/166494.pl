@@ -18,5 +18,5 @@ sub EVENT_ENTER {
 
 sub EVENT_DEATH{
 quest::signalwith(166273,609,0); #Boss_Dead_Grimlings
-quest::signalwith(166799,15,0);
+quest::signalwith(166799,17,0);
 }

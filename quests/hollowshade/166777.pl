@@ -18,6 +18,6 @@ sub EVENT_ENTER {
 
 sub EVENT_DEATH{
 quest::signalwith(166273,609,0); #Boss_Dead_Wolves
-quest::signalwith(166799,20,0);
+quest::signalwith(166799,18,0);
 }
 
