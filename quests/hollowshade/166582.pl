@@ -160,685 +160,689 @@ my $fa = quest::ChooseRandom(166944,166945);
   if($signal == 400){
    quest::spawn2($a,0,0,1735.3,3406.9,,166.4,145.1); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 401){
+  elsif($signal == 401){
    quest::spawn2($b,0,0,1793.5,3391.5,,160.8,159); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 402){
+  elsif($signal == 402){
    quest::spawn2($c,0,0,1751.2,2885.1,,163.7,199.6); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 403){
+  elsif($signal == 403){
    quest::spawn2($d,0,0,1526.7,2495.8,164.7,112); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 404){
+  elsif($signal == 404){
    quest::spawn2($e,4,0,1376.4,2167.1,163.3,48.2); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 405){
+  elsif($signal == 405){
    quest::spawn2($f,0,0,1827.9,3639.5,158.3,127.1); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 406){
+  elsif($signal == 406){
    quest::spawn2($g,0,0,1800.5,3166.7,160.1,222.5); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 407){
+  elsif($signal == 407){
    quest::spawn2($h,0,0,1729.7,3499.8,158.7,65); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 408){
+  elsif($signal == 408){
    quest::spawn2($i,0,0,1983,3537,158.3,178); #an_owlbear_fleshrender an_owlbear_denmaster Skrietat Chu
    } 
-  if($signal == 409){
+  elsif($signal == 409){
    quest::spawn2($j,498009,0,1443.9,1270,150.5,246.7); #an_owlbear_cub
    } 
-  if($signal == 410){
+  elsif($signal == 410){
    quest::spawn2($k,498093,0,1498.9,936,53.1,279.5); #an_owlbear_ravager an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 411){
+  elsif($signal == 411){
    quest::spawn2($l,9,0,904.7,2337.1,245.3,142.5); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 412){
+  elsif($signal == 412){
    quest::spawn2($m,0,0,1893.1,3077.7,162.3,248.5); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw an_owlbear_grappler
    } 
-  if($signal == 413){
+  elsif($signal == 413){
    quest::spawn2($n,0,0,1534.5,2806.4,164.1,81.6); #an_owlbear_ravager an_owlbear_razorbeak an_owlbear_razorclaw
    } 
-  if($signal == 414){
+  elsif($signal == 414){
    quest::spawn2($o,0,0,2072.1,3100.1,154.5,219.6); #an_owlbear_ravager an_owlbear_razorbeak Skrietat Cha
    } 
-  if($signal == 415){
+  elsif($signal == 415){
    quest::spawn2($p,3,0,1126.5,2150,143.9,63); #an_owlbear_spurclaw a_patrolling_owlbear
    } 
-  if($signal == 416){
+  elsif($signal == 416){
    quest::spawn2($q,,0,0,1542.4,2979.7,171.5,98); #an_owlbear_spurclaw a_patrolling_owlbear
    } 
-  if($signal == 417){
+  elsif($signal == 417){
    quest::spawn2($r,0,0,2002,3027,152.5,243.4); #an_owlbear_spurclaw a_patrolling_owlbear
    } 
-  if($signal == 418){
+  elsif($signal == 418){
    quest::spawn2($s,498126,0,1271.8,2131.7,171.6,244.8); #an_owlbear_gatherer
    } 
-  if($signal == 419){
+  elsif($signal == 419){
    quest::spawn2(166467,0,0,1996.1,3623.3,166.6,124.4); #an_owlbear_grappler
    } 
-  if($signal == 420){
+  elsif($signal == 420){
    quest::spawn2(166589,0,0,1318.9,1109.9,115.5,194.1); #an_owlbear_razorbeak
    } 
-  if($signal == 421){
+  elsif($signal == 421){
    quest::spawn2(166425,0,0,398,1942,133.1,25.5); #an_owlbear_ravager
    } 
-  if($signal == 422){
+  elsif($signal == 422){
    quest::spawn2(166438,0,0,1618.4,2593.6,162.9,153.1); #an_owlbear_razorbeak
    } 
-  if($signal == 423){
+  elsif($signal == 423){
    quest::spawn2(166492,0,0,516,1019,35.5,112.5); #an_owlbear_hunter
    } 
-  if($signal == 424){
+  elsif($signal == 424){
    quest::spawn2(166493,0,0,1265.8,2169.8,172,371); #an_owlbear_hunter
    } 
-  if($signal == 425){
+  elsif($signal == 425){
    quest::spawn2(166411,498135,0,-846.2,1337.3,285.5,113.1); #Skrietat_Chet
    } 
-  if($signal == 426){
+  elsif($signal == 426){
    quest::spawn2(166439,0,0,1573.9,2270.5,160,208.8); #an_owlbear_razorbeak
    } 
-  if($signal == 427){
+  elsif($signal == 427){
    quest::spawn2(166440,0,0,1525.1,2349.4,163.1,99.8); #an_owlbear_razorbeak
    } 
-  if($signal == 428){
+  elsif($signal == 428){
    quest::spawn2(166441,0,0,1671.1,2462.,158,189.8); #an_owlbear_razorbeak
    } 
-  if($signal == 429){
+  elsif($signal == 429){
    quest::spawn2(166442,0,0,1698.9,2795.8,167.1,212.9); #an_owlbear_razorbeak
    } 
-  if($signal == 430){
+  elsif($signal == 430){
    quest::spawn2(166443,0,0,1697.9,3060.4,159.8,180.1); #an_owlbear_razorbeak
    } 
-  if($signal == 431){
+  elsif($signal == 431){
    quest::spawn2(166444,0,0,2063.2,3211,159.1,170.1); #an_owlbear_razorbeak
    } 
-  if($signal == 432){
+  elsif($signal == 432){
    quest::spawn2(166468,0,0,1975.4,3275.8,159.8,135.4); #an_owlbear_grappler
    } 
-  if($signal == 433){
+  elsif($signal == 433){
    quest::spawn2(166469,0,0,1949.6,3431.9,150.5,211.8); #an_owlbear_grappler
    } 
-  if($signal == 434){
+  elsif($signal == 434){
    quest::spawn2(166412,4,0,934.5,2176.7,161.6,149.2); #Prince_Skriatat
    } 
-  if($signal == 435){
+  elsif($signal == 435){
    quest::spawn2($t,0,0,-2969.5,466.9,55.6,24.6); #Ghowlik The_Fabled_Ghowlik a_sonic_packleader
    } 
-  if($signal == 436){
+  elsif($signal == 436){
    quest::spawn2($u,0,0,-2887.4,627.4,71.1,132.4); #a_sonic_devourer a_sonic_hunter a_sonic_ravager a_sonic_stalker
    } 
-  if($signal == 437){
+  elsif($signal == 437){
    quest::spawn2($v,0,0,-2997.8,516.2,54,35); #a_sonic_devourer a_sonic_hunter a_sonic_ravager a_sonic_stalker
    } 
-  if($signal == 438){
+  elsif($signal == 438){
    quest::spawn2($w,0,0,-3002.5,573.7,52.7,63.5); #a_sonic_tracker a_sonic_devourer a_sonic_warwolf
    } 
-  if($signal == 439){
+  elsif($signal == 439){
    quest::spawn2($x,0,0,-3113.2,618.4,64.2,99.1); #a_sonic_ravager a_sonic_hunter a_sonic_devourer
    } 
-  if($signal == 440){
+  elsif($signal == 440){
    quest::spawn2($y,0,0,-2991.5,666.2,62,109); #a_sonic_devourer a_sonic_hunter a_sonic_ravager a_sonic_stalker
    } 
-  if($signal == 441){
+  elsif($signal == 441){
    quest::spawn2($z,0,0,-2942.5,670.6,64.7,129.9); #a_sonic_tracker a_sonic_devourer a_sonic_warwolf a_sonic_ravager
    } 
-  if($signal == 442){
+  elsif($signal == 442){
    quest::spawn2($aa,0,0,-2906.6,663.3,71.5,153.9); #a_sonic_tracker a_sonic_warwolf a_sonic_devourer a_sonic_hunter
    } 
-  if($signal == 443){
+  elsif($signal == 443){
    quest::spawn2($ab,0,0,-2867.1,582.8,69.9,159); #a_sonic_stalker a_sonic_ravager a_sonic_hunter a_sonic_warwolf
    } 
-  if($signal == 444){
+  elsif($signal == 444){
    quest::spawn2($ac,0,0,-2832.2,572.7,70.1,89.4); #a_sonic_ravager a_sonic_stalker a_sonic_warwolf
    } 
-  if($signal == 445){
+  elsif($signal == 445){
    quest::spawn2($ad,0,0,-2929.9,409,71.2,5.1); #a_sonic_hunter a_sonic_ravager a_sonic_stalker
    } 
-  if($signal == 446){  
+  elsif($signal == 446){  
    quest::spawn2($ae,0,0,-2887.4,477.7,71,227.1); #a_sonic_tracker a_sonic_devourer a_sonic_warwolf
    } 
-  if($signal == 447){
+  elsif($signal == 447){
    quest::spawn2($af,0,0,-2845.7,507.9,70.4,20.9); #a_sonic_ravager a_sonic_hunter a_sonic_devourer
    } 
-  if($signal == 448){
+  elsif($signal == 448){
    quest::spawn2($ag,0,0,-2932.2,525,55.8,62.2); #a_sonic_hunter a_sonic_ravager a_sonic_stalker
    } 
-  if($signal == 449){  
+  elsif($signal == 449){  
    quest::spawn2($ah,0,0,-2931.4,584.7,54.5,77.4); #a_sonic_tracker a_sonic_devourer a_sonic_warwolf
    } 
-  if($signal == 450){
+  elsif($signal == 450){
    quest::spawn2($ai,0,0,1735.3,3406.9,,166.4,145.1); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 451){
+  elsif($signal == 451){
    quest::spawn2($aj,0,0,1793.5,3391.5,,160.8,159); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 452){
+  elsif($signal == 452){
    quest::spawn2($ak,0,0,1751.2,2885.1,,163.7,199.6); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 453){
+  elsif($signal == 453){
    quest::spawn2($al,0,0,1526.7,2495.8,164.7,112); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 454){
+  elsif($signal == 454){
    quest::spawn2($am,4,0,1376.4,2167.1,163.3,48.2); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 455){
+  elsif($signal == 455){
    quest::spawn2($an,0,0,1827.9,3639.5,158.3,127.1); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 456){
+  elsif($signal == 456){
    quest::spawn2($ao,0,0,1800.5,3166.7,160.1,222.5); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 457){
+  elsif($signal == 457){
    quest::spawn2($ap,0,0,1729.7,3499.8,158.7,65); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 458){
+  elsif($signal == 458){
    quest::spawn2($aq,0,0,1983,3537,158.3,178); #a sonic wolf Dreadmaw Wolfkin
    } 
-  if($signal == 459){
+  elsif($signal == 459){
    quest::spawn2($ar,498009,0,1443.9,1270,150.5,246.7); #a_sonic_pup
    } 
-  if($signal == 460){
+  elsif($signal == 460){
    quest::spawn2($as,498093,0,1498.9,936,53.1,279.5); #a_sonic_stalker a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 461){
+  elsif($signal == 461){
    quest::spawn2($at,9,0,904.7,2337.1,245.3,142.5); #a_sonic_warwolf
    } 
-  if($signal == 462){
+  elsif($signal == 462){
    quest::spawn2($au,0,0,1893.1,3077.7,162.3,248.5); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager a_sonic_devourer
    } 
-  if($signal == 463){
+  elsif($signal == 463){
    quest::spawn2($av,0,0,1534.5,2806.4,164.1,81.6); #a_sonic_stalker a_sonic_warwolf a_sonic_ravager
    } 
-  if($signal == 464){
+  elsif($signal == 464){
    quest::spawn2($aw,0,0,2072.1,3100.1,154.5,219.6); #a_sonic_ravager a_sonic_warwolf Fireclaw Wolfkin
    } 
-  if($signal == 465){
+  elsif($signal == 465){
    quest::spawn2($ax,3,0,1126.5,2150,143.9,63); #a_sonic_tracker a_patrolling_sonic_wolf
    } 
-  if($signal == 466){
+  elsif($signal == 466){
    quest::spawn2($ay,0,0,1542.4,2979.7,171.5,98); #a_sonic_tracker a_patrolling_sonic_wolf
    } 
-  if($signal == 467){
+  elsif($signal == 467){
    quest::spawn2($az,0,0,2002,3027,152.5,243.4); #a_sonic_tracker a_patrolling_sonic_wolf
    } 
-  if($signal == 468){
+  elsif($signal == 468){
    quest::spawn2($ba,498126,0,1271.8,2131.7,171.6,244.8); #a_sonic_wolf
    } 
-  if($signal == 469){
+  elsif($signal == 469){
    quest::spawn2(166390,0,0,1996.1,3623.3,166.6,124.4); #a_sonic_devourer
    } 
-  if($signal == 470){
+  elsif($signal == 470){
    quest::spawn2(166391,0,0,1318.9,1109.9,115.5,194.1); #Wolf stalker
    } 
-  if($signal == 471){
+  elsif($signal == 471){
    quest::spawn2(166392,0,0,398,1942,133.1,25.5); #a_sonic_stalker
    } 
-  if($signal == 472){
+  elsif($signal == 472){
    quest::spawn2(166393,0,0,1618.4,2593.6,162.9,153.1); #a_sonic_warwolf
    } 
-  if($signal == 473){
+  elsif($signal == 473){
    quest::spawn2(166394,0,0,516,1019,35.5,112.5); #a_sonic_wolf
    } 
-  if($signal == 474){
+  elsif($signal == 474){
    quest::spawn2(166395,0,0,1265.8,2169.8,172,371); #a_sonic_wolf
    } 
-  if($signal == 475){
+  elsif($signal == 475){
    quest::spawn2(166260,5,0,-1212,795.5,9.9,197.6); #Curfang
    } 
-  if($signal == 476){
+  elsif($signal == 476){
    quest::spawn2(166396,0,0,1573.9,2270.5,160,208.8); #a_sonic_warwolf
    } 
-  if($signal == 477){
+  elsif($signal == 477){
    quest::spawn2(166397,0,0,1525.1,2349.4,163.1,99.8); #a_sonic_warwolf
    } 
-  if($signal == 478){
+  elsif($signal == 478){
    quest::spawn2(166398,0,0,1671.1,2462.,158,189.8); #a_sonic_warwolf
    } 
-  if($signal == 479){
+  elsif($signal == 479){
    quest::spawn2(166399,0,0,1698.9,2795.8,167.1,212.9); #a_sonic_warwolf
    } 
-  if($signal == 480){
+  elsif($signal == 480){
    quest::spawn2(166400,0,0,1697.9,3060.4,159.8,180.1); #a_sonic_warwolf
    } 
-  if($signal == 481){
+  elsif($signal == 481){
    quest::spawn2(166401,0,0,2063.2,3211,159.1,170.1); #a_sonic_warwolf
    } 
-  if($signal == 482){
+  elsif($signal == 482){
    quest::spawn2(166402,0,0,1975.4,3275.8,159.8,135.4); #a_sonic_devourer
    } 
-  if($signal == 483){
+  elsif($signal == 483){
    quest::spawn2(166404,0,0,1949.6,3431.9,150.5,211.8); #a_sonic_devourer
    } 
-  if($signal == 484){
+  elsif($signal == 484){
    quest::spawn2(166355,4,0,934.5,2176.7,161.6,149.2); #Warpaw Dankpelt
    } 
-  if($signal == 485){
+  elsif($signal == 485){
    quest::spawn2($bb,0,0,1735.3,3406.9,,166.4,145.1); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 486){
+  elsif($signal == 486){
    quest::spawn2($bc,0,0,1793.5,3391.5,,160.8,159); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 487){
+  elsif($signal == 487){
    quest::spawn2($bd,0,0,1751.2,2885.1,,163.7,199.6); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 488){
+  elsif($signal == 488){
    quest::spawn2($be,0,0,1526.7,2495.8,164.7,112); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 489){
+  elsif($signal == 489){
    quest::spawn2($bf,4,0,1376.4,2167.1,163.3,48.2); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 490){
+  elsif($signal == 490){
    quest::spawn2($bg,0,0,1827.9,3639.5,158.3,127.1); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 491){
+  elsif($signal == 491){
    quest::spawn2($bh,0,0,1800.9,3181.9,158.1,64.6); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 492){
+  elsif($signal == 492){
    quest::spawn2($bi,0,0,1729.7,3499.8,158.7,65); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 493){
+  elsif($signal == 493){
    quest::spawn2($bj,0,0,1983,3537,158.3,178); #a_grimling_guard Griktar_Grimwit
    } 
-  if($signal == 494){
+  elsif($signal == 494){
    quest::spawn2($bk,498009,0,1443.9,1270,150.5,246.7); #a_grimling_grunt
    } 
-  if($signal == 495){
+  elsif($signal == 495){
    quest::spawn2($bl,498093,0,1498.9,936,53.1,279.5); #a_grimling_thief a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 496){
+  elsif($signal == 496){
    quest::spawn2($bm,9,0,904.7,2337.1,245.3,142.5); #a_grimling_conqueror
    } 
-  if($signal == 497){
+  elsif($signal == 497){
    quest::spawn2($bn,0,0,1893.1,3077.7,162.3,248.5); #a_grimling_thief a_grimling_conqueror a_grimling soldier a_grimling_overseer
    } 
-  if($signal == 498){
+  elsif($signal == 498){
    quest::spawn2($bo,0,0,1534.5,2806.4,164.1,81.6); #a_grimling_thief a_grimling_conqueror a_grimling soldier
    } 
-  if($signal == 499){
+  elsif($signal == 499){
    quest::spawn2($bp,0,0,2072.1,3100.1,154.5,219.6); #Gleeknot Gnitrat a grimling guard
    } 
-  if($signal == 500){
+  elsif($signal == 500){
    quest::spawn2($bq,3,0,1126.5,2150,143.9,63); #a_grimling_recruit a_patrolling_recruit
    } 
-  if($signal == 501){
+  elsif($signal == 501){
    quest::spawn2($br,0,0,1542.4,2979.7,171.5,98); #a_grimling recruit a patroling recruit
    } 
-  if($signal == 502){
+  elsif($signal == 502){
    quest::spawn2(166549,0,0,1996.1,3623.3,166.6,124.4); #a_grimling_overseer
    } 
-  if($signal == 503){
+  elsif($signal == 503){
    quest::spawn2(166667,0,0,398,1942,133.1,25.5); #a_grimling_thief
    } 
-  if($signal == 504){
+  elsif($signal == 504){
    quest::spawn2(166520,0,0,1618.4,2593.6,162.9,153.1); #a_grimling_conqueror
    } 
-  if($signal == 505){
+  elsif($signal == 505){
    quest::spawn2(166563,0,0,516,1019,35.5,112.5); #a_grimling_spiritist
    } 
-  if($signal == 506){
+  elsif($signal == 506){
    quest::spawn2(166596,0,0,1265.8,2169.8,172,371); #a_grimling_spiritist
    } 
-  if($signal == 507){
+  elsif($signal == 507){
    quest::spawn2(166566,5,0,-1212,795.5,9.9,197.6); #Gamtoine_Cursmakk
    } 
-  if($signal == 508){
+  elsif($signal == 508){
    quest::spawn2(166980,0,0,1573.9,2270.5,160,208.8); #a_grimling_conqueror
    } 
-  if($signal == 509){
+  elsif($signal == 509){
    quest::spawn2(166522,0,0,1525.1,2349.4,163.1,99.8); #a_grimling_conqueror
    } 
-  if($signal == 510){
+  elsif($signal == 510){
    quest::spawn2(166523,0,0,1671.1,2462.,158,189.8); #a_grimling_conqueror
    } 
-  if($signal == 511){
+  elsif($signal == 511){
    quest::spawn2(166524,0,0,1698.9,2795.8,167.1,212.9); #a_grimling_conqueror
    } 
-  if($signal == 512){
+  elsif($signal == 512){
    quest::spawn2(166525,0,0,1697.9,3060.4,159.8,180.1); #a_grimling_conqueror
    } 
-  if($signal == 513){
+  elsif($signal == 513){
    quest::spawn2(166526,0,0,2063.2,3211,159.1,170.1); #a_grimling_conqueror
    } 
-  if($signal == 514){
+  elsif($signal == 514){
    quest::spawn2(166550,0,0,1975.4,3275.8,159.8,135.4); #a_grimling_overseer
    } 
-  if($signal == 515){
+  elsif($signal == 515){
    quest::spawn2(166552,0,0,1949.6,3431.9,150.5,211.8); #a_grimling_overseer
    } 
-  if($signal == 516){
+  elsif($signal == 516){
    quest::spawn2(166950,4,0,934.5,2176.7,161.6,149.2); #Wiknak Grimglom
    } 
-  if($signal == 517){
+  elsif($signal == 517){
    quest::spawn2($bs,0,0,-2969.5,466.9,55.6,24.6); #an owlbear fleshrender Skriat Chee an owlbear fleshrender
    } 
-  if($signal == 518){
+  elsif($signal == 518){
    quest::spawn2($bt,0,0,-2887.4,627.4,71.1,132.4); #an owlbear bonegrinder an owlbear grappler an owlbear hunter
    } 
-  if($signal == 519){
+  elsif($signal == 519){
    quest::spawn2($bu,0,0,-2997.8,516.2,54,35); #an owlbear ravager an owlbear razorbeak an owlbear razorclaw an owlbear spurclaw
    } 
-  if($signal == 520){
+  elsif($signal == 520){
    quest::spawn2($bv,0,0,-3002.5,573.7,52.7,63.5); #an owlbear bonegrinder an owlbear grappler an owlbear ravager
    } 
-  if($signal == 521){
+  elsif($signal == 521){
    quest::spawn2($bw,0,0,-3113.2,618.4,64.2,99.1); #an owlbear razorbeak an owlbear razorclaw an owlbear spurclaw
    } 
-  if($signal == 522){
+  elsif($signal == 522){
    quest::spawn2($bx,0,0,-2991.5,666.2,62,109); #an owlbear fleshrender an owlbear bonegrinder an owlbear grappler an owlbear hunter
    } 
-  if($signal == 523){
+  elsif($signal == 523){
    quest::spawn2($by,0,0,-2942.5,670.6,64.7,129.9); #an owlbear razorbeak an owlbear razorclaw an owlbear bonegrinder an owlbear grappler
    } 
-  if($signal == 524){
+  elsif($signal == 524){
    quest::spawn2($bz,0,0,-2906.6,663.3,71.5,153.9); #an owlbear fleshrender an owlbear grappler an owlbear ravager an owlbear fleshrender
    } 
-  if($signal == 525){
+  elsif($signal == 525){
    quest::spawn2($ca,0,0,-2867.1,582.8,69.9,159); #an owlbear grappler an owlbear ravager an owlbear fleshrender an owlbear fleshrender
    } 
-  if($signal == 526){
+  elsif($signal == 526){
    quest::spawn2($cb,0,0,-2832.2,572.7,70.1,89.4); #an owlbear bonegrinder an owlbear grappler an owlbear hunter
    } 
-  if($signal == 527){
+  elsif($signal == 527){
    quest::spawn2($cc,0,0,-2929.9,409,71.2,5.1); #an owlbear razorbeak an owlbear razorclaw an owlbear spurclaw
    } 
-  if($signal == 528){
+  elsif($signal == 528){
    quest::spawn2($cd,9,0,-2887.4,477.7,71,227.1); #an owlbear bonegrinder an owlbear grappler an owlbear ravager
    } 
-  if($signal == 529){
+  elsif($signal == 529){
    quest::spawn2($ce,0,0,-2845.7,507.9,70.4,20.9); #an owlbear razorbeak an owlbear razorclaw an owlbear spurclaw
    } 
-  if($signal == 530){
+  elsif($signal == 530){
    quest::spawn2($cf,0,0,-2932.2,525,55.8,62.2); #an owlbear razorbeak an owlbear razorclaw an owlbear spurclaw
    } 
-  if($signal == 531){
+  elsif($signal == 531){
    quest::spawn2($cg,0,0,-2931.4,584.7,54.5,77.4); #an owlbear bonegrinder an owlbear grappler an owlbear hunter
    } 
-  if($signal == 532){
+  elsif($signal == 532){
    quest::spawn2($ch,0,0,-2969.5,466.9,55.6,24.6); #grimling tribal leader Grurn No Eyes Fabled Grurn No Eyes
    } 
-  if($signal == 533){
+  elsif($signal == 533){
    quest::spawn2($ci,0,0,-2887.4,627.4,71.1,132.4); #a grimling conqueror a grimling spiritist a grimling thief a grimling soldier
    } 
-  if($signal == 534){
+  elsif($signal == 534){
    quest::spawn2($cj,0,0,-2997.8,516.2,54,35); #a grimling conqueror a grimling soldier a grimling thief a grimling overseeer
    } 
-  if($signal == 535){
+  elsif($signal == 535){
    quest::spawn2($ck,0,0,-3002.5,573.7,52.7,63.5); #a grimling conqueror a grimling soldier a grimling thief
    } 
-  if($signal == 536){
+  elsif($signal == 536){
    quest::spawn2($cl,0,0,-3113.2,618.4,64.2,99.1); #a grimling conqueror a grimling soldier a grimling thief
    } 
-  if($signal == 537){
+  elsif($signal == 537){
    quest::spawn2($cm,0,0,-2991.5,666.2,62,109); #a grimling conqueror a grimling soldier a grimling conqueror a grimling thief
    } 
-  if($signal == 538){
+  elsif($signal == 538){
    quest::spawn2($cn,0,0,-2942.5,670.6,64.7,129.9); #a grimling conqueror a grimling soldier a grimling spiritist a grimling thief
    } 
-  if($signal == 539){
+  elsif($signal == 539){
    quest::spawn2($co,0,0,-2906.6,663.3,71.5,153.9); #a grimling conqueror a grimling soldier a grimling conqueror a grimling thief
    } 
-  if($signal == 540){
+  elsif($signal == 540){
    quest::spawn2($cp,0,0,-2867.1,582.8,69.9,159); #a grimling conqueror a grimling soldier a grimling spiritist a grimling thief
    } 
-  if($signal == 541){
+  elsif($signal == 541){
    quest::spawn2($cq,0,0,-2832.2,572.7,70.1,89.4); #a grimling conqueror a grimling soldier a grimling thief
    } 
-  if($signal == 542){
+  elsif($signal == 542){
    quest::spawn2($cr,0,0,-2929.9,409,71.2,5.1); #a grimling conqueror a grimling overseeer a grimling thief
    } 
-  if($signal == 543){
+  elsif($signal == 543){
    quest::spawn2($cs,9,0,-2887.4,477.7,71,227.1); #a grimling conqueror a grimling soldier a grimling thief
    } 
-  if($signal == 544){
+  elsif($signal == 544){
    quest::spawn2($ct,0,0,-2845.7,507.9,70.4,20.9); #a grimling conqueror a grimling overseeer a grimling overseeer
    } 
-  if($signal == 545){
+  elsif($signal == 545){
    quest::spawn2($cu,0,0,-2932.2,525,55.8,62.2); #a grimling overseeer a grimling conqueror a grimling thief
    } 
-  if($signal == 546){
+  elsif($signal == 546){
    quest::spawn2($cv,0,0,-2931.4,584.7,54.5,77.4); #a grimling conqueror a grimling overseeer a grimling thief
    } 
-  if($signal == 547){
+  elsif($signal == 547){
    quest::spawn2($cw,0,0,-620.4,-2810.5,85.5,255.1); #a grimling spiritist a grimling chieftan a grimling priest
    } 
-  if($signal == 548){
+  elsif($signal == 548){
    quest::spawn2($cx,0,0,-493.6,-2737.4,54.8,195.9); #a grimling thief a grimling soldier
    } 
-  if($signal == 549){
+  elsif($signal == 549){
    quest::spawn2($cy,0,0,-506.8,-2754.4,46.1,196.9); #a grimling spiritist a grimling mystic
    } 
-  if($signal == 550){
+  elsif($signal == 550){
    quest::spawn2($cz,0,0,-505.1,-2719.4,37.7,213.5); #a grimling overseeer a grimling conqueror
    } 
-  if($signal == 551){
+  elsif($signal == 551){
    quest::spawn2($da,0,0,-668.2,-2681.7,34,212.1); #a grimling recruit a grimling soldier
    } 
-  if($signal == 552){
+  elsif($signal == 552){
    quest::spawn2($db,0,0,-675,-2663.7,17.7,205.8); #a grimling spiritist a grimling mystic
    } 
-  if($signal == 553){
+  elsif($signal == 553){
    quest::spawn2($dc,0,0,-685.1,-2694.8,22.7,214.9); #a grimling conqueror a grimling soldier
    } 
-  if($signal == 554){
+  elsif($signal == 554){
    quest::spawn2($dd,0,0,-590.1,-2659.5,26.1,205.1); #a grimling overseeer a grimling recruit
    } 
-  if($signal == 555){
+  elsif($signal == 555){
    quest::spawn2($de,0,0,-604.4,-2671.7,24.4,208.6); #a grimling spiritist a grimling mystic 
    } 
-  if($signal == 556){
+  elsif($signal == 556){
    quest::spawn2($df,0,0,-591,-2642.5,14.8,211.2); #a grimling overseeer a grimling conqueror
    } 
-  if($signal == 557){
+  elsif($signal == 557){
    quest::spawn2($dg,0,0,-579.2,-2616.6,10.7,183.9); #a grimling recruit a grimling soldier
    } 
-  if($signal == 558){
+  elsif($signal == 558){
    quest::spawn2($dh,0,0,-569.2,-2601.2,20.7,185.9); #a grimling  spiritist a grimling mystic
    } 
-  if($signal == 559){
+  elsif($signal == 559){
    quest::spawn2($di,0,0,-579.3,-2584.3,9.2,190.5); #a grimling overseeer a grimling conqueror 
    } 
-  if($signal == 560){
+  elsif($signal == 560){
    quest::spawn2($dj,0,0,-537,-2581,13.8,211.6); #a grimling thief a grimling soldier 
    } 
-  if($signal == 561){
+  elsif($signal == 561){
    quest::spawn2($dk,0,0,-521.1,-2566.1,21.3,194.1); #a grimling soldier a grimling recruit
    } 
-  if($signal == 562){
+  elsif($signal == 562){
    quest::spawn2($dl,0,0,-533.1,-2548.8,6.4,187.9); #a grimling recruit a grimling soldier 
    } 
-  if($signal == 563){
+  elsif($signal == 563){
    quest::spawn2($dm,0,0,-444.8,-2514.3,28,203.9); #a grimling thief a grimling soldier 
    } 
-  if($signal == 564){
+  elsif($signal == 564){
    quest::spawn2($dn,0,0,-448.2,-2497.1,20.7,199.5); #a grimling  spiritist a grimling mystic
    } 
-  if($signal == 565){
+  elsif($signal == 565){
    quest::spawn2($do,0,0,-458.8,-2528,15.8,198.5); #a grimling overseeer a grimling conqueror 
    } 
-  if($signal == 566){
+  elsif($signal == 566){
    quest::spawn2(166175,0,0,-620.8,-2824.6,70.3,2.4); #a grimling spiritist
    } 
-  if($signal == 567){
+  elsif($signal == 567){
    quest::spawn2(166170,0,0,-626.6,-2842.3,82.8,253.4); #a grimling spiritist
    } 
-  if($signal == 568){
+  elsif($signal == 568){
    quest::spawn2(166210,0,0,-631.3,-2801.4,68.1,254.5); #a grimling bodyguard
    } 
-  if($signal == 569){
+  elsif($signal == 569){
    quest::spawn2(166209,0,0,-610.7,-2801.4,68.1,254.5); #a grimling bodyguard
    } 
-  if($signal == 570){
+  elsif($signal == 570){
    quest::spawn2($dp,0,0,-620.4,-2810.5,85.5,255.1); #a sonic stalker Scarflank a sonic warwolf
    } 
-  if($signal == 571){
+  elsif($signal == 571){
    quest::spawn2($dq,0,0,-493.6,-2737.4,54.8,195.9); #a sonic hunter a sonic stalker
    } 
-  if($signal == 572){
+  elsif($signal == 572){
    quest::spawn2($dr,0,0,-506.8,-2754.4,46.1,196.9); #a sonic ravager a sonic tracker
    } 
-  if($signal == 573){
+  elsif($signal == 573){
    quest::spawn2($ds,0,0,-505.1,-2719.4,37.7,213.5); #a sonic warwolf a sonic stalker
    } 
-  if($signal == 574){
+  elsif($signal == 574){
    quest::spawn2($dt,0,0,-668.2,-2681.7,34,212.1); #a sonic hunter a sonic warwolf
    } 
-  if($signal == 575){
+  elsif($signal == 575){
    quest::spawn2($du,0,0,-675,-2663.7,17.7,205.8); #a sonic ravager a sonic tracker
    } 
-  if($signal == 576){
+  elsif($signal == 576){
    quest::spawn2($dv,0,0,-685.1,-2694.8,22.7,214.9); #a stalker a sonic hunter
    } 
-  if($signal == 577){
+  elsif($signal == 577){
    quest::spawn2($dw,0,0,-590.1,-2659.5,26.1,205.1); #a sonic warwolf a sonic ravager
    } 
-  if($signal == 578){
+  elsif($signal == 578){
    quest::spawn2($dx,0,0,-604.4,-2671.7,24.4,208.6); #a sonic tracker a sonic stalker
    } 
-  if($signal == 579){
+  elsif($signal == 579){
    quest::spawn2($dy,0,0,-591,-2642.5,14.8,211.2); #a sonic hunter a sonic warwolf
    } 
-  if($signal == 580){
+  elsif($signal == 580){
    quest::spawn2($dz,0,0,-579.2,-2616.6,10.7,183.9); #a sonic ravager a sonic tracker
    } 
-  if($signal == 581){
+  elsif($signal == 581){
    quest::spawn2($ea,0,0,-569.2,-2601.2,20.7,185.9); #a sonic stalker a sonic hunter
    } 
-  if($signal == 582){
+  elsif($signal == 582){
    quest::spawn2($eb,0,0,-579.3,-2584.3,9.2,190.5); #a sonic warwolf a sonic ravager
    } 
-  if($signal == 583){
+  elsif($signal == 583){
    quest::spawn2($ec,0,0,-537,-2581,13.8,211.6); #a sonic tracker a sonic stalker
    } 
-  if($signal == 584){
+  elsif($signal == 584){
    quest::spawn2($ed,0,0,-521.1,-2566.1,21.3,194.1); #a sonic hunter a sonic warwolf
    } 
-  if($signal == 585){
+  elsif($signal == 585){
    quest::spawn2($ee,0,0,-533.1,-2548.8,6.4,187.9); #a sonic ravager a sonic tracker
    } 
-  if($signal == 586){
+  elsif($signal == 586){
    quest::spawn2($ef,0,0,-444.8,-2514.3,28,203.9); #a sonic stalker a sonic hunter
    } 
-  if($signal == 587){
+  elsif($signal == 587){
    quest::spawn2($eg,0,0,-448.2,-2497.1,20.7,199.5); #a sonic warwolf a sonic ravager
    } 
-  if($signal == 588){
+  elsif($signal == 588){
    quest::spawn2($eh,0,0,-458.8,-2528,15.8,198.5); #a sonic tracker a sonic stalker
    } 
-  if($signal == 589){
+  elsif($signal == 589){
    quest::spawn2(166147,0,0,-631.3,-2801.4,68.1,254.5); #a sonic guardian
    } 
-  if($signal == 590){
+  elsif($signal == 590){
    quest::spawn2(166156,0,0,-610.7,-2801.4,68.1,254.5); #a sonic guardian
    } 
-  if($signal == 591){
+  elsif($signal == 591){
    quest::spawn2($ei,0,0,-620.4,-2810.5,85.5,255.1); #an owlbear razorbeak an owlbear screechmaw an owlbear spurclaw
    } 
-  if($signal == 592){
+  elsif($signal == 592){
    quest::spawn2($ej,0,0,-493.6,-2737.4,54.8,195.9); #an owlbear bonegrinder an owlbear fleshrenderer
    } 
-  if($signal == 593){
+  elsif($signal == 593){
    quest::spawn2($ek,0,0,-506.8,-2754.4,46.1,196.9); #an owlbear hunter an owlbear ravager
    } 
-  if($signal == 594){
+  elsif($signal == 594){
    quest::spawn2($el,0,0,-505.1,-2719.4,37.7,213.5); #an owlbear razorbeak an owlbear razorclaw
    } 
-  if($signal == 595){
+  elsif($signal == 595){
    quest::spawn2($em,0,0,-668.2,-2681.7,34,212.1); #an owlbear spurclaw an owlbear bonegrinder
    } 
-  if($signal == 596){
+  elsif($signal == 596){
    quest::spawn2($en,0,0,-675,-2663.7,17.7,205.8); #an owlbear fleshrenderer an owlbear hunter
    } 
-  if($signal == 597){
+  elsif($signal == 597){
    quest::spawn2($eo,0,0,-685.1,-2694.8,22.7,214.9); #an owlbear ravager an owlbear razorbeak
    } 
-  if($signal == 598){
+  elsif($signal == 598){
    quest::spawn2($ep,0,0,-590.1,-2659.5,26.1,205.1); #an owlbear razorclaw an owlbear spurclaw
    } 
-  if($signal == 599){
+  elsif($signal == 599){
    quest::spawn2($eq,0,0,-604.4,-2671.7,24.4,208.6); #an owlbear bonegrinder an owlbear fleshrenderer
    } 
-  if($signal == 600){
+  elsif($signal == 600){
    quest::spawn2($er,0,0,-591,-2642.5,14.8,211.2); #an owlbear hunter an owlbear ravager
    } 
-  if($signal == 601){
+  elsif($signal == 601){
    quest::spawn2($es,0,0,-579.2,-2616.6,10.7,183.9); #an owlbear razorbeak an owlbear razorclaw
    } 
-  if($signal == 602){
+  elsif($signal == 602){
    quest::spawn2($et,0,0,-569.2,-2601.2,20.7,185.9); #an owlbear spurclaw an owlbear bonegrinder
    } 
-  if($signal == 603){
+  elsif($signal == 603){
    quest::spawn2($eu,0,0,-579.3,-2584.3,9.2,190.5); #an owlbear fleshrenderer an owlbear hunter
    } 
-  if($signal == 604){
+  elsif($signal == 604){
    quest::spawn2($ev,0,0,-537,-2581,13.8,211.6); #an owlbear ravager an owlbear razorbeak
    } 
-  if($signal == 605){
+  elsif($signal == 605){
    quest::spawn2($ew,0,0,-521.1,-2566.1,21.3,194.1); #an owlbear razorclaw an owlbear spurclaw
    } 
-  if($signal == 606){
+  elsif($signal == 606){
    quest::spawn2($ex,0,0,-533.1,-2548.8,6.4,187.9); #an owlbear bonegrinder an owlbear fleshrenderer
    } 
-  if($signal == 607){
+  elsif($signal == 607){
    quest::spawn2($ey,0,0,-444.8,-2514.3,28,203.9); #an owlbear hunter an owlbear ravager
    } 
-  if($signal == 608){
+  elsif($signal == 608){
    quest::spawn2($ez,0,0,-448.2,-2497.1,20.7,199.5); #an owlbear razorbeak an owlbear razorclaw
    } 
-  if($signal == 609){
+  elsif($signal == 609){
    quest::spawn2($fa,0,0,-458.8,-2528,15.8,198.5); #an owlbear spurclaw an owlbear bonegrinder
    } 
-  if($signal == 610){
+  elsif($signal == 610){
    quest::spawn2(166948,0,0,-620.8,-2824.6,70.3,2.4); #an owlbear razorclaw
    } 
-  if($signal == 611){
+  elsif($signal == 611){
    quest::spawn2(166949,0,0,-626.6,-2842.3,82.8,253.4); #an owlbear razorclaw
    } 
-  if($signal == 612){
+  elsif($signal == 612){
    quest::spawn2(166946,0,0,-631.3,-2801.4,68.1,254.5); #an owlbear razorbeak
    } 
-  if($signal == 613){
+  elsif($signal == 613){
    quest::spawn2(166947,0,0,-610.7,-2801.4,68.1,254.5); #an owlbear razorbeak
    }
-  if($signal == 614){
+  elsif($signal == 614){
    quest::spawn2(166084,0,0,1928,1141,25.6,77.5); #Tolah Rakknak
    }
-  if($signal == 615){
+  elsif($signal == 615){
    quest::spawn2(166082,0,0,1993,1063,25.6,255.5); #an owlbear razorbeak
    }
-  if($signal == 620){
+  elsif($signal == 620){
    quest::spawn2(166985,0,0,1755.4,3598.3,156,106); #owlbear Delay depopper north cave
    quest::signalwith(166985,1001,0);
   }
-  if($signal == 621){
+  elsif($signal == 621){
    quest::spawn2(166986,0,0,1755.4,3598.3,156,106); #wolf Delay depopper north cave
    quest::signalwith(166986,2001,0);
   }
-  if($signal == 622){
+  elsif($signal == 622){
    quest::spawn2(166987,0,0,1755.4,3598.3,156,106); #grimling Delay depopper north cave
    quest::signalwith(166987,3001,0);
   }
-  if($signal == 623){
+  elsif($signal == 623){
    quest::spawn2(166988,0,0,-3025.9,600.5,70.2,61.2); #wolf Delay depopper east cave
    quest::signalwith(166988,4001,0);
   }
-  if($signal == 624){
+  elsif($signal == 624){
    quest::spawn2(166989,0,0,-3025.9,600.5,70.2,61.2); #owlbear Delay depopper east cave
    quest::signalwith(166989,5001,0);
   }
-  if($signal == 625){
+  elsif($signal == 625){
    quest::spawn2(166990,0,0,-3025.9,600.5,70.2,61.2); #grimling Delay depopper east cave
    quest::signalwith(166990,6001,0);
   }
-  if($signal == 626){
+  elsif($signal == 626){
    quest::spawn2(166991,0,0,-214.2,-2787.9,155.1,155.5); #grimling Delay depopper south village
    quest::signalwith(166991,7001,0);
   }
-  if($signal == 627){
+  elsif($signal == 627){
    quest::spawn2(166992,0,0,-214.2,-2787.9,155.1,155.5); #owlbear Delay depopper south village
    quest::signalwith(166992,8001,0);
   }
-  if($signal == 628){
+  elsif($signal == 628){
    quest::spawn2(166993,0,0,-214.2,-2787.9,155.1,155.5); #wolf Delay depopper south village
    quest::signalwith(166993,9001,0);
    }
+else {
+      #do nothing
+   
+  }
 }
