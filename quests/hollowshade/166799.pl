@@ -13,7 +13,7 @@ sub EVENT_SIGNAL {
    quest::depop(166651);
    quest::spawn2(166663,0,0,-2857.1,553.3,167,56.1);
    }
-  if($signal == 13){
+  elsif($signal == 13){
    my $a = quest::ChooseRandom(166814,166813);
    quest::spawn2($a,0,0,2975.7,956.9,109.2,3.5); #East cave respawner if wolves boss dies
    quest::signalwith(166814,11,10000);
@@ -25,7 +25,7 @@ sub EVENT_SIGNAL {
    quest::depop(166651);
    quest::spawn2(166663,0,0,-2857.1,553.3,167,56.1);
    }
-  if($signal == 12){
+  elsif($signal == 12){
    my $a = quest::ChooseRandom(166802,166813);
    quest::spawn2($a,0,0,2975.7,956.9,109.2,3.5); #East cave respawner if owlbears boss dies
    quest::signalwith(166802,11,10000);
@@ -37,7 +37,7 @@ sub EVENT_SIGNAL {
    quest::depop(166651);
    quest::spawn2(166663,0,0,-2857.1,553.3,167,56.1);
    }
-  if($signal == 15){
+  elsif($signal == 15){
    my $a = quest::ChooseRandom(166816,166817);
    quest::spawn2($a,0,0,2975.7,956.9,109.2,3.5); #North cave respawner if owlbears boss dies
    quest::signalwith(166816,11,10000);
@@ -49,7 +49,7 @@ sub EVENT_SIGNAL {
    quest::depop(166487);
    quest::spawn2(166405,0,0,1303.8,2131.1,280.9,197.5);
   }
-  if($signal == 16){
+  elsif($signal == 16){
    my $a = quest::ChooseRandom(166815,166817);
    quest::spawn2($a,0,0,2975.7,956.9,109.2,3.5); #North cave respawner if wolf boss dies
    quest::signalwith(166815,11,10000);
@@ -61,7 +61,7 @@ sub EVENT_SIGNAL {
    quest::depop(166487);
    quest::spawn2(166405,0,0,1303.8,2131.1,280.9,197.5);
   }
-  if($signal == 17){
+  elsif($signal == 17){
    my $a = quest::ChooseRandom(166815,166816);
    quest::spawn2($a,0,0,2975.7,956.9,109.2,3.5); #North cave respawner if Grimlings boss dies
    quest::signalwith(166815,11,10000);
@@ -73,7 +73,7 @@ sub EVENT_SIGNAL {
    quest::depop(166487);
    quest::spawn2(166405,0,0,1303.8,2131.1,280.9,197.5);
   }
-  if($signal == 18){
+  elsif($signal == 18){
    my $a = quest::ChooseRandom(166818,166819);
    quest::spawn2($a,0,0,2975.7,956.9,109.2,3.5); #South Village respawner if Grimlings boss dies
    quest::signalwith(166818,11,10000);
@@ -85,7 +85,7 @@ sub EVENT_SIGNAL {
    quest::depop(166571);
    quest::spawn2(166821,0,0,-661.2,-2902.7,101.5,15.6);
   }
-  if($signal == 19){
+  elsif($signal == 19){
    my $a = quest::ChooseRandom(166819,166820);
    quest::spawn2($a,0,0,2975.7,956.9,109.2,3.5); #South Village respawner if owlbears boss dies
    quest::signalwith(166819,11,10000);
@@ -97,7 +97,7 @@ sub EVENT_SIGNAL {
    quest::depop(166571);
    quest::spawn2(166821,0,0,-661.2,-2902.7,101.5,15.6);
   }
-  if($signal == 20){
+  elsif($signal == 20){
    my $a = quest::ChooseRandom(166818,166820);
    quest::spawn2($a,0,0,2975.7,956.9,109.2,3.5); #South Village respawner if wolves boss dies
    quest::signalwith(166818,11,10000);
@@ -109,6 +109,9 @@ sub EVENT_SIGNAL {
    quest::depop(166571);
    quest::spawn2(166821,0,0,-661.2,-2902.7,101.5,15.6);
   }
+else {
+    #do nothing
+ }
  }
 
 
