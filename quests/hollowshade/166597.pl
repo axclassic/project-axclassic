@@ -18,7 +18,7 @@ if ($signal == 1001){
   quest::spawn2(166406,498123,0,-2666.9,691.7,39.7,50.4); #a sonic wolf fiend
    quest::depop();
    }
-if ($signal == 1002){
+elsif ($signal == 1002){
    quest::depop(166487);
    quest::depop(166585);
    quest::depop(166586);
@@ -37,7 +37,7 @@ if ($signal == 1002){
    quest::spawn2(166575,0,0,1194.6,2117.5,167.9,194.8); #owlbear defender
    quest::depop();
   }
-if ($signal == 1003){
+elsif ($signal == 1003){
    quest::depop(166650);
    quest::depop(166651);
    quest::depop(166652);
@@ -55,7 +55,7 @@ if ($signal == 1003){
    quest::spawn2(166403,0,0,-2741.7,520.5,47.6,79.8); #a sonic defender
    quest::depop(); 
   }
-if ($signal == 1004){
+elsif ($signal == 1004){
    quest::depop(166650);
    quest::depop(166651);
    quest::depop(166652);
@@ -73,7 +73,7 @@ if ($signal == 1004){
    quest::spawn2(166668,0,0,-2741.7,520.5,47.6,79.8); #a sonic defender
    quest::depop(); 
   }
-if ($signal == 1005){
+elsif ($signal == 1005){
    quest::depop(166567);
    quest::depop(166568);
    quest::depop(166569);
@@ -91,7 +91,7 @@ if ($signal == 1005){
    quest::spawn2(166826,0,0,-618.5,-2583.2,5.3,242.4); #a grimling_defender
    quest::depop(); 
   }
-if ($signal == 1006){
+elsif ($signal == 1006){
    quest::depop(166567);
    quest::depop(166568);
    quest::depop(166569);
@@ -109,4 +109,7 @@ if ($signal == 1006){
    quest::spawn2(166565,0,0,-618.5,-2583.2,5.3,242.4); #a grimling_defender
    quest::depop(); 
   }
+  else{
+ #do nothing
+ }
 }
