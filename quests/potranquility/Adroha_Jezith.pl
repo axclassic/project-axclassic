@@ -25,7 +25,6 @@ my $coma = quest::saylink("coma", 1);
   if($signal == 1500){
    quest::emote(" gives a soft sigh of woe");
    quest::say("You won't be getting any response from Thelin. Ever since his injury he has been in a deep $coma with no sign of ever recovering.");
-   quest::signalwith(203074,1501,1000);
    }
  }
 
