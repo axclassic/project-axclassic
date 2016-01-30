@@ -19,9 +19,9 @@ my $nightmares = quest::saylink("nightmares", 1);
   if ($text=~/Tranquility/i){
    quest::say("Thelin enjoyed it here. He assisted the other followers by using all his mana to open a portal to the Plane of Nightmares, the demi-plane ruled by the child of The Faceless, Terris-Thule. Spent from using all his energies, he went to bed early after his victory had been achieved in this task. As he laid in bed, he looked over the dagger that had been given to him by the female dwarf. He smiled at the new peace he had found here and began to fall asleep. Drifting away into the realm of dreams, his subconscious was assulted by the horrors of a nightmare. He tossed and turned from the visions that came before him. So bad did he writhe in his subconscious torment that he turned on the dagger. He was critically injured, and let out a wrenching scream. We found him and were able to heal his wound enough to keep him alive. However, he still lies in a deep coma seemingly tortured by $nightmares.");
   }
-  if ($text=~/nightmares/i){
+  if ($text=~/nightmares/i) {
    quest::say("It is our belief that Terris-Thule is punishing him for allowing entrance into her plane. She seems to have an exceedingly strong tie to him. Since her father has already punished him, she likely found that he was easily tormented by her own powers. Sometimes he talks while tossing and turning. We have taken note of everything he has said. He has said 'I accept your offer Terris-Thule', 'I must find the pieces', and 'It never ends'. You must help him. Go through the portal that he has helped to create. Try to find his planar projection in Terris' plane. Help him wake from this torment. Please, I beg you. I cannot stand to watch him suffer any longer.");
-   quest::flagclient(1510,1);
+   quest::faction(2810,120);
   }
  }   
 sub EVENT_SIGNAL{
