@@ -1,5 +1,4 @@
 sub EVENT_SAY{
-my $coma = quest::saylink("coma", 1);
 my $poverty = quest::saylink("poverty", 1);
 my $jeweled = quest::saylink("jeweled", 1);
 my $Tranquility = quest::saylink("Tranquility", 1);
@@ -22,6 +21,7 @@ my $nightmares = quest::saylink("nightmares", 1);
   }
  }   
 sub EVENT_SIGNAL{
+my $coma = quest::saylink("coma", 1);
   if($signal == 1500){
    quest::emote(" gives a soft sigh of woe");
    quest::say("You won't be getting any response from Thelin. Ever since his injury he has been in a deep $coma with no sign of ever recovering.");
