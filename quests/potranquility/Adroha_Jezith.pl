@@ -3,6 +3,10 @@ my $poverty = quest::saylink("poverty", 1);
 my $jeweled = quest::saylink("jeweled", 1);
 my $Tranquility = quest::saylink("Tranquility", 1);
 my $nightmares = quest::saylink("nightmares", 1);
+  if ($text=~/hail/i){
+   quest::emote(" dabs Thelin's forehead with a cold towel and looks up to you, her gentle features veiled in concern. Her voice is gentle and sweet in its hushed tones as she gently returns to your greetings.");
+   quest::say("Poor, poor Thelin. I wonder if he will ever recover from opening the portal to the Nightmare plane. I hope he will recover. That seems to be all we have right now, hope. Perhaps you should move along, traveler, and leave the suffering elders to their rest.");
+   }
   if ($text=~/coma/i){
   quest::say("My pity onto Thelin. His life on Norrath was a miserable one. As a young man he began to study the workings of fear inspired by Cazic-Thule. The workings had been translated for mortals by Zebuxoruk. Pouring over the texts, Thelin felt his mind being invaded by Cazic. This information was not for mortal usage and the malevolent god stripped him of all his earthly belongings and cursed him to live in $poverty and ruin.");
   }
