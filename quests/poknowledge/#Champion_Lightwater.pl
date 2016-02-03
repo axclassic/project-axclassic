@@ -29,8 +29,8 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 22298 => 1)) {
 	$client->Message(14,"Champion Lightwater says, 'My God, you've found it! I haven't seen one of these in a long time!'");
 	$client->Message(263,"Champion Lightwater waves her hand emphatically as a random item materializes out of thin air.");	
-		my $randomroll = int(rand(100));
-		if ($randomroll < '34') {
+		# my $randomroll = int(rand(100));  #Random roll
+		# if ($randomroll < '34') {
 			quest::summonitem(17527); #satchel of legacies lost w/ items
 			quest::summonitem(40605, 5); #5 potion of adventure
 			quest::summonitem(17523);#book of knowledge
@@ -47,9 +47,9 @@ sub EVENT_ITEM {
 			my $final = $elabarray [rand @elabarray];
 			quest::summonitem($final);
 			$client->Message(263,"$name stumbles as the weight of the bag falls into your hands.");
-			$client->Message(14,"Champion Lightwater says, 'Farewell!'");
-			}
-		elsif ($randomroll < '68') {
+			#$client->Message(14,"Champion Lightwater says, 'Farewell!'");
+		#	}
+		# elsif ($randomroll < '68') {
 			my @epicarray = (10650, 8495, 14341, 11050, 20490, 68299, 28034, 14383, 10651, 10652, 11057, 20488, 5532, 20542, 10908, 20544);
 			my $randomepic = $epicarray[rand @epicarray];
 				if ($randomepic == 8495) { #If beastlord epic is chosen, must summon two items
@@ -59,13 +59,14 @@ sub EVENT_ITEM {
 				else{
 				quest::summonitem($randomepic);
 				}
-			$client->Message(14,"Champion Lightwater says, 'Farewell!'");
-		}
-		else {
-		quest::we(13, "Champion Lightwater shouts, 'Congratulations to $name for a risky proposition and came out victorious!'");
+		#	$client->Message(14,"Champion Lightwater says, 'Farewell!'");
+		# }
+		# else {
+		# quest::we(13, "Champion Lightwater shouts, 'Congratulations to $name for a risky proposition and came out victorious!'");
 		quest::summonitem(120216); # rathe server is 120216 test is 120199
 		$client->Message(14,"Champion Lightwater says, 'Farewell!'");
-		}
+		$client->Message(15,"*POOF* Champion Lightwater disappears into thin air.");
+		# }
 		
 	quest::ding();
 	quest::depop(202389); #rathe & test is 202389
