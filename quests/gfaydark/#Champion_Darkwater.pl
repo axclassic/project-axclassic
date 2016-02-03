@@ -3,15 +3,13 @@
 ## Zone: All Starter Towns          ##
 ## Darkwater Ladder Event           ##
 ## By: Angelox	                    ##
-## Revised by Caved for AXClassic   ##
-## to make Clicklinks available     ##
-## Angelox: Third revision          ##
-## to improve logic                 ##
+## Revised Clicklinks by Caved      ##
+## 3rd revision by Angelox logic    ##
 ## Date:  02-01-2011    	        ##
 ## 4th revision 7/29/2015 cleanup   ##
-## 5th rev. 7/31/2015 improved	    ##
-## qglobals and made sure its reset ##
-## UPDATE 1/1/16: SoW Earring gift working only when new years event is ON ##
+## 7/31/15 revision improved globals##
+## UPDATE 1/1/16: SoW Earring gift  ##
+## 2/2/16 More rewards at level 65  ##
 ######################################
 sub EVENT_SAY {
 #hyperlinks
@@ -122,8 +120,7 @@ my $activeMonth = "January";
 		quest::ding();
 		$client->Message(6, "You received the Champion's Ladder Players Trophy!");
 		quest::setglobal("ladder_trophy", 6, 5, "F");
-		$client->Message(14, "Champion Darkwater says, 'If you are not satisfied with this final reward, you can give it back to me at any time
-		and I will give you something.");
+		$client->Message(14, "Champion Darkwater says, 'I will give you something more $name, all you need to do is show me the final trophy.'");
 		}
 		elsif (($ulevel < '66') && ($ladder_trophy == '6')) {
 		$client->Message(15, "You already have your level 65 trophy.");
@@ -256,11 +253,20 @@ my $activeMonth = "January";
 		quest::exp(50);
 		quest::ding();
 		}
+# Check for repeated turn ins of 65 trophy for card. Eats the trophy instead
+		elsif (plugin::check_handin(\%itemcount, 413=> 1) && $qglobals{"kingcard"} == 1) {
+		plugin::return_items(\%itemcount);
+		$client->Message(14, "Champion Darkwater says, 'You're in trouble! Wait until admins hear about this.'");
+		#$client->Message(14, "King card is $kingcard.");
+		#quest::setglobal("kingcard", 0, 5, "F");
+		}
 #Turning in 65 ladder reward for King Card
-	elsif (plugin::check_handin(\%itemcount, 413=> 1)) {
-		$client->Message(14, "Champion Darkwater says, 'Here, take this and let us never speak of it again.'");
-		$client->Message(6, "You received a King Card.");
+	elsif (plugin::check_handin(\%itemcount, 413=> 1) && !defined $qglobals{"kingcard"} || $qglobals{"kingcard"} != 1) {
+		$client->Message(14, "Champion Darkwater says, 'I see you want more $name. Talk to Champion Lightwater and give her this card.'");
+		$client->Message(6, "You received a King Card. and kingcard is $kingcard.");
 		quest::summonitem(22298);
+		quest::summonitem(413);
+		quest::setglobal("kingcard", 1, 5, "F");
 	}
 	else {
 	$client->Message(14, "Champion Darkwater says, 'Sorry, I can't use this.'");
