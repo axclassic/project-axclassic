@@ -263,7 +263,7 @@ my $activeMonth = "January";
 #Turning in 65 ladder reward for King Card
 	elsif (plugin::check_handin(\%itemcount, 413=> 1) && !defined $qglobals{"kingcard"} || $qglobals{"kingcard"} != 1) {
 		$client->Message(14, "Champion Darkwater says, 'I see you want more $name. Talk to Champion Lightwater and give her this card.'");
-		$client->Message(6, "You received a King Card. and kingcard is $kingcard.");
+		$client->Message(6, "You received a King Card.");
 		quest::summonitem(22298);
 		quest::summonitem(413);
 		quest::setglobal("kingcard", 1, 5, "F");
