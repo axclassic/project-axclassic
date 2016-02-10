@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
 	}
 sub EVENT_ENTER {
     if ($qglobals{"Tmaze"} == 1) {
-     quest::spawn2(221009,0,0,1620.9,66.3,-338.8,127.6);
+     quest::spawn2(221009,0,0,1622.3,67.8,-331.2,127.9);
      quest::depop();
     }
     elsif ($qglobals{"Tthule"} == 1) {
