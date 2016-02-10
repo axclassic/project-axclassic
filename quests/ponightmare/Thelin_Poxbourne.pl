@@ -16,7 +16,10 @@ my $ready = quest::saylink("ready", 1);
   if I can retrieve my $dagger, then I am free to go. She does this only because she knows that I cannot retrieve it on my own.");
   quest::delglobal("Thelin");
   quest::setglobal("Tdagger", 1, 5, "S30"); #gives you 30 seconds to trigger next response and deletes Thelin Global
- 
+   }
+ elsif ($text=~/Hail/i && $qglobals{"Tthule"} == 1) {
+  quest::say("Good to see you again $name. Finish that Vile Terris Thule for me and end this nightmare");
+  quest::movepc(221,1655.3,25.8,-338.7); 
   }
  elsif ($text=~/dagger/i && $qglobals{"Tdagger"} == 1) {
   quest::say("She has taken the only thing that has brought me any joy in my life. She took it and broke it into seven pieces.
@@ -26,9 +29,7 @@ my $ready = quest::saylink("ready", 1);
  
   }
  elsif ($text=~/help/i && $qglobals{"Thelp"} == 1) {
-  quest::say("I do not know who you are, but I am thankful that you have stumbled upon me. I can bring you into my dream state,
-  but my powers are limited so I can only handle eighteen at once. Please when you are prepared have the leader of each of your band
-  of adventurers tell me they are $ready.");
+  quest::say("I do not know who you are, but I am thankful that you have stumbled upon me. I can bring you into my dream state. Please when you are prepared tell me they are $ready.");
   quest::delglobal("Thelp");
   quest::setglobal("Tready", 1, 5, "M10"); #gives you 10 minutes to form up your 18 bot raid and trigger next response and deletes Thelp Global 
  
@@ -39,10 +40,10 @@ my $ready = quest::saylink("ready", 1);
   quest::delglobal("Tready");
   quest::setglobal("Tmaze", 1, 5, "M5"); #gives you 5 Minutes to zone and hail Thelin instance zone
   quest::settimer("sleeptimer",10);
-  quest::movepc(722,0,0,0);
+  quest::movepc(221,1655.3,25.8,-338.7);
  
   }
-  elsif (!defined $qglobals{"Thelin"} || !defined $qglobals{"Tdagger"} || !defined $qglobals{"Thelp"} || !defined $qglobals{"Tready"}) { #If hailed before Adorha OR any of the subsequent continuations were not Hailed in time this happens
+  elsif (!defined $qglobals{"Thelin"} || !defined $qglobals{"Tdagger"} || !defined $qglobals{"Thelp"} || !defined $qglobals{"Tready"} || !defined $qglobals{"Tthule"}) { #If hailed before Adorha OR any of the subsequent continuations were not Hailed in time this happens
    
    quest::emote(" screams loudly, and then falls asleep once again.");
    quest::settimer("sleeptimer",10);
