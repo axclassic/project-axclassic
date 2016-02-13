@@ -6,7 +6,7 @@ my $ready = quest::saylink("ready", 1);
    } 
    if($text=~/ready/i){
      quest::say("Please stay close, I know not what horror Terris will unleash upon us.");
-     quest::start(221001);
+     quest::start(1);
    }
  }
 sub EVENT_WAYPOINT{
