@@ -8,9 +8,7 @@ my $ready = quest::saylink("ready", 1);
      quest::say("Please stay close, I know not what horror Terris will unleash upon us.");
      quest::start(1);
    }
-   elsif(($text=~/hail/i && 
-#zone nightmareb
-defined $qglobals{"Tfinal"} == 1){
+   elsif(($text=~/hail/i && defined $qglobals{"Tfinal"} == 1){
    quest::say("I am sorry but I can not face her again. You must do this without me.");
    quest::signalwith(221017,221,0);
    quest::depop();
