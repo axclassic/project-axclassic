@@ -76,6 +76,11 @@ sub EVENT_SIGNAL{
    quest::depop();
    }
  }  
+sub EVENT_DEATH{
+   quest::shout("OH NO! We have failed!");
+   quest::movepc(203,-1170.8,667.2,-847.8);
+   }
+ }
 
 
 
