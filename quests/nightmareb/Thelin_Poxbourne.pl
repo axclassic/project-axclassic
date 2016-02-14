@@ -1,14 +1,25 @@
 #BeginFile nightmareb\Thelin_Poxbourne.pl NPC ID 221009
 sub EVENT_SAY {
 my $ready = quest::saylink("ready", 1);
-   if($text=~/hail/i){
+   if ($text=~/hail/i && defined $qglobals{"Tmaze"} == 1){
 	quest::say("Has everyone made it here safely? When you tell me I will seal off my dream and we can begin. We must be careful here, visions await around every turn. Are you $ready to follow? I know where all the pieces of the dagger are, but I cannot collect them all on my own.");
    } 
    if($text=~/ready/i){
      quest::say("Please stay close, I know not what horror Terris will unleash upon us.");
      quest::start(1);
    }
+   elsif(($text=~/hail/i && 
+#zone nightmareb
+defined $qglobals{"Tfinal"} == 1){
+   quest::say("I am sorry but I can not face her again. You must do this without me.");
+   quest::signalwith(221017,221,0);
+   quest::depop();
  }
+  else {
+    quest::movepc(203,-1170.8,667.2,-847.8);
+    quest::depop();
+  }
+}
 sub EVENT_WAYPOINT{
     if ($wp == 6) {
     quest::emote(' kneels down and picks up a dagger hilt.');

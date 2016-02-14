@@ -1,14 +1,6 @@
-sub EVENT_SPAWN {
- $x = $npc->GetX();
-	$y = $npc->GetY();
-	quest::set_proximity($x - 20, $x + 20, $y - 20, $y + 20);
-	}
-sub EVENT_ENTER {
-    if ($qglobals{"Tmaze"} == 1) {
-     quest::spawn2(221009,0,0,1621.7,80.5,-334.8,137.9);
-     quest::depop();
-    }
-    elsif ($qglobals{"Tthule"} == 1) {
+
+sub EVENT_SIGNAL {
+    if ($signal == 221) {
     quest::spawn2(221015,0,0,339.5,142.1,-151.1,29.5);
     quest::spawn2(221014,0,0,247.3,146.5,-125.4,57.1);
     quest::spawn2(221013,0,0,398.9,-164.7,-162.2,244.6);
@@ -51,8 +43,5 @@ sub EVENT_ENTER {
     quest::spawn2(221012,0,0,-1546.4,19.6,74.5,72.6);
     quest::spawn2(221011,0,0,-1844.5,-9.8,131,190.2);
     quest::depop();
-  }
-  else {
-    quest::movepc(203,-1170.8,667.2,-847.8);
   }
  }
