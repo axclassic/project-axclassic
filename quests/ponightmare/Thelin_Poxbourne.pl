@@ -19,6 +19,8 @@ my $ready = quest::saylink("ready", 1);
    }
  elsif ($text=~/Hail/i && $qglobals{"Tthule"} == 1) {
   quest::say("Good to see you again $name. Finish that Vile Terris Thule for me and end this nightmare");
+  quest::delglobal("Tthule");
+  quest::setglobal("Tfinal", 1, 5, "M30"); #gives you 30 minutes to hail Thelin in nightmareb and deletes Thule Global
   quest::movepc(221,1655.3,25.8,-338.7); 
   }
  elsif ($text=~/dagger/i && $qglobals{"Tdagger"} == 1) {
@@ -54,6 +56,8 @@ my $ready = quest::saylink("ready", 1);
    #Do nothing for now
    }
 }#End sub EVENT_SAY
+
+
 
 sub EVENT_TIMER {
    if($timer eq "sleeptimer"){
