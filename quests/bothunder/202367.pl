@@ -1,3 +1,4 @@
+#test
 sub EVENT_SPAWN
 
 {
