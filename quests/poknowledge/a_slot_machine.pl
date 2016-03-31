@@ -46,7 +46,7 @@ sub EVENT_SAY {
 		$client->Message(14, "A slot machine is oddly placed with a $payout description and a $token slot.");
 		}
 	elsif($text=~/token/i) {
-		$client->Message(15, "The token slot is too small for coins.");
+		$client->Message(15, "The token slot is too small for coins. Caden Zharik sells gold tokens worth about 100 platinum each.");
 		}
 	elsif($text=~/payout/i) {
 		$client->Message(12, "-" x 57);
