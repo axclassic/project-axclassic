@@ -76,7 +76,7 @@ sub EVENT_ITEM {
 		my@miniarray4 = ($spades, $hearts, $clubs, $diamonds);
 		my $reel4 = splice(@miniarray4, int(rand(4)), 1);
 		@total = ($reel1, $reel2, $reel3, $reel4);
-		$client->Message(14, "The slot machine spins briefly then stops at [$reel1, $reel2, $reel3, $reel4]");
+		$client->Message(14, "The slot machine spins briefly then stops at [$reel1, $reel2, $reel3, $reel4].");
 #These check jackpot sequence
 	if ("@spades4" eq "@total")  {
 		$client->Message(15, "You HIT $spades $spades $spades $spades jackpot! You win 1050 Platinum Pieces.");
@@ -125,7 +125,7 @@ sub EVENT_ITEM {
 		quest::givecash(0, 0, 0, 105);
 		}
 	else{
-		$client->Message(15, "You get nothing.");
+		#$client->Message(15, "You get nothing.");
 		}
 		#$client->Message(14, "Debugging, the Total array is @total.");
 		#$client->Message(14, "peeking at @total[0] and @total[1] as well as @total[1] and @total[2].");	
