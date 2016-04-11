@@ -23,8 +23,8 @@ my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
 my $newyears = quest::saylink("special", 1);
 #Ladder date and char settings
-my $minCharID  = 5829;
-my $maxCharID  = 5828;
+my $minCharID  = 5829; #remember to define this in the sub Event ITEM below
+my $maxCharID  = 5828; #5828
 my $activeYear = 2016;
 my $activeMonth = "January";
 
@@ -33,7 +33,6 @@ my $activeMonth = "January";
 	    $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
 		$client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
 		$client->Message(15, "You should start a new character on or after this date.");
-		# quest::say("Your characterid is $charid."); debugging $charid
 	}
 	elsif(($text=~/hail/i) && ($charid > $maxCharID) && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
 		$client->Message(14, "Champion Darkwater says, 'Hail, $name! I am Champion Darkwater the Ladder Guide, and I will be observing
@@ -219,18 +218,25 @@ my $activeMonth = "January";
 
 
 sub EVENT_ITEM {
+my $minCharID  = 5829; #dont forget to set this one as well 5829
+my $activeMonth = January;
 my $activeYear = 2016;
-my $activeMonth = "January";
+
 	if ($charid < $minCharID) { #this charid and the one above should be the same.
 		$client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
 		$client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
 		$client->Message(15, "You should start a new character on or after this date.");
+		#$client->Message(14, "charid is $charid and mincharid is $minCharID.");
 		plugin::return_items(\%itemcount);
 			if($platinum != 0 || $gold != 0 || $silver != 0 || $copper != 0) {
 			quest::givecash($copper, $silver, $gold, $platinum);
 			}
 		}
-#Champion Darkwater's gift
+# money check
+	elsif ($platinum != 0 || $gold != 0 || $silver != 0 || $copper != 0) {
+	$client->Message(14, "Champion Darkwater says, 'Ermmm... well okay thanks.'");
+	}
+	#Champion Darkwater's gift
 	elsif (plugin::check_handin(\%itemcount, 119925=>1)) {
 	$client->Message(14, "Champion Darkwater says, 'Welcome $name to the Rathe Ladder! Here is your earring.");
 	$client->Message(6, "You received a Darkwater's Gift!");
@@ -253,15 +259,8 @@ my $activeMonth = "January";
 		quest::exp(50);
 		quest::ding();
 		}
-# Check for repeated turn ins of 65 trophy for card. Eats the trophy instead
-		elsif (plugin::check_handin(\%itemcount, 413=> 1) && $qglobals{"kingcard"} == 1) {
-		plugin::return_items(\%itemcount);
-		$client->Message(14, "Champion Darkwater says, 'You're in trouble! Wait until admins hear about this.'");
-		#$client->Message(14, "King card is $kingcard.");
-		#quest::setglobal("kingcard", 0, 5, "F");
-		}
 #Turning in 65 ladder reward for King Card
-	elsif (plugin::check_handin(\%itemcount, 413=> 1) && !defined $qglobals{"kingcard"} || $qglobals{"kingcard"} != 1) {
+	elsif (plugin::check_handin(\%itemcount, 413=>1) && $qglobals{"kingcard"} != 1) {
 		$client->Message(14, "Champion Darkwater says, 'I see you want more $name. Talk to Champion Lightwater and give her this card.'");
 		$client->Message(6, "You received a King Card.");
 		quest::summonitem(22298);
@@ -269,11 +268,9 @@ my $activeMonth = "January";
 		quest::setglobal("kingcard", 1, 5, "F");
 	}
 	else {
-	$client->Message(14, "Champion Darkwater says, 'Sorry, I can't use this.'");
-	plugin::return_items(\%itemcount);
-		if($platinum != 0 || $gold != 0 || $silver != 0 || $copper != 0) {
-		quest::givecash($copper, $silver, $gold, $platinum);
-		}
+	$client->Message(14,"Champion Darkwater says, 'Now what would I do with this?'");
+	plugin::return_items(\%itemcount); #returns item
+	#$client->Message(14, "kingcard is $kingcard.");
 	}
 }
 
