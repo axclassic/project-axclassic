@@ -10,11 +10,11 @@
 sub EVENT_CLICKDOOR {
 	#my $d_id = ($doorid % 256);
 	#$client->Message(15, "doorid is $doorid.");
-	#If all 5 are down ONLY the Group LEADER GETS ACCESS
-	#Tricky part here is that $name will eq $gleader so only leader enters
+	#Checks if access and no one in Plane of Time B
 	if ((defined $qglobals{$name."boss1"}) && (defined $qglobals{$name."boss2"}) && (defined $qglobals{$name."boss3"}) &&
-		(defined $qglobals{$name."boss4"}) && (defined $qglobals{$name."boss5"})) {
+		(defined $qglobals{$name."boss4"}) && (defined $qglobals{$name."boss5"}) && (!defined $qglobals{"blockout"})) {
 		if($doorid == 8){
+			quest::setglobal("blockout", 1, 7, "H5"); #This sets lockout
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
 			quest::movepc(223, -36, 1352, 496);
@@ -27,10 +27,10 @@ sub EVENT_CLICKDOOR {
 				quest::delglobal($members."boss3");
 				quest::delglobal($members."boss4");
 				quest::delglobal($members."boss5");
-			}
-			
+				}
 		}
 		elsif($doorid == 9){
+			quest::setglobal("blockout", 1, 7, "H5");
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
 			quest::movepc(223, -51, 857, 496);
@@ -46,6 +46,7 @@ sub EVENT_CLICKDOOR {
 				}
 		}
 		elsif($doorid == 10){
+			quest::setglobal("blockout", 1, 7, "H5");
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
 			quest::movepc(223, -35, 1636, 496);
@@ -61,6 +62,7 @@ sub EVENT_CLICKDOOR {
 				}
 		}
 		elsif($doorid == 11){
+			quest::setglobal("blockout", 1, 7, "H5");
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
 			quest::movepc(223, -55, 569, 496);
@@ -76,6 +78,7 @@ sub EVENT_CLICKDOOR {
 				}
 		}
 		elsif($doorid == 12){
+			quest::setglobal("blockout", 1, 7, "H5");
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
 			quest::movepc(223, -27, 1103, 496);
@@ -93,12 +96,14 @@ sub EVENT_CLICKDOOR {
 		else {
 		#DO nothing for now
 		}
-		
-		
+	#Lockout initializes
+	} elsif ((defined $qglobals{$name."boss1"}) && (defined $qglobals{$name."boss2"}) && (defined $qglobals{$name."boss3"}) &&
+			 (defined $qglobals{$name."boss4"}) && (defined $qglobals{$name."boss5"}) && (defined $qglobals{"blockout"})) {
+				$client->Message(15, "You are flagged for access but there is someone already in Plane of Time B. 
+				Wait until he/she leaves or try again later.");
 	} else {
-	$client->Message(14, "Portal is locked.");
+		$client->Message(14, "Portal is locked.");
 	}
-	
 	
 	
 	
