@@ -23,7 +23,7 @@ if (!defined $qglobals{$name."boss2"}){
 		$client->Message(15, "You have more to dispatch to appease the gods...");
 	}
 	else {
-		$client->Message(14, "Congratulations, $name. You feel an overwhelming urge to pass 
+		$client->Message(14, "Congratulations! You feel an overwhelming urge to pass 
 		through the portals. Make haste before it's too late...");
 	}
 }#END sub EVENT_DEATH
@@ -42,7 +42,7 @@ sub EVENT_NPC_SLAY {
 		#Upon Death the messages come..	
 		if((defined $qglobals{$clientlist."boss1"}) && (defined $qglobals{$clientlist."boss3"}) &&
 			(defined $qglobals{$clientlist."boss4"}) && (defined $qglobals{$clientlist."boss5"})) {
-			$ent->Message(14, "Congratulations, $clientlist. You feel an overwhelming urge to pass 
+			$ent->Message(14, "Congratulations! You feel an overwhelming urge to pass 
 			through the portals. Make haste before it's too late...");
 		} else {
 		$ent->Message(15, "You have more to dispatch to appease the gods...");
