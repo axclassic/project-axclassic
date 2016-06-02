@@ -1,3 +1,26 @@
+##Plane of Time B player.pl
+sub EVENT_ZONE{
+	#quest::ze(15, "MUAHAHHA another victum!");
+	quest::delglobal("blockout");
+	#fetch corpse
+	@corpse = $entity_list->GetCorpseList();
+	if(@corpse){
+	quest::setglobal($name."pobcorpse", 1, 7, "D7");
+	foreach $ent (@corpse) {
+		$corpseName = $ent->GetOwnerName();
+			if($corpseName eq $name) {
+				my $ex = int(rand(140) -70); #randomize corpse loc in graveyard area
+				my $yy = int(rand(50) -25);
+				$ent->GMMove(850+$ex, -140+$yy, 395);
+			}
+      }
+	  
+	  } else {
+	  #DO nothing for now
+	  }
+
+}#END sub EVENT_ZONE
+
 sub EVENT_ENTERZONE {
 	BEGINRAID();
 	quest::settimer("player_check", 10);
@@ -72,16 +95,4 @@ sub EVENT_CLICKDOOR {
                 quest::setglobal("potimeLockout", 5, 5, "H24");
 		quest::MovePCInstance(223, $instance, 251, -1124, -1);
 	} 
-}
-
-sub BEGINRAID {
-	if (!defined($qglobals{potimeLockout}) && !defined($qglobals{potime_canzone})) {
-		quest::setglobal("potimeLockout", 1, 5, "H24");
-		quest::setglobal("potime_canzone", 1, 5, "H24");
-	}
-
-sub EVENT_ZONE {
-
-$client->NukeItem(627);
-}
 }
