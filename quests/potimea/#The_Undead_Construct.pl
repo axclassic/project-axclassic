@@ -20,11 +20,11 @@ sub EVENT_DEATH {
 	}
 	if ((!defined $qglobals{$name."boss1"}) || (!defined $qglobals{$name."boss2"}) || 
 		(!defined $qglobals{$name."boss3"}) || (!defined $qglobals{$name."boss5"})) {
-		$client->Message(15, "You have more to dispatch to appease the gods...");
+		$client->Message(15, "A booming echo bellows from across the sky, 'You have more to dispatch to appease the gods...'");
 	}
 	else {
-		$client->Message(14, "Congratulations! You feel an overwhelming urge to pass 
-		through the portals. Make haste before it's too late...");
+		$client->Message(14, "A booming echo bellows from across the sky, 'Congratulations! You feel an overwhelming urge to pass 
+			through the portals. Make haste before it's too late...'");
 	}
 }#END sub EVENT_DEATH
 
@@ -42,10 +42,10 @@ sub EVENT_NPC_SLAY {
 		#Upon Death the messages come..	
 		if((defined $qglobals{$clientlist."boss1"}) && (defined $qglobals{$clientlist."boss2"}) &&
 			(defined $qglobals{$clientlist."boss3"}) && (defined $qglobals{$clientlist."boss5"})) {
-			$ent->Message(14, "Congratulations! You feel an overwhelming urge to pass 
-			through the portals. Make haste before it's too late...");
+			$ent->Message(14, "A booming echo bellows from across the sky, 'Congratulations! You feel an overwhelming urge to pass 
+			through the portals. Make haste before it's too late...'");
 		} else {
-		$ent->Message(15, "You have more to dispatch to appease the gods...");
+		$ent->Message(15, "A booming echo bellows from across the sky, 'You have more to dispatch to appease the gods...'");
 		}
 	}
 }#END Sub EVENT_NPC_SLAY
