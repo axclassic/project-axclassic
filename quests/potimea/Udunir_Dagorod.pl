@@ -22,6 +22,7 @@ my $send = quest::saylink("send", 1);
 sub EVENT_ITEM {
 	if ($platinum == 1000 && $ulevel >= 64 && defined $qglobals{$name."pobcorpse"}) {
 		$client->Message(14,"Thank you $name , you are on the way back to your Time B, good luck!"); #Money handin for porting into time B graveyard.
+		quest::setglobal($name."reco", 1, 7, "M10"); #adds check when entering zone
 		quest::delglobal($name."pobcorpse"); #Deletes corpse qglobal
 		quest::movepc(223, 851, -141, 395); #Moves to PotimeB graveyard
 	}
