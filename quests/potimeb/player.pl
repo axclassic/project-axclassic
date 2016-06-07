@@ -10,7 +10,7 @@ sub EVENT_ZONE{
 	if($status >= 50){
 		quest::ze(15, "a GM has left the zone.");
 		#quest::delglobal("blockout");
-		quest::delglobal("blockout2");
+		#quest::delglobal("blockout2");
 		#quest::delglobal("portal3");
 		#quest::delglobal("portal4");
 		#quest::delglobal("portal5");
@@ -62,7 +62,7 @@ sub EVENT_ZONE{
 
 sub EVENT_ENTERZONE { #Upon entering zone through portals it will spawn mobs in all 5 locations
 	#quest::delglobal("blockout");
-	if($status >= 450) {
+	if($status >= 50) {
 		quest::ze(15, "a GM has entered the zone.");
 		#quest::delglobal("blockout");
 	} elsif ((defined $qglobals{"blockout"}) && (defined $qglobals{$name."reco"})) {
