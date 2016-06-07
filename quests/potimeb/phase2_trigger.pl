@@ -1,121 +1,94 @@
-my $IIacounter;
+# phase_trigger script npcid - 223191 This is required for signals for phase 2
+sub EVENT_ZONE { #when zoning out, counters must be reset!
+	$savedc2 = 0;
+	$IIcounter = 0;
+}
+
+my $IIcounter;
 
 sub EVENT_SPAWN {
-    $IIacounter = 0;
+    # $IIacounter = 0;
+    quest::signalwith(223111,1001,0); #flavor triggers invisible _ 223111.pl
+	#spawning phase 2's 1st group no boss
+	#Earth group using #earth_counter.pl
+		quest::spawn2(223178,0,0,-129.6,1720,547,0);
+	#Air group using #air_counter.pl
+		quest::spawn2(223179,0,0,-129.6,1720,547,0);
+	#Water group using #water_counter.pl
+		quest::spawn2(223181,0,0,-129.6,1720,547,0);
+	#Fire group using #fire_counter.pl
+		quest::spawn2(223182,0,0,-129.6,1720,547,0);
+	#Undead group using #undead_counter.pl
+		quest::spawn2(223180,0,0,-129.6,1720,547,0);
+	
 
-    quest::signalwith(223111,1001,0); #flavor
-    quest::signalwith(223177,10,1);
-    quest::spawn2(223163,0,0,-140,1737,547,0); #phase 2 timer
-    quest::spawn2(223160,0,0,80,1645,495,64); #earth door
-    quest::spawn2(223203,0,0,98,1645,495,195);
-    quest::spawn2(223161,0,0,80,1355,495,64); #air door
-    quest::spawn2(223204,0,0,98,1355,495,195);
-    quest::spawn2(223162,0,0,80,1109,495,64); #undead door
-    quest::spawn2(223205,0,0,98,1109,495,195);
-    quest::spawn2(223202,0,0,80,868,495,64); #water door
-    quest::spawn2(223207,0,0,98,868,495,195);
-    quest::spawn2(223201,0,0,80,574,495,64); #fire door
-    quest::spawn2(223206,0,0,98,574,495,195);
-
-    quest::spawn_condition("potimeb",10,1);
-    
-    quest::depopall(223089); #clean up non-required leftovers from phase 1.
-    quest::depopall(223094);
-    quest::depopall(223095);
-    quest::depopall(223147);
-
-}    
+}
     
 sub EVENT_SIGNAL {
-  if ($signal == 10020) {
-    quest::clearspawntimers();
-    quest::spawn_condition("potimeb",10,0); #won't force a repop without this.
-    quest::spawn_condition("potimeb",10,1);
-    quest::spawn2(223134,0,0,262,1644,493,192.5);
-    quest::spawn2(223118,0,0,262,1354,493,192.5);
-    quest::spawn2(223127,0,0,262,1109,493,192.5);
-    quest::spawn2(223096,0,0,262,869,493,192.5);
-    quest::spawn2(223146,0,0,262,574,493,192.5);
-}
-  if ($signal == 10030) {
-    $IIacounter += 1;
-}
-  if ($IIacounter == 5 ) { #phase 2 success
-    quest::spawn2(223154,0,0,-140,1737,547,0); #phase 3 trigger
-    quest::spawn_condition("potimeb",10,0); #set us to default.
-    quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
-    $IIacounter = 0;
-}
 
-  if($signal == 9909) {      
-    quest::settimer("phase2",3600); #60 minute time limit
-  }
+	if ($signal == 14028) { #counts # of kills from phase 2 earth 1st group
+	 #This should spawn the Earth 2nd mob group + boss for phase 2
+	 #quest::ze(15, "I see you completed Earth!, this signal should spawn the boss's group!");
+	#Use earth_trigger.pl as the last group+boss phase 2
+	quest::spawn2(223169,0,0,-129.6,1720,547,0);
+	}
+	if ($signal == 14038) { # counts # of kills from air groups 1st grp
+	#quest::ze(15, "I see you completed air!, this signal should spawn the boss's group!");
+	#Use air_trigger.pl as the last group+boss phase 2
+	quest::spawn2(223170,0,0,-129.6,1720,547,0);
+	}
+	if ($signal == 14048) { # counts # of kills from undead groups 1st grp
+	#quest::ze(15, "I see you completed undead!, this signal should spawn the boss's group!");
+	#Use undead_trigger.pl as the last group+boss phase 2
+	quest::spawn2(223171,0,0,-129.6,1720,547,0);
+	}	
+	if ($signal == 14058) { # counts # of kills from water groups 1st grp
+	#quest::ze(15, "I see you completed water!, this signal should spawn the boss's group!");
+	#Use water_trigger.pl as the last group+boss phase 2
+	quest::spawn2(223172,0,0,-129.6,1720,547,0);
+	}
+	if ($signal == 14068) { # counts # of kills from water groups 1stgrp
+	#quest::ze(15, "I see you completed fire!, this signal should spawn the boss's group!");
+	#Use fire_trigger.pl as the last group+boss phase 2
+	quest::spawn2(223173,0,0,-129.6,1720,547,0);
+	}
+	
+	
+	#This signal keeps track of the groups dead to open inner doors
+	if ($signal == 14035) { #phase 2 boss signals
+	#quest::ze(15, "Mob+boss earth grp for phase 2 is dead, door should open!");
+	$IIcounter+=1;
+	$savedc2 = $IIcounter;
+	#quest::ze(15, "testing signal 14035 and counter is $savedc2.");
+	}
+	if ($IIcounter == 5) { #Inner doors open!
+	$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
+	quest::we(14, "Congratulations, phase 2 has been completed! Move on to phase 3.");
+	
+	#inner connecting doors
+	quest::forcedooropen(13); #connecting door water and fire lower right panel
+    quest::forcedooropen(14); # upper right
+    quest::forcedooropen(15); # upper left
+    quest::forcedooropen(16); # lower left
+    quest::forcedooropen(33); #undead subdoor lower right panel
+    quest::forcedooropen(34); # upper right
+    quest::forcedooropen(35); # upper left
+    quest::forcedooropen(36); # lower left
+    quest::forcedooropen(38); #connecting door earth and air lower right panel
+    quest::forcedooropen(39); # upper right
+    quest::forcedooropen(40); # upper left
+    quest::forcedooropen(41); # lower left
+	
+	quest::spawn2(223154,0,0,-129.6,1720,547,0); #triggers phase3_trigger.pl
+	#quest::depop();#depops phase2_trigger
+	
+	#quest::stoptimer($timer); #repop resets everything anyway
+	#quest::starttimer("closealld",1);
+	
+	}
+ 
  }
 
 sub EVENT_TIMER {
-	if ($timer eq "phase2") { 
-		$check = 0;
-
-		#phase3
-		$check_boss = $entity_list->GetMobByNpcTypeID(223154);
-		if ($check_boss) {
-			$check = 1;
-		}
-		#phase4
-		$check_boss = $entity_list->GetMobByNpcTypeID(223157);
-		if ($check_boss) {
-			$check = 1;
-		}
-		#phase5
-		$check_boss = $entity_list->GetMobByNpcTypeID(223158);
-		if ($check_boss) {
-			$check = 1;
-		}
-		#quarm
-		$check_boss = $entity_list->GetMobByNpcTypeID(223159);
-		if ($check_boss) {
-			$check = 1;
-		}	
-		
-		if($check == 0) {
-			#then we need to end the event
-			quest::shout("Phase 2 failed! Time expired.");
-			quest::spawn_condition("potimeb",10,0); #set us to default.
-			quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
-			quest::stoptimer("phase2");
-			quest::signalwith(223177,666,0);
-			quest::depopall(223132);
-			quest::depopall(223136);
-			quest::depopall(223126);
-			quest::depopall(223141);
-			quest::depopall(223148);
-			quest::depopall(223153);
-			quest::depopall(223096);
-			quest::depopall(223117);
-			quest::depopall(223143);
-			quest::depopall(223114);
-			quest::depopall(223137);
-			quest::depopall(223109);
-			quest::depopall(223124);
-			quest::depopall(223146);
-			quest::depopall(223110);
-			quest::depopall(223125);
-			quest::depopall(223102);
-			quest::depopall(223133);
-			quest::depopall(223134);
-			quest::depopall(223107);
-			quest::depopall(223138);
-			quest::depopall(223127);
-			quest::depopall(223216);
-			quest::depopall(223118);
-			quest::depopall(223163);
-			quest::depop();
-		} else {
-			#new phase is running
-			#we should start the timer for the next phase
-			quest::stoptimer("phase2");
-			quest::signalwith(223154,9909,0);
-			quest::depop();
-		}
-	}
+	
  }

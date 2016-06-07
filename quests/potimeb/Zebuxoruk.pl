@@ -1,6 +1,8 @@
+# Zebuxoruk.pl npcid - 223212
+
 sub EVENT_SPAWN {
     quest::emote("staggers about and looks at you, drowsy from his weakened state. 'My thanks to you. I am surprised to see you have made it here. We must get back to Norrath. The time has come for me to share my knowledge. Something is coming, a threat to us all, and the sands in the hourglass are thinning. Make haste and take me back the way you came.'");
-quest::settimer("zeb1",20);
+quest::settimer("zeb1",15);
 }
 sub EVENT_TIMER {
 if($timer eq "zeb1"){
@@ -11,13 +13,14 @@ if($timer eq "zeb1"){
 if($timer eq "zeb2"){
     quest::say("If they have taken measures these extreme I must rethink what I have done, and what I will do. If there was this much cause for conc...");
     quest::signalwith(223111,1006,0);
-    quest::spawn2(223213,0,0,47,-1105.91,-2.8105,187.9);
-    quest::settimer("zeb3",10);
+    #quest::spawn2(223213,0,0,47,-1105.91,-2.8105,187.9); #spawns over at quarm
+	quest::spawn2(223213,0,0,-597,-1106,-3,187.9); #next to zeb
+    quest::settimer("zeb3",12); #10
     quest::stoptimer("zeb2");
 }
 if($timer eq "zeb3"){
     quest::say("Druzzil, I have missed you. Wasn't it you that taught me in your own realm to seek knowledge and share it in all forms?");
-    quest::settimer("zeb4",15);
+    quest::settimer("zeb4",30); #15
     quest::stoptimer("zeb3");
 }
 if($timer eq "zeb4"){

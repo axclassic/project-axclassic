@@ -1,3 +1,5 @@
+# Dark_Knight_of_Terris.pl npcid - 223058
+
 sub EVENT_AGGRO {
   quest::say("What twisted reasoning would possess you to travel here and challenge the gods themselves? Your madness knows no bounds! The only sensible course of action is to end your miserable existence.");
 }
@@ -8,7 +10,7 @@ sub EVENT_DEATH {
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 66){
-     quest::depop();
-}
+  # if ($signal == 66){
+     # quest::depop();
+# }
  }

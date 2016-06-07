@@ -1,6 +1,8 @@
+# mob is _ npcid - 223111. Spawns with phase2_trigger.pl This could be nothing but signals
+
 sub EVENT_SIGNAL {
   if ($signal == 1000) {
-quest::ze(15,"In the distance, an hourglass appears, the grains of sand falling methodically into place. As quickly as the image was formed, it dissipates. You have one hour left.");
+quest::ze(15,"In the distance, an hourglass appears, the grains of sand falling methodically into place. As quickly as the image was formed, it dissipates.");
 }
   if ($signal == 1001) {
 quest::ze(15,"Ethereal mists gather at the far wall, causing it to fade in and out of focus.");
@@ -32,8 +34,8 @@ quest::pause(2000);
 quest::ze(15,"Xegony says, 'Mithaniel, Karana please record what you see here. With your good nature I am sure that your records will be impartial to any side. We must record this for the ages and learn from our mistake of allowing Zebuxoruk to gain so much power that he is easily passed on to mortals.'");
 quest::pause(2000);
 quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
-quest::pause(2000);
-quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have one additional hour.");
+#quest::pause(2000);
+#quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have one additional hour.");
  }
    if ($signal == 1002) {
  quest::ze(15,"Ethereal mists gather at the far wall, causing it to fade in and out of focus.");
@@ -59,8 +61,8 @@ quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the
  quest::ze(15,"Innoruuk says, 'Do not mock me! I shall seek you out after this is done and my power is restored. You will not be so smug after our next meeting.'");
  quest::pause(2000);
  quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
- quest::pause(2000);
- quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have an additional one hour and fifteen minutes.");
+ #quest::pause(2000);
+ #quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have an additional one hour and fifteen minutes.");
  }
     if ($signal == 1003) {
   quest::ze(15,"Terris Thule says, 'I am certain my warriors will have no problem holding back any intruders, but I have my doubts about the other armies.'");
@@ -72,8 +74,8 @@ quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the
   quest::ze(15,"Saryrn says, 'It is no matter anyways, no mortal could ever ascend to this place. These precautions are unnecessary. Bringing them here was a waste of time.'");
   quest::pause(2000);
   quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
-  quest::pause(2000);
-  quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have four additional hours.");
+  #quest::pause(2000);
+  #quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have four additional hours.");
  }
     if ($signal == 1004) {
  quest::ze(15,"Rallos Zek says, 'Something is wrong. I feel Tallon and Vallon's spirits have weakened.'");
@@ -89,8 +91,8 @@ quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the
  quest::ze(15,"Rallos Zek says, 'Now is not the time to bicker! We must focus our strength on these puny mortals! Minions of the army, come to our sides. Your gods beckon you, we need you now!'");
  quest::pause(2000);
   quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
- quest::pause(2000);
-  quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have four additional hours.");
+ #quest::pause(2000);
+  #quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have four additional hours.");
  }
      if ($signal == 1005) {
   quest::ze(15,"Fennin Ro says, 'Impossible! How could the races of Norrath have traveled this deep into the Planes?!'");
@@ -105,8 +107,8 @@ quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the
   quest::ze(15,"A horrible creation with all the powers from each elemental realm. Your body begins to shudder by the mere presence of this being.");
   quest::pause(2000);
    quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
-  quest::pause(2000);
-   quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have two additional hours.");
+ # quest::pause(2000);
+   #quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have two additional hours.");
  }
     if ($signal == 1006) {
   quest::ze(15,"Suddenly in a bright flash a feminine figure appears before you. Your ears ring from the loud burst as she slowly materializes.");

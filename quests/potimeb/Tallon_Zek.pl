@@ -7,9 +7,9 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 66) {
-    quest::depop();
-} 
+  # if ($signal == 66) {
+    # quest::depop();
+# } 
  }
 
 sub EVENT_DEATH {

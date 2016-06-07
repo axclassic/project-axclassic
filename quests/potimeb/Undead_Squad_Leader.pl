@@ -1,3 +1,6 @@
+# Undead_Squad_Leader.pl npcid - 223057
+
+
 sub EVENT_AGGRO {
   quest::say("Can you even fathom the infinite torture and suffering in store for you? I thought not.");
 }
@@ -8,7 +11,7 @@ sub EVENT_DEATH {
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 66){
-     quest::depop();
-}
+  # if ($signal == 66){
+     # quest::depop();
+# }
  }

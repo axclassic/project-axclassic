@@ -1,9 +1,6 @@
+#A_Deepwater_Assassin.pl npcid - 223141
+
 sub EVENT_DEATH {
-  quest::signalwith(223163,10010,0);
+  quest::signalwith(223181,14058,0); #Triggers #water_counter.pl
 }
 
-sub EVENT_SIGNAL {
-  if ($signal == 66){
-     quest::depop();
-}
- }

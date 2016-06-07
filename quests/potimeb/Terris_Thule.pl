@@ -51,9 +51,9 @@ sub EVENT_HP {
  }
 
 sub EVENT_SIGNAL {
-  if ($signal == 66) {
-    quest::depop();
-} 
+  # if ($signal == 66) {
+    # quest::depop();
+# } 
  }
 
 sub EVENT_DEATH {
@@ -67,7 +67,7 @@ sub EVENT_TIMER {
  my $y = $npc->GetY();
  if($timer eq "terris") { 
  if($x < -380 || $x > -199 || $y > 380 || $y < 199) {
-    $npc->GMMove(-310,307,365,95);
+    $npc->GMMove(-310,307,365,95); #-310,307,365,95
   }
  }
 }

@@ -1,3 +1,6 @@
+# mob name is _ npcid - 223214 old beehive
+
+
 sub EVENT_DEATH {
-   quest::spawn2(223212,1,0,-635.485,-1109.51,-2.8105,60);
+   quest::spawn2(223212,1,0,-635.485,-1109.51,-2.8105,60); #spawns Zebuxoruk
 }

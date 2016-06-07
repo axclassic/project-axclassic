@@ -1,3 +1,5 @@
+# quarm_trigger.pl npcid - 223159
+
 sub EVENT_SPAWN 
 {
     	quest::spawn2(223215,0,0,251,-1124,-2.8,0); #Quarm Pathing
@@ -7,27 +9,27 @@ sub EVENT_SPAWN
     	quest::depopall(223145);
     	quest::depopall(223002);
     	quest::depopall(223003);
-		quest::spawn2(223999, 0, 0, 374.5, -1.3, 3.1, 192);#phase5_flag
+		#quest::spawn2(223999, 0, 0, 374.5, -1.3, 3.1, 192);#phase5_flag
 }
  
 sub EVENT_SIGNAL {
-     if($signal == 9909) {
-        quest::settimer("quarm",7200); #120 minute time limit        
-     }
+     # if($signal == 9909) {
+        # quest::settimer("quarm",7200); #120 minute time limit        
+     # }
 }
 
 sub EVENT_TIMER 
 {
-   	if ($timer eq "quarm") 
-   	{ #event failure
-    		quest::stoptimer("quarm");
-    		quest::signalwith(223177,666,0);
-    		quest::shout("You have failed to defeat Quarm in time!");
-    		quest::depopall(223994);
-    		quest::depopall(223993);
-    		quest::depopall(223992);
-    		quest::depopall(223991);
-    		quest::depopall(223112);
-    		quest::depop();
-	}	
+   	# if ($timer eq "quarm") 
+   	# { #event failure
+    		# quest::stoptimer("quarm");
+    		# quest::signalwith(223177,666,0);
+    		# quest::shout("You have failed to defeat Quarm in time!");
+    		# quest::depopall(223994);
+    		# quest::depopall(223993);
+    		# quest::depopall(223992);
+    		# quest::depopall(223991);
+    		# quest::depopall(223112);
+    		# quest::depop();
+	# }	
 }

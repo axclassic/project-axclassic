@@ -109,22 +109,24 @@ sub EVENT_HP {
 }
 
 sub EVENT_DEATH {
-	quest::spawn2(223214,0,0,-656.2,-1096.5,-2.7,60);
-	quest::depop(223999);#phase5_flag
-	quest::spawn2(223991, 0, 0, -186, -1114, -2, 192);#phase6_flag
-	quest::signalwith(223177,667,0);
+	quest::spawn2(223250,0,0,-656.2,-1096.5,-2.7,60); #spawns new beehive
+	#quest::depop(223999);#phase5_flag
+	#quest::spawn2(223991, 0, 0, -186, -1114, -2, 192);#phase6_flag
+	#quest::signalwith(223177,667,0);
+		$npc->CameraEffect(3000, 9, 0, 1); #Worlwide camera shake
+		quest::we(14, "CONGRATULATIONS with the completion of phase 5. Prepare for armageddon.");
         quest::we(15, "For a brief moment, it feels as if all time has stopped. Inside your mind, you hear a great beast screaming as it takes one last breath. It has been done. The gods have been overthrown.");
         quest::we(15, "After a short moment of peace and joy, you are swallowed by the horror of what has happened. You say, out loud for no one to hear, 'What have we done?'");
 }
 
 sub EVENT_SIGNAL {
-	#depop as we are now out of time
-	if ($signal == 66){
-		quest::depop();
-	}
+	# #depop as we are now out of time
+	# if ($signal == 66){
+		# quest::depop();
+	# }
 	
-	#start the pathgrid
-	if ($signal == 1007){
-		quest::start(2);
-	}
+	# #start the pathgrid
+	# if ($signal == 1007){
+		# quest::start(2);
+	# }
 }

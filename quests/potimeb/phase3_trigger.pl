@@ -1,3 +1,4 @@
+# This is phase 3 trigger npcid - 223154
 my $namedI;
 my $namedII;
 my $namedIII;
@@ -18,12 +19,8 @@ sub EVENT_SPAWN {
     $namedVII = 0;
     $namedVIII = 0;
     $namedIX = 0;
-    quest::signalwith(223111,1002,0); #flavor
-    quest::signalwith(223177,18,1); #doors
-    quest::spawn2(223209,0,0,458,709,495,64); #doors
-    quest::spawn2(223208,0,0,458,1101,495,64);
-    quest::spawn2(223210,0,0,458,1502,495,64);
-    quest::spawn2(223010,0,0,1280,1010,359.38,195); #non target nameds
+    quest::signalwith(223111,1002,0); #flavor text
+    quest::spawn2(223010,0,0,1280,1010,359.38,195); #16 non target nameds
     quest::spawn2(223011,0,0,1280,1030,359.38,195);
     quest::spawn2(223012,0,0,1260,1250,359.38,195);
     quest::spawn2(223013,0,0,1260,1270,359.38,195);
@@ -39,338 +36,303 @@ sub EVENT_SPAWN {
     quest::spawn2(223023,0,0,1230,1310,359.38,175);
     quest::spawn2(223155,0,0,1250,1135,359.5,192);
     quest::spawn2(223156,0,0,1250,1085,359.5,192);
-    quest::spawn_condition("potimeb",2,1); #1st wave
-    quest::spawn2(223217,0,0,0,0,0,0); #this will be our wave counter
-    quest::depopall(223179); #depop player counter
-    quest::depopall(223178); #depop player counter
-    quest::depopall(223182); #depop player counter
-    quest::depopall(223180); #depop player counter
-    quest::depopall(223181); #depop player counter
-    quest::depopall(223110); #clean up last phase
-    quest::depopall(223125);
-    quest::depopall(223102);
-    quest::depopall(223133);
-    quest::depopall(223087);
-    quest::depopall(223107);
-    quest::depopall(223138);
-    quest::depopall(223132);
-    quest::depopall(223136);
-    quest::depopall(223126);
-    quest::depopall(223141);
-    quest::depopall(223148);
-    quest::depopall(223153);
-    quest::depopall(223117);
-    quest::depopall(223143);
-    quest::depopall(223114);
-    quest::depopall(223137);
-    quest::depopall(223109);
-    quest::depopall(223124);
-	quest::spawn2(223996, 0, 0, 891, 1111, 493, 192); #phase2_flag
-	
+	#8 targetable mobs
+	quest::spawn2(223005,0,0,1150.0,1135.0,351.7,192.5); #sametargetable NPC's A_Pig_of_War
+	quest::spawn2(223005,0,0,1200.0,1185.0,352.2,192.5); #targetable NPC's A_Pig_of_War
+	quest::spawn2(223005,0,0,1200.0,1135.0,351.0,192.5); #targetable NPC's A_Pig_of_War
+	quest::spawn2(223005,0,0,1150.0,1085.0,351.0,192.5); #targetable NPC's A_Pig_of_War
+	quest::spawn2(223006,0,0,1150.0,1035.0,352.0,192.5); #targetable NPC's A_Dark_Guardian_of_the_Warlord
+	quest::spawn2(223006,0,0,1200.0,1035.0,351.5,192.5); #targetable NPC's A_Dark_Guardian_of_the_Warlord
+	quest::spawn2(223006,0,0,1150.0,1195.0,351.6,192.5); #sametargetable NPC's A_Dark_Guardian_of_the_Warlord
+	quest::spawn2(223006,0,0,1200.0,1085.0,351.0,192.5);
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 11018) { #spawn first 2 nameds
-    quest::depopall(223155);
-    quest::depopall(223156);
-    quest::depopall(223217);
-    quest::spawn2(223009,0,0,1250,1085,359.5,192);
-    quest::spawn2(223008,0,0,1250,1135,359.5,192);
-}
-  if ($signal == 11010) { 
+	if($signal == 1011) { #sets counter to start 1st wave upon all 8 dying
+		$wonpccounter+= 1;
+		$waveoc = $wonpccounter;
+		#quest::ze(15, "okay i signaled and my 1st counter is now $waveoc.");
+	}
+	if ($wonpccounter == 8) { # triggers #wave1.pl
+		$wonpccounter = 0;
+		#quest::ze(15, "okay all 8 are dead now do something!");
+	
+		#start wave1
+		quest::depopall(223155); # A_Ferocious_Warboar
+		quest::depopall(223156); # Deathbringer_Blackheart 
+		#quest::depopall(223217); # #wave1.pl
+		quest::spawn2(223009,0,0,1250,1085,359.5,192); #Deathbringer_Blackheart
+		quest::spawn2(223008,0,0,1250,1135,359.5,192); #A_Ferocious_Warboar
+	}
+	
+  if ($signal == 11010) { #1st two names
     $namedI += 1;
-}
-  if ($namedI == 2) { 
-    quest::spawn_condition("potimeb",3,1); # wave 2
-    quest::spawn2(223218,0,0,0,0,0,0); # wave counter
+	}
+  if ($namedI == 2) {
+    #quest::spawn_condition("potimeb",3,1); # wave 2
+    #quest::spawn2(223218,0,0,0,0,0,0); # wave counter
     quest::depopall(223016); #depop untargetable nameds
     quest::depopall(223017);
-    quest::spawn2(223017,0,0,1250,1085,359.5,192); #pop targetable nameds in new locations
-    quest::spawn2(223016,0,0,1250,1135,359.5,192);
+    quest::spawn2(223016,0,0,1250,1085,359.5,192); #pop non - targetable nameds in new locations
+    quest::spawn2(223017,0,0,1250,1135,359.5,192);
+	#8 target mobs
+	quest::spawn2(223027,0,0,1150.0,1185.0,352.7,192.5); #targetable NPC's Archon_of_the_Plaquebringer
+	quest::spawn2(223027,0,0,1200.0,1185.0,352.2,192.5); #targetable NPC's Archon_of_the_Plaquebringer
+	quest::spawn2(223027,0,0,1150.0,1135.0,351.0,192.5); #targetable NPC's Archon_of_the_Plaquebringer
+	quest::spawn2(223029,0,0,1150.0,1085.0,351.0,192.5); #targetable NPC's Revenant_of_the_Plaquebringer
+	quest::spawn2(223030,0,0,1150.0,1035.0,352.0,192.5); #targetable NPC's Revenant_of_the_Plaquebringer
+	quest::spawn2(223030,0,0,1200.0,1035.0,351.5,192.5); #targetable NPC's Revenant_of_the_Plaquebringer
+	quest::spawn2(223029,0,0,1200.0,1085.0,351.0,192.5); #targetable NPC's Revenant_of_the_Plaquebringer
+	quest::spawn2(223026,0,0,1200.0,1135.0,351.6,192.5); #targetable NPC's Incantator_of_the_Plaquebringer
+	
     $namedI = 0;
     $namedII = 0;
- 
 }
-  if ($signal == 11028) { #spawn second 2 nameds
-    quest::depopall(223016);
-    quest::depopall(223017);
-    quest::depopall(223218);
-    quest::spawn2(223024,0,0,1250,1085,359.5,192);
-    quest::spawn2(223025,0,0,1250,1135,359.5,192);
-}
- 
-  if ($signal == 11020) {
-    $namedII += 1;
-}
-  if ($namedII == 2) {
-    quest::spawn_condition("potimeb",4,1); #3
-    quest::spawn2(223219,0,0,0,0,0,0);
-    quest::depopall(223022);
-    quest::depopall(223023);
-    quest::spawn2(223023,0,0,1250,1085,359.5,192);
-    quest::spawn2(223022,0,0,1250,1135,359.5,192);
-    $namedII = 0;
-    $namedIII = 0;
-} 
-  if ($signal == 11038) { #3
-    quest::depopall(223022);
-    quest::depopall(223023);
-    quest::depopall(223219);
-    quest::spawn2(223031,0,0,1250,1085,359.5,192);
-    quest::spawn2(223032,0,0,1250,1135,359.5,192);
-}
- 
-  if ($signal == 11030) {
-    $namedIII += 1;
-}
-  if ($namedIII == 2) {
-    quest::spawn_condition("potimeb",5,1); #4
-    quest::spawn2(223220,0,0,0,0,0,0);
-    quest::depopall(223012);
-    quest::depopall(223013);
-    quest::spawn2(223012,0,0,1250,1085,359.5,192);
-    quest::spawn2(223013,0,0,1250,1135,359.5,192);
-    $namedIII = 0;
-    $namedIV = 0;
-} 
-  if ($signal == 11048) { #4
-    quest::depopall(223012);
-    quest::depopall(223013);
-    quest::depopall(223220);
-    quest::spawn2(223038,0,0,1250,1085,359.5,192);
-    quest::spawn2(223037,0,0,1250,1135,359.5,192);
 
- }
-  if ($signal == 11040) {
-    $namedIV += 1;
-}
-  if ($namedIV == 2) {
-    quest::spawn_condition("potimeb",6,1); #5
-    quest::spawn2(223221,0,0,0,0,0,0);
-    quest::depopall(223010);
-    quest::depopall(223011);
-    quest::spawn2(223010,0,0,1250,1085,359.5,192);
-    quest::spawn2(223011,0,0,1250,1135,359.5,192);
-    $namedIV = 0;
-    $namedV = 0;
-} 
-  if ($signal == 11058) { #5
-    quest::depopall(223010);
-    quest::depopall(223011);
-    quest::depopall(223221);
-    quest::spawn2(223047,0,0,1250,1085,359.5,192);
-    quest::spawn2(223046,0,0,1250,1135,359.5,192);
-}
- 
-  if ($signal == 11050) {
-    $namedV += 1;
-}
-  if ($namedV == 2) {
-    quest::spawn_condition("potimeb",7,1); #6
-    quest::spawn2(223222,0,0,0,0,0,0);
-    quest::depopall(223014);
-    quest::depopall(223015);
-    quest::spawn2(223015,0,0,1250,1085,359.5,192);
-    quest::spawn2(223014,0,0,1250,1135,359.5,192);
-    $namedV = 0;
-    $namedVI = 0;
-} 
-  if ($signal == 11068) { #6
-    quest::depopall(223014);
-    quest::depopall(223015);
-    quest::depopall(223222);
-    quest::spawn2(223050,0,0,1250,1085,359.5,192);
-    quest::spawn2(223051,0,0,1250,1135,359.5,192);
-}
- 
-  if ($signal == 11060) {
-    $namedVI += 1;
-}
-  if ($namedVI == 2) {
-    quest::spawn_condition("potimeb",8,1); #7
-    quest::spawn2(223223,0,0,0,0,0,0);
-    quest::depopall(223020);
-    quest::depopall(223021);
-    quest::spawn2(223020,0,0,1250,1085,359.5,192);
-    quest::spawn2(223021,0,0,1250,1135,359.5,192);
-    $namedVI = 0;
-    $namedVII = 0;
-} 
-  if ($signal == 11078) { #7
-    quest::depopall(223020);
-    quest::depopall(223021);
-    quest::depopall(223223);
-    quest::spawn2(223058,0,0,1250,1085,359.5,192);
-    quest::spawn2(223057,0,0,1250,1135,359.5,192);
-}
- 
-  if ($signal == 11070) { 
-     $namedVII += 1;
-}
-  if ($namedVII == 2) {
-    quest::spawn_condition("potimeb",9,1); #final wave
-    quest::spawn2(223224,0,0,0,0,0,0);
-    quest::depopall(223018);
-    quest::depopall(223019);
-    quest::spawn2(223018,0,0,1250,1085,359.5,192);
-    quest::spawn2(223019,0,0,1250,1135,359.5,192);
-
-    $namedVII = 0;
-    $namedVIII = 0;
-} 
-  if ($signal == 11088) { #last 2 nameds
-    quest::depopall(223018);
-    quest::depopall(223019);
-    quest::depopall(223224);
-    quest::spawn2(223066,0,0,1250,1085,359.5,192);
-    quest::spawn2(223065,0,0,1250,1135,359.5,192);
-}
- 
-  if ($signal == 11080) { 
-    $namedVIII += 1;
-}
-  if ($namedVIII == 2) { #spawn golems
-    quest::spawn2(223073,0,0,1492,1110,374.1,195.5);
-    quest::spawn2(223074,0,0,1563,1110,374.1,195.5);
-    $namedVIII = 0;
-    $namedIX = 0;
-} 
-  if ($signal == 11090) { 
-    $namedIX += 1;
-} 
-  if ($namedIX == 2) { #event success
-    quest::spawn_condition("potimeb",9,0); #set us to default.
-    quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
-    quest::spawn2(223157,0,0,-410,-69,348,0); #spawn phase4_trigger
-    $namedIX = 0;
-} 
-
-   if($signal == 9909) {
-          quest::settimer("phase3",4500); #75 minute time limit
-   }
- }
-
-sub EVENT_TIMER {
-	if ($timer eq "phase3") { 
-		$check = 0;
-
-		#phase4
-		$check_boss = $entity_list->GetMobByNpcTypeID(223157);
-		if ($check_boss) {
-			$check = 1
-		}
-		#phase5
-		$check_boss = $entity_list->GetMobByNpcTypeID(223158);
-		if ($check_boss) {
-			$check = 1
-		}
-		#quarm
-		$check_boss = $entity_list->GetMobByNpcTypeID(223159);
-		if ($check_boss) {
-			$check = 1
-		}	
-		
-		if($check == 0) {
-    quest::shout("Phase 3 failed! Time expired.");
-    quest::spawn_condition("potimeb",2,0); #set us to default.
-    quest::spawn_condition("potimeb",3,0);
-    quest::spawn_condition("potimeb",4,0);
-    quest::spawn_condition("potimeb",5,0);
-    quest::spawn_condition("potimeb",6,0);
-    quest::spawn_condition("potimeb",7,0);
-    quest::spawn_condition("potimeb",8,0);
-    quest::spawn_condition("potimeb",9,0);
-    quest::clearspawntimers(); # clear our timers so we spawn next time the phase occurs.
-    quest::stoptimer("phase3");
-    quest::signalwith(223177,666,0);
-    quest::depopall(223005); #depop any mobs up
-    quest::depopall(223005);
-    quest::depopall(223006); 
-    quest::depopall(223026);
-    quest::depopall(223027);
-    quest::depopall(223028);
-    quest::depopall(223029);
-    quest::depopall(223030);
-    quest::depopall(223033);
-    quest::depopall(223034);
-    quest::depopall(223035);
-    quest::depopall(223036);
-    quest::depopall(223039);
-    quest::depopall(223040);
-    quest::depopall(223041);
-    quest::depopall(223042);
-    quest::depopall(223043);
-    quest::depopall(223044);
-    quest::depopall(223045);
-    quest::depopall(223048);
-    quest::depopall(223049);
-    quest::depopall(223052);
-    quest::depopall(223053);
-    quest::depopall(223054);
-    quest::depopall(223055);
-    quest::depopall(223056);
-    quest::depopall(223059);
-    quest::depopall(223060);
-    quest::depopall(223061);
-    quest::depopall(223062);
-    quest::depopall(223063);
-    quest::depopall(223064);
-    quest::depopall(223067);
-    quest::depopall(223068);
-    quest::depopall(223069);
-    quest::depopall(223070);
-    quest::depopall(223071);
-    quest::depopall(223072);
-    quest::depopall(223009);
-    quest::depopall(223008);
-    quest::depopall(223024);
-    quest::depopall(223025);
-    quest::depopall(223031);
-    quest::depopall(223032);
-    quest::depopall(223037);
-    quest::depopall(223038);
-    quest::depopall(223046);
-    quest::depopall(223047);
-    quest::depopall(223050);
-    quest::depopall(223051);
-    quest::depopall(223058);
-    quest::depopall(223057);
-    quest::depopall(223066);
-    quest::depopall(223065);
-    quest::depopall(223074);
-    quest::depopall(223073);
-    quest::depopall(223010);
-    quest::depopall(223011);
-    quest::depopall(223012);
-    quest::depopall(223013);
-    quest::depopall(223014);
-    quest::depopall(223015);
-    quest::depopall(223016);
-    quest::depopall(223017);
-    quest::depopall(223018);
-    quest::depopall(223019);
-    quest::depopall(223020);
-    quest::depopall(223021);
-    quest::depopall(223022);
-    quest::depopall(223023);
-    quest::depopall(223155);
-    quest::depopall(223156);
-    quest::depopall(223217);
-    quest::depopall(223218);
-    quest::depopall(223219);
-    quest::depopall(223220);
-    quest::depopall(223221);
-    quest::depopall(223222);
-    quest::depopall(223223);
-    quest::depopall(223224);
-    quest::depop(); 
-		} else {
-			#new phase is running
-			#we should start the timer for the next phase
-			quest::stoptimer("phase3");
-			quest::signalwith(223157, 9909, 0);
-			quest::depop();
-		}
+#starts counter of wave 2
+	if($signal == 2022) { #sets counter to start 3rd wave upon all 8 dying
+		$wtwnpccounter+= 1;
+		$wavetwc = $wtwnpccounter;
+		#quest::ze(15, "okay i signaled and my 2nd counter is now $wavetwc.");
+	}
+	
+	if ($wtwnpccounter == 8) { # triggers #wave3.pl
+		$wtwnpccounter = 0;
+		#quest::ze(15, "okay all 8 are dead now do something!");
+		#depopping
+		quest::depopall(223017); #non target named Kraksmaal_Fir`Dethsin
+		quest::depopall(223016); #non target named Xeroan_Xi`Geruonask
+		quest::spawn2(223025,0,0,1250.0,1085.0,351.0,192.0); #targetable named Xeroan_Xi`Geruonask
+		quest::spawn2(223024,0,0,1250.0,1135.0,351.0,192.0); #targetable named Kraksmaal_Fir`Dethsin
 	}
 
+	if ($signal == 11020) {
+    $namedII += 1;
+	}
+	if ($namedII == 2) { #start of wave 3
+	
+    quest::depopall(223022); #non target named A_Deadly_Warboar
+    quest::depopall(223023);  #non target named Deathbringer_Skullsmash
+    quest::spawn2(223022,0,0,1250.0,1135.0,359.5,192.0); #non target named A_Deadly_Warboar
+	quest::spawn2(223023,0,0,1230.0,1085.0,359.5,192.0); #non target named Deathbringer_Skullsmash
+	quest::spawn2(223034,0,0,1150.0,1185.0,352.7,192.5); #targetable NPC's A_Dark_Guardian_of_the_Warlord
+	quest::spawn2(223035,0,0,1150.0,1135.0,351.6,192.5); #targetable NPC's A_Zek_Bloodtusk
+	quest::spawn2(223035,0,0,1200.0,1185.0,352.2,192.5); #targetable NPC's A_Zek_Bloodtusk
+	quest::spawn2(223033,0,0,1200.0,1135.0,351.0,192.5); #targetable NPC's A_Warlord_Zek
+	quest::spawn2(223034,0,0,1200.0,1085.0,351.0,192.5); #targetable NPC's A_Dark_Guardian_of_the_Warlord
+	quest::spawn2(223035,0,0,1150.0,1085.0,352.0,192.5); #targetable NPC's A_Zek_Bloodtusk
+	quest::spawn2(223034,0,0,1200.0,1035.0,351.5,192.5); #targetable NPC's A_Dark_Guardian_of_the_Warlord
+	quest::spawn2(223034,0,0,1150.0,1035.0,352.0,192.5); #targetable NPC's A_Dark_Guardian_of_the_Warlord
+	
+    $namedI = 0;
+    $namedII = 0;
+	}
+#starts counter of wave 3
+	if($signal == 3033) { #sets counter to start 4th wave upon all 8 dying
+		$wthnpccounter+= 1;
+		$wavethc = $wthnpccounter;
+		#quest::ze(15, "okay i signaled and my 3rd counter is now $wavethc.");
+	}
+	
+	if ($wthnpccounter == 8) { # triggers #wave4.pl
+		$wthnpccounter = 0;
+		#quest::ze(15, "okay all 8 are dead now do something!");
+		#depopping
+		quest::depopall(223022); #non target named A_Deadly_Warboar
+		quest::depopall(223023);  #non target named Deathbringer_Skullsmash
+		quest::spawn2(223031,0,0,1250.0,1085.0,351.0,192.0); #targetable NPC's Deathbringer Skulls
+		quest::spawn2(223032,0,0,1250.0,1135.0,351.0,192.0); #targetable NPC's A_Deadly_Warboar
+	}
+	if ($signal == 11030) { #start of wave 4
+		$namedIII += 1;
+	}
+	if ($namedIII == 2) { #start of wave 3
+    quest::depopall(223012); #non target named Sinrunal_Gorgedreal
+	quest::depopall(223013); #non target named Herlsoakian
+    quest::spawn2(223012,0,0,1250.0,1085.0,359.5,192.0); #non target named Sinrunal_Gorgedreal
+	quest::spawn2(223013,0,0,1250.0,1135.0,359.5,192.0); #non target named Herlsoakian
+	quest::spawn2(223043,0,0,1200.0,1185.0,352.2,192.5); #targetable NPC's A_Ferocious_Cube_Phantasmist
+	quest::spawn2(223043,0,0,1200.0,1135.0,351.0,192.5); #targetable NPC's A_Ferocious_Cube_Phantasmist
+	quest::spawn2(223043,0,0,1150.0,1185.0,351.0,192.5); #targetable NPC's A_Ferocious_Cube_Phantasmist
+	quest::spawn2(223044,0,0,1150.0,1035.0,351.5,192.5); #targetable NPC's A_Ferocious_Cube_Phantasmist
+	quest::spawn2(223042,0,0,1200.0,1035.0,351.0,192.5); #targetable NPC's A_Ferocious_Cube_Formation
+	quest::spawn2(223040,0,0,1200.0,1085.0,351.6,192.5); #targetable NPC's Vanquisher_of_the_Faceless
+	quest::spawn2(223040,0,0,1150.0,1135.0,351.6,192.5); #targetable NPC's Vanquisher_of_the_Faceless
+	quest::spawn2(223039,0,0,1150.0,1085.0,352.0,192.5); #targetable NPC's Battlemaster_of_the_Faceless
+    $namedIII = 0;
+	}
+	#starts counter of wave 4
+	if($signal == 4044) { #sets counter to start 4th wave upon all 8 dying
+		$wfourcounter+= 1;
+		$wfourc = $wfourcounter;
+		#quest::ze(15, "okay i signaled and my 4th counter is now $wfourc.");
+	}
+	if ($wfourcounter == 8) { # triggers 4th
+		$wfourcounter = 0;
+		#quest::ze(15, "okay all 8 are dead now do something!");
+		#depopping
+		quest::depopall(223012); #non target named Sinrunal_Gorgedreal
+		quest::depopall(223013); #non target named Herlsoakian
+		quest::spawn2(223038,0,0,1250.0,1085.0,351.0,192.0); #targetable NPC's Sinrunal_Gorgedreal
+		quest::spawn2(223037,0,0,1250.0,1135.0,351.0,192.0); #targetable NPC's Herlsoakian
+	}
+	if ($signal == 11040) { #start of wave 5
+		$namedIV += 1;
+	}
+	if ($namedIV == 2) { #start of wave 5
+    quest::depopall(223012); #non target named Sinrunal_Gorgedreal
+	quest::depopall(223013); #non target named Herlsoakian
+    quest::spawn2(223010,0,0,1250.0,1085.0,359.9,192.0); #non target named A_Needletusk_Warboar
+	quest::spawn2(223011,0,0,1250.0,1135.0,359.9,192.0); #non target named Deathbringer_Rianit
+	quest::spawn2(223049,0,0,1150.0,1185.0,352.7,192.5); #targetable NPC's A_Warboar_of_Suffering
+	quest::spawn2(223049,0,0,1200.0,1135.0,351.0,192.5); #targetable NPC's A_Warboar_of_Suffering
+	quest::spawn2(223049,0,0,1150.0,1085.0,351.0,192.5); #targetable NPC's A_Warboar_of_Suffering
+	quest::spawn2(223049,0,0,1200.0,1035.0,351.5,192.5); #targetable NPC's A_Warboar_of_Suffering
+	quest::spawn2(223048,0,0,1150.0,1035.0,352.0,192.5); #targetable NPC's A_Minion_of_the_Warlord
+	quest::spawn2(223048,0,0,1200.0,1085.0,351.0,192.5); #targetable NPC's A_Minion_of_the_Warlord
+	quest::spawn2(223048,0,0,1150.0,1135.0,351.6,192.5); #targetable NPC's A_Minion_of_the_Warlord
+	quest::spawn2(223048,0,0,1200.0,1185.0,352.2,192.5); #targetable NPC's A_Minion_of_the_Warlord
+    $namedIV = 0;
+	}
+	
+	if ($signal == 5055) { #sets counter to start 6th wave upon all 8 dying
+		$wfivecounter+= 1;
+		$wfivec = $wfivecounter;
+		#quest::ze(15, "okay i signaled and my 5th counter is now $wfivec.");
+	}
+	if ($wfivecounter == 8) {
+		$wfivecounter = 0;
+		#quest::ze(15, "okay all 8 are dead now do something!");
+		#depopping
+		quest::depopall(223010); #non target named A_Needletusk_Warboar
+		quest::depopall(223011); #non target named Deathbringer_Rianit
+		quest::spawn2(223047,0,0,1250.0,1085.0,351.0,192.0); #targetable NPC's A_Needletusk_Warboar
+		quest::spawn2(223046,0,0,1250.0,1135.0,351.0,192.0); #targetable NPC's Deathbringer_Rianit
+	}
+	if ($signal == 11050) { #start of wave 6
+		$namedV += 1;
+	}
+	if ($namedV == 2) {
+    quest::depopall(223015); #non target named Dersool_Fal`Giersnaol
+	quest::depopall(223014); #non target named Xerskel_Gerodnsal
+    quest::spawn2(223014,0,0,1250.0,1135.0,359.5,192.0); #non target named Xerskel_Gerodnsal
+	quest::spawn2(223015,0,0,1250.0,1085.0,359.5,192.0); #non target named Dersool_Fal`Giersnaol
+	quest::spawn2(223052,0,0,1145.0,1080.0,352.7,192.5); #targetable NPC's Assassin_of_Hate
+	quest::spawn2(223055,0,0,1200.0,1185.0,352.2,192.5); #targetable NPC's Dark_Priest_of_Innoruuk
+	quest::spawn2(223056,0,0,1150.0,1135.0,351.6,192.5); #targetable NPC's Dark_Priest_of_Innoruuk
+	quest::spawn2(223055,0,0,1200.0,1135.0,351.0,192.5); #targetable NPC's Dark_Priest_of_Innoruuk
+	quest::spawn2(223056,0,0,1150.0,1185.0,351.0,192.5); #targetable NPC's Dark_Priest_of_Innoruuk
+	quest::spawn2(223055,0,0,1200.0,1085.0,351.0,192.5); #targetable NPC's Dark_Priest_of_Innoruuk
+	quest::spawn2(223056,0,0,1150.0,1035.0,352.0,192.5); #targetable NPC's Dark_Priest_of_Innoruuk
+	quest::spawn2(223052,0,0,1200.0,1035.0,351.5,192.5); #targetable NPC's Assassin_of_Hate
+	$namedV = 0;
+	}
+	if ($signal == 6066) { #sets counter to start 6th wave upon all 8 dying
+		$wsixcounter+= 1;
+		$wsixc = $wsixcounter;
+		#quest::ze(15, "okay i signaled and my 6th counter is now $wsixc.");
+	}
+	if ($wsixcounter == 8) {
+		$wsixcounter = 0;
+		#quest::ze(15, "okay all 8 are dead now do something!");
+		#depopping
+		quest::depopall(223014); #non target named Xerskel_Gerodnsal
+		quest::depopall(223015); #non target named Dersool_Fal`Giersnaol
+		quest::spawn2(223050,0,0,1250.0,1085.0,359.5,192.0); #targetable NPC's Dersool_Fal`Giersnaol
+		quest::spawn2(223051,0,0,1250.0,1135.0,359.5,192.0); #targetable NPC's Xerskel_Gerodnsal
+	}
+	if ($signal == 11060) { #start of wave 7
+		$namedVI += 1;
+	}
+	if ($namedVI == 2) {
+    quest::depopall(223020); #non target named Dark_Knight_of_Terris
+	quest::depopall(223021); #non target named Undead_Squad_Leader
+    quest::spawn2(223020,0,0,1250.0,1085.0,359.5,192.0); #non target named Dark_Knight_of_Terris
+	quest::spawn2(223021,0,0,1250.0,1135.0,359.5,192.0); #non target named Undead_Squad_Leader
+	quest::spawn2(223059,0,0,1150.0,1185.0,352.7,192.5); #targetable NPC's Undead_Pawn_of_Terris
+	quest::spawn2(223060,0,0,1200.0,1185.0,352.2,192.5); #targetable NPC's Undead_Pawn_of_Terris
+	quest::spawn2(223059,0,0,1150.0,1035.0,352.0,192.5); #targetable NPC's Undead_Pawn_of_Terris
+	quest::spawn2(223059,0,0,1200.0,1035.0,351.5,192.5); #targetable NPC's Undead_Pawn_of_Terris
+	quest::spawn2(223062,0,0,1200.0,1085.0,351.0,192.5); #targetable NPC's A_Hobgoblin_Servant
+	quest::spawn2(223063,0,0,1200.0,1135.0,351.0,192.5); #targetable NPC's Knight_of_Nightmare
+	quest::spawn2(223064,0,0,1150.0,1135.0,351.6,192.5); #targetable NPC's Knight_of_Nightmare
+	quest::spawn2(223064,0,0,1150.0,1085.0,351.0,192.5); #targetable NPC's Knight_of_Nightmare
+    $namedVI = 0;
+	}
+	if ($signal == 7077) { #sets counter to start 7th wave upon all 8 dying
+		$wsevcounter+= 1;
+		$wsevc = $wsevcounter;
+		#quest::ze(15, "okay i signaled and my 7th counter is now $wsevc.");
+	}
+	if ($wsevcounter == 8) {
+		$wsevcounter = 0;
+		#quest::ze(15, "okay all 8 are dead now do something!");
+		#depopping
+		quest::depopall(223020); #non target named Dark_Knight_of_Terris
+		quest::depopall(223021); #non target named Undead_Squad_Leader
+		quest::spawn2(223058,0,0,1250.0,1085.0,351.0,192.0); #targetable NPC's Dark_Knight_of_Terris
+		quest::spawn2(223057,0,0,1250.0,1135.0,351.0,192.0); #targetable NPC's Undead_Squad_Leader
+	}
+	
+	if ($signal == 11070) { #start of wave 7
+		$namedVII += 1;
+	}
+	if ($namedVII == 2) {
+    quest::depopall(223018); #non target named Dreamwarp
+	quest::depopall(223019); #non target named Champion_of_Torment
+    quest::spawn2(223018,0,0,1250.0,1085.0,359.5,192.0); #non target named Dreamwarp
+	quest::spawn2(223019,0,0,1250.0,1135.0,359.5,192.0); #non target named Champion_of_Torment
+	quest::spawn2(223068,0,0,1150.0,1185.0,352.7,192.5); #targetable NPC's Cutthtoat_of_Saryrn
+	quest::spawn2(223069,0,0,1200.0,1185.0,352.2,192.5); #targetable NPC's Dark_Knight_of_Saryrn
+	quest::spawn2(223072,0,0,1200.0,1135.0,351.0,192.5); #targetable NPC's Doombringer_of_Saryrn
+	quest::spawn2(223072,0,0,1150.0,1135.0,351.6,192.5); #targetable NPC's Doombringer_of_Saryrn
+	quest::spawn2(223071,0,0,1150.0,1035.0,352.0,192.5); #targetable NPC's Templar_of_Saryrn
+	quest::spawn2(223068,0,0,1200.0,1035.0,351.5,192.5); #targetable NPC's Cutthtoat_of_Saryrn
+	quest::spawn2(223069,0,0,1150.0,1085.0,351.0,192.5); #targetable NPC's Dark_Knight_of_Saryrn
+	quest::spawn2(223067,0,0,1200.0,1085.0,351.0,192.5); #targetable NPC's Warbeast_of_Saryrn
+    $namedVII = 0;
+	}
+	if ($signal == 8088) { #sets counter to start 8th wave upon all 8 dying
+		$weigcounter+= 1;
+		$weigc = $weigcounter;
+		#quest::ze(15, "okay i signaled and my 8th counter is now $weigc.");
+	}
+	if ($weigcounter == 7) {
+		$weigcounter = 0;
+		#quest::ze(15, "okay all 7 are dead now do something!");
+		#depopping
+		quest::depopall(223018); #non target named Dreamwarp
+		quest::depopall(223019); #non target named Champion_of_Torment
+		quest::spawn2(223066,0,0,1250.0,1085.0,351.0,192.0); #targetable NPC's Dreamwarp
+		quest::spawn2(223065,0,0,1250.0,1135.0,351.0,192.0); #targetable NPC's Champion_of_Torment
+	}
+	if ($signal == 11080) { #start of Last encounter with 2 guardians
+		$namedVIII += 1;
+	}
+	if ($namedVIII == 2) {
+	quest::spawn2(223073,0,0,1492.0,1110.0,369.0,195.5); #targetable NPC's Avatar_of_Elements
+	quest::spawn2(223074,0,0,1563.0,1110.0,369.0,195.5); #targetable NPC's Supernatural_Guardian
+	$namedVIII = 0;
+	}
+	if ($signal == 11090) { #counter to open portal to phase 4
+		$wnincounter+= 1;
+		$wninc = $wnincounter;
+		#quest::ze(15, "okay counter is unlocked $wninc.");
+	}
+	if ($wnincounter == 2) {
+		
+		$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
+		quest::we(14, "Congratulations, phase 3 has been completed! Move through the portal to phase 4.");
+		#depopping
+		quest::setglobal("portal3", 1, 7, "H1");
+		$wnincounter = 0;
+		#quest::depop(); if you want to make it clean uncheck this when going live.
+	}
+
+}#END sub_EVENT_SIGNAL
+	
+ sub EVENT_CLICKDOOR {
+}
+
+sub EVENT_TIMER {
 }

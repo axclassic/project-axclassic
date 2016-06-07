@@ -19,8 +19,13 @@ sub EVENT_ENTER
 
 }
 
-sub EVENT_SAY
-{
+sub EVENT_SAY {
+
+#shortcuts
+#quest::signalwith(223177,14060,0); #signals counter at 4 and will open on 5th
+#quest::signalwith(223191,14035,0); #signals inner doors.
+#quest::signalwith(223154,11090,0); #signals portal
+
 $npc->SetAppearance(0);
 if ($text =~/hail/i)
  {
@@ -51,6 +56,6 @@ else {
 plugin::return_items(\%itemcount);
  }
 }
-}
+}#END sub_EVENT_SAY
 
 

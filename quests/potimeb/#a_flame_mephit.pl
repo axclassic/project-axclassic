@@ -1,3 +1,6 @@
+##a_flame_mephit.pl npcid - 223088
+
+
 sub EVENT_DEATH {
     my $x = $npc->GetX();
     my $y = $npc->GetY();
@@ -9,7 +12,7 @@ sub EVENT_DEATH {
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 66) {
-    quest::depop();
-}
+  # if ($signal == 66) {
+    # quest::depop();
+# }
  }

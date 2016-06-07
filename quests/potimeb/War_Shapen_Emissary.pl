@@ -1,9 +1,11 @@
+# War_Shapen_Emissary npcid - 223096
+
 sub EVENT_DEATH {
-  quest::signalwith(223191,10030,0);
+  quest::signalwith(223172,14035,0); #Triggers #water_trigger.pl
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 66){
-     quest::depop();
-}
+  # if ($signal == 66){
+     # quest::depop();
+# }
  }

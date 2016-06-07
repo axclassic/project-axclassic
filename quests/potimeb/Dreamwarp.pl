@@ -1,3 +1,5 @@
+# Dreamwarp.pl npcid - 223066
+
 sub EVENT_AGGRO {
   quest::emote("senses your presence and ventures closer, the many mouths nipping at the air.");
 }
@@ -8,7 +10,7 @@ sub EVENT_DEATH {
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 66){
-     quest::depop();
-}
+  # if ($signal == 66){
+     # quest::depop();
+# }
  }

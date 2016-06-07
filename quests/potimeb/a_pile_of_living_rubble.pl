@@ -1,3 +1,6 @@
+#a_pile of living rubble npcid - 223106
+
+
 sub EVENT_DEATH {
     my $x = $npc->GetX();
     my $y = $npc->GetY();
@@ -11,8 +14,8 @@ sub EVENT_DEATH {
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 66) {
-    quest::depop();
-}
+  # if ($signal == 66) {
+    # quest::depop();
+# }
  }
 
