@@ -14,10 +14,10 @@ sub EVENT_CLICKDOOR {
 	if ((defined $qglobals{$name."boss1"}) && (defined $qglobals{$name."boss2"}) && (defined $qglobals{$name."boss3"}) &&
 		(defined $qglobals{$name."boss4"}) && (defined $qglobals{$name."boss5"}) && (!defined $qglobals{"blockout"})) {
 		if($doorid == 8){
-			quest::setglobal("blockout", 1, 7, "H5"); #This sets lockout
+			quest::setglobal("blockout", 1, 7, "H24"); #This sets lockout If people complain they cant get it, Dont be flagedd with a GM account! because if you zone out in potimeb with status greater than 50, no qglobals are deleted!
+			quest::setglobal("blockout2", 1, 7, "H5");
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
-			quest::movepc(223, -36, 1352, 496);
 			#Once zone in, all clients' boss triggers are wiped
 			my @questarray = $entity_list->GetClientList();
 			foreach $ent(@questarray){
@@ -28,12 +28,13 @@ sub EVENT_CLICKDOOR {
 				quest::delglobal($members."boss4");
 				quest::delglobal($members."boss5");
 				}
+			quest::movepc(223, -36, 1352, 496);
 		}
 		elsif($doorid == 9){
 			quest::setglobal("blockout", 1, 7, "H5");
+			quest::setglobal("blockout2", 1, 7, "H5");
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
-			quest::movepc(223, -51, 857, 496);
 			#Once zone in, all clients' boss triggers are wiped
 			my @questarray = $entity_list->GetClientList();
 			foreach $ent(@questarray){
@@ -44,12 +45,13 @@ sub EVENT_CLICKDOOR {
 				quest::delglobal($members."boss4");
 				quest::delglobal($members."boss5");
 				}
+			quest::movepc(223, -51, 857, 496);
 		}
 		elsif($doorid == 10){
 			quest::setglobal("blockout", 1, 7, "H5");
+			quest::setglobal("blockout2", 1, 7, "H5");
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
-			quest::movepc(223, -35, 1636, 496);
 			#Once zone in, all clients' boss triggers are wiped
 			my @questarray = $entity_list->GetClientList();
 			foreach $ent(@questarray){
@@ -60,12 +62,13 @@ sub EVENT_CLICKDOOR {
 				quest::delglobal($members."boss4");
 				quest::delglobal($members."boss5");
 				}
+			quest::movepc(223, -35, 1636, 496);
 		}
 		elsif($doorid == 11){
 			quest::setglobal("blockout", 1, 7, "H5");
+			quest::setglobal("blockout2", 1, 7, "H5");
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
-			quest::movepc(223, -55, 569, 496);
 			#Once zone in, all clients' boss triggers are wiped
 			my @questarray = $entity_list->GetClientList();
 			foreach $ent(@questarray){
@@ -76,12 +79,13 @@ sub EVENT_CLICKDOOR {
 				quest::delglobal($members."boss4");
 				quest::delglobal($members."boss5");
 				}
+			quest::movepc(223, -55, 569, 496);
 		}
 		elsif($doorid == 12){
 			quest::setglobal("blockout", 1, 7, "H5");
+			quest::setglobal("blockout2", 1, 7, "H5");
 			$client->Message(14, "The portal, dim at first, begins to glow brighter.");
 			$client->Message(14, "The portal flashes briefly, then glows steadily.");
-			quest::movepc(223, -27, 1103, 496);
 			#Once zone in, all clients' boss triggers are wiped
 			my @questarray = $entity_list->GetClientList();
 			foreach $ent(@questarray){
@@ -92,6 +96,7 @@ sub EVENT_CLICKDOOR {
 				quest::delglobal($members."boss4");
 				quest::delglobal($members."boss5");
 				}
+			quest::movepc(223, -27, 1103, 496);
 		}
 		else {
 		#DO nothing for now
