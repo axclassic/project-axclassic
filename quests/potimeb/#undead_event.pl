@@ -31,7 +31,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(223129,0,0,65.2,1109.7,494.8,185.5); #Rythor_of_the_Undead
     quest::spawn2(223150,0,0,65.2,1119.7,494.8,185.5); #an_undead_protector
     quest::spawn2(223150,0,0,65.2,1099.7,494.8,185.5);
-	$unpccounter = 0;
+	$unpccounter = -15;
     
 }
   if ($signal == 14040) {
