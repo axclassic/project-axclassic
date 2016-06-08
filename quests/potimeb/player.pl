@@ -9,7 +9,7 @@
 sub EVENT_ZONE{
 	if($status >= 50){
 		quest::ze(15, "a GM has left the zone.");
-		#quest::delglobal("blockout");
+		quest::delglobal("blockout");
 		#quest::delglobal("blockout2");
 		#quest::delglobal("portal3");
 		#quest::delglobal("portal4");
