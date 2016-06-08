@@ -19,13 +19,13 @@ sub EVENT_SIGNAL {
     quest::spawn2(quest::ChooseRandom(223105,223116),0,0,67,1103,494.8,185.5);
     quest::spawn2(quest::ChooseRandom(223105,223116),0,0,67,1120,494.8,185.5);
     quest::spawn2(quest::ChooseRandom(223105),0,0,62,1103,494.8,185.5);
-    quest::spawn2(quest::ChooseRandom(223105),0,0,62,1120,494.8,185.5);
+    #quest::spawn2(quest::ChooseRandom(223105),0,0,62,1120,494.8,185.5);
 }
   elsif ($unpccounter == 4 ) {
     quest::spawn2(quest::ChooseRandom(223116),0,0,67,1103,494.8,185.5);
     quest::spawn2(quest::ChooseRandom(223116),0,0,67,1120,494.8,185.5);
     quest::spawn2(quest::ChooseRandom(223116),0,0,62,1103,494.8,185.5);
-    quest::spawn2(quest::ChooseRandom(223116),0,0,62,1120,494.8,185.5);
+    #quest::spawn2(quest::ChooseRandom(223116),0,0,62,1120,494.8,185.5);
 }
   elsif ($unpccounter == 5 ) {
     quest::spawn2(223129,0,0,65.2,1109.7,494.8,185.5); #Rythor_of_the_Undead
