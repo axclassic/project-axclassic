@@ -21,7 +21,7 @@ sub EVENT_SIGNAL { #like air_event.pl starts a counter for when all are dead, sp
 		#quest::ze(15, "okay i signaled and my counter is now $undeadc.");
 	}	
 	if ($unpccounter == 9) { # phase_trigger script npcid - 223191
-		quest::signalwith(223191, 14048, 0);
+		quest::signalwith(223191, 14034, 0);
 		$unpccounter = 0;
 		quest::depop();
 	}

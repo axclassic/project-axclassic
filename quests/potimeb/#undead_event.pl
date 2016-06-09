@@ -16,15 +16,15 @@ sub EVENT_SIGNAL {
 	#quest::ze(15, "okay i signaled and my counte ris now $undeadc.");
 }
   if ($unpccounter == 3 ) {
-    quest::spawn2(quest::ChooseRandom(223105,223116),0,0,67,1103,494.8,185.5);
-    quest::spawn2(quest::ChooseRandom(223105,223116),0,0,67,1120,494.8,185.5);
+    #quest::spawn2(quest::ChooseRandom(223105,223116),0,0,67,1103,494.8,185.5);
+    #quest::spawn2(quest::ChooseRandom(223105,223116),0,0,67,1120,494.8,185.5);
     quest::spawn2(quest::ChooseRandom(223105),0,0,62,1103,494.8,185.5);
-    #quest::spawn2(quest::ChooseRandom(223105),0,0,62,1120,494.8,185.5);
+    quest::spawn2(quest::ChooseRandom(223105),0,0,62,1120,494.8,185.5);
 }
   elsif ($unpccounter == 4 ) {
     quest::spawn2(quest::ChooseRandom(223116),0,0,67,1103,494.8,185.5);
     quest::spawn2(quest::ChooseRandom(223116),0,0,67,1120,494.8,185.5);
-    quest::spawn2(quest::ChooseRandom(223116),0,0,62,1103,494.8,185.5);
+    #quest::spawn2(quest::ChooseRandom(223116),0,0,62,1103,494.8,185.5);
     #quest::spawn2(quest::ChooseRandom(223116),0,0,62,1120,494.8,185.5);
 }
   elsif ($unpccounter == 5 ) {

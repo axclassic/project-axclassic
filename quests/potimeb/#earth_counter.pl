@@ -20,7 +20,7 @@ sub EVENT_SIGNAL { #like earth_event.pl starts a counter for when all are dead, 
 		#quest::ze(15, "okay i signaled and my counter is now $earthc.");
 	}	
 	if ($enpccounter == 8) { # phase_trigger script npcid - 223191
-		quest::signalwith(223191, 14028, 0);
+		quest::signalwith(223191, 14034, 0);
 		$enpccounter = 0;
 		quest::depop();
 	}

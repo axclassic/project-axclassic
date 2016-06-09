@@ -26,31 +26,45 @@ sub EVENT_SPAWN {
     
 sub EVENT_SIGNAL {
 
-	if ($signal == 14028) { #counts # of kills from phase 2 earth 1st group
-	 #This should spawn the Earth 2nd mob group + boss for phase 2
-	 #quest::ze(15, "I see you completed Earth!, this signal should spawn the boss's group!");
-	#Use earth_trigger.pl as the last group+boss phase 2
-	quest::spawn2(223169,0,0,-129.6,1720,547,0);
+	# if ($signal == 14028) { #counts # of kills from phase 2 earth 1st group
+	 # #This should spawn the Earth 2nd mob group + boss for phase 2
+	 # #quest::ze(15, "I see you completed Earth!, this signal should spawn the boss's group!");
+	# #Use earth_trigger.pl as the last group+boss phase 2
+	# quest::spawn2(223169,0,0,-129.6,1720,547,0);
+	# }
+	# if ($signal == 14038) { # counts # of kills from air groups 1st grp
+	# #quest::ze(15, "I see you completed air!, this signal should spawn the boss's group!");
+	# #Use air_trigger.pl as the last group+boss phase 2
+	# quest::spawn2(223170,0,0,-129.6,1720,547,0);
+	# }
+	# if ($signal == 14048) { # counts # of kills from undead groups 1st grp
+	# #quest::ze(15, "I see you completed undead!, this signal should spawn the boss's group!");
+	# #Use undead_trigger.pl as the last group+boss phase 2
+	# quest::spawn2(223171,0,0,-129.6,1720,547,0);
+	# }	
+	# if ($signal == 14058) { # counts # of kills from water groups 1st grp
+	# #quest::ze(15, "I see you completed water!, this signal should spawn the boss's group!");
+	# #Use water_trigger.pl as the last group+boss phase 2
+	# quest::spawn2(223172,0,0,-129.6,1720,547,0);
+	# }
+	# if ($signal == 14068) { # counts # of kills from water groups 1stgrp
+	# #quest::ze(15, "I see you completed fire!, this signal should spawn the boss's group!");
+	# #Use fire_trigger.pl as the last group+boss phase 2
+	# quest::spawn2(223173,0,0,-129.6,1720,547,0);
+	# }
+	
+	if ($signal == 14034) { #keeps track of group mob #1
+	$groupboss += 1;
+	$savedg = $groupboss;
 	}
-	if ($signal == 14038) { # counts # of kills from air groups 1st grp
-	#quest::ze(15, "I see you completed air!, this signal should spawn the boss's group!");
-	#Use air_trigger.pl as the last group+boss phase 2
-	quest::spawn2(223170,0,0,-129.6,1720,547,0);
-	}
-	if ($signal == 14048) { # counts # of kills from undead groups 1st grp
-	#quest::ze(15, "I see you completed undead!, this signal should spawn the boss's group!");
-	#Use undead_trigger.pl as the last group+boss phase 2
-	quest::spawn2(223171,0,0,-129.6,1720,547,0);
-	}	
-	if ($signal == 14058) { # counts # of kills from water groups 1st grp
-	#quest::ze(15, "I see you completed water!, this signal should spawn the boss's group!");
-	#Use water_trigger.pl as the last group+boss phase 2
-	quest::spawn2(223172,0,0,-129.6,1720,547,0);
-	}
-	if ($signal == 14068) { # counts # of kills from water groups 1stgrp
-	#quest::ze(15, "I see you completed fire!, this signal should spawn the boss's group!");
-	#Use fire_trigger.pl as the last group+boss phase 2
-	quest::spawn2(223173,0,0,-129.6,1720,547,0);
+	if ($groupboss == 5) {
+	quest::spawn2(223169,0,0,-129.6,1720,547,0); #earth boss group
+	quest::spawn2(223170,0,0,-129.6,1720,547,0); #air boss group
+	quest::spawn2(223171,0,0,-129.6,1720,547,0); #undead boss group
+	quest::spawn2(223172,0,0,-129.6,1720,547,0); #water boss group
+	quest::spawn2(223173,0,0,-129.6,1720,547,0); #fire boss group
+	quest::ze(15, "You are now halfway through phase 2.");
+	$groupboss = 0;
 	}
 	
 	
@@ -80,7 +94,7 @@ sub EVENT_SIGNAL {
     quest::forcedooropen(41); # lower left
 	
 	quest::spawn2(223154,0,0,-129.6,1720,547,0); #triggers phase3_trigger.pl
-	#quest::depop();#depops phase2_trigger
+	quest::depop();#depops phase2_trigger
 	
 	#quest::stoptimer($timer); #repop resets everything anyway
 	#quest::starttimer("closealld",1);
