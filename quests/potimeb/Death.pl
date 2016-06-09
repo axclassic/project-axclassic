@@ -1,4 +1,6 @@
 # Death.pl npcid - 223251
+# Used in case bot raid crashes and player gets booted out.
+# Only GM's can use this feature and last case scenario for now
 
 sub EVENT_SAY {
 
