@@ -30,7 +30,7 @@ sub EVENT_SIGNAL {
 	#quest::settimer("terris",1800);
 	}
 	if ($godcounterI == 4) { #event success
-	quest::ze(14, "You are halfway through this phase. Move through the fountain to continue.");
+	quest::ze(15, "You are halfway through this phase. Click on the fountain to continue.");
 	quest::setglobal("portal4",1, 7, "H1"); #sets flag to portal through fountain
 	$godcounterI = 0;
 	}
