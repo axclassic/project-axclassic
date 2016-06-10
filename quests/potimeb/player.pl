@@ -110,24 +110,29 @@ sub EVENT_ENTERZONE { #Upon entering zone through portals it will spawn mobs in 
 
 sub EVENT_CLICKDOOR {
 	my $d_id = ($doorid % 256);
-	#$client->Message(15, "doorid is $doorid and d_id is $d_id.");
 	
-	if(($d_id == 62) && (defined $qglobals{"portal3"})) {
-	quest::movepc(223, -401, 0, 347); #moves to portal 4 spot upon phase 3 completion
-	quest::spawn2(223157,0,0,-410,-69,348,0); #spawn phase4_trigger.pl
+	if($status >= 50) { #Check for gms
+	#quest::ze(15, "GM's are not allowed.");
 	}
-	if(($d_id == 24) && (defined $qglobals{"portal4"})) {
-	quest::movepc(223, -419, 0, 4); #semi last phase
-	quest::spawn2(223158,0,0,-415.5,-68.8,3.3,0); # phase5_trigger.pl
+	else {
+		#$client->Message(15, "doorid is $doorid and d_id is $d_id.");
+		
+		if(($d_id == 62) && (defined $qglobals{"portal3"})) {
+		quest::movepc(223, -401, 0, 347); #moves to portal 4 spot upon phase 3 completion
+		quest::spawn2(223157,0,0,-410,-69,348,0); #spawn phase4_trigger.pl
+		}
+		if(($d_id == 24) && (defined $qglobals{"portal4"})) {
+		quest::movepc(223, -419, 0, 4); #semi last phase
+		quest::spawn2(223158,0,0,-415.5,-68.8,3.3,0); # phase5_trigger.pl
+		}
+		if(($d_id == 51) && (defined $qglobals{"portal5"})) {
+		#quest::movepc(223, -620, -1125, -2); #To Quarm the end behind
+		
+		quest::movepc(223, 268, -1121, -2); #To Quarm the end in front!
+		quest::spawn2(223159,0,0,166,-938,9.7,0); #spawn quarm_trigger
+		}
 	}
-	if(($d_id == 51) && (defined $qglobals{"portal5"})) {
-	#quest::movepc(223, -620, -1125, -2); #To Quarm the end behind
-	
-	quest::movepc(223, 268, -1121, -2); #To Quarm the end in front!
-	quest::spawn2(223159,0,0,166,-938,9.7,0); #spawn quarm_trigger
-	}
-	
-}
+}#END sub_EVENT_CLICKDOOR
 
 # sub EVENT_CONNECT { #I dont think these are supported for axclassic but worth a try
 	# quest::repopzone();
