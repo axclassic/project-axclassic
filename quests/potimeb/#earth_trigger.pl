@@ -1,15 +1,9 @@
 ##earth_trigger this is an invisible controller for phase 2 last mob+boss encounter
-# npcid - 223169
+# npcid - 223169 earth_trigger
 
 sub EVENT_SPAWN { #This spawns 2nd grp + boss for phase 2
     quest::spawn2(223110,0,0,252.0,1659.0,491.0,192.5);
-<<<<<<< .mine
 	quest::spawn2(223125,0,0,242.0,1654.0,491.6,192.5);
-||||||| .r4282
-	quest::spawn2(233125,0,0,242.0,1654.0,491.6,192.5); #Doesnt spawn for some reason
-=======
-	quest::spawn2(223125,0,0,242.0,1654.0,491.6,192.5); 
->>>>>>> .r4299
 	quest::spawn2(223102,0,0,232.0,1649.0,491.9,192.5);
 	quest::spawn2(223125,0,0,252.0,1649.0,491.3,192.5);
 	quest::spawn2(223125,0,0,242.0,1644.0,491.5,192.5);
