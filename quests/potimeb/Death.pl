@@ -10,7 +10,7 @@ if($status == 255){
 	quest::delglobal("blockout2");
 	quest::stoptimer("opendoors");
 	quest::stoptimer("twoopens");
-	quest::delglobal("Pookpobcorpse"); #temp
+	
 	quest::depopzone(1); #improved reset
 	quest::repopzone();
 	quest::doanim(15);
