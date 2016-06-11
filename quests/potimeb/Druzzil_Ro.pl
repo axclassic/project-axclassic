@@ -34,6 +34,7 @@ quest::delglobal("blockout2");
 quest::delglobal("portal3");
 quest::delglobal("portal4");
 quest::delglobal("portal5");
+quest::depopzone(1); #improved reset
 quest::repopzone();
 #quest::depop();#last minute adds to prevent doors opening
 	my @carray = $entity_list->GetClientList();

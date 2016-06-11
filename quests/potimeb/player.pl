@@ -31,7 +31,8 @@ sub EVENT_ZONE{
 			quest::delglobal("portal3"); #remember to put this in so it deletes upon dying, zoning etc
 			quest::delglobal("portal4");
 			quest::delglobal("portal5");
-			quest::repopzone(); #reseting zone on each logout.
+			quest::depopzone(1); #improved reset
+			quest::repopzone();
 			quest::delglobal("blockout");
 			quest::delglobal($name."reco");
 			#quest::stoptimer($timer);
@@ -73,7 +74,8 @@ sub EVENT_ENTERZONE { #Upon entering zone through portals it will spawn mobs in 
 	
 		#quest::ze(15, "successful entering zone. blockout qglobal DISABLED!");
 	} elsif((defined $qglobals{"blockout"}) && (defined $qglobals{"blockout2"})) { #The blockout2 is an extra check involved for when someone disconnects in the zone.
-			quest::repopzone(); #reseting just in case.
+			quest::depopzone(1); #improved reset
+			quest::repopzone();
 			#$client->Message(15, "blockout is here so spawns should pop.");
 			quest::delglobal("blockout2");
 		#first message
