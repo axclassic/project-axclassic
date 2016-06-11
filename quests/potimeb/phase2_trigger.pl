@@ -78,7 +78,6 @@ sub EVENT_SIGNAL {
 	if ($IIcounter == 5) { #Inner doors open!
 	$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
 	quest::we(14, "Congratulations, phase 2 has been completed! Move through the clock door to phase 3.");
-	
 	#inner connecting doors
 	quest::forcedooropen(13); #connecting door water and fire lower right panel
     quest::forcedooropen(14); # upper right
@@ -93,8 +92,10 @@ sub EVENT_SIGNAL {
     quest::forcedooropen(40); # upper left
     quest::forcedooropen(41); # lower left
 	
+	quest::settimer("twoopens",20); #20 seconds
+	
 	quest::spawn2(223154,0,0,-129.6,1720,547,0); #triggers phase3_trigger.pl
-	quest::depop();#depops phase2_trigger
+	#quest::depop();#depops phase2_trigger
 	
 	#quest::stoptimer($timer); #repop resets everything anyway
 	#quest::starttimer("closealld",1);
@@ -104,5 +105,20 @@ sub EVENT_SIGNAL {
  }
 
 sub EVENT_TIMER {
+	if($timer eq "twoopens") {
+	#inner connecting doors
+	quest::forcedooropen(13); #connecting door water and fire lower right panel
+    quest::forcedooropen(14); # upper right
+    quest::forcedooropen(15); # upper left
+    quest::forcedooropen(16); # lower left
+    quest::forcedooropen(33); #undead subdoor lower right panel
+    quest::forcedooropen(34); # upper right
+    quest::forcedooropen(35); # upper left
+    quest::forcedooropen(36); # lower left
+    quest::forcedooropen(38); #connecting door earth and air lower right panel
+    quest::forcedooropen(39); # upper right
+    quest::forcedooropen(40); # upper left
+    quest::forcedooropen(41); # lower left
+	}
 	
  }

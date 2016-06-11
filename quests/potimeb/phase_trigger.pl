@@ -4,6 +4,11 @@ sub EVENT_ZONE { #when zoning out, counters must be reset!
 	$Icounter = 0;
 }
 
+sub EVENT_ENTERZONE {
+	$savedc = 0;
+	$Icounter = 0;
+}
+
 my $Icounter;
 
 sub EVENT_SPAWN {
