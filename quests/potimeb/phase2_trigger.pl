@@ -95,6 +95,7 @@ sub EVENT_SIGNAL {
 	quest::settimer("twoopens",20); #20 seconds
 	
 	quest::spawn2(223154,0,0,-129.6,1720,547,0); #triggers phase3_trigger.pl
+	$IIcounter = 0;
 	#quest::depop();#depops phase2_trigger
 	
 	#quest::stoptimer($timer); #repop resets everything anyway
