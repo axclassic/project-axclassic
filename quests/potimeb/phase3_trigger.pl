@@ -297,9 +297,9 @@ sub EVENT_SIGNAL {
 		$weigc = $weigcounter;
 		#quest::ze(15, "okay i signaled and my 8th counter is now $weigc.");
 	}
-	if ($weigcounter == 7) {
+	if ($weigcounter == 8) {
 		$weigcounter = 0;
-		#quest::ze(15, "okay all 7 are dead now do something!");
+		#quest::ze(15, "okay all 8 are dead now do something!");
 		#depopping
 		quest::depopall(223018); #non target named Dreamwarp
 		quest::depopall(223019); #non target named Champion_of_Torment
