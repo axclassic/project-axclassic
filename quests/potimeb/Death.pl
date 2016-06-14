@@ -8,8 +8,6 @@ if($status == 255){
 	if($text=~/help/i){
 	quest::delglobal("blockout");
 	quest::delglobal("blockout2");
-	quest::stoptimer("opendoors");
-	quest::stoptimer("twoopens");
 	
 	quest::depopzone(1); #improved reset
 	quest::repopzone();
