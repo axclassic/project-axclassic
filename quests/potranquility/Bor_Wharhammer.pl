@@ -42,19 +42,19 @@ sub EVENT_SAY {
       quest::say("Ye realize, these here Emblems kin only be fer specific classes, so tell me which one ye be lookin' fer. Be it fer $Ranger, $Rogue, $Shaman or $Berserker.");
 	  quest::say("Or are ye back cuz ye got the $text1 emblem?");
 	}
-   elsif($text=~/$Ranger/i && $ulevel >=50) {
+   elsif($text=~/Ranger/i && $ulevel >=50) {
       quest::say("Very well, a ranger emblem and furnace of Ro. That will be 500 platinum please.");
 	  quest::setglobal("ranger_emblem",1,7,"M30");
 	}  
-   elsif($text=~/$Rogue/i && $ulevel >=50) {
+   elsif($text=~/Rogue/i && $ulevel >=50) {
       quest::say("Very well, a rogue emblem and furnace of Ro. That will be 500 platinum please.");
 	  quest::setglobal("rogue_emblem",1,7,"M30");
 	}
-elsif($text=~/$Shaman/i && $ulevel >=50) {
+elsif($text=~/Shaman/i && $ulevel >=50) {
       quest::say("Very well, a shaman emblem and furnace of Ro. That will be 500 platinum please.");
 	  quest::setglobal("shaman_emblem",1,7,"M30");
 	}  
-elsif($text=~/$Berserker/i && $ulevel >=50) {
+elsif($text=~/Berserker/i && $ulevel >=50) {
       quest::say("Very well, a berserker emblem and furnace of Ro. That will be 500 platinum please.");
 	  quest::setglobal("berserker_emblem",1,7,"M30");
 	}  
@@ -63,19 +63,19 @@ elsif($text=~/$Berserker/i && $ulevel >=50) {
 	  quest::say("Ye realize, these here Emblems kin only be fer specific classes, so tell me which one ye be lookin' fer. Be it fer $Necromancer, $Wizard, $Magician or $Enchanter.");
 	  quest::say ("Or are ye back cuz ye got the $text2 emblem?");
    }
-   elsif($text=~/$Necromancer/i && $ulevel >=50) {
+   elsif($text=~/Necromancer/i && $ulevel >=50) {
       quest::say("Very well, a necromaner emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
 	  quest::setglobal("necromancer_emblem",1,7,"M30");
 	}  
-	elsif($text=~/$Wizard/i && $ulevel >=50) {
+	elsif($text=~/Wizard/i && $ulevel >=50) {
       quest::say("Very well, a wizard emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
 	  quest::setglobal("wizard_emblem",1,7,"M30");
 	}  
-	elsif($text=~/$Magician/i && $ulevel >=50) {
+	elsif($text=~/Magician/i && $ulevel >=50) {
       quest::say("Very well, a magician emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
 	  quest::setglobal("magician_emblem",1,7,"M30");
 	}  
-	elsif($text=~/$Enchanter/i && $ulevel >=50) {
+	elsif($text=~/Enchanter/i && $ulevel >=50) {
       quest::say("Very well, a enchanter emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
 	  quest::setglobal("enchanter_emblem",1,7,"M30");
 	}  
@@ -84,15 +84,15 @@ elsif($text=~/$Berserker/i && $ulevel >=50) {
 	  quest::say("Ye realize, these here Emblems kin only be fer specific classes, so tell me which one ye be lookin' fer. Be it fer $Druid, $Monk or $Beastlord.");
 	  quest::say("Or are ye back cuz ye got the $text3 emblem?");
    }
-   elsif($text=~/$Druid/i && $ulevel >=50) {
+   elsif($text=~/Druid/i && $ulevel >=50) {
       quest::say("Very well, a druid emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
 	  quest::setglobal("druid_emblem",1,7,"M30");
 	}  
-	elsif($text=~/$Monk/i && $ulevel >=50) {
+	elsif($text=~/Monk/i && $ulevel >=50) {
       quest::say("Very well, a monk emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
 	  quest::setglobal("monk_emblem",1,7,"M30");
 	}  
-	elsif($text=~/$Beastlord/i && $ulevel >=50) {
+	elsif($text=~/Beastlord/i && $ulevel >=50) {
       quest::say("Very well, a beastlord emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
 	  quest::setglobal("beastlord_emblem",1,7,"M30");
 	}  
@@ -101,23 +101,23 @@ elsif($text=~/$Berserker/i && $ulevel >=50) {
 	  quest::say("Ye realize, these here Emblems kin only be fer specific classes, so tell me which one ye be lookin' fer. Be it fer $Cleric, $Warrior, $Shadowknight, $Paladin or $Bard.");
 	  quest::say("Or are ye back cuz ye got the $text4 emblem?");
 	}
-   elsif($text=~/$Cleric/i && $ulevel >=50) {
+   elsif($text=~/Cleric/i && $ulevel >=50) {
       quest::say("Very well, a cleric emblem and furnace of Ro. That will be 500 platinum please.");
 	  quest::setglobal("cleric_emblem",1,7,"M30");
 	}  
-	elsif($text=~/$Warrior/i && $ulevel >=50) {
+	elsif($text=~/Warrior/i && $ulevel >=50) {
       quest::say("Very well, a warrior emblem and furnace of Ro. That will be 500 platinum please.");
 	  quest::setglobal("warrior_emblem",1,7,"M30");
 	}  
-	elsif($text=~/$Shadowknight/i && $ulevel >=50) {
+	elsif($text=~/Shadowknight/i && $ulevel >=50) {
       quest::say("Very well, a shadowknight emblem and furnace of Ro. That will be 500 platinum please.");
 	  quest::setglobal("shadowknight_emblem",1,7,"M30");
 	}  
-	elsif($text=~/$Paladin/i && $ulevel >=50) {
+	elsif($text=~/Paladin/i && $ulevel >=50) {
       quest::say("Very well, a paladin emblem and furnace of Ro. That will be 500 platinum please.");
 	  quest:;setglobal("paladin_emblem",1,7,"M30");
 	}  
-	elsif($text=~/$Bard/i && $ulevel >=50) {
+	elsif($text=~/Bard/i && $ulevel >=50) {
       quest::say("Very well, a bard emblem and furnace of Ro. That will be 500 platinum please.");
 	  quest::setglobal("bard_emblem",1,7,"M30");
 	}  
