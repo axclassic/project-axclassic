@@ -229,12 +229,10 @@ sub EVENT_ITEM {
          quest::delglobal("berserker_emblem");
       }
 	  else  {
-	  quest::say("Huh? Cant't ye count? I asked fer 500 Platinum!");
+	  quest::say("Huh? Cant't ye count? I asked fer 500 Platinum! But thanks fer th' donation!");
 	     plugin::return_items(\%itemcount);
-     if($platinum != 0 || $gold != 0 || $silver != 0 || $copper != 0) {
-	   quest::givecash($copper, $silver, $gold, $platinum);
+     
      }
-	}
    }
 
         
