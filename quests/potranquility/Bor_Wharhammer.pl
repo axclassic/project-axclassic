@@ -132,111 +132,111 @@ elsif($text=~/Berserker/i && $ulevel >=50) {
       }
   }  
 sub EVENT_ITEM {
-      if ($ulevel >= 50 && $qglobals{"warrior_emblem"} == 1 && ($platinum == 500)) {
+      if ($ulevel >= 50 && defined $qglobals{"warrior_emblem"} == 1 && ($platinum == 500)) {
 		 quest::summonitem(16267);#Warrior Emblem
          quest::summonitem(17184);#Mystical Furnace of Ro
 		 quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("warrior_emblem");
 		}
-	  elsif ($ulevel >= 50 && $qglobals{"cleric_emblem"} == 1 && ($platinum == 500)) {
+	  elsif ($ulevel >= 50 && defined $qglobals{"cleric_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16271);#Cleric Emblem
          quest::summonitem(17184);#Mystical Furnace of Ro
         quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("cleric_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"paladin_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"paladin_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16269);#Paladin Emblem
          quest::summonitem(17184);#Mystical Furnace of Ro
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("paladin_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"ranger_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"ranger_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16272);#Ranger Emblem
          quest::summonitem(17184);#Mystical Furnace of Ro
         quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("ranger_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"shadowknight_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"shadowknight_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16270);#Shadowknight Emblem
          quest::summonitem(17184);#Mystical Furnace of Ro
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("shadowknight_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"druid_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"druid_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16276);#Druid Emblem
          quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
         quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("druid_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"monk_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"monk_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16275);#Monk Emblem
          quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("monk_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"bard_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"bard_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16268);#Bard Emblem
          quest::summonitem(17184);#Mystical Furnace of Ro
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("bard_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"rogue_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"rogue_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16273);#Rogue Emblem
          quest::summonitem(17184);#Mystical Furnace of Ro
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("rogue_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"shaman_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"shaman_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16274);#Shaman Emblem
          quest::summonitem(17184);#Mystical Furnace of Ro
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("shaman_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"necromancer_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"necromancer_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16278);#Necromancer Emblem
          quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("necromancer_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"wizard_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"wizard_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16279);#Wizard Emblem
          quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("wizard_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"magician_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"magician_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16280);#Magician Emblem
          quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("magician_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"enchanter_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"enchanter_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16281);#Enchanter Emblem
          quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("enchanter_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"beastlord_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"beastlord_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(16277);#Beastlord Emblem
          quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
          quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("beastlord_emblem");
       }
-      elsif ($ulevel >= 50 && $qglobals{"berserker_emblem"} == 1 && ($platinum == 500)) {
+      elsif ($ulevel >= 50 && defined $qglobals{"berserker_emblem"} == 1 && ($platinum == 500)) {
          quest::summonitem(32000);#Berserker Emblem
          quest::summonitem(17184);#Mystical Furnace of Ro
         quest::say("Wonderful! This coin will go towards me fines with the Myrist library. They charge quite a bit fer overdue volumes! 'ere be yer emblem an' a kit in which ye may craft planar armor. The kit only 'as enough magical energy t'craft one piece before the energies expire, be sure ye understand. May the armor ye make with it provide ye with much protection.");
          quest::delglobal("berserker_emblem");
       }
-	  else {
+	  elsif (!defined $qglobals{"warrior_emblem"} || !defined $qglobals{"cleric_emblem"} || !defined $qglobals{"paladin_emblem"} || !defined $qglobals{"ranger_emblem"} || !defined $qglobals{"shadowknight_emblem"}|| !defined $qglobals{"druid_emblem"}|| !defined $qglobals{"monk_emblem"}|| !defined $qglobals{"bard_emblem"}|| !defined $qglobals{"rogue_emblem"}|| !defined $qglobals{"shaman_emblem"}|| !defined $qglobals{"necromancer_emblem"}|| !defined $qglobals{"magician_emblem"}|| !defined $qglobals{"enchanter_emblem"}|| !defined $qglobals{"wizard_emblem"}|| !defined $qglobals{"beastlord_emblem"}|| !defined $qglobals{"berserker_emblem"}) {
 	  quest::say("Huh? Cant't ye count? I asked fer 500 Platinum!");
-	        plugin::return_items(\%itemcount);
-         return 1;
+	     plugin::return_items(\%itemcount);
+     if($platinum != 0 || $gold != 0 || $silver != 0 || $copper != 0) {
+	   quest::givecash($copper, $silver, $gold, $platinum);
      }
+	 else {
+	  #do nothing
+	 }
+   }
    }
    
-
-        
-  
-
-#END of FILE Zone:potranquility  ID:203064 -- Bor_Wharhammer
