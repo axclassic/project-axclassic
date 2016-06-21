@@ -44,19 +44,19 @@ sub EVENT_SAY {
 	}
    elsif($text=~/Ranger/i && $ulevel >=50) {
       quest::say("Very well, a ranger emblem and furnace of Ro. That will be 500 platinum please.");
-	  quest:;setglobal("ranger_emblem",1,7,"M30");
+	  quest::setglobal("ranger_emblem",1,7,"M30");
 	}  
    elsif($text=~/Rogue/i && $ulevel >=50) {
       quest::say("Very well, a rogue emblem and furnace of Ro. That will be 500 platinum please.");
-	  quest:;setglobal("rogue_emblem",1,7,"M30");
+	  quest::setglobal("rogue_emblem",1,7,"M30");
 	}
    elsif($text=~/Shaman/i && $ulevel >=50) {
       quest::say("Very well, a shaman emblem and furnace of Ro. That will be 500 platinum please.");
-	  quest:;setglobal("shaman_emblem",1,7,"M30");
+	  quest::setglobal("shaman_emblem",1,7,"M30");
 	}  
    elsif($text=~/Berserker/i && $ulevel >=50) {
       quest::say("Very well, a berserker emblem and furnace of Ro. That will be 500 platinum please.");
-	  quest:;setglobal("berserker_emblem",1,7,"M30");
+	  quest::setglobal("berserker_emblem",1,7,"M30");
 	}  
    elsif($text=~/silk/i && $ulevel >=50) {
       quest::say("Har! It be quite funny that we be referin' t'silk as armor, fer the amount o'protection it provides be miniscule at best. The planar armor made from strands o'ether can still be quite useful fer its magical properties, 'owever. Ye will need t'take up a Tanaan embroidery needle, a pattern, an emblem an' various amounts o'ether silk swatches t'create a piece. Craft it all within a sewing kit boilin' with magical energy.");
@@ -65,19 +65,19 @@ sub EVENT_SAY {
    }
    elsif($text=~/Necromancer/i && $ulevel >=50) {
       quest::say("Very well, a necromaner emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
-	  quest:;setglobal("necromancer_emblem",1,7,"M30");
+	  quest::setglobal("necromancer_emblem",1,7,"M30");
 	}  
 	elsif($text=~/Wizard/i && $ulevel >=50) {
       quest::say("Very well, a wizard emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
-	  quest:;setglobal("wizard_emblem",1,7,"M30");
+	  quest::setglobal("wizard_emblem",1,7,"M30");
 	}  
 	elsif($text=~/Magician/i && $ulevel >=50) {
       quest::say("Very well, a magician emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
-	  quest:;setglobal("magician_emblem",1,7,"M30");
+	  quest::setglobal("magician_emblem",1,7,"M30");
 	}  
 	elsif($text=~/Enchanter/i && $ulevel >=50) {
       quest::say("Very well, a enchanter emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
-	  quest:;setglobal("enchanter_emblem",1,7,"M30");
+	  quest::setglobal("enchanter_emblem",1,7,"M30");
 	}  
    elsif($text=~/leather/i && $ulevel >=50) {
       quest::say("Leather armor provides little protection due t'the make-up o'the materials. We shall do our best, 'owever, t'see ye make a quality piece. T'do so, ye must combine a pattern, an emblem, various pieces o'cured ethereal energy an' a Tanaan embroidery needle all within a sewing kit boilin' with magical energy. The cured energy may be problematic fer an unskilled craftsman, 'owever. Just sew two silk ethereal swatches together using a Tanaan embroidery needle within a Tanaan loom. I can just imagine yer next question t'be about swatches, aye?");
@@ -86,11 +86,11 @@ sub EVENT_SAY {
    }
    elsif($text=~/Druid/i && $ulevel >=50) {
       quest::say("Very well, a druid emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
-	  quest:;setglobal("druid_emblem",1,7,"M30");
+	  quest::setglobal("druid_emblem",1,7,"M30");
 	}  
 	elsif($text=~/Monk/i && $ulevel >=50) {
       quest::say("Very well, a monk emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
-	  quest:;setglobal("monk_emblem",1,7,"M30");
+	  quest::setglobal("monk_emblem",1,7,"M30");
 	}  
 	elsif($text=~/Beastlord/i && $ulevel >=50) {
       quest::say("Very well, a beastlord emblem and Druzzil's Mystical Sewing Kit. That will be 500 platinum please.");
@@ -107,7 +107,7 @@ sub EVENT_SAY {
 	}  
 	elsif($text=~/Warrior/i && $ulevel >=50) {
       quest::say("Very well, a warrior emblem and furnace of Ro. That will be 500 platinum please.");
-	  quest:;setglobal("warrior_emblem",1,7,"M30");
+	  quest::setglobal("warrior_emblem",1,7,"M30");
 	}  
 	elsif($text=~/Shadowknight/i && $ulevel >=50) {
       quest::say("Very well, a shadowknight emblem and furnace of Ro. That will be 500 platinum please.");
