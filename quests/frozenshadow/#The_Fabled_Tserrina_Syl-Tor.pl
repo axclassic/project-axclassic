@@ -1,4 +1,4 @@
-# #The_Fabled_Tserrina_Syl`Tor NPCID 111185
+# #The_Fabled_Tserrina_Syl`Tor NPCID 111185 (use - to replace ` in filename)
 
 sub EVENT_SPAWN{
 	$x = $npc->GetX();
