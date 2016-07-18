@@ -7,7 +7,7 @@ sub EVENT_SPAWN{
 }
 
 sub EVENT_ENTER{
-	if($ulevel <= 40){
+	if($ulevel <= 45){
 		quest::shout("We shall meet again $name! When you are a worthy opponent!!");
 
 		quest::depop();
@@ -15,7 +15,7 @@ sub EVENT_ENTER{
 }
 
 sub EVENT_AGGRO{
-	if($ulevel <= 40){
+	if($ulevel <= 45){
 		quest::shout("We shall meet again $name! When you are a worthy opponent!!");
 
 		quest::depop();
