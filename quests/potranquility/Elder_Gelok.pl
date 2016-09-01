@@ -52,19 +52,15 @@ sub EVENT_ITEM {
 		my $random2 = int(rand(4));
 		if($random2 == 0) {
 			quest::summonitem(22503); #Blue diamond
-			quest::say("my number is $random2.");
 		}
 		elsif($random2 == 1) {
 			quest::summonitem(10037); #diamond
-			quest::say("my number is $random2.");
 		}
 		elsif($random2 == 2) {
 			quest::summonitem(10028); #peridot
-			quest::say("my number is $random2.");
 		}
 		elsif($random2 == 3) {
 			quest::summonitem(15981); #raw diamond
-			quest::say("my number is $random2.");
 		}
 	}
 	else {
