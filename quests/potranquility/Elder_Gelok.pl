@@ -48,7 +48,7 @@ sub EVENT_ITEM {
 	}
 	#possibility of getting a gem upon a turn in
 	my $random1 = int(rand(100));
-	if ($random1 < 100) { # set approx. 40%
+	if ($random1 < 40) { # set approx. 40%
 		my $random2 = int(rand(4));
 		if($random2 == 0) {
 			quest::summonitem(22503); #Blue diamond
