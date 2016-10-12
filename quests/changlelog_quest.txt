@@ -1,5 +1,97 @@
 AX Classic Quests Changelog (Started April 15, 2009)
------------------------------------------------------
+|-----------------------------------------------------|
+==10/07/2016==
+Testing: test.
+
+==10/06/2016==
+Patrikpatrik: Added flavor text to A Mystic Voice in potimeA.
+
+==9/20/2016==
+Patrikpatrik: Added a check to a ice shade script to spawn VhalSera correctly.
+
+==9/14/2016==
+Patrikpatrik: Fixed bridle money rewards affecting Aldo, Galic, Hiklo, and Wendal scripts.
+
+==9/06/2016==
+Patrikpatrik: Fixed Craegin Coldtongue + injured wolf quest.
+
+==9/04/2016==
+Patrikpatrik: Revamped Gukbottom, removed controller scripts.
+
+==9/02/2016==
+Patrikpatrik: Revamped Najena, removed controller scripts.
+
+==9/01/2016==
+Patrikpatrik: Added missing say and item to Councilman Srethix.
+Patrikpatrik: Updated Elder Gelok quest script.
+Patrikpatrik: Revamped Solb, cleaned up scripts and fabled controllers.
+
+==8/31/2016==
+Angelox: Elder Gelok Fix quest might work now.
+
+==7/14/2016==
+Patrikpatrik: Corrected depopping fabled script in Karnor's.
+
+==7/01/2016==
+Angelox: Follow up to Champion Darkwater's update.
+
+==6/30/2016==
+Patrikpatrik: Updated Champion Darkwater for ladder reset.
+
+==5/28/2016==
+Aardil: Fixed thenest 343166.pl.
+
+==5/19/2016==
+Patrikpatrik: Quest fix for monk shackle of steel #6.
+
+==4/08/2016==
+Patrikpatrik: Fixed Champion Darkwater's script.
+
+==3/31/2016==
+Patrikpatrik: Corrected a slot machine text.
+
+==2/26/2016==
+Caved: Test in bothunder.
+
+==2/10/2016==
+Aardil: Fixed Thelin Poxbourne text.
+Patrikpatrik: Correction to subroutines with Ranger Band.
+
+==2/09/2016==
+Aardil: Added Terris Thule in nightmareb.
+
+==2/03/2016==
+Patrikpatrik: Updated Champion Lightwater.
+Patrikpatrik: Updated Champion Darkwater.
+Patrikpatrik: Updated Ranger Band.
+
+==1/23/2016==
+Angelox: Updated Aediles to the revised "bot create" command
+
+==1/22/2016==
+Aardil: Started war event in Hollowshade.
+
+==1/01/2016==
+Patrikpatrik: Updated New Year's Event.
+Patrikpatrik: Updated Champion Darkwater for ladder reset.
+Patrikpatrik: Added Moonstone of Life as 65 reward.
+
+==11/06/2015==
+Patrikpatrik: Fixed Clukker the Crazy's quest in Plane of Mischief.
+
+==10/19/2015==
+Patrikpatrik: Fixed Scout Charisa for Leuz's task quest in Velious.
+
+==7/28/2015==
+Patrikpatrik: Added Champion Lightwater.
+Patrikpatrik: Title & rewards for reaching level 65 created.
+
+==7/18/2015==
+Patrikpatrik: Added Treant Fists questline for monks.
+
+==7/01/2015==
+Patrikpatrik: Updated Champion Darkwater for ladder reset.
+
 ==4/15/2015==
 Angelox: Testing the emailer for commits.
 
