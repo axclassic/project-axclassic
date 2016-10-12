@@ -1,8 +1,5 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
-==10/07/2016==
-Testing: test.
-
 ==10/06/2016==
 Patrikpatrik: Added flavor text to A Mystic Voice in potimeA.
 
