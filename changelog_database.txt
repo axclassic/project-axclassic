@@ -1,0 +1,64 @@
+AX Classic Database Changelog (Started October 11, 2016)
+|-------------------------------------------------------|
+==9/04/2016==
+Patrikpatrik: Revamped Gukbottom, removed controller scripts.
+
+==9/02/2016==
+Patrikpatrik: Revamped Najena, removed controller scripts.
+
+==9/01/2016==
+Patrikpatrik: Revamped Solb, cleaned up scripts and fabled controllers.
+
+==7/14/2016==
+Patrikpatrik: Revamped Karnor's Castle.
+
+==6/29/2016==
+Angelox: Removed all the fabled controller scripts in Karnor's Castle.
+
+==6/23/2016==
+Patrikpatrik: Removed all scripts, revamped Tower of Frozen shadow.
+
+==6/18/2016==
+Aardil: Created and updated Eda Wharhammer and Bor Wharhammer.
+
+==6/05/2016==
+Patrikpatrik: Cleanup of scripts folder potimeB.
+
+==6/02/2016==
+Patrikpatrik: Fixed entry to PotimeB, corpse recovery, lockout, zonewide message.
+
+==5/31/2016==
+Patrikpatrik: Revamped Plane of Time B to work without instances.
+
+==2/07/2016==
+Angelox: Restored gfaydark for memory leaks.
+
+==1/29/2016==
+Aardil: Added Adroha Jezith, Elder Poxbourne, Thelin.
+
+==1/01/2016==
+Patrikpatrik: Added Moonstone of Life as 65 reward.
+
+==12/11/2015==
+Patrikpatrik: Fixed Velketor's Spider invisibility.
+
+==10/16/2015==
+Patrikpatrik: Added Gigglegibber Goblin lottery game in Poknowledge.
+
+==9/01/2015==
+Patrikpatrik: Added a Hi-Low game variant in Poknowledge.
+
+==8/19/2015==
+Patrikpatrik: Added a blackjack dealer in Poknowledge.
+
+==8/05/2015==
+Patrikpatrik: Added a slot machine in Poknowledge.
+
+==8/03/2015==
+Patrikpatrik: Added seven cards the Gambling dwarf.
+
+==7/28/2015==
+Patrikpatrik: Added Champion Lightwater.
+
+==7/28/2015==
+Patrikpatrik: Fixed healing potions and experience Elixers.
