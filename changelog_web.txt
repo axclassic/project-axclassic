@@ -1,0 +1,119 @@
+AX Classic Web Changelog (Started October 11, 2016)
+|-------------------------------------------------------|
+==10/11/2016==
+Patrikpatrik: The Rathe News section changed to Changelogs. Added Source, Quests, Database, and Web.
+
+==10/09/2016==
+Patrikpatrik: Fixed Character Mover.php to only execute when player logs out of eq client.
+Patrikpatrik: Set additional check to only work once a day per account.
+
+==9/21/2016==
+Patrikpatrik: Fixed horizontal stretching to be limited when maximizing window.
+Patrikpatrik: Centered the pages upon stretching, colors brighters, shadows darker.
+Patrikpatrik: Server Stats will now update stats without refreshing, thank you jQuery!
+
+==5/25/2016==
+Patrikpatrik: Fixed Firefox browsers to display tables correctly.
+Patrikpatrik: Forum Guests now display in server stats.
+
+==5/13/2016==
+Patrikpatrik: Added 1.5 epics link in Guides section.
+
+==2/03/2016==
+Patrikpatrik: The Rathe News window extended to catch more news!
+Patrikpatrik: Events window updated, Guides section Moonstones & Traveling updated.
+
+==1/01/2016==
+Patrikpatrik: AX Classic Database Zone by Levels columns fixed.
+Patrikpatrik: AX Classic Database Items search by 'HP Regen' displays fixed.
+
+==11/29/2015==
+Patrikpatrik: Melee damage and Defensive AA calculations page in AX Classic Database fixed.
+
+==11/24/2015==
+Patrikpatrik: recipes.php in AX Classic Database fixed, specific tradeskills can be selected.
+
+==11/20/2015==
+Patrikpatrik: spells.php in AX Classic Database fixed.
+Patrikpatrik: Spell search corrected, classes toggle functioning, min and max levels re-introduced.
+
+==10/17/2015==
+Patrikpatrik: Color palettes for the front changed to resemble the Forum's theme.
+
+==10/06/2015==
+Patrikpatrik: Events and Hot Zone(s) will now only show if something is happening.
+
+==7/24/2015==
+Patrikpatrik: Vote Results window added and can be seen after casting vote.
+
+==3/24/2015==
+Patrikpatrik: Events window added, Server Info window moved to bottom of page.
+
+==3/17/2015==
+Patrikpatrik: Banned IP list added in Server Rules section.
+
+==3/16/2015==
+Patrikpatrik: Server statistics, Hot Zones, and Active Zones should be displaying correctly.
+Patrikpatrik: Bot raid Commands added in Bot Commands section.
+
+==3/04/2015==
+Patrikpatrik: Poll Questions #3 and #4 archived and closed in Guides section.
+
+==2/23/2015==
+Patrikpatrik: Ladder Champions Updated in Ladder Section.
+Patrikpatrik: Server News column changed to The Rathe News.
+Patrikpatrik: Zone names in Ladder section changed to long version.
+
+==2/02/2015==
+Patrikpatrik: How to Connect? page clarified.
+
+==2/02/2015==
+Patrikpatrik: Added Bot Epics Guide
+Patrikpatrik: Added Bot Epics complete Walkthrough, FAQ's updated.
+Patrikpatrik: Polling Question #2 closed added to archived links.
+Patrikpatrik: Hot Zones window added to left column.
+
+==12/03/2014==
+Patrikpatrik: Character Mover added.
+Patrikpatrik: Pictures added to ladder champions.
+
+==11/20/2014==
+Patrikpatrik: Added Server News.
+
+==11/17/2014==
+Patrikpatrik: Completed Hall of Fame
+Patrikpatrik: Ladder FAQ has been moved to it's original place.
+Patrikpatrik: Ladder Champions has it's own page in Ladder Section.
+
+==11/16/2014==
+Patrikpatrik: How to Connect? steps revised and clarified.
+Patrikpatrik: Added Hunting Guide section in Forums.
+Patrikpatrik: Questing for Temperance added to Guides.
+Patrikpatrik: Walkthrough for Epics 1.0 added to Guides.
+
+==11/13/2014==
+Patrikpatrik: Added Forum Info Window.
+Patrikpatrik: Changed Moonstones and Traveling to a table with anchor links.
+Patrikpatrik: Articles will have an author now, if available.
+Patrikpatrik: Added quick links to Bot Commands for class specific commands
+Patrikpatrik: Changed background layout to dark tile from original Axclassic site.
+
+==11/03/2014==
+Patrikpatrik: Improved the timestamps of all posts.
+Patrikpatrik: Color correction on menu bars and other containers.
+Patrikpatrik: Set topics to fall off after 1 week.
+
+==10/31/2014==
+Patrikpatrik: Server Info added to display players and bots online.
+Patrikpatrik: AX Classic intro moved to FAQ's.
+
+==10/27/2014==
+Patrikpatrik: Recent topics added to catch forum posts.
+Patrikpatrik: What version of EQ? and Where to Start/Group? moved to FAQ's.
+
+==10/21/2014==
+Patrikpatrik: Old votes archived and sent to Guides section.
+Patrikpatrik: Voting poll added and posted on Oct 17, 2014.
+
+==10/13/2014==
+Patrikpatrik: AX Classic website refresh up and live!
