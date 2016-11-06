@@ -203,7 +203,6 @@ $npc->SetAppearance(1); # Sits down
 
 sub EVENT_SAY {
 my $random_result3 = int(rand(170));
-$npc->DoAnim(8, 48);
 
 my $btevent1 = quest::saylink("New Years", 1);
 my $btevent2 = quest::saylink("Easter", 1);
@@ -256,6 +255,29 @@ my $wind = quest::saylink("Wind", 1);
 my $legendary = quest::saylink("legendary", 1);
 my $interest = quest::saylink("interest", 1);
 my $tempt = quest::saylink("tempt", 1);
+
+#Randomized and make animations not always happen, so they seem more natural 
+	if ($random_result3 <= 20){ 
+	    $npc->DoAnim(8, 48); #nod
+	    }
+	elsif ($random_result3 <= 40){
+	    $npc->DoAnim(8, 31);#yawn
+	    }
+	elsif ($random_result3 <= 50){
+	    $npc->DoAnim(8, 64);#point
+	    }
+	elsif ($random_result3 <= 60){
+	    $npc->DoAnim(8, 55); #cough
+	    }
+	elsif ($random_result3 <= 80){
+	    $npc->DoAnim(8, 65); #shrug
+	    }
+	elsif ($random_result3 <= 100){
+	    $npc->DoAnim(8, 77);#smile
+	    }
+	elsif ($random_result3 <= 120){
+	    $npc->DoAnim(8, 77);#sigh
+	    }
 
 	if($text=~/Hail/i) {
         if(($ulevel <= 10) && ($event1 == 1)) {
