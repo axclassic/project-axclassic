@@ -22,7 +22,7 @@ my $darkened = quest::saylink("darkened", 1);
   if ($text=~/darkened/i) {
     quest::say("The jawbones will aid me in tuning to the essence of the corrupted spirits. When you return to me with them, you are enabling me to place the lost soul to rest. I am able to release four of these spirits at one time in much the same way I am training these four young trainees. It is best to bring me four of them at one time if you are able.");
     quest::say("Always pay attention to your surroundings. There are many opponents that will ambush you while you are out in the field. It is wise to take companions with you when venturing far.");
-    quest::say"I am in need of Rotting Jawbones, Sharp Toothed Jawbones and Thick Jawbones. Please bring them to me four at a time.");
+    quest::say("I am in need of Rotting Jawbones, Sharp Toothed Jawbones and Thick Jawbones. Please bring them to me four at a time.");
   }
   if($text=~/loda/i){
     quest::say("Loda Kai left Shar Vahl many years ago. He had set off for the distant city of Katta Castellum just north of the tenebrous mountains. We have not seen him since, but the brigands wear his family emblem. $Kedra Kai has banished himself from our city in shame.");
@@ -35,13 +35,13 @@ my $darkened = quest::saylink("darkened", 1);
 sub EVENT_ITEM {
 my $text1 = quest::saylink("Loda", 1);
     if (plugin::check_handin(\%itemcount, 30872 == 1)) {
-     quest::say"Thank you for your aid $name. I will place this spirit to peaceful rest and give these remains a proper burial. It is a shame you could only return with one. It takes four of these to make a real difference. Nevertheless your efforts are appreciated. Thank you."); 
+     quest::say("Thank you for your aid $name. I will place this spirit to peaceful rest and give these remains a proper burial. It is a shame you could only return with one. It takes four of these to make a real difference. Nevertheless your efforts are appreciated. Thank you."); 
      }
     elsif (plugin::check_handin(\%itemcount, 30872 == 2)) {
-     quest::say"Thank you for your aid $name. I will place this spirit to peaceful rest and give these remains a proper burial. It is a shame you could only return with two. It takes four of these to make a real difference. Nevertheless your efforts are appreciated. Thank you."); 
+     quest::say("Thank you for your aid $name. I will place this spirit to peaceful rest and give these remains a proper burial. It is a shame you could only return with two. It takes four of these to make a real difference. Nevertheless your efforts are appreciated. Thank you."); 
      }
     elsif (plugin::check_handin(\%itemcount, 30872 == 3)) {
-     quest::say"Thank you for your aid $name. I will place this spirit to peaceful rest and give these remains a proper burial. It is a shame you could only return with three. It takes four of these to make a real difference. Nevertheless your efforts are appreciated. Thank you."); 
+     quest::say("Thank you for your aid $name. I will place this spirit to peaceful rest and give these remains a proper burial. It is a shame you could only return with three. It takes four of these to make a real difference. Nevertheless your efforts are appreciated. Thank you."); 
      }
     elsif (plugin::check_handin(\%itemcount, 30872 => 4)) {
      quest::say("I can see that you have a brave heart. You have rescued many of the fallen spirits with little regard to your own welfare. Such selfless acts should not go unrewarded. Please take these gloves and wear them with pride. It is a symbol of rebirth.");
