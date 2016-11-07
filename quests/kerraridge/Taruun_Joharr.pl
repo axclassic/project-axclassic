@@ -2,7 +2,8 @@ sub EVENT_SAY {
      if ($text=~/hail/i) {
   quest::say("How can I help you $name?");
   }
-sub EVENT_ITEM { 
+}
+sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount,3466 => 1)){
     quest::emote(' takes the buckler and spins it in his hand for a moment');
     quest::say("I suppose assumin' you were sent here by Harbin isn't too far from the reality of things. I'll try to think of a few things for you to do, but in the meantime, take these daggers and practice until you can use both of them. You need to get out of the habit of toting this shield around. If your enemy is gettin' close enough to hit you on it, you ain't doin' your job right anyway. I'll do what I can to train you from here, but I'm going to need to eat first. It's been a while since my last meal. Take this meal voucher to Cook Yalkiin. Once they fill the order bring it back and we'll start your lesson. Now scoot.");
