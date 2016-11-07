@@ -1,4 +1,4 @@
-sub EVENT_SAY { 
+sub EVENT_SAY {
 my $work = quest::saylink("work", 1);
     if($text=~/Hail/i){
      quest::say("Good day friend! I'm glad you've stopped by. I am in need of some assistance. Please direct anyone seeking $work to me.");
@@ -9,7 +9,7 @@ my $work = quest::saylink("work", 1);
 }
 sub EVENT_ITEM {
     if (plugin::check_handin(\%itemcount, 2877 =>1 )) {
-     quest::say("Excellent! I practice the art of alchemy and I am currently working on some new recipes. I require a few special ingredients. Fortunately they grow in the crater just outside our city walls. Bring me a redcapped mushroom. a pinch of scarlet moss and a bluecapped mushroom. I'll be most grateful."); }
+     quest::say("Excellent! I practice the art of alchemy and I am currently working on some new recipes. I require a few special ingredients. Fortunately they grow in the crater just outside our city walls. Bring me a redcapped mushroom. a pinch of scarlet moss and a bluecapped mushroom. I'll be most grateful.");
      quest::summonitem(2877);
      quest::exp(500);
      quest::faction(132,10 );
