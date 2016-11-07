@@ -1,4 +1,4 @@
-sub EVENT_SPAWN{{
+sub EVENT_SPAWN{
    quest::settimer("nightmareb_Planar",600);
  }
 sub EVENT_SAY {
