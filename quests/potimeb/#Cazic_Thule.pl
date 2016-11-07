@@ -6,7 +6,7 @@ sub EVENT_DEATH {
         quest::signalwith(223158,13010,0);
         quest::say("Noooo. . . fear. . . shall never die. . .");
 }
-}
+
 #sub EVENT_SIGNAL {
   # if ($signal == 66){
      # quest::depop();
