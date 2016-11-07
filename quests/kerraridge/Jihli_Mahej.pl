@@ -9,7 +9,7 @@ quest::say("Oh! Something was ordered? Do you have the receipt?");
 }
 sub EVENT_ITEM {
 if(plugin::check_handin(\%itemcount,5954 => 1)){
-quest::say("There seems to be a small problem with this order, it seems that it got broken in shipping and since you are not the one who purchased it, I can not offer a refund and getting a replacement would take weeks.")
+quest::say("There seems to be a small problem with this order, it seems that it got broken in shipping and since you are not the one who purchased it, I can not offer a refund and getting a replacement would take weeks.");
 quest::say(" The best thing I can offer since Gawfed needs it today is to give you the broken pieces and let you take it to Chogar. I am sure he can fix it up good as new.");
 quest::summonitem(5955);
 }
