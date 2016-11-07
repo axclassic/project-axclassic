@@ -1,6 +1,6 @@
 sub EVENT_SAY {
     if($text=~/Hail/i){
-     quest::say("isn't a wonderful day $name?  How may I be of assistance?"); }
+     quest::say("isn't a wonderful day $name?  How may I be of assistance?");
      }
     if($text=~/merchant/i){
      quest::say("Gah... I'm losing my wits. I didn't tell you which merchant. Well, the fur is the first thing to go, and the mind is a close second. My wife's birthday is usually quite a large event in my household and I've been trying to make this one extra special. I'm lucky I can still find my tail.");
@@ -8,7 +8,7 @@ sub EVENT_SAY {
      quest::summonitem();
      }
 }
-sub EVENT_ITEM { 
+sub EVENT_ITEM {
 my $merchant = quest::saylink("merchant", 1);
     if(plugin::check_handin(\%itemcount,3659 => 1)){
      quest::say("Very well met. young friend.  I assume that Gherik has sent you to me for the purpose of training you.  Unforunately. I will not be doing any formal training for the several days.  I'm taking a bit of a holiday to celebrate my wife's birthday.  If you could take this receipt to the $merchant for me before my wife gets home. I'd appreciate it.  I'll place you at the top of my training list as well.");
@@ -36,7 +36,7 @@ my $merchant = quest::saylink("merchant", 1);
      quest::say("It looks like you're all set. I'll have this sent over to my brother at once. Thank you again for fetch the vase for me. I can't wait to give it to the missus. I just know that she's going to love it.");
      quest::say("I have another task for you. It shouldn't take much time at all. Your cloak won't be done for a while, so you can do this while you wait.");
      quest::say("Take this piece of parchment to Jangle. He'll give you a bag of lute strings. I'm restringing all of my instruments before the party. Please be quick. Thank you again.");
-     quest::summonitem(5960):
+     quest::summonitem(5960);
      quest::exp(2000);
      quest::ding();
      quest::faction(132,10);
