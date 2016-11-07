@@ -1,4 +1,4 @@
-sub EVENT_SAY { 
+sub EVENT_SAY {
 my $slate = quest::saylink("slate", 1);
     if($text=~/Hail/i){
     quest::say("Hello $name. would you care for a drink?  Or perhaps you're the one they sent to help me?  If you've come to help please show me your acrylia $slate."); 
@@ -16,7 +16,7 @@ my $slate = quest::saylink("slate", 1);
      if($text=~/Hollow/i){
     quest::say("'You'll need some Crystal water, just as you do with all of our teas, and some Hollow palm roots. You can find Hollow palms out in the moors, watch out for the grimlings though. Once you find the roots just use the strainer to control the flow of water over the leaves. If you do it correctly you'll create a very potent brew. When you get it right bring the strainer back to me with a sample of your work.");
     }
-}    
+}
 sub EVENT_ITEM {
 my $interested = quest::saylink("interested", 1);
 my $purify = quest::saylink("purify", 1);
@@ -34,7 +34,7 @@ my $Hollow = quest::saylink("Hollow", 1);
     quest::say("Many thanks $name, I'll be going to brew this tea up for the guards now. Take this seal as proof of your helping me. You wouldn't happen to know anyone who would be $interested in learning the art of Vah Shir Brewing would you? I could really use the help in these hard times, I can barely keep up with all the demand.");
     quest::summonitem(31774);
     quest::exp(5000);
-    {
+    }
     elsif(plugin::check_handin(\%itemcount,31774 => 1)){
     quest::say("Well done, it is now time to start down the path of learning the art of Vah Shir brewing. You'll need a steady hand if you are to master the brew barrel. The first thing you'll need to learn is how to $purify the water using this Acrylia filter. It is what we use in all our finest brews. Bring me 4 flasks of crystal clear water and I'll teach you how to make the tea from the gravel tea leaves.");
     quest::summonitem(31760);
@@ -61,6 +61,6 @@ my $Hollow = quest::saylink("Hollow", 1);
     quest::summonitem(31777);
     quest::say("There ya go $name, This is even a better strainer. You should be able to use it in any recipe that calls for a strainer.");
     }
-}    
+}
   #END of FILE Zone:sharvahl  ID:155093 -- Merchant_Ahlam 
   
