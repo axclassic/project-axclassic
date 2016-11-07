@@ -36,7 +36,6 @@ sub EVENT_ITEM {
       #quest::signalwith(20205, 1, 1);
     }
   }
-}
 
 #END of FILE Zone: kithicor  ID:20064 -- War_Priestess_T-zan
 
