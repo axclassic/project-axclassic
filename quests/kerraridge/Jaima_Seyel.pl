@@ -1,4 +1,4 @@
-sub EVENT_SAY { 
+sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("Hello Citizen. I am in need of an apprentice.  If you feel that you are capable of assisting me. please show me your Dar Khura Apprentice Cloak and I'll explain the task to you.");
 }
@@ -6,6 +6,7 @@ if($text=~/challenge/i){
 quest::say("You will need to walk into the darkness of the Hollowshade Moor to face this enemy. Unlike the wolves that we have always been able to commune with, the wolves of the moor are oblivious to our attempts at communication.");
 quest::say("We have studied them for some time and our determination is that they are too corrupt for us to deal with. Their aggressive behavior and sheer numbers have forced us to research ways to kill them as quickly as possible.");
 quest::say("Fill that bag with the paws from one of those wolves. Once that task is complete, please return to me with the evidence of your encounter.");
+}
 }
 sub EVENT_ITEM {
 my $challenge = quest::saylink("challenge", 1);
