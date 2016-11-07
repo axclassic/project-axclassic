@@ -1,4 +1,4 @@
-sub EVENT_SAY { 
+sub EVENT_SAY {
 my $stamina = quest::saylink("stamina", 1);
    if($text=~/Hail/i){
     quest::emote(' coughs a bit and looks up at you with tired, bleary eyes');
@@ -13,7 +13,7 @@ sub EVENT_ITEM{
    quest::say("Oh that is good. I feel a little better already, thanks $name! A little more of that stuff and I'll be better in no time.");
    quest::ding();
    quest::faction(350, 10);
-   quest::faction(186 10);
+   quest::faction(186, 10);
    quest::faction(206, 10);
    quest::faction(228, -10);
    quest::faction(55, -10);
