@@ -6,7 +6,7 @@ sub EVENT_DEATH {
         quest::signalwith(223158,13010,0);
         quest::say("Defeat by mortals. . . impossible. The power of decay still beckons for you. . . someday. . .");
 }
-}
+
 #sub EVENT_SIGNAL {
   # if ($signal == 66){
      # quest::depop();
