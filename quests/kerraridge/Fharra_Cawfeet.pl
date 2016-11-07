@@ -16,7 +16,7 @@ if ($text=~/told/i){
 quest::say("I was called to this house a few days ago, because several members of a recent scouting group have been running slight fevers. The fever is nothing that should alarm you but we will need to tend to them. Tending to the sick is one of our duties as Dar Khura. Nothing personal but I need to see some kind of proof that you are the one that was sent to help me, Insurance rates are so high now, I can't afford a law suit.");
 }
 if ($text=~/willing/i){
-quest::say("I need you to make a tonic to help aleviate their fevers. Please head into the cavern system just beyond the thicket. Gather the hearts of muck diggers that roam those caverns. Their hearts seem to regulate the temperature of their body and can be used in potions and tonics to control temperature in a similar fashion. Brew two of those hearts with a flask of water and it should produce the tonic I need. Please, fill the blackened clay jar with tonic. Try to make it back before I fall over from exhaustion."); }
+quest::say("I need you to make a tonic to help aleviate their fevers. Please head into the cavern system just beyond the thicket. Gather the hearts of muck diggers that roam those caverns. Their hearts seem to regulate the temperature of their body and can be used in potions and tonics to control temperature in a similar fashion. Brew two of those hearts with a flask of water and it should produce the tonic I need. Please, fill the blackened clay jar with tonic. Try to make it back before I fall over from exhaustion.");
 }
 }
 sub EVENT_ITEM {
