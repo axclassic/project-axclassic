@@ -1,4 +1,4 @@
-sub EVENT_SAY { 
+sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("May I help you?");
 }
@@ -10,7 +10,7 @@ quest::emote(' turns to you and squints at the claws that you have just given hi
 quest::say("I see that you've been getting some use out of these things. They are crude, but they seem sturdy enough.");
 quest::say("I hope the combat you've seen has made an impression on you, young friend. Combat is not pleasant, but it is often unavoidable. We are explorers and conflict often breeds in the unknown. Learn from each encounter and you are less likely to be trapped by conflict in the future.");
 quest::summonitem(17113);
-quest::say(:"In preparation for your journey down the path of Khati Sha, you will need to seek out the wolves of the moor. You will need to learn the behavior and abilities of this enemy.");
+quest::say("In preparation for your journey down the path of Khati Sha, you will need to seek out the wolves of the moor. You will need to learn the behavior and abilities of this enemy.");
 quest::say("Once you have tracked and met these beasts, I will teach you how to best dispose of them in the future. Place two molars from the mouth of one of their pups in that bag and return to me. That will guarantee that you've come face to face with your foe.");
 }
 elsif(plugin::check_handin(\%itemcount,120209 =>1 )){
@@ -18,7 +18,7 @@ quest::emote(' turns to you and squints at the claws that you have just given hi
 quest::say("I see that you've been getting some use out of these things. They are crude, but they seem sturdy enough.");
 quest::say("I hope the combat you've seen has made an impression on you, young friend. Combat is not pleasant, but it is often unavoidable. We are explorers and conflict often breeds in the unknown. Learn from each encounter and you are less likely to be trapped by conflict in the future.");
 quest::summonitem(17113);
-quest::say(:"In preparation for your journey down the path of Khati Sha, you will need to seek out the wolves of the moor. You will need to learn the behavior and abilities of this enemy.");
+quest::say("In preparation for your journey down the path of Khati Sha, you will need to seek out the wolves of the moor. You will need to learn the behavior and abilities of this enemy.");
 quest::say("Once you have tracked and met these beasts, I will teach you how to best dispose of them in the future. Place two molars from the mouth of one of their pups in that bag and return to me. That will guarantee that you've come face to face with your foe.");
 }
 elsif(plugin::check_handin(\%itemcount,48047 =>1, 120209 =>1 )){
@@ -26,7 +26,7 @@ quest::emote(' turns to you and squints at the claws that you have just given hi
 quest::say("I see that you've been getting some use out of these things. They are crude, but they seem sturdy enough.");
 quest::say("I hope the combat you've seen has made an impression on you, young friend. Combat is not pleasant, but it is often unavoidable. We are explorers and conflict often breeds in the unknown. Learn from each encounter and you are less likely to be trapped by conflict in the future.");
 quest::summonitem(17113);
-quest::say(:"In preparation for your journey down the path of Khati Sha, you will need to seek out the wolves of the moor. You will need to learn the behavior and abilities of this enemy.");
+quest::say("In preparation for your journey down the path of Khati Sha, you will need to seek out the wolves of the moor. You will need to learn the behavior and abilities of this enemy.");
 quest::say("Once you have tracked and met these beasts, I will teach you how to best dispose of them in the future. Place two molars from the mouth of one of their pups in that bag and return to me. That will guarantee that you've come face to face with your foe.");
 }
 elsif(plugin::check_handin(\%itemcount,6182 =>1 )){
@@ -40,7 +40,7 @@ quest::say("These claws are very well crafted! Your work is very impressive. Ple
 quest::summonitem(6185);
 quest::summonitem(6186);
 quest::summonitem(6184);
-quest::shout("
+}
 }
 #END of FILE Zone:sharvahl  ID:155056 -- Kaam_Rahiir 
 
