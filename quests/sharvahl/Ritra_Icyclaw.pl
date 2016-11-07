@@ -8,4 +8,3 @@ if ($text=~/hail/i && $faction < 5 && $ulevel <= 10){
    quest::summonitem(59933,20);
    }
 }
-}
