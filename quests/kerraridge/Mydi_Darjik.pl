@@ -1,4 +1,4 @@
-sub EVENT_SAY { 
+sub EVENT_SAY {
 if($text=~/Hail/i){
 quest::say("Greetings. did you need assistance with something or are you just browsing?");
 }
@@ -11,7 +11,7 @@ sub EVENT_ITEM {
 my $solution = quest::saylink("solution", 1);
 if (plugin::check_handin(\%itemcount, 3495 => 1)) {
 quest::say("Yes. yes, I can improve your shield easy enough");
-quest::emote(' takes out a piece of cloth and cuts it big enough to cover your buckler twice over and folds it neatly. Handing it back to you.'):
+quest::emote(' takes out a piece of cloth and cuts it big enough to cover your buckler twice over and folds it neatly. Handing it back to you.');
 quest::emote(' looks around for a moment.');
 quest::say("Sometimes I feel as if the spirits are playing a trick on me. I am out of spores. I never seem to run out of spores until the times when I need them most. You'll need to gather them on your own to make the soaking $solution.");
 }
