@@ -27,7 +27,7 @@ for /R %%g in ( !perlfile! ) do (
 )
 
 cls
-echo All done^^! Finished at %time%.
+echo All done^^! Finished at %time%. If no results below then all perl scripts checked syntax OK^^!
 echo.
 
 for /f "tokens=1,2,3*" %%h in ( checkall.txt ) do (
