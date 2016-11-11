@@ -5,9 +5,9 @@ REM This checkall batch file checks for perl syntax errors for Windows
 REM by scanning for only perl files in the quests folder. Like the Linux
 REM version of check_all the syntax OK's will be ignored and only errors
 REM will be generated to the user. This takes about a minute to scan.
-REM 1st rev. 11/10/2016 by Patrikpatrik
+REM 2nd rev. 11/11/2016 by Patrikpatrik
 
-setlocal enabledelayedexpansion
+setlocal EnableDelayedExpansion
 goto :main
 
 :main
@@ -27,7 +27,7 @@ for /R %%g in ( !perlfile! ) do (
 )
 
 cls
-echo All done^^!
+echo All done^^! Finished at %time%.
 echo.
 
 for /f "tokens=1,2,3*" %%h in ( checkall.txt ) do (
