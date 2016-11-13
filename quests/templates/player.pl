@@ -1,5 +1,19 @@
+##########################
+# #player.pl in templates
+# Last updated 11/12/16
+#
+#
+##########################
+
+
+
 sub EVENT_ENTERZONE {
-no warnings 'all' ;
+no warnings 'all';
+$event1 = 0;
+$event2 = 0;
+$event3 = 0;
+$event4 = 0;
+$event5 = 0;
   ## Set proper spawn in dual-spawn zones
   if ($zoneid ==  81){ ##Droga
    if ($ulevel <=45){
