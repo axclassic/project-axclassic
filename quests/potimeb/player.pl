@@ -61,7 +61,14 @@ sub EVENT_ZONE{
 
 }#END sub EVENT_ZONE
 
-sub EVENT_ENTERZONE { #Upon entering zone through portals it will spawn mobs in all 5 locations
+sub EVENT_ENTERZONE {
+	no warnings 'all' ;
+	$event1 = 0;
+	$event2 = 0;
+	$event3 = 0;
+	$event4 = 0;
+	$event5 = 0;
+	#Upon entering zone through portals it will spawn mobs in all 5 locations
 	#quest::delglobal("blockout");
 	if($status >= 50) {
 		quest::ze(15, "a GM has entered the zone.");

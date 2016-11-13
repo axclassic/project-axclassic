@@ -1,5 +1,11 @@
 sub EVENT_ENTERZONE {
-if (defined $qglobals{whimsy}) {
+ no warnings 'all' ;
+ $event1 = 0;
+ $event2 = 0;
+ $event3 = 0;
+ $event4 = 0;
+ $event5 = 0;
+ if (defined $qglobals{whimsy}) {
 quest::delglobal("whimsy");
 }
 if($hasitem{69059}) { 

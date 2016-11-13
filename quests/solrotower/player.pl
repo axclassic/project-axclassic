@@ -3,6 +3,12 @@
 # rallos was required to get to sol ro, not the zone, on live, that is why he was in here. - Reno
 
 sub EVENT_ENTERZONE {
+ no warnings 'all' ;
+ $event1 = 0;
+ $event2 = 0;
+ $event3 = 0;
+ $event4 = 0;
+ $event5 = 0;
 if (defined $qglobals{whimsy}) {
 quest::delglobal("whimsy");
 }

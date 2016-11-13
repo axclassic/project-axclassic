@@ -115,6 +115,12 @@ sub EVENT_CLICKDOOR {
 }#END sub EVENT_CLICKDOOR
 
 sub EVENT_ENTERZONE {
+ 	no warnings 'all' ;
+ 	$event1 = 0;
+ 	$event2 = 0;
+ 	$event3 = 0;
+ 	$event4 = 0;
+	$event5 = 0;
 	$client->Message(15, "Welcome $name! If you're here to access Plane of Time B, the portals 
 	are locked until you kill all 5 bosses guarding the sundial portals. You have 60 minutes 
 	to kill all 5 and timer starts after the 1st one killed. You must kill each one to gain portal
