@@ -1,9 +1,14 @@
-## NPC: Udunir_Dagorod               ##
+## NPC: Udunir_Dagorod NPCID 219065  ##
 ## Zone: Plane of Time A             ##
 ## corpse recovery dude              ##
 ## Created by Aardil                 ##
 ##                    31-05-2016     ##
+## Last revised by patrikpatrik 11/20/16##
 #######################################
+sub EVENT_SPAWN {
+	$portalab = 0; #Counter for the boss kills
+}
+
 sub EVENT_SAY {
 my $send = quest::saylink("send", 1);
 	if ($text=~/hail/i && $ulevel >= 64 && defined $qglobals{$name."pobcorpse"}) {
@@ -16,7 +21,8 @@ my $send = quest::saylink("send", 1);
 	$client->Message(14, "It will be a meager 1000 platinum pieces please.");
 	}
 	else {
-	$client->Message(14,"I have nothing to say to you $name, now go away or I shall taunt you a second time!");   
+	$client->Message(14,"I have nothing to say to you $name, now go away or I shall taunt you a second time!");
+	
 	}
 }
 sub EVENT_ITEM {
@@ -31,4 +37,16 @@ sub EVENT_ITEM {
 		plugin::return_items(\%itemcount);
 		return 1;
 	}
+}
+
+sub EVENT_SIGNAL {
+	if ($signal == 10505) { #This signal are from these mobs upon death!
+		if ($qglobals{'portalab'} > 4) {
+			quest::setglobal("portalab", 1, 7, "M60");
+		}
+		else {
+		quest::setglobal("portalab", ($qglobals{'portalab'}) + 1, 7, "M60");	
+		}
+	}
+
 }
