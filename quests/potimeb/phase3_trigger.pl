@@ -322,7 +322,7 @@ sub EVENT_SIGNAL {
 	if ($wnincounter == 2) {
 		
 		$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
-		quest::we(14, "Congratulations, phase 3 has been completed! Click on the portal to phase 4.");
+		quest::we(14, "Congratulations to $name! Phase 3 has been completed, click on the portal to phase 4.");
 		#depopping
 		quest::setglobal("portal3", 1, 7, "H1");
 		$wnincounter = 0;
