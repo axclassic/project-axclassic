@@ -85,7 +85,7 @@ sub EVENT_SIGNAL {
 	}
 	if ($godcounterII == 4) { #event success
 	$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
-    quest::we(14, "Congratulations with the completion of phase 4. The 5th and final phase is in the next room through the fountain.");
+    quest::we(14, "Congratulations to $name with the completion of phase 4. The 5th and final phase is in the next room through the fountain.");
     quest::setglobal("portal5",1,7,"H1"); #sets flag for final phase to Quarm
     $godcounterII = 0;
 	}
