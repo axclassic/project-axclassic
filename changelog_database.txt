@@ -1,5 +1,9 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==11/22/2016==
+Angelox: Added crystal folder in quests.
+Patrikpatrik: Testing alternate depopping fabled scripts only when spawned.
+
 ==9/04/2016==
 Patrikpatrik: Revamped Gukbottom, removed controller scripts.
 
