@@ -1,5 +1,9 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==11/25/2016==
+Patrikpatrik: Forum color legends correction fix.
+Patrikpatrik: Specified changelog sections.
+
 ==10/11/2016==
 Patrikpatrik: The Rathe News section changed to Changelogs. Added Source, Quests, Database, and Web.
 
