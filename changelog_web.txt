@@ -1,5 +1,9 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==12/02/2016==
+Patrikpatrik: Added server time feature in serverstat window and replaces Active zones.
+Patrikpatrik: serverstat auto update feature disabled for now.
+
 ==11/25/2016==
 Patrikpatrik: Forum color legends correction fix.
 Patrikpatrik: Specified changelog sections.
