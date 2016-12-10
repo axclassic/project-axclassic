@@ -12,5 +12,5 @@ sub EVENT_LOOT{
 	} elsif ($templ == 1620) { # Runebranded girdle
 		$item = quest::varlink(1620);
 	}
-		quest::we(14, "$name, the $class has just looted the -$item-!");
+		quest::we(14, "The Rathe server congratulates $name, the uber $class for looting an extremely rare -$item-!");
 }
