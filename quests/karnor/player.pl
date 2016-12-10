@@ -12,5 +12,5 @@ sub EVENT_LOOT{
 	} elsif ($templ == 6639) { # Tranquil staff
 		$item = quest::varlink(6639);
 	}
-		quest::we(14, "$name, the $class has just looted the -$item-!");
+		quest::we(14, "The Rathe server congratulates $name, the uber $class for looting an extremely rare -$item-!");
 }
