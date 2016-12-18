@@ -1,7 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==12/18/2016==
-Patrikpatrik: Fabled depopper scripts re-introduced.
+Patrikpatrik: Fabled depopper scripts re-introduced for Old Sebilis.
 
 ==12/08/2016==
 Patrikpatrik: Improved depopper script for Karnor's fableds.
