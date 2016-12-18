@@ -1,4 +1,4 @@
-# #The_Fabled_Baron_Yosig (89182)
+# #The_Fabled_Froglok_Pickler (89189)
 # Depopper script after 10 min by Patrikpatrik
 # Last updated 12/18/2016
 
@@ -9,13 +9,13 @@ sub EVENT_SPAWN{
 	
 	$tempb = $npc->GetNPCTypeID();
 	
-	if ($tempb == 89182) {
-		quest::settimer("fyosig", 600);
+	if ($tempb == 89189) {
+		quest::settimer("fpickler", 600);
 	}
 }
 
 sub EVENT_TIMER {
-	if($timer eq "fyosig") {
+	if($timer eq "fpickler") {
 		quest::depop();
 	}
 }

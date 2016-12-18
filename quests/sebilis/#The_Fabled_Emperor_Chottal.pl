@@ -1,4 +1,4 @@
-# #The_Fabled_Baron_Yosig (89182)
+# #The_Fabled_Emperor_Chottal (89187)
 # Depopper script after 10 min by Patrikpatrik
 # Last updated 12/18/2016
 
@@ -9,13 +9,13 @@ sub EVENT_SPAWN{
 	
 	$tempb = $npc->GetNPCTypeID();
 	
-	if ($tempb == 89182) {
-		quest::settimer("fyosig", 600);
+	if ($tempb == 89187) {
+		quest::settimer("fchottal", 600);
 	}
 }
 
 sub EVENT_TIMER {
-	if($timer eq "fyosig") {
+	if($timer eq "fchottal") {
 		quest::depop();
 	}
 }
