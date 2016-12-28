@@ -1,5 +1,9 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==12/28/2016==
+Patrikpatrik: Bristlebane changed to Bristlebane the King of Thieves.
+Patrikpatrik: Koxius the Imperceptible spawn % changed and added correct loot.
+
 ==11/22/2016==
 Angelox: Added crystal folder in quests.
 Patrikpatrik: Testing alternate depopping fabled scripts only when spawned.
