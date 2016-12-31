@@ -3,6 +3,8 @@
 ## Zone: Plane of Knowledge                ##
 ## AXClassic's risky ladder reward system  ##
 ## by Patrikpatrik                         ##
+## UPDATE 1/1/2017 will reward shrink item ##
+## upon random ticket from darkwater       ##
 #############################################
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
@@ -36,6 +38,7 @@ sub EVENT_ITEM {
 			quest::summonitem(17523);#book of knowledge
 			quest::summonitem(21813);#Run 2 speed horse black chain bridle
 			quest::summonitem(14009, 5);# 5 potion of moderate healing
+			quest::summonitem(101362); # Unlimited shrinks
 		#This outputs two items without duplicates to prevent lore bug!
 		my @miniarray = ('21820', '21821', '21822', '21823'); #This array contains 4 platinum bags
 				for (my $i = 0; $i< 2; $i++) { #This will loop twice
@@ -67,14 +70,33 @@ sub EVENT_ITEM {
 		$client->Message(14,"Champion Lightwater says, 'Farewell!'");
 		$client->Message(15,"*POOF* Champion Lightwater disappears into thin air.");
 		# }
-		
 	quest::ding();
-	quest::depop(202389); #rathe & test is 202389
-	}
-	else {
+	#quest::depop(202389); #rathe & test is 202389 DONT DEPOP ANYMORE 1/1/17
+#If random ticket is handed in
+	} elsif (plugin::check_handin(\%itemcount, 51859=>1)) {
+		quest::say("Not bad, but good enough.");
+		quest::summonitem(19725); #wand of imperceptibility
+		$item = quest::varlink(19725);
+		quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
+	} elsif (plugin::check_handin(\%itemcount, 51860=>1)) {
+		quest::say("Now be careful with this.");
+		quest::summonitem(86735); #Earring of Diminutiveness
+		$item = quest::varlink(86735);
+	    quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
+	} elsif (plugin::check_handin(\%itemcount, 51861=>1)) {
+		quest::say("Second best I say!");
+		quest::summonitem(101362); #Humanoid reductionizer
+		$item = quest::varlink(101362);
+	    quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
+	} elsif (plugin::check_handin(\%itemcount, 66615=>1)) {
+		quest::say("Best one ever!");
+		quest::summonitem(62433); #shimmering Bauble of trickery
+		$item = quest::varlink(62433);
+	    quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
+	} else {
 	$client->Message(14,"Champion Lightwater says, 'Now what would I do with this?'");
 	plugin::return_items(\%itemcount); #returns item
 	}
-}
+}#END sub EVENT_ITEM
 
 #END of FILE Zone:poknowledge ID:202389 -- #Champion_Lightwater.pl
