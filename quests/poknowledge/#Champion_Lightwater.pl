@@ -38,7 +38,6 @@ sub EVENT_ITEM {
 			quest::summonitem(17523);#book of knowledge
 			quest::summonitem(21813);#Run 2 speed horse black chain bridle
 			quest::summonitem(14009, 5);# 5 potion of moderate healing
-			quest::summonitem(101362); # Unlimited shrinks
 		#This outputs two items without duplicates to prevent lore bug!
 		my @miniarray = ('21820', '21821', '21822', '21823'); #This array contains 4 platinum bags
 				for (my $i = 0; $i< 2; $i++) { #This will loop twice
