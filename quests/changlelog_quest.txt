@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==1/01/2017==
+Patrikpatrik: Champion Darkwater.pl scripts streamlined and plaed in 'templates' for efficiency.
+Patrikpatrik: Champion Darkwater/Lightwater accepts and rewards tickets for shrink items.
+
 ==12/18/2016==
 Patrikpatrik: Fabled depopper scripts re-introduced for Old Sebilis.
 
