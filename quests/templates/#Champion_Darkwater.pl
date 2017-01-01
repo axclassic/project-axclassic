@@ -4,12 +4,12 @@
 ## Darkwater Ladder Event           ##
 ## By: Angelox	                    ##
 ## Revised Clicklinks by Caved      ##
-## 3rd revision by Angelox logic    ##
-## Date:  02-01-2011    	        ##
-## 4th revision 7/29/2015 cleanup   ##
-## 7/31/15 revision improved globals##
-## UPDATE 1/1/16: SoW Earring gift  ##
-## 2/2/16 More rewards at level 65  ##
+## 3rd rev by Angelox logic 2/01/11 ##
+## 7/29/15 4th REV patrikpatrik     ##
+## 7/31/15 improved globals         ##
+## 1/01/16 SoW Earring gift         ##
+## 2/02/16 More rewards at level 65 ##
+## 1/01/17 added shrink item reward ##
 ######################################
 sub EVENT_SAY {
 #hyperlinks
@@ -23,10 +23,10 @@ my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
 my $newyears = quest::saylink("special", 1);
 #Ladder date and char settings
-my $minCharID  = 6125; #remember to define this in the sub Event ITEM below
-my $maxCharID  = 6124; #5828
-my $activeYear = 2016;
-my $activeMonth = "July";
+my $minCharID  = 6408; #6125 remember to define this in the sub Event ITEM below
+my $maxCharID  = 6407; #6124 5828
+my $activeYear = 2017; #2016
+my $activeMonth = "January"; #July
 
 
 	if(($text=~/hail/i) && ($charid < $minCharID)) { #this is the newest charID
@@ -218,9 +218,9 @@ my $activeMonth = "July";
 
 
 sub EVENT_ITEM {
-my $minCharID  = 6125; #dont forget to set this one as well 5829
-my $activeMonth = "July";
-my $activeYear = 2016;
+my $minCharID  = 6408; #6125 dont forget to set this one as well 5829
+my $activeMonth = "January";
+my $activeYear = 2017;
 
 	if ($charid < $minCharID) { #this charid and the one above should be the same.
 		$client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
@@ -261,11 +261,24 @@ my $activeYear = 2016;
 		}
 #Turning in 65 ladder reward for King Card
 	elsif (plugin::check_handin(\%itemcount, 413=>1) && $qglobals{"kingcard"} != 1) {
-		$client->Message(14, "Champion Darkwater says, 'I see you want more $name. Talk to Champion Lightwater and give her this card.'");
+		$client->Message(14, "Champion Darkwater says, 'I see you want more $name. Talk to Champion Lightwater and give her this card and your random ticket.'");
 		$client->Message(6, "You received a King Card.");
 		quest::summonitem(22298);
 		quest::summonitem(413);
 		quest::setglobal("kingcard", 1, 5, "F");
+#Random ticket reward
+		$ticket = int(rand(4) + 1);
+		if($ticket == 1) {
+			quest::summonitem(51859); #green ticket
+		} elsif ($ticket == 2) {
+			quest::summonitem(51860); #yellow
+		} elsif ($ticket == 3) {
+			quest::summonitem(51861); #white
+		} elsif ($ticket == 4) {
+			quest::summonitem(66615); #gold
+		} else {
+			#DO nothing.
+		}
 	}
 	else {
 	$client->Message(14,"Champion Darkwater says, 'Now what would I do with this?'");
