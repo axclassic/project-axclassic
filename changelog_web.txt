@@ -1,5 +1,9 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==1/06/2017==
+Patrikpatrik: Improved Server Time requests.
+Patrikpatrik: Re-introduced serverstat auto update feature.
+
 ==12/02/2016==
 Patrikpatrik: Added server time feature in serverstat window and replaces Active zones.
 Patrikpatrik: serverstat auto update feature disabled for now.
