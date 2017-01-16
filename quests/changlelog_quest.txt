@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==1/15/2017==
+Patrikpatrik: Added levitate option for Olunea Miltin, Tegea Prendyn, & Zachariah Reigh.
+
 ==1/01/2017==
 Patrikpatrik: Champion Darkwater.pl scripts streamlined and placed in 'templates' for efficiency.
 Patrikpatrik: Champion Darkwater/Lightwater accepts and rewards tickets for shrink items.
