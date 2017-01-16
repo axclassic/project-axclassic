@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==1/15/2017==
+Patrikpatrik: Adjusted boat height for butcher, oot, & freporte.
+
 ==12/28/2016==
 Patrikpatrik: Bristlebane changed to Bristlebane the King of Thieves.
 Patrikpatrik: Koxius the Imperceptible spawn % changed and added correct loot.
