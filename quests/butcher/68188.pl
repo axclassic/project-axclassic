@@ -2,6 +2,7 @@
 ## SirensBane travels from oot to oot to butcher and back
 ## Angelox
 ## Qadar
+## UPDATE 1/15/2017 Patrikpatrik Testing corrected boat height without using ramp
 
 sub EVENT_SPAWN{
 no warnings 'all' ;
@@ -67,7 +68,7 @@ no warnings 'all' ;
     quest::delglobal("sirens");
     quest::setglobal("sirens",0,7,"F");
     $sirens = undef;
-    quest::spawn2(68228,224,0,3680,2010,-19,153);
+    quest::spawn2(68228,224,0,3680,2010,-30,153);
   }
 }
 
