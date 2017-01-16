@@ -2,6 +2,7 @@
 ## SirensBane travels from oot to oot to freporte and back
 ## Angelox
 ## Qadar
+## UPDATE 1/15/2017 Patrikpatrik Testing corrected boat height without using ramp
 sub EVENT_WAYPOINT{
 no warnings 'all' ;
 
@@ -49,7 +50,7 @@ no warnings 'all' ;
     quest::delglobal("sirens");
     quest::setglobal("sirens",40,7,"F");
     $sirens = undef;
-    quest::spawn2(10196,24,0,-1654.87,-655.925,-80,46.5);
+    quest::spawn2(10196,24,0,-1654.87,-655.925,-96,46.5);
   }
 }
 

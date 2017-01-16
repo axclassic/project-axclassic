@@ -28,6 +28,7 @@
 #
 # *** NPC NOTES ***
 #
+# UPDATE 1/15/2017 patrikpatrik added levitate option with hyperlink
 #
 #
 ############################################
@@ -37,10 +38,16 @@
 
 sub EVENT_SAY
 {
+#hyperlinks
+my $levitate = quest::saylink("levitate", 1);
    if($text=~/Hail/i) {
    quest::say("Hello. It is good to meet you. Try not to scare the fish away. This is A good spot I supply fish to the Grub N' Grog. The patrons there love me!");
-   quest::say("Although it was better when the [ship] sailed here ...");
+   quest::say("Although it was better when the [ship] sailed here... Would you like a $levitate?");
    }
+elsif($text=~/levitate/i) {
+	quest::say("There you are, safe travels!");
+	$npc->CastSpell(261, $userid);
+}
 ### AngeloX's "Remember the SirensBane!"
 elsif($text=~/ship/i){
 quest::emote("looks up dreamily, 'Aye, the good ship SirensBane, did us all a great [service] in her day ...'");
