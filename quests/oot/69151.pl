@@ -56,7 +56,7 @@ if($sirens==14){
   $sirens = undef;
 	if((($zonetime >= 1800)&&($zonetime <= 2359))|(($zonetime >= 0)&&($zonetime <= 500))){           #nighttime
 	     if ($event4==1){#Pitch Black Event
-  		quest::spawn2(69156,62,0,10784.3,1151.7,-13,183.9);}
+  		quest::spawn2(69156,62,0,10784.3,1151.7,-40,183.9);}
 	     else{quest::spawn2(69134,62,0,10784.3,1151.7,-40,183.9);}} #daytime boat
 	else{						     #daytime
   		quest::spawn2(69134,62,0,10784.3,1151.7,-40,183.9);}
