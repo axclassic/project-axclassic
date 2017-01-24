@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==1/22/2017==
+Angelox: Added Gem Inlaid Gauntlets quest.
+
 ==1/15/2017==
 Patrikpatrik: Added levitate option for Olunea Miltin, Tegea Prendyn, & Zachariah Reigh.
 
