@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==1/27/2017==
+Patrikpatrik: Added depopper script for Fabled Xalgoz.
+
 ==1/15/2017==
 Patrikpatrik: Adjusted boat height for butcher, oot, & freporte.
 
