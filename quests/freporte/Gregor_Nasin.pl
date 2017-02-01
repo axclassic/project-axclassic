@@ -1,5 +1,5 @@
 ############################################
-# UPDATE 1/30/2017 Erud's Tonic changed to 13118
+# UPDATE 2/01/2017 Erud's Tonic 13118 & 13122
 # ZONE: East Freeport (freporte)
 # DATABASE: PEQ-Velious
 # LAST EDIT DATE: May 1,2005
@@ -89,8 +89,9 @@ quest::say("I do not know. Ask an ogre. Maybe they have heard of him.");
 }
 
 sub EVENT_ITEM {
-# Erud's Tonic ID-13118 - Koalindl Fish ID-13383 - Honey Jum ID-13952 - Kiola Nut ID-13340
-	if(plugin::check_handin(\%itemcount, 13118=>1, 13383=>1, 13952=>1, 13340=>1)) {
+# Erud's Tonic ID-13118 & 13122 - Koalindl Fish ID-13383 - Honey Jum ID-13952 - Kiola Nut ID-13340
+	if(plugin::check_handin(\%itemcount, 13118=>1, 13383=>1, 13952=>1, 13340=>1) ||
+	  plugin::check_handin(\%itemcount, 13122=>1, 13383=>1, 13952=>1, 13340=>1)) {
 		quest::say("Now I have every ingredient mentioned in the Barkeep Compendium. Here. You take it. <..click!.> Whoops!! I just closed it. It's magically sealed, I never closed it before. It's useless to you. I have no need for it any longer. Maybe you can return it to [Clurg] for some type of reward.");
 		quest::ding(); quest::exp("200");
 		# Barkeep Compendium ID-13379
@@ -107,11 +108,7 @@ sub EVENT_ITEM {
 		# Freeport Militia Faction
 		quest::faction("105","1");
 	}
-	
 	plugin::return_items(\%itemcount);
 }
 
-
 #END of FILE Zone:freporte  ID:10064 -- Gregor_Nasin 
-
-
