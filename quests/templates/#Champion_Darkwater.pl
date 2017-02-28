@@ -132,7 +132,8 @@ my $activeMonth = "January"; #July
 			}
 		elsif (($ulevel == '65') && ($ladder_title == '1')) { #set Ladder Title
 			$client->SetAATitle("Ladder Champion");
-			quest::we(13, "Champion Darkwater shouts, 'All Hail $name for earning the title Ladder Champion!'");
+			##quest::we is bugged
+			##quest::we(13, "Champion Darkwater shouts, 'All Hail $name for earning the title Ladder Champion!'");
 			quest::ding();
 			quest::setglobal("ladder_title", 2, 5, "F");
 			$ladder_title=undef;

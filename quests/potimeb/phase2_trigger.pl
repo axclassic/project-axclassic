@@ -52,7 +52,8 @@ sub EVENT_SIGNAL {
 	}
 	if ($IIcounter == 5) { #Inner doors open!
 	$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
-	quest::we(14, "Congratulations to $name! Phase 2 has been completed, move through the clock door to phase 3.");
+	##quest::we is bugged
+	##quest::we(14, "Congratulations to $name! Phase 2 has been completed, move through the clock door to phase 3.");
 	#inner connecting doors
 	quest::forcedooropen(13); #connecting door water and fire lower right panel
     quest::forcedooropen(14); # upper right

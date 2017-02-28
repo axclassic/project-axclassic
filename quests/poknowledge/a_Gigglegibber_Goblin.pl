@@ -119,7 +119,8 @@ sub EVENT_ITEM {
 		if ((($totals[0] == $roll1) || ($totals[0] == $roll2) || ($totals[0] == $roll3)) &&
 		   (($totals[1] == $roll1) || ($totals[1] == $roll2) || ($totals[1] == $roll3)) &&
 		   (($totals[2] == $roll1) || ($totals[2] == $roll2) || ($totals[2] == $roll3))) {
-			   $client->Message(14, "a Gigglegibber Goblin says, 'You HIT the jackpot $name, congratulations!");
+			   ##quest::we is bugged
+			   ##$client->Message(14, "a Gigglegibber Goblin says, 'You HIT the jackpot $name, congratulations!");
 			   quest::we(13, "a Gigglegibber Goblin shouts, '$name just won the jackpot of $qglobals{'jackpot'} platinum!'");
 			   quest::setglobal("globaljackpot", $qglobals{"jackpot"} , 7, "F");
 			   $globaljackpot = $qglobals{"jackpot"};

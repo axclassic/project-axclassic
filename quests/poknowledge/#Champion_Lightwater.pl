@@ -76,22 +76,23 @@ sub EVENT_ITEM {
 		quest::say("Not bad, but good enough.");
 		quest::summonitem(19725); #wand of imperceptibility
 		$item = quest::varlink(19725);
-		quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
+		##quest::we is bugged
+		##quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
 	} elsif (plugin::check_handin(\%itemcount, 51860=>1)) {
 		quest::say("Now be careful with this.");
 		quest::summonitem(86735); #Earring of Diminutiveness
 		$item = quest::varlink(86735);
-	    quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
+	    ##quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
 	} elsif (plugin::check_handin(\%itemcount, 51861=>1)) {
 		quest::say("Second best I say!");
 		quest::summonitem(101362); #Humanoid reductionizer
 		$item = quest::varlink(101362);
-	    quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
+	    ##quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
 	} elsif (plugin::check_handin(\%itemcount, 66615=>1)) {
 		quest::say("Best one ever!");
 		quest::summonitem(62433); #shimmering Bauble of trickery
 		$item = quest::varlink(62433);
-	    quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
+	   ##quest::we(14, "The Rathe server congratulates $name, the uber $class for receiving a -$item-!");
 	} else {
 	$client->Message(14,"Champion Lightwater says, 'Now what would I do with this?'");
 	plugin::return_items(\%itemcount); #returns item

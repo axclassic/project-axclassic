@@ -24,7 +24,8 @@ sub EVENT_SIGNAL { #phase 1 signals
   if ($Icounter == 5 ) { #phase 1 success all doors should unlock
 	# quest::settimer("zshake", 1);
 	$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
-	quest::we(14, "Congratulations to $name! Phase 1 has been completed, move on to phase 2.");
+	##quest::we is bugged
+	##quest::we(14, "Congratulations to $name! Phase 1 has been completed, move on to phase 2.");
 	quest::forcedooropen(5); #fire trial lower right panel
     quest::forcedooropen(6); # upper right
     quest::forcedooropen(7); # upper left
