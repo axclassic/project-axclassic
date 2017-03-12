@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==3/11/2017==
+Patrikpatrik: Addition of sparring armor quest with Master Bain.
+
 ==1/22/2017==
 Angelox: Added Gem Inlaid Gauntlets quest.
 
