@@ -1,3 +1,5 @@
+# Yar`Lir_the_Hurricane`s_Eye (340062)
+
 ##Yar'Lir event 1 of possible 3 NPC ID 340062##
 sub EVENT_SPAWN {
 
@@ -13,5 +15,5 @@ sub EVENT_HP {
  }
 
 sub EVENT_DEATH {
-quest::spawn2(340067,0,0,-3354.8,3144.2,292.5,183.8); 
-}
+	quest::spawn2(340067,0,0,-3354.8,3144.2,292.5,183.8); # an_finely_crafted_chest (340067)
+}# END sub EVENT_DEATH
