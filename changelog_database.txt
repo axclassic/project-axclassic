@@ -2,7 +2,7 @@ AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==3/19/2017==
 Patrikpatrik: Certain boss respawn timers adjusted to 3 hours.
-Patrikpatrik: Chest items & epic coin adjusted accordingly.
+Patrikpatrik: Chest items & epic coin adjusted.
 
 ==1/27/2017==
 Patrikpatrik: Added depopper script for Fabled Xalgoz.
