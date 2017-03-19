@@ -2,6 +2,7 @@ AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==3/18/2017==
 Patrikpatrik: Certain bosses respawn timer changed to once per day.
+
 ==1/27/2017==
 Patrikpatrik: Added depopper script for Fabled Xalgoz.
 
