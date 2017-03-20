@@ -20,4 +20,7 @@ my $Duram = quest::saylink("Duram", 1);
     quest::say("I can find my way out from here friend.");
     quest::depop();
     }
- }   
+    else {    
+    plugin::return_items(\%itemcount);
+    }
+   }
