@@ -6,12 +6,13 @@ my $Duram = quest::saylink("Duram", 1);
   if($text=~/hail/i) {
   $npc->SetAppearance(0);#stand
   quest::say("Uuugh. . . I wish $Duram was here.");
+    quest::settimer(Death",60);
   }
   if($text=~/Duram/i) {
   quest::say("Duram sent you? Unbelievable. Before I go anywhere, I need my sword back, it was taken from me earlier. That beast in there took it and knocked me down. . .he thought I was dead because I didn't move. Defeat him and bring me back my sword and I will leave.");
   quest::say("You have Thirty minutes to do what I could not.");
   quest::spawn2(316063,0,0,-1861,-742,-309.8,146.5);
-  quest::settimer(Death",60);
+
    }
  }
  
