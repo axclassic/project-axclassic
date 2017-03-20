@@ -25,6 +25,8 @@ my $Duram = quest::saylink("Duram", 1);
     quest::depop();
     }
     else {    
+    $client->Message(14,"I don't need this $name. Take it back.");
     plugin::return_items(\%itemcount);
+    return 1;
     }
    }
