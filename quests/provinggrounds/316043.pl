@@ -19,7 +19,7 @@ my $Duram = quest::saylink("Duram", 1);
     quest::summonitem(69973);
     quest::depop();
     }
-    elsif (plugin::check_handin(\%itemcount, 120221 => 1)) {
+    if (plugin::check_handin(\%itemcount, 120221 => 1)) {
     quest::say("My sword, Oh My it is broken! Thank you for trying bring it back to me. I have no other option but to return to my home and forge a new sword.");
     quest::say("I can find my way out from here friend.");
     quest::depop();
