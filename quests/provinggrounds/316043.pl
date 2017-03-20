@@ -3,7 +3,7 @@ sub EVENT_SPAWN {$npc->SetAppearance(3);#sleeping
 sub EVENT_SAY {
 my $Duram = quest::saylink("Duram", 1);
   if($text=~/hail/i) {
-  $npc->SetAppearance(1);#stand
+  $npc->SetAppearance(0);#stand
   quest::say("Uuugh. . . I wish $Duram was here.");
   }
   if($text=~/Duram/i) {
