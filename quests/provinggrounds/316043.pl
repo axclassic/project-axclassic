@@ -1,4 +1,5 @@
-sub EVENT_SPAWN {$npc->SetAppearance(3);#sleeping
+sub EVENT_SPAWN {
+$npc->SetAppearance(3);#sleeping
 }
 sub EVENT_SAY {
 my $Duram = quest::saylink("Duram", 1);
