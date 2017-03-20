@@ -1,21 +1,23 @@
 sub EVENT_SAY {
-   if($text=~/hail/i) {
-    quest::say("Uuugh. . .");
-    }
-   if($text=~/home/i) {
-    quest::say("Duram sent you? Unbelievable. Before I go anywhere, I need my sword back, it was taken from me earlier. That beast in there took it and knocked me down. . .he thought I was dead because I didn't move. Defeat him and bring me back my sword and I will leave.");   
-    quest::spawn2(316063,0,0,-1861,-742,-309.8,142.6);	
-    }
-   } 
-sub EVENT_ITEM {
-if(plugin::check_handin(\%itemcount, 69974 => 1)) {
-   quest::say("'My sword, you have brought it back to me. Thank you $name, you truly are heroic.");
-   quest::say("'At last I am free again! Thank you so much for saving me from the horrors of this vile place. You have my gratitude. I can find my way out from here friend. Here take this note. I am sure you will find a use for it.");
-   quest::summonitem(69973);
-   quest::depop(); }
-elsif(plugin::check_handin(\%itemcount, 120221 => 1)) {
-   quest::say("My sword, Oh My it is broken! Thank you for trying to retrieve it for me. I have no other option but to return to my home and forge a new sword.");
-   quest::say("I can find my way out from here friend.");
-   quest::depop();
-   }
+my $Duram = quest::saylink("Duram", 1);
+  if($text=~/hail/i) {
+  quest::say("Uuugh. . . I wish $Duram was here.");
   }
+  if($text=~/Duram/i) {
+  quest::say("Duram sent you? Unbelievable. Before I go anywhere, I need my sword back, it was taken from me earlier. That beast in there took it and knocked me down. . .he thought I was dead because I didn't move. Defeat him and bring me back my sword and I will leave.");
+  quest::spawn2(316063,0,0,-1861,-742,-309.8,146.5);
+   }
+ } 
+  sub EVENT_ITEM {
+    if(plugin::check_handin(\%itemcount, 69974 => 1)) {
+    quest::say("'My sword, you have brought it back to me. Thank you $name, you truly are heroic.");
+    quest::say("'At last I am free again! Thank you so much for saving me from the horrors of this vile place. You have my gratitude. I can find my way out from here friend. Here take this note. I am sure you will find a use for it.");
+    quest::summonitem(69973);
+    quest::depop();
+    }
+    elsif(plugin::check_handin(\%itemcount, 120221 => 1)) {
+    quest::say("My sword, Oh My it is broken! Thank you for trying bring it back to me. I have no other option but to return to my home and forge a new sword.");
+    quest::say("I can find my way out from here friend.");
+    quest::depop();
+    }
+ }   
