@@ -1,3 +1,6 @@
+sub EVENT_SPAWN {
+$npc->SetAppearance(3);#sleeping
+}
 sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount, 69974 => 1)) {
    quest::say("'My sword, you have brought it back to me. Thank you $name, you truly are heroic.");
