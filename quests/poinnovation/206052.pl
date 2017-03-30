@@ -19,7 +19,7 @@ my $collecting = quest::saylink("collecting", 1);
   if($text=~/combination/i) {  
    quest::say("Well you see when I was back home it was common for me to use a mycological spore extricate-kinetoconvertor to power my devices. I started planning my defense to use this as a power source out of sheer habit. Here in this desolation the mushrooms that were grown back home do not exist. I am going to have to rig something from spare parts. It is taking a long time with my having to search the junkyard small portions at a time due to the clockworks. Would you help me in $collecting materials?"); 
   }
-  if($text=~/hail/i) {
+  if($text=~/collecting/i) {
    quest::emote(' peers over some schematics laying on a table next to him.');
    quest::say("Let us see here. I have some of the base parts for the power source. If you could collect a copper node, a bundle of super conductive wires, and an intact power cell I could power up the machine. Good luck to you $name, I hope that we can work together on this.");
   }
