@@ -28,7 +28,7 @@ my $collecting = quest::saylink("collecting", 1);
   if ($wp == 21) { 
   quest::emote(' begins assembling the power source.'); 
   quest::spawn2(206386,0,0,-735,1580,-52.6,130.9);
-  quest::spawn2(206387,0,0,-723.5,1566.3.-52.4,248.9);
+  quest::spawn2(206387,0,0,-723.5,1566.3,-52.4,248.9);
   quest::depop();
   } 
  } 
