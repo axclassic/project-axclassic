@@ -5,8 +5,6 @@ sub EVENT_SPAWN {
    
   }
 sub EVENT_HP {
-if($hpevent <= 61)
- }
    quest::spawn2(204351,0,0,922,1028,280);
    quest::spawn2(204351,0,0,947,1117,200);
    quest::spawn2(204351,0,0,1031,1164,276);
@@ -15,7 +13,7 @@ if($hpevent <= 61)
    quest::spawn2(204351,0,0,1237,887,272);
    quest::settimer(1,30);     # Timer to spawn targetable treants 30 seconds after untargetables are spawned #    
   }
-  }
+  
 sub EVENT_TIMER {
   if ($timer == 1) {
    quest::depopall(204351); # Despawn untargetable treants #  # Spawn the targetable treants
