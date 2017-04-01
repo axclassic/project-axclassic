@@ -1,4 +1,4 @@
-
+#Deyid_the_Twisted#
 sub EVENT_SPAWN {
 
    quest::setnexthpevent(61);
