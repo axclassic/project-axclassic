@@ -1,5 +1,5 @@
 
- }sub EVENT_SPAWN {
+sub EVENT_SPAWN {
    quest::setnexthpevent(61);
   }
 sub EVENT_HP {
