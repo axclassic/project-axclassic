@@ -21,7 +21,7 @@ my $prepared = quest::saylink("prepared", 1);
   quest::say("Hmm.. It doesn't seem to want to work. Do you see $Deyid?");
   }
  if($text=~/Deyid/i) {
-  quest::say("Ohh, that must be what is causing all this trouble! You all seem so brave. Maybe if you chop down Deyid the Twisted I will be able to go home? Will you please? If you have gathered together and are prepared, have your leaders step forward and tell me their readiness. Mother's Locket doesn't seem as bright as it was before. I fear I can only use it but a couple more times.");
+  quest::say("Ohh, that must be what is causing all this trouble! You all seem so brave. Maybe if you chop down Deyid the Twisted I will be able to go home? Will you please? If you have gathered together and are $prepared, have your leaders step forward and tell me their readiness. Mother's Locket doesn't seem as bright as it was before. I fear I can only use it but a couple more times.");
   }
  if($text=~/prepared/i) {
   quest::say("Very well, Good luck to you $name.");
