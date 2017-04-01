@@ -17,7 +17,7 @@ my $prepared = quest::saylink("prepared", 1);
   quest::say("My mother always carried this with her. I have no idea why I suddenly have it. Perhaps I can make it work for you, if you $want me to?");
   }
  if($text=~/want/i) {
-  $client->Message(14,"Seilaen attempt to use the Locket of Escape upon you");
+  $client->Message(14,"Seilaen attempts to use the Locket of Escape upon you");
   quest::say("Hmm.. It doesn't seem to want to work. Do you see $Deyid?");
   }
  if($text=~/Deyid/i) {
