@@ -1,5 +1,5 @@
 
-sub EVENT_ATTACK {
+sub EVENT_SPAWN {
 
    quest::setnexthpevent(61);
    
