@@ -1,8 +1,11 @@
 
 sub EVENT_SPAWN {
+
    quest::setnexthpevent(61);
+   
   }
 sub EVENT_HP {
+
    quest::spawn2(204351,0,0,922,1028,280);
    quest::spawn2(204351,0,0,947,1117,200);
    quest::spawn2(204351,0,0,1031,1164,276);
