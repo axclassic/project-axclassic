@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
   }
 
 sub EVENT_HP {
-quest::signalwith(204353,204,0);
+#quest::signalwith(204353,204,0);
    quest::spawn2(204351,0,0,922,1028,275.2,58.1);
    quest::spawn2(204351,0,0,947,1117,272.5,94.4);
    quest::spawn2(204351,0,0,1031,1164,271.3,135.8);
