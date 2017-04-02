@@ -34,6 +34,7 @@ sub EVENT_SIGNAL {
   quest::shout("Oh thank you! Thank you! I don't feel the trees watching me anymore! And.. Let me try Mother's Locket again, I think it might work..");
   quest::depopall(204351);
   quest::depopall(204352);
+  quest::depop(204353);
   quest::depop();
   }
  }  
