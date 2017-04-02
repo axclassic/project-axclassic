@@ -18,5 +18,6 @@ quest::spawn2(204352,0,0,1031,1164,271.3);
 quest::spawn2(204352,0,0,1121,1154,275.3);   
 quest::spawn2(204352,0,0,1206,1067,278.3);   
 quest::spawn2(204352,0,0,1063,1251,278.2); 
+quest::stoptimer(1);     # Prevent treants from respawning as targetable if killed quickly #
 }
 }
