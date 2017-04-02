@@ -25,7 +25,7 @@ my $prepared = quest::saylink("prepared", 1);
   }
  if($text=~/prepared/i) {
   quest::say("Very well, Good luck to you $name.");
-  #quest::spawn2(204353,862,910,278,31.5);
+  quest::spawn2(204353,862,910,278,31.5);
   quest::movepc(204,1173.0,1176.6,279.4);
   }
  } 
