@@ -1,5 +1,11 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==4/2/2017==
+Aardil: Added quest for Seilaen & Deyid in ponightmare.
+
+==3/31/2017==
+Aardil: Added Nitram Anizok quest in poinnovation.
+
 ==3/11/2017==
 Patrikpatrik: Addition of sparring armor quest with Master Bain.
 
