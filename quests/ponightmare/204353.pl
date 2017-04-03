@@ -1,7 +1,6 @@
 #Deyid_Trigger#
 sub EVENT_SIGNAL {
 if($signal == 204) {
-quest::shout("signal recieved!");
 quest::settimer("depoptimer",30);
 }
 }
