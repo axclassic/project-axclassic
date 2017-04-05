@@ -1,6 +1,7 @@
 ##Relv_the_Mysterious in the Plane of Storms  210080## 
 
 sub EVENT_SAY {
+my $return = quest::saylink("return", 1);
 my $destruction = quest::saylink("destruction", 1);
 my $continue = quest::saylink("continue", 1);
 my $destroy = quest::saylink("destroy", 1);
@@ -8,7 +9,11 @@ my $courageous = quest::saylink("courageous", 1);
 my $time = quest::saylink("time", 1);
   if($text=~/hail/i) {
    quest::say("Greetings to you, small one. I see you have made great progress through our fair planar dwelling. Were it not for the dubious undertakings by someone. . . or something, I would be more than glad to welcome you here. Unfortunately, there have been dangerous tidings afoot. Just look at the trees around you. This $destruction is the work of something altogether unseen, at least by me.");
-   }   
+   quest::say("If you did not fare well and need to $return to collect your belongings, just speak the word and it will be so.");
+   } 
+  if($text=~/return/i) {
+   quest::movepc(210,-1099.4,4956.4,-523.2);  
+   }
   if($text=~/destruction/i) {
    quest::say("There was a time when all the trees were green and alive, though as you can see, that time is no more. I am unsure what it is that has caused the damage, but I do know that whatever it is has caused a great deal of damage and will $continue to do so unless someone like yourself has the courage to rid us of it.");
    }
