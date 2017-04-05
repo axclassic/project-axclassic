@@ -8,6 +8,7 @@ my $wait = quest::saylink("wait", 1);
 my $us = quest::saylink("us", 1);
 my $wait = quest::saylink("wait", 1);
 my $else = quest::saylink("else", 1);
+my $illusion = quest::saylink("illusion", 1);
   if($text=~/hail/i) {
    quest::say("Why hello there! Ahh, it's good to see a new face down $here. So you've come to $wait with $us eh? That is splendid! It's been getting very boring lately.");
   }
