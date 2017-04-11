@@ -2,6 +2,7 @@ AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==4/10/2017==
 Patrikpatrik: Added depopper script for fableds in Crushbone.
+Patrikpatrik: Adjusted fableds spawn % in Crushbone.
 
 ==3/19/2017==
 Patrikpatrik: Certain boss respawn timers adjusted to 3 hours.
