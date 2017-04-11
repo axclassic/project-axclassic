@@ -2,11 +2,19 @@
 #Status: COMPLETE
 
 sub EVENT_SAY {
+my $materials = quest::saylink("materials", 1);
+my $boots = quest::saylink("boots", 1);
+my $bracer = quest::saylink("bracer", 1);
+my $coif = quest::saylink("coif", 1);
+my $gloves = quest::saylink("gloves", 1);
+my $leggings = quest::saylink("leggings", 1);
+my $sleeves = quest::saylink("sleeves", 1);
+my $tunic = quest::saylink("tunic", 1);
   if($text=~/hail/i) {
-    quest::say("Greetings, $name. So you are one of Selzar's new recruits. You are to assist in the construction of the armor you will don as a new Rogue of the House of the Ebon Mask. I have assembled a kit that is used in the crafting of Ashen Bone Mail. You must travel beyond Neriak into the Nektulos Forest for the [materials] that compose the armor.");
+    quest::say("Greetings, $name. So you are one of Selzar's new recruits. You are to assist in the construction of the armor you will don as a new Rogue of the House of the Ebon Mask. I have assembled a kit that is used in the crafting of Ashen Bone Mail. You must travel beyond Neriak into the Nektulos Forest for the $materials that compose the armor.");
   }
   if($text=~/materials/i) {
-    quest::say("Many species of dangerous creatures, the restless dead, and halfling invaders from Rivervale inhabit the Nektulos Forest. You must defeat these creatures and halflings in order to obtain the materials. The materials you seek depend on the piece of armor you desire. Do you desire to craft [gloves], [boots], a [bracer], a [coif], [leggings], [sleeves], or a [tunic]?");
+    quest::say("Many species of dangerous creatures, the restless dead, and halfling invaders from Rivervale inhabit the Nektulos Forest. You must defeat these creatures and halflings in order to obtain the materials. The materials you seek depend on the piece of armor you desire. Do you desire to craft $gloves, $boots, $bracer, $coif, $leggings, $sleeves, or a $tunic?");
     quest::summonitem(17124);
   }
   if($text=~/boots/i) {
@@ -40,8 +48,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+my $materials = quest::saylink("materials", 1);
   if(plugin::check_handin(\%itemcount, 2416 => 1)) {
-    quest::say("Greetings, $name. So you are one of Selzar's new recruits. You are to assist in the construction of the armor you will don as a new Rogue of the House of the Ebon Mask. I have assembled a kit that is used in the crafting of Ashen Bone Mail. You must travel beyond Neriak into the Nektulos Forest for the [materials] that compose the armor.");
+    quest::say("Greetings, $name. So you are one of Selzar's new recruits. You are to assist in the construction of the armor you will don as a new Rogue of the House of the Ebon Mask. I have assembled a kit that is used in the crafting of Ashen Bone Mail. You must travel beyond Neriak into the Nektulos Forest for the $materials that compose the armor.");
     quest::exp(500);
   }
   else {
