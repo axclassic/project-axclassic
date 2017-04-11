@@ -7,17 +7,23 @@
 #   Bone Mail Weapon
 
 sub EVENT_SAY {
+my $armor = quest::saylink("armor", 1);
+my $task = quest::saylink("task", 1);
+my $weapon = quest::saylink("weapon", 1);
+my $shield = quest::saylink("shield", 1);
+my $Ultricle = quest::saylink("Ultricle", 1);
+
     if ($text=~/Hail/i) {
-        quest::say("So you are the next pathetic maggot I have the displeasure of training to be a useful Shadowknight of the Lodge of the Dead. First you must get yourself outfitted in a suit of [armor]. those rags you wear cannot even contain the stench of your miserable hide and will do no good protecting it from the edge of an enemy's blade.");
+        quest::say("So you are the next pathetic maggot I have the displeasure of training to be a useful Shadowknight of the Lodge of the Dead. First you must get yourself outfitted in a suit of $armor. those rags you wear cannot even contain the stench of your miserable hide and will do no good protecting it from the edge of an enemy's blade.");
     }
 
     if ($text=~/armor/i) {
-        quest::say("Seek Krivn S'Tai in the Commoner quarter of Neriak and give him this request parchment. Krivn S'Tai has been paid in advance by the Lodge of the Dead for the requested service. Simply give him the request parchment and he will instruct you further. When you have outfitted yourself in a suit of armor return to the Lodge of the Dead and I will grant you another [task].");
+        quest::say("Seek Krivn S'Tai in the Commoner quarter of Neriak and give him this request parchment. Krivn S'Tai has been paid in advance by the Lodge of the Dead for the requested service. Simply give him the request parchment and he will instruct you further. When you have outfitted yourself in a suit of armor return to the Lodge of the Dead and I will grant you another $task.");
         quest::summonitem(19584); # Request Parchment
     }
 
     if ($text=~/task/i) {
-        quest::say("Ah. you are eager to advance further within the Lodge of the Dead. Although it is my duty to aid your training, do not allow your arrogance to blind you to your lowly position amongst the Queen's most loyal subjects. Your next task is to assist the construction of a [weapon] and [shield] worthy of being wielded by a Shadowknight of the Lodge of the Dead.");
+        quest::say("Ah. you are eager to advance further within the Lodge of the Dead. Although it is my duty to aid your training, do not allow your arrogance to blind you to your lowly position amongst the Queen's most loyal subjects. Your next task is to assist the construction of a $weapon and $shield worthy of being wielded by a Shadowknight of the Lodge of the Dead.");
     }
 
     if ($text=~/weapon/i) {
@@ -25,7 +31,7 @@ sub EVENT_SAY {
     }
 
     if ($text=~/shield/i) {
-        quest::say("The bones of the dead that dig from their graves at the [Ultricle] in the Nektulos Forest have been strengthened by the minerals and ashen soil. Return some of these walking dead to the rest they have abandoned and bring to me four Petrified Femurs.");
+        quest::say("The bones of the dead that dig from their graves at the $Ultricle in the Nektulos Forest have been strengthened by the minerals and ashen soil. Return some of these walking dead to the rest they have abandoned and bring to me four Petrified Femurs.");
     }
 
     if ($text=~/Ultricle/i) {
