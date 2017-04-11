@@ -44,7 +44,7 @@ my $silk = quest::saylink("silk", 1);
         quest::summonitem(19559); # Tattered Glove Pattern
     }
 
-    if ($text=~/=greaves/i) {
+    if ($text=~/greaves/i) {
         quest::say("To craft Bone Mail Leggings you require three silk thread, a low quality wolf skin, two calcified tibia, and a calcified pelvis bone. Once you have the necessary components combine them in your Bone Mail Kit with this Tattered Leggings Pattern.");
         quest::summonitem(19560); # Tattered Pant Pattern
     }
@@ -59,7 +59,7 @@ my $silk = quest::saylink("silk", 1);
         quest::summonitem(19556); # Tattered Tunic Pattern
     }
 
-    if ($text=~/silk thread/i) {
+    if ($text=~/silk/i) {
         quest::say("To craft a silk thread, combine two spiderling silks in a Loom."); # Made up text
     }
 }
