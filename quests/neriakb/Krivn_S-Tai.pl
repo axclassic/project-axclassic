@@ -22,7 +22,9 @@ my $silk = quest::saylink("silk", 1);
 
     if ($text=~/materials/i) {
         quest::say("Many species of dangerous creatures and even the walking remains of the dead inhabit the Nektulos Forest. You must defeat these creatures and undead in order to obtain the materials. The materials you seek depend on the piece of armor you desire. Do you desire to craft Bone Mail $gauntlets, $boots, $bracer, $helm, $greaves, $vambraces, or $breastplate?");
-    }    
+        quest::say("I have assembled a kit that is used in the crafting of Bone Mail for you.");
+		quest::summonitem(17124); # Mail Assembly Kit
+	}    
 
     if ($text=~/boots/i) {
         quest::say("To craft Bone Mail Boots you require two $silk thread, two ruined wolf pelts, and two calcified foot bones. Once you have the necessary components combine them in your Bone Mail Kit with this Tattered Boot Pattern.");
@@ -67,8 +69,7 @@ my $silk = quest::saylink("silk", 1);
 sub EVENT_ITEM {
 my $materials = quest::saylink("materials", 1);
     if (plugin::check_handin(\%itemcount, 19584 => 1)) { # Request Parchment
-        quest::say("So you are one of Ulraz's new recruits. You are to assist in the construction of the armor you will don as a new Shadowknight of the Lodge of the Dead. I have assembled a kit that is used in the crafting of Bone Mail. You must travel beyond Neriak into the Nektulos Forest for the $materials that compose the armor.");
-        quest::summonitem(17124); # Mail Assembly Kit
-    }
+        quest::say("So you are one of Ulraz's new recruits. You are to assist in the construction of the armor you will don as a new Shadowknight of the Lodge of the Dead. You must travel beyond Neriak into the Nektulos Forest for the $materials that compose the armor.");
+   }
 }
 #END of FILE Zone:neriakb  ID:41046 -- Krivn_S`Tai
