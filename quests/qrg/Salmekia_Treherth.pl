@@ -4,6 +4,8 @@
 ## Quest: Druids Newbie Armor       ##
 ## Revised by caved for AXClassic   ##
 ## EQWorld Server     15-12-2010    ##
+## Removed class specific so all can do ##
+## Revised by Aardil 05-02-2017 ##
 ######################################
 sub EVENT_SAY {
 my $clothing = quest::saylink("clothing", 1);
@@ -17,45 +19,37 @@ my $tunic = quest::saylink("Tunic", 1);
 my $task = quest::saylink("task", 1);
 my $bloodsabers = quest::saylink("Bloodsabers", 1);
 
-  if (($text=~/hail/i&&$class eq 'Druid')) {
+  if ($text=~/hail/i) {
     $client->Message(14,"Welcome to Surefall Glade, $name, the home of the Jaggedpine Treefolk. I help teach young druids the ways of our people. We have worshipers of both Karana, the Storm Lord, and Tunare, the All Mother, living here in the glade. If you are a new druid I will help you obtain a suit of $clothing that will offer comfort and protection while working in the wilds and help protect you from the weapons of the Gnolls that wish to take these lands. After you re done getting your Armor i have 1 final $task for you");
   }
-  if (($text=~/clothing/i&&$class eq 'Druid')) {
+  if ($text=~/clothing/i) {
     $client->Message(14,"I can craft Pine Druid armor for you. Are you interested in Pine Druid $gloves, Pine Druid $boots, a Pine Druid $bracer, a Pine Druid $cap, Pine Druid $pants, Pine Druid $sleeves or a Pine Druid $tunic? Please remmember that all the molds that i have to use to make this armor for you will cost 1 platinum per piece exept for the tunic that will cost 2 platinum pieces. When you have been outfitted and are ready I will tell you of a final $task that you can assist with.");
-
   }
-  if (($text=~/gloves/i&&$class eq 'Druid')) {
+  if ($text=~/gloves/i) {
     $client->Message(14,"I will craft your Pine Druid Gloves if you bring me: 2 Blackburrow Gnoll Skins, 1 ruined gnoll leather gloves, 1 giant field rat whiskers, and 1 platinum piece.");
-
   }
-  if (($text=~/boots/i&&$class eq 'Druid')) {
+  if ($text=~/boots/i) {
     $client->Message(14,"I will craft your Pine Druid Boots if you bring me: 2 Blackburrow Gnoll Skins, 1 ruined gnoll leather boots, 1 large whiskered bat fur and 1 platinum piece.");
-
   }
-  if (($text=~/bracer/i&&$class eq 'Druid')) {
+  if ($text=~/bracer/i) {
     $client->Message(14,"I will craft your Pine Druid Bracer if you bring me: 1 Blackburrow Gnoll Skins, 1 ruined gnoll leather wristbands, 1 gnoll fang and 1 platinum piece.");
-
   }
-  if (($text=~/cap/i&&$class eq 'Druid')) {
+  if ($text=~/cap/i) {
     $client->Message(14,"I will craft your Pine Druid Cap if you bring me: 2 Blackburrow Gnoll Skins, 1 ruined gnoll leather cap, 1 Gray Wolf Fang and 1 platinum piece.");
-
   }
-  if (($text=~/pants/i&&$class eq 'Druid')) {
+  if ($text=~/pants/i) {
     $client->Message(14,"I will craft your Pine Druid Pants if you bring me: 2 Blackburrow Gnoll Skins, 1 ruined gnoll leather leggings, 1 Wolf Meat and 1 platinum piece.");
-
   }
-  if (($text=~/sleeves/i&&$class eq 'Druid')) {
+  if ($text=~/sleeves/i) {
     $client->Message(14,"I will craft your Pine Druid Sleeves if you bring me: 2 Blackburrow Gnoll Skins, 1 ruined gnoll leather sleeves, 1 Plague Rat Tail and 1 platinum piece.");
-
   }
-  if (($text=~/tunic/i&&$class eq 'Druid')) {
+  if ($text=~/tunic/i) {
     $client->Message(14,"I will craft your Pine Druid Tunic if you bring me: 2 Blackburrow Gnoll Skins, 1 ruined gnoll leather tunic, 1 silver ring and 2 platinum pieces. Don't forget that I have 1 more $task for you!");
-
   }
-  if (($text=~/task/i&&$class eq 'Druid')) {
+  if ($text=~/task/i) {
     $client->Message(14,"We druids seek to live in harmony with nature, taking only what we need from the land and the creatures that inhabit it. Although the City of Qeynos is a noble place, there are people in the city that do not share our reverence for nature and poach the animals of the Karanas needlessly. Even worse than these poachers, whom the rangers of the Jaggedpine Treefolk constantly seek to deter, are the despicable worshipers of Bertoxxulous that hide in the sewers and catacombs of Qeynos. These wicked individuals are known as the $bloodsabers.");
   }
-  if (($text=~/bloodsabers/i&&$class eq 'Druid')) {
+  if ($text=~/bloodsabers/i) {
     $client->Message(14,"The Bloodsabers are responsible for a number of atrocities including the spreading of the diseases which have been inflicting the wolves and bears of the Qeynos Hills and the recent poisoning of the farmers fields in the Plains of Karana. Recently we have discovered that a Bloodsaber defiler has been attempting to poison the waters of Surefall Glade. Find this individual and deal with him accordingly, I doubt that this individual will surrender willingly. If need be eliminate them and bring me their head.");
   }
 }
