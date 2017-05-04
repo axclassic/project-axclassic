@@ -11,9 +11,10 @@ sub EVENT_SPAWN{
 }
 
 sub EVENT_SAY {
+my $keys = quest::saylink("keys", 1);
   if($khazi!=3){       # if Grexah hasnt released kobolds
     if($text=~/Hail/i){
-      quest::say("Oh, hi $name.  This is not a good time for me to talk, my [keys] have gone missing.");
+      quest::say("Oh, hi $name.  This is not a good time for me to talk, my $keys have gone missing.");
     }
     if($text=~/keys/i){
       quest::say("I cannot find my keys to the the kobold prisoners' pen.  I suspect Grexah took them.  He was here earlier acting suspiciously.  If you find him, ask him if he has my keys.");

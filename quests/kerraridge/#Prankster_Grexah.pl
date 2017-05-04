@@ -2,12 +2,18 @@
 #by Qadar
 
 sub EVENT_SAY {
+my $busy = quest::saylink("busy", 1);
+my $key = quest::saylink("key", 1);
+my $help = quest::saylink("help", 1);
   if($khazi==1){                      # if key hasnt been given to him
     if($text=~/Hail/i){
-      quest::say("Please leave me alone, I am busy.");
+      quest::say("Please leave me alone, I am $busy.");
     }
+	if($text=~/busy/i){
+	  quest::say("Very busy, I am looking for a $key.");
+	 }
     if($text=~/key/i){
-      quest::say("Did Khazi send you?  I took the keys as a joke but I have lost them.  If she finds out I have lost her keys, I will be in big trouble for sure!  Will you [help] me find them?");
+      quest::say("Did Khazi send you?  I took the keys as a joke but I have lost them.  If she finds out I have lost her keys, I will be in big trouble for sure!  Will you $help me find them?");
     }
     if($text=~/help/i){
       quest::say("Thank you!  I lost them on the island with the skeletons.  One jumped out at me and I was so scared, the keys fell out of my hand and into a pit.  They are still down there, but I am too afraid to go get them.  Please find them and bring them to me.  I will reward you if you do.  Do not let Khazi know, she will not be happy.");
