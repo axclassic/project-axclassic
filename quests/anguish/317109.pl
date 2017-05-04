@@ -67,7 +67,16 @@ sub EVENT_HP {
    quest::emote(' breaks free of his bonds, killing the Riftseekers with the magic.');
    quest::shout("You dare betray me! When I am done with them I shall see that all of your kind meet the same fate.");
    quest::ze(15,"The world shifts around you as the riftseeker's are consumed by their magic.");
-   quest::movepc(317,590.6,3167.9,-13.4);
+   quest::depopall(317133);
+   quest::depop(317129);
+   quest::depop(317130);
+   quest::depop(317131);
+   quest::depop(317132);
+   quest::depop(317134);
+   quest::depop(317135);
+   quest::depop(317136);
+   quest::depop(317137);
+   quest::depop(317148);
    quest::spawn2(317138,0,0,507,4969,294.3,129.4);
    quest::depop();
    }

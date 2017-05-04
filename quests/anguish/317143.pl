@@ -5,7 +5,10 @@ sub EVENT_SPAWN {
   $npc->SetHP($curhp + $HealPoints);
   }
 sub EVENT_DEATH {
-   quest::setglobal("FHanvar", 1, 5, "F");
-   quest::spawn2(317087,0,0,484,4389.9,208.6,195.4);
-   $client->Message(14,"You recieve a character flag!");
-  }
+    my $x = $npc->GetX(); 
+    my $y = $npc->GetY(); 
+    my $z = $npc->GetZ();  
+    my $h = $npc->GetHeading(); 
+  quest::spawn2(317152,0,0,$x,$y,$z,$h); 
+  quest::spawn2(317087,0,0,484,4389.9,208.6,195.4);
+ }

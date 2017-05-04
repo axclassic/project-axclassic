@@ -98,8 +98,7 @@ sub EVENT_HP {
  }
  
 sub EVENT_DEATH {
-   $client->Message(14,"The air around you vanishes as Keldovan gasps for his last breath.");
+   quest::ze(14,"The air around you vanishes as Keldovan gasps for his last breath.");
    quest::signalwith(317005,380,0);
-   quest::setglobal("FKeldovan", 1, 5, "F");
-   $client->Message(14,"You recieve a character flag!");
  }
+ 

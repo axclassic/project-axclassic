@@ -37,5 +37,7 @@ sub EVENT_HP {
 sub EVENT_DEATH {
    quest::depopall(317110);
    quest::signalwith(317127,903,0);
-   $client->Message(14,"As the Arch Magus corpse falls to the ground, you feel the magical aura filling the room collapse, and hear a deep guttural laugh growing louder."); 
-  } 
+   quest::ze(14,"As the Arch Magus corpse falls to the ground, you feel the magical aura filling the room collapse, and hear a deep guttural laugh growing louder."); 
+  }
+
+  
