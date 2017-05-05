@@ -5,9 +5,7 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 10, $x + 10, $y - 10, $y + 10);
     }
 sub EVENT_ENTER {
-   my @clist = $entity_list->GetClientList();
-        foreach my $c (@clist){
-     if(defined $qglobals{"FKeldovan"} == 1 && defined $qglobals{"FTure"} == 1 && defined $qglobals{"FJelvan"} == 1 && defined $qglobals{"FHanvar"} == 1){
+    if(defined $qglobals{"FKeldovan"} == 1 && defined $qglobals{"FTure"} == 1 && defined $qglobals{"FJelvan"} == 1 && defined $qglobals{"FHanvar"} == 1){
    quest::movepc(317,508.4,4752.9,277.5,248.1);
    }
    elsif(!defined $qglobals{"FKeldovan"} || !defined $qglobals{"FTure"} || !defined $qglobals{"FJelvan"} || !defined $qglobals{"THanvar"}) {
@@ -17,4 +15,4 @@ sub EVENT_ENTER {
    #Do nothing;
   }
  }
-} 
+ 
