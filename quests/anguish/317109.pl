@@ -77,7 +77,7 @@ sub EVENT_HP {
    quest::depop(317136);
    quest::depop(317137);
    quest::depop(317148);
-   quest::spawn2(317138,0,0,507,4969,294.3,129.4);
+   quest::spawn2(317153,0,0,507,4969,294.3,129.4);
    quest::depop();
    }
    else {
