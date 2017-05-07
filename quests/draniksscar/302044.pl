@@ -21,22 +21,15 @@ my $breastplate = quest::saylink("breastplate", 1);
   }
 }
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 51476 == 1, 51490 == 3) && $class, 'Ranger') {
-  quest::summonitem(70879);
-  }
-  elsif (plugin::check_handin(\%itemcount, 51476 == 1, 51490 == 3) && $class, 'Shaman') {  
-  quest::summonitem(70921);
-  }
-  elsif (plugin::check_handin(\%itemcount, 51476 == 1, 51490 == 3) && $class, 'Rogue') {  
-  quest::summonitem(70914);
-  }
-  elsif (plugin::check_handin(\%itemcount, 51476 == 1, 51490 == 3) && $class, 'Berserker') {  
-  quest::summonitem(70963);
-  }
+  if (plugin::check_handin(\%itemcount, 51476 == 1, 51490 == 3)) {
+  if($class eq 'Ranger'){quest::summonitem("70879");}
+  elsif($class eq 'Shaman'){quest::summonitem("70921");}
+  elsif($class eq 'Rogue'){quest::summonitem("70914");}
+  elsif($class eq 'Berserker'){quest::summonitem("70963");}
   else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items 
     plugin::return_items(\%itemcount);
     return 1;
   }
+ }
 }
- 
