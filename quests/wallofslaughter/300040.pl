@@ -13,14 +13,25 @@ my $breastplates = quest::saylink("breastplates", 1);
    }
   } 
 sub EVENT_ITEM {
-  if (plugin::check_handin(\%itemcount, 51476 == 1, 51483 == 3) && $class, 'Bard') {
+  if ($class eq 'Bard' && plugin::check_handin(\%itemcount, 51476 == 1, 51483 == 3)) {
     quest::say("Ah, yes, this is the vest I saw Jayruk wear so often when times were brighter. No one knows what happened to him, but this vest confirms my greatest fear -- that he met with an untimely end. I thank you for returning this to me so I may pay my respects to my greatest friend. Here is the breastplate I spoke of 
    earlier. I was crafting this for myself, but in times such as these, it is better that it serve a true fighter such as yourself than a mere smith pretending to be one.");
-   if($class eq 'Bard'){quest::summonitem("70907");}
-   elsif($class eq 'Cleric'){quest::summonitem("70865");}
-   elsif($class eq 'Paladin'){quest::summonitem("70872");}
-   elsif($class eq 'Shadowknight'){quest::summonitem("70886");}
-   elsif($class eq 'Warrior'){quest::summonitem("70858");}
+   quest::summonitem("70907");
+   }
+   elsif ($class eq 'Paladin' && plugin::check_handin(\%itemcount, 51476 == 1, 51483 == 3)) {
+    quest::say("Ah, yes, this is the vest I saw Jayruk wear so often when times were brighter. No one knows what happened to him, but this vest confirms my greatest fear -- that he met with an untimely end. I thank you for returning this to me so I may pay my respects to my greatest friend. Here is the breastplate I spoke of 
+   earlier. I was crafting this for myself, but in times such as these, it is better that it serve a true fighter such as yourself than a mere smith pretending to be one.");
+   quest::summonitem("70865");
+   }
+   elsif ($class eq 'Shadowknight' && plugin::check_handin(\%itemcount, 51476 == 1, 51483 == 3)) {
+    quest::say("Ah, yes, this is the vest I saw Jayruk wear so often when times were brighter. No one knows what happened to him, but this vest confirms my greatest fear -- that he met with an untimely end. I thank you for returning this to me so I may pay my respects to my greatest friend. Here is the breastplate I spoke of 
+   earlier. I was crafting this for myself, but in times such as these, it is better that it serve a true fighter such as yourself than a mere smith pretending to be one.");
+   quest::summonitem("70886");
+   }
+   elsif ($class eq 'Warrior' && plugin::check_handin(\%itemcount, 51476 == 1, 51483 == 3)) {
+    quest::say("Ah, yes, this is the vest I saw Jayruk wear so often when times were brighter. No one knows what happened to him, but this vest confirms my greatest fear -- that he met with an untimely end. I thank you for returning this to me so I may pay my respects to my greatest friend. Here is the breastplate I spoke of 
+   earlier. I was crafting this for myself, but in times such as these, it is better that it serve a true fighter such as yourself than a mere smith pretending to be one.");
+   quest::summonitem("70858");
    }
    else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items 
