@@ -26,10 +26,10 @@ sub EVENT_ITEM {
   elsif($class eq 'Shaman'){quest::summonitem("70921");}
   elsif($class eq 'Rogue'){quest::summonitem("70914");}
   elsif($class eq 'Berserker'){quest::summonitem("70963");}
+  }
   else {
     $client->Message(14,"$name, I don't need this. Take it back."); #return bogus items 
     plugin::return_items(\%itemcount);
     return 1;
   }
  }
-}
