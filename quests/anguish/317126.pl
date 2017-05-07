@@ -5,14 +5,13 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 10, $x + 10, $y - 10, $y + 10);
     }
 sub EVENT_ENTER {
-    if(defined $qglobals{"FKeldovan"} == 1 && defined $qglobals{"FTure"} == 1 && defined $qglobals{"FJelvan"} == 1 && defined $qglobals{"FHanvar"} == 1){
+   if(defined $qglobals{"FKeldovan"} == 1 && defined $qglobals{"FTure"} == 1 && defined $qglobals{"FJelvan"} == 1 && defined $qglobals{"FHanvar"} == 1){
    quest::movepc(317,508.4,4752.9,277.5,248.1);
    }
    elsif(!defined $qglobals{"FKeldovan"} || !defined $qglobals{"FTure"} || !defined $qglobals{"FJelvan"} || !defined $qglobals{"THanvar"}) {
-    $c->Message(15, "The way is locked....It is held by the dead and the dead keep it.... The way is locked.");
-  } 
-   else {
-   #Do nothing;
-  }
+    quest::ze(15, "The way is blocked....It is held by the dead and the dead keep it.... The way is blocked.");
+   }
+else {
+#do nothing;
+  }   
  }
- 
