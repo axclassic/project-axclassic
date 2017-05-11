@@ -49,7 +49,7 @@ elsif(($race == 'erudite') && ($class == 'necromancer') && ($text=~/pantaloons/i
 $client->Message(14,"If you want me to craft Abattoir Initiate Pantaloons you must bring me: 2 Bricks of Crude Bronze, 1 Dusty Burlap Pants and 1 Pixie Dust. Once you hand me these items I will create your very own Abattoir Initiate Pantaloons.");
 }
 elsif(($race == 'erudite') && ($class == 'necromancer') && ($text=~/robe/i)) {
-$client->Message(14,"If you want me to craft a Abattoir Initiate Robe you must bring me: 2 Bricks of Crude Bronze, 1 Dusty Burlap Shirt and 1  . Once you hand me these items I will create your very own Abattoir Initiate Robe.");
+$client->Message(14,"If you want me to craft a Abattoir Initiate Robe you must bring me: 2 Bricks of Crude Bronze, 1 Dusty Burlap Shirt and 1 Giant Wood Spider Thorax. Once you hand me these items I will create your very own Abattoir Initiate Robe.");
 }
 else {
 $client->Message(14,"You don't belong here $class\. Begone!!");
