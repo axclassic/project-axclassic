@@ -3,10 +3,10 @@
 #All hometown NPCs
 #
 #To Do:
-#Add hometown check
+#This NPC is for those who have created bad faction with their hometown and can't get flagged
 
 sub EVENT_SAY {
-  if(($ulevel >= 15) && (!defined($qglobals{Wayfarer}))) {
+  if($ulevel >= 15)) {
     if($text=~/hail/i) {
       quest::say("Come to find out about the Wayfarers Brotherhood, hm? I think I saw you around here long ago. Because you are familiar to me, I will trust you with some [information].");
     }
@@ -26,7 +26,6 @@ sub EVENT_SAY {
       quest::say("We've found some strange items off the dead in the dungeons. At first we just thought they were simple things -- rocks, pebbles, gems, and the like -- and then we noticed they had very unusual auras about them. Well, one day, Morden Rasp was toying with one -- a shiny green shard -- and he went to scrape it with his dagger. Suddenly, the shard began to reform and fused with his dagger. While the dagger remained as fine as ever, Morden himself felt a surge of strength! So, you will want to watch out for these strange magic pieces in the world. Now, I suggest you go talk to Selephra Giztral, Barstre Songweaver, Vual Stoutest, Teria Grinntli, or Ruanya Windleaf. They handle all of those who are interested in working for the Wayfarers Brotherhood and getting rewards. Remember well what I've told you!");
       $client->Message(15,"You have completed a step toward becoming a great adventurer. Well done!");
       quest::setglobal("Wayfarer",1,5,"F");
-      quest::setglobal("Messenger",1,5,"F");
     }
   }
   else {
