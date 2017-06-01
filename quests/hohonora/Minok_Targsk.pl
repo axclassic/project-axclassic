@@ -1,14 +1,17 @@
 #Minok_Targsk.pl
 #Found the missing pieces in the db, no reason for this not to be finished afaik. -Kilelen
 sub EVENT_SAY {
+my $grenic = quest::saylink("grenic", 1);
+my $map = quest::saylink("map", 1);
+my $assist = quest::saylink("assist", 1);
    if($text=~/Hail/i)   {
-	quest::say("Who defines the lines of being right or wrong? When a good man is under pressure he sometimes makes bad choices. Should this man not be forgiven or should he be judged to be wrong for the rest of his life? It's just not right. [Grenic] should be allowed back into the halls as he once was.");
+	quest::say("Who defines the lines of being right or wrong? When a good man is under pressure he sometimes makes bad choices. Should this man not be forgiven or should he be judged to be wrong for the rest of his life? It's just not right. $Grenic should be allowed back into the halls as he once was.");
    }
    if($text=~/grenic/i)   {
-	quest::say("Grenic Drere was the man who saved my life. We fought together in the battle of Amm`Oren. Grenic lost sight of our objective for a second and killed innocent people rather than making them prisoners. Mithaniel Marr banished him from the Halls of Honor. Grenic has asked me for a favor to try and find an alternate way into see Mithaniel Marr. I hid pieces of a [map] that I had drawn up around here but the other guards have been keeping a close eye on me.");
+	quest::say("Grenic Drere was the man who saved my life. We fought together in the battle of Amm`Oren. Grenic lost sight of our objective for a second and killed innocent people rather than making them prisoners. Mithaniel Marr banished him from the Halls of Honor. Grenic has asked me for a favor to try and find an alternate way into see Mithaniel Marr. I hid pieces of a $map that I had drawn up around here but the other guards have been keeping a close eye on me.");
    }
    if($text=~/map/i)   {
-	quest::say("I had a well drawn map of this place. It was so good that i tore it into four pieces and hid it. If that map fell into the hands of the enemy it could mean destruction. I need help collecting the map. Will you [help] me out $name?");
+	quest::say("I had a well drawn map of this place. It was so good that I tore it into four pieces and hid it. If that map fell into the hands of the enemy it could mean destruction. I need help collecting the map. Will you $assist me out $name?");
    }
    if($text=~/help/i)   {
 	quest::say("I hid each section in the four corners of the Halls. Collect them and bring them back to me.");
