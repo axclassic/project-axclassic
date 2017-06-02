@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+== 6/01/2017==
+Patrikpatrik: Updated recommended files section in 'How to Connect?'.
+
 ==4/28/2017==
 Patrikpatrik: Revamped 'Guides' section.
 
