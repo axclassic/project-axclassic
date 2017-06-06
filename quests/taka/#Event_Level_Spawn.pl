@@ -7,34 +7,34 @@ sub EVENT_SPAWN {
 sub EVENT_ENTER {
   quest::say("I see you $name spawning appropriate mobs");
   if(defined $qglobals{"Takaone"} == 1 ){
-  quest::spawn_conditon(taka,0,1);
+  quest::spawn_conditon(taka,1,1);
   }
   elsif(defined $qglobals{"Takatwo"} == 1 ){
-  quest::spawn_conditon(taka,0,2);
+  quest::spawn_conditon(taka,1,2);
   }
   elsif(defined $qglobals{"Takathree"} == 1 ){
-  quest::spawn_conditon(taka,0,3);
+  quest::spawn_conditon(taka,1,3);
   }
   elsif(defined $qglobals{"Takafour"} == 1 ){
-  quest::spawn_conditon(taka,0,4);
+  quest::spawn_conditon(taka,1,4);
   }
   elsif(defined $qglobals{"Takafive"} == 1 ){
-  quest::spawn_conditon(taka,0,5);
+  quest::spawn_conditon(taka,1,5);
   }
   elsif(defined $qglobals{"Takasix"} == 1 ){
-  quest::spawn_conditon(taka,0,6);
+  quest::spawn_conditon(taka,1,6);
   }
   elsif(defined $qglobals{"Takaseven"} == 1 ){
-  quest::spawn_conditon(taka,0,7);
+  quest::spawn_conditon(taka,1,7);
   }
   elsif(defined $qglobals{"Takaeight"} == 1 ){
-  quest::spawn_conditon(taka,0,8);
+  quest::spawn_conditon(taka,1,8);
   }
   elsif(defined $qglobals{"Takanine"} == 1 ){
-  quest::spawn_conditon(taka,0,9);
+  quest::spawn_conditon(taka,1,9);
   }
   elsif(defined $qglobals{"Takaten"} == 1 ){
-  quest::spawn_conditon(taka,0,10);
+  quest::spawn_conditon(taka,1,10);
   }
   else {
   #do Nothing;
