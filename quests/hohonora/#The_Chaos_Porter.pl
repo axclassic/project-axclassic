@@ -29,7 +29,7 @@ sub EVENT_ENTER {
 	if(defined $qglobals{"Djinneight"}) {
     quest::ze(14, "You are not skilled enough to enter the final Chamber of Chaos.");
 	}
-if($qglobals{"Djinnnine"} == 1) {
+    if(defined $qglobals{"Djinnnine"}) {
     quest::ze(15, "The world begins to spin as you blackout.");
 	quest::ze(14, "You feel your body move across space and time.");
     quest::movepc(211,-1378,-2089.1,1,127.3);
