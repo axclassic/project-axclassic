@@ -7,7 +7,7 @@
 
 
 sub EVENT_ZONE{
-	if($status >= 450){
+	if($status >= 50){
 		quest::ze(15, "a GM has left the zone.");
 		#quest::delglobal("blockout");
 		#quest::delglobal("blockout2");
@@ -70,7 +70,7 @@ sub EVENT_ENTERZONE {
 	$event5 = 0;
 	#Upon entering zone through portals it will spawn mobs in all 5 locations
 	#quest::delglobal("blockout");
-	if($status >= 450) {
+	if($status >= 50) {
 		quest::ze(15, "a GM has entered the zone.");
 		#quest::delglobal("blockout");
 	} elsif ((defined $qglobals{"blockout"}) && (defined $qglobals{$name."reco"})) {
@@ -109,11 +109,7 @@ sub EVENT_ENTERZONE {
 		quest::movepc(9, 335, 181, -25); #WC default 
 	} else {
 			#quest::ze(15, "You entered and came across the else function. You must have quit and come back when no ones here.");
-			#quest::repopzone(); #no ones in here? just reset anyway
-			
-			#quest::ze(13, "An unknown voice shouts, 'You do not belong here, begone!'");
-			#quest::movepc(9, 335, 181, -25); #WC default 
-			
+			quest::repopzone(); #no ones in here? just reset anyway
 			#$client->Message(15, "corpse fetching and or gm spectating my status is $status.");
 		#When qglobals blockout is not defined nothing happens i.e corpse fetching in graveyard or gm intervention.
 		}
@@ -126,7 +122,7 @@ sub EVENT_ENTERZONE {
 sub EVENT_CLICKDOOR {
 	my $d_id = ($doorid % 256);
 	
-	if($status >= 450) { #Check for gms
+	if($status >= 50) { #Check for gms
 	#quest::ze(15, "GM's are not allowed.");
 	}
 	else {
