@@ -145,13 +145,17 @@ sub EVENT_CLICKDOOR {
 	}
 }#END sub_EVENT_CLICKDOOR
 
-# sub EVENT_CONNECT { #I dont think these are supported for axclassic but worth a try
-	# quest::repopzone();
-	# #quest::depop();
-# }
+sub EVENT_CONNECT {
+	if($status < 50) {
+	quest::delglobal("aLD$name");
+	quest::ze(15, "$name triggered EVENT_CONNECT.");
+	}
+}
 
-# sub EVENT_DISCONNECT {
-	# quest::repopzone();
-	# #quest::depop();
-	# quest::ze(15, "testing testing uh oh.");
-# }
+sub EVENT_DISCONNECT {
+	# GMstatus 50 is 'Guide'.
+	if($status < 50) { # GM's don't go LD so this conditional will prevent confusion
+	quest::ze(15, "$name has disconnected which means LD!");
+	quest::setglobal("aLD$name", 1, 7, "F"); # S20  20 seconds qglobal
+	}
+}
