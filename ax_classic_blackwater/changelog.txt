@@ -1,5 +1,7 @@
 AX Classic Editor Changelog (Started May 9, 2009) --Belatedly
 -----------------------------------------------------
+==June 9, 2017==
+Patrikpatrik: Enabled adventures tab to display but needs further testing.
 
 ==September 8, 2009==
 Asram: (Via Cavedude) Added search by primary faction when changing a NPC's faction.
