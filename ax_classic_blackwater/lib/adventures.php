@@ -23,7 +23,7 @@ $ldontraptype = array(
 
 switch ($action) {
   case 0:         
-    if ($npcid) {
+    if (!$npcid) {
       $body = new Template("templates/adventures/adventures.tmpl.php");
       $body->set('currzone', $z);
       $body->set('npcid', $npcid);
