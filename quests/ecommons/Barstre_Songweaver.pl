@@ -36,6 +36,7 @@ sub EVENT_SAY {
       if (!plugin::check_hasitem($client,41000)) { #PC does not have an Adventurer's Stone
         quest::say("Take this Adventurer Stone with you on your journeys into the dungeons. You will find it useful. Should you lose it somehow, come talk to me and I'll replace it.");
         quest::summonitem(41000); #Adventurer's Stone
+        $client->KeyRingAdd(41000);
       }
       else {
         my $ruj_wins = $client->GetLDoNWinsTheme(4);
