@@ -6,36 +6,19 @@ sub EVENT_SAY {
   if($ulevel >= 15) {
     if(plugin::check_hasitem($client, 41000) || $client->KeyRingCheck(41000)) { #Adventurer's Stone
       if($text=~/hail/i) {
-        quest::say("Greetings, $name. I can provide travel to other magi in [Butcherblock], [Commonlands], [Everfrost], [North Ro], and [South Ro]. I can also send you to [Natimbi], the shores of Taelosia, or to the Queen of Thorns in [Abysmal Sea]. Just tell me where you'd like to go.");
-      }
-      if($text=~/butcherblock/i) {
-        quest::emote("begins to cast a spell.");
-        quest::selfcast(4179); #Teleport Butcherblock
-      }
-      if($text=~/everfrost/i) {
-        quest::emote("begins to cast a spell.");
-        quest::selfcast(4180); #Teleport Everfrost
-      }
-      if($text=~/commonlands/i) {
-        quest::emote("begins to cast a spell.");
-        quest::selfcast(4176); #Teleport East Commons
-      }
-      if($text=~/north ro/i) {
-        quest::emote("begins to cast a spell.");
-        quest::selfcast(4177); #Teleport North Ro
-      }
-      if($text=~/south ro/i) {
-        quest::emote("begins to cast a spell.");
-        quest::selfcast(4178); #Teleport South Ro
-      }
-      if($text=~/natimbi/i) {
-        quest::emote("begins to cast a spell.");
-        quest::selfcast(4963); #Natimbi Gate
-      }
-      if($text=~/abysmal sea/i) {
-        quest::emote("begins to cast a spell.");
-        #quest::selfcast(); #Translocate Abysmal missing???
-        quest::movepc(279,0,-199,140); #Abysmal Sea
+         my $random_result = int(rand(100));
+         if($random_result<=45) {
+            quest::say("I hear that you use Moonstones for travel around here.");
+         }
+         elsif($random_result<=60) {
+            quest::say("I can hear the sound of the Ocean from here, can you?");
+         }
+         elsif($random_result<=85) {
+            quest::say("Hmmm.");
+         }
+         else {
+            quest::say("I hear that you use Moonstones for travel around here.");
+         }
       }
     }
     else { #PC does not have Adventurer's Stone
