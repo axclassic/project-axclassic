@@ -6,6 +6,7 @@
     quest::signalwith(211167,263,0);
 	}
    elsif ($randomroll > '35'){
+   quest::shout("Not this Time.");
       #do nothing;
    }
     else {
