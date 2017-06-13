@@ -18,7 +18,7 @@ sub EVENT_SIGNAL {
    if($counter == 2) {
     quest::stoptimer("Twinspop");
 	quest::spawn2(211194,0,0,-875.4,1146,1,162.1);
-	$counter += 0;
+	$counter = 0;
 	quest::depop();
 	}
   }

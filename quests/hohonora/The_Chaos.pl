@@ -1,6 +1,16 @@
 ##The_Chaos 211142##
+sub EVENT_SPAWN {
+ $x = $npc->GetX();
+	$y = $npc->GetY();
+	quest::set_proximity($x - 140, $x + 140, $y - 140, $y + 140);
+    }
+sub EVENT_ENTER {
+$client->Freeze();
+}
+
 sub EVENT_SIGNAL {
   if($signal == 300){
+  
    quest::shout("You all have your orders. You know the information and the location of the temple. Find the power source and return it to me.");
    quest::signalwith(211173,301,0);
    quest::signalwith(211173,302,10000);
@@ -18,6 +28,7 @@ sub EVENT_SIGNAL {
    quest::spawn2(211180,0,0,-1394.7,-2220.6,1,106.5);
    quest::spawn2(211180,0,0,-1366.8,-2211.7,1,131.6);
    quest::spawn2(211180,0,0,-1328.4,-2259.2,1,185.1);
+   $client->UnFreeze();
    quest::settimer("Chaospop",1800);
    }
  }

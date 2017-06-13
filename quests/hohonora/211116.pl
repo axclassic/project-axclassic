@@ -12,10 +12,5 @@ sub EVENT_TIMER {
   }
  } 
  sub EVENT_DEATH {
-    my $x = $npc->GetX(); 
-    my $y = $npc->GetY(); 
-    my $z = $npc->GetZ();  
-    my $h = $npc->GetHeading(); 
-	quest::stoptimer("Bishoppop");
-  quest::spawn2(211194,0,0,$x,$y,$z,$h); 
-}
+ 	quest::stoptimer("Bishoppop");
+  }

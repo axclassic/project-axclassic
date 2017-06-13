@@ -40,7 +40,7 @@ quest::say("I do not believe you have spoken to Lord Drizku yet $name.");
 }
 }
 sub EVENT_ITEM {
-if (plugin::check_handin(\%itemcount,120239 => 1)){ #Djinn Glowing Signet Ring
+if (plugin::check_handin(\%itemcount,120239 => 1)){ #Signet of Chaos
 quest::say("Well Done $name, With the generals now defeted it is time for the final battle to reclaim our temples. Take this as proof of what you have accomplished, It is the Key to the Chamber of Chaos. Your skills will never be as needd as they are now.");
 quest::summonitem(120238);
 quest::delglobal("Djinneight");

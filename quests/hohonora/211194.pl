@@ -9,6 +9,7 @@ sub EVENT_SAY {
    if($text=~/aid/i){
    quest::say("Very well, I shall do as asked.");
    quest::movepc(211,-2675,-385,-10);
+   quest::depop();
 	}
   }
 sub EVENT_TIMER {
