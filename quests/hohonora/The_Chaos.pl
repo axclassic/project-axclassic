@@ -2,7 +2,7 @@
 sub EVENT_SPAWN {
  $x = $npc->GetX();
 	$y = $npc->GetY();
-	quest::set_proximity($x - 140, $x + 140, $y - 140, $y + 140);
+	quest::set_proximity($x - 200, $x + 200, $y - 200, $y + 200);
     }
 sub EVENT_ENTER {
 $client->Freeze();
@@ -16,11 +16,12 @@ sub EVENT_SIGNAL {
    quest::signalwith(211173,302,10000);
   }
   elsif($signal == 304){
+  my $battle = quest::saylink("battle", 1);
    quest::say("No, both of you go. Watch over the others and make sure Adrianne does not interfere with our plans. I will tend to the visitors.");
    quest::ze(15, "Screech and Vaion beem a smile at each other and vanish in a flash of light.");
    quest::depop(211179);
    quest::depop(211173);
-   quest::say("Come mortals, it has been a long time since I last enjoyed a decent battle.");
+   quest::say("Come mortals, it has been a long time since I last enjoyed a decent $battle.");
    quest::ze(15, "You feel a power grab you and drag you towards The Chaos.");
    quest::spawn2(211180,0,0,-1371.7,-2314,1,1.4);
    quest::spawn2(211180,0,0,-1403.9,-2302.6,1,27);
