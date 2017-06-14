@@ -32,7 +32,7 @@ sub EVENT_ENTER {
     if(defined $qglobals{"Djinnnine"}) {
     quest::ze(15, "The world begins to spin as you blackout.");
 	quest::ze(14, "You feel your body move across space and time.");
-    quest::movepc(211,-1378,-2089.1,1,127.3);
+    quest::movepc(211,-1360.4,-1882.4,1,128.4);
 	quest::spawn2(211142,0,0,-1374.8,-2265.3,1,254.5);
 	quest::spawn2(211176,0,0,-1371.7,-2314,1,1.4);
 	quest::spawn2(211174,0,0,-1403.9,-2302.6,1,27);
