@@ -34,18 +34,11 @@ sub EVENT_SIGNAL {
    }
  }
  sub EVENT_TIMER {
-   if($timer eq "Chaosfreeze"){
-   quest::stoptimer("Chaosfreeze");
-    $client->UnFreeze();
-	}
-   elsif($timer eq "Chaospop"){
+   if($timer eq "Chaospop"){
    quest::stoptimer("Chaospop");
     quest::depopall(211172);
     quest::depop();
-  }
-  Else (
-  #Do Nothing;
-  )
+ }
  }
  sub EVENT_DEATH {
     my $x = $npc->GetX(); 
