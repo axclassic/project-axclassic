@@ -5,6 +5,7 @@ sub EVENT_SPAWN {
 	quest::set_proximity($x - 200, $x + 200, $y - 200, $y + 200);
     }
 sub EVENT_ENTER {
+quest::settimer("Chaosfreeze",60);
 $client->Freeze();
 }
 
@@ -29,16 +30,22 @@ sub EVENT_SIGNAL {
    quest::spawn2(211180,0,0,-1394.7,-2220.6,1,106.5);
    quest::spawn2(211180,0,0,-1366.8,-2211.7,1,131.6);
    quest::spawn2(211180,0,0,-1328.4,-2259.2,1,185.1);
-   $client->UnFreeze();
    quest::settimer("Chaospop",1800);
    }
  }
  sub EVENT_TIMER {
-   if($timer eq "Chaospop"){
+   if($timer eq "Chaosfreeze"){
+   quest::stoptimer("Chaosfreeze");
+    $client->UnFreeze();
+	}
+   elsif($timer eq "Chaospop"){
    quest::stoptimer("Chaospop");
     quest::depopall(211172);
     quest::depop();
   }
+  Else (
+  #Do Nothing;
+  )
  }
  sub EVENT_DEATH {
     my $x = $npc->GetX(); 
