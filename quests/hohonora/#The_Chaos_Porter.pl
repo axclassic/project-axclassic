@@ -41,7 +41,7 @@ sub EVENT_ENTER {
 	quest::spawn2(211179,0,0,-1366.8,-2211.7,1,131.6);
 	quest::spawn2(211178,0,0,-1337.9,-2226.7,1,153.3);
 	quest::spawn2(211177,0,0,-1339.9,-2293.4,1,217.4);
-	quest::signalwith(211142,300,10000);
+	#quest::signalwith(211142,300,10000);
 	quest::depop();
 	}
   }
