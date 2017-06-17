@@ -11,6 +11,9 @@ sub EVENT_TIMER {
     quest::depop();
   }
 }
+sub EVENT_DEATH{
+quest::signalwith(176105,176,0);
+}
 
 # EOF
 

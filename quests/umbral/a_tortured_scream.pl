@@ -17,16 +17,12 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER {
   if ($timer eq "spawndoom") {
    my $a = quest::ChooseRandom(176088,176088,176088,176088,176110);
-    quest::shout(" and it echoes throughout the plains as a tormented spirit is released upon the land.");
+    quest::ze(13, "You are filled with fright as a tormented spirit is released upon the land.");
     quest::spawn2($a,0,0,120,-297.5,5,63.5);
     quest::stoptimer("spawndoom");
     quest::depop();
   }
-  if ($timer eq "nospawndoom") {
-    quest::stoptimer("nospawndoom");
-    quest::depop();
-  }
-}
+ }
 
 # EOF Zone: umbral ID: 176087 NPC: a_tortured_scream
 
