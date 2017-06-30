@@ -17,6 +17,7 @@ quest::depop();
 }
 sub EVENT_TIMER {
 if($timer eq "spawnemp"){
+quest::stoptimer("spawnemp")
 quest::depop(165227);
 quest::depopall(162210);
 quest::depop(162130);
@@ -26,6 +27,7 @@ quest::depop(162124);
 quest::depop(162126);
 quest::depop(162128);
 quest::depop(162129);
+ $counter = 0;
 quest::depop();
 }
 }
