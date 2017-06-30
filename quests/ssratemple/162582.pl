@@ -6,11 +6,12 @@ my $empevent = 0;
 }
 sub EVENT_SIGNAL {
 if($signal == 162) {
-  $counter += 1;
-if($counter == 7) {
+  #$counter += 1;
+if($counter == 6) {
 quest::settimer("spawnemp",900);
 quest::signalwith(162581,91,0);
 quest::signalwith(162580,92,0);
+ $counter = undef;
 quest::depop();
 }
 }
@@ -27,7 +28,7 @@ quest::depop(162124);
 quest::depop(162126);
 quest::depop(162128);
 quest::depop(162129);
- $counter = 0;
+ $counter = undef;
 quest::depop();
 }
 }
