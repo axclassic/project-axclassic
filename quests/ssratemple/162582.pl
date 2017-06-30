@@ -27,7 +27,7 @@ quest::depop(162124);
 quest::depop(162126);
 quest::depop(162128);
 quest::depop(162129);
- $counter = undef;
+ $counter = 0;
 quest::depop();
 }
 }
