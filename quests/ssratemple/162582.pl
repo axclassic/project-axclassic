@@ -11,7 +11,6 @@ if($counter == 7) {
 quest::settimer("spawnemp",900);
 quest::signalwith(162581,91,0);
 quest::signalwith(162580,92,0);
- $counter = undef;
 quest::depop();
 }
 }
