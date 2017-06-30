@@ -6,8 +6,8 @@ my $empevent = 0;
 }
 sub EVENT_SIGNAL {
 if($signal == 162) {
-  #$counter += 1;
-if($counter == 6) {
+  $counter += 1;
+if($counter == 7) {
 quest::settimer("spawnemp",900);
 quest::signalwith(162581,91,0);
 quest::signalwith(162580,92,0);
