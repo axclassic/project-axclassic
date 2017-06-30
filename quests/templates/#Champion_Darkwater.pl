@@ -10,6 +10,7 @@
 ## 1/01/16 SoW Earring gift         ##
 ## 2/02/16 More rewards at level 65 ##
 ## 1/01/17 added shrink item reward ##
+## 6/30/17 update
 ######################################
 sub EVENT_SAY {
 #hyperlinks
@@ -23,10 +24,10 @@ my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
 my $newyears = quest::saylink("special", 1);
 #Ladder date and char settings
-my $minCharID  = 6408; #6125 remember to define this in the sub Event ITEM below
-my $maxCharID  = 6407; #6124 5828
+my $minCharID  = 6679; #6125 remember to define this in the sub Event ITEM below 5992
+my $maxCharID  = 6678; #6124 5828
 my $activeYear = 2017; #2016
-my $activeMonth = "January"; #July
+my $activeMonth = "July"; #July
 
 
 	if(($text=~/hail/i) && ($charid < $minCharID)) { #this is the newest charID
@@ -219,8 +220,8 @@ my $activeMonth = "January"; #July
 
 
 sub EVENT_ITEM {
-my $minCharID  = 6408; #6125 dont forget to set this one as well 5829
-my $activeMonth = "January";
+my $minCharID  = 6679; # dont forget to set this one as well 5829 6125
+my $activeMonth = "July";
 my $activeYear = 2017;
 
 	if ($charid < $minCharID) { #this charid and the one above should be the same.
