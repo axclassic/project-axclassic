@@ -4,7 +4,7 @@
 sub EVENT_SPAWN {
 	quest::settimer(7,60);
 	quest::settimer(8,2100);
-	quest::spawn2(154150,0,0,433.60,-357.44,36.13,260); # A_Sacrafice
+	quest::spawn2(154150,462018,0,433.60,-357.44,36.13,260); # A_Sacrafice
 	quest::spawn2(154149,0,0,385.78,-298.13,36.13,260); # A_Sacrafice
 	quest::spawn2(154148,0,0,433.60,-236.54,36.13,260); # A_Sacrafice
 }
