@@ -9,8 +9,11 @@ sub EVENT_SPAWN {
 	quest::spawn2(154148,0,0,433.60,-236.54,36.13,260); # A_Sacrafice
 }
 
-sub EVENT_TIMER {
+sub EVENT_TIMER {  
 	if($timer == 7) {
+	      quest::depop(154150);
+	      quest::depop(154149);
+	      quest::depop(154148);
 		quest::spawn2(154150,462018,0,433.60,-357.44,36.13,260); # A_Sacrafice
 		quest::spawn2(154149,462019,0,385.78,-298.13,36.13,260); # A_Sacrafice
 		quest::spawn2(154148,462020,0,433.60,-236.54,36.13,260); # A_Sacrafice
