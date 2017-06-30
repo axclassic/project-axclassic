@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==6/29/2017==
+Aardil: Temple Ssraeshza revamp.
+
 ==6/01/2017==
 Aardil: Halls of Honor revamp.
 
