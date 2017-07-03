@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==07/03/2017==
+Congdar: Fix Fabled Quillmane spawn
+
 ==6/29/2017==
 Aardil: Temple Ssraeshza revamp.
 
