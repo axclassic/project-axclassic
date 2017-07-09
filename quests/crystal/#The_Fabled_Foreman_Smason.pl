@@ -10,7 +10,7 @@ sub EVENT_SPAWN {
 	$tempa = $npc->GetNPCTypeID();
 	
 	if ($tempa == 121092) {
-		quest::settimer("fabledsmason", 300); #will remain for 5 minutes
+		quest::settimer("fabledsmason", 600); #will remain for 10 minutes
 	}
 }
 
