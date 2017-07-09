@@ -24,7 +24,7 @@ sub EVENT_ATTACK {
     if($TreeAttackingGroup) {
         #There is a group so lets do stuff.  There is a one-third chance for any of the 3 things to happen
         my $random_result = int(rand(100));
-        if($random_result > 166) {
+        if($random_result > 66) {
             #The group members get full health
             for($count=0; $count<$TreeAttackingGroup->GroupCount(); $count++) {
                 #Get a group member
@@ -39,7 +39,7 @@ sub EVENT_ATTACK {
                 }
             }
         }
-        elsif ($random_result > 0) {
+        elsif ($random_result > 33) {
             #The group members are attacked by up to 3 npc's
             $TreeAttacker->Message(5, "$mname explodes into wood and bark as it's hidden friends emerge to attack you!");
 
