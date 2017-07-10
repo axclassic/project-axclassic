@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==7/09/2017==
+Patrikpatrik: Truncated lengthy strings for convenience.
+
 == 6/01/2017==
 Patrikpatrik: Updated recommended files section in 'How to Connect?'.
 
