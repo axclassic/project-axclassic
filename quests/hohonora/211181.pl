@@ -10,3 +10,10 @@ sub EVENT_SPAWN {
     my $z = $npc->GetZ();  
     my $h = $npc->GetHeading(); 
   quest::spawn2(211194,0,0,$x,$y,$z,$h); 
+  quest::depopall(211180);
+	quest::depopall(211198);
+	quest::depopall(211201);
+	quest::depop(211200);
+	quest::depop(211142);
+	quest::depop(211199);
+	}
