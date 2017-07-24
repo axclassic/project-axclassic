@@ -4,6 +4,13 @@ sub EVENT_SPAWN {
   my $HealPoints = -50000;
   $npc->SetHP($curhp + $HealPoints);
   }
+  sub EVENT_NPC_SLAY {
+my $meatbag = $entity_list->GetMobID($userid);
+      if($meatbag->IsBot()) {
+	  $meatbag->Message(5,"$name tells you $mname just killed me! I hate $zoneln");
+	  quest::signalwith(211200,200,1);
+	  }
+    }
   sub EVENT_DEATH {
     my $x = $npc->GetX(); 
     my $y = $npc->GetY(); 
