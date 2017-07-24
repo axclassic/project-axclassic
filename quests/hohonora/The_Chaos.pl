@@ -16,7 +16,7 @@ sub EVENT_SIGNAL {
    quest::depop(211173);
    quest::say("Come mortals, it has been a long time since I last enjoyed a decent battle.");
    quest::ze(15, "You feel a power grab you and drag you towards The Chaos.");
-   quest::signalwith(211197,309,100);
+   quest::spawn2(211182,0,0,-1132.7,-2251.5,1,190.4);
    quest::spawn2(211200,0,0,-1608.6,-2284.1,1,65.4);
    quest::spawn2(211180,0,0,-1371.7,-2314,1,1.4);
    quest::spawn2(211180,0,0,-1403.9,-2302.6,1,27);
@@ -28,7 +28,7 @@ sub EVENT_SIGNAL {
  }
  sub EVENT_HP {
  if($hpevent == 50){
- quest::spawn2(211199,0,0,,-1374.8,-2265.3,1,254.5);
+ quest::spawn2(211199,0,0,-1374.8,-2265.3,1,254.5);
  quest::depopall(211180);
  quest::spawn2(211198,0,0,-1371.7,-2314,1,1.4);
  quest::spawn2(211198,0,0,-1403.9,-2302.6,1,27);
@@ -47,18 +47,3 @@ sub EVENT_SIGNAL {
 	  }
     }
 
-sub EVENT_TIMER {
-   if($timer eq "Chaospop"){
-   quest::stoptimer("Chaospop");
-    quest::depopall(211172);
-    quest::depop();
- }
- }
- sub EVENT_DEATH {
-    my $x = $npc->GetX(); 
-    my $y = $npc->GetY(); 
-    my $z = $npc->GetZ();  
-    my $h = $npc->GetHeading(); 
-	quest::stoptimer("Chaospop");
-  quest::spawn2(211194,0,0,$x,$y,$z,$h); 
-}

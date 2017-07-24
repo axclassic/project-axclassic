@@ -16,7 +16,11 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER {
    if($timer eq "Chaospop"){
    quest::stoptimer("Chaospop");
-    quest::depopall(211172);
+    quest::depopall(211180);
+	quest::depopall(211198);
+	quest::depop(211142);
+	quest::depop(211199);
+	quest::depop(211181);
 	  $counter =0
     quest::depop();
  }
