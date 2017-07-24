@@ -19,6 +19,8 @@ sub EVENT_TIMER {
    quest::stoptimer("Chaospop");
     quest::depopall(211180);
 	quest::depopall(211198);
+	quest::depopall(211201);
+	quest::depop(211200);
 	quest::depop(211142);
 	quest::depop(211199);
 	quest::depop(211181);
