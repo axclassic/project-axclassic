@@ -59,6 +59,7 @@ sub EVENT_SIGNAL {
 	 quest::depopall(211166);
 	 quest::depop(211121);
 	 quest::ze(14, "You have failed the Queen Volkara event.");
+	 $counter = 0;
      quest::depop();	 
  }
  }
