@@ -10,6 +10,7 @@ sub EVENT_SIGNAL {
    if($counter == 6) {  
     quest::depop(211199);
     quest::spawn2(211181,0,0,-1374.8,-2265.3,1,254.5);
+	$counter =0;
 	}
 	}
 	}
@@ -21,7 +22,8 @@ sub EVENT_TIMER {
 	quest::depop(211142);
 	quest::depop(211199);
 	quest::depop(211181);
-	  $counter =0
+	quest::ze(14, "You have failed The Chaos event.");
+	  $counter =0;
     quest::depop();
  }
  }
