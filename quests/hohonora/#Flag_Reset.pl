@@ -11,7 +11,7 @@ quest::delglobal("Djinnsix");
 quest::delglobal("Djinnseven");
 quest::delglobal("Djinneight");
 quest::delglobal("Djinnnine");
-quest::setglobal("Djinnsix", 1, 5, "F");
+quest::setglobal("Djinnnine", 1, 5, "F");
 
 }
 }
