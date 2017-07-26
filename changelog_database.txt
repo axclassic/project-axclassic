@@ -1,7 +1,7 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==7/27/2017==
-Patrikpatrik: Testing server-wide loot msg for Karnor & Sebilis.
+Patrikpatrik: Re-testing server-wide loot msg for rare loots.
 
 ==5/05/2017==
 Patrikpatrik: Added depopper scripts for fableds in Mistmoore & Lower Guk.
