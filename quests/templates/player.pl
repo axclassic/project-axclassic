@@ -1,11 +1,9 @@
 ##########################
 # #player.pl in templates
 # Last updated 11/12/16
-#
+# added server wide loot msg 7/26/17 patrikpatrik
 #
 ##########################
-
-
 
 sub EVENT_ENTERZONE {
 no warnings 'all';
@@ -277,4 +275,21 @@ sub EVENT_COMBINE_SUCCESS
         quest::summonitem(67704);
         $client->Message(1,"Success");
     }
+}
+
+sub EVENT_LOOT {
+	my @items_list = (82731, 82734, 6639, 2735, 1619, 1620);
+	# Karnor's Castle
+	# 82731 Fabled_Jade_mace
+	# 82734 Fabled_Tranquil staff
+	# 6639 Tranquil staff
+	# Sebilis
+	# 2735 Fungus covered scale tunic
+	# 1619 siblisian berserker cloak
+	# 1620 Runebranded girdle
+
+	if(grep(/^$looted_id$/, @items_list)) {
+		my $item = quest::varlink($looted_id);
+		quest::we(14, "The Rathe server congratulates $name, the uber $class for looting an extremely rare -$item-!");
+	}
 }
