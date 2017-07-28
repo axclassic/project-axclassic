@@ -35,7 +35,7 @@ sub EVENT_SAY
         quest::say("Hail! $name, You best not be associating yourself with the likes of Najena.");
     }
 
-    if($text=~/reagent/i) {
+    if($text=~/substance/i) {
         quest::say("The infamous Mage, Najena employs several apprentices. These apprentices are most likely well equiped with just the reagents I need. Perhaps you can relieve them of their burden for me? Bring me 3 pouches of reagents from the Mages and you'll have the substance.");
     }
 }
@@ -61,6 +61,7 @@ sub EVENT_ITEM
         #Priests of Life Faction
         quest::faction("257","-1");
     }
+    plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:freportw  ID:9013 -- Driana_Poxsbourne
