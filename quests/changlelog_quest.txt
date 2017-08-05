@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==07/30/2017==
+Aardil: Broodlands revamped.
+Aardil: Dragons of Norrath expansion epic requirement removed.
+
 ==07/08/2017==
 Congdar: Create LDoN A_Hollow_Tree.pl
 
