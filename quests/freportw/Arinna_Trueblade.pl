@@ -104,12 +104,13 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+  #remove class requirements for quests on The Rathe for Bots
   #do all other hand ins first, then let it do disciplines
-  if($class ne 'Warrior') {
-    quest::say("Only members of the guild may do these quests.");
-    plugin::return_items(\%itemcount);
-    return 1;
-  }
+  #if($class ne 'Warrior') {
+  #  quest::say("Only members of the guild may do these quests.");
+  #  plugin::return_items(\%itemcount);
+  #  return 1;
+  #}
     # Vial of Smoke ID-9923 - Pristine Giant Scarab Leg ID-9919 - Lion Paw ID-9918
     if (plugin::check_handin(\%itemcount, 9919 => 1, 9918 => 1, 9923 => 1)) {
       quest::say("$name, you have proven your value to the Steel Warriors. Here is a weapon that will let you slay magical creatures that you couldn't with a normal weapon.");
