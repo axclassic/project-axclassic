@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-my $tests = quest::saylink("tests", 1);
+my $test = quest::saylink("test", 1);
   if ($ulevel <= 20 && $text=~/Hail/i){
    quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
    }
@@ -7,7 +7,10 @@ my $tests = quest::saylink("tests", 1);
    quest::say("So you wish to help The Dark Reign eh? Well then I have a $test for you to see if you are worthy.");
    }
    if ($ulevel <= 40 && $ulevel >= 31 && $text=~/Hail/i){
-   quest::say("So you wish to help The Dark Reign eh? Well then I have a few $tests for you to see if you are worthy.");
+   quest::say("So you wish to help The Dark Reign eh? Well then I have a few $test for you to see if you are worthy.");
+   }
+   if ($ulevel <= 60 && $ulevel >= 51 && $text=~/Hail/i){
+   quest::say("So you wish to help The Dark Reign eh? Well then I have a few $test for you to see if you are worthy.");
    }
    if ($ulevel <= 50 && $ulevel >= 41 && $text=~/Hail/i){
    quest::say("I am sorry $name, I have nothing for an explorer of your experiance. Check with the others as they may have things you can do to help the Dark Reign. Come back to me as you gain experiance and I may have other missiopns you can help with.");
@@ -21,7 +24,7 @@ my $tests = quest::saylink("tests", 1);
    }
    if ($ulevel <= 40 && $ulevel >= 31 && $text=~/test/i){
    quest::say("You must hurry. The Norrath Keepers are slowly making their way deeper into Tirranun's Delve. We have heard they seek a magic that the delve goblins possess that allows them to create a great, sentient, and dangerous dervish of stone. This dervish is a danger to anyone in the delve, but if the Norrath Keepers are able to capture and harness the dervish, they will most certainly use it in the army they build. You must find a way to claim this magic for the Dark Reign!");
-   quest::say("Bring to me the Essence of Emoush as proof for your reward.");
+   quest::say("Bring to me the Glowing Stone Fragment as proof for your reward.");
    }
    if ($ulevel <= 60 && $ulevel >= 51 && $text=~/test/i){
    quest::say("There have been several sightings of a massive guardian that has risen in the sand gardens of Stillmoon Temple. This guardian has been very protective of the area and we have lost contact with several scouts that were sent to gather more information. The scouts that have survived the attacks report that the guardian is allied with the sand goblins of the region. It is simply too dangerous to continue our exploration of the temple as long as that guardian is around. We need you to remove it.");
@@ -30,61 +33,61 @@ my $tests = quest::saylink("tests", 1);
  }
 sub EVENT_ITEM {
 if ($ulevel == 21 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(126100);
    quest::givecash(0,0,0,30);
    }
    elsif ($ulevel == 22 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(138700);
    quest::givecash(0,0,0,30);
    }
    elsif ($ulevel == 23 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(151900);
    quest::givecash(0,0,0,30);
    }
    elsif ($ulevel == 24 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(165700);
    quest::givecash(0,0,0,30);
    }
    elsif ($ulevel == 25 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(180100);
    quest::givecash(0,0,0,30);
    }
    elsif ($ulevel == 26 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(195100);
    quest::givecash(0,0,0,30);
    }
    elsif ($ulevel == 27 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(210700);
    quest::givecash(0,0,0,30);
    }
    elsif ($ulevel == 28 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(226900);
    quest::givecash(0,0,0,30);
    }
    elsif ($ulevel == 29 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(243700);
    quest::givecash(0,0,0,30);
    }
    elsif ($ulevel == 30 && plugin::check_handin(\%itemcount, 120163 => 1)) {
-   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more  work for a rising champion as yourself.");
+   quest::say("Whew! Glad you were able to take care of that little issue. Be sure to check with others as they may have more work for a rising champion as yourself.");
    quest::ding();
    quest::exp(531100);
    quest::givecash(0,0,0,30);

@@ -16,7 +16,7 @@ my $Storms = quest::saylink("Storms", 1);
    }
    if ($ulevel <= 40 && $ulevel >= 31 && $text=~/flames/i){
    quest::say("Yes, getting to Tirranun is not as easy at it may seem. The Figment of Tirranun may be there yet he is just that, a figment. you must first destroy several of the Whorl of searing ashes. Once his minions are delt with, Tirranun will show his true colors.");
-   {
+   }
    if ($ulevel <= 50 && $ulevel >= 41 && $text=~/rumors/i){
    quest::say("You must travel into the Nest and learn as much as you can about the corruption of the place. There are a number of drakes in the caverns of the Nest that have been twisted somehow. We want you to look for a drake that has been rumored to be altered so significantly that it has unique magic. Go learn more about it and kill it if you can.");
    quest::say("Bring to me a Shadowscale as proof.");
