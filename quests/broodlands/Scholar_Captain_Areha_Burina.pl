@@ -1,5 +1,6 @@
 sub EVENT_SAY {
 my $rumors = quest::saylink("rumors", 1);
+my $flames = quest::saylink("flames", 1);
 my $Perch = quest::saylink("Perch", 1);
 my $Reflections = quest::saylink("Reflections", 1);
 my $Storms = quest::saylink("Storms", 1);
@@ -11,11 +12,12 @@ my $Storms = quest::saylink("Storms", 1);
    quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
    }
    if ($ulevel <= 40 && $ulevel >= 31 && $text=~/rumors/i){
-   quest::say("Tirranun has proven himself to be a deadly adversary. He shows no discretion, remorse, or reason for the wholesale slaughter for which he is responsible. Many innocents that crossed his path here in Lavastorm lie dead because of his irrational rage. Take a force into the Delve and smother his flames once and for all. The beast must not be allowed to wreak havoc on our people any longer.");
+   quest::say("Tirranun has proven himself to be a deadly adversary. He shows no discretion, remorse, or reason for the wholesale slaughter for which he is responsible. Many innocents that crossed his path here in Lavastorm lie dead because of his irrational rage. Take a force into the Delve and smother his $flames once and for all. The beast must not be allowed to wreak havoc on our people any longer.");
    }
-   if ($ulevel <= 40 && $ulevel >= 31 && $text=~/rumors/i){
-   if ($ulevel <= 50 && $ulevel >= 41 && $text=~/flames/i){
-   quest::say("Yes, getting to Tirranun is not as easy at it may seem. The Figment of Tirranun may be there yet he is just that, a figment. you must first destroy several of the Whorl of searing ashes. Once his minions are delt with, Tirranun will show his true colors.")
+   if ($ulevel <= 40 && $ulevel >= 31 && $text=~/flames/i){
+   quest::say("Yes, getting to Tirranun is not as easy at it may seem. The Figment of Tirranun may be there yet he is just that, a figment. you must first destroy several of the Whorl of searing ashes. Once his minions are delt with, Tirranun will show his true colors.");
+   {
+   if ($ulevel <= 50 && $ulevel >= 41 && $text=~/rumors/i){
    quest::say("You must travel into the Nest and learn as much as you can about the corruption of the place. There are a number of drakes in the caverns of the Nest that have been twisted somehow. We want you to look for a drake that has been rumored to be altered so significantly that it has unique magic. Go learn more about it and kill it if you can.");
    quest::say("Bring to me a Shadowscale as proof.");
    }
