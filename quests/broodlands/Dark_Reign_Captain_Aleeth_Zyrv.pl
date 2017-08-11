@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-my $test = quest::saylink("test", 1);
+my $tests = quest::saylink("tests", 1);
   if ($ulevel <= 20 && $text=~/Hail/i){
    quest::say("I am sorry but I have nothing you could possibly do. Check with the others in the camp as they may have work that someone of your experiance might be able to help the Norrath Keepers with.");
    }
