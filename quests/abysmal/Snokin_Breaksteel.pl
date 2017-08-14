@@ -3,14 +3,14 @@ sub EVENT_SAY {
     if (quest::istaskactivityactive(170,4)) { #Smithing Collect Step 5
       quest::say("No more work now. Snokin happy wit what you do already. Snokin show you secret now. You not tell anyone!");
       quest::emote("looks around furtively, as if everyone on the ship doesn't hear everything he says. He hands you a piece of paper with some very precise writing on it. You can only guess that he did not write it. You look it over and you understand the methods for smelting the aligned ore and the shimmering aligned ore. It's not a complicated process, but you would have needed information that only that Wayfarers have to uncover it. Now all you need to do is place the ore into a forge and you will be able to make the steel. However, you are certain that you can improve the process if you work with the ore long enough. Snokin takes the paper back and pulls out a ledger. You see him carefully note your name on the ledger with clear and concise penmanship that matches that on the paper you just read.");
-      quest::LearnRecipe(3649); #Bar of Aligned Steel
-      quest::LearnRecipe(3650); #Bar of Shimmering Steel
+      $client->LearnRecipe(3630); #Bar of Aligned Steel
+      $client->LearnRecipe(3631); #Bar of Shimmering Steel
     }
     if(quest::istaskactivityactive(163,4)) { #Smithing Freebie Step 5
       quest::say("No more work now. Snokin happy wit what you do already. Snokin show you secret now. You not tell anyone!");
       quest::emote("looks around furtively, as if everyone on the ship doesn't hear everything he says. He hands you a piece of paper with some very precise writing on it. You can only guess that he did not write it. You look it over and you understand the methods for smelting the aligned ore and the shimmering aligned ore. It's not a complicated process, but you would have needed information that only that Wayfarers have to uncover it. Now all you need to do is place the ore into a forge and you will be able to make the steel. However, you are certain that you can improve the process if you work with the ore long enough. Snokin takes the paper back and pulls out a ledger. You see him carefully note your name on the ledger with clear and concise penmanship that matches that on the paper you just read.");
-      quest::LearnRecipe(3649); #Bar of Aligned Steel
-      quest::LearnRecipe(3650); #Bar of Shimmering Steel
+      $client->LearnRecipe(3630); #Bar of Aligned Steel
+      $client->LearnRecipe(3631); #Bar of Shimmering Steel
     }
     else {
       quest::say("Hello, Snokin can help you with da smith stuff. Can you [help] Snokin? Snokin too busy, need more time at forge with new ore, less time doing silly work for Wayfarers.");
@@ -24,7 +24,10 @@ sub EVENT_SAY {
   }
   if ($text=~/silly work/i) {
     quest::say("Tank you! If you make stuff for Snokin, Snokin can work more on new ore. You work as hard as Snokin, den Snokin give you good reward. Snokin knows people work good for good reward. Take [dis stuff] and make tings for me.");
-    quest::taskselector(163); #Smithing Freebie
+    #quest::tasksetselector(163); #Smithing Freebie
+    if(!quest::istaskactive(163)) {
+       quest::taskselector(163);
+    }
   }
   if ($text=~/dis stuff/i) {
     if(quest::istaskactivityactive(163,0)) { #Smithing Freebie Step 1
