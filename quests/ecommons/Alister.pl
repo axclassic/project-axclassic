@@ -19,7 +19,9 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-    quest::auction("Jewel Crafter for hire! Will enchant Platinum bars for 5pp! Will craft anything Platinum that I can for 10pp. Have mats for sale!");
+    my $rand_item = quest::ChooseRandom(14623,14627,14611,14695,14683,14635,14707,14667,14687,14607,14703);
+    my $item_link = quest::varlink($rand_item);
+    quest::auction($item_link, "Jewel Crafter for hire! Will enchant Platinum bars for 5pp! Will craft anything Platinum that I can for 10pp. Have mats for sale!");
 }                                                                     
 
 sub EVENT_SAY
