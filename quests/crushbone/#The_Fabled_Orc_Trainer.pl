@@ -1,5 +1,6 @@
 # #The_Fabled_Orc_Trainer (58013)
 # Depopper script by patrikpatrik 4/10/2017
+# Update 8/30/17 Timer stops if engaged and restarts on exit.
 
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
@@ -9,7 +10,15 @@ sub EVENT_SPAWN {
 	$tempd = $npc->GetNPCTypeID();
 	
 	if ($tempd == 58013) {
-		quest::settimer("fabledtrain", 600); #will remain for 10 minutes
+		quest::settimer("fabledtrain", 600); #will remain for 10 minutes 600
+	}
+}
+
+sub EVENT_COMBAT {
+	if($npc->IsEngaged()) {
+		quest::stoptimer($timer);
+	} else {
+		quest::settimer("fabledtrain", 600);
 	}
 }
 

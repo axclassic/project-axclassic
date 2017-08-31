@@ -3,6 +3,7 @@
 #Revised Angelox 10-23-06
 #zone: Crushbone
 # update depopper script by patrikpatrik 4/10/2017
+# Update 8/30/17 Timer stops if engaged and restarts on exit.
 
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
@@ -21,7 +22,6 @@ sub EVENT_TIMER {
 	}
 }
 
-
 sub EVENT_COMBAT{
     my $random_result = int(rand(100));
     if(($combat_state == 1) &&($random_result<=20)){
@@ -34,6 +34,12 @@ sub EVENT_COMBAT{
     quest::say("Fall before the might of Clan Crushbone!!");
     }elsif($combat_state == 1){
     quest::say("Humans kill humans, apes do not kill apes!");}
+	
+	if($npc->IsEngaged()) {
+		quest::stoptimer($timer);
+	} else {
+		quest::settimer("fabledcrush", 600);
+	}
 }
 
 sub EVENT_ATTACK
