@@ -1,7 +1,7 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 == 9/10/2017==
-Patrikpatirk: Cosmetic swap for Special Events header & Hot Zones header, if active.
+Patrikpatirk: Cosmetic swap for Special Events & Hot Zones header, if active.
 
 == 9/06/2017==
 Patrikpatrik: (angelox) Displayed Hotzones should now sync correctly.
