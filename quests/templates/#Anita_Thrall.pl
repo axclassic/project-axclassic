@@ -218,7 +218,7 @@ sub EVENT_ITEM{
     quest::setglobal("bot_spell_4",1,5,"F");
     $bot_spell_4 = undef;
     $client->Message(6,"You have scribed the spell Temperance!");}
-  elsif (plugin::check_handin(\%itemcount,59572 => 1)){ #Blessing of Temperance (not complete yet , just have the script ready).
+  elsif (plugin::check_handin(\%itemcount,59572 => 1)){ #Blessing of Temperance
     $client->Message(14,"Excellent, thank you, $class. Your spell has been scribed.");
     quest::setglobal("bot_spell_4",2,5,"F");
     $bot_spell_4 = undef;
