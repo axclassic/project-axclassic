@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/17/2017==
+Patrikpatrik: Emeleo Leafwalker will say if an Event is active before setting up.
+
 ==09/16/2017==
 Angelox: Changed first bot flag to EVENT_CONNECT as it waits 
 	for the client to connect to the world (me thinks). 
