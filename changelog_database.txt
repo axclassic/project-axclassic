@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==9/17/2017==
+Patrikpatrik: Restored the correct selling price for 'Of Platinum' bags.
+
 ==8/30/2017==
 Patrikpatrik: Engaging Fabled mobs will now stop the depopper timer.
 
