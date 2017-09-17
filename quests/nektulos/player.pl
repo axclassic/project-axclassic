@@ -1,3 +1,15 @@
+## This appears to wait for the client to connect before executing
+sub EVENT_CONNECT {
+ ## Angelox: First bot is free  
+ if (!defined $bot_spawn_limit){
+    quest::setglobal("bot_spawn_limit", 1, 5, "F");
+    $bot_spawn_limit = undef;
+    $client->Message(6,"You receive a character flag!");
+    $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
+    $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
+ }
+}
+
 sub EVENT_ENTERZONE {
  no warnings 'all' ;
  $event1 = 0;
@@ -142,18 +154,6 @@ my $random_result = int(rand(100));
   elsif ((!plugin::check_hasitem($client, 138)) && (defined ${$name}==2)){
     quest::summonitem(140);
   }
- ## Angelox: First bot is free  
- if (!defined $bot_spawn_limit){
-    quest::setglobal("bot_spawn_limit", 1, 5, "F");
-    $bot_spawn_limit = undef;
-    $client->Message(6,"You receive a character flag!");
-    $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
-    $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
- }
-  #elsif (!defined($tswitch)) {
-   # quest::setglobal("tswitch",6,5,"F");
-   # $taunt_switch = undef;
- # }
  }
 elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
  #$client->Message(14,"Classic 2011 mode.");

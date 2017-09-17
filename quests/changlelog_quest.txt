@@ -1,7 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==09/16/2017==
-Congdar: remove unneeded comment text
+Angelox: Changed first bot flag to EVENT_CONNECT as it waits 
+	for the client to connect to the world (me thinks). 
+Congdar: Remove unneeded comment text
 
 ==08/14/2017==
 Congdar: Add quest::auction() see /ecommons/Alister.pl for useage

@@ -1,17 +1,22 @@
-##########################
-# #player.pl in templates
-# Last updated 11/12/16
-# added server wide loot msg 7/26/17 patrikpatrik
-#
-##########################
+## This appears to wait for the client to connect before executing
+sub EVENT_CONNECT {
+ ## Angelox: First bot is free  
+ if (!defined $bot_spawn_limit){
+    quest::setglobal("bot_spawn_limit", 1, 5, "F");
+    $bot_spawn_limit = undef;
+    $client->Message(6,"You receive a character flag!");
+    $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
+    $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
+ }
+}
 
 sub EVENT_ENTERZONE {
-no warnings 'all';
-$event1 = 0;
-$event2 = 0;
-$event3 = 0;
-$event4 = 0;
-$event5 = 0;
+ no warnings 'all' ;
+ $event1 = 0;
+ $event2 = 0;
+ $event3 = 0;
+ $event4 = 0;
+ $event5 = 0;
   ## Set proper spawn in dual-spawn zones
   if ($zoneid ==  81){ ##Droga
    if ($ulevel <=45){
@@ -149,18 +154,6 @@ my $random_result = int(rand(100));
   elsif ((!plugin::check_hasitem($client, 138)) && (defined ${$name}==2)){
     quest::summonitem(140);
   }
- ## Angelox: First bot is free  
- if (!defined $bot_spawn_limit){
-    quest::setglobal("bot_spawn_limit", 1, 5, "F");
-    $bot_spawn_limit = undef;
-    $client->Message(6,"You receive a character flag!");
-    $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
-    $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
- }
-  #elsif (!defined($tswitch)) {
-   # quest::setglobal("tswitch",6,5,"F");
-   # $taunt_switch = undef;
- # }
  }
 elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
  #$client->Message(14,"Classic 2011 mode.");
@@ -275,25 +268,4 @@ sub EVENT_COMBINE_SUCCESS
         quest::summonitem(67704);
         $client->Message(1,"Success");
     }
-}
-
-sub EVENT_LOOT {
-	my @items_list = (82731, 82734, 6639, 6631, 2735, 1619, 1620, 25210, 25212);
-	# Karnor's Castle
-	# 82731 Fabled_Jade_mace
-	# 82734 Fabled_Tranquil staff
-	# 6639 Tranquil staff
-	# Sebilis
-	# 6631 Ton pos bo stick of understanding
-	# 2735 Fungus covered scale tunic
-	# 1619 siblisian berserker cloak
-	# 1620 Runebranded girdle
-	# Kael
-	# 25210 Blade of Carnage
-	# 25212 Flayed Barbarian Skin Leggings
-
-	if(grep(/^$looted_id$/, @items_list)) {
-		my $item = quest::varlink($looted_id);
-		quest::we(14, "The Rathe server congratulates $name, the uber $class for looting an extremely rare -$item-!");
-	}
 }
