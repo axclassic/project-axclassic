@@ -75,8 +75,6 @@ sub EVENT_ENTERZONE {
 	quest::delglobal("williampop");
 	quest::setglobal("williampop",2,7,"F");
   }
-if (((defined $Classic2012) && ($Classic2012 < 1)) | (!defined $Classic2012)){
- #$client->Message(14,"AXClassic mode.");
  if($ulevel >= 50){
   my @zonex = (1..17,19..31,33..38,40..47,49..63,67..70,73..75,78,82..84,97,98,100,101,104,106,121,156,165,166,189); #Trivial ZoneIDs array
   my $zoney = $zoneid;
@@ -154,65 +152,6 @@ my $random_result = int(rand(100));
   elsif ((!plugin::check_hasitem($client, 138)) && (defined ${$name}==2)){
     quest::summonitem(140);
   }
- }
-elsif ((defined $Classic2012) && ($Classic2012 > 0)) {
- #$client->Message(14,"Classic 2011 mode.");
-   if (!defined $bot_spell_6){
-    quest::setglobal("bot_spell_1",3,5,"F");
-    $bot_spell_1 = undef;
-    quest::setglobal("bot_spell_5",6,5,"F");
-    $bot_spell_5 = undef;
-    quest::setglobal("bot_spell_6",2,5,"F");
-    $bot_spell_6 = undef;
-    quest::setglobal("bot_spell_2",3,5,"F");
-    $bot_spell_2=undef;
-    quest::setglobal("bot_spell_3",3,5,"F");
-    $bot_spell_3=undef;
-    quest::setglobal("bard_spell_1",1,5,"F");
-    $bard_spell_1 = undef;
-    $client->Message(14,"Bot spells scribed, will become available as you level.");
-    quest::setglobal("bot_spawn_limit", 1, 5, "F");
-    $bot_spawn_limit = undef;
-    $client->Message(6,"You receive a character flag!");
-    $client->Message(14,"You have one bot available for creation, use the '#bot create' command.");
-    }
-   elsif (($ulevel >= 5)&&($ulevel <= 9)&&($qglobals{bot_spawn_limit} <= 1)){ 
-    quest::setglobal("bot_spawn_limit", 2, 5, "F");
-    $bot_spawn_limit = undef;
-    $client->Message(6,"You receive a character flag!");
-    $client->Message(14,"You have your second bot available for creation, use the '#bot create' command.");
-    }
-   elsif (($ulevel >= 10)&&($ulevel <= 14)&&($qglobals{bot_spawn_limit} <= 2)){ 
-    quest::setglobal("bot_spawn_limit", 3, 5, "F");
-    $bot_spawn_limit = undef;
-    $client->Message(6,"You receive a character flag!");
-    $client->Message(14,"You have your third bot available for creation, use the '#bot create' command.");
-    }
-   elsif (($ulevel >= 15)&&($ulevel <= 19)&&($qglobals{bot_spawn_limit} <= 3)){ 
-    quest::setglobal("bot_spawn_limit", 4, 5, "F");
-    $bot_spawn_limit = undef;
-    $client->Message(6,"You receive a character flag!");
-    $client->Message(14,"You have your fourth bot available for creation, use the '#bot create' command.");
-    }
-   elsif (($ulevel >= 20)&&($ulevel <= 50)&&($qglobals{bot_spawn_limit} <= 4)){ 
-    quest::setglobal("bot_spawn_limit", 5, 5, "F");
-    $bot_spawn_limit = undef;
-    $client->Message(6,"You receive a character flag!");
-    $client->Message(14,"You have your fifth bot available for creation, use the '#bot create' command.");
-    }
-    ## Angelox: This is for anouncing events
-   my $random_result = int(rand(100));
-   $clientver = $client->GetClientVersion();
-   if ($random_result<=2 && $clientver > 3){ ##Need to fix this in the hard code
-    $client->Message(14,"If you spot a bug while playing, please post it at http://forums.axclassic.com.");
-    $client->Message(14,"Petitions can be posted at http://forums.axclassic.com."); 
-    }
-   elsif ($random_result<=4){
-    $client->Message(14,"This server restarts daily at 4:01am eastern time, server will stay down a few minutes for maintenance, then start again - make sure you're in a safe spot before the restart.");
-    }
-  }
-    ## Both Database advisories
-    #
     ## Advise the players about our client status.
     if (($ulevel == 1) && (defined $bot_spawn_limit)){
       $clientver = $client->GetClientVersion();
