@@ -20,15 +20,15 @@ my @eventarr = ($qglobals{'event1'},$qglobals{'event2'},$qglobals{'event3'},
 $qglobals{'event4'},$qglobals{'event5'},$qglobals{'event6'},$qglobals{'event7'},
 $qglobals{'event8'});
 #naming the events
-my $event1 = "New Year's Event";
-my $event2 = "Easter Event";
-my $event3 = "Bloodhunt Event";
-my $event4 = "Pitch Black Event";
-my $event5 = "Random Moonstone Event";
-my $event6 = "Christmas Event";
-my $event7 = "Band Dislikes Orcs";
-my $event8 = "Unknown";
-my @currevent = ($event1, $event2, $event3, $event4, $event5, $event6, $event7, $event8);
+my $even1 = "New Year's Event";
+my $even2 = "Easter Event";
+my $even3 = "Bloodhunt Event";
+my $even4 = "Pitch Black Event";
+my $even5 = "Random Moonstone Event";
+my $even6 = "Christmas Event";
+my $even7 = "Band Dislikes Orcs";
+my $even8 = "Unknown";
+my @curreven = ($even1, $even2, $even3, $even4, $even5, $even6, $even7, $even8);
 
 if($text=~/Hail/i){
   $client->Message(14,"Hello $name\! Would you like to $start or $terminate an event?");
@@ -36,12 +36,12 @@ if($text=~/Hail/i){
 	 for (my $i = 0; $i < scalar(@eventarr); $i++) {
 			my $active = $eventarr[$i];
 			if($active == 1) {
-			$enow = $currevent[$i]; # Setting indices to be equal to each other!
+			my $enow = $curreven[$i]; # Setting indices to be equal to each other!
 				my $p = $i + 1;
 				my $eventnow = "Event$p";
 				$client->Message(14, "$enow or $eventnow is currently running!");
 			}
-		} 
+		}	
  }
 elsif($text=~/Start New Year/i){ #event1
  $client->Message(14,"Very well then, The NewYear event has started.");
