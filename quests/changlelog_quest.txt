@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/18/2017==
+Angelox: Removed all player.pls and any other NPC pls from zones that were already in templates.
+
 ==09/17/2017==
 Patrikpatrik: Emeleo Leafwalker will say if an Event is active before setting up.
 
