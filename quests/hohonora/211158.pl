@@ -23,7 +23,7 @@ sub EVENT_SIGNAL {
 	}
   }
 }
-Sub EVENT_TIMER {
+sub EVENT_TIMER {
 if($timer eq "Twinspop"){
 quest::stoptimer("Twinspop");
 quest::depopall(211127);

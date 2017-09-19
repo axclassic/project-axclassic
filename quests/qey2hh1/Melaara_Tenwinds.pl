@@ -6,7 +6,7 @@
 #This NPC is for those who have created bad faction with their hometown and can't get flagged
 
 sub EVENT_SAY {
-  if($ulevel >= 15)) {
+  if($ulevel >= 15) {
     if($text=~/hail/i) {
       quest::say("Come to find out about the Wayfarers Brotherhood, hm? I think I saw you around here long ago. Because you are familiar to me, I will trust you with some [information].");
     }

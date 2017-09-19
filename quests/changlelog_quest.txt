@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/19/2017==
+Angelox: Fixed syntax errors on a some quests. 
+
 ==09/18/2017==
 Angelox: Removed axclassic2012 inserts from player.pl.
 Angelox: Removed all player.pls and any other NPC pls from zones that were already in templates.

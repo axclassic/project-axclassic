@@ -29,8 +29,7 @@ if($signal == 222) {
   elsif($signal == 359) {
  $npc->CameraEffect(3000, 4, 1); 
   }
- }
- else {
+  else {
  #do Nothing;
  }
 }
