@@ -1,7 +1,14 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
-==09/20/2017==
-Congdar: Update quests: Rallic Pack, Shrieking Substances, Yiln's Missing Tomes
+==09/19/2017==
+Angelox: Fixed syntax errors on a some quests. 
+
+==09/18/2017==
+Angelox: Removed axclassic2012 inserts from player.pl.
+Angelox: Removed all player.pls and any other NPC pls from zones that were already in templates.
+
+==09/17/2017==
+Patrikpatrik: Emeleo Leafwalker will say if an Event is active before setting up.
 
 ==09/16/2017==
 Angelox: Changed first bot flag to EVENT_CONNECT as it waits 

@@ -1,6 +1,9 @@
 #Zone:cshome
 #Angelox
 #Script for setting or unsetting special events
+#Update 9/17/2017
+#Will now tell you if an event is up before setting it - patrikpatrik
+##########################################################
 
 sub EVENT_SAY {
 my $start = quest::saylink("start", 1);
@@ -12,9 +15,33 @@ my $startBloodhunt = quest::saylink("Start Bloodhunt", 1);
 my $startPitchblack = quest::saylink("Start Pitch Black", 1);
 my $startMoonstone = quest::saylink("Start Random Moonstone", 1);
 my $startOrc = quest::saylink("Start Band dislikes Orcs", 1); #this one already here, saved for template to next quest.
+#array of existing events in database. event1 - event8
+my @eventarr = ($qglobals{'event1'},$qglobals{'event2'},$qglobals{'event3'},
+$qglobals{'event4'},$qglobals{'event5'},$qglobals{'event6'},$qglobals{'event7'},
+$qglobals{'event8'});
+#naming the events
+my $even1 = "New Year's Event";
+my $even2 = "Easter Event";
+my $even3 = "Bloodhunt Event";
+my $even4 = "Pitch Black Event";
+my $even5 = "Random Moonstone Event";
+my $even6 = "Christmas Event";
+my $even7 = "Band Dislikes Orcs";
+my $even8 = "Unknown";
+my @curreven = ($even1, $even2, $even3, $even4, $even5, $even6, $even7, $even8);
 
 if($text=~/Hail/i){
   $client->Message(14,"Hello $name\! Would you like to $start or $terminate an event?");
+  	# Events currently running if active
+	 for (my $i = 0; $i < scalar(@eventarr); $i++) {
+			my $active = $eventarr[$i];
+			if($active == 1) {
+			my $enow = $curreven[$i]; # Setting indices to be equal to each other!
+				my $p = $i + 1;
+				my $eventnow = "Event$p";
+				$client->Message(14, "$enow or $eventnow is currently running!");
+			}
+		}	
  }
 elsif($text=~/Start New Year/i){ #event1
  $client->Message(14,"Very well then, The NewYear event has started.");
