@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/20/2017==
+Congdar: Update quests: Rallic Pack, Shrieking Substances, Yiln's Missing Tomes
+
 ==09/16/2017==
 Angelox: Changed first bot flag to EVENT_CONNECT as it waits 
 	for the client to connect to the world (me thinks). 
