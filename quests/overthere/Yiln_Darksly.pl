@@ -24,7 +24,7 @@ sub EVENT_ITEM {
       quest::summonitem(55025);
       quest::ding();
       quest::exp(10000);
-      quest::faction(69,10); # +Dark Bargainers
+      quest::faction(69,15); # +Dark Bargainers
       quest::faction(88,1);  # +Dreadguard Outer
       quest::faction(87,1);  # +Dreadguard Inner
    }

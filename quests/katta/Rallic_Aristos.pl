@@ -8,6 +8,9 @@ sub EVENT_SAY {
    if($text=~/plan/i) {
       quest::say("The full plans are not at my disposal but one of my concerns that may be instrumental in our success is the acquisition of grimling documents carried by a grimling courier who is seen frequently running from the forest to the mines. If one of the Validus Custodus attempts to obtain the runners pouch the grimlings will surely retaliate. if adventurers like yourselves obtained it however and quietly delivered it to me we may be able to move forward with our plans.");
    }
+   if($text=~/required materials/i) {
+      quest::say("In addition to the pattern you will need to acquire a Perfect Owlbear Pelt, Shade Silk Thread, and a Shade Silk Cord. You may use any loom or large tailoring kit to craft the pack.");
+   }
 }
 
 sub EVENT_ITEM {
