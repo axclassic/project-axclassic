@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/01/2017==
+Angelox: Removed some unused/misplaced files (see past two commits). 
+
 ==09/20/2017==
 Congdar: Update quests: Rallic Pack, Shrieking Substances, Yiln's Missing Tomes
 
