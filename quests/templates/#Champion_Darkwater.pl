@@ -11,6 +11,7 @@
 ## 2/02/16 More rewards at level 65 ##
 ## 1/01/17 added shrink item reward ##
 ## 6/30/17 update
+## 10/1/17 Changed 22298 to 22294   ##
 ######################################
 sub EVENT_SAY {
 #hyperlinks
@@ -264,8 +265,8 @@ my $activeYear = 2017;
 #Turning in 65 ladder reward for King Card
 	elsif (plugin::check_handin(\%itemcount, 413=>1) && $qglobals{"kingcard"} != 1) {
 		$client->Message(14, "Champion Darkwater says, 'I see you want more $name. Talk to Champion Lightwater and give her this card and your random ticket.'");
-		$client->Message(6, "You received a King Card.");
-		quest::summonitem(22298);
+		$client->Message(6, "You received a begging Card."); # changed from king card to Beggar card.
+		quest::summonitem(22294); # previously 22298
 		quest::summonitem(413);
 		quest::setglobal("kingcard", 1, 5, "F");
 #Random ticket reward
