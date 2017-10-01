@@ -5,6 +5,7 @@
 ## by Patrikpatrik                         ##
 ## UPDATE 1/1/2017 will reward shrink item ##
 ## upon random ticket from darkwater       ##
+## 10/1/2017 22298 changed to 22294	       ##
 #############################################
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
@@ -28,7 +29,7 @@ sub EVENT_SAY {
 }
 sub EVENT_ITEM {
 #If king card is handed in
-	if (plugin::check_handin(\%itemcount, 22298 => 1)) {
+	if (plugin::check_handin(\%itemcount, 22294 => 1)) { # changed from 22298
 	$client->Message(14,"Champion Lightwater says, 'My God, you've found it! I haven't seen one of these in a long time!'");
 	$client->Message(263,"Champion Lightwater waves her hand emphatically as a random item materializes out of thin air.");	
 		# my $randomroll = int(rand(100));  #Random roll
