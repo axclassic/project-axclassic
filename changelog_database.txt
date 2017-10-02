@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/01/2017==
+Patrikpatrik: Fixed Vilnius the Small spawn conditions and it's PH.
+
 ==9/17/2017==
 Patrikpatrik: Restored the correct selling price for 'Of Platinum' bags.
 
