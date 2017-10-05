@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/04/2017==
+Angelox: Started cleanup of Hollowshade scripts in attempt to repair it.
+Angelox: Started to place quoted out mob names in scripts so we know which is which. 
+
 ==10/01/2017==
 Angelox: Removed some unused/misplaced files (see past two commits). 
 Patrikpatrik: Security fix for Champion_Darkwater & Champion_Lightwater.
