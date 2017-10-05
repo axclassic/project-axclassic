@@ -1,6 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==10/04/2017==
+Angelox: May have found the problem.
 Angelox: Started cleanup of Hollowshade scripts in attempt to repair it.
 Angelox: Started to place quoted out mob names in scripts so we know which is which. 
 
