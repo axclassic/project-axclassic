@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/05/2017==
+Angelox: Possible fix for guard respawner in Hollowshade.
+
 ==10/04/2017==
 Angelox: May have found the problem.
 Angelox: Started cleanup of Hollowshade scripts in attempt to repair it.
