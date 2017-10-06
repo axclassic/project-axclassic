@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/06/2017==
+Congdar: fix pl files with errors logged in log file.
+
 ==10/05/2017==
 Angelox: Possible fix for guard respawner in Hollowshade.
 
