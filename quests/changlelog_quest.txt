@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/07/2017==
+Angelox: changed to quest::unique_spawn to ensure no mobs are dupe spawning.
+
 ==10/06/2017==
 Congdar: fix pl files with errors logged in log file.
 
