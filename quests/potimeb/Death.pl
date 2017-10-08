@@ -20,7 +20,7 @@ if($text=~/hail/i) {
 	}
 if($text=~/faction/i) {
 	quest::say("Currently your faction is $faction.");
-	quest::faction(42, 250); #cov
+	quest::faction(362, 250); #yel
 	quest::say("Now your faction is $faction.");
 	}
 }#END sub EVENT_SAY
