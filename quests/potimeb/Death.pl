@@ -18,11 +18,7 @@ if($text=~/hail/i) {
 	quest::say("Yes?");
 	quest::doanim(5);
 	}
-if($text=~/faction/i) {
-	quest::say("Currently your faction is $faction.");
-	quest::faction(362, 250); #yel
-	quest::say("Now your faction is $faction.");
-	}
+
 }#END sub EVENT_SAY
 
 sub EVENT_WAYPOINT {
