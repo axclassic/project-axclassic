@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/08/2017==
+Patrikpatrik: Corrected stats & faction hits for Lord Yelinak, King Tormax, & Dain Frostreaver IV.
+
 ==10/01/2017==
 Patrikpatrik: Fixed Vilnius the Small spawn conditions and it's PH.
 
