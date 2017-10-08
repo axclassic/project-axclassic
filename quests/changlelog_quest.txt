@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/08/2017==
+Patrikpatrik: Fixed Ralgyn, Kardakor, Rolandal for Ralgyn's Promise.
+
 ==10/07/2017==
 Angelox: changed to quest::unique_spawn to ensure no mobs are dupe spawning.
 
