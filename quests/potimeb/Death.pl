@@ -3,7 +3,7 @@
 # Only GM's can use this feature and last case scenario for now
 
 sub EVENT_SAY {
-
+	
 if($status == 255){
 	if($text=~/help/i){
 	quest::delglobal("blockout");
@@ -18,7 +18,11 @@ if($text=~/hail/i) {
 	quest::say("Yes?");
 	quest::doanim(5);
 	}
-
+if($text=~/faction/i) {
+	quest::say("Currently your faction is $faction.");
+	quest::faction(42, 250); #cov
+	quest::say("Now your faction is $faction.");
+	}
 }#END sub EVENT_SAY
 
 sub EVENT_WAYPOINT {
