@@ -2,6 +2,7 @@ AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==10/10/2017==
 Congdar: fix Harla Dar
+Congdar: update graveyard for Eschina Sybell quest
 
 ==10/08/2017==
 Patrikpatrik: Fixed Ralgyn, Kardakor, Rolandal for Ralgyn's Promise.
