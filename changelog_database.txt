@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/18/2017==
+Patrikpatrik: Added Undertow to spawn table & fabled scripts to Kedge Keep.
+
 ==10/08/2017==
 Patrikpatrik: Corrected stats & faction hits for Lord Yelinak, King Tormax, & Dain Frostreaver IV.
 
