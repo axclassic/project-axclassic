@@ -1,5 +1,5 @@
 #angelox
-##a_grimling_chieftain 
+##Ghowlik.pl
 
 sub EVENT_DEATH {
 	my $random_result = int(rand(100));

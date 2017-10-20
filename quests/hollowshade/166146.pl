@@ -1,5 +1,5 @@
 #angelox
-#Sonic Guardian
+#Sonic Lookout
 sub EVENT_SIGNAL {
  if ($astate==1){
  quest::shout("To arms! The grimlins are attacking the Sonic camp!");
