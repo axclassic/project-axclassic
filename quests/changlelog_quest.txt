@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/20/2017==
+Angelox: Some merging to the Hollowshade quests.
+
 ==10/10/2017==
 Congdar: fix Harla Dar
 Congdar: update graveyard for Eschina Sybell quest

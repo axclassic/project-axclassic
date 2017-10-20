@@ -1,5 +1,22 @@
 #angelox
 ##Ghowlik.pl
+sub EVENT_COMBAT{
+    my $random_result = int(rand(100));
+    if(($combat_state == 1) &&($random_result<=20)){
+    quest::say("growls as it senses the presence of an outsider.");
+    }elsif(($combat_state == 1) &&($random_result<=40)){
+    quest::say("sniffs at the ground, picking up the scent of a threat.");
+    }elsif(($combat_state == 1) &&($random_result<=60)){
+    quest::say("sniffs at the ground, picking up the scent of a threat.");
+    }elsif(($combat_state == 1) &&($random_result<=80)){
+    quest::say("growls as it senses the presence of an outsider.");
+    }elsif($combat_state == 1){
+    quest::say("lunges forward, saliva dripping from its fanged jaw.");}
+}
+
+sub EVENT_ATTACK{
+{quest::say("lunges forward, saliva dripping from its fanged jaw.");}
+}
 
 sub EVENT_DEATH {
 	my $random_result = int(rand(100));
@@ -19,4 +36,14 @@ sub EVENT_DEATH {
 	quest::me("Owlbears begin to attack the sonic wolf tribe");
 	quest::signal(166146,5);
   }
+  
+    if($random_result<=20){
+    quest::say("coughs up a bit of blood. 'You'll never escape us. . .");
+    }elsif($random_result<=40){
+    quest::say("screams as it collapses, 'Brothers and sisters, show no mercy to this outlander.");
+    }elsif($random_result<=60){
+    quest::say("collapses, its fur matted with blood.");
+    }elsif($random_result<=80){
+    quest::say("staggers for a moment and then collapses.");
+    }
 }
