@@ -23,7 +23,6 @@ sub EVENT_DEATH {
 	quest::spawn_condition("hollowshade",4,1); #grimlin defender are 4
 	quest::spawn_condition("hollowshade",6,0); #wolf defender are 6
 	quest::spawn_condition("hollowshade",5,0); #owl defender are 5
-	quest::say("");
  if($random_result<51){
 	quest::delglobal("astate");
 	quest::setglobal("astate",3,3,"F"); #wolves
@@ -38,13 +37,13 @@ sub EVENT_DEATH {
 	quest::signal(166179,5);
   }
     if($random_result<=20){
-    quest::say("coughs up a bit of blood. 'You'll never escape us...");
+    quest::emote("coughs up a bit of blood. 'You'll never escape us...");
     }elsif($random_result<=40){
-    quest::say("staggers for a moment and then collapses..");
+    quest::emote("staggers for a moment and then collapses..");
     }elsif($random_result<=60){
-    quest::say("coughs up a bit of blood. 'You'll never escape us...");
+    quest::emote("coughs up a bit of blood. 'You'll never escape us...");
     }elsif($random_result<=80){
-    quest::say("screams as it collapses, 'Brothers and sisters, show no mercy to this outlander.");
+    quest::emote("screams as it collapses, 'Brothers and sisters, show no mercy to this outlander.");
     }else{
     quest::say("Tribesmen, we are under siege!");}
 }

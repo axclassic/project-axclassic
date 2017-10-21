@@ -3,19 +3,19 @@
 sub EVENT_COMBAT{
     my $random_result = int(rand(100));
     if(($combat_state == 1) &&($random_result<=20)){
-    quest::say("assails you with a deafening shriek!");
+    quest::emote("assails you with a deafening shriek!");
     }elsif(($combat_state == 1) &&($random_result<=40)){
-    quest::say("emits a loud screech, vibrating the ground at your feet.");
+    quest::emote("emits a loud screech, vibrating the ground at your feet.");
     }elsif(($combat_state == 1) &&($random_result<=60)){
-    quest::say("snaps its powerful beak.");
+    quest::emote("snaps its powerful beak.");
     }elsif(($combat_state == 1) &&($random_result<=80)){
-    quest::say("emits a loud screech, vibrating the ground at your feet.");
+    quest::emote("emits a loud screech, vibrating the ground at your feet.");
     }elsif($combat_state == 1){
-    quest::say("catches sight of an enemy and ruffles its feathers in anger.");}
+    quest::emote("catches sight of an enemy and ruffles its feathers in anger.");}
 }
 
 sub EVENT_ATTACK{
-{quest::say("catches sight of an enemy and ruffles its feathers in anger.");}
+{quest::emote("catches sight of an enemy and ruffles its feathers in anger.");}
 }
 
 sub EVENT_DEATH {
@@ -37,13 +37,13 @@ sub EVENT_DEATH {
 	quest::signal(166217,5);
   }
     if($random_result<=20){
-    quest::say("emits a muffled screech as it collapses.");
+    quest::emote("emits a muffled screech as it collapses.");
     }elsif($random_result<=40){
-    quest::say("twitches as life fades from its round yellow eyes.");
+    quest::emote("twitches as life fades from its round yellow eyes.");
     }elsif($random_result<=60){
-    quest::say("emits a muffled screech as it collapses.");
+    quest::emote("emits a muffled screech as it collapses.");
     }elsif($random_result<=80){
-    quest::say("twitches as life fades from its round yellow eyes.");
+    quest::emote("twitches as life fades from its round yellow eyes.");
     }else{
-    quest::say("staggers for a moment and then collapses...");}
+    quest::emote("staggers for a moment and then collapses...");}
 }
