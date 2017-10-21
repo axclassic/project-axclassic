@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/21/2017==
+Congdar: Nexus zone activated
+
 ==10/18/2017==
 Patrikpatrik: Added Undertow to spawn table & fabled scripts to Kedge Keep.
 

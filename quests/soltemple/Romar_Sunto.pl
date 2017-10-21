@@ -28,6 +28,10 @@ sub EVENT_SAY {
     quest::say("Tash had a collection of ten antique silver coins that were left in different cities around the world. If you were to collect all 10 coins, I would give you a [coin pouch] that would let you combine them into the master Coin of Tash. If you are interested I will sell you a copy of the Tome of Tash, detailing where the coins were reportedly left, for a mere 50 gold.");
   }
 
+  elsif($text=~/reward/i) {
+    quest::say("I will reward you with a scroll for the spell Tashania. For personal use, of course.");
+  }
+
 }
 
 sub EVENT_ITEM {
