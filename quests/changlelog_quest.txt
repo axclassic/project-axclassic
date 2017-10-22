@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/22/2017==
+Angelox: zoner to swamp from trak incase zoneline fix don't work right.
+
 ==10/21/2017==
 Congdar: Nexus zone activated
 
