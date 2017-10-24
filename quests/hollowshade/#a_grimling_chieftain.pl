@@ -19,22 +19,28 @@ sub EVENT_ATTACK{
 }
 
 sub EVENT_DEATH {
+	#spawn grimlin defenders
 	my $random_result = int(rand(100));
 	quest::spawn_condition("hollowshade",4,1); #grimlin defender are 4
 	quest::spawn_condition("hollowshade",6,0); #wolf defender are 6
 	quest::spawn_condition("hollowshade",5,0); #owl defender are 5
+ #Randomize what race attacks
  if($random_result<51){
 	quest::delglobal("astate");
 	quest::setglobal("astate",3,3,"F"); #wolves
 	$astate=undef;
 	quest::me("Sonic wolves begins to attack the grimlin camp");
 	quest::signal(166179,5);
+	#spawn wolf invaders
+	quest::spawn_condition("hollowshade",9,1); #wolf invader are 9
   }else{
 	quest::delglobal("astate");
 	quest::setglobal("astate",2,3,"F"); #owlbears
 	$astate=undef;
 	quest::me("Owlbears begin to attack the grimlin camp");
 	quest::signal(166179,5);
+	#spawn owl invaders
+	quest::spawn_condition("hollowshade",8,1); #owl invader are 8
   }
     if($random_result<=20){
     quest::emote("coughs up a bit of blood. 'You'll never escape us...");
