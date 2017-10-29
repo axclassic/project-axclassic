@@ -21,7 +21,7 @@ sub EVENT_SPAWN
 	quest::setglobal("astate",1,3,"F");
 	$astate=undef;
 	quest::delglobal("sstate");
-	quest::setglobal("sstate",3,3,"F");
+	quest::setglobal("sstate",1,3,"F");
 	$sstate=undef;
 	quest::delglobal("defder1");
 	quest::setglobal("defder1",0,3,"F");

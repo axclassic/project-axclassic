@@ -12,7 +12,7 @@ if (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&(
 }
 #wolves killed owls
 elsif (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==3)&&($sstate==1)){
-	#Set Zone Race to OWolves (Sonics)
+	#Set Zone Race to Wolves (Sonics)
 	quest::spawn_condition("hollowshade",3,1); #wolves won
 	quest::spawn_condition("hollowshade",2,0);
 	quest::spawn_condition("hollowshade",1,0);
