@@ -1,57 +1,33 @@
-#angelox
-#defender5 script wolf
-
 sub EVENT_DEATH {
 #grimlins killed wolves
-if (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==1)&&($sstate==3)){
-	quest::spawn_condition("hollowshade",3,0); #wolves are 3
-	quest::spawn_condition("hollowshade",2,0); #owls are 2
-	quest::spawn_condition("hollowshade",1,1); #grimlin are 1
-	quest::spawn_condition("hollowshade",6,0); #wolf defender are 6
-	quest::spawn_condition("hollowshade",5,0); #owl defender are 5
-}
-#grimlins killed owlbears
-elsif (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==1)&&($sstate==2)){
-	quest::spawn_condition("hollowshade",3,0); #wolves are 3
-	quest::spawn_condition("hollowshade",2,0); #owls are 2
-	quest::spawn_condition("hollowshade",1,1); #grimlin are 1
-	quest::spawn_condition("hollowshade",6,0); #wolf defender are 6
-	quest::spawn_condition("hollowshade",5,0); #owl defender are 5
-}
-#owls killed gremlins
-elsif (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==2)&&($sstate==1)){
+if (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==2)&&($sstate==1)){
+	#Set Zone Race to Grimlins
 	quest::spawn_condition("hollowshade",3,0);
-	quest::spawn_condition("hollowshade",2,1);
-	quest::spawn_condition("hollowshade",1,0);
+	quest::spawn_condition("hollowshade",2,0); 
+	quest::spawn_condition("hollowshade",1,1);  #grimlins won
+	#Remove Camp Defenders
 	quest::spawn_condition("hollowshade",6,0); #wolf defender are 6
-	quest::spawn_condition("hollowshade",4,0); #grimlin defender are 4
+	#Remove Camp Invaders
+	quest::spawn_condition("hollowshade",13,0); #grimlin to wolf camp invader are 13
 }
-#owls killed  wolves
-elsif (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==2)&&($sstate==3)){
-	quest::spawn_condition("hollowshade",3,0);
-	quest::spawn_condition("hollowshade",2,1);
-	quest::spawn_condition("hollowshade",1,0);
-	quest::spawn_condition("hollowshade",6,0); #wolf defender are 6
-	quest::spawn_condition("hollowshade",4,0); #grimlin defender are 4
-}
-#wolves killed owls
-elsif (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==3)&&($sstate==2)){
-	quest::spawn_condition("hollowshade",3,1);
-	quest::spawn_condition("hollowshade",2,0);
-	quest::spawn_condition("hollowshade",1,0);
-	quest::spawn_condition("hollowshade",5,0); #owl defender are 5
-	quest::spawn_condition("hollowshade",4,0); #grimlin defender are 4
-}
-#wolves killed grimlins
+#owls killed wolves
 elsif (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==3)&&($sstate==1)){
-	quest::spawn_condition("hollowshade",3,1);
+	#Set Zone Race to OWolves (Sonics)
+	quest::spawn_condition("hollowshade",3,1); #wolves won
 	quest::spawn_condition("hollowshade",2,0);
 	quest::spawn_condition("hollowshade",1,0);
-	quest::spawn_condition("hollowshade",5,0); #owl defender are 5
-	quest::spawn_condition("hollowshade",4,0); #grimlin defender are 4
-}else{
+	#Remove Camp Defenders
+	quest::spawn_condition("hollowshade",6,0); #wolf defender are 6
+	#Remove Camp Invaders
+	quest::spawn_condition("hollowshade",12,0); #owl to wolf camp invader are 12
+}
+#If not all $defder variables are set, then must be this one needs to be set
+else{ 
 	quest::delglobal("defder5");
 	quest::setglobal("defder5",1,3,"F");
 	$defder5=undef;
  }
 }
+#angelox
+#5a_sonic_defender 
+#Hollowshade script wolf defenders
