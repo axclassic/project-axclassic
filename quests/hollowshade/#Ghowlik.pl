@@ -29,12 +29,16 @@ sub EVENT_DEATH {
 	$astate=undef;
 	quest::me("Grimlins begin to attack the sonic wolves tribe");
 	quest::signal(166146,5);
+	#spawn owl invaders to wolf camp
+	quest::spawn_condition("hollowshade",12,1); #owls 12
   }else{
 	quest::delglobal("astate");
 	quest::setglobal("astate",2,3,"F"); #owlbears
 	$astate=undef;
 	quest::me("Owlbears begin to attack the sonic wolf tribe");
 	quest::signal(166146,5);
+	#spawn grimling invaders to wolf camp
+	quest::spawn_condition("hollowshade",13,1); #grimlings 13
   }
   
     if($random_result<=20){

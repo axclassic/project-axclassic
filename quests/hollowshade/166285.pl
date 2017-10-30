@@ -1,6 +1,6 @@
 sub EVENT_DEATH {
 #grimlins killed owls
-if (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==2)&&($sstate==1)){
+if (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==1)&&($sstate==2)){
 	#Set Zone Race to Grimlins
 	quest::spawn_condition("hollowshade",3,0);
 	quest::spawn_condition("hollowshade",2,0); 
@@ -11,7 +11,7 @@ if (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&(
 	quest::spawn_condition("hollowshade",11,0); #grimlin to owl camp invader are 11
 }
 #wolves killed owls
-elsif (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==3)&&($sstate==1)){
+elsif (($defder1==1)&&($defder2==1)&&($defder3==1)&&($defder4==1)&&($defder5==1)&&($astate==3)&&($sstate==2)){
 	#Set Zone Race to Wolves (Sonics)
 	quest::spawn_condition("hollowshade",3,1); #wolves won
 	quest::spawn_condition("hollowshade",2,0);
