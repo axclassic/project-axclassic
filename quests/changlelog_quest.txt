@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/31/2017==
+Angelox: Hollowshade - Winning race stays in zone tell conquered. 
+Angelox: Hollowshade - If Invaders are not helped, they will loose the war.	  
+
 ==10/30/2017==
 Angelox: Hollowshade Wars updates
 
