@@ -208,3 +208,23 @@ sub EVENT_COMBINE_SUCCESS
         $client->Message(1,"Success");
     }
 }
+
+sub EVENT_LOOT {
+	my @items_list = (82731, 82734, 6639, 6631, 2735, 1619, 1620, 25210, 25212);
+	# Karnor's Castle
+	# 82731 Fabled_Jade_mace
+	# 82734 Fabled_Tranquil staff
+	# 6639 Tranquil staff
+	# Sebilis
+	# 6631 Ton pos bo stick of understanding
+	# 2735 Fungus covered scale tunic
+	# 1619 siblisian berserker cloak
+	# 1620 Runebranded girdle
+	# Kael
+	# 25210 Blade of Carnage
+	# 25212 Flayed Barbarian Skin Leggings
+	if(grep(/^$looted_id$/, @items_list)) {
+		my $item = quest::varlink($looted_id);
+		quest::we(14, "The Rathe server congratulates $name, the uber $class for looting an extremely rare -$item-!");
+	}
+}
