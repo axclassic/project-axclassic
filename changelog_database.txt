@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==11/03/2017==
+Patrikpatrik: Minor fix to dbforum title and flavor text.
+
 ==10/21/2017==
 Congdar: Nexus and Bazaar zones activated
 
