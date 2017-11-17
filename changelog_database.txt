@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==11/17/2017==
+Congdar: fix nro ldon Rescue npc id's
+
 ==11/03/2017==
 Patrikpatrik: Minor fix to dbforum title and flavor text.
 
