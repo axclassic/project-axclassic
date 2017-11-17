@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/17/2017==
+Congdar: PoJustice delete The_Tribunal.pl and 201078_old.pl since 201078.pl should be used.
+
 ==10/31/2017==
 Angelox: Hollowshade - Winning race stays in zone tell conquered. 
 Angelox: Hollowshade - If Invaders are not helped, they will loose the war.	  
