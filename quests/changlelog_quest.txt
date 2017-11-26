@@ -1,6 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==11/26/2017==
+Angelox: Tserrina_Syl`Tor duplicate spawning fix.
 Angelox: fix for Cara Omica duplicate spawning.
 
 ==11/25/2017==
