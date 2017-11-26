@@ -76,7 +76,7 @@ sub EVENT_ENTERZONE {
 	quest::setglobal("williampop",2,7,"F");
   }
  if($ulevel >= 50){
-  my @zonex = (1..17,19..31,33..38,40..47,49..63,67..70,73..75,78,82..84,97,98,100,101,104,106,121,156,165,166,189); #Trivial ZoneIDs array
+  my @zonex = (1..17,19..25,27..31,33..38,40..47,49..63,67..70,73..75,78,82..84,97,98,100,101,104,106,121,156,165,166,189); #Trivial ZoneIDs array
   my $zoney = $zoneid;
   if (grep {$_ eq $zoney} @zonex){
       $client->Message(15,"This zone is trivial to you since you aquired level 50 - you are only allowed to complete your unfinished quests.");
