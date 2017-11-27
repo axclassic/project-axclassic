@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/27/2017==
+Angelox:Fix for Fabled Omica to warn when de-popping.
+
 ==11/26/2017==
 Angelox: Tserrina_Syl`Tor duplicate spawning fix.
 Angelox: fix for Cara Omica duplicate spawning.
