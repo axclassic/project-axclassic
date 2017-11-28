@@ -2,6 +2,7 @@
 #zone - FrozenShadow
 #Angelox
 sub EVENT_DEATH{
+	#quest::say("Your level is $ulevel");
 	my $random_result = int(rand(100));
     if ($omica>1){ #Omica not up yet
 	if (($random_result <= 20) && ($ulevel >= 40)) { #4
