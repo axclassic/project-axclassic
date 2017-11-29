@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/28/2017==
+Congdar: Fix for Vox/Naggy level limit
+
 ==11/27/2017==
 Angelox:Fix for Fabled Omica to warn when de-popping.
 

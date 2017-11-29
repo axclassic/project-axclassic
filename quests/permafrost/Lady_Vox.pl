@@ -4,8 +4,9 @@
 sub EVENT_ATTACK {
    if($ulevel >= 53) {
       quest::shout("I will not fight you, but I will banish you!");
-      quest::movepc(31,-485.77,-476.04,73.72);
+      quest::movepc(30,-7021.9,2020.1,-59.8,190.1);
    }
 }
+
 # EOF zone: permafrost ID: 73057 NPC: Lady_Vox
 
