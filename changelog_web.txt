@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==12/01/2017==
+Patrikpatrik: Hot Zones linked to more descriptions when up.
+
 == 9/10/2017==
 Patrikpatirk: Cosmetic swap for Special Events & Hot Zones header, if active.
 
