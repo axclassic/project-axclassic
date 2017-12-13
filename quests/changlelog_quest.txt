@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/13/2017==
+Congdar: add soldungb fabled depop scripts
+
 ==11/28/2017==
 Congdar: Fix for Vox/Naggy level limit
 
