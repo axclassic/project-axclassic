@@ -1,7 +1,7 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==12/14/2017==
-Patrikpatrik: Greatly reduced the number of bots/spiders/webcrawlers to a minimum.
+Patrikpatrik: Greatly reduced the number of bots/spiders/webcrawlers to a bare minimum.
 
 ==12/01/2017==
 Patrikpatrik: Hot Zones linked to more descriptions when up.
