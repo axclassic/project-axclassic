@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/24/2017==
+Patrikpatrik: Added fabled depopper scripts for Charasis.
+
 ==12/13/2017==
 Congdar: add soldungb fabled depop scripts
 
