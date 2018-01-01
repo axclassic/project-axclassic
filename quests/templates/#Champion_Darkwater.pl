@@ -25,10 +25,10 @@ my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
 my $newyears = quest::saylink("special", 1);
 #Ladder date and char settings
-my $minCharID  = 6679; #6125 remember to define this in the sub Event ITEM below 5992
-my $maxCharID  = 6678; #6124 5828
+my $minCharID  = 6978; #6125 remember to define this in the sub Event ITEM below 5992
+my $maxCharID  = 6977; #6124 5828
 my $activeYear = 2017; #2016
-my $activeMonth = "July"; #July
+my $activeMonth = "January"; #July January
 
 
 	if(($text=~/hail/i) && ($charid < $minCharID)) { #this is the newest charID
@@ -221,8 +221,8 @@ my $activeMonth = "July"; #July
 
 
 sub EVENT_ITEM {
-my $minCharID  = 6679; # dont forget to set this one as well 5829 6125
-my $activeMonth = "July";
+my $minCharID  = 6978; # dont forget to set this one as well 5829 6125
+my $activeMonth = "January";
 my $activeYear = 2017;
 
 	if ($charid < $minCharID) { #this charid and the one above should be the same.
