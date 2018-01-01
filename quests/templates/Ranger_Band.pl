@@ -246,7 +246,7 @@ my $kithicor = quest::saylink("Kithicor Forest", 1);
 my $pirates = quest::saylink("pirates", 1);
 my $treasure = quest::saylink("treasure", 1);
 my $skeletons = quest::saylink("Skeletons", 1);
-my $activeYear = 2016;
+my $activeYear = 2018;
 my $moonstone = quest::saylink("moonstone", 1);
 my $shadeweavers = quest::saylink("Shadeweavers Thicket", 1);
 my $transport = quest::saylink("transport", 1);
@@ -410,7 +410,7 @@ my $tempt = quest::saylink("tempt", 1);
 	elsif(($text=~/wind/i) && ($zoneid == 165)){
 	  $client->Message(14,"Ranger Band says, 'Aye, Moonstone of the Wind! Fastest moonstone in Norrath, also great to have when trying to escape a dire situation.'"); }
 	elsif(($ulevel <= 10) && ($text=~/New Years/i) && ($event1==1)){
-	  $client->Message(14,"Ranger Band says, 'What I will do in $activeYear you ask? I travel around and make new friends. I adventure so I can tell stories about my travels to anyone who wants to hear. Do you want to travel too? Maybe I can help you. I got a stack of Moonstones right here but you guessed it, bring what I want, and I will give you a random Moonstone - go and find me: 1 Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.'"); }
+	  $client->Message(14,"Ranger Band says, 'What will I do in $activeYear you ask? I travel around and make new friends. I adventure so I can tell stories about my travels to anyone who wants to hear. Do you want to travel too? Maybe I can help you. I got a stack of Moonstones right here but you guessed it, bring what I want, and I will give you a random Moonstone - go and find me: 1 Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.'"); }
 	#Orc EVENT 
 	elsif(($ulevel <= 20) && ($text=~/interest/i) && ($event5==1) && ($charid > $minCharID)){ #Must have Ladder check here
 	  $client->Message(14,"Ranger Band says, 'I have a collection of Moonstones I obtained while camping certain named mobs in Norrath, I haven't much need for them anymore, void to $tempt you with a quest!'"); }
