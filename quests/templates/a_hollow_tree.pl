@@ -74,7 +74,7 @@ sub EVENT_ATTACK {
                 my $entid1 = quest::spawn2($id, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), $npc->GetHeading());
                 my $mob1 = $entity_list->GetMobID($entid1);
                 my $mobnpc1 = $mob1->CastToNPC();
-                $mobnpc1->AddToHateList($TreeAttacker);
+                $mobnpc1->AddToHateList($TreeAttacker, 1);
             }
         }
         elsif ($random_result > 25) {

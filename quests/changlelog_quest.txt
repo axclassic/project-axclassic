@@ -1,6 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
-==12/24/2018==
+==01/13/2018==
+Congdar: Plane of Sky update
+
+==12/24/2017==
 Angelox: Changed Ranger Bands active year date for the new year.
 
 ==12/24/2017==

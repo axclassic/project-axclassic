@@ -162,7 +162,7 @@ my $random_result = int(rand(100));
 	$client->Message(15,"Thank you for trying us out!");
       }
    }
-   elsif ($zoneid == 215){ ##poair de-buff
+   elsif ($zoneid == 71){ ##airplane de-buff
       $client->BuffFadeAll();
    } 
   elsif($ulevel >= 15 && !defined($qglobals{Wayfarer}) && $client->GetStartZone()!=$zoneid && $zoneid !=50 && $zoneid !=12) {
