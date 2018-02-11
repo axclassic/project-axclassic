@@ -1,28 +1,29 @@
+# Phara Dar's door can only be opened if the other dragons are dead.
 sub EVENT_CLICKDOOR {
    my $dragonsup = 0;
-   if($entity_list->IsMobSpawnedByNpcTypeID(108053)) { #Xygoz
+   if($entity_list->GetMobByNpcTypeID(108053)) { #Xygoz
       $dragonsup++;
    }
-   if($entity_list->IsMobSpawnedByNpcTypeID(108040)) { #Druushk
+   if($entity_list->GetMobByNpcTypeID(108040)) { #Druushk
       $dragonsup++;
    }
-   if($entity_list->IsMobSpawnedByNpcTypeID(108047)) { #Nexona
+   if($entity_list->GetMobByNpcTypeID(108047)) { #Nexona
       $dragonsup++;
    }
-   if($entity_list->IsMobSpawnedByNpcTypeID(108043)) { #Hoshkar
+   if($entity_list->GetMobByNpcTypeID(108043)) { #Hoshkar
       $dragonsup++;
    }
-   if($entity_list->IsMobSpawnedByNpcTypeID(108050)) { #Silverwing
+   if($entity_list->GetMobByNpcTypeID(108050)) { #Silverwing
       $dragonsup++;
    }
    if($doorid == 56 || $doorid == 57) {
       if($dragonsup == 0) {
-         $client->Message(0,"You got the door open.");
+         $client->Message(15,"You got the door open.");
          quest::forcedooropen(56);
          quest::forcedooropen(57);
       }
       else {
-         $client->Message(0,"A seal has been placed on this door by Phara Dar. Perhaps there is a way to remove it.");
+         $client->Message(15,"A seal has been placed on this door by Phara Dar. Perhaps there is a way to remove it.");
       }
    }
 }

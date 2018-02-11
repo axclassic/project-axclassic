@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==02/10/2018==
+Congdar: more Veeshan's Peak 2.0
+
 ==02/09/2018==
 Congdar: Fix for Dain Frostreaver IV
 Congdar: Veeshan's Peak 2.0

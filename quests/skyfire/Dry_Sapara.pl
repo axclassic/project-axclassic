@@ -1,6 +1,6 @@
 #ID91092
 sub EVENT_SPAWN {
-   quest::settimer("dsap",5);
+   quest::settimer("dsglobes",5);
 }
 
 sub EVENT_SAY {
@@ -19,28 +19,34 @@ sub EVENT_SAY {
 }
 
 sub EVENT_TIMER {
-   if($timer eq "dsap") {
-      quest::stoptimer("dsap");
+   if($timer eq "dsglobes") {
+      quest::stoptimer("dsglobes");
       my $shouted = 0;
       if(defined $qglobals{door_one} && defined $qglobals{door_two} && defined $qglobals{door_three}) {
          quest::shout("The globes are absorbing my energy! I do not know what will happen next, so be prepared!");
-         $shouted = 1;
+         $shouted++;
       }
       if(defined $qglobals{door_one} && defined $qglobals{door_two} && defined $qglobals{door_four}) {
          quest::shout("The globes are absorbing my energy! I do not know what will happen next, so be prepared!");
-         $shouted = 1;
+         $shouted++;
       }
       if(defined $qglobals{door_one} && defined $qglobals{door_three} && defined $qglobals{door_four}) {
          quest::shout("The globes are absorbing my energy! I do not know what will happen next, so be prepared!");
-         $shouted = 1;
+         $shouted++;
       }
       if(defined $qglobals{door_two} && defined $qglobals{door_three} && defined $qglobals{door_four}) {
          quest::shout("The globes are absorbing my energy! I do not know what will happen next, so be prepared!");
-         $shouted = 1;
+         $shouted++;
       }
       if($shouted == 0) {
-         quest::settimer("dsap",5);
+         quest::settimer("dsglobes",5);
       }
+   }
+}
+
+sub EVENT_SIGNAL {
+   if($signal == 1) { # Suled_Dar`s_Shade dead or depopped.
+      quest::settimer("dsglobes",5);
    }
 }
 

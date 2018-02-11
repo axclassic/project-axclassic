@@ -4,6 +4,8 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_DEATH {
+   quest::stoptimer("sds");
+   quest::signalwith(91092,1,1);
    quest::setglobal(dragon_not_ready,1,3,"H72");
    quest::spawn2(91099,0,0,-8.5,861.0,-168.3,223.6);
    quest::spawn2(91099,0,0,-18.5,861.0,-168.3,223.6);
@@ -18,6 +20,7 @@ sub EVENT_DEATH {
 sub EVENT_TIMER {
    if($timer eq "sds") {
       quest::stoptimer("sds");
+      quest::signalwith(91092,1,1);
       quest::setglobal(dragon_not_ready,1,3,"H1");
       quest::depop();
    }
