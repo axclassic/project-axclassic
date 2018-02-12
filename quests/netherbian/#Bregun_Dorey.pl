@@ -16,7 +16,7 @@ sub EVENT_SAY{
   if ($text=~/good/i) {
     quest::say("Yeah good! Trog trog trog trog! Hahaha! These Troglodytes don't know of Rivervale. They just run around the cave all day doing Troglodyte things. Hahaha! Trog trog trog. So what was I speaking of.. Oh Bixies! So, are there bixies around Rivervale?");
   }
-  if ($text=~/bixes.*rivervale/i) {
+  if ($text=~/bixies around rivervale/i) {
     quest::say("There are Bixies! THERE ARE BIXIES! This is great. You should hunt some Bixies, and get some Bixie parts. Then you can make me some Bixie Crunchies! Ooooh, Crunchies. I want to try the Crunchies. I think you should bring me four Crunchies!");
   }
 }
