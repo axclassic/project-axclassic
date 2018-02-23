@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==02/23/2018==
+Angelox: Doors database update.
+
 ==11/17/2017==
 Congdar: fix nro ldon Rescue npc id's
 
