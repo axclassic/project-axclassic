@@ -12,6 +12,8 @@ sub EVENT_SPAWN {
 
 sub EVENT_AGGRO {
    quest::settimer("LeashCheck",10);
+   my $annoyer = $client->GetID();
+   quest::signalwith(108017,$annoyer,10);
 }
 
 sub EVENT_TIMER {

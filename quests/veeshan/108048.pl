@@ -41,6 +41,11 @@ sub EVENT_SAY {
    }
 }
 
+sub EVENT_AGGRO {
+   my $annoyer = $client->GetID();
+   quest::signalwith(108019,$annoyer,10);
+}
+
 sub EVENT_ITEM {
    if($faction == 1) {
       if(plugin::check_handin(\%itemcount, 69316 => 1)) { #Box of Phara Dar (Full)

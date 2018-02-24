@@ -30,6 +30,11 @@ sub EVENT_HP {
    }
 }
 
+sub EVENT_AGGRO {
+   my $annoyer = $client->GetID();
+   quest::signalwith(108016,$annoyer,10);
+}
+
 sub EVENT_SAY {
    if($text=~/hail/i) {
       quest::say("Who steps in my lair?! Ah, 'tis but a soft-flesh nuisance. I must say I am amazed at the idiocy you adventurers must boast to explore these areas, especially when we're trying to keep you out. Since you are here, I will tell you of a story and a [dilemma] I am having if you wish. You might become more enlightened.");

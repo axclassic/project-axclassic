@@ -10,6 +10,11 @@ sub EVENT_SAY {
    }
 }
 
+sub EVENT_AGGRO {
+   my $annoyer = $client->GetID();
+   quest::signalwith(108018,$annoyer,10);
+}
+
 sub EVENT_ITEM {
    if($faction == 1) {
       if(plugin::check_handin(\%itemcount, 69344 => 1)) {
