@@ -46,22 +46,28 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-   if(($itemcount{27249} == 1) && ($itemcount{27208} == 1) && ($itemcount{27209} == 1) && ($itemcount{27204} == 1)) { # 4 talismans
-      quest::say("You impress me, mortal. I would never have thought you would be fit for this task and now you have proved me wrong. As I said earlier, I cannot condone the killing of other dragons, so I will assume that you acquired these through other methods. If you did slay these dragons however, that does bring a small bit of joy to me. I have one final task for you before we part ways. There is a certain Wyvern that has become an unwelcome outcast in the frozen lands. End his suffering and return proof of the deed to me.");
-      quest::summonitem(69351); #Hoshkar's Bag of Holding
+   if($faction == 1) {
+      if(plugin::check_handin(\%itemcount, 27249 => 1, 27208 => 1, 27209 => 1, 27204 => 1)) { # 4 talismans
+         quest::say("You impress me, mortal. I would never have thought you would be fit for this task and now you have proved me wrong. As I said earlier, I cannot condone the killing of other dragons, so I will assume that you acquired these through other methods. If you did slay these dragons however, that does bring a small bit of joy to me. I have one final task for you before we part ways. There is a certain Wyvern that has become an unwelcome outcast in the frozen lands. End his suffering and return proof of the deed to me.");
+         quest::summonitem(69351); #Hoshkar's Bag of Holding
+      }
+      if(plugin::check_handin(\%itemcount, 69352 => 1)) { #Full Hoshkar's Bag of Holding
+         quest::say("Splendid, $name. This Wyvern has been a thorn in my side as long as those Sky dragons have been. You have gained my trust, outlander, and here is your reward. If the reward does not impress you, I have a different one that might. Return that to me if you wish to see it.");
+         quest::summonitem(69380); #Wand of the Lava Shaper
+      }
+      if(plugin::check_handin(\%itemcount, 69380 => 1)) {
+         quest::say("How utterly obtuse and arrogant. How about this one then?");
+         quest::summonitem(69379);
+      }
+      if(plugin::check_handin(\%itemcount, 69379 => 1)) {
+         quest::say("How utterly obtuse and arrogant. How about this one then?");
+         quest::summonitem(69380);
+      }
    }
-   if($itemcount{69352} == 1) { #Full Hoshkar's Bag of Holding
-      quest::say("Splendid, $name. This Wyvern has been a thorn in my side as long as those Sky dragons have been. You have gained my trust, outlander, and here is your reward. If the reward does not impress you, I have a different one that might. Return that to me if you wish to see it.");
-      quest::summonitem(69380); #Wand of the Lava Shaper
+   else { # less than ally faction
+      quest::say("You still need to prove your loyalty to us. I do not feel we can trust you yet, outlander.");
    }
-   if($itemcount{69380} == 1) {
-      quest::say("How utterly obtuse and arrogant. How about this one then?");
-      quest::summonitem(69379);
-   }
-   if($itemcount{69379} == 1) {
-      quest::say("How utterly obtuse and arrogant. How about this one then?");
-      quest::summonitem(69380);
-   }
+   plugin::return_items(\%itemcount);
 }
 # Quest by mystic414
 

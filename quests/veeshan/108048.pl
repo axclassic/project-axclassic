@@ -67,6 +67,9 @@ sub EVENT_ITEM {
          quest::summonitem(69390); #Earring of Phara Dar
       }
    }
+   else { # less than ally faction
+      quest::say("You still need to prove your loyalty to us. I do not feel we can trust you yet, outlander.");
+   }
    plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:veeshan ID:108048 -- Phara_Dar.pl

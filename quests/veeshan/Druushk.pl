@@ -45,15 +45,22 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-   if(plugin::check_handin(\%itemcount, 69339 => 1, 69338 => 1, 69337 => 1)) {
-      quest::say("My worst fears are true. My assistant has been slain. I will have my servants investigate this heinous crime. Here is your reward for this deed mortal. If you do not like it, I can provide you with a different reward.");
-      quest::summonitem ("69383");
+   if($faction == 1) {
+      if(plugin::check_handin(\%itemcount, 69339 => 1, 69338 => 1, 69337 => 1)) {
+         quest::say("My worst fears are true. My assistant has been slain. I will have my servants investigate this heinous crime. Here is your reward for this deed mortal. If you do not like it, I can provide you with a different reward.");
+         quest::summonitem ("69383");
+      }
+      if(plugin::check_handin(\%itemcount, 69383 => 1)) {
+         quest::say("How utterly obtuse and arrogant. How about this one then?");
+         quest::summonitem ("69384");
+      }
+      if(plugin::check_handin(\%itemcount, 69384 => 1)) {
+         quest::say("How utterly obtuse and arrogant. How about this one then?");
+         quest::summonitem ("69383");
+      }
    }
-   if(plugin::check_handin(\%itemcount, 69383 => 1)) {
-      quest::summonitem ("69384");
-   }
-   if(plugin::check_handin(\%itemcount, 69384 => 1)) {
-      quest::summonitem ("69383");
+   else { # less than ally faction
+      quest::say("You still need to prove your loyalty to us. I do not feel we can trust you yet, outlander.");
    }
    plugin::return_items(\%itemcount); # return unused items
 }

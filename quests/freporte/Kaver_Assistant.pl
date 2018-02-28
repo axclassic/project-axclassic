@@ -22,7 +22,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-   if($itemcount{13794} => 4) {
+   if(plugin::check_handin(\%itemcount, 13794 => 4)) {
       quest::exp(25);
       quest::ding();
       quest::say("Thank you your name and kills have been recorded.");
@@ -30,7 +30,7 @@ sub EVENT_ITEM {
       quest::faction(235,15);
       quest::givecash(5,2,1,0);
    }
-   elsif($itemcount{13068} => 4) {
+   elsif(plugin::check_handin(\%itemcount, 13068 => 4)) {
       quest::exp(25);
       quest::ding();
       quest::say("Thank you your name and kills have been recorded.");
@@ -38,7 +38,7 @@ sub EVENT_ITEM {
       quest::faction(235,15);
       quest::givecash(5,2,1,0);
    }
-   elsif($itemcount{9131} => 4) {
+   elsif(plugin::check_handin(\%itemcount, 9131 => 4)) {
       quest::exp(25);
       quest::ding();
       quest::say("Thank you your name and kills have been recorded.");
