@@ -41,11 +41,11 @@ sub EVENT_ITEM {
 
 sub EVENT_SIGNAL {
 	if ($signal == 10505) { #This signal are from these mobs upon death!
-		if ($qglobals{'portalab'} > 4) {
+		if ($qglobals{"portalab"} > 4) {
 			quest::setglobal("portalab", 1, 7, "M60");
 		}
 		else {
-		quest::setglobal("portalab", ($qglobals{'portalab'}) + 1, 7, "M60");	
+		quest::setglobal("portalab", ($qglobals{"portalab"}) + 1, 7, "M60");	
 		}
 	}
 
