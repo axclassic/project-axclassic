@@ -1,4 +1,4 @@
-sub EVENT_ZONE {
+sub EVENT_ENTERZONE {
      if($ulevel <= 55 && $ulevel >= 50) {
     quest::signalwith(302084,474,0);
 	quest::signalwith(302084,475,10);
