@@ -24,7 +24,7 @@ sub EVENT_SAY {
     quest::say("I have heard rumors that my wayward brothers have recruited guards to protect them but I question their loyalty to the Evil Bunny. I am sure the Evil Bunny wont give the Easter Eggs up without a fight. I need the Easter Eggs back so I can try and correct this issue before its too late. Will you $help?");
 	}
    elsif ($text=~/help/i && $ulevel <= 49) {
-   quest::assigntask(188);
+   quest::assigntask(187);
    quest::say("Thank you $name, Take this basket to collect the Easter Eggs in and return it to me when you have finished collecting them.");
    quest::summonitem(120281);
    }
