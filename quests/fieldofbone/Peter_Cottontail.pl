@@ -21,7 +21,7 @@ sub EVENT_SAY {
     quest::say("I need you to track down my wayward brothers and collect the Easter Eggs from them by whatever $means is necessary.");
     }
    elsif ($text=~/means/i) {
-    quest::say(("I have heard rumors that my wayward brothers have recruited guards to protect them but I question their loyalty to the Evil Bunny. I am sure the Evil Bunny wont give the Easter Eggs up without a fight. I need the Easter Eggs back so I can try and correct this issue before its too late. Will you $help?");
+    quest::say("I have heard rumors that my wayward brothers have recruited guards to protect them but I question their loyalty to the Evil Bunny. I am sure the Evil Bunny wont give the Easter Eggs up without a fight. I need the Easter Eggs back so I can try and correct this issue before its too late. Will you $help?");
 	}
    elsif ($text=~/help/i && $ulevel <= 49) {
    quest::assigntask(183);
