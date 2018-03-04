@@ -5,24 +5,24 @@ sub EVENT_SIGNAL {
      if($signal == 44) {
 	quest::depopall(54310); 
 	quest::depopall(54311);
-	quest::depopall(68312);
-	quest::depopall(68313);
-	quest::depopall(68314);
-	quest::depopall(68315);
-	quest::depopall(68316);
-	quest::depopall(68317);
-	quest::depopall(68318);
-	quest::depopall(68319);
-	quest::depopall(68320);
-	quest::depopall(68321);
-	quest::depopall(68322);
-	quest::depopall(68323);
-	quest::depopall(68324);
-	quest::depopall(68325);
-	quest::depopall(68326);
-	quest::depopall(68327);
-	quest::depopall(68328);
-	quest::depopall(68329);
+	quest::depopall(54312);
+	quest::depopall(54313);
+	quest::depopall(54314);
+	quest::depopall(54315);
+	quest::depopall(54316);
+	quest::depopall(54317);
+	quest::depopall(54318);
+	quest::depopall(54319);
+	quest::depopall(54320);
+	quest::depopall(54321);
+	quest::depopall(54322);
+	quest::depopall(54323);
+	quest::depopall(54324);
+	quest::depopall(54325);
+	quest::depopall(54326);
+	quest::depopall(54327);
+	quest::depopall(54328);
+	quest::depopall(54329);
 	}
 	elsif($signal == 34) {
 	quest::spawn2(54310,0,0,-1999.7,2158.1,-43.4,110.1);
