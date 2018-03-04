@@ -32,7 +32,7 @@ sub EVENT_ENTERZONE {
 	quest::signalwith(57166,55,0);
 	quest::signalwith(57166,52,10);
 	}
-	elsif($ulevel >= 41 && $ulevel <= 41) {
+	elsif($ulevel >= 41 && $ulevel <= 45) {
 	quest::signalwith(57166,55,0);
 	quest::signalwith(57166,53,10);
 	}
