@@ -353,19 +353,19 @@ if ($zoneid ==  9){  ##FreeportWest
 	}
 	elsif($ulevel >= 31 && $ulevel <= 35) {
 	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,228,10);
+	quest::signalwith(30190,227,10);
 	}
 	elsif($ulevel >= 36 && $ulevel <= 40) {
 	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,229,10);
+	quest::signalwith(30190,228,10);
 	}
 	elsif($ulevel >= 41 && $ulevel <= 45) {
 	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,230,10);
+	quest::signalwith(30190,229,10);
 	}
 	elsif($ulevel >= 46 && $ulevel <= 49) {
 	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,231,10);
+	quest::signalwith(30190,230,10);
 	}
 	else {
 	quest::signalwith(30190,220,0);
