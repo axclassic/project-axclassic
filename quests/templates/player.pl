@@ -10,6 +10,7 @@ sub EVENT_CONNECT {
  }
 }
 sub EVENT_ZONE {
+##All of the following zones are used in the New Easter Event the signals tell the controller for each zone what level NPC to spawn
 if ($zoneid ==  9){  ##FreeportWest
    if($ulevel >= 1 && $ulevel <= 5) {
     quest::signalwith(9186,11,0);

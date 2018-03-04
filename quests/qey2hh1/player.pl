@@ -1,3 +1,4 @@
+##New Easter Event the signals tell the controller for Westkarana qey2hh1 zone what level NPC to spawn
 sub EVENT_ENTERZONE {
      if($ulevel >= 1 && $ulevel <= 5) {
     quest::signalwith(12215,165,0);

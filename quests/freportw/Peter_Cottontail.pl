@@ -1,5 +1,7 @@
 ## Peter_Cottontail ID 9165 West Freeport##
-##Easter Event ##
+##New Easter Event ##
+##Quest giver for new easter event, he is in most starting zones but not all##
+##Peter_Cottontail is spawned via Global {NewEasterEvent} ##
 
 sub EVENT_SAY {
   my $rebelling = quest::saylink("rebelling", 1);

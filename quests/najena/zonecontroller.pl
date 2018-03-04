@@ -1,4 +1,6 @@
 ##zonecontroller.pl ID 44135 in Najena##
+##Spawns NPC according to signal from player.pl Player.pl may be in the zone file or in templates folder depending if this is a starter zone or not##
+##zonecontroller is spawned via Global {NewEasterEvent} ##
 sub EVENT_SIGNAL {
      if($signal == 364) {
 	quest::depopall(44115); 

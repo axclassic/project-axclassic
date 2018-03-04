@@ -1,4 +1,6 @@
 ##zonecontroller.pl ID 35188 in sro##
+##Spawns NPC according to signal from player.pl Player.pl may be in the zone file or in templates folder depending if this is a starter zone or not##
+##zonecontroller is spawned via Global {NewEasterEvent} ##
 sub EVENT_SIGNAL {
      if($signal == 132) {
 	quest::depopall(35168); 

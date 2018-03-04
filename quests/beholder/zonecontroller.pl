@@ -1,4 +1,6 @@
 ##zonecontroller.pl ID 16057 in beholder Gorge of King Xorbb##
+##Spawns NPC according to signal from player.pl Player.pl may be in the zone file or in templates folder depending if this is a starter zone or not##
+##zonecontroller is spawned via Global {NewEasterEvent} ##
 sub EVENT_SIGNAL {
      if($signal == 441) {
 	quest::depopall(16037); 
