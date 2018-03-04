@@ -1,4 +1,4 @@
-##New Easter Event the signals tell the controller for lfaydark zone what level NPC to spawn
+
 sub EVENT_ENTERZONE {
    if($ulevel >= 1 && $ulevel <= 5) {
     quest::signalwith(57166,55,0);
