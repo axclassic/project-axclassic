@@ -193,47 +193,47 @@ if ($zoneid ==  9){  ##FreeportWest
 	}
 	if ($zoneid ==  56){ ##Steamfont Mountains
 	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(56228,99,0);
-	quest::signalwith(56228,89,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(56228,99,0);
+    quest::signalwith(56228,89,0);
 	quest::signalwith(56228,90,10);
 	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(56228,99,0);
+	elsif($ulevel >= 6 && $ulevel <= 10) {
+	quest::signalwith(56228,89,0);
 	quest::signalwith(56228,91,10);
 	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(56228,99,0);
+	elsif($ulevel >= 11 && $ulevel <= 15) {
+	quest::signalwith(56228,89,0);
 	quest::signalwith(56228,92,10);
 	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(56228,99,0);
+	elsif($ulevel >= 16 && $ulevel <= 20) {
+	quest::signalwith(56228,89,0);
 	quest::signalwith(56228,93,10);
 	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(56228,99,0);
+	elsif($ulevel >= 21 && $ulevel <= 25) {
+	quest::signalwith(56228,89,0);
 	quest::signalwith(56228,94,10);
 	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(56228,99,0);
+	elsif($ulevel >= 26 && $ulevel <= 30) {
+	quest::signalwith(56228,89,0);
 	quest::signalwith(56228,95,10);
 	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(56228,99,0);
+	elsif($ulevel >= 31 && $ulevel <= 35) {
+	quest::signalwith(56228,89,0);
 	quest::signalwith(56228,96,10);
 	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(56228,99,0);
+	elsif($ulevel >= 36 && $ulevel <= 40) {
+	quest::signalwith(56228,89,0);
 	quest::signalwith(56228,97,10);
 	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(56228,99,0);
+	elsif($ulevel >= 41 && $ulevel <= 45) {
+	quest::signalwith(56228,89,0);
 	quest::signalwith(56228,98,10);
 	}
+	elsif($ulevel >= 46 && $ulevel <= 49) {
+	quest::signalwith(56228,89,0);
+	quest::signalwith(56228,99,10);
+	}
 	else {
-	quest::signalwith(56228,99,0);
+	quest::signalwith(56228,89,0);
 	}
 	}
 	if ($zoneid ==  25){ ##Nektulos
