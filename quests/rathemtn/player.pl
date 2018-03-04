@@ -1,5 +1,5 @@
 ##New Easter Event the signals tell the controller for Rathe Mountains zone what level NPC to spawn
-sub EVENT_ENTERZONE {
+sub EVENT_ZONE {
      if($ulevel >= 1 && $ulevel <= 5) {
     quest::signalwith(50666,397,0);
 	quest::signalwith(50666,398,10);
