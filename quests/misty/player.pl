@@ -1,5 +1,5 @@
 ##New Easter Event the signals tell the controller for Misty zone what level NPC to spawn
-sub EVENT_ZONE {
+sub EVENT_CONNECT {
      if($ulevel >= 1 && $ulevel <= 5) {
     quest::signalwith(33178,430,0);
 	quest::signalwith(33178,431,10);
