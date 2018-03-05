@@ -9,7 +9,6 @@ sub EVENT_CONNECT {
     $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
  }
 }
-sub EVENT_ZONE {
 ##All of the following zones are used in the New Easter Event the signals tell the controller for each zone what level NPC to spawn
 if ($zoneid ==  9){  ##FreeportWest
    if($ulevel >= 1 && $ulevel <= 5) {
@@ -728,7 +727,7 @@ if ($zoneid ==  9){  ##FreeportWest
 	quest::signalwith(189520,320,0);
 	}
     }
-	}
+	
 sub EVENT_ENTERZONE {
  no warnings 'all' ;
  $event1 = 0;
