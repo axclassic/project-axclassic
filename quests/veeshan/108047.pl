@@ -14,8 +14,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_AGGRO {
-   my $annoyer = $client->GetID();
-   quest::signalwith(108018,$annoyer,10);
+   my $annoyer = $npc->GetHateMost();
+   my $annoyerID = $annoyer->GetID();
+   quest::signalwith(108018,$annoyerID);
 }
 
 sub EVENT_ITEM {

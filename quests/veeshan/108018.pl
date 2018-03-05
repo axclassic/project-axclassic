@@ -1,8 +1,7 @@
 # A_Guardian_of_Nexona
 sub EVENT_SIGNAL {
-   my $annoyingclient = $entity_list->GetClientByID($signal);
-   my $annoyingname = $annoyingclient->GetName();
-   quest::attack($annoyingname);
+   my $annoyingmob = $entity_list->GetMobID($signal);
+   $npc->AddToHateList($annoyingmob, 10, 10);
 }
 # End of File
 

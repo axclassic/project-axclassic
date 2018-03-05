@@ -12,9 +12,10 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_AGGRO {
-   quest::settimer("LeashXygoz",5);
-   my $annoyer = $client->GetID();
-   quest::signalwith(108020,$annoyer,10);
+   quest::settimer("LeashXygoz",2);
+   my $annoyer = $npc->GetHateMost();
+   my $annoyerID = $annoyer->GetID();
+   quest::signalwith(108020,$annoyerID);
 }
 
 sub EVENT_TIMER {
@@ -22,7 +23,6 @@ sub EVENT_TIMER {
       my $distanceCHK = $npc->CalculateDistance($leashX, $leashY, $leashZ);
       if($distanceCHK >= 20) {
          $npc->GMMove($leashX, $leashY, $leashZ, $leashH);
-         $npc->HateSummon(1);
       }
    }
 }
