@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==03/05/2018==
+Congdar: Fear 2.0
+
 ==02/10/2018==
 Congdar: more Veeshan's Peak 2.0
 
