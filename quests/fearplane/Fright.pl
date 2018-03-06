@@ -2,17 +2,20 @@
 # Fright
 # Plane of Fear
 # Aramid September 2006
-
- my $x;
- my $y;
- my $z;
+sub EVENT_SIGNAL {
+   if($signal == 1) {
+      quest::say("Such is the will of Cazic-Thule!");
+   }
+   if($signal == 2) {
+      quest::follow(72003);
+   }
+   if($signal == 3) {
+      quest::sfollow();
+   }
+}
 
 sub EVENT_DEATH {
-   $x = $npc->GetX();
-   $y = $npc->GetY();
-   $z = $npc->GetZ();
-   quest::unique_spawn(72105,0,0,$x,$y,$z);
- }
-
-
+   quest::unique_spawn(72105,0,0,$x,$y,$z,$h);
+}
 # End of File - NPCID 72004 - Fright
+

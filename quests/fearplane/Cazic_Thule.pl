@@ -1,25 +1,380 @@
 # Call Dread, Fright & Terror to aid Cazic Thule if they're still alive
-# code by mystic414
-
-sub EVENT_AGGRO {
-  quest::shout("Denizens of Fear, your master commands you to come forth to his aid!!");
-  quest::shout("Beware all infidels who dare to taint my plane, for I shall rend your minds with fright, dread, and terror!");
-  my $dread_mob = $entity_list->GetMobByNpcTypeID(72000);
-  my $fright_mob = $entity_list->GetMobByNpcTypeID(72004);
-  my $terror_mob = $entity_list->GetMobByNpcTypeID(72002);
-  if ($dread_mob) {
-    my $dread_mobnpc = $dread_mob->CastToNPC();
-    $dread_mobnpc->AddToHateList($client, 1);
-  }
-  if ($fright_mob) {
-    my $fright_mobnpc = $fright_mob->CastToNPC();
-    $fright_mobnpc->AddToHateList($client, 1);
-  }
-  if ($terror_mob) {
-    my $terror_mobnpc = $terror_mob->CastToNPC();
-    $terror_mobnpc->AddToHateList($client, 1);
-  }
+# code by mystic414 updated by Congdar
+sub EVENT_SPAWN {
+   quest::settimer("CazicZoneShout", 1200);
 }
 
+sub EVENT_TIMER {
+   if($timer eq "CazicZoneShout") {
+      quest::shout("Beware all infidels who dare to taint my plane, for I shall rend your minds with fright, dread, and terror!");
+      # Amygdalan_knight
+      $entity_list->SignalMobsByNPCID(72019, 1);
+      $entity_list->SignalMobsByNPCID(72023, 1);
+      $entity_list->SignalMobsByNPCID(72029, 1);
+      $entity_list->SignalMobsByNPCID(72034, 1);
+      $entity_list->SignalMobsByNPCID(72049, 1);
+      $entity_list->SignalMobsByNPCID(72085, 1);
+      $entity_list->SignalMobsByNPCID(72091, 1);
+      $entity_list->SignalMobsByNPCID(72092, 1);
+      # Amygdalan_warrior
+      $entity_list->SignalMobsByNPCID(72015, 1);
+      $entity_list->SignalMobsByNPCID(72039, 1);
+      $entity_list->SignalMobsByNPCID(72045, 1);
+      $entity_list->SignalMobsByNPCID(72070, 1);
+      $entity_list->SignalMobsByNPCID(72075, 1);
+      # a_boogeyman
+      $entity_list->SignalMobsByNPCID(72036, 1);
+      $entity_list->SignalMobsByNPCID(72037, 1);
+      $entity_list->SignalMobsByNPCID(72042, 1);
+      $entity_list->SignalMobsByNPCID(72054, 1);
+      $entity_list->SignalMobsByNPCID(72062, 1);
+      # a_decrepit_warder
+      $entity_list->SignalMobsByNPCID(72016, 1);
+      $entity_list->SignalMobsByNPCID(72041, 1);
+      $entity_list->SignalMobsByNPCID(72103, 1);
+      # a_dracoliche
+      $entity_list->SignalMobsByNPCID(72090, 1);
+      # a_fetid_fiend
+      $entity_list->SignalMobsByNPCID(72008, 1);
+      $entity_list->SignalMobsByNPCID(72017, 1);
+      $entity_list->SignalMobsByNPCID(72059, 1);
+      $entity_list->SignalMobsByNPCID(72064, 1);
+      $entity_list->SignalMobsByNPCID(72065, 1);
+      $entity_list->SignalMobsByNPCID(72066, 1);
+      $entity_list->SignalMobsByNPCID(72072, 1);
+      $entity_list->SignalMobsByNPCID(72073, 1);
+      $entity_list->SignalMobsByNPCID(72084, 1);
+      # a_frightfinger
+      $entity_list->SignalMobsByNPCID(72030, 1);
+      $entity_list->SignalMobsByNPCID(72040, 1);
+      $entity_list->SignalMobsByNPCID(72081, 1);
+      $entity_list->SignalMobsByNPCID(72088, 1);
+      $entity_list->SignalMobsByNPCID(72096, 1);
+      # a_glare_lord
+      $entity_list->SignalMobsByNPCID(72020, 1);
+      $entity_list->SignalMobsByNPCID(72024, 1);
+      $entity_list->SignalMobsByNPCID(72026, 1);
+      $entity_list->SignalMobsByNPCID(72027, 1);
+      $entity_list->SignalMobsByNPCID(72076, 1);
+      # a_gorgon
+      $entity_list->SignalMobsByNPCID(72025, 1);
+      $entity_list->SignalMobsByNPCID(72031, 1);
+      $entity_list->SignalMobsByNPCID(72033, 1);
+      $entity_list->SignalMobsByNPCID(72043, 1);
+      # a_nightmare
+      $entity_list->SignalMobsByNPCID(72083, 1);
+      $entity_list->SignalMobsByNPCID(72086, 1);
+      $entity_list->SignalMobsByNPCID(72087, 1);
+      # a_phantasm
+      $entity_list->SignalMobsByNPCID(72102, 1);
+      # a_samhain
+      $entity_list->SignalMobsByNPCID(72021, 1);
+      $entity_list->SignalMobsByNPCID(72028, 1);
+      $entity_list->SignalMobsByNPCID(72032, 1);
+      $entity_list->SignalMobsByNPCID(72052, 1);
+      $entity_list->SignalMobsByNPCID(72053, 1);
+      # a_scareling
+      $entity_list->SignalMobsByNPCID(72005, 1);
+      $entity_list->SignalMobsByNPCID(72047, 1);
+      $entity_list->SignalMobsByNPCID(72048, 1);
+      $entity_list->SignalMobsByNPCID(72051, 1);
+      $entity_list->SignalMobsByNPCID(72094, 1);
+      # a_shiverback
+      $entity_list->SignalMobsByNPCID(72006, 1);
+      $entity_list->SignalMobsByNPCID(72007, 1);
+      $entity_list->SignalMobsByNPCID(72050, 1);
+      $entity_list->SignalMobsByNPCID(72063, 1);
+      $entity_list->SignalMobsByNPCID(72067, 1);
+      # a_spinechiller_spider
+      $entity_list->SignalMobsByNPCID(72009, 1);
+      $entity_list->SignalMobsByNPCID(72010, 1);
+      $entity_list->SignalMobsByNPCID(72011, 1);
+      $entity_list->SignalMobsByNPCID(72058, 1);
+      $entity_list->SignalMobsByNPCID(72095, 1);
+      # a_tentacle_tormentor
+      $entity_list->SignalMobsByNPCID(72056, 1);
+      $entity_list->SignalMobsByNPCID(72057, 1);
+      $entity_list->SignalMobsByNPCID(72060, 1);
+      $entity_list->SignalMobsByNPCID(72061, 1);
+      $entity_list->SignalMobsByNPCID(72080, 1);
+      # a_turmoil_toad
+      $entity_list->SignalMobsByNPCID(72014, 1);
+      $entity_list->SignalMobsByNPCID(72018, 1);
+      $entity_list->SignalMobsByNPCID(72038, 1);
+      $entity_list->SignalMobsByNPCID(72044, 1);
+      $entity_list->SignalMobsByNPCID(72055, 1);
+      # a_worry_wraith
+      $entity_list->SignalMobsByNPCID(72013, 1);
+      $entity_list->SignalMobsByNPCID(72022, 1);
+      $entity_list->SignalMobsByNPCID(72035, 1);
+      $entity_list->SignalMobsByNPCID(72046, 1);
+      $entity_list->SignalMobsByNPCID(72093, 1);
+      # Dread
+      $entity_list->SignalMobsByNPCID(72000, 1);
+      # Fright
+      $entity_list->SignalMobsByNPCID(72004, 1);
+      # phoboplasm
+      $entity_list->SignalMobsByNPCID(72071, 1);
+      $entity_list->SignalMobsByNPCID(72077, 1);
+      $entity_list->SignalMobsByNPCID(72079, 1);
+      $entity_list->SignalMobsByNPCID(72082, 1);
+      $entity_list->SignalMobsByNPCID(72089, 1);
+      # Terror
+      $entity_list->SignalMobsByNPCID(72002, 1);
+   }
+}
+
+sub EVENT_SAY {
+   if($text=~/gandan has failed in his task/i) {
+      quest::emote("\'s thoughts begin to pervade your own, they creep into your mind with great force. You feel pressure as if your head will explode. You see his thoughts becoming your own. You see in these visions a tome bound in flesh dropped to the ground. You then open your eyes to see that same book, and take it knowing that it was meant for you.");
+      quest::summonitem(18899); # Tome Bound in Flesh
+   }
+}
+
+sub EVENT_ITEM {
+   # Satchel of Cazic-Thule, Flayed Skin Tome, Tome Bound in Flesh
+   if(plugin::check_handin(\%itemcount, 8226 => 1, 18898 => 1, 18899 => 1)) {
+      quest::emote("seems pleased with the amount of pain that you have been able to inflict. Cazic Thule then grabs your hands and begins to infuse them with his power. Your hands burn like they were placed in lava for a moment, then feel cool as ice. You can feel the sheer power flowing through your new weapons of pain.");
+      quest::summonitem(7836); # Whistling Fists
+      quest::exp(100000);
+      quest::ding();
+   }
+   plugin::return_items(\%itemcount);
+}
+
+sub EVENT_AGGRO {
+   quest::shout("Denizens of Fear, your master commands you to come forth to his aid!!");
+   # Amygdalan_knight
+   $entity_list->SignalMobsByNPCID(72019, 2);
+   $entity_list->SignalMobsByNPCID(72023, 2);
+   $entity_list->SignalMobsByNPCID(72029, 2);
+   $entity_list->SignalMobsByNPCID(72034, 2);
+   $entity_list->SignalMobsByNPCID(72049, 2);
+   $entity_list->SignalMobsByNPCID(72085, 2);
+   $entity_list->SignalMobsByNPCID(72091, 2);
+   $entity_list->SignalMobsByNPCID(72092, 2);
+   # Amygdalan_warrior
+   $entity_list->SignalMobsByNPCID(72015, 2);
+   $entity_list->SignalMobsByNPCID(72039, 2);
+   $entity_list->SignalMobsByNPCID(72045, 2);
+   $entity_list->SignalMobsByNPCID(72070, 2);
+   $entity_list->SignalMobsByNPCID(72075, 2);
+   # a_boogeyman
+   $entity_list->SignalMobsByNPCID(72036, 2);
+   $entity_list->SignalMobsByNPCID(72037, 2);
+   $entity_list->SignalMobsByNPCID(72042, 2);
+   $entity_list->SignalMobsByNPCID(72054, 2);
+   $entity_list->SignalMobsByNPCID(72062, 2);
+   # a_decrepit_warder
+   $entity_list->SignalMobsByNPCID(72016, 2);
+   $entity_list->SignalMobsByNPCID(72041, 2);
+   $entity_list->SignalMobsByNPCID(72103, 2);
+   # a_dracoliche
+   $entity_list->SignalMobsByNPCID(72090, 2);
+   # a_fetid_fiend
+   $entity_list->SignalMobsByNPCID(72008, 2);
+   $entity_list->SignalMobsByNPCID(72017, 2);
+   $entity_list->SignalMobsByNPCID(72059, 2);
+   $entity_list->SignalMobsByNPCID(72064, 2);
+   $entity_list->SignalMobsByNPCID(72065, 2);
+   $entity_list->SignalMobsByNPCID(72066, 2);
+   $entity_list->SignalMobsByNPCID(72072, 2);
+   $entity_list->SignalMobsByNPCID(72073, 2);
+   $entity_list->SignalMobsByNPCID(72084, 2);
+   # a_frightfinger
+   $entity_list->SignalMobsByNPCID(72030, 2);
+   $entity_list->SignalMobsByNPCID(72040, 2);
+   $entity_list->SignalMobsByNPCID(72081, 2);
+   $entity_list->SignalMobsByNPCID(72088, 2);
+   $entity_list->SignalMobsByNPCID(72096, 2);
+   # a_glare_lord
+   $entity_list->SignalMobsByNPCID(72020, 2);
+   $entity_list->SignalMobsByNPCID(72024, 2);
+   $entity_list->SignalMobsByNPCID(72026, 2);
+   $entity_list->SignalMobsByNPCID(72027, 2);
+   $entity_list->SignalMobsByNPCID(72076, 2);
+   # a_gorgon
+   $entity_list->SignalMobsByNPCID(72025, 2);
+   $entity_list->SignalMobsByNPCID(72031, 2);
+   $entity_list->SignalMobsByNPCID(72033, 2);
+   $entity_list->SignalMobsByNPCID(72043, 2);
+   # a_nightmare
+   $entity_list->SignalMobsByNPCID(72083, 2);
+   $entity_list->SignalMobsByNPCID(72086, 2);
+   $entity_list->SignalMobsByNPCID(72087, 2);
+   # a_phantasm
+   $entity_list->SignalMobsByNPCID(72102, 2);
+   # a_samhai
+   $entity_list->SignalMobsByNPCID(72021, 2);
+   $entity_list->SignalMobsByNPCID(72028, 2);
+   $entity_list->SignalMobsByNPCID(72032, 2);
+   $entity_list->SignalMobsByNPCID(72052, 2);
+   $entity_list->SignalMobsByNPCID(72053, 2);
+   # a_scareling
+   $entity_list->SignalMobsByNPCID(72005, 2);
+   $entity_list->SignalMobsByNPCID(72047, 2);
+   $entity_list->SignalMobsByNPCID(72048, 2);
+   $entity_list->SignalMobsByNPCID(72051, 2);
+   $entity_list->SignalMobsByNPCID(72094, 2);
+   # a_shiverback
+   $entity_list->SignalMobsByNPCID(72006, 2);
+   $entity_list->SignalMobsByNPCID(72007, 2);
+   $entity_list->SignalMobsByNPCID(72050, 2);
+   $entity_list->SignalMobsByNPCID(72063, 2);
+   $entity_list->SignalMobsByNPCID(72067, 2);
+   # a_spinechiller_spider
+   $entity_list->SignalMobsByNPCID(72009, 2);
+   $entity_list->SignalMobsByNPCID(72010, 2);
+   $entity_list->SignalMobsByNPCID(72011, 2);
+   $entity_list->SignalMobsByNPCID(72058, 2);
+   $entity_list->SignalMobsByNPCID(72095, 2);
+   # a_tentacle_tormentor
+   $entity_list->SignalMobsByNPCID(72056, 2);
+   $entity_list->SignalMobsByNPCID(72057, 2);
+   $entity_list->SignalMobsByNPCID(72060, 2);
+   $entity_list->SignalMobsByNPCID(72061, 2);
+   $entity_list->SignalMobsByNPCID(72080, 2);
+   # a_turmoil_toad
+   $entity_list->SignalMobsByNPCID(72014, 2);
+   $entity_list->SignalMobsByNPCID(72018, 2);
+   $entity_list->SignalMobsByNPCID(72038, 2);
+   $entity_list->SignalMobsByNPCID(72044, 2);
+   $entity_list->SignalMobsByNPCID(72055, 2);
+   # a_worry_wraith
+   $entity_list->SignalMobsByNPCID(72013, 2);
+   $entity_list->SignalMobsByNPCID(72022, 2);
+   $entity_list->SignalMobsByNPCID(72035, 2);
+   $entity_list->SignalMobsByNPCID(72046, 2);
+   $entity_list->SignalMobsByNPCID(72093, 2);
+   # Dread
+   $entity_list->SignalMobsByNPCID(72000, 2);
+   # Fright
+   $entity_list->SignalMobsByNPCID(72004, 2);
+   # phoboplasm
+   $entity_list->SignalMobsByNPCID(72071, 2);
+   $entity_list->SignalMobsByNPCID(72077, 2);
+   $entity_list->SignalMobsByNPCID(72079, 2);
+   $entity_list->SignalMobsByNPCID(72082, 2);
+   $entity_list->SignalMobsByNPCID(72089, 2);
+   # Terror
+   $entity_list->SignalMobsByNPCID(72002, 2);
+}
+
+sub EVENT_DEATH {
+   # Amygdalan_knight
+   $entity_list->SignalMobsByNPCID(72019, 3);
+   $entity_list->SignalMobsByNPCID(72023, 3);
+   $entity_list->SignalMobsByNPCID(72029, 3);
+   $entity_list->SignalMobsByNPCID(72034, 3);
+   $entity_list->SignalMobsByNPCID(72049, 3);
+   $entity_list->SignalMobsByNPCID(72085, 3);
+   $entity_list->SignalMobsByNPCID(72091, 3);
+   $entity_list->SignalMobsByNPCID(72092, 3);
+   # Amygdalan_warrior
+   $entity_list->SignalMobsByNPCID(72015, 3);
+   $entity_list->SignalMobsByNPCID(72039, 3);
+   $entity_list->SignalMobsByNPCID(72045, 3);
+   $entity_list->SignalMobsByNPCID(72070, 3);
+   $entity_list->SignalMobsByNPCID(72075, 3);
+   # a_boogeyman
+   $entity_list->SignalMobsByNPCID(72036, 3);
+   $entity_list->SignalMobsByNPCID(72037, 3);
+   $entity_list->SignalMobsByNPCID(72042, 3);
+   $entity_list->SignalMobsByNPCID(72054, 3);
+   $entity_list->SignalMobsByNPCID(72062, 3);
+   # a_decrepit_warder
+   $entity_list->SignalMobsByNPCID(72016, 3);
+   $entity_list->SignalMobsByNPCID(72041, 3);
+   $entity_list->SignalMobsByNPCID(72103, 3);
+   # a_dracoliche
+   $entity_list->SignalMobsByNPCID(72090, 3);
+   # a_fetid_fiend
+   $entity_list->SignalMobsByNPCID(72008, 3);
+   $entity_list->SignalMobsByNPCID(72017, 3);
+   $entity_list->SignalMobsByNPCID(72059, 3);
+   $entity_list->SignalMobsByNPCID(72064, 3);
+   $entity_list->SignalMobsByNPCID(72065, 3);
+   $entity_list->SignalMobsByNPCID(72066, 3);
+   $entity_list->SignalMobsByNPCID(72072, 3);
+   $entity_list->SignalMobsByNPCID(72073, 3);
+   $entity_list->SignalMobsByNPCID(72084, 3);
+   # a_frightfinger
+   $entity_list->SignalMobsByNPCID(72030, 3);
+   $entity_list->SignalMobsByNPCID(72040, 3);
+   $entity_list->SignalMobsByNPCID(72081, 3);
+   $entity_list->SignalMobsByNPCID(72088, 3);
+   $entity_list->SignalMobsByNPCID(72096, 3);
+   # a_glare_lord
+   $entity_list->SignalMobsByNPCID(72020, 3);
+   $entity_list->SignalMobsByNPCID(72024, 3);
+   $entity_list->SignalMobsByNPCID(72026, 3);
+   $entity_list->SignalMobsByNPCID(72027, 3);
+   $entity_list->SignalMobsByNPCID(72076, 3);
+   # a_gorgon
+   $entity_list->SignalMobsByNPCID(72025, 3);
+   $entity_list->SignalMobsByNPCID(72031, 3);
+   $entity_list->SignalMobsByNPCID(72033, 3);
+   $entity_list->SignalMobsByNPCID(72043, 3);
+   # a_nightmare
+   $entity_list->SignalMobsByNPCID(72083, 3);
+   $entity_list->SignalMobsByNPCID(72086, 3);
+   $entity_list->SignalMobsByNPCID(72087, 3);
+   # a_phantasm
+   $entity_list->SignalMobsByNPCID(72102, 3);
+   # a_samhain
+   $entity_list->SignalMobsByNPCID(72021, 3);
+   $entity_list->SignalMobsByNPCID(72028, 3);
+   $entity_list->SignalMobsByNPCID(72032, 3);
+   $entity_list->SignalMobsByNPCID(72052, 3);
+   $entity_list->SignalMobsByNPCID(72053, 3);
+   # a_scareling
+   $entity_list->SignalMobsByNPCID(72005, 3);
+   $entity_list->SignalMobsByNPCID(72047, 3);
+   $entity_list->SignalMobsByNPCID(72048, 3);
+   $entity_list->SignalMobsByNPCID(72051, 3);
+   $entity_list->SignalMobsByNPCID(72094, 3);
+   # a_shiverback
+   $entity_list->SignalMobsByNPCID(72006, 3);
+   $entity_list->SignalMobsByNPCID(72007, 3);
+   $entity_list->SignalMobsByNPCID(72050, 3);
+   $entity_list->SignalMobsByNPCID(72063, 3);
+   $entity_list->SignalMobsByNPCID(72067, 3);
+   # a_spinechiller_spider
+   $entity_list->SignalMobsByNPCID(72009, 3);
+   $entity_list->SignalMobsByNPCID(72010, 3);
+   $entity_list->SignalMobsByNPCID(72011, 3);
+   $entity_list->SignalMobsByNPCID(72058, 3);
+   $entity_list->SignalMobsByNPCID(72095, 3);
+   # a_tentacle_tormentor
+   $entity_list->SignalMobsByNPCID(72056, 3);
+   $entity_list->SignalMobsByNPCID(72057, 3);
+   $entity_list->SignalMobsByNPCID(72060, 3);
+   $entity_list->SignalMobsByNPCID(72061, 3);
+   $entity_list->SignalMobsByNPCID(72080, 3);
+   # a_turmoil_toad
+   $entity_list->SignalMobsByNPCID(72014, 3);
+   $entity_list->SignalMobsByNPCID(72018, 3);
+   $entity_list->SignalMobsByNPCID(72038, 3);
+   $entity_list->SignalMobsByNPCID(72044, 3);
+   $entity_list->SignalMobsByNPCID(72055, 3);
+   # a_worry_wraith
+   $entity_list->SignalMobsByNPCID(72013, 3);
+   $entity_list->SignalMobsByNPCID(72022, 3);
+   $entity_list->SignalMobsByNPCID(72035, 3);
+   $entity_list->SignalMobsByNPCID(72046, 3);
+   $entity_list->SignalMobsByNPCID(72093, 3);
+   # Dread
+   $entity_list->SignalMobsByNPCID(72000, 3);
+   # Fright
+   $entity_list->SignalMobsByNPCID(72004, 3);
+   # phoboplasm
+   $entity_list->SignalMobsByNPCID(72071, 3);
+   $entity_list->SignalMobsByNPCID(72077, 3);
+   $entity_list->SignalMobsByNPCID(72079, 3);
+   $entity_list->SignalMobsByNPCID(72082, 3);
+   $entity_list->SignalMobsByNPCID(72089, 3);
+   # Terror
+   $entity_list->SignalMobsByNPCID(72002, 3);
+}
 # EOF zone: fearplane ID: 72003 NPC: Cazic_Thule
 
