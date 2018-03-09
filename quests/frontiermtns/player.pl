@@ -1,18 +1,12 @@
 ##New Easter Event the signals tell the controller for Frontier Mountains zone what level NPC to spawn
 sub EVENT_ENTERZONE {
-     if($ulevel >= 50 && $ulevel <= 55) {
-    quest::signalwith(92205,529,0);
-	quest::signalwith(92205,530,10);
-	}
-	elsif($ulevel >= 56 && $ulevel <= 60) {
-	quest::signalwith(92205,529,0);
-	quest::signalwith(92205,531,10);
-	}
-	elsif($ulevel >= 61 && $ulevel <= 65) {
-	quest::signalwith(92205,529,0);
-	quest::signalwith(92205,532,10);
-	}
-	  else {
-	quest::signalwith(92205,529,0);
-	}
-	}
+    if((defined $event8) && ($event8 == 1)) {
+        if(defined($qglobals{'EasterInProgress'})) {
+            $client->Message(14, "Another Norrathian is working on the Easter Event in this zone, come back a little later.");
+        }
+     else {
+        quest::signalwith(92205, $ulevel);
+			} #end else
+	} # Easter Event End
+        } # EVENT_ENTERZONE End
+	

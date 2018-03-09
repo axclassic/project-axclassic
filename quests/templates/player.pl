@@ -8,726 +8,148 @@ sub EVENT_CONNECT {
     $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
     $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
  }
-}
+if((defined $event8) && ($event8 == 1)) {
+        if(defined($qglobals{'EasterInProgress'})) {
+            $client->Message(14, "Another Norrathian is working on the Easter Event in this zone, come back a little later.");
+        }
+        else {
+            if($zoneid == 9) { # West Freeport freportw
+			quest::signalwith(9186, $ulevel);
+			}
+        	if ($zoneid ==  10){  ##East Freeport freporte
+			quest::signalwith(10233, $ulevel);
+            } 
+            if ($zoneid ==  68){ ##Butcherblock butcher
+			quest::signalwith(68347, $ulevel);
+            } 
+            if ($zoneid ==  54){ ##Greater Faydark gfaydark
+			quest::signalwith(54330, $ulevel);
+            } 
+	        if ($zoneid ==  56){ ##Steamfont Mountains steamfont
+			quest::signalwith(56228, $ulevel);
+            } 
+	        if ($zoneid ==  25){ ##Nektulos Forest nektulos
+			quest::signalwith(25234, $ulevel);
+            } 
+	        if ($zoneid ==  3){ ##Surefall Glades qrg
+			quest::signalwith(3086, $ulevel);
+            } 
+	        if ($zoneid ==  30){ ##Everfrost everfrost
+			quest::signalwith(30190, $ulevel);
+            } 
+	        if ($zoneid ==  78){ ##Field of Bone fieldofbone
+			quest::signalwith(78250, $ulevel);
+            } 
+	        if ($zoneid ==  83){ ##Swamp of No Hope	swampofnohope
+			quest::signalwith(83382, $ulevel);
+            } 
+	        if ($zoneid ==  38){ ##Toxxulia Forest tox
+			quest::signalwith(38235, $ulevel);
+            } 
+            if ($zoneid ==  75){ ##Paineel paineel
+			quest::signalwith(75192, $ulevel);
+            } 
+            if ($zoneid ==  46){ ##Innothule Swamp innothule
+			quest::signalwith(46126, $ulevel);
+            } 
+	        if ($zoneid ==  47){ ##The Feerrott	feerrott
+			quest::signalwith(47233, $ulevel);
+            }  
+	        if ($zoneid ==  20){ ##Kithicor	Forest kithicor
+			quest::signalwith(20276, $ulevel);
+            } 
+	        if ($zoneid ==  189){ ##Mines of Glooming Deep	tutorialb
+			quest::signalwith(189520, $ulevel);
+            } 
+        } #end else
+    } # Easter Event End
+} # EVENT_CONNECT End
+
 ##All of the following zones are used in the New Easter Event the signals tell the controller for each zone what level NPC to spawn
-if ($zoneid ==  9){  ##FreeportWest
-   if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(9186,11,0);
-	quest::signalwith(9186,1,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(9186,11,0);
-	quest::signalwith(9186,2,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(9186,11,0);
-	quest::signalwith(9186,3,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(9186,11,0);
-	quest::signalwith(9186,4,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(9186,11,0);
-	quest::signalwith(9186,5,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(9186,11,0);
-	quest::signalwith(9186,6,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(9186,11,0);
-	quest::signalwith(9186,7,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(9186,11,0);
-	quest::signalwith(9186,8,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(9186,11,0);
-	quest::signalwith(9186,9,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(9186,11,0);
-	quest::signalwith(9186,10,10);
-    }
-	else{
-	quest::signalwith(9186,11,0);
-	} 
-    }
-	if ($zoneid ==  10){  ##FreeportEast
-   if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(10233,22,0);
-	quest::signalwith(10233,12,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(10233,22,0);
-	quest::signalwith(10233,13,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(10233,22,0);
-	quest::signalwith(10233,14,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(10233,22,0);
-	quest::signalwith(10233,15,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(10233,22,0);
-	quest::signalwith(10233,16,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(10233,22,0);
-	quest::signalwith(10233,17,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(10233,22,0);
-	quest::signalwith(10233,18,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(10233,22,0);
-	quest::signalwith(10233,19,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(10233,22,0);
-	quest::signalwith(10233,20,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(10233,22,0);
-	quest::signalwith(10233,21,10);
-    }
-	else{
-	quest::signalwith(10233,22,0);
-	} 
-    }
-	elsif ($zoneid ==  68){ ##Butcherblock
-      if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(68347,33,0);
-	quest::signalwith(68347,23,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(68347,33,0);
-	quest::signalwith(68347,24,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(68347,33,0);
-	quest::signalwith(68347,25,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(68347,33,0);
-	quest::signalwith(68347,26,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(68347,33,0);
-	quest::signalwith(68347,27,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(68347,33,0);
-	quest::signalwith(68347,28,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(68347,33,0);
-	quest::signalwith(68347,29,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(68347,33,0);
-	quest::signalwith(68347,30,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(68347,33,0);
-	quest::signalwith(68347,31,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(68347,33,0);
-	quest::signalwith(68347,32,10);
-	}
-	else {
-	quest::signalwith(68347,33,0);
-	}
-	}
-	 if ($zoneid ==  54){ ##Greater Faydark
-	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(54330,44,0);
-	quest::signalwith(54330,34,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(54330,44,0);
-	quest::signalwith(54330,35,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(54330,44,0);
-	quest::signalwith(54330,36,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(54330,44,0);
-	quest::signalwith(54330,37,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(54330,44,0);
-	quest::signalwith(54330,38,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(54330,44,0);
-	quest::signalwith(54330,39,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(54330,44,0);
-	quest::signalwith(54330,40,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(54330,44,0);
-	quest::signalwith(54330,41,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(54330,44,0);
-	quest::signalwith(54330,42,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(54330,44,0);
-	quest::signalwith(54330,43,10);
-	}
-	else {
-	quest::signalwith(54330,44,0);
-	}
-	}
-	if ($zoneid ==  56){ ##Steamfont Mountains
-	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(56228,89,0);
-	quest::signalwith(56228,90,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(56228,89,0);
-	quest::signalwith(56228,91,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(56228,89,0);
-	quest::signalwith(56228,92,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(56228,89,0);
-	quest::signalwith(56228,93,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(56228,89,0);
-	quest::signalwith(56228,94,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(56228,89,0);
-	quest::signalwith(56228,95,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(56228,89,0);
-	quest::signalwith(56228,96,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(56228,89,0);
-	quest::signalwith(56228,97,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(56228,89,0);
-	quest::signalwith(56228,98,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(56228,89,0);
-	quest::signalwith(56228,99,10);
-	}
-	else {
-	quest::signalwith(56228,89,0);
-	}
-	}
-	if ($zoneid ==  25){ ##Nektulos
-	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(25234,143,0);
-	quest::signalwith(25234,144,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(25234,143,0);
-	quest::signalwith(25234,145,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(25234,143,0);
-	quest::signalwith(25234,146,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(25234,143,0);
-	quest::signalwith(25234,147,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(25234,143,0);
-	quest::signalwith(25234,148,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(25234,143,0);
-	quest::signalwith(25234,149,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(25234,143,0);
-	quest::signalwith(25234,150,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(25234,143,0);
-	quest::signalwith(25234,151,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(25234,143,0);
-	quest::signalwith(25234,152,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(25234,143,0);
-	quest::signalwith(25234,153,10);
-	}
-	else {
-	quest::signalwith(25234,143,0);
-	}
-	}
-	if ($zoneid ==  3){ ##Surefall Glades
-	 if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(3086,176,0);
-	quest::signalwith(3086,177,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(3086,176,0);
-	quest::signalwith(3086,178,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(3086,176,0);
-	quest::signalwith(3086,179,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(3086,176,0);
-	quest::signalwith(3086,180,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(3086,176,0);
-	quest::signalwith(3086,181,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(3086,176,0);
-	quest::signalwith(3086,182,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(3086,176,0);
-	quest::signalwith(3086,183,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(3086,176,0);
-	quest::signalwith(3086,184,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(3086,176,0);
-	quest::signalwith(3086,185,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(3086,176,0);
-	quest::signalwith(3086,186,10);
-	}
-	else {
-	quest::signalwith(3086,176,0);
-	}
-	}
-	if ($zoneid ==  30){ ##Everfrost
-	 if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(30190,220,0);
-	quest::signalwith(30190,221,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,222,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,223,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,224,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,225,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,226,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,227,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,228,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,229,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(30190,220,0);
-	quest::signalwith(30190,230,10);
-	}
-	else {
-	quest::signalwith(30190,220,0);
-	}
-	}
-	if ($zoneid ==  78){ ##Field of Bone
-	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(78250,265,0);
-	quest::signalwith(78250,266,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(78250,265,0);
-	quest::signalwith(78250,267,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(78250,265,0);
-	quest::signalwith(78250,268,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(78250,265,0);
-	quest::signalwith(78250,269,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(78250,265,0);
-	quest::signalwith(78250,270,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(78250,265,0);
-	quest::signalwith(78250,271,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(78250,265,0);
-	quest::signalwith(78250,272,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(78250,265,0);
-	quest::signalwith(78250,273,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(78250,265,0);
-	quest::signalwith(78250,274,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(78250,265,0);
-	quest::signalwith(78250,275,10);
-	}
-	else {
-	quest::signalwith(78250,265,0);
-	}
-	} 
-    if ($zoneid ==  83){ ##Swamp of No Hope	
-	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(83382,287,0);
-	quest::signalwith(83382,288,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(83382,287,0);
-	quest::signalwith(83382,289,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(83382,287,0);
-	quest::signalwith(83382,290,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(83382,287,0);
-	quest::signalwith(83382,291,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(83382,287,0);
-	quest::signalwith(83382,292,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(83382,287,0);
-	quest::signalwith(83382,293,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(83382,287,0);
-	quest::signalwith(83382,294,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(83382,287,0);
-	quest::signalwith(83382,295,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(83382,287,0);
-	quest::signalwith(83382,296,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(83382,287,0);
-	quest::signalwith(83382,297,10);
-	}
-	else {
-	quest::signalwith(83382,287,0);
-	}
-	}
-	if ($zoneid ==  38){ ##Toxxulia Forest
-      if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(38235,309,0);
-	quest::signalwith(38235,310,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(38235,309,0);
-	quest::signalwith(38235,311,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(38235,309,0);
-	quest::signalwith(38235,312,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(38235,309,0);
-	quest::signalwith(38235,313,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(38235,309,0);
-	quest::signalwith(38235,314,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(38235,309,0);
-	quest::signalwith(38235,315,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(38235,309,0);
-	quest::signalwith(38235,316,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(38235,309,0);
-	quest::signalwith(38235,317,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(38235,309,0);
-	quest::signalwith(38235,318,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(38235,309,0);
-	quest::signalwith(38235,319,10);
-	}
-	else {
-	quest::signalwith(38235,309,0);
-	}
-	}
-    if ($zoneid ==  75){ ##Paineel
-       if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(75192,331,0);
-	quest::signalwith(75192,332,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(75192,331,0);
-	quest::signalwith(75192,333,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(75192,331,0);
-	quest::signalwith(75192,334,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(75192,331,0);
-	quest::signalwith(75192,335,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(75192,331,0);
-	quest::signalwith(75192,336,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(75192,331,0);
-	quest::signalwith(75192,337,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(75192,331,0);
-	quest::signalwith(75192,338,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(751920,331,0);
-	quest::signalwith(75192,339,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(75192,331,0);
-	quest::signalwith(75192,340,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(75192,331,0);
-	quest::signalwith(75192,341,10);
-	}
-	else {
-	quest::signalwith(75192,331,0);
-	}
-	}
-    if ($zoneid ==  46){ ##Innothule	
-	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(46126,364,0);
-	quest::signalwith(46126,365,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(46126,364,0);
-	quest::signalwith(46126,366,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(46126,364,0);
-	quest::signalwith(46126,367,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(46126,364,0);
-	quest::signalwith(46126,368,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(46126,364,0);
-	quest::signalwith(46126,369,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(46126,364,0);
-	quest::signalwith(46126,370,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(46126,364,0);
-	quest::signalwith(46126,371,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(46126,364,0);
-	quest::signalwith(46126,372,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(46126,364,0);
-	quest::signalwith(46126,373,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(46126,364,0);
-	quest::signalwith(46126,374,10);
-	}
-	else {
-	quest::signalwith(46126,364,0);
-	}
-	}
-	if ($zoneid ==  47){ ##Feerrott	
-	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(47233,386,0);
-	quest::signalwith(47233,387,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(47233,386,0);
-	quest::signalwith(47233,388,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(47233,386,0);
-	quest::signalwith(47233,389,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(47233,386,0);
-	quest::signalwith(47233,390,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(47233,386,0);
-	quest::signalwith(47233,391,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(47233,386,0);
-	quest::signalwith(47233,392,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(47233,386,0);
-	quest::signalwith(47233,393,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(47233,386,0);
-	quest::signalwith(47233,394,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(47233,386,0);
-	quest::signalwith(47233,395,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(47233,386,0);
-	quest::signalwith(47233,396,10);
-	}
-	else {
-	quest::signalwith(47233,386,0);
-	}
-    }
-	if ($zoneid ==  20){ ##Kithicor	
-	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(20276,452,0);
-	quest::signalwith(20276,453,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(20276,452,0);
-	quest::signalwith(20276,454,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(20276,452,0);
-	quest::signalwith(20276,455,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(20276,452,0);
-	quest::signalwith(20276,456,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(20276,452,0);
-	quest::signalwith(20276,457,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(20276,452,0);
-	quest::signalwith(20276,458,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(20276,452,0);
-	quest::signalwith(20276,459,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(20276,452,0);
-	quest::signalwith(20276,460,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(20276,452,0);
-	quest::signalwith(20276,461,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(20276,452,0);
-	quest::signalwith(20276,462,10);
-	}
-	}
-	if ($zoneid ==  189){ ##Tutorialb Mines of Glooming Deep	
-	  if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(189520,320,0);
-	quest::signalwith(189520,453,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(189520,320,0);
-	quest::signalwith(189520,321,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(189520,320,0);
-	quest::signalwith(189520,322,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(189520,320,0);
-	quest::signalwith(189520,323,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(189520,320,0);
-	quest::signalwith(189520,324,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(189520,320,0);
-	quest::signalwith(189520,325,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(189520,320,0);
-	quest::signalwith(189520,326,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(189520,320,0);
-	quest::signalwith(189520,327,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(189520,320,0);
-	quest::signalwith(189520,328,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(189520,320,0);
-	quest::signalwith(189520,329,10);
-	}
-	else {
-	quest::signalwith(189520,320,0);
-	}
-    }
-	
+  # Easter Event Start
+    if($qglobal{'event2'} == 1) { # Easter Event Active
+        if(defined($qglobals{'EasterInProgress'})) {
+            $client->Message(14, "Another Easter Event is still in progress, come back a little later.");
+        }
+        else {
+            if($zoneid == 9) { # West Freeport freportw
+			    quest::spawn2(9165,0,0,-66.5,59.1,-27,101.4); ##Peter Cottontail
+                quest::signalwith(9186, $ulevel);
+            }
+        	if ($zoneid ==  10){  ##FreeportEast freporte
+			quest::spawn2(10212,0,0,-638.8,-244.1,-55,208.8); ##Peter Cottontail
+                quest::signalwith(10233, $ulevel);
+            } 
+            if ($zoneid ==  68){ ##Butcherblock butcher
+			quest::spawn2(68326,0,0,-329.1,2909.8,-2.2,122.4); ##Peter Cottontail
+			quest::signalwith(68347, $ulevel);
+            } 
+            if ($zoneid ==  54){ ##Greater Faydark gfaydark
+			quest::spawn2(54309,0,0,210.6,81.2,-2.8,237.9); ##Peter Cottontail
+			quest::signalwith(54330, $ulevel);
+            } 
+	        if ($zoneid ==  56){ ##Steamfont Mountains steamfont
+			quest::signalwith(56228, $ulevel);
+            } 
+	        if ($zoneid ==  25){ ##Nektulos Forest nektulos
+			quest::spawn2(25213,0,0,-990.9,2208.1,-6.4,18); ##Peter Cottontail
+			quest::signalwith(25234, $ulevel);
+            } 
+	        if ($zoneid ==  3){ ##Surefall Glades qrg
+			quest::spawn2(3065,0,0,107.3,62.4,1,164.1); ##Peter Cottontail
+			quest::signalwith(3086, $ulevel);
+            } 
+	        if ($zoneid ==  30){ ##Everfrost everfrost
+			quest::spawn2(30155,0,0,578.1,3213.4,-63.1,35.1); ##Peter Cottontail
+			quest::signalwith(30190, $ulevel);
+            } 
+	        if ($zoneid ==  78){ ##Field of Bone fieldofbone
+			quest::spawn2(78229,0,0,2679.4,-2122.4,12.2,4.6); ##Peter Cottontail
+			quest::signalwith(78250, $ulevel);
+            } 
+	        if ($zoneid ==  83){ ##Swamp of No Hope	swampofnohope
+			quest::spawn2(83361,0,0,-1943,-1145.6,25,171.8); ##Peter Cottontail
+			quest::signalwith(83382, $ulevel);
+            } 
+	        if ($zoneid ==  38){ ##Toxxulia Forest tox
+			quest::spawn2(38214,0,0,276.7,2373,-48.5,125.4); ##Peter Cottontail
+			quest::signalwith(38235, $ulevel);
+            } 
+            if ($zoneid ==  75){ ##Paineel paineel
+			quest::spawn2(75171,0,0,-75.8,1099.8,1,144.8); ##Peter Cottontail
+			quest::signalwith(75192, $ulevel);
+            } 
+            if ($zoneid ==  46){ ##Innothule Swamp innothule
+			quest::signalwith(46126, $ulevel);
+            } 
+	        if ($zoneid ==  47){ ##The Feerrott	feerrott
+			quest::signalwith(47233, $ulevel);
+            }  
+	        if ($zoneid ==  20){ ##Kithicor	Forest kithicor
+			quest::signalwith(20276, $ulevel);
+            } 
+	        if ($zoneid ==  189){ ##Mines of Glooming Deep	tutorialb
+			quest::signalwith(189520, $ulevel);
+            }
+            if($zoneid == 49) { # Oggok oggok
+                quest::spawn2(49137,0,0,394.3,250,567,64.6); ##Peter Cottontail
+            }
+        	if ($zoneid ==  19){  ##Rivervale
+                quest::spawn2(19163,0,0,-103.9,-89.1,1,252.4); ##Peter Cottontail
+            } 
+            if ($zoneid ==  21){ ##North Qeynos qeynos2
+			quest::spawn2(2158,0,0,216.9,328.3,0,241.1); ##Peter Cottontail
+            } 
+            if ($zoneid ==  61){ ##Northern Felwithe felwithea
+			quest::spawn2(61100,0,0,75.3,16.2,1,180.4); ##Peter Cottontail
+            } 
+	        if ($zoneid ==  74){ ##Kerra Isle kerraridge
+			quest::spawn(74560,0,0,-717.8,557.4,16.5,76.1); ##Peter Cottontail
+            } #end else
+        } # Easter Event End
+    } # EVENT_CONNECT End
+
+
 sub EVENT_ENTERZONE {
  no warnings 'all' ;
  $event1 = 0;
@@ -946,3 +368,4 @@ sub EVENT_LOOT {
 		quest::we(14, "The Rathe server congratulates $name, the uber $class for looting an extremely rare -$item-!");
 	}
 }  
+

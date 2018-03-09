@@ -1,50 +1,15 @@
 ##New Easter Event the signals tell the controller for Qeynos Hills qeytoqrg zone what level NPC to spawn##
-sub EVENT_ZONE {
-if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(4223,154,0);
-	quest::signalwith(4223,155,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(4223,154,0);
-	quest::signalwith(4223,156,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(4223,154,0);
-	quest::signalwith(4223,157,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(4223,154,0);
-	quest::signalwith(4223,158,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(4223,154,0);
-	quest::signalwith(4223,159,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(4223,154,0);
-	quest::signalwith(4223,160,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(4223,154,0);
-	quest::signalwith(4223,161,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(4223,154,0);
-	quest::signalwith(4223,162,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(4223,154,0);
-	quest::signalwith(4223,163,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(4223,154,0);
-	quest::signalwith(4223,164,10);
-	}
-	else {
-	quest::signalwith(4223,154,0);
-	}
-	}
-	
+sub EVENT_CONNECT {
+    if((defined $event8) && ($event8 == 1)) {
+        if(defined($qglobals{'EasterInProgress'})) {
+            $client->Message(14, "Another Norrathian is working on the Easter Event in this zone, come back a little later.");
+        }
+     else {
+        quest::signalwith(4223, $ulevel);
+			} #end else
+	} # Easter Event End
+        } # EVENT_CONNECT End
+		
 sub EVENT_ENTERZONE {
  no warnings 'all' ;
  $event1 = 0;

@@ -1,49 +1,15 @@
 ##New Easter Event the signals tell the controller for Rathe Mountains zone what level NPC to spawn
-sub EVENT_ZONE {
-     if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(50666,397,0);
-	quest::signalwith(50666,398,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(50666,397,0);
-	quest::signalwith(50666,399,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(50666,397,0);
-	quest::signalwith(50666,400,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(50666,397,0);
-	quest::signalwith(50666,401,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(50666,397,0);
-	quest::signalwith(50666,402,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(50666,397,0);
-	quest::signalwith(50666,403,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(50666,397,0);
-	quest::signalwith(50666,404,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(50666,397,0);
-	quest::signalwith(50666,405,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(50666,397,0);
-	quest::signalwith(50666,406,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(50666,397,0);
-	quest::signalwith(50666,407,10);
-	}
-	else {
-	quest::signalwith(50666,397,0);
-	}
-	}
+sub EVENT_CONNECT {
+    if((defined $event8) && ($event8 == 1)) {
+        if(defined($qglobals{'EasterInProgress'})) {
+            $client->Message(14, "Another Norrathian is working on the Easter Event in this zone, come back a little later.");
+        }
+     else {
+        quest::signalwith(50666, $ulevel);
+			} #end else
+	} # Easter Event End
+        } # EVENT_CONNECT End
+	
 
 sub EVENT_ENTERZONE {
  no warnings 'all' ;

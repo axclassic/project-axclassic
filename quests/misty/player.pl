@@ -1,49 +1,15 @@
 ##New Easter Event the signals tell the controller for Misty zone what level NPC to spawn
 sub EVENT_CONNECT {
-     if($ulevel >= 1 && $ulevel <= 5) {
-    quest::signalwith(33178,430,0);
-	quest::signalwith(33178,431,10);
-	}
-	elsif($ulevel >= 6 && $ulevel <= 10) {
-	quest::signalwith(33178,430,0);
-	quest::signalwith(33178,432,10);
-	}
-	elsif($ulevel >= 11 && $ulevel <= 15) {
-	quest::signalwith(33178,430,0);
-	quest::signalwith(33178,433,10);
-	}
-	elsif($ulevel >= 16 && $ulevel <= 20) {
-	quest::signalwith(33178,430,0);
-	quest::signalwith(33178,434,10);
-	}
-	elsif($ulevel >= 21 && $ulevel <= 25) {
-	quest::signalwith(33178,430,0);
-	quest::signalwith(33178,435,10);
-	}
-	elsif($ulevel >= 26 && $ulevel <= 30) {
-	quest::signalwith(33178,430,0);
-	quest::signalwith(33178,436,10);
-	}
-	elsif($ulevel >= 31 && $ulevel <= 35) {
-	quest::signalwith(33178,430,0);
-	quest::signalwith(33178,437,10);
-	}
-	elsif($ulevel >= 36 && $ulevel <= 40) {
-	quest::signalwith(33178,430,0);
-	quest::signalwith(33178,438,10);
-	}
-	elsif($ulevel >= 41 && $ulevel <= 45) {
-	quest::signalwith(33178,430,0);
-	quest::signalwith(33178,439,10);
-	}
-	elsif($ulevel >= 46 && $ulevel <= 49) {
-	quest::signalwith(33178,430,0);
-	quest::signalwith(33178,440,10);
-	}
-	else {
-	quest::signalwith(33178,430,0);
-	}
-	}
+    if((defined $event8) && ($event8 == 1)) {
+        if(defined($qglobals{'EasterInProgress'})) {
+            $client->Message(14, "Another Norrathian is working on the Easter Event in this zone, come back a little later.");
+        }
+     else {
+        quest::signalwith(33178, $ulevel);
+			} #end else
+	} # Easter Event End
+ } # EVENT_CONNECT End
+	
 
 sub EVENT_ENTERZONE {
  no warnings 'all' ;
