@@ -1,3 +1,7 @@
+sub EVENT_SPAWN {
+   quest::settimer("FabledLIS", 1200); #will remain for 20 minutes
+}
+
 sub EVENT_AGGRO {
    quest::settimer("LeashFLIS",5);
 }
@@ -6,6 +10,10 @@ my $LISLocation = 1;
 my $distanceCHK = 0;
 my $distanceLOC = 50;
 sub EVENT_TIMER {
+   if($timer eq "FabledLIS") {
+      quest::stoptimer("FabledLIS");
+      quest::depop();
+   }
    if($timer eq "LeashFLIS") {
       if($LISLocation == 1) {
          $distanceCHK = $npc->CalculateDistance(-232.1,-431.6,201.1);
