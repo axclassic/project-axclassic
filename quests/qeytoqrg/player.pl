@@ -1,15 +1,4 @@
-##New Easter Event the signals tell the controller for Qeynos Hills qeytoqrg zone what level NPC to spawn##
-sub EVENT_CONNECT {
-    if((defined $event8) && ($event8 == 1)) {
-        if(defined($qglobals{'EasterInProgress'})) {
-            $client->Message(14, "Another Norrathian is working on the Easter Event in this zone, come back a little later.");
-        }
-     else {
-        quest::signalwith(4223, $ulevel);
-			} #end else
-	} # Easter Event End
-        } # EVENT_CONNECT End
-		
+
 sub EVENT_ENTERZONE {
  no warnings 'all' ;
  $event1 = 0;
