@@ -1,9 +1,10 @@
 sub EVENT_SCALE_CALC {
-  my $int = $client->GetINT();
-    
-  if($int < 0) {
-    $int = 0;
-  }
-  
-  $questitem->SetScale($int/300);
+    my $itemWearer = $entity_list->GetMobID($userid); #This can be player or bot
+    my $int = $itemWearer->GetINT();
+
+    if($int < 0) {
+        $int = 0;
+    }
+
+    $questitem->SetScale($int/300);
 }

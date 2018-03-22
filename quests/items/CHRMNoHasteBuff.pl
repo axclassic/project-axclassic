@@ -1,11 +1,11 @@
-sub EVENT_SCALE_CALC
-{
-  my $haste = $client->FindType(11);
-  
-  if($haste) {
-    $questitem->SetScale(1);
-  }
-  else {
-    $questitem->SetScale(2);
- }
+sub EVENT_SCALE_CALC {
+    my $itemWearer = $entity_list->GetMobID($userid); #This can be player or bot
+    my $haste = $itemWearer->FindType(11);
+
+    if($haste) {
+        $questitem->SetScale(0);
+    }
+    else {
+        $questitem->SetScale(1);
+    }
 }

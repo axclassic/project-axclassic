@@ -1,5 +1,6 @@
 sub EVENT_SCALE_CALC {
-   my $scale = $client->GetModCharacterFactionLevel(279); # Sabertooths of Blackburrow
+   my $itemWearer = $entity_list->GetMobID($userid); #This can be player or bot
+   my $scale = $itemWearer->GetModCharacterFactionLevel(279); # Sabertooths of Blackburrow
 
    # set the scale based on where faction is in the range [-1500, 0]
    if($scale > 0) {
