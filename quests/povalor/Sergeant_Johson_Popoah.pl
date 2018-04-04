@@ -6,7 +6,7 @@ my $compound = quest::saylink("compound", 1);
   quest::say("State your business or leave our $compound.");
   quest::setglobal("Aerinkey", 1, 5, "F");
   }
- if($text=~/Hail/i && defined $qglobals{"Aerinkey"} == 1 && $text=~/Hail/i){
+ if($text=~/Hail/i && defined $qglobals{"Aerinkey"} == 1){
   quest::say("Leave now before there is bloodshed");
   }
  if($text=~/compound/i && defined $qglobals{"Aerinkey"} == 1){  
