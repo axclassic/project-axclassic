@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==04/17/2018==
+Congdar: Fix LDoN Ruanya_Windleaf.pl not giving out Adventurer's Stone
+
 ==04/06/2018==
 Congdar: LDoN Magus ports work for level 45+
 

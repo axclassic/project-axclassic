@@ -87,13 +87,13 @@ sub EVENT_ENTERZONE {
         quest::delglobal("williampop");
         quest::setglobal("williampop",2,7,"F");
     }
-    if($ulevel >= 50) {
-        my @zonex = (1..17,19..25,27..31,33..38,40..47,49..63,67..70,73..75,78,82..84,97,98,100,101,104,106,121,156,165,166,189); #Trivial ZoneIDs array
-        my $zoney = $zoneid;
-        if(grep{$_ eq $zoney} @zonex) {
-            $client->Message(15,"This zone is trivial to you since you aquired level 50 - you are only allowed to complete your unfinished quests.");
-        }
-    }
+#    if($ulevel >= 50) {
+#        my @zonex = (1..17,19..25,27..31,33..38,40..47,49..63,67..70,73..75,78,82..84,97,98,100,101,104,106,121,156,165,166,189); #Trivial ZoneIDs array
+#        my $zoney = $zoneid;
+#        if(grep{$_ eq $zoney} @zonex) {
+#            $client->Message(15,"This zone is trivial to you since you aquired level 50 - you are only allowed to complete your unfinished quests.");
+#        }
+#    }
     ## Angelox: I'm gonna put in some random help for new players (new players are our life line :) - feel free to add.).
     my $random_result = int(rand(100));
     if($ulevel <= 3) {
@@ -158,7 +158,7 @@ sub EVENT_ENTERZONE {
         quest::delglobal("$name");
         quest::setglobal("$name",0,7,"F");
     }
-    elsif(($ulevel <= 9) && ($zoneid == 165) && (${$name}!=2)) {
+    elsif(($ulevel <= 9) && ($zoneid == 165) && (defined(${$name}) && (${$name}!=2))) {
         $client->Message(14,"Ask Ranger Band again about a [Moonstone] for returning.");
         (${$name})=undef;
         quest::delglobal("$name");
@@ -171,7 +171,7 @@ sub EVENT_ENTERZONE {
             (${$name})=undef;
         }
     }
-    elsif((!plugin::check_hasitem($client, 138)) && (defined ${$name}==2)) {
+    elsif((!plugin::check_hasitem($client, 138)) && (defined(${$name}) && ${$name}==2)) {
         quest::summonitem(140);
     }
     ## Advise the players about our client status.

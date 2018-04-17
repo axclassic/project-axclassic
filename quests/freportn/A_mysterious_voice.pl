@@ -1,7 +1,7 @@
 sub EVENT_SPAWN {
     $x = $npc->GetX();
     $y = $npc->GetY();
-    quest::set_proximity($x - 40, $x + 40, $y - 40, $y + 40);
+    quest::set_proximity($x - 150, $x + 150, $y - 150, $y + 150);
 }
 sub EVENT_ENTER {
     if (($ulevel >= 15) && (!defined $qglobals{"Messenger"})) {

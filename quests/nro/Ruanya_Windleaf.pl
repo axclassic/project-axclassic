@@ -35,11 +35,10 @@ sub EVENT_SAY {
         }
         elsif(defined($qglobals{Wayfarer}) && ($qglobals{Wayfarer} == 2)) {
                 #PC is ready forAdventurer's Stone
-                if(!$client->KeyRingCheck(41000) && !plugin::check_hasitem($client,41000)) {
+                if($client->KeyRingCheck(41000) && !plugin::check_hasitem($client,41000)) {
                     #PC does not have an Adventurer's Stone
                     quest::say("Take this Adventurer Stone with you on your journeys into the dungeons. You will find it useful. Should you lose it somehow, come talk to me and I'll replace it.");
                     quest::summonitem(41000); #Adventurer's Stone
-                    $client->KeyRingAdd(41000);
                 }
                 else {
                     #PC has an Adventurer's Stone already
@@ -50,7 +49,7 @@ sub EVENT_SAY {
                     if($tak_wins < 2) {
                         quest::say("My ancestors have been trapped under the sands for many, many years, so many I believe they've forgotten where they came from. I would tell you more, but you would need to do a few favors for the Wayfarers Brotherhood.");
                     }
-                    elsif($tak_wins >= 2 && (!defined($qglobals{TAKtalk}) || ($qglobals{TAKtalk}== 0)) {
+                    elsif($tak_wins >= 2 && (!defined($qglobals{TAKtalk}) || ($qglobals{TAKtalk}== 0))) {
                         #2 wins
                         quest::setglobal("TAKtalk",1,5,"F");
                         quest::say("I must tell you, I'm a little saddened by the fate of the elves in Takish-Hiz. By all accounts, that city once held such great splendor and beauty. Now it is a such a menacing place. It does torment me some that I cannot walk amongst the echoes of my ancestors without fear. I'm so glad that you've come to hear the story though. I'm feeling somewhat morose at the moment, but I'd be glad to start this long tale another time.");
