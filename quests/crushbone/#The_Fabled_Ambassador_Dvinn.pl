@@ -16,7 +16,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_COMBAT {
 	if($npc->IsEngaged()) {
-		quest::stoptimer($timer);
+		quest::stoptimer("fableddvinn");
 	} else {
 		quest::settimer("fableddvinn", 600);
 	}

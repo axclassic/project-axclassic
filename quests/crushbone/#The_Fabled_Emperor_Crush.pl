@@ -36,7 +36,7 @@ sub EVENT_COMBAT{
     quest::say("Humans kill humans, apes do not kill apes!");}
 	
 	if($npc->IsEngaged()) {
-		quest::stoptimer($timer);
+		quest::stoptimer("fabledcrush");
 	} else {
 		quest::settimer("fabledcrush", 600);
 	}

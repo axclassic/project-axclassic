@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==04/20/2018==
+Congdar: Vex Thal updates
+
 ==04/17/2018==
 Congdar: Fix LDoN Ruanya_Windleaf.pl not giving out Adventurer's Stone
 
