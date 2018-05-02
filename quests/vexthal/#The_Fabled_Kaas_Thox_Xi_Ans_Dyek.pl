@@ -1,4 +1,7 @@
-# Warder control for first raid target on 1st floor of vexthal
+# Fabled depopper
+# Aggro radius is 60, so I set a larger proximity for the depop script.
+# I made it resetable by using EVENT_EXIT.  Since it can take a long time to get to
+# this fabled's spawn location, a timer was not a good solution.
 
 sub EVENT_SPAWN {
     quest::spawn2(158087,0,0,626.0,256.0,6.25,172);
@@ -6,7 +9,6 @@ sub EVENT_SPAWN {
     quest::spawn2(158087,0,0,1314.8,85.0,233.1,192);
     my $x = $npc->GetX();
     my $y = $npc->GetY();
-    # Set an extra large proximity so we get the player from way outside aggro radius.
     quest::set_proximity($x-200,$x+200,$y-200,$y+200);
 }
 
@@ -16,6 +18,11 @@ sub EVENT_ENTER {
     quest::settimer("FDkaas",600);
 }
 
+sub EVENT_EXIT {
+   quest::stoptimer("FDkaas");
+   quest::shout("Run away then, I can wait.");
+}
+
 sub EVENT_COMBAT {
     quest::stoptimer("FDkaas");
 }
@@ -23,6 +30,7 @@ sub EVENT_COMBAT {
 sub EVENT_TIMER {
     if($timer eq "FDkaas") {
         quest::stoptimer("FDkaas");
+        quest::spawn2(158013,0,0,957,0,13,192);
         quest::depop();
     }
 }

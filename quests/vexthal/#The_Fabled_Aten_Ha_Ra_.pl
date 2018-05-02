@@ -1,14 +1,23 @@
+# Fabled depopper
+# Aggro radius is 60, so I set a larger proximity for the depop script.
+# I made it resetable by using EVENT_EXIT.  Since it can take a long time to get to
+# this fabled's spawn location, a timer was not a good solution.
+
 sub EVENT_SPAWN {
     my $x = $npc->GetX();
     my $y = $npc->GetY();
-    # Set an extra large proximity so we get the player from way outside aggro radius.
-    quest::set_proximity($x-245,$x+245,$y-245,$y+245);
+    quest::set_proximity($x-90,$x+90,$y-100,$y+90);
 }
 
 sub EVENT_ENTER {
     quest::shout("You offend me $race");
     quest::shout("$name, you must engage me within 10 minutes or I will leave.");
     quest::settimer("FDatenha",600);
+}
+
+sub EVENT_EXIT {
+   quest::stoptimer("FDatenha");
+   quest::shout("Run away then, I can wait.");
 }
 
 sub EVENT_COMBAT {

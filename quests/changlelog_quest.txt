@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==05/02/2018==
+Congdar: more Vex Thal updates
+
 ==04/20/2018==
 Congdar: Vex Thal updates
 
