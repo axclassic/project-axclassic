@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==05/08/2018==
+Congdar: update Lysbith_McNaff.pl
+
 ==05/02/2018==
 Congdar: more Vex Thal updates
 
