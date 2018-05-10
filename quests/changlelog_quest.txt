@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==05/10/2018==
+Congdar: update Jaled_Dar-s_Shade.pl
+
 ==05/08/2018==
 Congdar: update Lysbith_McNaff.pl
 
