@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==06/17/2018==
+Angelox: update to Emperor_Ganak.pl possible need for new part to quest.
+
 ==05/10/2018==
 Congdar: update Jaled_Dar-s_Shade.pl
 

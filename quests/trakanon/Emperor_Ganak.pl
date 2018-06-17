@@ -29,7 +29,8 @@ sub EVENT_ITEM {
      quest::ding(); quest::exp(10000);
     quest::set_zone_flag(89);
   }
-  if (plugin::check_handin(\%itemcount, 7276 => 1, 19953 => 1, 19954 => 1, 19955 => 1)) {
+  if ((plugin::check_handin(\%itemcount, 7276 => 1, 19953 => 1, 19954 => 1, 19955 => 1)) ||
+     (plugin::check_handin(\%itemcount, 64228 => 1, 19953 => 1, 19954 => 1, 19955 => 1))) {
     quest::say("I must say, I thought your flesh would be rotting from your bones alongside the remains of the ancient Sebilisians. I commend you on your victory over the poison dragon and thank you for returning the ancient medallions of my people. I reward you with the key you seek. A place shall be prepared for your souls among the most honored of the dead. Soon you will be seeing the world through the shroud of death.");
     quest::summonitem(20884);
     quest::set_zone_flag(108);
