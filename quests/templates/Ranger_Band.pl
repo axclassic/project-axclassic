@@ -500,7 +500,7 @@ sub convert_utility { #Angelox: for converting to higher coinage
 } #End sub CONVERT_UTILITY
 
 sub EVENT_ITEM {
-my @itemz = (1000 .. 1036,30670 .. 30680,94000,94001,10152,42984);
+my @itemz = (1000 .. 1036,1468 .. 1479,30670 .. 30680,94000,94001,10152,42984);
 my $total = 0;
 foreach my $xitem (@itemz) {
 $total += $itemcount{$xitem};
