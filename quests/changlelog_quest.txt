@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==07/25/2018==
+Angelox: Some work on the decaying skeleton quest (for new characters).
+	 You can fix your faction with them in Warrens. 
+
 ==06/17/2018==
 Angelox: update to Emperor_Ganak.pl possible need for new part to quest.
 
