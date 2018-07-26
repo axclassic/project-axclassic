@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==7/26/2018==
+Patrikpatrik: Changed Active Forum Guests to Active Forum Users to include all forum members in serverstat window.
+
 ==5/30/2018==
 Patrikpatrik: Atlas & database pages redirected to SSL links. 
 
