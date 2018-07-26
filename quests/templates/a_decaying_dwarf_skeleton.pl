@@ -1,4 +1,4 @@
-#Kingdom of Hades quest
+#Decaying skeleton quest, dwarf skeletons will eventually give you bone chips if you leave them alone.
 #All zones
 #Angelox
 sub EVENT_SAY {
