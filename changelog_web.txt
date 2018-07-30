@@ -1,10 +1,12 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
-==7/28/2018==
+==7/29/2018==
 Patrikpatrik: Overhauled voting system on front page. Uses ajax w/ no redirects.
 
-== 7/27/2018==
+== 7/28/2018==
 Patrikpatrik: Added ladder intro section in ladder page.
+
+==7/27/2018==
 Patrikpatrik: Minor color corrections for window sections.
 
 ==7/26/2018==
