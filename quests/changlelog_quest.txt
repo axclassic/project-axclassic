@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/13/2018==
+Congdar: Updated #Amontehepna.pl #Cara_Omica.pl to fix the not spawning issue.
+
 ==07/25/2018==
 Angelox: Some work on the decaying skeleton quest (for new characters).
 	 You can fix your faction with them in Warrens. 
