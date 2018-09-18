@@ -1,8 +1,23 @@
 # Gauntlets of Dragon Slaying
 # Belt of Dwarf Slaying
 
+######################
+# update Sept 17 2018
+# proper faction fixed and turning in head fix
+#######################
+#FACTIONS table:
+# 9 is apprehensive
+# 5 is indifferent
+# 4 is amiable
+# 3 is Kindly
+# 2 is Warmly
+# 1 is ally?
+#quest::faction(42, 50); #Claws of Veeshan
+#quest::faction(362, 50); #Yelinak
+#quest::faction(179,+250); # +tormax
+
 sub EVENT_SAY {
-  if ($faction < 4) { # Require amiable or better faction
+  if ($faction <= 4) { # Require amiable or better faction
     if ($text=~/hail/i) {
       quest::say("Greetings, $race. You know who I am, but I only vaguely know of you. My purpose is simple, I will rule these lands like my father, and my grandfather before him. All tasks but two are inconsequential to me.");
     }
@@ -16,7 +31,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  if ($faction == 2) { # Require warmly or better faction
+  if ($faction <= 2) { # Require warmly or better faction
     if (plugin::check_handin(\%itemcount, 30501 => 1)) { ## Dain head
       quest::summonitem(25858);
       quest::faction(49,-100); # -coldain
