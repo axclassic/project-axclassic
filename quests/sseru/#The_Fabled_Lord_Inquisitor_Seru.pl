@@ -3,6 +3,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_AGGRO {
+   quest::stoptimer("FabledLIS");
    quest::settimer("LeashFLIS",5);
 }
 
