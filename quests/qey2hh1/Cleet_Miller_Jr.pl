@@ -21,7 +21,7 @@ my $corn = quest::saylink("corn", 1);
        quest::say("OK, I scraped up a few mor kernels for you, you better succeed this time. Return to Corny Scarecrow talk to him and hand him these.");
 	   quest::delglobal("Thanksdead");
         quest::setglobal("Thanksreturn", 1, 5, "F");
-		quest::sommonitem(120239);
+		quest::summonitem(120329);
 	   }
          else {
             quest::emote(' grumbles and looks up at you.'); 
