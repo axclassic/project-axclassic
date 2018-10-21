@@ -86,7 +86,7 @@ sub EVENT_ITEM {
    quest::delglobal("Thanksreturn");
    quest::signalwith(14228,663,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 40  && $ulevel >= 36 && defined $qglobals{"Thanksscarecrow"} == ) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 40  && $ulevel >= 36 && defined $qglobals{"Thanksscarecrow"} == 1) { 
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14229,673,100);
    }
