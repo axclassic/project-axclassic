@@ -1,4 +1,4 @@
-## Corny_Scarecrow 14194 South Karana##
+## Corny_Scarecrow 14194 South Karana ##
 sub EVENT_SAY {
  my $wild = quest::saylink("wild", 1);
  my $kernels = quest::saylink("kernels", 1);
