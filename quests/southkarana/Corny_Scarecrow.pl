@@ -27,7 +27,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14222,603,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 5 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 5 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14222,603,100);
@@ -36,7 +36,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14223,613,100);
    }
-   elsif ($itemcount{120331} == 1  && $ulevel <= 10  && $ulevel >= 6 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1  && $ulevel <= 10  && $ulevel >= 6 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14223,613,100);
@@ -45,7 +45,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14224,623,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 15  && $ulevel >= 11 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 15  && $ulevel >= 11 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14224,623,100);
@@ -54,7 +54,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14225,633,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 20  && $ulevel >= 16 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 20  && $ulevel >= 16 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14225,633,100);
@@ -63,7 +63,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14226,643,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 25  && $ulevel >= 21 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 25  && $ulevel >= 21 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14226,643,100);
@@ -72,7 +72,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14227,653,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 30  && $ulevel >= 26 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 30  && $ulevel >= 26 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14227,653,100);
@@ -81,7 +81,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14228,663,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 35  && $ulevel >= 31 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 35  && $ulevel >= 31 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14228,663,100);
@@ -90,7 +90,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14229,673,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 40  && $ulevel >= 36 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 40  && $ulevel >= 36 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14229,673,100);
@@ -99,7 +99,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14230,683,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 45  && $ulevel >= 41 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 45  && $ulevel >= 41 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14230,683,100);
@@ -108,7 +108,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14231,693,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 50  && $ulevel >= 46 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 50  && $ulevel >= 46 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14231,693,100);
@@ -117,7 +117,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14232,703,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 55  && $ulevel >= 515 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 55  && $ulevel >= 515 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14232,703,100);
@@ -126,7 +126,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14233,713,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel <= 60  && $ulevel >= 56 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel <= 60  && $ulevel >= 56 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14233,713,100)
@@ -135,7 +135,7 @@ sub EVENT_ITEM {
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
    quest::signalwith(14234,723,100);
    }
-   elsif ($itemcount{120331} == 1 && $ulevel >= 61 && defined $qglobals{"Thankssreturn"} == 1) { 
+   elsif ($itemcount{120331} == 1 && $ulevel >= 61 && defined $qglobals{"Thanksreturn"} == 1) { 
    quest::say("Okay $name be ready this time!");
    quest::delglobal("Thanksreturn");
    quest::signalwith(14234,723,100);
