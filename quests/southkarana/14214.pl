@@ -1,11 +1,11 @@
 #Wild_Turkey ID 14214 ##
 sub EVENT_DEATH{
-      quest::signalwith(14231,705,0);
+      quest::signalwith(14231,732,0);
 	  }
 sub EVENT_SLAY {
 	  $client->Message(5,"$mname just killed you! When you return talk to Corny Scrarecrow for further instructions.");
 	  quest::delglobal("Thanksscarecrow");
    quest::setglobal("Thanksdead", 1, 5, "F");
-   quest::signalwith(14231,707,0);
+   quest::signalwith(14231,752,0);
     }
  

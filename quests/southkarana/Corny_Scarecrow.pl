@@ -142,8 +142,8 @@ sub EVENT_ITEM {
    }
    }
 sub EVENT_SIGNAL {
-   if($signal == 601) {
-   quest::say ("Thank you name for the directions. I can find my way home to Lady Einarr now and return to guarding her fields.");
+   if($signal == 606) {
+   quest::say ("Thank you $name for the directions. I can find my way home to Lady Einarr now and return to guarding her fields.");
    quest::delglobal("Thanksscarecrow");
    quest::setglobal("Thankssmglumr", 1, 5, "F");
    quest::depop();
