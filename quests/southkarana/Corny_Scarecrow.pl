@@ -14,9 +14,15 @@ sub EVENT_SAY {
    }
    elsif($text =~ /wild/i && defined $qglobals{"Thanksscarecrow"} == 1) {
    quest::say("You seek wild turkeys? If you give me some corn I will call them in for you--but be careful, they are a dangerous lot!");
+   quest::say("After you clean up the mess perhaps you could give me directions on how to get home?");
    }
    elsif($text =~ /kernels/i && defined $qglobals{"Thanksreturn"} == 1) {
    quest::say("Give me some corn I will call them in for you!");
+   }
+   elsif($text =~ /Hail/i && defined $qglobals{"Thankswild"} == 1) {
+   quest::say ("Thank you $name for the directions. I can find my way home to Lady Einarr now and return to guarding her fields.");
+   quest::setglobal("Thankssmglumr", 1, 5, "F");
+   quest::depop();
    }
 	else {
 	quest::say("Do I know you? I dont talk to strangers.");
@@ -141,12 +147,5 @@ sub EVENT_ITEM {
    quest::signalwith(14234,723,100);
    }
    }
-sub EVENT_SIGNAL {
-   if($signal == 606) {
-   quest::say ("Thank you $name for the directions. I can find my way home to Lady Einarr now and return to guarding her fields.");
-   quest::delglobal("Thanksscarecrow");
-   quest::setglobal("Thankssmglumr", 1, 5, "F");
-   quest::depop();
-   }
- }  
+
  
