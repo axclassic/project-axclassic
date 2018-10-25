@@ -21,7 +21,6 @@ sub EVENT_SIGNAL {
 	quest::spawn2(14199,0,0,526.4,437.6,-2.8,40.6);
 	}
    if($counter == 10) {
-	quest::signalwith(14194,606,10); ##signal 606 is to Corny Scarecrow to continue dialogue and flag player with global for next step of quest##
 	$counter = undef;
 	quest::depop();
 	}
