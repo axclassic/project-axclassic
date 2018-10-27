@@ -1,9 +1,12 @@
 #Wild_Turkey ID 14220 ##
 sub EVENT_DEATH{
-      quest::signalwith(14234,735,0);
+      my $meatbag = $entity_list->GetMobID($userid);
+      if($meatbag->IsBot()) {
+	  quest::signalwith(14222,723,0);
 	  quest::delglobal("Thanksscarecrow");
 	  quest::setglobal("Thankswild");
 	  }
+	}
 sub EVENT_SLAY {
 	  $client->Message(5,"$mname just killed you! When you return talk to Corny Scrarecrow for further instructions.");
 	  quest::delglobal("Thanksscarecrow");
