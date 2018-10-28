@@ -1,4 +1,4 @@
-#Wild_Turkey ID 14202 ##
+##Wild_Turkey ID 14202 ##
  sub EVENT_SLAY {
 	  $client->Message(5,"$mname just killed you! When you return talk to Corny Scrarecrow for further instructions.");
 	  quest::delglobal("Thanksscarecrow");
