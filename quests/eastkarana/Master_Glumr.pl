@@ -20,9 +20,9 @@ sub EVENT_SAY {
     }
  }	
  sub EVENT_ITEM {
-    if ($itemcount{120328} == 1) { 
+    if ($itemcount{120330} == 1) { 
 	quest::say("It's a miracle! Thank you so much, $name. With this food our turkeys are sure to live.");
 	quest::say("Please take this note to my father to let him know of your great deeds!");
-	quest::summonitem(120330);
+	quest::summonitem(120332);
 	}
   }	
