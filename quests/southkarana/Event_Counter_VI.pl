@@ -12,7 +12,7 @@ sub EVENT_SIGNAL {
 	quest::spawn2(14207,0,0,521.7,449.5,-2.8,53.1);
 	quest::spawn2(14207,0,0,526.4,437.6,-2.8,40.6);
 	}
-   if($signal == 728) { ##signal 655 is from each mob who dies##
+   if($signal == 728) { ##signal 728 is from each mob who dies##
          $counter += 1;
    if($counter == 5) {
 	quest::spawn2(14207,0,0,547.9,508.5,-2.8,79);
