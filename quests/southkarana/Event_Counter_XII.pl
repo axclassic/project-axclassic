@@ -23,14 +23,7 @@ sub EVENT_SIGNAL {
    if($counter == 10) {
 	$counter = undef;
 	quest::depop();
-	}
-    if($signal == 754) { ##signal that player died##
-    quest::depopall(14219);	
-	quest::depop(14218);
-	$counter = undef;
-	quest::depop();	
-	
    }
+  }
  }
-}
  
