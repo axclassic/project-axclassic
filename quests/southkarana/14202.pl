@@ -9,12 +9,12 @@
 my $meatbag = $entity_list->GetMobID($userid);
       if($entity_list->GetMobID($userid)) {
 	  quest::delglobal("Thanksscarecrow");
-	  quest::setglobal("Thankswild");
+	  quest::setglobal("Thankswild", 1, 5, "F");
 	  quest::signalwith(14225,726,0);
 	  }
 	  elsif($meatbag->IsBot()) {
 	  quest::delglobal("Thanksscarecrow");
-	  quest::setglobal("Thankswild");
+	  quest::setglobal("Thankswild", 1, 5, "F");
 	  quest::signalwith(14225,726,0);
 	  }
 	  else{
