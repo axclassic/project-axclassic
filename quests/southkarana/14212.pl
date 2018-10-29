@@ -6,18 +6,7 @@
    quest::signalwith(14235,751,0);
     }
  sub EVENT_DEATH{
-my $meatbag = $entity_list->GetMobID($userid);
-      if($entity_list->GetMobID($userid)) {
 	  quest::delglobal("Thanksscarecrow");
-	  quest::setglobal("Thankswild", 1, 5, "F");
+	  quest::setglobal("Thankswild", 1, 3, "F");
 	  quest::signalwith(14230,731,0);
 	  }
-	  elsif($meatbag->IsBot()) {
-	  quest::delglobal("Thanksscarecrow");
-	  quest::setglobal("Thankswild", 1, 5, "F");
-	  quest::signalwith(14230,731,0);
-	  }
-	  else{
-	  #Do Nothing;
-	}
-	} 
