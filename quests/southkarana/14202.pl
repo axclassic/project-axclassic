@@ -5,9 +5,9 @@
    quest::setglobal("Thanksdead", 1, 5, "F");
    quest::signalwith(14235,746,0);
     }
- sub EVENT_DEATH{
+ sub EVENT_KILLED_MERIT{
 	  quest::delglobal("Thanksscarecrow");
-	  quest::setglobal("Thankswild", 1, 3, "F");
+	  quest::setglobal("Thankswild", 1, 5, "F");
 	  quest::signalwith(14225,726,0);
 	  }
 	 
