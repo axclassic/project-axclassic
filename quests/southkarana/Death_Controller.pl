@@ -1,4 +1,9 @@
 ##Death_Controller 14235##
+sub EVENT_SPAWN {
+      if((defined $event9) && ($event9 == 1)) {
+       quest::unique_spawn(14194,0,0,633,485,-1.9,69.1);    ##Spawns Corny Scarecrow for Thanksgiving Event
+   }
+   }
 sub EVENT_SIGNAL {
     if($signal == 743) { ##signal that player died##
     quest::depopall(14197);	
