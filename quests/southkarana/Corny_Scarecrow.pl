@@ -22,12 +22,18 @@ sub EVENT_SAY {
    elsif($text =~ /Hail/i && defined $qglobals{"Thankswild"} == 1) {
    quest::say ("Thank you $name for the directions. I can find my way home to Lady Einarr now and return to guarding her fields.");
    quest::setglobal("Thankssmglumr", 1, 5, "F");
-   quest::depop();
+   quest::start(111);
    }
 	else {
 	quest::say("Do I know you? I dont talk to strangers.");
     }
  }	
+ sub EVENT_WAYPOINT {
+    if ($wp == 1) {
+    quest::signalwith(14235,756,0);
+    quest::depop();
+	}
+	}
 sub EVENT_ITEM {
    if ($itemcount{120331} == 1 && $ulevel <= 5 && defined $qglobals{"Thanksscarecrow"} == 1) { 
    quest::say("Okay, $name. Watch how quickly these wild turkeys come after this corn!");
