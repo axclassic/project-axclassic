@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
       if((defined $event9) && ($event9 == 1)) {
        quest::unique_spawn(15220,0,0,-54.2,-724.1,2,243); 
        quest::unique_spawn(15221,0,0,-95.3,-745.9,2,9);
-       quest::unique_spawn(15221,0,0,-79.3,-739.8,1.1,243.6);
-       quest::unique_spawn(15221,0,0,-101.3,-742,1.1,25.3);	   
+       quest::unique_spawn(15221,0,0,-72.8,-733,1.1,213.8);
+       quest::unique_spawn(15221,0,0,-106.9,-724.4,1.1,69.4);	   
    }
    }
