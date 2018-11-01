@@ -1,7 +1,7 @@
 ##Death_Controller 14235##
 sub EVENT_SPAWN {
       if((defined $event9) && ($event9 == 1)) {
-       quest::spawn2(14194,110,0,633,485,-1.9,69.1);    ##Spawns Corny Scarecrow for Thanksgiving Event
+       quest::spawn2(14194,0,0,633,485,-1.9,69.1);    ##Spawns Corny Scarecrow for Thanksgiving Event
    }
    }
 sub EVENT_SIGNAL {
