@@ -57,9 +57,6 @@ sub EVENT_SIGNAL {
     quest::depopall(14221);	
 	quest::depop(14220);
 	}
-	elsif($signal == 756) { ##signal that Corny Scarecrow has reached end of path and needs to be respawned##
-    quest::spawn2(14194,111,0,633,485,-1.9,69.1);
-	}
 	else{
 	#Do Nothing;
 	}
