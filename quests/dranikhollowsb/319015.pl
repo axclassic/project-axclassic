@@ -3,7 +3,8 @@ sub EVENT_SAY {
  my $finish = quest::saylink("finish", 1);
  if($text=~/hail/i) {
  quest::say("You $name have reached the end of this cave. Return any coin you may possess. If you wish to work you way through the tunnel again, speak $return and I shall place you back at the beginning."); 
- quest::say("If you are finished here and wish to go back to Grand Historian Gersh, speak $finish and it will be so."); }
+ quest::say("If you are finished here and wish to go back to Grand Historian Gersh, speak $finish and it will be so."); 
+ }
 if($text=~/return/i) {
   	quest::movepc(319,0.0,-447.0,-36.0); }
 if($text=~/finish/i) {
