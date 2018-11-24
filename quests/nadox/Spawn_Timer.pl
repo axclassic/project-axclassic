@@ -9,5 +9,6 @@ if($timer eq "NadoxEpic"){
     quest::depopall(227140);
     quest::depopall(227143);
     quest::depopall(227142);
+	quest::depop();
 	}
 }
