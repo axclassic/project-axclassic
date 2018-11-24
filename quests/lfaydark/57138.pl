@@ -1,8 +1,5 @@
 sub EVENT_SAY {
-  if ($ulevel <= 50 && $text=~/Hail/i){
-   quest::say("Be gone youngster! There is nothing for you here but death.");
-   }
-  if($ulevel >= 51 && $text=~/hail/i) {
+    if($ulevel >= 51 && $text=~/hail/i && defined $qglobals{"EpicBox"} == 1) {
    quest::say("The Letter? I may have it but I will never surrender it to the likes of you! Prepare to die scum!");
    quest::spawn2(57137,0,0,-1771.9,-910.3,-2.3,242.4);
    quest::spawn2(57141,0,0,-1746.7,-918.9,0.4,217);
@@ -12,4 +9,10 @@ sub EVENT_SAY {
    quest::spawn2(57141,0,0,-1765.2,-875.8,-4,136.4);
    quest::depop();
    }
+   elsif($ulevel >= 51 && $text=~/Hail/i && !defined $qglobals{"EpicBox"} == 1){
+   quest::say("You are not worthy as of yet. Return to me when you have aquired your Epic 1.5 or above.");
+   }
+   elsif($ulevel <= 50 && $text=~/Hail/i){
+   quest::say("Be gone youngster! There is nothing for you here but death.");
+ }
  }
