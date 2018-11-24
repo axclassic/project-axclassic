@@ -1,6 +1,6 @@
 sub EVENT_SAY {
 my $ready = quest::saylink("ready", 1);
- if($text=~/hail/i) {
+ if($text=~/hail/i && defined $qglobals{"EpicBox"} == 1) {
       quest::say("'Yes, yes, Gilina said you would be coming. I can help you in your battle against Lhranc! I have a personal vendetta against Lhranc. He killed my twin brother, Gilligno. This is going to be a tough battle. Lhranc has been reincarnated as a powerful general of the Mata Muram army. Are you $ready for me to attempt the summoning of Lhranc?");
 	  }
 	  if($text=~/ready/i) {
@@ -11,6 +11,9 @@ my $ready = quest::saylink("ready", 1);
 	  quest::spawn2(336529,0,0,1050.4,2273.6,-26.1,244.4);
 	  quest::signalwith(336529,1005,12000);
 	  $client->CameraEffect(3000, 6);
+	  }
+	  elsif($text=~/hail/i && !defined $qglobals{"EpicBox"}) {
+	  quest::say("What do you want stranger? Begone from here, it is much to dangerous for you to be here.");
 	  }
 	  }
 sub EVENT_SIGNAL {
