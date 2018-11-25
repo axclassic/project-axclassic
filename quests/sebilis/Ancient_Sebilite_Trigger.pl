@@ -1,3 +1,4 @@
+##Ancient_Sebilite_Trigger ID 89197##
 my $ancient_sebilite_event = 0;
 
 sub EVENT_SPAWN  {
