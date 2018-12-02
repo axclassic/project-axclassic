@@ -5,9 +5,11 @@ sub EVENT_SPAWN {
   quest::settimer("TarlangDepop",1500); #Despawn after 25 minutes 
 } 
 
-sub EVENT_TIMER { 
+sub EVENT_TIMER {
+if($timer eq "TarlangDepop") { 
   quest::stoptimer("TarlangDepop"); 
   quest::depop(); 
 } 
+}
 
-#EndFile: causeway\#Tarlang.pl (00000)
+#EndFile: causeway\#Tarlang.pl 
