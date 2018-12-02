@@ -3,7 +3,7 @@
 sub EVENT_SPAWN{
 $x = $npc->GetX();
 	$y = $npc->GetY();
-	quest::set_proximity($x - 120, $x + 120, $y - 120, $y + 120);
+	quest::set_proximity($x - 90, $x + 90, $y - 90, $y + 90);
 	}
 sub EVENT_ENTER {
     if(defined $qglobals{"EpicBox"} == 1) {
