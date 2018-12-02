@@ -1,13 +1,18 @@
-#BeginFile: causeway\Tarlang.pl 
-#Quest file for Nobles Causeway - Tarlang (Passive): Necromancer Epic 1.5 (Soulwhisper) 
-
-sub EVENT_SAY { 
-   if($text=~/hail/i) { 
-   quest::say("Fool! You think you have what it takes to destroy me? I shall feast on your bones!");   
-   quest::spawn2(303118,0,0,1363,-146,316.8,147.5); #Tarlang (Active) 
-   quest::depop(); 
-  } 
-} 
-
-
+##BeginFile: causeway\Tarlang.pl## 
+#Quest file for Nobles Causeway - Tarlang (Normal) ##
+sub EVENT_SPAWN { 
+  quest::settimer("TarlangDepop",3600); 
+}  
+sub EVENT_TIMER { 
+   if($timer eq "TarlangDepop") { 
+  quest::stoptimer("TarlangDepop"); 
+  quest::depop(); 
+  }
+ }
+sub EVENT_DEATH {
+quest::stoptimer("TarlangDepop"); 
+quest::depop(303118);
+quest::depop(303119);
+quest::depop();
+}
 #EndFile: causeway\Tarlang.pl (303046)
