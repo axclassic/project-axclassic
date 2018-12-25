@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/25/2018==
+Angelox: Found and fixed syntax error in Lavastorm.
+
 ==09/28/2018==
 Congdar: Updated #The_Fabled_Lord_Inquisitor_Seru.pl to fix the depop issue.
 
