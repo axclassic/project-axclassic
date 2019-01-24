@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==1/24/2019==
+Patrikpatrik: Validated server redirection & fixed remaining https conflicts.
+
 ==7/29/2018==
 Patrikpatrik: Overhauled voting system on front page. Uses ajax w/ no redirects.
 
