@@ -1,6 +1,633 @@
 AX-Classic Open Source Server Changelog (Started 8/14/2009)
 |-----------------------------------------------------------|
-==06/11/2015==
+==05/09/2019==
+Angelox: Updated startup.bat for windows servers to prevent multiple starts.
+
+==05/06/2019==
+Congdar: Fix for new enforcement of error C2360: initialization, Storage allocation of local variables inside a block in c++
+
+==08/27/2018==
+Congdar: Account creation now updates time_creation field.
+
+==08/14/2018==
+Angelox: Cleaned up some of the global bot commands.
+
+==08/13/2018==
+Angelox: Moved last of old-style bot command code over to newer method.
+	 Added more checks so player gets feedback on misplaced commands.
+
+==08/12/2018==
+Congdar: #bot bindme was broken
+
+==08/06/2018==
+Congdar: add command #bot equip
+Congdar: #bot unequip works better
+
+==07/14/2018==
+Angelox: Some lingering #botmode code removed. 
+
+==07/12/2018==
+Angelox: Removed Titanium command #botmode.
+
+==07/04/2018==
+Angelox: #bot battlerez [botname] will spawn and auto-add the bot to the group.
+
+==07/02/2018==
+Angelox: Battlerez is working for normal group play.
+
+==07/01/2018==
+Angelox: Fixed bug that prevented forming new single groups.
+
+==06/24/2018==
+Angelox: More work on optional method for saving raids.
+	 Added option to clear a group in the database;  
+
+==06/21/2018==
+Angelox: Re-working the simplified form of forming bot raids:
+         You can no longer add raid members beyond what you are allowed.
+         Your save raid groups will be checked for bot amounts, 
+         you'll have to remove excessive amounts prior spawning raid. 
+
+==05/30/2018==
+Congdar: fix for TotalKarma
+Congdar: fix for npc keeping aggro after evac
+
+==05/28/2018==
+Congdar: fix for Permanent Illusion AA duration
+
+==05/24/2018==
+Angelox: Mana bar was still not updating when full (does now).
+Angelox: Timer changes
+
+==05/23/2018==
+Angelox: Bot's mana bar should be more in sync. 
+Angelox: More tweaks to bot manna bar updater.
+
+==05/22/2018==
+Angelox: Some fixes to #bot mez and the bot manabar updater.
+
+==05/15/2018==
+Congdar: add bard to #bot ai mez
+
+==05/11/2018==
+Congdar: fix #bot invis live
+
+==05/10/2018==
+Congdar: fix bot clicky Boots of the Beastlord
+
+==05/09/2018==
+Congdar: fix bot clicky Wand of Casual Blessings
+Congdar: fix #bot levitate
+
+==05/03/2018==
+Congdar: fix for Bots regening mana too fast.
+
+==05/02/2018==
+Congdar: Vex Thal fixes
+
+==04/06/2018==
+Congdar: karma and tradeskill updates
+
+==04/01/2018==
+Congdar: fix bot hitpoint display bug
+
+==03/27/2018==
+Congdar: fix bot clickies Amulet of Xuzl, Shroud of Emerald Vines
+
+==03/22/2018==
+Congdar: scaled items work now
+Congdar: scaled items work for bots too
+Congdar: new command -   #bot spells   - Display your targeted bots spell list
+Congdar: Increase book name length to avoid truncation failure
+Congdar: update language definitions to include Alaran and Hadal
+Congdar: qglobals with duration timers now expire.
+
+==03/11/2018==
+Angelox: Added more info for the player for quested spells. 
+
+==03/05/2018==
+Congdar: aggro update
+
+==03/02/2018==
+Congdar: possible fix to Kael path bug
+
+==02/27/2018==
+Congdar: fix bot commands where code path not followed
+
+==02/25/2018==
+Congdar: fix #bot disbandgroup not fully clearing raids
+Congdar: fix #bot resist will now include pets
+Congdar: fix issue where mob will lose all aggro
+
+==02/23/2018==
+Congdar: fix NPE zone crash
+
+==02/18/2018==
+Congdar: zoning from Nexus portals when bots are spawned now works
+
+==02/13/2018==
+Congdar: fix zone crash for Death Pact on bot
+
+==02/12/2018==
+Congdar: HP/Mana/Endurance regen require food and drink
+
+==02/10/2018==
+Congdar: Veeshan's Peak update
+
+==02/09/2018==
+Congdar: npc's can see invisible again
+
+==01/20/2018==
+Congdar: bot's don't need invisibility clicky
+
+==01/14/2018==
+Congdar: EVENT_LOOT will no longer trigger on your own corpse
+Congdar: #bot showstats now displays Haste
+
+
+==01/12/2018==
+Congdar: fix procing augs for bots
+Congdar: update #npcspawn to add a spawnpoint to the same spawngroup
+
+==01/09/2018==
+Congdar: tweak to Bard AA Fading Memories
+
+==01/04/2018==
+Congdar: fix sense heading skillup
+
+==01/01/2018==
+Congdar: bots are no longer immune to fear spells
+
+==12/30/2017==
+Congdar: test fix for crash on zone with bots
+
+==12/29/2017==
+Congdar: update to commit 1202 to include feign death memory clear
+
+==12/26/2017==
+Congdar: bot lockpick will now use PICK_LOCK skill
+
+==12/23/2017==
+Angelox: Fixed/verified #npcspawn update/remove/delete. 
+         Please test/experiment on your testserver before using.
+         #npcspawn with no options renders some help.
+
+==12/22/2017==
+Congdar: Tribute Masters have returned
+Angelox: Fixed #npcspawn add, disabled update/remove/delete for now.
+
+==12/20/2017==
+Angelox: Disabled some of the other spawn commands that haven't been verified.
+Angelox: "#npcspawn create" will create exact duplicate of targeted NPC.
+Angelox: Fixed bug where #npcspawn was not not adding proper spawngroupID.
+
+==12/18/2017==
+Angelox: Changed defaults for #wpadd (with no options) to "patrol" "and random half". 
+
+==12/17/2017==
+Angelox: Fix for in-game grid adding commands for mob movement. 
+Angelox: Fix for #npcspawn command or other command that uses ZoneDatabase::NPCSpawnDB().
+  Needed Mysql Table Change;
+  ALTER TABLE `ax_classic`.`spawngroup` MODIFY COLUMN `id` INT(11) NOT NULL,
+  MODIFY COLUMN `name` VARCHAR(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+==12/13/2017==
+Congdar: quest EVENT_'s update to client if initiated by a bot
+Congdar: rem'd out code that turned bot chat on when you specifically had turned it off.
+
+==12/11/2017==
+Congdar: npc respawn Variance works better.
+
+==12/09/2017==
+Congdar: Bots are more vocal in raids
+
+==12/08/2017==
+Congdar: Bots are more vocal about npc spell immunity and resists
+
+==11/30/2017==
+Angelox: Added "Revamps.sql" which has queries I had saved up from zone revamps. 
+
+==11/28/2017==
+Congdar: EVENT_AGGRO works for bots/pets now.
+Congdar: Fix for Vox/Naggy level limit
+
+==11/25/2017==
+Congdar: LDoN re-enabled
+Congdar: added LDoN chest/vase/box commands #bot ldonDisarm and #bot ldonUnlock.  Right-Click for locked status.
+
+==11/24/2017==
+Congdar: LDoN temporarily disabled
+Congdar: LDoN failed objective will now give half points if you meet the objective before the zone expires.
+
+==11/20/2017==
+Congdar: bots can't click on items with 0 charges.
+
+==11/19/2017==
+Congdar: test fix for removing aggro when zoning.
+
+==11/17/2017==
+Congdar: fix ldon stat window
+
+==11/09/2017==
+Congdar: clicky items with limited charges will work properly now
+
+==11/05/2017==
+Congdar: fix side effects to aggro clear changes.
+Congdar: fix item charges update
+
+==11/04/2017==
+Congdar: item charges update
+
+==11/03/2017==
+Congdar: Bots summoned when guarding reset guard spot to summoned location
+Congdar: Another try at clearing all aggro on client death.
+
+==10/25/2017==
+Angelox: Removed GroupRaid timer and upped SpawnRaid timer.
+Angelox: All of the bot raid will disband properly again. 
+
+==10/16/2017==
+Angelox: More changes to ensure bots get removed when client is gone. 
+
+==10/15/2017==
+Angelox: SetDeadOwner() Will keep dead bot flag for raid bots tell they get re-spawned.
+
+==10/14/2017==
+Congdar: fix custom item Stone of the Genderless
+
+==10/09/2017==
+Congdar: fixes to Group Temperance and #bot mana for raids
+
+==10/08/2017==
+Congdar: tweaks to bot clickies
+Congdar: mana report for raids
+
+==10/06/2017==
+Angelox: fixed problem with botdeath and raid groups. 
+Congdar: tweaks to line of sight code.
+Angelox: Small fix to BotAI
+
+==10/04/2017==
+Angelox: Dead bots will zone dead (stay dead tell rezzed). 
+Angelox: If you character dies,, so will your bots.
+
+==10/03/2017==
+Angelox: Fix to ensure bots clear the zone when client dies.
+
+==10/01/2017==
+Congdar: Tweaks to bot guard
+
+==09/29/2017==
+Angelox: some checks to ensure #botmode stays in Titanium. 
+
+==09/28/2017==
+Angelox: reinstated #botmode again, for testing.
+
+==09/25/2017==
+Congdar: bots, in meetings with caster pets, have learned how to "Guard" better.
+
+==09/21/2017==
+Congdar: tweak to bots sitting for regen
+
+==09/17/2017==
+Congdar: fix bot casting spell with not enough mana
+
+==09/16/2017==
+Congdar: fix for player bard AA Fading Memories
+Congdar: update support for Spell: Blessing of Temperance
+
+==09/15/2017==
+Congdar: small tweak to getting bot rogue behind npc and bot low health sitting
+
+==09/10/2017==
+Congdar: bots will now sit to gain regen bonus when out of combat.
+
+==09/09/2017==
+Congdar: Fix for Aegis of Life bot click
+Congdar: configure initial checks for 1st bot on char create
+
+==09/08/2017==
+Angelox: We can flag undesired HotZones as NonHot in the table "zone", column "note".
+
+==09/06/2017==
+Angelox: HotZones will only display what we can play in.
+Angelox: Fix for line 506 in database.cpp being too long and Kwrite (Kate) would open in read-only mode.
+
+==09/04/2017==
+Congdar: Improved random hotzones fix. 
+
+==09/03/2017==
+Angelox: Random hotzones will always appear (daily). 
+
+==08/31/2017==
+Angelox: Ensuring that Enchater mez messages are always on. 
+
+==08/30/2017==
+Congdar: Fix for Mana Robe botclicky fix
+
+==08/29/2017==
+Congdar: fix for Mana Robe botclicky
+Angelox: More SetChat() fixes.
+Angelox: Greatly reduced BotChat - too much chat gets repetitious and unnatural.
+
+==08/28/2017==
+Angelox: Bot healers should always say when they are healing (even with chat off).
+Angelox: Removed rest off heal-related messages in BotAI (the goal was to turn off chat only).
+
+==08/27/2017==
+Congdar: remove underfoot test code
+
+==08/20/2017==
+Congdar: LDoN Leaderboard try 2
+
+==08/17/2017==
+Congdar: fix quest::auction() for linux compile
+
+==08/15/2017==
+Congdar: fix quest::auction()
+
+==08/14/2017==
+Congdar: Add quest::auction()
+
+==08/13/2017==
+Congdar: Fix for Tiny Companion clickie
+
+==08/09/2017==
+Congdar: Bots have learned how to click on items with click effects.
+
+==08/05/2017==
+Congdar: fix for Spell:Voice Graft
+Congdar: add time left to #bot buffs
+Congdar: fix spell spam from bard
+
+==7/23/2017==
+Congdar: #bot sheal now heals pets too
+
+==7/22/2017==
+Congdar: test code for remove aggro after zoning
+Congdar: #bot cure <> now cures pets too
+
+==7/17/2017==
+Congdar: retry SOCKET, GetZoneID(), OffTank, Swimming changes
+
+==7/16/2017==
+Angelox: Revereted revision from 1094 to 1091 (forgot to add this in changelog).
+Angelox: Re-Inserted Congdars raid-bot tank fix from rev 1093.
+
+==7/13/2017==
+Angelox: Disabled RezBot and BattleRez for bot raids as it doesn't work there.
+
+==7/11/2017==
+Angelox: Re-did Battlerez for rezzing bots while in combat.
+
+==7/10/2017==
+Congdar: Fix null pointer in ldon adventure setup.
+Congdar: Reduce Bard spell spam.
+Congdar: If Bot pet gets the killing blow, we get experience now.
+Congdar: When deleting a character, also delete adventure_stats
+
+==7/06/2017==
+Angelox: Some tweaks to rezbot command.
+Angelox: Battlerez work (battlerez still not active).
+
+==7/05/2017==
+Angelox: New command "rezbot" active Usage: #bot rezbot [bot name].
+
+==7/01/2017==
+Congdar: Fix #bot inventory list output on Underfoot Client.
+Congdar: Added rezbot Resurrection Effects
+
+==6/30/2017==
+Angelox: Uploaded some rezsbot work - unquote setbotdead line in attack.cpp to activate.
+
+==6/27/2017==
+Congdar: Tradeskills are easier to advance.
+Congdar: Remove unintended exploit fix for non-DS spells.
+
+==6/20/2017==
+Congdar: Message(int,string) now works for bots in quest scripts. if($thing->IsBot()) $thing->Message( 5, "$name says $mname is hitting me with a sword, whaaa!");
+
+==6/18/2017==
+Congdar: Fix EVENT_TIMER, Update $client->Freeze() to kneel since if you were running when freeze() is called you still run and can't stop.
+
+==6/15/2017==
+Congdar: Fix EVENT_NPC_SLAY implement perl $mob->IsBot()
+
+==6/14/2017==
+Congdar: Fix bot pet summoned lore weapon usage
+
+==6/13/2017==
+Congdar: Fix bot pet secondary weapon
+
+==6/08/2017==
+Congdar: Implement EVENT_DUEL_WIN EVENT_DUEL_LOSE EVENT_FEIGN_DEATH
+
+==6/07/2017==
+Congdar: Implement $client->Freeze(); $client->UnFreeze();
+
+==6/06/2017==
+Congdar: Bot Raid Secondary Tank will offtank better
+Congdar: Implement EVENT_CONNECT EVENT_DISCONNECT EVENT_TICK EVENT_GROUP_CHANGE EVENT_DUEL
+
+==6/05/2017==
+Congdar: Add minimum damage to Berserker Bot Frenzy skill
+Congdar: Zone version updates.
+
+==6/02/2017==
+Congdar: Fix for Bot Beserker Frenzy
+Congdar: Initial Takish-Hiz LDoN work
+
+==5/29/2017==
+Congdar: Made #bot set taunt command a little easier to understand
+Congdar: Pets can dual wield better
+Congdar: Berserker Bots can Frenzy
+
+==5/25/2017==
+Congdar: Bots are now affected by root spells
+Congdar: GM's can now cast detrimental spells on bots
+
+==5/21/2017==
+Congdar: Bard bots have gotten better at Musicing(5)
+
+==5/18/2017==
+Congdar: Windows: fix load from character screen crash
+Congdar: Cleric bot will now buff pets
+
+==5/14/2017==
+Congdar: Updates to perl512 and Visual Studio 2017
+Congdar: Fix for level 10 druid bot not casting SoW
+Congdar: Add DependsAX folder
+
+==9/26/2016==
+Angelox: Fix for healme command crashing the zone when Necro only is in group.
+
+==9/14/2016==
+Lazylob: Fix for characters retaining aggro after zoning or dying
+Lazylob: Fix for bots using Recommended items incorrectly
+
+==9/14/2016==
+Lazylob: Fix for clerics only healing warriors
+
+==9/12/2016==
+Lazylob: Added new commands for toggling cleric bot casting cheal spell.
+
+==9/09/2016==
+Lazylob: Fix for bots skipping certain buffs and pet buffs.
+
+==9/08/2016==
+Lazylob: Possible fix zone crash/holding aggro after zoning
+
+==6/09/2016==
+Angelox: Fix for group raid crash/bug.
+
+==6/07/2016==
+Cerbert:added mana check when performing a generic cast
+
+==6/02/2016==
+Cerbert: Added new gm command corpselist
+Cerbert: Inventory change to allow autostack on pickpocket
+
+==5/26/2016==
+Angelox: Fix for aggro still there after Evac or zoning back.
+
+==5/25/2016==
+Angelox: Fixed #bot pacify while in guard mode, wasn't working right.
+
+==5/17/2016==
+Angelox: Fix for zone crash on character death.
+
+==5/16/2016==
+Cerbert: Turned off automatic chat set with #bot group normal,Turned on bots stating their invis spell cast in group.
+
+==5/15/2016==
+Cerbert: Fix for #bot create command when creating a half-elf, updates for #bot invis command.
+Cerbert: Some new bot chatting and fixes
+
+==4/17/2016==
+Angelox: Fix for problem with #bot invis live/undead where caster was saying it did not have that spell.
+
+==4/16/2016==
+Angelox: Some untested code I started for finding needed caster bots in group.
+Cerbert: Bots have discovered how to dispel fix.
+
+==3/31/2016==
+Cerbert:Invis command fixed where at times a bot would claim they did not have the spell to cast when the actually did.
+Cerbert:Fixed error in bot chatting (race chatter should now be correct).
+Cerbert:Fixed charisma command - #bot charisma now works again.
+
+==3/25/2016==
+Angelox: #bot sow will always return a reply.
+
+==3/08/2016==
+Angelox: Finished and hopefully de-bugged the revised #bot sow command.
+
+==3/07/2016==
+Angelox: Started some work on #bot sow revamp - still needs a few bugs ironed out.
+	 Also, Chat needs a switch for disable #bot set chat on/off for some routines. 
+
+==2/24/2016==
+Angelox: Re-did the #bot invis command. 
+
+==2/18/2016==
+Cerbert: Updated #bot create - fixed lookup table error, and added bounds checking
+
+==2/10/2016==
+Angelox: Reverted some changes to #bot create tell it can get fixed.
+
+==2/10/2016==
+Lazylob: Fix bot create not making Froglok bots
+
+==2/9/2016==
+Lazylob: Fix bot update and bot create command to work again
+
+==2/8/2016==
+Lazylob:Fix bot raid commands so they get parsed correctly
+	Fix possible infinite loop with rogue backstab
+Cerbert:Significant changes to #bot command dispatching - removed calls to DB at top level. 
+	This is the initial restructuring, and still needs optimization for individual commands. 
+	See botcommand.cpp for details on new command structure.
+	
+==2/7/2016==
+Cerbert: Latest stable release
+Cerbert: Moving all source into trunk
+
+==2/3/2016==
+Lazylob: Minor again adjustment to MainTank and Rogue bot positioning
+
+==1/26/2016==
+Cerbert:minor optimizations, fixes for sprintf formatting, possible null pointer dereference fixes,etc. 
+
+==1/24/2016==
+Lazylob: Minor adjustment to MainTank and Rogue bot positioning
+
+==1/24/2016==
+Lazylob: Typo fix for creating Vahshir bots
+Lazylob: New bot command, #bot group info - that is like raid info
+Lazylob: New bot command, #bot showstats - gives current bot stats
+ 
+==1/23/2016==
+Cerbert: Update for bot chatter fix
+Patrik: Typo fix its "barbarian", not "barberian"  
+
+==1/22/2016==
+Angelox: #bot [create] uses class and race names instead of numbers.
+Lazylob: Attempt2: Fix for some group spells only casting the caster
+
+==1/21/2016==
+Lazylob: Fix for BotRaid agro not clearing after zone
+Lazylob: Fix for some group spells only casting the caster
+
+==1/20/2016==
+Lazylob: Fixed a problem with mobs holding onto bot aggro after zoning
+
+==1/15/2016==
+Cerbert: Added initialization to result variable to stop crash if sql function call fails in DB on mysql_free_result call.
+
+==1/4/2016==
+Lazylob: Adjusted MageBots to only summon epic pets if the owner has completed the mage epic
+
+==12/28/2015==
+ Lazylob: Fixed bug where bot raids would cause the client to be in a casting state
+
+==12/23/2015==
+ Angelox: Fixed bug that was crashing zone on raid Evac.
+ Lazylob: Fixed Bot pets's null attacks
+ 
+==10/29/2015==
+ Angelox: Reverted last fixes.
+ 
+==10/23/2015==
+ Angelox: Re-worked BotDepop() and removed BotKill().    
+ 
+==10/16/2015==
+ Angelox: #bot [summon] [group] command re-worked. 
+ 
+==10/14/2015==
+ Angelox: Some additions to BotDepop() for ensuring a clean Depop.
+ 
+==10/12/2015==
+ Angelox: Fixed bug that enabled any bot to dual weld at any level. 
+ 
+==10/11/2015==
+ Angelox: Since Bots emulate clients, can't use underscores either (it breaks the group window)
+
+==10/10/2015==
+ Angelox: Randomized starter bots look.
+ 
+==10/04/2015==
+ Angelox: Found and fixed bug that was causing zone crashes with newbe bot spawning. 
+ 
+==10/02/2015==
+ Angelox: Newbe bot help text tweaked to look more natural. 
+ Angelox: Apostrophes allowed in CleanMobName() function (may have to make a CleanBotName() function if this clashes).
+ 
+==10/01/2015==
+ Angelox: Fixed small detail where newbe bots name would appear with underscore in a gsay.  
+ 
+==09/27/2015==
+ Angelox: Removed 04-29 fix, as it was crashing zones.
+
+==09/11/2015==
  Angelox: Fix for quest::depopall causing zone crash 
  
 ==07/26/2015==
