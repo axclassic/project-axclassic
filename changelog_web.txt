@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==7/25/2019==
+Patrikpatrik: Fixed color correction.
+
 ==1/24/2019==
 Patrikpatrik: Validated server redirection & fixed remaining https conflicts.
 
