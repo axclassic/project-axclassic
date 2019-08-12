@@ -564,16 +564,16 @@ sub EVENT_ITEM {
                     $client->Message(14,"I don want that stink'n bow, me wants a hunting bow!");
                     quest::summonitem(8003);
                 }
-                if(plugin::check_handin(\%itemcount, 8009 => 1)) {
+                elsif(plugin::check_handin(\%itemcount, 8009 => 1)) {
 #the wrong bow
                     $client->Message(14,"I don want that stink'n bow, me wants a hunting bow!");
                     quest::summonitem(8009);
                 }
                 if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-                    quest::givecash($copper, $silver, $gold, $platinum);
+                   quest::givecash($copper, $silver, $gold, $platinum);
                 }
                 $client->Message(14,"Dat ain't whats me asked ye fer!!");
-                plugin::return_items(\%itemcount);
+                 plugin::return_items(\%itemcount);
             }
         }
         elsif(($ulevel >= $twentyninebotlevel) && ($qglobals{bot_spawn_limit} <= 29)) {
@@ -582,12 +582,12 @@ sub EVENT_ITEM {
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Thanks $name!");
             }
-            else {
-                $client->Message(14,"Dat ain't whats me asked ye fer!");
-                plugin::return_items(\%itemcount);
-                if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-                    quest::givecash($copper, $silver, $gold, $platinum);
-                }
+#             else {
+#                 $client->Message(14,"Dat ain't whats me asked ye fer!");
+#                 plugin::return_items(\%itemcount);
+#                 if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+#                     quest::givecash($copper, $silver, $gold, $platinum);
+#                 }
             }
         }
         elsif(($ulevel >= $fortyfourbotlevel) && ($qglobals{bot_spawn_limit} <= 44)) {
