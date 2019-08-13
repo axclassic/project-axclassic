@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/13/2019==
+Angelox: Fixed/restored Rev5035 Aediles Thrall Script
+
 ==08/11/2019==
 Angelox: Partial fix for bugged Aediles Thrall Script.
 
