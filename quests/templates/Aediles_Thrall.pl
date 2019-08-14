@@ -643,7 +643,7 @@ sub EVENT_ITEM {
 	    $ranonce = 1;
         }
 	if($ranonce<=0) {
-	    $client->Message(14,"Dat ain't whats me asked ye fer!!!");
+	    $client->Message(14,"I don want dat! Yer wasting me time!");
 	    plugin::return_items(\%itemcount);
 	    if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
 		quest::givecash($copper, $silver, $gold, $platinum);
