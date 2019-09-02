@@ -47,7 +47,7 @@ sub EVENT_TIMER{
    }
    elsif($timer eq "Fithround"){
    quest::stoptimer("Fithround");
-   quest::depop(128003);
+   quest::depop(128006);
    quest::depop(128162);
    quest::spawn2(128151,0,0,575,-700,1,253);
    quest::spawn2(128151,0,0,225,-700,1,253);
@@ -71,7 +71,7 @@ sub EVENT_TIMER{
    }
     elsif($timer eq "Eighthround"){
    quest::stoptimer("Eighthround");
-   quest::depop(128001);
+   quest::depop(128003);
    quest::depop(128163);
    quest::spawn2(128151,0,0,575,-650,1,253);
    quest::spawn2(128151,0,0,225,-650,1,253);
@@ -88,7 +88,7 @@ sub EVENT_TIMER{
    elsif($timer eq "Tenthround"){
    quest::stoptimer("Tenthround");
    quest::depop(128164);
-   quest::depop(128007);
+   quest::depop(128001);
    quest::spawn2(128151,0,0,225,-600,1,253);
    quest::spawn2(128151,0,0,575,-600,1,253);
    quest::depop();
