@@ -90,7 +90,7 @@ sub EVENT_TIMER{
    quest::depop(128164);
    quest::depop(128007);
    quest::spawn2(128151,0,0,225,-600,1,253);
-   quest::spawn2(128151,0,0,575,600,1,253);
+   quest::spawn2(128151,0,0,575,-600,1,253);
    quest::depop();
    }
      else{
