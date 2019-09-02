@@ -16,7 +16,7 @@ sub EVENT_SIGNAL {
     }	
     if($signal == 1286) { ##signal 1284 is from each of the each of the Forbidding Gargoyles##
     $counter += 1;
-	   if($counter == 1) {
+	   if($counter == 2) {
 	quest::spawn2(128098,0,0,1288.2,-1472,-125.8,0);
 	quest::depop();
     }	
