@@ -6,6 +6,26 @@
 	}
     elsif($signal == 12821) {
     quest::depopall(128151);
+	quest::depop(128000);
+	quest::depop(128001);
+	quest::depop(128002);
+	quest::depop(128003);
+	quest::depop(128004);
+	quest::depop(128005);
+	quest::depop(128006);
+	quest::depop(128007);
+	quest::depop(128153);
+	quest::depop(128154);
+	quest::depop(128155);
+	quest::depop(128156);
+	quest::depop(128157);
+	quest::depop(128158);
+	quest::depop(128159);
+	quest::depop(128160);
+	quest::depop(128161);
+	quest::depop(128162);
+	quest::depop(128163);
+	quest::depop(128164);
     quest::depop();	
     }
 	  else{
