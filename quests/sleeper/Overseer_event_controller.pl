@@ -20,7 +20,7 @@ sub EVENT_SIGNAL {
     }	
     if($signal == 1284) { ##signal 1284 is from each of the each of the NPC's on the balcony level##
     $counter += 1;
-	   if($counter == 10) {
+	   if($counter == 9) {
 	quest::spawn2(128145,0,0,384.6,-367.3,101.9,129);
 	quest::depop();
     }	
