@@ -35,7 +35,7 @@ sub EVENT_SAY {
       quest::say("The kind of trouble that happens when someone does somethin' they shouldn't. They woke Kerafyrm up and they paid for it, believe me. This place has changed too, seemingly because there are these new Ancient dragons who control it. They're awaiting the return of Kerafyrm from whereever he is, and they dont want anyone to disturb them. So it comes to bear, are you here to find the $ancients?");
 	  }
 	if($text=~/ancients/i){
-	quest::spawn2(128108,0,0,1104,-1743,101,0);
+	quest::spawn2(128168,0,0,1104,-1743,101,0);
 	quest::depop();
 	}
    }
