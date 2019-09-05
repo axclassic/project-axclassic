@@ -5,7 +5,7 @@ sub EVENT_SAY {
   my $trek = quest::saylink("trek", 1);
   my $saw = quest::saylink("saw", 1);
   my $undescribable = quest::saylink("undescribable", 1);
-  my $friends = quest::saylink("friends", 1);
+  my $text2 = quest::saylink("friends", 1);
   my $trouble = quest::saylink("trouble", 1);
   my $ancients = quest::saylink("ancients", 1);
      if($text=~/hail/i){
@@ -14,7 +14,7 @@ sub EVENT_SAY {
     }
 	if($text=~/why/i){
     quest::say("If'n ye looked around ye at all, ye'd see that there was a bunch of wyverns 'round here. Now how is it that a little gnome like meself could survive in this place with all of them runnin' round?");
-    quest::say("Exactly, I couldn't and didn't. I came here a long time ago, searchin' for treasures and $information the likes of whichI never thought possible. I tried to get a couple of my old $friends along too, but they thought it was goin' to be too dangerous. I guess they were right, and I shouldn't have ever come here, but I did.");
+    quest::say("Exactly, I couldn't and didn't. I came here a long time ago, searchin' for treasures and $information the likes of whichI never thought possible. I tried to get a couple of my old friends along too, but they thought it was goin' to be too dangerous. I guess they were right, and I shouldn't have ever come here, but I did.");
 	}
    if($text=~/information/i){
      quest::say("Well, long time ago there was this story 'bout a sleeping critter who was a mean ol' guy that no one really liked all that much. Some of his brothers an' sisters decided that they were goin' to put him to bed for being so mean, and so they locked him up deep down inside this tomb. They chose four of the most strongest an' had them keep him under wraps so he wouldn't get loose an' go on a killind spree. Anyway, I caught wind of this and decided that this was the greatest achievement a gnome like meself could ever make, and I began a $trek for it.");
@@ -26,16 +26,16 @@ sub EVENT_SAY {
       quest::say("It was truly $undescribable.");
     }
 	if($text=~/undescribable/i){
-      quest::say("Are ye daft? I said it were truly undescribableI wish my $friends were here.");
+      quest::say("Are ye daft? I said it were truly undescribableI wish my $text2 were here.");
     }
 	if($text=~/friends/i){
-      quest::say("Paldar and Ulessa Bladesoul. A couple of the most enjoyable people I've every known. They tried to convince me that coming here so long ago was a bad idea, but being the foolish explorer that I was, I made my way here anyway. They tried to tell me that there were bad things brewin' down here, and that any attempt to find orsomehow wake the dragon up was a bad idea. It turned out they were right. Not only that, but not too long ago, some more daring explorers came here and woke him up. When they did that, there was a whole lot of $trouble for everyone.");
+      quest::say("Paldar and Ulessa Bladesoul. A couple of the most enjoyable people I've every known. They tried to convince me that coming here so long ago was a bad idea, but being the foolish explorer that I was, I made my way here anyway. They tried to tell me that there were bad things brewin' down here, and that any attempt to find or somehow wake the dragon up was a bad idea. It turned out they were right. Not only that, but not too long ago, some more daring explorers came here and woke him up. When they did that, there was a whole lot of $trouble for everyone.");
     }
 	if($text=~/trouble/i && !defined $qglobals{"Sleeperawake"}){
       quest::say("The kind of trouble that happens when someone does somethin' they shouldn't. They tried to wake Kerafyrm up and they paid for it, believe me. As will be yer fate if you continue exploring these here halls of death.");
 	  }
 	if($text=~/trouble/i && defined $qglobals{"Sleeperawake"} == 1){
-      quest::say("The kind of trouble that happens when someone does somethin' they shouldn't. They woke Kerafyrm up and they paid for it, believe me. This place has changed too, seemingly because there are these new Ancient dragons who control it. They're awaiting the return of Kerafyrm from whereever he is, and they dont want anyone to disturb them. So it comes to bear, are you here to find the $ancients?");
+      quest::say("The kind of trouble that happens when someone does somethin' they shouldn't. They woke Kerafyrm up and they paid for it, believe me. This place has changed too, seemingly because there are these new Ancient dragons who control it. They're awaiting the return of Kerafyrm from where ever he is, and they dont want anyone to disturb them. So it comes to bear, are you here to find the $ancients?");
 	  }
 	if($text=~/ancients/i && defined $qglobals{"Sleeperawake"} == 1){
 	quest::spawn2(128168,0,0,1104,-1743,101,0);
