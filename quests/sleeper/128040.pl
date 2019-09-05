@@ -31,10 +31,13 @@ sub EVENT_SAY {
 	if($text=~/friends/i){
       quest::say("Paldar and Ulessa Bladesoul. A couple of the most enjoyable people I've every known. They tried to convince me that coming here so long ago was a bad idea, but being the foolish explorer that I was, I made my way here anyway. They tried to tell me that there were bad things brewin' down here, and that any attempt to find orsomehow wake the dragon up was a bad idea. It turned out they were right. Not only that, but not too long ago, some more daring explorers came here and woke him up. When they did that, there was a whole lot of $trouble for everyone.");
     }
-	if($text=~/trouble/i){
+	if($text=~/trouble/i && !defined $qglobals{"Sleeperawake"}){
+      quest::say("The kind of trouble that happens when someone does somethin' they shouldn't. They tried to wake Kerafyrm up and they paid for it, believe me. As will be yer fate if you continue exploring these here halls of death.");
+	  }
+	if($text=~/trouble/i && defined $qglobals{"Sleeperawake"} == 1){
       quest::say("The kind of trouble that happens when someone does somethin' they shouldn't. They woke Kerafyrm up and they paid for it, believe me. This place has changed too, seemingly because there are these new Ancient dragons who control it. They're awaiting the return of Kerafyrm from whereever he is, and they dont want anyone to disturb them. So it comes to bear, are you here to find the $ancients?");
 	  }
-	if($text=~/ancients/i){
+	if($text=~/ancients/i && defined $qglobals{"Sleeperawake"} == 1){
 	quest::spawn2(128168,0,0,1104,-1743,101,0);
 	quest::depop();
 	}

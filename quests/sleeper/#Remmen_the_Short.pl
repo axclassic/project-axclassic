@@ -15,7 +15,7 @@ sub EVENT_SAY {
    elsif($text=~/guardians/i && !defined $qglobals{"Sleeperawake"}){
     quest::say("The gargoyles and the golems you have seen so far are the most basic of all the creations in this tomb. However beyond this hall you will find creatures of even greater spite and power. Beyond this hall you will begin to understand the immensity of the situation which you are in,as well as the control that the Ancients have on those who enter this liar. If I were in your position, I would turn back and leave the liar before chaos erupted into my very essence, as it is sure to do in yours and as it has in many before you.");
     }
-   elsif($text=~/hail/i && !defined $qglobals{"Sleeperawake"} == 1){
+   elsif($text=~/hail/i && !defined $qglobals{"Sleeperawake"}){
      quest::say("You have traveled a great distance, and already bested a great many challenges to find me here, so for that I salute your effort. However, mortal being, your effort has been in vain, for the challenges that await you are far more difficult than that which you have encountered thus far. That you have reached me here shows that you are indeed headstrong and able, however do not confuse these things with the ability to best the $guardians which walk these halls beyond.");
     }
 	elsif($text=~/forsaken/i && defined $qglobals{"Sleeperawake"} == 1){

@@ -6,10 +6,10 @@ sub EVENT_SPAWN {
     }
 sub EVENT_SIGNAL {
     if($signal == 12812) { ##signal 12812 is that Drakeen Apprentice is dead##
-    quest::settimer("Apprentice",300); 
+    quest::settimer("Apprentice",120); 
 	}	
     elsif($signal == 12813) { ##signal 12813 is from Drakeen Protector is dead##
-   quest::settimer("Protector",300);
+   quest::settimer("Protector",120);
    }
    elsif($signal == 12814) { ##signal 12814 is from Drakeen Controller is dead##
    quest::settimer("Controller",10);
