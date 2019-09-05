@@ -78,7 +78,7 @@ if($text=~/Hail/i) {
   ##Drakeen Scales (29483) Drops from Drakeen Controller## 
 if ($itemcount{20410} == 1) { 
     quest::emote(' melds the components inside the pouch to form a spiritual concoction. He then ingests the mixture and changes shape into a menacing drake. Unawares of the difficulties of spiritual transference to corporeal form, the beast goes insane and begins attacking you!');
-    quest::spawn2(128111,0,0,-74.8,-1233,90,0);
+    quest::spawn2(128140,0,0,-74.8,-1233,90,0);
 	$client->Message(14,"The once proud ghost of Paldar Bladesoul screeches and claws its way toward you, insanity rushing through it as though a demon itself possessed it."); 
 	quest::depop();
 	}
