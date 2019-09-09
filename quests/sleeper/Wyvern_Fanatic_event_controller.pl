@@ -1,6 +1,6 @@
 sub EVENT_SIGNAL {
     if($signal == 1290) { ##signal 1290 is that Sinister Gargoyle is dead##
-    quest::settimer("Fanatic",60); 
+    quest::settimer("Fanatic",30); 
 	}
  }
 sub EVENT_TIMER{
