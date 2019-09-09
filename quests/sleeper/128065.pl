@@ -1,7 +1,8 @@
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
 	$y = $npc->GetY();
-	quest::set_proximity($x - 10 $x + 10 $y - 10 $y + 10);
+	$z = $npc->GetZ();
+	quest::set_proximity($x - 130, $x + 130, $y - 130, $y + 130, $z - 30, $z + 30);
 }
 sub EVENT_ENTER {
 $client->Message(14,"As you turn the corner, you catch a glimpse of a beast beyond mangled and twisted by decades of decay.");
