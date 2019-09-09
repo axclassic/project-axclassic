@@ -14,7 +14,7 @@ sub EVENT_SIGNAL {
     if($signal == 1287) { ##signal 1285 is that a Sinister Gargoyle has spawned##
     quest::depop(); 
     }	
-    if($signal == 1286) { ##signal 1284 is from each of the each of the Forbidding Gargoyles##
+    if($signal == 1286) { ##signal 1284 is from each of the each of the an aged caretaker ID 128167 only##
     $counter += 1;
 	   if($counter == 2) {
 	quest::spawn2(128098,0,0,1288.2,-1472,-125.8,0);
