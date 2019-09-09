@@ -5,6 +5,6 @@ sub EVENT_SPAWN {
 }
 sub EVENT_ENTER {
 $client->Message(14,"As you turn the corner, you bare witness to a frigid caretaker down the hall, waiting for you.");
-quest::spawn2(128097,0,0,1298,-1808,-127,129);
+quest::spawn2(128099,0,0,623.2,-1335.3,-445.8,4.5);
 quest::depop();
 }

@@ -6,6 +6,6 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER{
    if($timer eq "Fanatic"){
    quest::stoptimer("Fanatic");
-   quest::spawn2(128071,0,0,212,-2383,-698,64);
+   quest::spawn2(128071,0,0,623.2,-1335.3,-445.8,4.5);
    }
 }   
