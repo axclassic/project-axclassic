@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/10/2019==
+Aardil: Sleepers Tomb revamped to match closely as possible as it did.
+
 ==08/13/2019==
 Angelox: Fixed/restored Rev5035 Aediles Thrall Script
 
