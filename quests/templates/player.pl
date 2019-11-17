@@ -63,24 +63,24 @@ sub EVENT_ENTERZONE {
             quest::setglobal("cazpop",3,3,"F");
         }
     }
-    elsif($zoneid ==  20 ) {
+#    elsif($zoneid ==  20 ) {
         ##Kitchicor
-        if(($zonetime >= 0)&&($zonetime <= 800)) {
-            #nighttime
-            quest::spawn_condition("kithicor", 2,0); #live are 2
-            quest::spawn_condition("kithicor", 1,1); #undead are 1
-        }
-        elsif(($zonetime >= 2000)&&($zonetime <= 2359)) {
-            #nighttime
-            quest::spawn_condition("kithicor", 2,0); #live are 2
-            quest::spawn_condition("kithicor", 1,1);#undead are 1
-        }
-        else {
-            #daytime
-            quest::spawn_condition("kithicor",2,1);
-            quest::spawn_condition("kithicor",1,0);
-        }
-    }
+#        if(($zonetime >= 0)&&($zonetime <= 800)) {
+#            #nighttime
+#            quest::spawn_condition("kithicor", 2,0); #live are 2
+#            quest::spawn_condition("kithicor", 1,1); #undead are 1
+#        }
+#        elsif(($zonetime >= 2000)&&($zonetime <= 2359)) {
+#            #nighttime
+#            quest::spawn_condition("kithicor", 2,0); #live are 2
+#            quest::spawn_condition("kithicor", 1,1);#undead are 1
+#        }
+#        else {
+#            #daytime
+#            quest::spawn_condition("kithicor",2,1);
+#            quest::spawn_condition("kithicor",1,0);
+#        }
+#    }
     elsif(($zoneid ==  59 ) && ($event3 == 1) && ($williampop == 0)) {
         ##Mistmoore forWilliam spawn
             quest::spawn2(59161,0,0,361.0,-213.0,-136.8,126.0);
