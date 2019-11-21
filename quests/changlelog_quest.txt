@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/21/2019==
+Angelox: Fixes to night spawning scripts
+
 ==09/10/2019==
 Aardil: Sleepers Tomb revamped to match closely as possible as it did.
 
