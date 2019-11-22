@@ -11,10 +11,10 @@ sub EVENT_SPAWN {
       quest::spawn_condition("commons", 1,0);        #Undead has Condition 1, so 0 spawns them
       quest::spawn_condition("commons", 2,1);        #Live have Condition 2
    }
-   else {                                            #daytime
-      quest::spawn_condition("commons",1,1);
-      quest::spawn_condition("commons",2,0);
-   }
+#   else {                                            #daytime
+#      quest::spawn_condition("commons",1,1);
+#      quest::spawn_condition("commons",2,0);
+#   }
 }
 
 sub EVENT_WAYPOINT {
@@ -26,9 +26,9 @@ sub EVENT_WAYPOINT {
       quest::spawn_condition("commons", 1,0);        #Undead has Condition 1, so 0 spawns them
       quest::spawn_condition("commons", 2,1);        #Live have Condition 2
    }
-   else {                                            #daytime
-      quest::spawn_condition("commons",1,1);
-      quest::spawn_condition("commons",2,0);
-   }
+#   else {                                            #daytime
+#      quest::spawn_condition("commons",1,1);
+#      quest::spawn_condition("commons",2,0);
+#   }
 }
 ## End of spawn script
