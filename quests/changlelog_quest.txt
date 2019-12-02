@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/01/2019==
+Congdar: Terrorantula scripting in South Ro
+
 ==09/21/2019==
 Angelox: Fixes to night spawning scripts
 
