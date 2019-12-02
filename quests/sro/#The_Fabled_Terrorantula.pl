@@ -7,4 +7,16 @@ sub EVENT_DEATH {
     quest::spawn2(35075,15,0,$x - 5,$y,$z,$h);
     quest::spawn2(35075,15,0,$x,$y + 5,$z,$h);
     quest::spawn2(35075,15,0,$x,$y - 5,$z,$h);
+    quest::spawn2(35075,15,0,$x + 5,$y,$z,$h);
+    quest::spawn2(35075,15,0,$x - 5,$y,$z,$h);
+    quest::spawn2(35075,15,0,$x,$y + 5,$z,$h);
+    quest::spawn2(35075,15,0,$x,$y - 5,$z,$h);
+    quest::spawn2(35075,15,0,$x + 5,$y,$z,$h);
+    quest::spawn2(35075,15,0,$x - 5,$y,$z,$h);
+    quest::spawn2(35075,15,0,$x,$y + 5,$z,$h);
+    quest::spawn2(35075,15,0,$x,$y - 5,$z,$h);
+    quest::spawn2(35075,15,0,$x + 5,$y,$z,$h);
+    quest::spawn2(35075,15,0,$x - 5,$y,$z,$h);
+    quest::spawn2(35075,15,0,$x,$y + 5,$z,$h);
+    quest::spawn2(35075,15,0,$x,$y - 5,$z,$h);
 }
