@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/19/2019==
+Congdar: City of Mist updates to Shaman and ShadowKnight quests
+
 ==12/01/2019==
 Congdar: Terrorantula scripting in South Ro
 
