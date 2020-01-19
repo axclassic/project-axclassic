@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==01/19/2020==
+Congdar: Fix item Charm of Deception
+
 ==12/19/2019==
 Congdar: City of Mist updates to Shaman and ShadowKnight quests
 
