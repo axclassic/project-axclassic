@@ -48,6 +48,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(62863); #Druid Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Druid Epic!");
 }
 elsif($ulevel == 65 && $class == 'druid' && plugin::check_handin(\%itemcount, 62863 => 1)) { #Druid epic 1.5 to 2.0
@@ -86,6 +88,8 @@ $client->Message(6,"When everything gets back to normal you notice that you forg
 quest::summonitem(5532); #Give back the Sprenkler...
 quest::summonitem(9955);#Cleric Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Cleric Epic!");
 }
 elsif($ulevel == 65 && $class == 'cleric' && plugin::check_handin(\%itemcount, 9955 => 1)) { #Cleric epic 1.5 to 2.0
@@ -123,6 +127,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(50003);#Shadowknight Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Shadowknight Epic!");
 }
 elsif($ulevel == 65 && $class == 'shadowknight' && plugin::check_handin(\%itemcount, 50003 => 1)) { #Shadowknight epic 1.5 to 2.0
@@ -160,6 +166,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(57400);#Shaman Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Shaman Epic!");
 }
 elsif($ulevel == 65 && $class == 'shaman' && plugin::check_handin(\%itemcount, 57400 => 1)) { #Shaman epic 1.5 to 2.0
@@ -197,6 +205,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(12665);#Wizard Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Wizard Epic!");
 }
 elsif($ulevel == 65 && $class == 'wizard' && plugin::check_handin(\%itemcount, 12665 => 1)) { #Wizard epic 1.5 to 2.0
@@ -234,6 +244,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(19092);#Magician Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Magician Epic!");
 }
 elsif($ulevel == 65 && $class == 'magician' && plugin::check_handin(\%itemcount, 19092 => 1)) { #Magician epic 1.5 to 2.0
@@ -271,6 +283,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!.");
 quest::summonitem(52952);#Enchanter Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Enchanter Epic!");
 }
 elsif($ulevel == 65 && $class == 'enchanter' && plugin::check_handin(\%itemcount, 52952 => 1)) { #Enchanter epic 1.5 to 2.0
@@ -308,6 +322,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(62581);#Necromancer Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Necromancer Epic!");
 }
 elsif($ulevel == 65 && $class == 'necromancer' && plugin::check_handin(\%itemcount, 62581 => 1)) { #Necromancer epic 1.5 to 2.0
@@ -345,6 +361,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(60321);#Warrior Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Warrior Epic!");
 }
 elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 66176 => 1)){ #Warrior epic 1.0 to 1.5
@@ -391,6 +409,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(52347); #Roque Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Roque Epic!");
 }
 elsif($ulevel == 65 && $class == 'roque' && plugin::check_handin(\%itemcount, 52347 => 1)) { #Roque epic 1.5 to 2.0
@@ -428,6 +448,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(61025); #Monk Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Monk Epic!");
 }
 elsif($ulevel == 65 && $class == 'monk' && plugin::check_handin(\%itemcount, 61025 => 1)) { #Monk epic 1.5 to 2.0
@@ -465,6 +487,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(52911); #Beastlord Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Beastlord Epic!");
 }
 elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 8496 => 1)) { #Beastlord epic 1.0 to 1.5
@@ -511,6 +535,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(77631); #Bard Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Bard Epic!");
 }
 elsif($ulevel == 65 && $class == 'bard' && plugin::check_handin(\%itemcount, 77631 => 1)) { #Bard epic 1.5 to 2.0
@@ -548,6 +574,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(64031); #Paladin Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Paladin Epic!");
 }
 elsif($ulevel == 65 && $class == 'paladin' && plugin::check_handin(\%itemcount, 64031 => 1)) { #Paladin epic 1.5 to 2.0
@@ -585,6 +613,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(18398); #Berserker Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Berserker Epic!");
 }
 elsif($ulevel == 65 && $class == 'berserker' && plugin::check_handin(\%itemcount, 18398 => 1)) { #Berserker epic 1.5 to 2.0
@@ -622,6 +652,8 @@ $client->Message(6,"You are starting to feel strange as the old man begins to ch
 $client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 quest::summonitem(62627); #Ranger Epic 1.5
 quest::level(10); #Set level to 10
+quest::setglobal("EpicBox", 1, 5, "F");	
+$client->Message(14,"You recieve the Epic flag!");
 quest::shout2("Please congratulate!! $name is now working on the 1.5 Ranger Epic!");
 }
 elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 20487 => 1)) { #Ranger epic 1.0 to 1.5 || plugin::check_handin(\%itemcount, 204887 => 1)
