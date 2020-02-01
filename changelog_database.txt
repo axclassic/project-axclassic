@@ -1,7 +1,7 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==01/31/2020==
-Congdar: Removed Attuneable flag from all items.
+Congdar: Removed Attuneable flag from all items. 
 
 ==02/23/2018==
 Angelox: Doors database update.
