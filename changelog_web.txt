@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==02/21/2020==
+Patrikpatrik: Redirected links update.
+
 ==11/17/2019==
 Patrikpatrik: Addition of Thanksgiving Event to the Special Events section.
 
