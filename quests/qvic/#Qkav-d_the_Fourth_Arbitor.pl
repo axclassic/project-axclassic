@@ -1,22 +1,52 @@
+# Qvic Raid Event: Cynosure Kvanjji
+
 sub EVENT_AGGRO {
-  quest::settimer(1,20);
-  }
+   quest::settimer("Fourth", 20);
+}
   
 sub EVENT_TIMER {
-  quest::signalwith(295149,1);
-  }
+   if($timer eq "Fourth") {
+      quest::emote("channels its energy and begins to heal Cynosure Kvanjji.");
+      quest::signalwith(295146, 0);
+   }
+   if($timer eq "CastSpells") {
+      CastSpells();
+   }
+}
+
+sub CastSpells {
+   $SpellToCast = quest::ChooseRandom(4567, 4723, 4749, 4748, 4734, 4121, 4722);
+   $SpellTarget = $npc->GetHateMost();
+   $npc->CastSpell($SpellToCast, $SpellTarget->GetID());
+}
+
+sub EVENT_SIGNAL {
+   if($signal == 0) {
+      quest::emote("heals Cynosure Kvanjji's wounds.");
+   }
+   elsif($signal == 1) {
+      quest::stoptimer("Fourth");
+      quest::settimer("CastSpells", 35);
+      CastSpells();
+   }
+   else {
+      $Cynosure = $entity_list->GetMobByNpcTypeID(295146);
+      if($Cynosure) {
+         quest::emote("locks minds with Cynosure Kvanjji, as it mimics the Cynosure's spell.");
+         $SpellTarget = $Cynosure->GetHateRandom();
+         $npc->CastSpell($signal, $SpellTarget->GetID());
+      }
+   }
+}
 
 sub EVENT_DEATH {
-  $check_cyno = $entity_list->GetMobByNpcTypeID(295149);
-  $check_named = $entity_list->GetMobByNpcTypeID(295146);
-  $check_named = $entity_list->GetMobByNpcTypeID(295147);
-  $check_named = $entity_list->GetMobByNpcTypeID(295145);
-  if($check_cyno == 0) {
-      }
-  elsif($check_named == 0) {
-    quest::spanw2(295145,0,0,-216,-191,-467,192);
-    quest::spanw2(295146,0,0,-316,-181,-464,64);
-    quest::spanw2(295147,0,0,-243,-250,-439,248);
-    quest::spanw2(295148,0,0,-357,-275,-435,25);
-  }
+   quest::stoptimer("CastSpells");
+   quest::stoptimer("Fourth");
+   $check_cyno = $entity_list->GetMobByNpcTypeID(295146);
+   if($check_cyno) {
+      quest::signalwith(295146, 4, 20000);
+   }
 }
+
+# NPC #Qkav`d_the_Fourth_Arbitor (295150)
+
