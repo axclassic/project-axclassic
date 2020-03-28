@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==03/28/2020==
+Congdar: fix Priest of Discord Rift of... spells.
+
 ==03/18/2020==
 Congdar: Qvic revamp
 

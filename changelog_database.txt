@@ -1,5 +1,9 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==03/28/2020==
+Congdar: fix Priest of Discord Rift of... spells.
+Congdar: update item Stone of the Dark Master from Feign Death to Death Peace
+
 ==01/31/2020==
 Congdar: Removed Attuneable flag from all items. 
 
