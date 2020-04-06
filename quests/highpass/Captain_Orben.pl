@@ -17,7 +17,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-    if($itemcount{13792} == 1) {
+    if(plugin::check_handin(\%itemcount, 13792 => 1)) {
         quest::givecash(6,7,2,0);
         quest::faction(149,5);
         quest::faction(31,2);
@@ -26,7 +26,14 @@ sub EVENT_ITEM {
         quest::faction(105,2);
         quest::ding();quest::exp(1000);
     }
-    if($itemcount{13792} == 1) {
+    if(plugin::check_handin(\%itemcount, 13792 => 2)) {
+        quest::givecash(6,7,2,0);
+        quest::faction(149,5);
+        quest::faction(31,2);
+        quest::faction(214,2);
+        quest::faction(53,2);
+        quest::faction(105,2);
+        quest::ding();quest::exp(1000);
         quest::givecash(6,7,2,0);
         quest::faction(149,5);
         quest::faction(31,2);
@@ -35,7 +42,21 @@ sub EVENT_ITEM {
         quest::faction(105,2);
         quest::ding();quest::exp(1000);
     }
-    if($itemcount{13792} == 1) {
+    if(plugin::check_handin(\%itemcount, 13792 => 3)) {
+        quest::givecash(6,7,2,0);
+        quest::faction(149,5);
+        quest::faction(31,2);
+        quest::faction(214,2);
+        quest::faction(53,2);
+        quest::faction(105,2);
+        quest::ding();quest::exp(1000);
+        quest::givecash(6,7,2,0);
+        quest::faction(149,5);
+        quest::faction(31,2);
+        quest::faction(214,2);
+        quest::faction(53,2);
+        quest::faction(105,2);
+        quest::ding();quest::exp(1000);
         quest::givecash(6,7,2,0);
         quest::faction(149,5);
         quest::faction(31,2);
@@ -44,7 +65,28 @@ sub EVENT_ITEM {
         quest::faction(105,2);
         quest::ding();quest::exp(1000);
     }
-    if($itemcount{13792} == 1) {
+    if(plugin::check_handin(\%itemcount, 13792 => 4)) {
+        quest::givecash(6,7,2,0);
+        quest::faction(149,5);
+        quest::faction(31,2);
+        quest::faction(214,2);
+        quest::faction(53,2);
+        quest::faction(105,2);
+        quest::ding();quest::exp(1000);
+        quest::givecash(6,7,2,0);
+        quest::faction(149,5);
+        quest::faction(31,2);
+        quest::faction(214,2);
+        quest::faction(53,2);
+        quest::faction(105,2);
+        quest::ding();quest::exp(1000);
+        quest::givecash(6,7,2,0);
+        quest::faction(149,5);
+        quest::faction(31,2);
+        quest::faction(214,2);
+        quest::faction(53,2);
+        quest::faction(105,2);
+        quest::ding();quest::exp(1000);
         quest::givecash(6,7,2,0);
         quest::faction(149,5);
         quest::faction(31,2);
@@ -53,5 +95,7 @@ sub EVENT_ITEM {
         quest::faction(105,2);
         quest::ding();quest::exp(1000);
     }
+    # Return unused items
+    plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:highpass  ID:5036 -- Captain_Orben 
