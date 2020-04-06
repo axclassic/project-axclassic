@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==04/06/2020==
+Congdar: fix Captain Orben gnoll scalp quest
+
 ==03/28/2020==
 Congdar: fix Priest of Discord Rift of... spells.
 
