@@ -24,7 +24,34 @@ sub EVENT_ITEM {
         quest::faction(214,2);
         quest::faction(53,2);
         quest::faction(105,2);
-        quest::exp(1000);
+        quest::ding();quest::exp(1000);
+    }
+    if($itemcount{13792} == 1) {
+        quest::givecash(6,7,2,0);
+        quest::faction(149,5);
+        quest::faction(31,2);
+        quest::faction(214,2);
+        quest::faction(53,2);
+        quest::faction(105,2);
+        quest::ding();quest::exp(1000);
+    }
+    if($itemcount{13792} == 1) {
+        quest::givecash(6,7,2,0);
+        quest::faction(149,5);
+        quest::faction(31,2);
+        quest::faction(214,2);
+        quest::faction(53,2);
+        quest::faction(105,2);
+        quest::ding();quest::exp(1000);
+    }
+    if($itemcount{13792} == 1) {
+        quest::givecash(6,7,2,0);
+        quest::faction(149,5);
+        quest::faction(31,2);
+        quest::faction(214,2);
+        quest::faction(53,2);
+        quest::faction(105,2);
+        quest::ding();quest::exp(1000);
     }
 }
 #END of FILE Zone:highpasshold  ID:407096 -- Captain_Orben 
