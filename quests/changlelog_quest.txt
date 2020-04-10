@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==04/09/2020==
+Congdar: more highpass updates
+
 ==04/06/2020==
 Congdar: fix Captain Orben gnoll scalp quest
 

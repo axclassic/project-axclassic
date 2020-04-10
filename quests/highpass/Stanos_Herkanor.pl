@@ -52,6 +52,10 @@ sub EVENT_SAY {
       quest::signalwith(5037, 1, 2);
       }
     }
+    elsif($text=~/I killed Renux/i) {
+        quest::say("You killed Renux? You stupid git of a dog! Renux was my best work, a killer without peer, without remorse. All I did to her, I did for a reason, and it made her matchless. Ravens take your eyes! All you needed to do was gather evidence. When Hanns' believed me, Renux would follow. A hollow victory, it seems. I suppose you had to do it, but I imagine it cost you in the process. When this is over, perhaps you and I shall have a reckoning.");
+        quest::faction(149,-500); #Highpass Guards
+    }
     elsif($text=~/who are you/i) {
       quest::say("<chuckle> You are young, aren't you? I ran [the Circle] out of Qeynos for well over 30 years, and did a right fine job of it. It's a long story, and isn't over yet. I have much to answer for.");
     }
