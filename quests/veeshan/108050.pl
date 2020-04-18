@@ -1,32 +1,4 @@
 #Silverwing NPCID: 108050
-my $leashX = 0;
-my $leashY = 0;
-my $leashZ = 0;
-my $leashH = 0;
-
-sub EVENT_SPAWN {
-   $leashX = $x;
-   $leashY = $y;
-   $leashZ = $z;
-   $leashH = $h;
-}
-
-sub EVENT_AGGRO {
-   quest::settimer("LeashSilverwing",5);
-}
-
-sub EVENT_TIMER {
-   if($timer eq "LeashSilverwing") {
-      my $distanceCHK = $npc->CalculateDistance($leashX, $leashY, $leashZ);
-      if($distanceCHK >= 20) {
-         $npc->GMMove($leashX, $leashY, $leashZ, $leashH);
-      }
-   }
-}
-
-sub EVENT_DEATH {
-   quest::stoptimer("LeashSilverwing");
-}
 
 sub EVENT_SAY {
    if($text=~/Hail/i) {
@@ -63,3 +35,4 @@ sub EVENT_ITEM {
    }
    plugin::return_items(\%itemcount);
 }
+

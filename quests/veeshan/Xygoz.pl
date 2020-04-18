@@ -1,34 +1,9 @@
 # Veeshan's Peak Xygoz 108053
-my $leashX = 0;
-my $leashY = 0;
-my $leashZ = 0;
-my $leashH = 0;
-
-sub EVENT_SPAWN {
-   $leashX = $x;
-   $leashY = $y;
-   $leashZ = $z;
-   $leashH = $h;
-}
 
 sub EVENT_AGGRO {
-   quest::settimer("LeashXygoz",2);
    my $annoyer = $npc->GetHateMost();
    my $annoyerID = $annoyer->GetID();
    quest::signalwith(108020,$annoyerID);
-}
-
-sub EVENT_TIMER {
-   if($timer eq "LeashXygoz") {
-      my $distanceCHK = $npc->CalculateDistance($leashX, $leashY, $leashZ);
-      if($distanceCHK >= 20) {
-         $npc->GMMove($leashX, $leashY, $leashZ, $leashH);
-      }
-   }
-}
-
-sub EVENT_DEATH {
-   quest::stoptimer("LeashXygoz");
 }
 
 sub EVENT_SAY {

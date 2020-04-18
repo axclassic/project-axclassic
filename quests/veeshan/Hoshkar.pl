@@ -1,33 +1,9 @@
-my $leashX = 0;
-my $leashY = 0;
-my $leashZ = 0;
-my $leashH = 0;
-
-sub EVENT_SPAWN {
-   $leashX = $x;
-   $leashY = $y;
-   $leashZ = $z;
-   $leashH = $h;
-}
+# Hoshkar (108043)
 
 sub EVENT_AGGRO {
-   quest::settimer("LeashHoshkar",2);
    my $annoyer = $npc->GetHateMost();
    my $annoyerID = $annoyer->GetID();
    quest::signalwith(108017,$annoyerID);
-}
-
-sub EVENT_TIMER {
-   if($timer eq "LeashHoshkar") {
-      my $distanceCHK = $npc->CalculateDistance($leashX, $leashY, $leashZ);
-      if($distanceCHK >= 20) {
-         $npc->GMMove($leashX, $leashY, $leashZ, $leashH);
-      }
-   }
-}
-
-sub EVENT_DEATH {
-   quest::stoptimer("LeashHoshkar");
 }
 
 sub EVENT_SAY {
