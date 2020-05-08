@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==05/08/2020==
+Congdar: Anguish revamp
+
 ==04/18/2020==
 Congdar: veeshans peak remove mob leash from perl
 
