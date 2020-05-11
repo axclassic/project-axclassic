@@ -1,7 +1,7 @@
 ## This is the final encounter in the Asylum of Anguish raid expedition.  #Overlord_Mata_Muram (317000) becomes active once Arch Magus Vangl is dead. ##
 
-my $banished_hp = 30;
 my $banished_raid = 0;
+my $banished_hp = 30;
 my $reenable_summon = 0;
 my $reset_countdown = 0;
 my $GazeTarget = 0;
@@ -9,6 +9,33 @@ my $GazeTargetID = 0;
 my $BuzzTarget = 0;
 my $event_started = 0;
 my $worlds = quest::saylink("worlds", 1);
+
+sub EVENT_SPAWN {
+    if($banished_raid) {
+        quest::settimer("reset", 3600);
+        quest::settimer("banish_phase2", 5);
+        # --sitting
+        $npc->SetAppearance(1);
+        quest::modifynpcstat("hp_regen", "0");
+        $npc->SetHP($banished_hp);
+        $reenable_summon = 1;
+        quest::modifynpcstat("special_attacks", "ERQMCNIDf");
+    }
+	else {
+        $npc->SetHP($npc->GetMaxHP());
+        $banished_raid = 0;
+        $reenable_summon = 0;
+        $GazeTarget = 0;
+        $GazeTargetID = 0;
+        $BuzzTarget = 0;
+        $event_started = 0;
+        $reset_countdown = 0;
+        $banished_hp = 30;
+        # --sitting
+        $npc->SetAppearance(1);
+        quest::modifynpcstat("special_attacks", "SERQMCNIDABfWOH");
+	}
+}
 
 sub EVENT_SAY {
     if($event_started == 0) {
@@ -27,7 +54,9 @@ sub EVENT_SAY {
                 quest::setnexthpevent(80);
                 quest::modifynpcstat("special_attacks", "SERQMCNIDf");
                 my $random_raid_member = $client->GetRandomBotRaidMember();
-                $npc->AddToHateList($random_raid_member, 100);
+                if($random_raid_member) {
+                    $npc->AddToHateList($random_raid_member, 100);
+                }
             }
         }
     }
@@ -112,28 +141,6 @@ sub EVENT_HP {
 	}		
 }
 
-sub EVENT_SPAWN {
-	if($banished_raid == 0) {
-		$npc->SetHP($npc->GetMaxHP());
-		$event_started = 0;
-		$reset_countdown = 0;
-        $banished_hp = 30;
-        # --sitting
-		$npc->SetAppearance(1);
-        quest::modifynpcstat("special_attacks", "SERQMCNIDABfWOH");
-    }
-	else {
-        quest::settimer("reset", 3600);
-		quest::settimer("banish_phase2", 5);
-        # --sitting
-        $npc->SetAppearance(1);
-		quest::modifynpcstat("hp_regen", "0");
-		$npc->SetHP($banished_hp);
-		$reenable_summon = 1;
-        quest::modifynpcstat("special_attacks", "ERQMCNIDf");
-	}
-}
-
 sub EVENT_COMBAT {
     if($npc->IsEngaged()) {
         quest::stoptimer("reset");
@@ -146,8 +153,8 @@ sub EVENT_COMBAT {
 		quest::settimer("torment", (10 + int(rand(11))));
 		quest::settimer("pick6", 50);
         # -- Coerced_Lieutenant
-		quest::spawn2(317114, 0, 0,378, 4969, 279, 128);
-		quest::spawn2(317114, 0, 0,618, 4969, 279, 384);
+		quest::spawn2(317114, 0, 0, 378, 4969, 279, 128);
+		quest::spawn2(317114, 0, 0, 618, 4969, 279, 384);
         quest::settimer("coerced", 10);
 		if($reenable_summon) {
             quest::settimer("enable_summon", 10);
@@ -215,25 +222,47 @@ sub EVENT_TIMER {
                     quest::ze(15, "Mata Muram fixes his gaze on one of your companions.");
                     if($GazeTarget->IsClient()) {
                         $GazeTarget->Message(6, "You feel a gaze of deadly power focusing on you.");
+                        $GazeTargetID = 0;
                     }
-                    $GazeTargetID = $GazeTarget->GetNPCTypeID();
+                    else {
+                        $GazeTargetID = $GazeTarget->GetNPCTypeID();
+                    }
                     quest::settimer("mmgaze_cast", 10);
+                    quest::settimer("mmgaze_reflect", 5);
                     last;
                 }
             }
         }
     }
+    elsif($timer eq "mmgaze_reflect") {
+        if($npc->FindBuff(5685)) {
+            quest::stoptimer("mmgaze_reflect");
+            quest::ze(15, "Mata Muram grows weak as he is afflicted with his own magic.");
+            quest::settimer("mmgaze_reflect2", 2);
+        }
+    }
+    elsif($timer eq "mmgaze_reflect2") {
+        quest::stoptimer("mmgaze_reflect2");
+        quest::ze(15, "Mata Muram roars in anger, 'You dare use my own magic against me?!'");
+        quest::settimer("mmgaze_reflect3", 15);
+    }
+    elsif($timer eq "mmgaze_reflect3") {
+        quest::stoptimer("mmgaze_reflect3");
+        quest::ze(15, "Mata Muram shakes off the effects of his affliction.");
+    }
     elsif($timer eq "mmgaze_cast") {
-        $GazeTarget = $entity_list->GetMobByNpcTypeID($GazeTargetID);
+        if($GazeTargetID != 0) {
+            $GazeTarget = $entity_list->GetMobByNpcTypeID($GazeTargetID);
+        }
         if($GazeTarget) {
-            my $targetName = $GazeTarget->GetCleanName();
+            $targetName = $GazeTarget->GetCleanName();
             if($targetName) {
                 quest::emote(" fixes his gaze on $targetName");
                 # Spell: Mata Muram's Gaze
                 $npc->SendBeginCast(5685, 0);
                 quest::castspell(5685, $GazeTarget->GetID());
-                $GazeTarget = undef;
-                $targetName = undef;
+                $GazeTarget = 0;
+                $targetName = 0;
             }
         }
     }
@@ -245,7 +274,7 @@ sub EVENT_TIMER {
                 if($BuzzTarget) {
                     quest::ze(15, "You hear a buzzing in the distance.");
                     if($BuzzTarget->IsClient()) {
-                        $GazeTarget->Message(6, "You hear a strange buzzing around your head, and feel as though something is creeping toward you.");
+                        $BuzzTarget->Message(6, "You hear a strange buzzing around your head, and feel as though something is creeping toward you.");
                     }
                     quest::settimer("buzz_spawn", 6);
                     last;
@@ -343,7 +372,8 @@ sub EVENT_TIMER {
 	}
     elsif($timer eq "respawn") {
         quest::stoptimer("respawn");
-        quest::spawn2(317114, 0, 0, $npc->GetX(), $npc->GetY(), $npc->GetZ(), 0);
+        quest::spawn2(317114, 0, 0, 378, 4969, 279, 128);
+        quest::settimer("coerced", 10);
     }
 }
 

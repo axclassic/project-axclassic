@@ -24,6 +24,9 @@ sub setup_lockouts {
 }
 
 sub EVENT_SPAWN {
+    $AugsTotal = 0;
+    $qblobalchecker = 0;
+    $qblobalsetter = 0;
     $instance_id = $instanceid;
     @charid_list = $entity_list->GetClientList();
     $qblobalsetter = $instance_id."_anguish_bit";
@@ -267,10 +270,10 @@ sub Check_amv_chest {
 }
 
 sub Spawn_augs {
-	my $rolled_mob;
+	my $rolled_mob = 0;
 	my $num_mob = 0;
 	my @mob_list;
-	my $num_to_spawn;
+	my $num_to_spawn = 0;
 	my $mob_in_list = 0;
 
     %list_named = (
@@ -282,19 +285,20 @@ sub Spawn_augs {
 	);
 
     my $diceroll = (1 + int(rand(100)));
-    if($diceroll < 40) {
-        $num_to_spawn = 2;
-    }
-	elsif($diceroll < 60) {
-        $num_to_spawn = 3;
-    }
-	elsif($diceroll < 80) {
+    if($diceroll > 80) {
         $num_to_spawn = 4;
     }
-	else {
+	elsif($diceroll > 60) {
         $num_to_spawn = 5;
     }
+	elsif($diceroll > 40) {
+        $num_to_spawn = 6;
+    }
+	else {
+        $num_to_spawn = 1;
+    }
 
+    # Since $num_mob starts at 0 we get +1 for 5 Max spawns
     while($num_mob < $num_to_spawn) {
         my $randAugs = int(rand(5));
         $rolled_mob = $list_named{$randAugs}->[0];
@@ -379,7 +383,7 @@ sub AddLockout {
 
 sub AugsCounter {
     $AugsTotal = $AugsTotal + 1;
-    if($AugsTotal == 85) {
+    if($AugsTotal == 95) {
         AddLockout($Anguish_Lockouts{3});
         quest::ze(15, "The walls of the castle tremble for a moment. Your interference has notified Mata Muram's lieutenants to your presence.");
     }

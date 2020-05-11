@@ -75,7 +75,7 @@ sub EVENT_TIMER {
 		else {
             quest::spawn2(317110, 0, 0, 505, 4792, 278, 384);
         }
-        quest::signal(317110, 1);
+        quest::signalwith(317110, 1);
     }
     elsif($timer eq "focus30") {
         quest::stoptimer("focus30");

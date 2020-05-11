@@ -16,16 +16,14 @@ sub Get_Target {
 }
 sub EVENT_TIMER {
     if($timer eq "gettarget") {
+        quest::stoptimer("gettarget");
         if(!$npc->GetTarget()) {
             Get_Target();
         }
     }
 }
 sub EVENT_DEATH {
+    quest::signalwith(317000, 317114);
     quest::stoptimer("gettarget");
-    my $death_x = $npc->GetX();
-    my $death_y = $npc->GetY();
-    my $death_z = $npc->GetZ();
-    quest::spawn2(317114, 0, 0, $death_x, $death_y, $death_z, 0);
 }
 
