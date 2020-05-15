@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==05/14/2020==
+Congdar: Move custom content in OoW chambers e and f to a separate instance.
+Congdar: update Priests of Discord and finish Anguish.
+
 ==05/10/2020==
 Congdar: more Anguish
 

@@ -60,12 +60,12 @@ sub EVENT_TIMER {
             $tanthu_aggro = 0;
         }
         if($torment_alive == 0) {
-            #--set player lockout
-            #--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"
-            quest::signalwith(317117 , 317004);
             # --Jelvan`s_Keepsake (317111)
 			quest::unique_spawn(317111, 0, 0, $x, $y, $z, 0);
 			quest::ze(15, "You hear Jelvan's shouts of gratitude as he runs into the shadows.");
+            #--set player lockout
+            #--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"
+            quest::signalwith(317117 , 317004);
             $event_started = 0;
             quest::depop();
         }

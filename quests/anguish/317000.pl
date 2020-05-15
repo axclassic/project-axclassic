@@ -244,7 +244,7 @@ sub EVENT_TIMER {
     elsif($timer eq "mmgaze_reflect2") {
         quest::stoptimer("mmgaze_reflect2");
         quest::ze(15, "Mata Muram roars in anger, 'You dare use my own magic against me?!'");
-        quest::settimer("mmgaze_reflect3", 15);
+        quest::settimer("mmgaze_reflect3", 30);
     }
     elsif($timer eq "mmgaze_reflect3") {
         quest::stoptimer("mmgaze_reflect3");
