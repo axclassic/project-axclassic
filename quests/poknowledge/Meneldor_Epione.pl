@@ -41,10 +41,8 @@ sub EVENT_SAY {
 		return 1;
 	}
 	if($text=~/here/i && $ulevel >= 64 && $aatotal >= 250) {
-		$client->Message(14,"Going to send you to the corpse recovery instance now. Remember there is only 1 player allowed in this instance, if there already is a player you will have to wait until this player leaves. Your corpse will end up here after your instance has expired.");
-		quest::movepc(308, 0.00, 0.00, -0.21);
-
-
+		$client->Message(14, "I am sending you graveyard for your instance.corpse recovery instance.");
+		quest::movepc(316, -2105, -4361, -307, 0);
 	}
 }
 
@@ -57,12 +55,11 @@ sub EVENT_ITEM {
 		quest::summonitem($total);
 		return 1;
 	}
-
 	elsif(($platinum == 2000) && $ulevel >= 65 && !defined($qglobals{$name."chamberse9"}) && $aatotal >= 250) {
 		$client->Message(14,"Thank you $class , you are on the way to your Tier 4 Challenge, good luck!"); #Money handin forinstance creation and porting to it.
         my $instanceID = quest::CreateInstance("chamberse", 9, 28800);
 		quest::AssignToInstance($instanceID);
-		quest::setglobal($name."chamberse9",$instanceID,7,"H8");
+		quest::setglobal($name."chamberse9", $instanceID, 7, "H8");
 		quest::MovePCInstance(308, $instanceID, 0.00, 0.00, -0.21, 150);
 		return 1;
 	}
@@ -82,3 +79,4 @@ sub EVENT_ITEM {
 		return 1;
 	}
 }
+

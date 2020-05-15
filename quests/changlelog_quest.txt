@@ -1,6 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==05/15/2020==
+Congdar: Fix graveyard for custom content in chambersd,e,f
 Congdar: Fix Vex Thal Aten Ha Ra/Fabled dual spawn
 
 ==05/14/2020==
