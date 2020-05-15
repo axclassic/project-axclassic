@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==05/15/2020==
+Congdar: Fix Vex Thal Aten Ha Ra/Fabled dual spawn
+
 ==05/14/2020==
 Congdar: Move custom content in OoW chambers e and f to a separate instance.
 Congdar: update Priests of Discord and finish Anguish.

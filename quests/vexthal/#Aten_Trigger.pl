@@ -25,10 +25,12 @@ sub EVENT_TIMER {
                 if($random_result < 90) {
                     # #Aten_Ha_Ra_
                     quest::spawn2(158096,0,0,1412,0,248.63,192);
+                    quest::stoptimer("aten");
                 }
                 else {
                     # #The_Fabled_Aten_Ha_Ra_
                     quest::spawn2(158311,0,0,1412,0,248.63,192);
+                    quest::stoptimer("aten");
                 }
             }
             elsif(!$entity_list->GetMobByNpcTypeID(158306) && !$entity_list->GetMobByNpcTypeID(158308)) {
