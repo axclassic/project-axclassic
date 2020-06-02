@@ -17,7 +17,8 @@ sub EVENT_TIMER {
 sub CastSpells {
    $SpellToCast = quest::ChooseRandom(4567, 4723, 4749, 4748, 4734, 4121, 4722);
    $SpellTarget = $npc->GetHateMost();
-   $npc->CastSpell($SpellToCast, $SpellTarget->GetID());
+   $npc->SendBeginCast($SpellToCast, 0);
+   quest::castspell($SpellToCast, $SpellTarget->GetID());
 }
 
 sub EVENT_SIGNAL {
@@ -34,7 +35,8 @@ sub EVENT_SIGNAL {
       if($Cynosure) {
          quest::emote("locks minds with Cynosure Kvanjji, as it mimics the Cynosure's spell.");
          $SpellTarget = $Cynosure->GetHateRandom();
-         $npc->CastSpell($signal, $SpellTarget->GetID());
+         $npc->SendBeginCast($signal, 0);
+         quest::castspell($signal, $SpellTarget->GetID());
       }
    }
 }

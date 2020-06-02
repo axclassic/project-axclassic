@@ -20,7 +20,8 @@ sub EVENT_TIMER {
         $SpellTarget = $npc->GetTarget();
         if($SpellTarget) {
             # --Feedback Dispersion
-            $npc->CastSpell(5681, $SpellTarget->GetID());
+            $npc->SendBeginCast(5681, 0);
+            quest::castspell(5681, $SpellTarget->GetID());
             quest::depop();
         }
     }

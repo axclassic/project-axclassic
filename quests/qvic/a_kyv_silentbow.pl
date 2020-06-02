@@ -15,7 +15,8 @@ sub EVENT_TIMER {
       $SpellToCast = quest::chooserandom(4850, 4849, 4851);
       $SpellTarget = $npc->GetHateMost();
       if($SpellTarget) {
-         $npc->CastSpell($SpellToCast, $SpellTarget->GetID());
+          $npc->SendBeginCast($SpellToCast, 0);
+          quest::castspell($SpellToCast, $SpellTarget->GetID());
       }
    }
 }

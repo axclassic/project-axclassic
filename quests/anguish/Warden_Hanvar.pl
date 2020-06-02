@@ -138,7 +138,7 @@ sub Reset_Hanvar {
     quest::depopall(317102);
     $npc->GMMove(427, 4389, 222, 70);
     # Spell: Ocean's Cleansing
-    $npc->CastSpell(3791, $npc->GetID());
+    quest::castspell(3791, $npc->GetID());
     $npc->WipeHateList();
     my $reset_max_hp = $npc->GetMaxHP();
     $npc->SetHP($reset_max_hp);

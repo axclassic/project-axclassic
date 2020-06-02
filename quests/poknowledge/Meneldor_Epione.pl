@@ -41,7 +41,7 @@ sub EVENT_SAY {
 		return 1;
 	}
 	if($text=~/here/i && $ulevel >= 64 && $aatotal >= 250) {
-		$client->Message(14, "I am sending you graveyard for your instance.corpse recovery instance.");
+		$client->Message(14, "I am sending you to the graveyard for your corpse recovery.");
 		quest::movepc(316, -2105, -4361, -307, 0);
 	}
 }

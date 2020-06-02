@@ -3,7 +3,7 @@
 sub EVENT_CLICKDOOR {
     my $door_id = ($doorid % 256);
     if($door_id == 3) {
-        my $QGlobalValue = $client->GetQGlobal(${name}.".anguish");
+        my $QGlobalValue = $client->GetQGlobal(${name}."anguish");
         if($QGlobalValue) {
             $client->Message(14, "Sending you back to your instance.");
             quest::MovePCInstance(317, $QGlobalValue, -9, -2466, -79, 255);
@@ -65,7 +65,7 @@ sub EVENT_CLICKDOOR {
                 }
                 else {
                     quest::AssignToInstance($instance_ID);
-                    quest::setglobal(${name}.".anguish", $instance_ID, 7, "H8");
+                    quest::setglobal(${name}."anguish", $instance_ID, 7, "H8");
                     quest::MovePCInstance(317, $instance_ID, -9, -2466, -79, 255);
                 }
             }

@@ -95,7 +95,7 @@ sub EVENT_TIMER {
 		quest::depopall(317110);
 		$npc->SetHP($npc->GetMaxHP());
         # Spell: Ocean's Cleansing
-        $npc->CastSpell(3791, $npc->GetID());
+        quest::castspell(3791, $npc->GetID());
         $npc->WipeHateList();
         $npc->GMMove(366, 4886, 278, 0);
     }

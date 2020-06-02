@@ -43,6 +43,20 @@ sub EVENT_SAY {
     }
 }
 
+sub EVENT_SPAWN {
+    if($zoneid == 202) {
+        my $x = $npc->GetX();
+        my $y = $npc->GetY();
+        quest::set_proximity($x - 90, $x + 90, $y - 90, $y + 90);
+    }
+}
+
+sub EVENT_ENTER {
+    if($zoneid == 202) {
+        quest::signal(202273, 5); #Qadar
+    }
+}
+
 sub EVENT_ITEM {
     if($itemcount{18700} == 1) {
         quest::say("Sorry, no PVP on this server, but I'll give you the experience for your effort.");
