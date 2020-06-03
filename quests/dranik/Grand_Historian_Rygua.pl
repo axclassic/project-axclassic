@@ -127,7 +127,6 @@ sub EVENT_SAY {
                 my $GM_instance_ID = quest::CreateInstance('draniksewersc', 1, 21600);
                 quest::AssignToInstance($GM_instance_ID);
                 quest::MovePCInstance(333, $GM_instance_ID, -2.5, 4, -6, 0);
-                quest::say("Sewers of Dranik is now available to you.");
             }
             else {
                 $client->Message(15, "You must have a group of up to 6 members for this expedition.");

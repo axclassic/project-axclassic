@@ -2,6 +2,7 @@ AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==06/03/2020==
 Congdar: more Anguish access updates
+Congdar: even more
 
 ==06/02/2020==
 Congdar: Anguish access updates
