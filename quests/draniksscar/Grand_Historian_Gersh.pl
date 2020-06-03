@@ -203,7 +203,7 @@ sub EVENT_SAY {
             if($client->GetGM()) {
                 my $GM_instance_ID = quest::CreateInstance('dranikhollowsc', 1, 21600);
                 quest::AssignToInstance($GM_instance_ID);
-                quest::MovePCInstance(319, $GM_instance_ID, 0.0, -447.0, -36.0);
+                quest::MovePCInstance(320, $GM_instance_ID, 5.0, -51.0, -43.7, 254.5);
             }
             else {
                 $client->Message(15, "You must have a group of up to 6 members for this expedition.");

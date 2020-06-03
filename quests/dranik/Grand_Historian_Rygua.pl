@@ -16,7 +16,7 @@ sub EVENT_SAY {
     if($text=~/Catacombs/i) {
         quest::say("You have chosen to explore the Catacombs of Dranik. I have heard tales of frightening creatures of great power that lurk in the darkest shadows of the catacombs. Should you come across a dragorn known as $dragornmarshalgreshka, or an ikaav enchantress known as High Enchantress Zy'chia, prepare yourself for a tough battle. The battle might be hard fought, but some would say the riches are well worth it.");
         quest::say("You have chosen to explore the Catacombs of Dranik. I have heard tales of frightening creatures of great power that lurk in the darkest shadows of the catacombs. Should you come across a noc known as Elite Overlord Vijaz, or an ikaav wizard known as $highsorceressvitara, prepare yourself for a tough battle. The battle might be hard fought, but some would say the riches are well worth it.");
-        quest::say("You have chosen to explore the Catacombs of Dranik. I have heard tales of frightening creatures of great power that lurk in the darkest shadows of the catacombs. Should you come across a noc known as the $masterofthewatch, or an ikaav mage named, Elite Pixxt K’illiga, prepare yourself for a tough battle. The battle might be hard fought, but some would say the riches are well worth it.");
+        quest::say("You have chosen to explore the Catacombs of Dranik. I have heard tales of frightening creatures of great power that lurk in the darkest shadows of the catacombs. Should you come across a noc known as the $masterofthewatch, or an ikaav mage named, Elite Pixxt K'illiga, prepare yourself for a tough battle. The battle might be hard fought, but some would say the riches are well worth it.");
         quest::say("Be safe in your travels through the Catacombs.");
     }
     if($text=~/Sewers/i) {
@@ -78,7 +78,7 @@ sub EVENT_SAY {
         }
         else {
             if($client->GetGM()) {
-                my $GM_instance_ID = quest::CreateInstance('dranikhollowsa', 1, 21600);
+                my $GM_instance_ID = quest::CreateInstance('dranikcatacombsc', 1, 21600);
                 quest::AssignToInstance($GM_instance_ID);
                 quest::MovePCInstance(330, $GM_instance_ID, -10, -214, -3, 114);
             }
@@ -124,7 +124,7 @@ sub EVENT_SAY {
         }
         else {
             if($client->GetGM()) {
-                my $GM_instance_ID = quest::CreateInstance('dranikhollowsa', 1, 21600);
+                my $GM_instance_ID = quest::CreateInstance('draniksewersc', 1, 21600);
                 quest::AssignToInstance($GM_instance_ID);
                 quest::MovePCInstance(333, $GM_instance_ID, -2.5, 4, -6, 0);
             }
