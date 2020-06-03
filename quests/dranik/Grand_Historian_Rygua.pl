@@ -77,7 +77,14 @@ sub EVENT_SAY {
             }
         }
         else {
-            $client->Message(15, "You must have a group of up to 6 members for this adventure.");
+            if($client->GetGM()) {
+                my $GM_instance_ID = quest::CreateInstance('dranikhollowsa', 1, 21600);
+                quest::AssignToInstance($GM_instance_ID);
+                quest::MovePCInstance(330, $GM_instance_ID, -10, -214, -3, 114);
+            }
+            else {
+                $client->Message(15, "You must have a group of up to 6 members for this expedition.");
+            }
         }
     }
     if($text=~/Dragorn Foreman/i) {
@@ -116,7 +123,14 @@ sub EVENT_SAY {
             }
         }
         else {
-            $client->Message(15, "You must have a group of up to 6 members for this adventure.");
+            if($client->GetGM()) {
+                my $GM_instance_ID = quest::CreateInstance('dranikhollowsa', 1, 21600);
+                quest::AssignToInstance($GM_instance_ID);
+                quest::MovePCInstance(333, $GM_instance_ID, -2.5, 4, -6, 0);
+            }
+            else {
+                $client->Message(15, "You must have a group of up to 6 members for this expedition.");
+            }
         }
     }
 }

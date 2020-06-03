@@ -154,7 +154,14 @@ sub EVENT_SAY {
             }
         }
         else {
-            $client->Message(15, "You must have a group of up to 6 members for this expedition.");
+            if($client->GetGM()) {
+                my $GM_instance_ID = quest::CreateInstance('dranikhollowsb', 1, 21600);
+                quest::AssignToInstance($GM_instance_ID);
+                quest::MovePCInstance(319, $GM_instance_ID, 0.0, -447.0, -36.0);
+            }
+            else {
+                $client->Message(15, "You must have a group of up to 6 members for this expedition.");
+            }
         }
     }
     if($text=~/murkglider/i) {
@@ -193,7 +200,14 @@ sub EVENT_SAY {
             }
         }
         else {
-            $client->Message(15, "You must have a group of up to 6 members for this expedition.");
+            if($client->GetGM()) {
+                my $GM_instance_ID = quest::CreateInstance('dranikhollowsc', 1, 21600);
+                quest::AssignToInstance($GM_instance_ID);
+                quest::MovePCInstance(319, $GM_instance_ID, 0.0, -447.0, -36.0);
+            }
+            else {
+                $client->Message(15, "You must have a group of up to 6 members for this expedition.");
+            }
         }
     }
     if($text=~/girplan/i) {
@@ -234,7 +248,14 @@ sub EVENT_SAY {
             }
         }
         else {
-            $client->Message(15, "You must have a group of up to 6 members for this expedition.");
+            if($client->GetGM()) {
+                my $GM_instance_ID = quest::CreateInstance('dranikhollowsa', 1, 21600);
+                quest::AssignToInstance($GM_instance_ID);
+                quest::MovePCInstance(318, $GM_instance_ID, 0.0, 0.0, -11.1);
+            }
+            else {
+                $client->Message(15, "You must have a group of up to 6 members for this expedition.");
+            }
         }
     }
 }
