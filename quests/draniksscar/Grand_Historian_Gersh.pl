@@ -114,7 +114,6 @@ sub EVENT_SAY {
         quest::say("You have chosen to explore the Caves of Dranik. The caves are home to some frightening creatures. The caves you will be exploring are home to a vicious pair of creatures known for their strength and cunning. Should you come across a [ $kyv ] known as the Kyv Bowkeeper, or an Ukun known as the Ukun Fleshrender, prepare yourself for a tough battle. The battle might be hard fought, but some would say the riches are well worth it.");
         quest::say("You have chosen to explore the Caves of Dranik. The caves are home to some frightening creatures. The caves you will be exploring are home to a vicious pair of creatures known for their strength and cunning. Should you come across a [ $murkglider ] known as the Inky Murkglider, or a rat known as Silentpaw, prepare yourself for a tough battle. The battle might be hard fought, but some would say the riches are well worth it.");
         quest::say("You have chosen to explore the Caves of Dranik. The caves are home to some frightening creatures. The caves you will be exploring are home to a vicious pair of creatures known for their strength and cunning. Should you come across a [ $girplan ] known as the Girplan Pathmaker, or a discordling known as the Discordling Hollower, prepare yourself for a tough battle. The battle might be hard fought, but some would say the riches are well worth it.");
-        quest::say("Be safe in your travels through the caves, $name");
     }
     if($text=~/kyv/i) {
         quest::say("This expedition is not yet available. Send all complaints to The Rathe Management.");
@@ -151,11 +150,13 @@ sub EVENT_SAY {
                 quest::setgroupglobal("dranikhollowsb1", $instance_ID, 5, "H6");
                 $client->MarkCompassLoc(-2066.6, 395, 147);
                 quest::say("Dranik's Hollows: Fire Pit is now available to you.");
+                quest::say("Be safe in your travels through the caves, $name");
             }
         }
         else {
             if($client->GetGM()) {
-                my $GM_instance_ID = quest::CreateInstance('dranikhollowsb', 1, 21600);
+                my $instance_ID = quest::CreateInstance('dranikhollowsb', 1, 21600);
+                my $GM_instance_ID = quest::GetInstanceID("dranikhollowsb", 1);
                 quest::AssignToInstance($GM_instance_ID);
                 quest::MovePCInstance(319, $GM_instance_ID, 0.0, -447.0, -36.0);
             }
@@ -197,11 +198,13 @@ sub EVENT_SAY {
                 quest::setgroupglobal("dranikhollowsc1", $instance_ID, 5, "H6");
                 $client->MarkCompassLoc(-2050, 581, 211);
                 quest::say("Dranik's Hollows: Murkglider Hive is now available to you.");
+                quest::say("Be safe in your travels through the caves, $name");
             }
         }
         else {
             if($client->GetGM()) {
-                my $GM_instance_ID = quest::CreateInstance('dranikhollowsc', 1, 21600);
+                my $instance_ID = quest::CreateInstance('dranikhollowsc', 1, 21600);
+                my $GM_instance_ID = quest::GetInstanceID("dranikhollowsc", 1);
                 quest::AssignToInstance($GM_instance_ID);
                 quest::MovePCInstance(320, $GM_instance_ID, 5.0, -51.0, -43.7, 254.5);
             }
@@ -245,11 +248,13 @@ sub EVENT_SAY {
                 quest::setgroupglobal("dranikhollowsa1", $instance_ID, 5, "H6");
                 $client->MarkCompassLoc(-2027, 17.6, 207);
                 quest::say("Dranik's Hollows: Watering Hole is now available to you.");
+                quest::say("Be safe in your travels through the caves, $name");
             }
         }
         else {
             if($client->GetGM()) {
-                my $GM_instance_ID = quest::CreateInstance('dranikhollowsa', 1, 21600);
+                my $instance_ID = quest::CreateInstance('dranikhollowsa', 1, 21600);
+                my $GM_instance_ID = quest::GetInstanceID("dranikhollowsa", 1);
                 quest::AssignToInstance($GM_instance_ID);
                 quest::MovePCInstance(318, $GM_instance_ID, 0.0, 0.0, -11.1);
             }
