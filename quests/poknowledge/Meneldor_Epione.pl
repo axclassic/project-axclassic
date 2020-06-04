@@ -60,7 +60,7 @@ sub EVENT_ITEM {
         my $instanceID = quest::CreateInstance("chamberse", 9, 28800);
 		quest::AssignToInstance($instanceID);
 		quest::setglobal($name."chamberse9", $instanceID, 7, "H8");
-		quest::MovePCInstance(308, $instanceID, 0.00, 0.00, -0.21, 150);
+		quest::MovePCInstance(308, $instanceID, 0.2, -40.3, -1.7, 255.0);
 		return 1;
 	}
 	elsif(($platinum == 2000) && $ulevel >= 65 && defined($qglobals{$name."chamberse9"}) && $aatotal >= 250) {
