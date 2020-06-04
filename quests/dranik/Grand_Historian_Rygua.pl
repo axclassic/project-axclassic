@@ -23,7 +23,6 @@ sub EVENT_SAY {
         quest::say("You have chosen to explore the Sewers of Dranik. Beware during your travels there should you come across discordling named Craftsman Ferinio, or a golem known as $stonefoot. Both are rare and powerful adversaries. Should they come out of hiding, you will have a tough battle on your hands. However, some would say the riches are well worth it.");
         quest::say("You have chosen to explore the Sewers of Dranik. Beware during your travels there should you come across an ikaav mage named $silaniajanaid, or a bat known as the Nightfang Glider. Both are rare and powerful adversaries. Should they come out of hiding, you will have a tough battle on your hands. However, some would say the riches are well worth it.");
         quest::say("You have chosen to explore the Sewers of Dranik. Beware during your travels there should you come across a dragorn known as the $dragornforeman, or an ukun known as the Ukun Sentinel. Both are rare and powerful adversaries. Should they come out of hiding, you will have a tough battle on your hands. However, some would say the riches are well worth it.");
-        quest::say("Be safe in your travels through the Sewers.");
     }
     if($text=~/Dragorn Marshal Greshka/i) {
         quest::say("This adventure is not yet available. Send all complaints to The Rathe Management.");
@@ -74,17 +73,11 @@ sub EVENT_SAY {
                 quest::setgroupglobal("dranikcatacombsc1", $instance_ID, 5, "H6");
                 $client->MarkCompassLoc(-292.52, 1031.42, -75.75);
                 quest::say("Catacombs of Dranik is now available to you.");
+                quest::say("Be safe in your travels through the Sewers, $name.");
             }
         }
         else {
-            if($client->GetGM()) {
-                my $GM_instance_ID = quest::CreateInstance('dranikcatacombsc', 1, 21600);
-                quest::AssignToInstance($GM_instance_ID);
-                quest::MovePCInstance(330, $GM_instance_ID, -10, -214, -3, 114);
-            }
-            else {
-                $client->Message(15, "You must have a group of up to 6 members for this expedition.");
-            }
+            $client->Message(15, "You must have a group of up to 6 members for this expedition.");
         }
     }
     if($text=~/Dragorn Foreman/i) {
@@ -120,17 +113,11 @@ sub EVENT_SAY {
                 quest::setgroupglobal("draniksewersc1", $instance_ID, 5, "H6");
                 $client->MarkCompassLoc(-140.37, -1243.2, -236.43);
                 quest::say("Sewers of Dranik is now available to you.");
+                quest::say("Be safe in your travels through the Sewers, $name.");
             }
         }
         else {
-            if($client->GetGM()) {
-                my $GM_instance_ID = quest::CreateInstance('draniksewersc', 1, 21600);
-                quest::AssignToInstance($GM_instance_ID);
-                quest::MovePCInstance(333, $GM_instance_ID, -2.5, 4, -6, 0);
-            }
-            else {
-                $client->Message(15, "You must have a group of up to 6 members for this expedition.");
-            }
+            $client->Message(15, "You must have a group of up to 6 members for this expedition.");
         }
     }
 }
