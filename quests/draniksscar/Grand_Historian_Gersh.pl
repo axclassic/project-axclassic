@@ -1,4 +1,4 @@
-# Grand_Historian_Gersh (302051)
+# Grand_Historian_Gersh (302051) 
 
 sub EVENT_SAY {
     my $knowledge = quest::saylink("knowledge", 1);
