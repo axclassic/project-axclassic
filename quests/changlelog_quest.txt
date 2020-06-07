@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==06/07/2020==
+Congdar: fix Sarialiyn_Tranquilsong.pl
+
 ==06/03/2020==
 Congdar: more Anguish access updates
 Congdar: even more
