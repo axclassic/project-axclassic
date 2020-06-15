@@ -5,25 +5,11 @@
 # Otherwise spawn the named. Last revision 9/20/16 by Patrikpatrik
 # Killing him spawns Vhalsera on 6b.
 
-sub EVENT_SAY {
-	
-}
-
 sub EVENT_DEATH {
-	my @npcarray = $entity_list->GetNPCList(); #Dumps all NPC's in an array
-		foreach my $n (@npcarray){
-			$npcname = $n->GetCleanName();
-			if($npcname eq "VhalSera"){ # If VhalSera is up then flag it.
-				$vhalsera = 1;
-			} else {
-				# Do nothing
-			}
-		}
-	if($vhalsera == 1){
-		# Do nothing if he's up. (Emulates unique Spawn.)
-	} else {
-	  quest::spawn2(111144,0,0,-400.85,400.89,24.13,125); #Spawns Vhalsera
-	}
+    my $VhalSera = $entity_list->GetMobByNpcTypeID(111144);
+    if(!$VhalSera) {
+        quest::spawn2(111144, 0, 0, -400.85, 400.89, 24.13, 125); #Spawns Vhalsera
+    }
 }
 
 # End of File NPCID: 111250 Zone: Tower of Frozen Shadow
