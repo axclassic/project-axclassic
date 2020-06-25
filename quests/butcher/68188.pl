@@ -54,7 +54,7 @@ no warnings 'all' ;
     quest::setglobal("butcherlastseen",$sirens,"3","F");
     $butcherlastseen = 0;
     quest::delglobal("butchertimer");
-    quest::setglobal("butchertimer",0,"3","7");}
+    quest::setglobal("butchertimer",0,"3","M7");}
     $butchertimer = 0;
 #}
 
