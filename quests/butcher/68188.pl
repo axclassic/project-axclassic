@@ -47,15 +47,15 @@ no warnings 'all' ;
       my $tempvar = $butchertimer+1;
      # if($debugpl==1){quest::shout("Stormbreaker hasn't moved, increasing timer to $tempvar");}
       quest::delglobal("butchertimer");
-      quest::setglobal("butchertimer",$tempvar,3,"F");}
+      quest::setglobal("butchertimer",$tempvar,"3","F");}
   }else{                          #boat has changed waypoints, tell butcherlastseen its new waypoint, reset timer to 0
    # if($debugpl==1){quest::shout("Stormbreaker seems to be moving ok");}
     quest::delglobal("butcherlastseen");
-    quest::setglobal("butcherlastseen",$sirens,3,F);
-    $butcherlastseen = undef;
+    quest::setglobal("butcherlastseen",$sirens,"3","F");
+    $butcherlastseen = 0;
     quest::delglobal("butchertimer");
-    quest::setglobal("butchertimer",0,3,7);
-    $butchertimer = undef;}
+    quest::setglobal("butchertimer",0,"3","7");}
+    $butchertimer = 0;
 #}
 
 
