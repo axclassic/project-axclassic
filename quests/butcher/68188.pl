@@ -62,7 +62,7 @@ no warnings 'all' ;
 
 #### Watcher script:  When Sirens == 100, it spawns real boat, and changes $sirens to 0, so it won't keep triggering this script
 
-  if($debugpl){ quest::shout("Sirens is set at $sirens");}
+  #if($debugpl){ quest::shout("Sirens is set at $sirens");}
   if($sirens==100){
     quest::depopall(68228);
     quest::delglobal("sirens");
@@ -73,6 +73,6 @@ no warnings 'all' ;
 }
 
 sub EVENT_SIGNAL{      ### depops the boat and drops players onto the real boat when the real boat signals it to
-  if($debugpl){quest::shout("Fake boat depopping!");}
+  #if($debugpl){quest::shout("Fake boat depopping!");}
   quest::depop();
 }

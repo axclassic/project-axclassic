@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==06/25/2020==
+angelox: boat timer fixes.
+
 ==06/15/2020==
 Congdar: frozen shadow and griegs end fixes 
 

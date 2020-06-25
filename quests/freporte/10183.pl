@@ -32,17 +32,17 @@ sub EVENT_WAYPOINT {
          my $tempvar = $freportetimer+1;
          #if($debugpl)==1){quest::shout("Stormbreaker hasn't moved, increasing timer to $tempvar");}
          quest::delglobal("freportetimer");
-         quest::setglobal("freportetimer",$tempvar,3,"F");
+         quest::setglobal("freportetimer",$tempvar,"3","F");
       }
    }
    else {                          #boat has changed waypoints, tell freportelastseen its new waypoint, reset timer to 0
       #if($debugpl)==1){quest::shout("Stormbreaker seems to be moving ok");}
       quest::delglobal("freportelastseen");
-      quest::setglobal("freportelastseen",$sirens,3,F);
-      $freportelastseen = undef;
+      quest::setglobal("freportelastseen",$sirens,"3","F");
+      $freportelastseen = 0;
       quest::delglobal("freportetimer");
-      quest::setglobal("freportetimer",0,3,7);
-      $freportetimer = undef;
+      quest::setglobal("freportetimer","0","3","M7");
+      $freportetimer = 0;
    }
 #}
    #if($debuglpl==1){quest::shout("Sirens is set at $sirens");}

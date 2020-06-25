@@ -1,9 +1,9 @@
 ## SirensBane travels from butcher to oot to freporte and back
 ## Angelox
 ## Qadar
-sub EVENT_SPAWN {
-	quest::shout("Boat is approaching the docks!");
-}
+#sub EVENT_SPAWN {
+#	quest::shout("Boat is approaching the docks!");
+#}
 
 
 sub EVENT_DEATH {

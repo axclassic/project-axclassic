@@ -47,18 +47,18 @@ sub EVENT_WAYPOINT {
             my $tempvar = $oottimer+1;
             #if($debugpl)==1){quest::shout("Stormbreaker hasn't moved, increasing timer to $tempvar");}
             quest::delglobal("oottimer");
-            quest::setglobal("oottimer",$tempvar,3,"F");
+            quest::setglobal("oottimer",$tempvar,"3","F");
         }
     }
     else {
         #boat has changed waypoints, tell ootseen its new waypoint, reset timer to 0
         #if($debugpl)==1){quest::shout("Stormbreaker seems to be moving ok");}
         quest::delglobal("ootlastseen");
-        quest::setglobal("ootlastseen",$sirens,3,F);
-        $ootlastseen = undef;
+        quest::setglobal("ootlastseen",$sirens,"3","F");
+        $ootlastseen = 0;
         quest::delglobal("oottimer");
-        quest::setglobal("oottimer",0,3,7);
-        $oottimer = undef;
+        quest::setglobal("oottimer",0,"3","M7");
+        $oottimer = 0;
     }
     #}
     #if($debugpl)){quest::shout("Sirens is set at $sirens");}

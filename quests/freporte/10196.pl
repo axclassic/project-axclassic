@@ -3,9 +3,9 @@
 ## Qadar
 ## 1/16/2017 patrikpatrik will shout when boat is here
 
-sub EVENT_SPAWN {
-	quest::shout("Boat is approaching the docks!");
-}
+#sub EVENT_SPAWN {
+#	quest::shout("Boat is approaching the docks!");
+#}
 
 sub EVENT_DEATH {
  if(($sirens < 60) && ($sirens > 0)){
