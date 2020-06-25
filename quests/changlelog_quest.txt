@@ -1,11 +1,5 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
-==06/23/2020==
-Congdar: fix a_shrouded_bat.pl
-
-==06/16/2020==
-Congdar: update khati sha event
-
 ==06/15/2020==
 Congdar: frozen shadow and griegs end fixes
 

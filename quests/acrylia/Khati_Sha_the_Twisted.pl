@@ -1,9 +1,10 @@
 # Khati Sha Event
 # Created by Gonner
 
+
 sub EVENT_SPAWN {
 	quest::settimer(1,1); 
-}
+	}
 
 
 sub EVENT_AGGRO {
@@ -19,27 +20,28 @@ sub EVENT_TIMER {
 	my $x = $npc->GetX();
 	my $y = $npc->GetY();
 
-	if($timer == 2) {
-		quest::spawn2(154054,0,0,972.00,-556.00,-41.00,185); # Defiled Minion
-		quest::spawn2(154054,0,0,970.00,-602.00,-41.00,225); # Defiled Minion
-		quest::spawn2(154054,0,0,910.00,-602.00,-41.00,30); # Defiled Minion
-		quest::spawn2(154054,0,0,905.00,-556.00,-41.00,60); # Defiled Minion
-	}
+		if($timer == 2) {
+			quest::spawn2(154054,0,0,972.00,-556.00,-41.00,185); # Defiled Minion
+			quest::spawn2(154054,0,0,970.00,-602.00,-41.00,225); # Defiled Minion
+			quest::spawn2(154054,0,0,910.00,-602.00,-41.00,30); # Defiled Minion
+			quest::spawn2(154054,0,0,905.00,-556.00,-41.00,60); # Defiled Minion
+		}	
 
-	if($timer == 1 && ($y > -545)) {
-		quest::shout("You will never remove me from my chamber!");
-		quest::depop();
-		quest::spawn2(154145,0,0,940.00,-610.00,-41.00,0); # Respawn Kahti Sha
-		quest::signal(154054);
-		quest::stoptimer(2);
-	}
-
-	if($timer == 3) {
-		quest::stoptimer(1);
-		quest::stoptimer(2);
-		quest::stoptimer(3);
-		quest::depop();
-	}
+		if($timer == 1 && ($y > -545)) {
+			quest::shout("You will never remove me from my chamber!");
+			quest::depop();
+			quest::spawn2(154145,0,0,940.00,-610.00,-41.00,0); # Respawn Kahti Sha
+			quest::signal(154054);
+			quest::stoptimer(2);
+		}			
+		
+		if($timer == 3) {
+			quest::stoptimer(1);
+			quest::stoptimer(2);
+			quest::stoptimer(3);
+			quest::depop();
+		}
+		
 }
 
 
