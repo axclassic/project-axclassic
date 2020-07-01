@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==07/01/2020==
+Patrikpatrik: Ladder reset for July 1st.
+
 ==05/20/2020==
 Patrikpatrik: Fixed thumbnail links in members only Atlas Maps/Zones.
 
