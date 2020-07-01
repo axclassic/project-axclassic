@@ -13,6 +13,7 @@
 ## 6/30/17 update
 ## 10/1/17 Changed 22298 to 22294   ##
 ## 12/31/19 Changed yr to 2020      ##
+## 7/1/20 July 1st update	    ##
 ######################################
 sub EVENT_SAY {
 #hyperlinks
@@ -26,10 +27,10 @@ my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
 my $newyears = quest::saylink("special", 1);
 #Ladder date and char settings
-my $minCharID  = 7625; #6125 remember to define this @ line 224
-my $maxCharID  = 7624; #6124 5828
+my $minCharID  = 7711; #6125 remember to define this @ line 224
+my $maxCharID  = 7710; #6124 5828
 my $activeYear = 2020; #2016
-my $activeMonth = "January"; #July January
+my $activeMonth = "July"; #July January
 
 
 	if(($text=~/hail/i) && ($charid < $minCharID)) { #this is the newest charID
@@ -222,8 +223,8 @@ my $activeMonth = "January"; #July January
 
 
 sub EVENT_ITEM {
-my $minCharID  = 7625; # dont forget to set this one as well 5829 6125
-my $activeMonth = "January";
+my $minCharID  = 7711; # dont forget to set this one as well 5829 6125
+my $activeMonth = "July";
 my $activeYear = 2020;
 
 	if ($charid < $minCharID) { #this charid and the one above should be the same.
