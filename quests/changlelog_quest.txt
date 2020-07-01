@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==07/01/2020==
+Patrikpatrik: Updated Champion Darkwater to July 1st 2020.
+
 ==06/25/2020==
 angelox: boat timer fixes.
 
