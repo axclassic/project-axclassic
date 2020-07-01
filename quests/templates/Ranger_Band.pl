@@ -7,6 +7,7 @@
 ## Second revision by EQPlayer 	    ##
 ## UPDATE 2/8/16 Fixed and cleanup  ##
 ## variables now within subroutines ##
+## Update 07/01/2020 @ line 20 patri##
 ######################################
 ## Further Notes:
 ## Ranger Band will now let you know if an Event is active.
@@ -16,7 +17,7 @@
 ## to hunt for the moonstones yourself - Patrik.
 ## UPDATE- SAYLINKS placed back in subroutines!
 
-$minCharID  = 5829; # 5829 Ladder info
+$minCharID  = 7711; # 5829 Ladder info
 
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
