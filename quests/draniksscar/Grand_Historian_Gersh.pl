@@ -241,3 +241,9 @@ sub EVENT_SAY {
     }
 }
 
+sub EVENT_ITEM {
+    quest::say("I do not want this.");
+    quest::say("If you were trying to get to the caves using your Epic item, you need to speak with Rod Malnverr in the Plane of Knowledge to get flagged, then return to me and ask for access.");
+    plugin::return_items(\%itemcount);
+}
+
