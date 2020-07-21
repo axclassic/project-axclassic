@@ -10,6 +10,7 @@ sub EVENT_ENTER {
 	$InInstanceCrem = quest::GetInstanceID("sncrematory",0);
 	$InInstancePool = quest::GetInstanceID("snpool",0);
 	$InInstanceLair = quest::GetInstanceID("snlair",0);
+    $client->ClearCompassMark();
 	if($InInstancePlant1 > 0){
 		quest::MovePCInstance(287, $InInstancePlant1, 150, 127, -7);
 	}
