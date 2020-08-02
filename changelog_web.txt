@@ -2,6 +2,7 @@ AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 == 08/01/2020==
 patrikpatrik: Empty zones excluded from HotZones.
+patrikpatrik: Tag links fixed.
 
 == 07/02/2020==
 patrikpatrik: Stripped down HotZones to front page viewing instead. 
