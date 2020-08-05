@@ -2,6 +2,7 @@ AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==08/04/2020==
 patrikpatrik: Filtered out npc lists.
+patrikpatrik: Minor updates to front page, refer news.
 
 == 08/01/2020==
 patrikpatrik: Empty zones excluded from HotZones.
