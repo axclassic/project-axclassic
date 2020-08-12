@@ -2,6 +2,7 @@ AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==08/12/2020==
 Angelox: Updated Windows executables, added database update with updater.
+Angelox: Updated ax_classic database (clean copy).
 
 ==03/28/2020==
 Congdar: fix Priest of Discord Rift of... spells.
