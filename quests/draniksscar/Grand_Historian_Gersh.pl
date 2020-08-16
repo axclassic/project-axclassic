@@ -85,7 +85,7 @@ sub EVENT_SAY {
         quest::setglobal("EpicThree", 1, 5, "F");
         if(defined($qglobals{$name."dranikhollowsb9"})) {
             my $QGlobalValue = $qglobals{$name."dranikhollowsb9"};
-            quest::MovePCInstance(318, $QGlobalValue, 0.0, -447.0, -36.0);  #dranikhollowsb
+            quest::MovePCInstance(319, $QGlobalValue, 0.0, -447.0, -36.0);  #dranikhollowsb
         }
         else {
             my $instanceID = quest::CreateInstance("dranikhollowsb", 9, 28800);

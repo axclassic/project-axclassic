@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/16/2020==
+Congdar: Fix Grand Historian Gersh Learning zone id
+
 ==07/17/2020==
 Congdar: update Oracle_Cador (202238)
 Congdar: Sewers of Nihilia instances open
