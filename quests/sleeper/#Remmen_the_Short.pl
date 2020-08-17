@@ -5,9 +5,8 @@ sub EVENT_SAY {
   my $abuse = quest::saylink("abuse", 1);
   my $war = quest::saylink("war", 1);
   my $tunnels = quest::saylink("tunnels", 1);
-  my $guardians = quest::saylink("guardians", 1);
   my $text2 = quest::saylink("chaos", 1);
-   my $motives = quest::saylink("motives", 1);
+  my $motives = quest::saylink("motives", 1);
    if($text=~/hail/i && defined $qglobals{"Sleeperawake"} == 1){
     quest::say("You have returned, and again, I salute your effort. However, mortal being, Things have changed in this $forsaken place. You have been deemed a threat to the Claws of Veeshan for releasing Kerafyrm.");
 	quest::say("Since you seem to have no values other than self riches, The pride has improved the creatures of this lair in hopes you will see the light.");
