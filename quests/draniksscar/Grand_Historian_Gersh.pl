@@ -24,9 +24,6 @@ sub EVENT_SAY {
         quest::setglobal("EpicOne", 1, 5, "F");
         quest::say("I am Grand Historian Gersh and I can open your mind to the history of our people if you wish. I can show you the remnants of our $caves where we hid from the raiding Muramite Army.");
     }
-    else {
-        quest::say("You need to speak to Rod Malnverr in The Plane of Knowledge for futher access.");
-    }
     if($text=~/passing/i) {
         quest::say("Be Gone from this place! You have not reached sufficient skill to even attempt what I could show you.");
     }
@@ -51,31 +48,19 @@ sub EVENT_SAY {
     if($text=~/caves/i && defined $qglobals{"EpicOne"} == 1 && $ulevel >= 50) {
         quest::say("There are several caves in the area, some we used to hide in, this is true but there are $others also.");
     }
-    else {
-        quest::say("You need to speak to Rod Malnverr in The Plane of Knowledge for futher access.");
-    }
     if($text=~/others/i && defined $qglobals{"EpicOne"} == 1 && $ulevel >= 50) {
         quest::say("Special caves where only the best of the best are given $access.");
-    }
-    else {
-        quest::say("You need to speak to Rod Malnverr in The Plane of Knowledge for futher access.");
     }
     if($text=~/access/i && defined $qglobals{"EpicOne"} == 1 && $ulevel >= 50) {
         quest::say("Only those who have proven themselves $worthy may enter these special caves.");
         quest::delglobal("EpicOne");
         quest::setglobal("Passed", 1, 5, "F");
     }
-    else {
-        quest::say("You need to speak to Rod Malnverr in The Plane of Knowledge for futher access.");
-    }
     if($text=~/worthy/i && defined $qglobals{"Passed"} == 1 && $ulevel >= 50) {
         quest::say("You $name have passed the worthiness test. You shall be granted access to the special caves.");
         quest::say("Depending on how many seasons you have under your belt, I can send you to the Cave of $Trials, the Cave of $Learning or the Cave of $Mastery.");
         quest::delglobal("Passed");
         quest::setglobal("EpicChoice", 1, 5, "F");
-    }
-    else {
-        quest::say("You need to speak to Rod Malnverr in The Plane of Knowledge for futher access.");
     }
     if($text=~/Trials/i && defined $qglobals{"EpicChoice"} == 1 && $ulevel <= 55  && $ulevel >= 50) {
         quest::say("As you wish my friend you may enter the Cave of Trials.");
@@ -92,9 +77,6 @@ sub EVENT_SAY {
             quest::MovePCInstance(318, $instanceID, 0.0, 0.0, -11.1); # dranikhollowsa
         }
     }
-    else {
-        quest::say("You need to speak to Rod Malnverr in The Plane of Knowledge for futher access.");
-    }
     if($text=~/Learning/i && defined $qglobals{"EpicChoice"} == 1 && $ulevel <= 59  && $ulevel >= 56){
         quest::say("As you wish my friend you may enter the Cave of Learning.");
         quest::delglobal("EpicChoice");
@@ -110,9 +92,6 @@ sub EVENT_SAY {
             quest::MovePCInstance(319, $instanceID, 0.0, -447.0, -36.0);  #dranikhollowsb
         }
     }
-    else {
-        quest::say("You need to speak to Rod Malnverr in The Plane of Knowledge for futher access.");
-    }
     if($text=~/Mastery/i && defined $qglobals{"EpicChoice"} == 1 && $ulevel >= 60) {
         quest::say("Well done my friend you may enter the Cave of Mastery.");
         quest::delglobal("EpicChoice");
@@ -127,9 +106,6 @@ sub EVENT_SAY {
             quest::setglobal($name."dranikhollowsc9", $instanceID, 7, "H6");
             quest::MovePCInstance(320, $instanceID, 5.0, -51.0, -44.6); #dranikhollowsc
         }
-    }
-    else {
-        quest::say("You need to speak to Rod Malnverr in The Plane of Knowledge for futher access.");
     }
     if($text=~/remnants/i) {
         quest::say("You have chosen to explore the Caves of Dranik. The caves are home to some frightening creatures. The caves you will be exploring are home to a vicious pair of creatures known for their strength and cunning. Should you come across a [ $kyv ] known as the Kyv Bowkeeper, or an Ukun known as the Ukun Fleshrender, prepare yourself for a tough battle. The battle might be hard fought, but some would say the riches are well worth it.");
