@@ -273,11 +273,11 @@ sub EVENT_ITEM {
         $client->Message(14,"Your BattleRez is already scribed.");
         quest::summonitem(628);
     }
-    elsif(($itemcount{628} == 1) && ($ulevel <= 44)) {
-        $client->Message(14,"Come back when your level 45 or higher.");
+    elsif(($itemcount{628} == 1) && ($ulevel <= 49)) {
+        $client->Message(14,"Come back when your level 50 or higher.");
         quest::summonitem(628);
     }
-    elsif($itemcount{628} == 1) {
+    elsif(($itemcount{628} == 1) && ($ulevel >= 50)) {
         $client->Message(14,"Excellent, thank you, $class. Your spell has been scribed.");
         quest::setglobal("BattleRez",1,5,"F");
         $BattleRez = undef;

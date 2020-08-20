@@ -11,11 +11,11 @@ sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail, good $name!! Be wary near the waters of Lake Rathe! The Riptide goblin king, Lord Bergurgle, has been commanding his minions to murder and rob all who come near it! I am here seeking his death but I am afraid I am no match for all of his subjects. I shall reward you greatly for the death of Lord Bergurgle. I simply ask that you bring me his crown as proof.");
   }
-  if(($text=~/BattleRez/i) && ($ulevel <= 45)){
-    quest::say("Come back when you are level 45 or higher...");
+  if(($text=~/BattleRez/i) && ($ulevel <= 49)){
+    quest::say("Come back when you are level 50 or higher...");
     return;
   }
-  if(($text=~/BattleRez/i) && ($ulevel >= 45)){
+  if(($text=~/BattleRez/i) && ($ulevel >= 50)){
     if($BattleRez == 1) {
     quest::say("You already have the BattleRez command.");
        return;
