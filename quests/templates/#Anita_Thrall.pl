@@ -12,6 +12,7 @@ sub EVENT_SAY {
     my $circle = quest::saylink("Circle", 1);
     my $portal = quest::saylink("Portal", 1);
     my $temperance = quest::saylink("Temperance", 1);
+    my $battlerez = quest::saylink("BattleRez", 1);
     my $lesser = quest::saylink("Lesser", 1);
     my $summon = quest::saylink("Summon", 1);
     my $conjure = quest::saylink("Conjure", 1);
@@ -30,7 +31,7 @@ sub EVENT_SAY {
         $client->Message(14,"Hello $name! I can scribe certain $spells your bots may require.");
     }
     elsif($text=~/spells/i) {
-        $client->Message(14,"I can scribe $circle or $portal spells, Also $temperance , $lesser Summon Corpse, $summon Corpse, $conjure Corpse, $tash, $selos, $magician epic - But you need to bring me the spell.");
+        $client->Message(14,"I can scribe $circle or $portal spells, Also $temperance, $battlerez, $lesser Summon Corpse, $summon Corpse, $conjure Corpse, $tash, $selos, $magician epic - But you need to bring me the spell.");
     }
     elsif($text=~/lesser|tashan/i) {
         $client->Message(14,"Buy it from the spell merchant and hand it to me. I'll scribe the spell for your bot.");
@@ -109,6 +110,10 @@ sub EVENT_SAY {
     }
     elsif($text=~/gunthak/i) {
         $client->Message(14,"Entrance to Gulf of Gunthak is in an old ship docked on the east coast of Stonebrunt Mountains.");
+    }
+    elsif($text=~/battlerez/i) {
+        $client->Message(14,"In order to aquire the BattleRez command, you must have finished your Cleric Epic quest.");
+        $client->Message(14,"If you already did this quest, go and see Shmendrik Lavawalker in Lake Rathetear and ask about the [BattleRez] command.");
     }
 }
 
@@ -262,6 +267,21 @@ sub EVENT_ITEM {
         quest::setglobal("bot_spell_4",2,5,"F");
         $bot_spell_4 = undef;
         $client->Message(6,"You have scribed the spell Blessing of Temperance!");
+    }
+    ## BattleRez
+    elsif(($itemcount{628} == 1) && ($BattleRez == 1)) {
+        $client->Message(14,"Your BattleRez is already scribed.");
+        quest::summonitem(628);
+    }
+    elsif(($itemcount{628} == 1) && ($ulevel <= 44)) {
+        $client->Message(14,"Come back when your level 45 or higher.");
+        quest::summonitem(628);
+    }
+    elsif($itemcount{628} == 1) {
+        $client->Message(14,"Excellent, thank you, $class. Your spell has been scribed.");
+        quest::setglobal("BattleRez",1,5,"F");
+        $BattleRez = undef;
+        $client->Message(6,"You have aquired the BattleRez command!");
     }
     ## Circle Spells
     elsif(($itemcount{129} == 1) && ($itemcount{130} == 1)) {

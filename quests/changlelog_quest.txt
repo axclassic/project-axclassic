@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/20/2020==
+Angelox: BattleRez comand quest will start with next ladder reset.
+
 ==08/16/2020==
 Congdar: Fix Grand Historian Gersh Learning zone id
 
