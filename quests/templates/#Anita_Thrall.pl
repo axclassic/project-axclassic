@@ -13,6 +13,7 @@ sub EVENT_SAY {
     my $portal = quest::saylink("Portal", 1);
     my $temperance = quest::saylink("Temperance", 1);
     my $battlerez = quest::saylink("BattleRez", 1);
+    my $rezbot = quest::saylink("RezBot", 1);
     my $lesser = quest::saylink("Lesser", 1);
     my $summon = quest::saylink("Summon", 1);
     my $conjure = quest::saylink("Conjure", 1);
@@ -31,7 +32,7 @@ sub EVENT_SAY {
         $client->Message(14,"Hello $name! I can scribe certain $spells your bots may require.");
     }
     elsif($text=~/spells/i) {
-        $client->Message(14,"I can scribe $circle or $portal spells, Also $temperance, $battlerez, $lesser Summon Corpse, $summon Corpse, $conjure Corpse, $tash, $selos, $magician epic - But you need to bring me the spell.");
+        $client->Message(14,"I can scribe $circle or $portal spells, Also $temperance, $battlerez, $lesser Summon Corpse, $summon Corpse, $conjure Corpse, $tash, $selos, $magician epic, upgrade your $rezbot - But you need to bring me the spell or scroll.");
     }
     elsif($text=~/lesser|tashan/i) {
         $client->Message(14,"Buy it from the spell merchant and hand it to me. I'll scribe the spell for your bot.");
@@ -114,6 +115,10 @@ sub EVENT_SAY {
     elsif($text=~/battlerez/i) {
         $client->Message(14,"In order to aquire the BattleRez command, you must have finished your Cleric Epic quest.");
         $client->Message(14,"If you already did this quest, go and see Shmendrik Lavawalker in Lake Rathetear and ask about the [BattleRez] command.");
+    }
+    elsif($text=~/rezbot/i) {
+        $client->Message(14,"I can upgrade your RezBot command to enable use during battle.");
+        $client->Message(14,"Journey to the Ocean of Tears and seek out Elesseryl Terussar, ask her about the [RezBot] for battle.");
     }
 }
 
@@ -282,6 +287,17 @@ sub EVENT_ITEM {
         quest::setglobal("BattleRez",1,5,"F");
         $BattleRez = undef;
         $client->Message(6,"You have aquired the BattleRez command!");
+    }
+    ## RezBot
+    elsif(($itemcount{629} == 1) && ($RezBot == 1)) {
+        $client->Message(14,"Your RezBot has already been upgraded.");
+        quest::summonitem(629);
+    }
+    elsif($itemcount{629} == 1) {
+        $client->Message(14,"Excellent $class. Your RezBot has been enabled for battle.");
+        quest::setglobal("RezBot",1,5,"F");
+        $RezBot = undef;
+        $client->Message(6,"You have upgraded the RezBot command!");
     }
     ## Circle Spells
     elsif(($itemcount{129} == 1) && ($itemcount{130} == 1)) {
