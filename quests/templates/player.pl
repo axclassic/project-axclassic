@@ -20,7 +20,10 @@ sub EVENT_ENTERZONE {
     $event4 = 0;
     $event5 = 0;
     $clientver = $client->GetClientVersion();
-    my $random_result = int(rand(100));
+    my $rand1 = int(rand(100));
+    my $rand2 = int(rand(100));
+    my $rand3 = int(rand(100));
+    my $rand4 = int(rand(100));
     ## Set proper spawn in dual-spawn zones
     if($zoneid ==  81) {
         ##Droga
@@ -98,37 +101,37 @@ sub EVENT_ENTERZONE {
 #            $client->Message(15,"This zone is trivial to you since you aquired level 50 - you are only allowed to complete your unfinished quests.");
 #        }
 #    }
-    if ($random_result<=3){
+    if ($rand1<=10){
 	if($ulevel >= 15 && !defined($qglobals{Wayfarer}) && $client->GetStartZone()!=$zoneid && $zoneid !=50 && $zoneid !=12) {
 	    $client->Message(15,"A mysterious voice whispers to you, 'If you can feel me in your thoughts, know this -- something is changing in the world and I reckon you should be a part of it. I do not know much, but I do know that in every home city and the wilds there are agents of an organization called the Wayfarers Brotherhood. They are looking for recruits . . . If you can hear this message, you are one of the chosen. Rush to your home city, or search the West Karanas and Rathe Mountains for a contact if you have been exiled from your home for your deeds, and find out more. Adventure awaits you, my friend.'");
 	}
     }
     ## Angelox: I'm gonna put in some random help for new players (new players are our life line :) - feel free to add.).
     if($ulevel <= 3) {
-        if($random_result<=25) {
+        if($rand2<=25) {
             $client->Message(14,"AXClassic is much harder and challenging than normal EqEmu, you'll depend heavily on  Bot help for advancement."); 
             $client->Message(14,"Use your \"Find\" button and look for Aediles Thrall for Bot (Mercenary) help.");
         }
-        elsif($random_result<=50) {
+        elsif($rand2<=50) {
             $client->Message(14,"You best be using the Underfoot client posted at AXClassic Forums; http://forums.axclassic.com."); 
             $client->Message(14,"You will not be able to board the ship that sails from Freeport to Butcher and back without an AXClassic client.");
 	    $client->Message(14,"You may also have problems with disconnects if not using an AXClassic client.");
         }
-        elsif($random_result<=75) {
+        elsif($rand2<=75) {
             $client->Message(14,"Post petitions and requests at http://forums.axclassic.com."); 
             $client->Message(14,"You first bot-helper is free (no quest needed), find and talk to Aediles Thrall about adding more bots.");
             $client->Message(14,"Use the command '#bot create help' for creating your bot.");
         }
-        elsif($random_result<=100) {
+        elsif($rand2<=100) {
             $client->Message(14,"Most travel in AXClassic is done by looted or quested moonstones and quested gates or portals for your Druid or Wizard Mercenary Bot."); 
             $client->Message(14,"Use your \"Find\" button and look for the Anita Thrall for gate or portal quests. ");
         }
         ## Angelox: This is for anouncing events
     }
-    if($random_result<=2) {
+    if($rand2<=2) {
         $client->Message(14,"If you spot a bug while playing, please post the bug report at http://forums.axclassic.com.");
     }
-    elsif ($random_result<=4) {
+    elsif ($rand2<=4) {
         $client->Message(14,"Ranger Band will upgrade your loose change to the highest coinage possible, hand him what you want converted.");
     }
     # elsif ($random_result<=4){
@@ -137,23 +140,23 @@ sub EVENT_ENTERZONE {
     # elsif ($random_result<=15){
     #   $client->Message(14,"The new ladder started on New Years 2012, New characters created on or after this date should talk to Champion Darkwater.");
     # }
-    elsif(($event1==1)&&($random_result<=70)) {
+    elsif(($event1==1)&&($rand3<=70)) {
         #New Year event
         $client->Message(14,"New Year event is active! Ask Ranger Band about the New [Year]. You must be level 10 or lower for this event.");
     }
-    elsif(($event2==1)&&($random_result<=70)) {
+    elsif(($event2==1)&&($rand3<=70)) {
         #Easter event
         $client->Message(14,"Easter event is active! Ask Ranger Band about the [Easter] egg hunt.");
     }
-    elsif(($event3==1)&&($random_result<=70)) {
+    elsif(($event3==1)&&($rand3<=70)) {
         #Bloodhunt event
         $client->Message(14,"Bloodhunt event is active! Ask Countess Zellia about the [bloodhunt].");
     }
-    elsif(($event4==1)&&($random_result<=70)) {
+    elsif(($event4==1)&&($rand3<=70)) {
         #Bloodhunt event
         $client->Message(14,"Pitch Black event is active! Head on out to Ocean of Tears when it gets dark.");
     }
-    elsif(($event5==1)&&($random_result<=70)) {
+    elsif(($event5==1)&&($rand3<=70)) {
         #Random Moonstone event
         $client->Message(14,"Ranger Bands dislike for Orcs event is active! Talk to Ranger Band. You must be level 20 or lower for this event.");
     }
@@ -181,7 +184,7 @@ sub EVENT_ENTERZONE {
     }
     ## Advise the players about our client status.
    if($clientver < 4) {
-    if($random_result<=10){
+    if($rand4<=10){
           $client->Message(15,"AXClassic is compatible with Underfoot, SoF, SoD, and Titanium clients.");
           $client->Message(15,"But best compatible with the Underfoot client.");
 	  $client->Message(15,"Underfoot client is what the developers work with and we urge you to use.");
