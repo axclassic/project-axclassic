@@ -7,6 +7,8 @@ sub EVENT_CONNECT {
         $client->Message(6,"You receive a character flag!");
         $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
         $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
+	quest::setglobal("seen_shadeweaver", 0, 5, "F");
+	$seen_shadeweaver = undef;
     }
 } # EVENT_CONNECT End
 
@@ -17,6 +19,8 @@ sub EVENT_ENTERZONE {
     $event3 = 0;
     $event4 = 0;
     $event5 = 0;
+    $clientver = $client->GetClientVersion();
+    my $random_result = int(rand(100));
     ## Set proper spawn in dual-spawn zones
     if($zoneid ==  81) {
         ##Droga
@@ -83,7 +87,7 @@ sub EVENT_ENTERZONE {
 #    }
     elsif(($zoneid ==  59 ) && ($event3 == 1) && ($williampop == 0)) {
         ##Mistmoore forWilliam spawn
-            quest::spawn2(59161,0,0,361.0,-213.0,-136.8,126.0);
+        quest::spawn2(59161,0,0,361.0,-213.0,-136.8,126.0);
         quest::delglobal("williampop");
         quest::setglobal("williampop",2,7,"F");
     }
@@ -94,16 +98,21 @@ sub EVENT_ENTERZONE {
 #            $client->Message(15,"This zone is trivial to you since you aquired level 50 - you are only allowed to complete your unfinished quests.");
 #        }
 #    }
+    if ($random_result<=3){
+	if($ulevel >= 15 && !defined($qglobals{Wayfarer}) && $client->GetStartZone()!=$zoneid && $zoneid !=50 && $zoneid !=12) {
+	    $client->Message(15,"A mysterious voice whispers to you, 'If you can feel me in your thoughts, know this -- something is changing in the world and I reckon you should be a part of it. I do not know much, but I do know that in every home city and the wilds there are agents of an organization called the Wayfarers Brotherhood. They are looking for recruits . . . If you can hear this message, you are one of the chosen. Rush to your home city, or search the West Karanas and Rathe Mountains for a contact if you have been exiled from your home for your deeds, and find out more. Adventure awaits you, my friend.'");
+	}
+    }
     ## Angelox: I'm gonna put in some random help for new players (new players are our life line :) - feel free to add.).
-    my $random_result = int(rand(100));
     if($ulevel <= 3) {
         if($random_result<=25) {
             $client->Message(14,"AXClassic is much harder and challenging than normal EqEmu, you'll depend heavily on  Bot help for advancement."); 
             $client->Message(14,"Use your \"Find\" button and look for Aediles Thrall for Bot (Mercenary) help.");
         }
         elsif($random_result<=50) {
-            $client->Message(14,"There are updated client files posted at AXClassic Forums; http://forums.axclassic.com."); 
-            $client->Message(14,"You will not be able to board the ship that sails from Freeport to Butcher and back without these files.");
+            $client->Message(14,"You best be using the Underfoot client posted at AXClassic Forums; http://forums.axclassic.com."); 
+            $client->Message(14,"You will not be able to board the ship that sails from Freeport to Butcher and back without an AXClassic client.");
+	    $client->Message(14,"You may also have problems with disconnects if not using an AXClassic client.");
         }
         elsif($random_result<=75) {
             $client->Message(14,"Post petitions and requests at http://forums.axclassic.com."); 
@@ -150,47 +159,47 @@ sub EVENT_ENTERZONE {
     }
     ## Angelox: This is for CR Stone in case of death under level 10;
     #if (($ulevel <= 9) && ($zoneid != 165) && (${$name}!=2)) {
-    if(($ulevel <= 9) && (!defined(${$name}))) {
-        if($ulevel == 1) {
-            $client->Message(14,"For game play in Shadeweavers Thicket, Ask Ranger Band about the [Moonstone].");
-        }
-        (${$name})=undef;
-        quest::delglobal("$name");
-        quest::setglobal("$name",0,7,"F");
+    if ($ulevel <= 9){
+      if(!defined $seen_shadeweaver) {
+          $client->Message(14,"For game play in Shadeweavers Thicket, Ask Ranger Band about the [Moonstone].");
+	  quest::setglobal("seen_shadeweaver", 0, 5, "F");
+	  $seen_shadeweaver = undef;
+      }
+      if (($zoneid == 165) && ($seen_shadeweaver <= 1)) {
+	  $client->Message(14,"You should bind yourself here if you plan to play in Shadeweavers Thicket.");
+	  $client->Message(14,"If you die,this stone will send you back to Shadeweavers and will work only a few times.");  
+	  quest::summonitem(140); #CR Stone for newbes in Shadeweavers
+	  $client->Message(14,"Ask Ranger Band again about a [Moonstone] for returning.");
+	  quest::setglobal("seen_shadeweaver", 2, 5, "F");
+	  $seen_shadeweaver = undef;
+      }
     }
-    elsif(($ulevel <= 9) && ($zoneid == 165) && (defined(${$name}) && (${$name}!=2))) {
-        $client->Message(14,"Ask Ranger Band again about a [Moonstone] for returning.");
-        (${$name})=undef;
-        quest::delglobal("$name");
-        quest::setglobal("$name",2,7,"F");
-    }
-    elsif(($ulevel >= 10 && $ulevel <= 15) && (${$name}<=2)) {
-        if(defined (${$name})) {
-            $client->Message(14,"There are more Moonstone quests available, ask Champion Darkwater about the [Moonstones].");
-            quest::delglobal("$name");
-            (${$name})=undef;
-        }
-    }
-    elsif((!plugin::check_hasitem($client, 138)) && (defined(${$name}) && ${$name}==2)) {
-        quest::summonitem(140);
+    elsif(($ulevel >= 10 && $ulevel <= 15) && ($seen_shadeweaver >= 1)) {
+          $client->Message(14,"There are more Moonstone quests available, ask Champion Darkwater about the [Moonstones].");
+          quest::setglobal("seen_shadeweaver", 0, 5, "F");
+          $seen_shadeweaver = undef;
     }
     ## Advise the players about our client status.
-    if(($ulevel == 1) && (defined $bot_spawn_limit)) {
-        $clientver = $client->GetClientVersion();
-        if($clientver > 3) {
-            $client->Message(15,"AXClassic is compatible with Titanium, SoF, SoD, and Underfoot clients.");
-            $client->Message(15,"Since AXClassic is based on the Titanium era, some features with newer clients will be disabled.");
-            $client->Message(15,"We hope you find AXClassics custom content interesting and stay with us.");
-            $client->Message(15,"Thank you for trying us out!");
-        }
+   if($clientver < 4) {
+    if($random_result<=10){
+          $client->Message(15,"AXClassic is compatible with Underfoot, SoF, SoD, and Titanium clients.");
+          $client->Message(15,"But best compatible with the Underfoot client.");
+	  $client->Message(15,"Underfoot client is what the developers work with and we urge you to use.");
+          $client->Message(15,"You can download the AXClassic version of Underfoot at the AXClassic Forums.");
+          $client->Message(15,"Thank you for playing here!");
     }
-    elsif($zoneid == 71) {
+    elsif($ulevel == 1){
+          $client->Message(15,"AXClassic is compatible with Underfoot, SoF, SoD, and Titanium clients.");
+          $client->Message(15,"But best compatible with the Underfoot client.");
+	  $client->Message(15,"Underfoot client is what the developers work with and we urge you to use.");
+          $client->Message(15,"You can download the AXClassic version of Underfoot at the AXClassic Forums.");
+          $client->Message(15,"Thank you for playing here!");
+    }
+  }
+    if($zoneid == 71) {
         ##airplane de-buff
         $client->BuffFadeAll();
     } 
-    elsif($ulevel >= 15 && !defined($qglobals{Wayfarer}) && $client->GetStartZone()!=$zoneid && $zoneid !=50 && $zoneid !=12) {
-        $client->Message(15,"A mysterious voice whispers to you, 'If you can feel me in your thoughts, know this -- something is changing in the world and I reckon you should be a part of it. I do not know much, but I do know that in every home city and the wilds there are agents of an organization called the Wayfarers Brotherhood. They are looking for recruits . . . If you can hear this message, you are one of the chosen. Rush to your home city, or search the West Karanas and Rathe Mountains for a contact if you have been exiled from your home for your deeds, and find out more. Adventure awaits you, my friend.'");
-    }
 }
 
 sub EVENT_COMBINE_SUCCESS {

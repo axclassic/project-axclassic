@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/26/2020==
+Angelox: Revised player.pl for the starter zones. 
+
 ==08/23/2020==
 Angelox: Added RezBot quest.
 
