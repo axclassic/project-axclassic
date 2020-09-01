@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/01/2020==
+Angelox: changed these files to create and copy sym links so folder templates is all that needs updating.
+	this change affects Rathe Server only.
+
 ==08/27/2020==
 Angelox: Organized all "A_mysterious_voice.pls" into one for the templates folder.
 

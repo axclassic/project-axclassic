@@ -1,0 +1,4 @@
+#!/bin/sh
+#This script is for Symlink templates/A_mysterious_voice.pl accross the starter zones
+#since it seems to work better i f script resides with him.
+echo ../akanon ../cabeast ../cabwest ../felwithea ../felwitheb ../freporte ../freportw ../gfaydark ../grobb ../halas ../kaladima ../kaladimb ../kerraridge ../neriakb ../neriakc ../oggok ../paineel ../qeynos ../qeynos2 ../qrg ../rathemtn ../rivervale ../swampofnohope | xargs -n 1 ln -s /home/angelox/eqemu/server/GitHub_Repo/quests/templates/A_mysterious_voice.pl A_mysterious_voice.pl
