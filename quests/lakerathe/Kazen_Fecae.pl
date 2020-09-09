@@ -37,7 +37,7 @@ sub EVENT_SAY {
     quest::say("'The reagents are the same types the great sorcerer Miragul used to cheat death and become a lich. I do not wish to become a lich as Miragul did, I have greater aspirations than to simply live forever as a hollow shell. I will rise up a being of pirit only, with a will off my own.' Kazen's eyes glow sickly red as he stared off toward the horizon.");
   }
   if($text=~/symbol of testing/i) {
-    quest::say("Show me that you can overcome larger obstacles and manipulate servants. Gather a force for of mercenaries if you like, or so-called friends, if you desire, and prepare for battle, my promising young student. Return to me with the symbol of testing when you are prepared for battle with my creations. Have no fear, I will not slay you myself. If you do live, tell me the name of the symbol you receive.");
+    quest::say("Show me that you can overcome larger obstacles and manipulate servants. Gather a force of mercenaries if you like, or so-called friends, if you desire, and prepare for battle, my promising young student. Return to me with the symbol of testing when you are prepared for battle with my creations. Have no fear, I will not slay you myself. If you do live, tell me the name of the symbol you receive.");
   }
   if($text=~/symbol of insanity/i) {
     quest::say("It is time for you to meet my partner, so to speak. Drendico Metalbones is his name and I assure you he is quite mad. His mind has been rended by fright, dread, and terror in his trips to the planes and his heart is full of hatred now. He has a tome which I wish you to use. Show him your symbol slowly and listen to his rantings well, they hide great knowledge.");

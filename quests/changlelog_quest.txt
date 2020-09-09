@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/09/2020==
+Congdar: Shield of Bane Warding
+
 ==09/01/2020==
 Angelox: changed these files to create and copy sym links so folder templates is all that needs updating.
 	this change affects Rathe Server only.

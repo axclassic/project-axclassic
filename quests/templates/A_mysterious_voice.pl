@@ -7,7 +7,7 @@ sub EVENT_ENTER {
   my $rand5 = int(rand(100));
   if ($rand5 <= 20 && $ulevel >= 15 && !defined $qglobals{"Messenger"}) {
 	if($zoneid == 55) { #Akanon
-	  $client->Message(15,"A mysterious voice whispers to you, 'Fla[ti Bizttrin in the Clockwork Bar has just joined the Wayfarers Brotherhood and has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
+	  $client->Message(15,"A mysterious voice whispers to you, 'Flapti Bizttrin in the Clockwork Bar has just joined the Wayfarers Brotherhood and has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
 	}
 	elsif($zoneid == 106) { #cabeast
 	  $client->Message(15,"A mysterious voice whispers to you, 'Zauz Malgorne was last seen near the Klok brothers smithing area and has just joined the Wayfarers Brotherhood. He has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");

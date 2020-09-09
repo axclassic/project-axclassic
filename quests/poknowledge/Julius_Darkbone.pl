@@ -11,7 +11,7 @@ my $silver = quest::saylink("silver", 1);
 my $reward = quest::saylink("reward", 1);
 
   if ($text=~/hail/i && $ ulevel >= 65) {
-    $client->Message(14,"Hello $name , do you see my staff? it is a piece of junk. I ones wielded a staf so powerfull that it was taken away from me. To make sure noone ever used it again they broke it into 8 pieces and scattered those pieces around the planes. If you could help me putting my staff back together I would be willing to channel some of my necromantic powers and capture them in a special magical stone for you to use. How about it $name ? Can we $make a deal?");
+    $client->Message(14,"Hello $name , do you see my staff? it is a piece of junk. I ones wielded a staff so powerfull that it was taken away from me. To make sure noone ever used it again they broke it into 8 pieces and scattered those pieces around the planes. If you could help me putting my staff back together I would be willing to channel some of my necromantic powers and capture them in a special magical stone for you to use. How about it $name ? Can we $make a deal?");
   }
 
   if ($text=~/hail/i && $ulevel < 60) {

@@ -1,28 +1,24 @@
-#Leramas_Feston.pl
+# Leramas_Feston (202048)
 #Intermediate Stealth Manual
 
 
 sub EVENT_SAY { 
-	#Pre-existing text.  Preserving it, suspect mobs says one thing if you have the
-	#correct manual and another if you don't.  Don't know a way to check what a pc owns,
-	#can't find a function for it.
-	#if($text=~/Hail/i){
-	#	quest::say("Hello and welcome to New Tanaan.  You are currently standing inside the Tanaan meeting hall. please feel free to relax and let your mind rest for a time here.  Surely the adventures of planar travel must have you weary by now.  The exploration of knowledge is a noble cause indeed. I have dedicated my life to helping others with their studies.  Perhaps once you have achieved a certain level of readiness you should seek me out again.");
-	#}
-	if($text=~/Hail/i){
-		quest::say("I see by the beginner manual you carry that you are on the right track. Let us continue your lessons, shall we? Bring me the Head of Rattican, who resides in the Plane of Disease.  Return this along with your Beginner Stealth Manual.");#text made up/adapted from intermediate magic manual.
+	if($text=~/Hail/i) {
+		quest::say("I hope your first teachings have taught you well, Kinil. It is time for your next lesson. The accumulation of knowledge requires exploration and study. If you explore the cave system in the Plane of Disease, you may eventually discover a foul being by the name of Rallius Rattican. You are to bring me his head, along with your Beginner Stealth Manual. Once done, we may proceed with your next lesson.");
 	}
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 28792 => 1, 29133 => 1)) {#Beginner Stealth Manual, Rattican's Head
-    quest::say("Very impressive, $name. This proves you have clearly graduated to the next phase of training we have to offer. Keep this book by your side and speak to Ethoach Trokith when you are ready for your next lesson.");#Text borrowed from intermediate combat manual, instructor's name changed to match advanced magic manual.
-    quest::summonitem(28793);#Intermediate Stealth Manual
-  }
-  else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-   return 1;
-  }
+	if(plugin::check_handin(\%itemcount, 28792 => 1, 29133 => 1)) {
+		#Beginner Stealth Manual, Rattican's Head
+		quest::say("Good work, $name. I must say I am quite impressed with your recovery of this. Clearly you have shown you are ready to begin your next lesson. Take this new book and when you are ready, speak to Ethoach Trokith. And remember, difficult tasks are put in our way not to stop us, but to call out our strength and resolve.");
+		quest::summonitem(28793);#Intermediate Stealth Manual
+        quest::exp(500000);
+        $client->AddMoneyToPP(0,5,3,6,1);
+	}
+    else {
+		quest::say("I don't need this."); #text made up
+		plugin::return_items(\%itemcount);
+	}
 }#END of FILE Zone:poknowledge  ID:202048 -- Leramas_Feston 
 
