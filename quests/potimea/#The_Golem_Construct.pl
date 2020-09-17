@@ -7,27 +7,16 @@
 ## Files associated player.pl Udunir_Dagorod
 #####################################
 
-sub EVENT_SAY {
-
-}#END sub EVENT_SAY
-
 sub EVENT_DEATH {
-#If player manages to kill the final blow
+    #If player manages to kill the final blow
 	quest::signalwith(219065, 10505, 0); #Triggers Udunir_Dagorod's signal
-
-	if (!defined $qglobals{'portalab'} || ($qglobals{'portalab'} < 4)) {
-		quest::ze(15, "A booming echo bellows from across the sky, 'You have more to dispatch to appease the gods...'");
-		}
-	elsif ($qglobals{'portalab'} == 4) {
-		quest::ze(14, "A booming echo bellows from across the sky, 'Congratulations! You feel an overwhelming urge to pass 
-		through the portals. Make haste before it's too late...'");
-	}
-	else {
+	if(!defined $qglobals{'portalab'} || ($qglobals{'portalab'} < 4)) {
 		quest::ze(15, "A booming echo bellows from across the sky, 'You have more to dispatch to appease the gods...'");
 	}
-
+	elsif($qglobals{'portalab'} == 4) {
+		quest::ze(14, "A booming echo bellows from across the sky, 'Congratulations! You feel an overwhelming urge to pass through the portals. Make haste before it's too late...'");
+    }
+    else {
+        quest::ze(15, "A booming echo bellows from across the sky, 'You have more to dispatch to appease the gods...'");
+    }
 }#END sub EVENT_DEATH
-
-sub EVENT_NPC_SLAY {
-
-}#END Sub EVENT_NPC_SLAY

@@ -15,24 +15,15 @@ sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
 }
 
 sub EVENT_SIGNAL { #like air_event.pl starts a counter for when all are dead, spawns the next group!
-	if ($signal == 14048) { #This signal are from these mobs upon death!
+	if($signal == 14048) { #This signal are from these mobs upon death!
 		$unpccounter+= 1;
 		$undeadc = $unpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $undeadc.");
 	}	
-	if ($unpccounter == 9) { # phase_trigger script npcid - 223191
+	if($unpccounter == 9) { # phase_trigger script npcid - 223191
 		quest::signalwith(223191, 14034, 0);
 		$unpccounter = 0;
 		quest::depop();
 	}
-	
 }
-
-
-sub EVENT_ENTER {
-   # $ucounter += 1;
-}
-
-sub EVENT_EXIT {
-   # $ucounter -= 1;
-} 
+ 

@@ -12,8 +12,3 @@ sub EVENT_DEATH {
     quest::spawn2(quest::ChooseRandom(0,223995),0,0,$x,$y - 10,$z,$h);
 }
 
-sub EVENT_SIGNAL {
-  # if ($signal == 66) {
-    # quest::depop();
-# }
- }

@@ -3,13 +3,13 @@
 my $godcounterII;
 
 sub EVENT_SPAWN {
-    $godcounterII = 0;
-    quest::signalwith(223111,1004,0); #flavor
-	
-    quest::spawn2(223098,0,0,-299,-297,23.3,31); #Fake Bertoxxulous
-    quest::spawn2(223165,0,0,-257,255,6,101.5); #Fake Cazic
-    quest::spawn2(223000,0,0,303.3,306,13.3,161.5); #Fake Innoruuk
-    quest::spawn2(223001,0,0,264,-279,18.75,217.5); #Fake Rallos
+	$godcounterII = 0;
+	quest::signalwith(223111,1004,0); #flavor
+
+	quest::spawn2(223098,0,0,-299,-297,23.3,31); #Fake Bertoxxulous
+	quest::spawn2(223165,0,0,-257,255,6,101.5); #Fake Cazic
+	quest::spawn2(223000,0,0,303.3,306,13.3,161.5); #Fake Innoruuk
+	quest::spawn2(223001,0,0,264,-279,18.75,217.5); #Fake Rallos
     #real mobs
 	quest::spawn2(223196,0,0,-92.6,-153.0,1.0,0.0); #targetable NPC's Guardian_Knight_of_Pestilence
 	quest::spawn2(223196,0,0,-92.6,-173.0,1.0,0.0); #targetable NPC's Guardian_Knight_of_Pestilence
@@ -63,34 +63,35 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SIGNAL {
-	if($signal == 1234) { #sets counter before last 4 gods up
+	if($signal == 1234) {
+		#sets counter before last 4 gods up
 		$lastcounter += 1;
 		$lastlast = $lastcounter;
-		#quest::ze(15, "okay i signaled last counter it is $lastlast.");
+        #quest::ze(15, "okay i signaled last counter it is $lastlast.");
 	}
-	if($lastcounter == 49) {
-	$lastcounter = 0;
-	quest::depopall(223098);
-    quest::depopall(223165);
-    quest::depopall(223000);
-    quest::depopall(223001);
-	quest::spawn2(223142,0,0,-299,-297,23.3,31); #Real Bertoxxulous
-    quest::spawn2(223166,0,0,-257,255,6,101.5); #Real Cazic
-    quest::spawn2(223167,0,0,303.3,306,13.3,161.5); #Real Innoruuk
-    quest::spawn2(223168,0,0,264,-279,18.75,217.5); #Real Rallos
-	}
-	
-	if ($signal == 13010) {
-    $godcounterII += 1;
-	}
-	if ($godcounterII == 4) { #event success
-	$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
-	##quest::we is bugged
-    ##quest::we(14, "Congratulations to $name with the completion of phase 4. The 5th and final phase is in the next room through the fountain.");
-    quest::setglobal("portal5",1,7,"H1"); #sets flag for final phase to Quarm
-    $godcounterII = 0;
-	}
-}
 
-sub EVENT_TIMER {
+    if($lastcounter == 49) {
+		$lastcounter = 0;
+		quest::depopall(223098);
+		quest::depopall(223165);
+		quest::depopall(223000);
+		quest::depopall(223001);
+		quest::spawn2(223142,0,0,-299,-297,23.3,31); #Real Bertoxxulous
+		quest::spawn2(223166,0,0,-257,255,6,101.5); #Real Cazic
+		quest::spawn2(223167,0,0,303.3,306,13.3,161.5); #Real Innoruuk
+		quest::spawn2(223168,0,0,264,-279,18.75,217.5); #Real Rallos
+	}
+
+	if($signal == 13010) {
+		$godcounterII += 1;
+	}
+
+    if($godcounterII == 4) {
+		#event success
+		$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
+        ##quest::we is bugged
+        ##quest::we(14, "Congratulations to $name with the completion of phase 4. The 5th and final phase is in the next room through the fountain.");
+		quest::setglobal("portal5",1,7,"H1"); #sets flag forfinal phase to Quarm
+        $godcounterII = 0;
+	}
 }

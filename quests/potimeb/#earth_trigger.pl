@@ -15,12 +15,12 @@ sub EVENT_SPAWN { #This spawns 2nd grp + boss for phase 2
 }
 
 sub EVENT_SIGNAL { #like earth_counter.pl starts a counter for when all are dead, then opens inner doors!
-	if ($signal == 14035) { #This signal are from these mobs upon death!
+	if($signal == 14035) { #This signal are from these mobs upon death!
 		$enpccounter+= 1;
 		$earthc = $enpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $earthc.");
 	}	
-	if ($enpccounter == 10) { # phase_trigger script npcid - 223191
+	if($enpccounter == 10) { # phase_trigger script npcid - 223191
 		quest::signalwith(223191, 14035, 0);
 		$enpccounter = 0;
 		quest::depop();
@@ -28,16 +28,17 @@ sub EVENT_SIGNAL { #like earth_counter.pl starts a counter for when all are dead
 	
 }
 
-sub EVENT_ENTER {
+#sub EVENT_ENTER {
    # quest::settimer("earth", 1); #1 sec after first player enters event starts
    # quest::clear_proximity();
-}
+#}
 
-sub EVENT_TIMER {
+#sub EVENT_TIMER {
 	# if ($timer eq "earth") {
 		# quest::spawn2(223186,0,0,-129.6,1720,547,0); #spawn event script
 		# quest::signalwith(223211,23,0); #send signal to start_trial signal 23 trigger to start hour time limit
 		# quest::stoptimer("earth");
 		# quest::depop();
 	# }
-}
+#}
+

@@ -9,18 +9,19 @@ sub EVENT_SPAWN {
 }  
 
 sub EVENT_SIGNAL {
-	if ($signal == 14028) {
+	if($signal == 14028) {
 		$fnpccounter += 1;
 		$firec = $fnpccounter;
 		#quest::ze(15, "okay i signaled and my counte ris now $firec.");
 	}
-	if ($fnpccounter == 3 ) { # was at 9, testing at 2.
+	if($fnpccounter == 3 ) { # was at 9, testing at 2.
 		quest::spawn2(223090,0,0,68,573,504,185.5); #Kazrok_of_Fire
 		$fnpccounter = 0;
 	}
-	if ($signal == 14020) {
+	if($signal == 14020) {
 		quest::signalwith(223177,14060,0); #tell main about phase 1 success
 		quest::depop();
 	
 	}
 }
+
