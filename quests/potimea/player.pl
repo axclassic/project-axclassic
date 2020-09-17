@@ -29,8 +29,8 @@ sub EVENT_CLICKDOOR {
     #quest::ze(15, "portal says bosscounter is $bosscounter.");
     if(($qglobals{"portalab"} == 5) && (!defined $qglobals{"blockout"})) {
         if($doorid == 8) {
-            quest::setglobal("blockout", 1, 7, "H24");
-            quest::setglobal("blockout2", 1, 7, "H5");
+            quest::setglobal("blockout", 1, 7, "H2");
+            quest::setglobal("blockout2", 1, 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             #Once zone in, counter is reset
@@ -38,8 +38,8 @@ sub EVENT_CLICKDOOR {
             quest::movepc(223, -36, 1352, 496);
         }
         elsif($doorid == 9) {
-            quest::setglobal("blockout", 1, 7, "H5");
-            quest::setglobal("blockout2", 1, 7, "H5");
+            quest::setglobal("blockout", 1, 7, "H2");
+            quest::setglobal("blockout2", 1, 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             #Once zone in, counter is reset
@@ -47,8 +47,8 @@ sub EVENT_CLICKDOOR {
             quest::movepc(223, -51, 857, 496);
         }
         elsif($doorid == 10) {
-            quest::setglobal("blockout", 1, 7, "H5");
-            quest::setglobal("blockout2", 1, 7, "H5");
+            quest::setglobal("blockout", 1, 7, "H2");
+            quest::setglobal("blockout2", 1, 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             #Once zone in, counter is reset
@@ -56,8 +56,8 @@ sub EVENT_CLICKDOOR {
             quest::movepc(223, -35, 1636, 496);
         }
         elsif($doorid == 11) {
-            quest::setglobal("blockout", 1, 7, "H5");
-            quest::setglobal("blockout2", 1, 7, "H5");
+            quest::setglobal("blockout", 1, 7, "H2");
+            quest::setglobal("blockout2", 1, 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             #Once zone in, counter is reset
@@ -65,8 +65,8 @@ sub EVENT_CLICKDOOR {
             quest::movepc(223, -55, 569, 496);
         }
         elsif($doorid == 12) {
-            quest::setglobal("blockout", 1, 7, "H5");
-            quest::setglobal("blockout2", 1, 7, "H5");
+            quest::setglobal("blockout", 1, 7, "H2");
+            quest::setglobal("blockout2", 1, 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             #Once zone in, counter is reset
