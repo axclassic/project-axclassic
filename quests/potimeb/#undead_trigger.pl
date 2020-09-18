@@ -1,6 +1,9 @@
 ##undead_trigger this is an invisible controller that triggers #undead_event.pl
 # npcid - 223171 #undead2_trigger is 223175
 
+my $unpccounter = 0;
+my $undeadc = 0;
+
 sub EVENT_SPAWN { # This spawns undead 2nd grp + boss phase 2
 	quest::spawn2(223138,0,0,232.0,1104.0,491.1,192.5);
 	quest::spawn2(223107,0,0,232.0,1114.0,491.2,192.5);
@@ -16,7 +19,7 @@ sub EVENT_SPAWN { # This spawns undead 2nd grp + boss phase 2
 
 sub EVENT_SIGNAL { #like undead_counter.pl starts a counter for when all are dead, then opens inner doors!
 	if($signal == 14035) { #This signal are from these mobs upon death!
-		$unpccounter+= 1;
+		$unpccounter += 1;
 		$undeadc = $unpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $undeadc.");
 	}	

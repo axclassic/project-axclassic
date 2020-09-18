@@ -1,13 +1,31 @@
 # This is phase 3 trigger npcid - 223154
-my $namedI;
-my $namedII;
-my $namedIII;
-my $namedIV;
-my $namedV;
-my $namedVI;
-my $namedVII;
-my $namedVIII;
-my $namedIX;
+my $namedI = 0;    
+my $namedII = 0;   
+my $namedIII = 0;  
+my $namedIV = 0;   
+my $namedV = 0;    
+my $namedVI = 0;   
+my $namedVII = 0;  
+my $namedVIII = 0; 
+my $namedIX = 0;   
+my $wonpccounter = 0;
+my $waveoc = 0;
+my $wtwnpccounter = 0;
+my $wavetwc = 0;
+my $wthnpccounter = 0;
+my $wavethc = 0;
+my $wfourcounter = 0;
+my $wfourc = 0;
+my $wfivecounter 0;
+my $wfivec = 0;
+my $wsixcounter = 0;
+my $wsixc = 0;
+my $wsevcounter = 0;
+my $wsevc = 0;
+my $weigcounter = 0;
+my $weigc = 0;
+my $wnincounter = 0;
+my $wninc = 0;
 
 sub EVENT_SPAWN {
 	$namedI = 0;
@@ -19,6 +37,24 @@ sub EVENT_SPAWN {
 	$namedVII = 0;
 	$namedVIII = 0;
 	$namedIX = 0;
+    $wonpccounter = 0;
+    $waveoc = 0;
+    $wtwnpccounter = 0;
+    $wavetwc = 0;
+    $wthnpccounter = 0;
+    $wavethc = 0;
+    $wfourcounter = 0;
+    $wfourc = 0;
+    $wfivecounter 0;
+    $wfivec = 0;
+    $wsixcounter = 0;
+    $wsixc = 0;
+    $wsevcounter = 0;
+    $wsevc = 0;
+    $weigcounter = 0;
+    $weigc = 0;
+    $wnincounter = 0;
+    $wninc = 0;
 	quest::signalwith(223111,1002,0); #flavor text
 	quest::spawn2(223010,0,0,1280,1010,359.38,195); #16 non target nameds
 	quest::spawn2(223011,0,0,1280,1030,359.38,195);
@@ -50,7 +86,7 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
 	if($signal == 1011) {
 		#sets counter to start 1st wave upon all 8 dying
-		$wonpccounter+= 1;
+		$wonpccounter += 1;
 		$waveoc = $wonpccounter;
         #quest::ze(15, "okay i signaled and my 1st counter is now $waveoc.");
 	}
@@ -96,7 +132,7 @@ sub EVENT_SIGNAL {
     #starts counter of wave 2
 	if($signal == 2022) {
 		#sets counter to start 3rd wave upon all 8 dying
-		$wtwnpccounter+= 1;
+		$wtwnpccounter += 1;
 		$wavetwc = $wtwnpccounter;
         #quest::ze(15, "okay i signaled and my 2nd counter is now $wavetwc.");
 	}
@@ -137,7 +173,7 @@ sub EVENT_SIGNAL {
     #starts counter of wave 3
 	if($signal == 3033) {
 		#sets counter to start 4th wave upon all 8 dying
-		$wthnpccounter+= 1;
+		$wthnpccounter += 1;
 		$wavethc = $wthnpccounter;
         #quest::ze(15, "okay i signaled and my 3rd counter is now $wavethc.");
 	}
@@ -178,7 +214,7 @@ sub EVENT_SIGNAL {
     #starts counter of wave 4
 	if($signal == 4044) {
 		#sets counter to start 4th wave upon all 8 dying
-		$wfourcounter+= 1;
+		$wfourcounter += 1;
 		$wfourc = $wfourcounter;
         #quest::ze(15, "okay i signaled and my 4th counter is now $wfourc.");
 	}
@@ -217,7 +253,7 @@ sub EVENT_SIGNAL {
 
 	if($signal == 5055) {
 		#sets counter to start 6th wave upon all 8 dying
-		$wfivecounter+= 1;
+		$wfivecounter += 1;
 		$wfivec = $wfivecounter;
         #quest::ze(15, "okay i signaled and my 5th counter is now $wfivec.");
 	}
@@ -255,7 +291,7 @@ sub EVENT_SIGNAL {
 
     if($signal == 6066) {
 		#sets counter to start 6th wave upon all 8 dying
-		$wsixcounter+= 1;
+		$wsixcounter += 1;
 		$wsixc = $wsixcounter;
         #quest::ze(15, "okay i signaled and my 6th counter is now $wsixc.");
 	}
@@ -293,7 +329,7 @@ sub EVENT_SIGNAL {
 
     if($signal == 7077) {
 		#sets counter to start 7th wave upon all 8 dying
-		$wsevcounter+= 1;
+		$wsevcounter += 1;
 		$wsevc = $wsevcounter;
         #quest::ze(15, "okay i signaled and my 7th counter is now $wsevc.");
 	}
@@ -331,7 +367,7 @@ sub EVENT_SIGNAL {
 
     if($signal == 8088) {
 		#sets counter to start 8th wave upon all 8 dying
-		$weigcounter+= 1;
+		$weigcounter += 1;
 		$weigc = $weigcounter;
         #quest::ze(15, "okay i signaled and my 8th counter is now $weigc.");
 	}
@@ -359,7 +395,7 @@ sub EVENT_SIGNAL {
 
     if($signal == 11090) {
 		#counter to open portal to phase 4
-		$wnincounter+= 1;
+		$wnincounter += 1;
 		$wninc = $wnincounter;
         #quest::ze(15, "okay counter is unlocked $wninc.");
 	}

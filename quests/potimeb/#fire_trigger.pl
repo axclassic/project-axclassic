@@ -1,6 +1,9 @@
 ##fire_trigger this is an invisible controller that triggers #fire_event.pl
 # npcid - 223173
 
+my $fnpccounter = 0;
+my $firec = 0;
+
 sub EVENT_SPAWN { # This spawns fire grp + boss for phase 2
 	quest::spawn2(223143,0,0,252.0,589.0,491.0,192.5);
 	quest::spawn2(223109,0,0,242.0,584.0,491.2,192.5);
@@ -16,7 +19,7 @@ sub EVENT_SPAWN { # This spawns fire grp + boss for phase 2
 
 sub EVENT_SIGNAL { #like fire_counter.pl starts a counter for when all are dead, then opens inner doors!
 	if($signal == 14035) { #This signal are from these mobs upon death!
-		$fnpccounter+= 1;
+		$fnpccounter += 1;
 		$firec = $fnpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $firec.");
 	}	

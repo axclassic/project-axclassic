@@ -1,6 +1,9 @@
 #This is an invisible controller which spawns the air phoneix
 #npcid - 223187
 
+my $anpccounter = 0;
+my $airc = 0;
+
 sub EVENT_SPAWN {
 	$anpccounter = 0;
 	quest::spawn2(quest::ChooseRandom(223087),0,0,67,1364,494.8,185.5); #An_Air_Phoenix_Noble

@@ -1,13 +1,16 @@
 # phase_trigger script npcid - 223191 This is required for signals for phase 2
 
+my $IIcounter = 0;
+my $groupboss = 0;
+my $savedc2 = 0;
+my $savedg = 0;
+
 sub EVENT_ZONE { #when zoning out, counters must be reset!
+    $savedg = 0;
 	$savedc2 = 0;
 	$IIcounter = 0;
 	$groupboss = 0;
 }
-
-my $IIcounter;
-my $groupboss;
 
 sub EVENT_SPAWN {
     # $IIacounter = 0;
@@ -46,7 +49,7 @@ sub EVENT_SIGNAL {
 	if($signal == 14035) {
 		#phase 2 boss signals
         #quest::ze(15, "Mob+boss earth grp for phase 2 is dead, door should open!");
-		$IIcounter+=1;
+		$IIcounter += 1;
 		$savedc2 = $IIcounter;
         #quest::ze(15, "testing signal 14035 and counter is $savedc2.");
 	}
@@ -81,6 +84,7 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER {
 	if($timer eq "twoopens") {
         #inner connecting doors
+        quest::stoptimer("twoopens");
 		quest::forcedooropen(13); #connecting door water and fire lower right panel
 		quest::forcedooropen(14); # upper right
 		quest::forcedooropen(15); # upper left
@@ -95,3 +99,4 @@ sub EVENT_TIMER {
 		quest::forcedooropen(41); # lower left
 	}
 }
+

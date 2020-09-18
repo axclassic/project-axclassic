@@ -1,5 +1,8 @@
 # phase_trigger script npcid - 223177 This is required for signals of all 5 trials
 
+my $Icounter;
+my $savedc = 0;
+
 sub EVENT_ZONE { #when zoning out, counters must be reset!
 	$savedc = 0;
 	$Icounter = 0;
@@ -10,11 +13,9 @@ sub EVENT_ENTERZONE {
 	$Icounter = 0;
 }
 
-my $Icounter;
-
 sub EVENT_SIGNAL { #phase 1 signals
 	if($signal == 14060) {
-		$Icounter+=1;
+		$Icounter += 1;
 		$savedc = $Icounter;
         #quest::ze(15, "Muahahah you have more to go mortal. and counter is $savedc.");
 	}
@@ -59,6 +60,7 @@ sub EVENT_TIMER {
 	# quest::stoptimer("zshake");
 	if($timer eq "opendoors") {
         #quest::ze(15, "Opening doors!");
+        quest::stoptimer("opendoors"); #stops timer does it work? yes
 		quest::forcedooropen(5); #fire trial lower right panel
 		quest::forcedooropen(6); # upper right
 		quest::forcedooropen(7); # upper left
@@ -80,6 +82,6 @@ sub EVENT_TIMER {
 		quest::forcedooropen(48); # upper left
 		quest::forcedooropen(49); # lower left
 	}
-	#quest::stoptimer("opendoors"); #stops timer does it work? yes
 	#quest::stoptimer($timer); #repop resets this anyway
 }
+

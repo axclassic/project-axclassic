@@ -1,6 +1,9 @@
 #This is an invisible controller which spawns the flame mephits
 #npcid - 223190
 
+my $fnpccounter = 0;
+my $firec = 0;
+
 sub EVENT_SPAWN {
     $fnpccounter = 0;
     quest::spawn2(223088,0,0,68,573,504,185.5); #a_flame_mephit

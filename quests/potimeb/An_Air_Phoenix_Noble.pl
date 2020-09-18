@@ -8,7 +8,7 @@ sub EVENT_DEATH {
     quest::signalwith(223187,14058,0);
     quest::spawn2(223995,0,0,$x,$y + 5,$z,$h); #a rock shaped assassin
     quest::spawn2(223995,0,0,$x,$y - 5,$z,$h);
-    quest::spawn2(quest::ChooseRandom(0,223995),0,0,$x,$y + 10,$z,$h);
-    quest::spawn2(quest::ChooseRandom(0,223995),0,0,$x,$y - 10,$z,$h);
+    quest::spawn2(223995,0,0,$x,$y + 10,$z,$h);
+    quest::spawn2(223995,0,0,$x,$y - 10,$z,$h);
 }
 

@@ -7,6 +7,13 @@
 ## UPDATED 6/6/16 now must pay to port##
 #######################################
 
+
+my $portfire = 0;
+my $portwater = 0;
+my $portearth = 0;
+my $portair = 0;
+my $portdead = 0;
+
 sub EVENT_SAY {
     #quest::signalwith(223177,14060,0); #signals counter at 4 and will open on 5th
     #quest::signalwith(223191,14035,0); #signals inner doors.

@@ -1,6 +1,9 @@
 #air_counter.pl used as phase2 mobs instead!
 #npcid - 223179
 
+my $anpccounter = 0;
+my $airc = 0;
+
 sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
    #air group
 	quest::spawn2(223226,0,0,232.0,1359.0,491.9,192.5); # #air_phoenix instead of air_phoenix

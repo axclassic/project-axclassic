@@ -29,7 +29,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
     if($platinum == 1000 && $ulevel >= 64 && defined $qglobals{$name."pobcorpse"}) {
         $client->Message(14,"Thank you $name , you are on the way back to your Time B, good luck!"); #Money handin for porting into time B graveyard.
-		quest::setglobal($name."reco", 1, 7, "M10"); #adds check when entering zone
+		quest::setglobal($name."reco", "1", 7, "M10"); #adds check when entering zone
 		quest::delglobal($name."pobcorpse"); #Deletes corpse qglobal
 		quest::movepc(223, 851, -141, 395); #Moves to PotimeB graveyard
 	}
@@ -42,11 +42,18 @@ sub EVENT_ITEM {
 
 sub EVENT_SIGNAL {
     if($signal == 10505) { #This signal are from these mobs upon death!
-        if($qglobals{'portalab'} > 4) {
-			quest::setglobal("portalab", 1, 7, "M60");
+        if((defined $qglobals{portalb}) && ($qglobals{portalab} > 4)) {
+			quest::setglobal("portalab", "1", 7, "M60");
 		}
 		else {
-            quest::setglobal("portalab", ($qglobals{'portalab'}) + 1, 7, "M60");	
+            my $value = 0;
+            if(!defined($qglobals{portalab})) {
+                $value = 1;
+            }
+            else {
+                $value = $qglobals{portalab} + 1;
+            }
+            quest::setglobal("portalab", $value, 7, "M60");	
 		}
 	}
 }

@@ -1,6 +1,9 @@
 #undead_counter.pl used as phase2 mobs instead!
 #npcid - 223180
 
+my $unpccounter = 0;
+my $undeadc = 0;
+
 sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
 	#undead group
 	quest::spawn2(223138,0,0,252.0,1124.0,491.4,192.5); #223138.pl is an_undead_guardian_
@@ -16,7 +19,7 @@ sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
 
 sub EVENT_SIGNAL { #like air_event.pl starts a counter for when all are dead, spawns the next group!
 	if($signal == 14048) { #This signal are from these mobs upon death!
-		$unpccounter+= 1;
+		$unpccounter += 1;
 		$undeadc = $unpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $undeadc.");
 	}	

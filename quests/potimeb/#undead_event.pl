@@ -1,12 +1,15 @@
 #This is an invisible controller which spawns the undead guardians
 #npcid - 223188
 
+my $unpccounter = 0;
+my $undeadc = 0;
+
 sub EVENT_SPAWN {
 	$unpccounter = 0;
 	$ubosscount = 0;
-	quest::spawn2(quest::ChooseRandom(223105),0,0,65.2,1109.7,494.8,185.5); #an_undead_guardian
-	quest::spawn2(quest::ChooseRandom(223105),0,0,65.2,1119.7,494.8,185.5);
-	quest::spawn2(quest::ChooseRandom(223105),0,0,65.2,1099.7,494.8,185.5);
+	quest::spawn2(223105,0,0,65.2,1109.7,494.8,185.5); #an_undead_guardian
+	quest::spawn2(223105,0,0,65.2,1119.7,494.8,185.5);
+	quest::spawn2(223105,0,0,65.2,1099.7,494.8,185.5);
 }  
 
 sub EVENT_SIGNAL {
@@ -18,12 +21,12 @@ sub EVENT_SIGNAL {
 	if($unpccounter == 3) {
         #quest::spawn2(quest::ChooseRandom(223105,223116),0,0,67,1103,494.8,185.5);
         #quest::spawn2(quest::ChooseRandom(223105,223116),0,0,67,1120,494.8,185.5);
-		quest::spawn2(quest::ChooseRandom(223105),0,0,62,1103,494.8,185.5);
-		quest::spawn2(quest::ChooseRandom(223105),0,0,62,1120,494.8,185.5);
+		quest::spawn2(223105,0,0,62,1103,494.8,185.5);
+		quest::spawn2(223105,0,0,62,1120,494.8,185.5);
 	}
 	elsif($unpccounter == 4 ) {
-		quest::spawn2(quest::ChooseRandom(223116),0,0,67,1103,494.8,185.5);
-		quest::spawn2(quest::ChooseRandom(223116),0,0,67,1120,494.8,185.5);
+		quest::spawn2(223116,0,0,67,1103,494.8,185.5);
+		quest::spawn2(223116,0,0,67,1120,494.8,185.5);
         #quest::spawn2(quest::ChooseRandom(223116),0,0,62,1103,494.8,185.5);
         #quest::spawn2(quest::ChooseRandom(223116),0,0,62,1120,494.8,185.5);
 	}

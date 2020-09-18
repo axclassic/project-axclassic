@@ -1,6 +1,9 @@
 ##earth_trigger this is an invisible controller for phase 2 last mob+boss encounter
 # npcid - 223169 earth_trigger
 
+my $enpccounter = 0;
+my $earthc = 0;
+
 sub EVENT_SPAWN { #This spawns 2nd grp + boss for phase 2
     quest::spawn2(223110,0,0,252.0,1659.0,491.0,192.5);
 	quest::spawn2(223125,0,0,242.0,1654.0,491.6,192.5);
@@ -16,7 +19,7 @@ sub EVENT_SPAWN { #This spawns 2nd grp + boss for phase 2
 
 sub EVENT_SIGNAL { #like earth_counter.pl starts a counter for when all are dead, then opens inner doors!
 	if($signal == 14035) { #This signal are from these mobs upon death!
-		$enpccounter+= 1;
+		$enpccounter += 1;
 		$earthc = $enpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $earthc.");
 	}	

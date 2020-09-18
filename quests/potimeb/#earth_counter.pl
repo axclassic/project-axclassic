@@ -1,6 +1,9 @@
 #earth_counter.pl used as phase2 mobs instead!
 #npcid - 223178
 
+my $enpccounter = 0;
+my $earthc = 0;
+
 sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
    #Earth
 	quest::spawn2(223125,0,0,252.0,1659.0,491.0,192.5);
@@ -16,7 +19,7 @@ sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
 
 sub EVENT_SIGNAL { #like earth_event.pl starts a counter for when all are dead, spawns the next group!
 	if($signal == 14028) { #This signal are from these mobs upon death!
-		$enpccounter+= 1;
+		$enpccounter += 1;
 		$earthc = $enpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $earthc.");
 	}	

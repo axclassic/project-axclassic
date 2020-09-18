@@ -1,6 +1,9 @@
 #This is an invisible controller which spawns the earth rubbles.
 #npcid - 223186
 
+my $enpccounter = 0;
+my $earthc = 0;
+
 sub EVENT_SPAWN {
     $enpccounter = 0;
     quest::spawn2(223106,0,0,70.3,1644.5,493.7,185.5); #a_pile_of_living_rubble

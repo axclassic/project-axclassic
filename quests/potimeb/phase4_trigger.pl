@@ -1,6 +1,6 @@
 # phase4_trigger.pl npcid - 223157
 
-my $godcounterI;
+my $godcounterI = 0;
 
 sub EVENT_SPAWN {
 	$godcounterI = 0;

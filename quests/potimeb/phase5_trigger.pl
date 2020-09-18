@@ -1,6 +1,8 @@
 # phase5_trigger.pl npcid - 223158
 
-my $godcounterII;
+my $godcounterII = 0;
+my $lastcounter = 0;
+my $lastlast = 0;
 
 sub EVENT_SPAWN {
 	$godcounterII = 0;

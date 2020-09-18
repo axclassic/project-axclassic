@@ -1,6 +1,9 @@
 #fire_counter.pl used as phase2 mobs instead!
 #npcid - 223182
 
+my $fnpccounter = 0;
+my $firec = 0;
+
 sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
     #fire group
 	quest::spawn2(223143,0,0,232.0,579.0,491.6,192.5);

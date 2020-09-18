@@ -1,6 +1,9 @@
 #This is an invisible controller which spawns the water mobs
 #npcid - 223189
 
+my $wnpccounter = 0;
+my $waterc = 0;
+
 sub EVENT_SPAWN {
     $wnpccounter = 0;
     quest::spawn2(223192,0,0,68,867,495,185.5); #a_regrua_defender

@@ -120,3 +120,4 @@ sub EVENT_SIGNAL {
 		quest::ze(15,"Suddenly in a bright flash a feminine figure appears before you. Your ears ring from the loud burst as she slowly materializes.");
 	}
 }
+
