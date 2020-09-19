@@ -5,9 +5,11 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-    quest::stoptimer("EmpDepop");
-    quest::signalwith(162260,3); #EmpCycle
-    quest::depop();
+    if($timer eq "EmpDepop") {
+        quest::stoptimer("EmpDepop");
+        quest::signalwith(162582, 3); #EmpCycle
+        quest::depop();
+    }
 }
 
 sub EVENT_COMBAT {
@@ -23,7 +25,7 @@ sub EVENT_DEATH {
     quest::spawn2(162210,0,0,953, -356, 404, 190); # NPC: A_shissar_wraith
     quest::spawn2(162210,0,0,773, -360, 403, 64); # NPC: A_shissar_wraith
     quest::spawn2(162210,0,0,770, -289, 403, 64); # NPC: A_shissar_wraith
-    quest::signalwith(162260,2); #EmpCycle
+    quest::signalwith(162582, 2); #EmpCycle
 }
 
 sub EVENT_SLAY {

@@ -7,10 +7,15 @@ sub EVENT_COMBAT {
         quest::spawn2(162280, 0, 0, 689, -293,  403,  0); #--Ssraezsha (162280)
         quest::spawn2(162280, 0, 0, 625, -293,  403,  0); #--Ssraezsha (162280)
     }
+    else {
+        quest::depopall(162280);
+        quest::signalwith(162582, 3); # Emp_Event_Controllerf
+        quest::depop();
+    }
 }
 
 sub EVENT_DEATH {
-    quest::signal(162582, 1); # Emp_Event_Controller
+    quest::signalwith(162582, 1); # Emp_Event_Controller
 }
 #EOF zone: ssratemple ID: 162189 NPC: #Blood_of_Ssraeshza
 
