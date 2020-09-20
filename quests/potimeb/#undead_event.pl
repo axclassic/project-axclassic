@@ -6,7 +6,7 @@ my $undeadc = 0;
 
 sub EVENT_SPAWN {
 	$unpccounter = 0;
-	$ubosscount = 0;
+	#$ubosscount = 0;
 	quest::spawn2(223105,0,0,65.2,1109.7,494.8,185.5); #an_undead_guardian
 	quest::spawn2(223105,0,0,65.2,1119.7,494.8,185.5);
 	quest::spawn2(223105,0,0,65.2,1099.7,494.8,185.5);

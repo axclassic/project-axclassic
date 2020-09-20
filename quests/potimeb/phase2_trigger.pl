@@ -60,19 +60,19 @@ sub EVENT_SIGNAL {
         ##quest::we is bugged
         ##quest::we(14, "Congratulations to $name! Phase 2 has been completed, move through the clock door to phase 3.");
         #inner connecting doors
-		quest::forcedooropen(13); #connecting door water and fire lower right panel
-		quest::forcedooropen(14); # upper right
-		quest::forcedooropen(15); # upper left
-		quest::forcedooropen(16); # lower left
-		quest::forcedooropen(33); #undead subdoor lower right panel
-		quest::forcedooropen(34); # upper right
-		quest::forcedooropen(35); # upper left
-		quest::forcedooropen(36); # lower left
-		quest::forcedooropen(38); #connecting door earth and air lower right panel
-		quest::forcedooropen(39); # upper right
-		quest::forcedooropen(40); # upper left
-		quest::forcedooropen(41); # lower left
-		quest::settimer("twoopens",20); #20 seconds
+		#quest::forcedooropen(13); #connecting door water and fire lower right panel
+		#quest::forcedooropen(14); # upper right
+		#quest::forcedooropen(15); # upper left
+		#quest::forcedooropen(16); # lower left
+		#quest::forcedooropen(33); #undead subdoor lower right panel
+		#quest::forcedooropen(34); # upper right
+		#quest::forcedooropen(35); # upper left
+		#quest::forcedooropen(36); # lower left
+		#quest::forcedooropen(38); #connecting door earth and air lower right panel
+		#quest::forcedooropen(39); # upper right
+		#quest::forcedooropen(40); # upper left
+		#quest::forcedooropen(41); # lower left
+		quest::settimer("twoopens", 5); #5 seconds
 		quest::spawn2(223154,0,0,-129.6,1720,547,0); #triggers phase3_trigger.pl
 		$IIcounter = 0;
         #quest::depop();#depops phase2_trigger
@@ -84,19 +84,42 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER {
 	if($timer eq "twoopens") {
         #inner connecting doors
-        #quest::stoptimer("twoopens");
-		quest::forcedooropen(13); #connecting door water and fire lower right panel
-		quest::forcedooropen(14); # upper right
-		quest::forcedooropen(15); # upper left
-		quest::forcedooropen(16); # lower left
-		quest::forcedooropen(33); #undead subdoor lower right panel
-		quest::forcedooropen(34); # upper right
-		quest::forcedooropen(35); # upper left
-		quest::forcedooropen(36); # lower left
-		quest::forcedooropen(38); #connecting door earth and air lower right panel
-		quest::forcedooropen(39); # upper right
-		quest::forcedooropen(40); # upper left
-		quest::forcedooropen(41); # lower left
+        my $open_door = $entity_list->FindDoor(13);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(14);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(15);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(16);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(33);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(34);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(35);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(36);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(38);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(39);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(40);
+        $open_door->ForceOpen($npc);
+        $open_door = $entity_list->FindDoor(41);
+        $open_door->ForceOpen($npc);
+		#quest::forcedooropen(13); #connecting door water and fire lower right panel
+		#quest::forcedooropen(14); # upper right
+		#quest::forcedooropen(15); # upper left
+		#quest::forcedooropen(16); # lower left
+		#quest::forcedooropen(33); #undead subdoor lower right panel
+		#quest::forcedooropen(34); # upper right
+		#quest::forcedooropen(35); # upper left
+		#quest::forcedooropen(36); # lower left
+		#quest::forcedooropen(38); #connecting door earth and air lower right panel
+		#quest::forcedooropen(39); # upper right
+		#quest::forcedooropen(40); # upper left
+		#quest::forcedooropen(41); # lower left
 	}
 }
 

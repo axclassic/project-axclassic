@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/20/2020==
+Congdar: potimeab updates
+
 ==09/19/2020==
 Congdar: potimeab updates
 Congdar: ssratemple updates 

@@ -13,14 +13,14 @@ sub EVENT_ZONE {
 		#quest::stoptimer($timer);
 		#quest::delglobal("checkb");
 	#}
-	if((defined $qglobals{$name."reco"}) || (defined $qglobals{$name."reco2"})) {
+    if((defined $qglobals{$name."reco"}) || (defined $qglobals{$name."reco2"})) {
 		#leave zone and dont disrupt players script if in zone
 		quest::delglobal($name."reco2");
 		quest::delglobal($name."reco");
         # Don't have a corpse? most likely died or zoned out
 	}
 	elsif((defined $qglobals{blockout}) && (!defined $qglobals{outout})) { #if you dont have a corpse and die! the getout is a check for when someone logs in from logging out earlier.
-        quest::delglobal("bdoors"); #Deletes qglobal doors so everyhting is locked agian!
+        #quest::delglobal("bdoors"); #Deletes qglobal doors so everyhting is locked agian!
         quest::delglobal("portal3"); #remember to put this in so it deletes upon dying, zoning etc
         quest::delglobal("portal4");
         quest::delglobal("portal5");
@@ -78,7 +78,7 @@ sub EVENT_ENTERZONE {
     elsif((defined $qglobals{blockout}) && (defined $qglobals{blockout2})) { #The blockout2 is an extra check involved for when someone disconnects in the zone.
         quest::depopzone(1); #improved reset
         quest::repopzone();
-        $client->Message(15, "blockout is here so spawns should pop.");
+        #$client->Message(15, "blockout is here so spawns should pop.");
         quest::delglobal("blockout2");
         #first message
         quest::signalwith(223111, 1000, 1);
@@ -104,9 +104,9 @@ sub EVENT_ENTERZONE {
         quest::movepc(9, 335, 181, -25); #WC default 
     }
     else {
-        quest::ze(15, "You entered and came across the else function. You must have quit and come back when no ones here.");
+        #quest::ze(15, "You entered and came across the else function. You must have quit and come back when no ones here.");
         quest::repopzone(); #no ones in here? just reset anyway
-        $client->Message(15, "corpse fetching and or gm spectating my status is $status.");
+        #$client->Message(15, "corpse fetching and or gm spectating my status is $status.");
         #When qglobals blockout is not defined nothing happens i.e corpse fetching in graveyard or gm intervention.
     }
 }#END sub_EVENT_ENTERZONE
@@ -117,7 +117,7 @@ sub EVENT_CLICKDOOR {
         #quest::ze(15, "GM's are not allowed.");
 	#}
 	#else {
-        #$client->Message(15, "doorid is $doorid and d_id is $d_id.");
+        #quest::ze(15, "doorid is $doorid and d_id is $d_id.");
         if(($d_id == 62) && (defined $qglobals{portal3})) {
             quest::movepc(223, -401, 0, 347); #moves to portal 4 spot upon phase 3 completion
             quest::spawn2(223157,0,0,-410,-69,348,0); #spawn phase4_trigger.pl
@@ -139,7 +139,7 @@ sub EVENT_CLICKDOOR {
 sub EVENT_CONNECT {
     #if($status < 50) {
         quest::delglobal("aLD$name");
-        quest::ze(15, "$name triggered EVENT_CONNECT.");
+        #quest::ze(15, "$name triggered EVENT_CONNECT.");
 	#}
 }
 

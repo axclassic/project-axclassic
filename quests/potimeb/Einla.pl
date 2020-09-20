@@ -5,13 +5,14 @@
 #December 2012
 
 sub EVENT_SPAWN {
-    $x = $npc->GetX();
-	$y = $npc->GetY();
-	quest::set_proximity($x - 90, $x + 90, $y - 90, $y + 90);
+	quest::settimer("feign", 10);
 }
 
-sub EVENT_ENTER {
-    $npc->SetAppearance(3);
+sub EVENT_TIMER {
+    if($timer eq "feign") {
+        quest::stoptimer("feign");
+        $npc->SetAppearance(3);
+    }
 }
 
 sub EVENT_SAY {
@@ -38,6 +39,7 @@ sub EVENT_ITEM {
     if($platinum == 50) {
         quest::say ("A wise choice $name");
         quest::summonitem(627);
+        quest::settimer("feign", 2);
     }
     else {
         plugin::return_items(\%itemcount);

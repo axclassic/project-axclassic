@@ -16,7 +16,7 @@ my $wthnpccounter = 0;
 my $wavethc = 0;
 my $wfourcounter = 0;
 my $wfourc = 0;
-my $wfivecounter 0;
+my $wfivecounter = 0;
 my $wfivec = 0;
 my $wsixcounter = 0;
 my $wsixc = 0;
@@ -45,7 +45,7 @@ sub EVENT_SPAWN {
     $wavethc = 0;
     $wfourcounter = 0;
     $wfourc = 0;
-    $wfivecounter 0;
+    $wfivecounter = 0;
     $wfivec = 0;
     $wsixcounter = 0;
     $wsixc = 0;

@@ -183,22 +183,20 @@ sub EVENT_ENTERZONE {
           $seen_shadeweaver = undef;
     }
     ## Advise the players about our client status.
-   if($clientver < 4) {
-    if($rand4<=10){
-          $client->Message(15,"AXClassic is compatible with Underfoot, SoF, SoD, and Titanium clients.");
-          $client->Message(15,"But best compatible with the Underfoot client.");
-	  $client->Message(15,"Underfoot client is what the developers work with and we urge you to use.");
-          $client->Message(15,"You can download the AXClassic version of Underfoot at the AXClassic Forums.");
-          $client->Message(15,"Thank you for playing here!");
+    if($clientver < 4) {
+        if($rand4<=10) {
+            $client->Message(15,"AXClassic is compatible with Underfoot and Titanium clients, but best compatible with the Underfoot client.");
+            $client->Message(15,"Underfoot client is what the developers work with and we urge you to use.");
+            $client->Message(15,"You can download the AXClassic version of Underfoot at the AXClassic Forums.");
+            $client->Message(15,"Thank you for playing here!");
+        }
+        elsif($ulevel == 1) {
+            $client->Message(15,"AXClassic is compatible with Underfoot and Titanium clients, but best compatible with the Underfoot client.");
+            $client->Message(15,"Underfoot client is what the developers work with and we urge you to use.");
+            $client->Message(15,"You can download the AXClassic version of Underfoot at the AXClassic Forums.");
+            $client->Message(15,"Thank you for playing here!");
+        }
     }
-    elsif($ulevel == 1){
-          $client->Message(15,"AXClassic is compatible with Underfoot, SoF, SoD, and Titanium clients.");
-          $client->Message(15,"But best compatible with the Underfoot client.");
-	  $client->Message(15,"Underfoot client is what the developers work with and we urge you to use.");
-          $client->Message(15,"You can download the AXClassic version of Underfoot at the AXClassic Forums.");
-          $client->Message(15,"Thank you for playing here!");
-    }
-  }
     if($zoneid == 71) {
         ##airplane de-buff
         $client->BuffFadeAll();
