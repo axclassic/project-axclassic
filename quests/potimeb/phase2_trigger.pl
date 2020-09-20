@@ -84,7 +84,7 @@ sub EVENT_SIGNAL {
 sub EVENT_TIMER {
 	if($timer eq "twoopens") {
         #inner connecting doors
-        quest::stoptimer("twoopens");
+        #quest::stoptimer("twoopens");
 		quest::forcedooropen(13); #connecting door water and fire lower right panel
 		quest::forcedooropen(14); # upper right
 		quest::forcedooropen(15); # upper left

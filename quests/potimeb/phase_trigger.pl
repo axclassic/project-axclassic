@@ -60,7 +60,7 @@ sub EVENT_TIMER {
 	# quest::stoptimer("zshake");
 	if($timer eq "opendoors") {
         #quest::ze(15, "Opening doors!");
-        quest::stoptimer("opendoors"); #stops timer does it work? yes
+        #quest::stoptimer("opendoors"); #stops timer does it work? yes
 		quest::forcedooropen(5); #fire trial lower right panel
 		quest::forcedooropen(6); # upper right
 		quest::forcedooropen(7); # upper left
