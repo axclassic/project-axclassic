@@ -30,14 +30,14 @@ sub EVENT_SAY {
     }
 
     if($text =~/cloud of death/i) {
-        quest::say ("The cloud of Death will hide you from your foes, you will appear slain and still to all who cast their eyes over your apparent lifeless corpse, however magic so powerful comes at a cost. Hand me a sum fit for a Prince and I will gladly let you borrow the item. Shall we say 50 Platinum pieces?");
+        quest::say ("The cloud of Death will hide you from your foes, you will appear slain and still to all who cast their eyes over your apparent lifeless corpse, however magic so powerful comes at a cost. Hand me a sum fit for a Prince and I will gladly let you borrow the item. Shall we say 150 Platinum pieces?");
         quest::emote ("Taps her foot impatiently");
     }
 }
 
 sub EVENT_ITEM {
-    if($platinum == 50) {
-        quest::say ("A wise choice $name");
+    if($platinum == 150) {
+        quest::say("A wise choice $name");
         quest::summonitem(627);
         quest::settimer("feign", 2);
     }
