@@ -33,10 +33,10 @@ sub EVENT_ZONE {
         #fetch corpse
         @corpse = $entity_list->GetCorpseList();
         if(@corpse) {
+            quest::setglobal($name."pobcorpse", 1, 7, "D7");
             foreach $ent (@corpse) {
                 $corpseName = $ent->GetOwnerName();
                 if($corpseName eq $name) {
-                    quest::setglobal($name."pobcorpse", 1, 7, "D7");
                     my $ex = int(rand(140) -70); #randomize corpse loc in graveyard area
                     my $yy = int(rand(50) -25);
                     $ent->GMMove(850+$ex, -140+$yy, 400);
