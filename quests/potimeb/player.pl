@@ -63,11 +63,11 @@ sub EVENT_ENTERZONE {
 	#$event5 = 0;
 	#Upon entering zone through portals it will spawn mobs in all 5 locations
 	#quest::delglobal("blockout");
-	#if($status >= 50) {
+	if($status >= 50) {
 		#quest::ze(15, "a GM has entered the zone.");
 		#quest::delglobal("blockout");
-	#}
-    if((defined $qglobals{blockout}) && (defined $qglobals{$name."reco"})) {
+	}
+    elsif((defined $qglobals{blockout}) && (defined $qglobals{$name."reco"})) {
         quest::ze(15, "Was sent by Udunir, retrieving corpse."); #corpse run so bypass qglobals and youll be in graveyard
         quest::setglobal($name."reco2", "1", 7, "H20"); #20 hours
     }
