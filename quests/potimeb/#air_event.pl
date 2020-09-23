@@ -6,10 +6,10 @@ my $airc = 0;
 
 sub EVENT_SPAWN {
 	$anpccounter = 0;
-	quest::spawn2(quest::ChooseRandom(223087),0,0,67,1364,494.8,185.5); #An_Air_Phoenix_Noble
-	quest::spawn2(quest::ChooseRandom(223087),0,0,67,1347,494.8,185.5);
-	quest::spawn2(quest::ChooseRandom(223087),0,0,62,1364,494.8,185.5);
-	quest::spawn2(quest::ChooseRandom(223087),0,0,62,1347,494.8,185.5);
+	quest::spawn2(223087,0,0,67,1364,494.8,185.5); #An_Air_Phoenix_Noble
+	quest::spawn2(223087,0,0,67,1347,494.8,185.5);
+	quest::spawn2(223087,0,0,62,1364,494.8,185.5);
+	quest::spawn2(223087,0,0,62,1347,494.8,185.5);
 }  
 
 sub EVENT_SIGNAL {
