@@ -33,10 +33,11 @@ sub EVENT_ZONE {
         #fetch corpse
         @corpse = $entity_list->GetCorpseList();
         if(@corpse) {
-            quest::setglobal($name."pobcorpse", 1, 7, "D7");
             foreach $ent (@corpse) {
                 $corpseName = $ent->GetOwnerName();
                 if($corpseName eq $name) {
+                    quest::setglobal($name."pobcorpse", 1, 7, "D7");
+                    quest::ze(15, "$name.pobcorpse now set.");
                     my $ex = int(rand(140) -70); #randomize corpse loc in graveyard area
                     my $yy = int(rand(50) -25);
                     $ent->GMMove(850+$ex, -140+$yy, 400);
@@ -68,12 +69,12 @@ sub EVENT_ENTERZONE {
 		#quest::delglobal("blockout");
 	}
     elsif((defined $qglobals{blockout}) && (defined $qglobals{$name."reco"})) {
-        quest::ze(15, "Was sent by Udunir, retrieving corpse."); #corpse run so bypass qglobals and youll be in graveyard
+        #quest::ze(15, "Was sent by Udunir, retrieving corpse."); #corpse run so bypass qglobals and youll be in graveyard
         quest::setglobal($name."reco2", "1", 7, "H20"); #20 hours
     }
     elsif((defined $qglobals{blockout}) && ((defined $globals{$name."reco2"}) || (defined $globals{$name."reco"}))) {
-        quest::ze(15, "you must have logged out from a corpse run so bypass qglobals and no depop!");
-		quest::ze(15, "successful entering zone. blockout qglobal DISABLED!");
+        #quest::ze(15, "you must have logged out from a corpse run so bypass qglobals and no depop!");
+		#quest::ze(15, "successful entering zone. blockout qglobal DISABLED!");
     }
     elsif((defined $qglobals{blockout}) && (defined $qglobals{blockout2})) { #The blockout2 is an extra check involved for when someone disconnects in the zone.
         quest::depopzone(1); #improved reset
@@ -99,7 +100,7 @@ sub EVENT_ENTERZONE {
     }
     elsif((defined $qglobals{blockout}) && (!defined $qglobals{blockout2}) && (!defined $qglobals{$name."reco"}) && (!defined $qglobals{$name."reco2"})) {
         quest::setglobal("outout", "1", 7, "F"); #triggers outout
-        quest::ze(15, "This means you came here when someone else is here so you must be zoned out asap OR you logged out in this zone and must be zoned out.");
+        #quest::ze(15, "This means you came here when someone else is here so you must be zoned out asap OR you logged out in this zone and must be zoned out.");
         quest::ze(13, "An unknown voice shouts, 'You do not belong here, begone!'");
         quest::movepc(9, 335, 181, -25); #WC default 
     }
@@ -116,7 +117,7 @@ sub EVENT_CLICKDOOR {
     #if($status >= 50) { #Check for gms
         #quest::ze(15, "GM's are not allowed.");
 	#}
-	#else {
+	#elsif {
         #quest::ze(15, "doorid is $doorid and d_id is $d_id.");
         if(($d_id == 62) && (defined $qglobals{portal3})) {
             quest::movepc(223, -401, 0, 347); #moves to portal 4 spot upon phase 3 completion
@@ -146,7 +147,7 @@ sub EVENT_CONNECT {
 sub EVENT_DISCONNECT {
 	# GMstatus 50 is 'Guide'.
     #if($status < 50) { # GM's don't go LD so this conditional will prevent confusion
-        quest::ze(15, "$name has disconnected which means LD!");
+        #quest::ze(15, "$name has disconnected which means LD!");
         quest::setglobal("aLD$name", 1, 7, "F"); # S20  20 seconds qglobal
 	#}
 }
