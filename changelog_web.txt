@@ -1,16 +1,20 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/09/2020==
+Patrikpatrik: Overhauled online stats from mysql -> mysqli (long time coming).
+Patrikpatrik: Added Rathe UK info when available.
+
 ==08/04/2020==
-patrikpatrik: Filtered out npc lists.
-patrikpatrik: Minor updates to front page, refer news.
+Patrikpatrik: Filtered out npc lists.
+Patrikpatrik: Minor updates to front page, refer news.
 
 == 08/01/2020==
-patrikpatrik: Empty zones excluded from HotZones.
-patrikpatrik: Tag links fixed.
+Patrikpatrik: Empty zones excluded from HotZones.
+Patrikpatrik: Tag links fixed.
 
 == 07/02/2020==
-patrikpatrik: Stripped down HotZones to front page viewing instead. 
-patrikpatrik: Links to npc infos turned off for now.
+Patrikpatrik: Stripped down HotZones to front page viewing instead. 
+Patrikpatrik: Links to npc infos turned off for now.
 
 ==07/01/2020==
 Patrikpatrik: Ladder reset for July 1st.
