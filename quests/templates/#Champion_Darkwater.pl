@@ -27,12 +27,31 @@ my $first = quest::saylink("first", 1);
 my $second = quest::saylink("second", 1);
 my $newyears = quest::saylink("special", 1);
 #Ladder date and char settings
-my $minCharID  = 7711; #6125 remember to define this @ line 224
+#RATHEUSA
+my $minCharID  = 7711; #6125 remember to define this in EVENT_ITEM
 my $maxCharID  = 7710; #6124 5828
+    if ($ActiveServer == 2){#RATHEUK
+        $minCharID  = 1;
+        $maxCharID  = 0;
+   }
+    elsif ($ActiveServer == 3){#NOSERVER
+        $minCharID  = 20000;
+        $maxCharID  = 20000;
+   }
+
 my $activeYear = 2020; #2016
 my $activeMonth = "July"; #July January
 
-
+        if (($text=~/server/i) && ($ActiveServer == 1)) {
+        $client->Message(14, "Champion Darkwater says, 'This is Rathe USA Server'");
+        }
+        elsif (($text=~/server/i) && ($ActiveServer == 2)) {
+        $client->Message(14, "Champion Darkwater says, 'This is Rathe UK Server'");
+        }
+        elsif ($text=~/server/i){ 
+        $client->Message(14, "Champion Darkwater says, 'There's no ladder on this server'");
+        }
+        
 	if(($text=~/hail/i) && ($charid < $minCharID)) { #this is the newest charID
 	    $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
 		$client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
@@ -223,7 +242,12 @@ my $activeMonth = "July"; #July January
 
 
 sub EVENT_ITEM {
-my $minCharID  = 7711; # dont forget to set this one as well 5829 6125
+    if ($ActiveServer == 1){#RATHEUSA
+        $minCharID  = 7711;
+    }
+    elsif ($ActiveServer == 2){#RATHEUK
+        $minCharID  = 1;
+    }
 my $activeMonth = "July";
 my $activeYear = 2020;
 
