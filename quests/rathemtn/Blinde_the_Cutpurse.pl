@@ -5,7 +5,7 @@ sub EVENT_DEATH {
   my $y = $npc->GetY();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
-  quest::spawn2(50306,0,0,$x,$y,$z,$h);
+  quest::spawn2(50218,0,0,$x,$y,$z,$h);
 }
 
 

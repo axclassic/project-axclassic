@@ -12,7 +12,6 @@ sub EVENT_ITEM {
    if($gold == 10) {
       quest::say("Thank you, $name. I will tell him to expect visitors.");
       quest::spawn2(71073,0,0,287.9,662.5,-54.1,109.3);
-      quest::depop();
    }
 }
 

@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/16/2020==
+Congdar: fix broken quest files in airplane,jaggedpine,wallofslaughter
+
 ==10/15/2020==
 Angelox: Added $ActiveServer variable so we can ID which server the script is running on.
 
