@@ -51,8 +51,15 @@ my $activeMonth = "July"; #July January
         elsif ($text=~/server/i){ 
         $client->Message(14, "Champion Darkwater says, 'There's no ladder on this server'");
         }
-        
-	if(($text=~/hail/i) && ($charid < $minCharID)) { #this is the newest charID
+	if(($text=~/hail/i) && ($status == 10)) { #Players banned from ladder
+	    $client->Message(14, "Champion Darkwater says, 'Your account has been removed from the ladder, contact a GM for help.'");
+	    return;
+	}
+	elsif(($text=~/hail/i) && ($status > 10) && ($status != 255)) {#Only developement status 255 allowed 
+	    $client->Message(14, "Champion Darkwater says, 'Your accounts status does not allow you to play on the ladder.'");
+	    return;
+	}
+	elsif(($text=~/hail/i) && ($charid < $minCharID)) { #this is the newest charID
 	    $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
 		$client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
 		$client->Message(15, "You should start a new character on or after this date.");
