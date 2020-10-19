@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/19/2020==
+Patrikpatrik: Combined rathe & ratheUK ladder participants to standings.
+
 ==10/09/2020==
 Patrikpatrik: Overhauled online stats from mysql -> mysqli (long time coming).
 Patrikpatrik: Added Rathe UK info when available.
