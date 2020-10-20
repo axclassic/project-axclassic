@@ -5,7 +5,7 @@ sub EVENT_SAY {
     quest::say("Hail, $name! You are brave to seek me here. what can I do for you? ")
   }
   elsif(($text=~/RezBot/i) && ($RezBot == 1)){
-    quest::say("You already have the what you need.");
+    quest::say("You already have what you need.");
     return;
   }
   elsif($text=~/RezBot/i){
