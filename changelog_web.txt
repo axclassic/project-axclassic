@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/21/2020==
+Patrikpatrik: Fixed bot count across both servers.
+
 ==10/19/2020==
 Patrikpatrik: Combined rathe & ratheUK ladder participants to ladder rankings.
 
