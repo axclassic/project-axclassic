@@ -1,4 +1,5 @@
 #sub written by Kilelean
+#Revised by Angelox for AXClassic 
 sub DoRandomPatchwork {
 	my $a;
 	$a = int(rand(100)); 
@@ -12,20 +13,22 @@ sub DoRandomPatchwork {
 }
 
 
-sub EVENT_SAY { 
+sub EVENT_SAY {
+my $tricksters = quest::saylink("pixie tricksters", 1);
+my $exterminate = quest::saylink("exterminate the pixies", 1);
 if($text=~/Hail/i){
-quest::say("Hail. $name! I trust you are not afraid of heights. Kelethin is a grand city. but it is also a safe haven from predators and evil beings. About the only thing to fear are the [pixie tricksters].");
+$client->Message(14,"Hail. $name! I trust you are not afraid of heights. Kelethin is a grand city. but it is also a safe haven from predators and evil beings. About the only thing to fear are the $tricksters.");
 }
 if($text=~/pixie tricksters/i){
-quest::say("An irritating lot of fairy folk. They have been starting fires in our great forest. They may just burn our grand community down. We will have to [exterminate the pixies]. It is unfortunate. but it is for the good of the entire forest.");
+$client->Message(14,"An irritating lot of fairy folk. They have been starting fires in our great forest. They may just burn our grand community down. We will have to $exterminate. It is unfortunate. but it is for the good of the entire forest.");
 }
 if($text=~/exterminate the pixies/i){
-quest::say("Faydark's Champions cannot call you foe. but you have yet to earn our trust."); }
+$client->Message(14,"Faydark's Champions cannot call you foe. but you have yet to earn our trust."); }
 }
 
 sub EVENT_ITEM {
 	if(plugin::check_handin(\%itemcount, 12109 => 1)) {#Pouch of Pixie Dust
-		quest::say("Good work. scout!!  You have earned this reward.  It is all we have at the time.  I am certain you are satisfied.  If not, then do not let me hear of it.");
+		$client->Message(14,"Good work. scout!!  You have earned this reward.  It is all we have at the time.  I am certain you are satisfied.  If not, then do not let me hear of it.");
 		&DoRandomPatchwork();
 		quest::givecash("0","2","0","0");
 		quest::faction(283, 10);#Scouts of Tunare

@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/01/2020==
+Angelox: Fixed syntax errors in a couple pls
+Angelox: Converted a few Ranger GM quests to "point and click" text.
+
 ==10/20/2020==
 Congdar: Verrell_Cogswin
 

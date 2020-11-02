@@ -14,7 +14,7 @@ sub EVENT_SAY {
             quest::say("We have come upon another problem.  The summoners that you encountered in the Temple of the Damned are working at another location closer to the main temple to summon more vile creatures. Do you [think that you] can stop the ritual?");
             #need live text
         }
-        elsif {
+        else {
             quest::emote("looks relieved to see you.");
             quest::say("Finally the Wayfarers Brotherhood has sent adventurers this far out. I was beginning to wonder what was happening. I'm Kevren Nalavat, one of the brotherhood's traveling scholars. We can talk [more] later. The important thing is that you're here and now that you are you'll need to prove that you're up to the challenges facing us on this rugged terrain. I've been all through this area and it's no place to be caught unaware! So what do you say? Are you [ready to be tested]?");
         }
