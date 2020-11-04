@@ -1,5 +1,9 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==11/04/2020==
+Patrikpatrik: Ladder repopulates single server in case 1 goes down.
+Patrikpatrik: Handling of error messages.
+
 ==10/21/2020==
 Patrikpatrik: Fixed bot count across both servers.
 
