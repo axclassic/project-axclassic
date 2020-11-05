@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==11/05/2020==
+Patrikpatrik: Log viewer fixed.
+
 ==11/04/2020==
 Patrikpatrik: Ladder repopulates single server in case 1 goes down.
 Patrikpatrik: Handling of error messages.
