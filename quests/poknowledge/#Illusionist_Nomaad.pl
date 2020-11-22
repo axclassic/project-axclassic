@@ -23,7 +23,15 @@ sub EVENT_SPAWN {
     my $x = $npc->GetX();
     my $y = $npc->GetY();
     quest::set_proximity($x - 90, $x + 90, $y - 90, $y + 90);
-    $npc->SetAppearance(1);
+    quest::settimer("sitdown", 35);
+}
+
+sub EVENT_TIMER {
+    if($timer eq "sitdown") {
+        if($npc->GetAppearance() != 1) {
+            $npc->SetAppearance(1);
+        }
+    }
 }
 
 sub EVENT_ENTER {
