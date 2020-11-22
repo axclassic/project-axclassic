@@ -1,6 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
-==12/05/2020==
+==11/21/2020==
+Congdar: fix An Ancient Sebilite Protector
+
+==11/05/2020==
 Congdar: fix Dark_Disciple_Master.pl Cleric Epic 1.5
 
 ==11/01/2020==

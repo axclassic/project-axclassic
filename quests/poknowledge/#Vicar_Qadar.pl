@@ -17,13 +17,13 @@ sub EVENT_SAY {
 }
 
 sub EVENT_SPAWN {
-   $x = $npc->GetX();
-   $y = $npc->GetY();
+   my $x = $npc->GetX();
+   my $y = $npc->GetY();
    quest::set_proximity($x - 90, $x + 90, $y - 90, $y + 90);
+   $npc->SetAppearance(1);
 }
 
 sub EVENT_ENTER {
-   $npc->SetAppearance(1);
    my $random_result = int(rand(100));
    if($random_result<=10) {
       quest::shout("Casting Temperance and Virtue for donations behind the main bank!");
