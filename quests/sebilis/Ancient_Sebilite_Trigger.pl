@@ -10,6 +10,7 @@ sub EVENT_SPAWN  {
 
 sub EVENT_TIMER {
 	if($timer eq "start_event") {
+        quest::stoptimer("start_event");
         # spawn 4 a_sebilite_ juggernaut (89193)
         quest::spawn2(89193,0,0,-332.7,-1391.3,-107,126.5);
         quest::spawn2(89193,0,0,-362.6,-1431.3,-107,26.2);
