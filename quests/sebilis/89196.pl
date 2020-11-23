@@ -9,8 +9,8 @@ sub EVENT_HP {
     if($hpevent == 75) {
         quest::signalwith(89194,901,0);
         quest::signalwith(89195,901,0);
-        quest::settimer("casting", 36);
-        $spellTarget1 = $npc->GetTarget();
+        quest::settimer("casting", 26);
+        $spellTarget1 = $npc->GetHateRandom();
         if($spellTarget1) {
             # -- Spell: Death Shackles
             $npc->SendBeginCast(2047, 0);
@@ -21,7 +21,7 @@ sub EVENT_HP {
 
 sub EVENT_TIMER {
 	if($timer eq "casting") {
-        $spellTarget1 = $npc->GetTarget();
+        $spellTarget1 = $npc->GetHateRandom();
         if($spellTarget1) {
             # -- Spell: Death Shackles
             $npc->SendBeginCast(2047, 0);
@@ -32,5 +32,6 @@ sub EVENT_TIMER {
 
 sub EVENT_DEATH {
     quest::stoptimer("casting");
-    quest::signalwith(89198,900,0);
+    quest::signalwith(89194,902,0);
+    quest::signalwith(89195,902,0);
 }
