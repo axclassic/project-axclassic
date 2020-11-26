@@ -14,8 +14,8 @@ sub EVENT_TIMER {
         my $spellTarget2 = $entity_list->GetMobByNpcTypeID(89196);
         if($spellTarget2) {
             # -- Spell: Complete Heal Protector
-            $npc->SendBeginCast(7204, 0);
-            quest::castspell(7204, $spellTarget2->GetID());
+            $npc->SendBeginCast(1292, 0);
+            quest::castspell(1292, $spellTarget2->GetID());
         }
     }
     if($timer eq "cast_spells1") {
