@@ -27,7 +27,7 @@ sub EVENT_SAY {
     my $selos = quest::saylink("Selos", 1);
     my $special = quest::saylink("special", 1);
     my $magician = quest::saylink("magician", 1);
-    my $magepic = quest::saylink("magepic", 1);
+    my $magepic = quest::saylink("Mage Epic", 1);
     if($text=~/hail/i) {
         $client->Message(14,"Hello $name! I can scribe certain $spells your bots may require.");
     }
@@ -52,8 +52,8 @@ sub EVENT_SAY {
     elsif($text=~/magician/i) {
         $client->Message(14,"Ahh yes, The Orb of Mastery! The League of Magicians will authorize me only if you have proof of their $magepic quest.");
     }
-    elsif($text=~/magepic/i) {
-        if(defined ($mag_epic_1)) {
+    elsif($text=~/Mage Epic/i) {
+        if(defined ($mage_epic_1)) {
             $client->Message(14,"You already have The Mage Epic 1.0.");
             return;
         }

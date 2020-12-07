@@ -29,7 +29,7 @@ sub EVENT_SAY {
    }
    if($text=~/llaw eht htiw eno I ma/i && $sirran == 6) { #island6
       quest::say("Kcul doog! Ouy rof ydaer si erips eht fo retsis eht won, sdik boj doog.");
-      quest::spawn(71076,0,0,-936.6,-1039.2,1092.9,62.0);
+      quest::spawn2(71076,0,0,-936.6,-1039.2,1092.9,62.0);
    }
    if($text=~/traverse this plane/i && $sirran == 1) {
       quest::say("Ahah! Wise you are and tell you I will. Hrm? Don't have wings, do you? Fairies have swords! Fairies stole my lucky feet! Hand me them, one by one, and be in for a treat! Haha!");

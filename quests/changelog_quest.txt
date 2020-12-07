@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/07/2020==
+Congdar: fix airplane sirran spawning #Sister_of_the_Spire
+
 ==11/21/2020==
 Congdar: fix An Ancient Sebilite Protector
 
