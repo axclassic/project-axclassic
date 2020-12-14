@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/14/2020==
+Congdar: Carmin will now return incorrect items
+
 ==12/07/2020==
 Congdar: fix airplane sirran spawning #Sister_of_the_Spire
 

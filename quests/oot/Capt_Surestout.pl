@@ -1,5 +1,7 @@
 # Shaman Epic 1.0
-# Capt Surestout
+# Capt_Surestout (69023)
+# Capt_Surestout (69100)
+# Capt_Surestout (69130)
 # Ocean of Tears
 # Aramid September 2006
 

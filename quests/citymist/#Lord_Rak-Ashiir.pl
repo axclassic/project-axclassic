@@ -24,11 +24,11 @@ sub EVENT_ITEM {
             $y = $npc->GetY();
             $z = $npc->GetZ();
             $h = $npc->GetHeading();
-            quest::depop();
             $entid1 = quest::spawn2(quest::ChooseRandom(90183,90183,90183,90183,90183,90189,90189),0,0,$x,$y,$z,$h);
             $mob1 = $entity_list->GetMobID($entid1);
             $mob1attack = $mob1->CastToNPC();
             $mob1attack->AddToHateList($client, 1);
+            quest::depop();
         }
         else {
             quest::emote("will not take this item.");

@@ -1,4 +1,4 @@
-# Bzzazzt NPCID 71007
+# Bzzazzt NPCID 71107
 # This will be the center bee
 # spawns one 71109 Bazzazzt on death
 sub EVENT_DEATH {
