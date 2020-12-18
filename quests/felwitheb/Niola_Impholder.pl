@@ -23,7 +23,7 @@ sub EVENT_ITEM {
    {
       quest::say("Ah yes.  These are exactly what I need.  Thank you very much.");
       quest::summonitem(15310);
-      quest::faction(170, 4); #Keepers of the Art
+      quest::faction(170, 8); #Keepers of the Art
       quest::faction(178, 4); #King Tearis Thex
       quest::faction(99, 4); #Faydarks Champions
       quest::faction(322, -4); #The Dead
