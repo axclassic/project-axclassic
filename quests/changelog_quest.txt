@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/21/2020==
+Congdar: Updates to Ranger/Druid Epic 1.0 quest for non-Druid/Rangers
+
 ==12/17/2020==
 Congdar: Niola Impholder now gives correct faction hits for bat wing quest.
 
