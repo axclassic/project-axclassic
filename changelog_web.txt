@@ -1,5 +1,10 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==12/31/2020==
+Patrikpatrik: Ladder reset for 2021.
+Patrikpatrik: Reverted to Rathe server stats only for now.
+Patrikpatrik: Champion Darkwater updated.
+
 ==11/05/2020==
 Patrikpatrik: Log viewer fixed.
 
