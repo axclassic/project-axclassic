@@ -14,6 +14,7 @@
 ## 10/1/17 Changed 22298 to 22294   ##
 ## 12/31/19 Changed yr to 2020      ##
 ## 7/1/20 July 1st update	    ##
+## 12/31/20 Jan 1st update	    ##
 ######################################
 sub EVENT_SAY {
 #hyperlinks
@@ -28,8 +29,8 @@ my $second = quest::saylink("second", 1);
 my $newyears = quest::saylink("special", 1);
 #Ladder date and char settings
 #RATHEUSA
-my $minCharID  = 7711; #6125 remember to define this in EVENT_ITEM
-my $maxCharID  = 7710; #6124 5828
+my $minCharID  = 7854; #6125 remember to define this in EVENT_ITEM
+my $maxCharID  = 7853; #6124 5828
     if ($ActiveServer == 2){#RATHEUK
         $minCharID  = 1;
         $maxCharID  = 0;
@@ -39,8 +40,8 @@ my $maxCharID  = 7710; #6124 5828
         $maxCharID  = 20000;
    }
 
-my $activeYear = 2020; #2016
-my $activeMonth = "July"; #July January
+my $activeYear = 2021; #2016
+my $activeMonth = "January"; #July January
 
         if (($text=~/server/i) && ($ActiveServer == 1)) {
         $client->Message(14, "Champion Darkwater says, 'This is Rathe USA Server'");
@@ -250,13 +251,13 @@ my $activeMonth = "July"; #July January
 
 sub EVENT_ITEM {
     if ($ActiveServer == 1){#RATHEUSA
-        $minCharID  = 7711;
+        $minCharID  = 7854;
     }
     elsif ($ActiveServer == 2){#RATHEUK
         $minCharID  = 1;
     }
-my $activeMonth = "July";
-my $activeYear = 2020;
+my $activeMonth = "January";
+my $activeYear = 2021;
 
 	if ($charid < $minCharID) { #this charid and the one above should be the same.
 		$client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
