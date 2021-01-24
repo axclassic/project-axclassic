@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==1/23/2021==
+Congdar: Item turn-in faction fixes for Togahn_Sorast, Phin_Esrinap, Reyia_Beslin, Brother_Belatin
+
 ==12/21/2020==
 Congdar: Updates to Ranger/Druid Epic 1.0 quest for non-Druid/Rangers
 

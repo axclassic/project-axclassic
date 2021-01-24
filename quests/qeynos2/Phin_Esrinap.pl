@@ -22,23 +22,23 @@ sub EVENT_ITEM {
  if ($itemcount{13789} == 4){
 	quest::say("Good job, $name, keep up the good work! Here is your white training headband. Wear it with honor, and make Lu'Sun proud.");
 	quest::summonitem("10110");
-	quest::faction("2082","1");
-	quest::faction("10101","1");
-	quest::faction("2030","1");
+	quest::faction("300","1");
+	quest::faction("135","1");
+	quest::faction("12","1");
 	quest::ding(); quest::exp("100");
  } elsif ($itemcount{13722} == 3 && $itemcount{10110} == 1){
 	quest::say("Good work.. and, as promised, here is your reward. It is an honor to present this yellow headband to $name, for recent acts of courage and heroism, on behalf of the Silent Fist Clan.");
 	quest::summonitem("10111");
-	quest::faction("2082","1");
-	quest::faction("10101","1");
-	quest::faction("2030","1");
+    quest::faction("300","1");
+    quest::faction("135","1");
+    quest::faction("12","1");
 	quest::ding(); quest::exp("200");
  } elsif ($itemcount{13027} == 2 && $itemcount{13028} == 1 && $itemcount{10111} == 1){
 	quest::say("It is an honor to present the orange headband of the Silent Fist Clan to one of our finest members, $name the mighty!");
 	quest::summonitem("10112");
-	quest::faction("2082","1");
-	quest::faction("10101","1");
-	quest::faction("2030","1");
+    quest::faction("300","1");
+    quest::faction("135","1");
+    quest::faction("12","1");
 	quest::ding(); quest::exp("300");
  } else {
   #do all other handins first with plugin, then let it do disciplines

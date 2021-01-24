@@ -114,7 +114,7 @@ sub EVENT_ITEM
 	# Orange Sash of Order ID-10132
 	quest::summonitem("10132");
 	quest::ding(); quest::exp("300");
-	quest::faction("310","1");
+	quest::faction("12","10");
  }
  # Blackened Wand ID-13237 - Blackened Sapphire ID-13238 - Orange Sash of Order ID-10132
  elsif ($itemcount{13237} == 1 && $itemcount{13238} == 1 && $itemcount{10132} == 1)
@@ -124,7 +124,7 @@ sub EVENT_ITEM
 	# Red Sash of Order ID-10133
 	quest::summonitem("10133");
 	quest::ding(); quest::exp("400");
-	quest::faction("310","1");
+	quest::faction("12","10");
  }
  else
  {

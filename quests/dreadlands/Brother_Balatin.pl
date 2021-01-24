@@ -22,6 +22,9 @@ sub EVENT_ITEM {
   quest::emote("holds his arms out and a fine robe materializes before your eyes. You grab it just in time to see the skeleton fade from existence.");
   #Summon: Robe of the Whistling Fist (12970)
   quest::summonitem(12970);
+  quest::faction("359","1");
+  quest::faction("50","1");
+  quest::faction("317","-1");
  } else {
    quest::say("I have no need for this item $name, you can have it back.");
    plugin::return_items(\%itemcount); 

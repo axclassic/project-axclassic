@@ -50,16 +50,16 @@ sub EVENT_ITEM {
  if ($itemcount{13166} == 1 && $itemcount{13167} == 1 && $itemcount{13165} == 1 && $itemcount{10112} == 1){
 	quest::say("We are deeply honored to have such great warrior as part of our Clan. With a proper burial, Shen and Dareb's souls will finally be at peace, and with the death of that vile Ghanex, the plains will be much safer for travelers. It is a great honor to present you, $name, with the red headband of the Silent Fist Clan.");
 	quest::summonitem("10113");
-	quest::faction("2082","1");
-	quest::faction("10101","1");
-	quest::faction("2030","1");
+    quest::faction("300","1");
+    quest::faction("135","1");
+    quest::faction("12","1");
 	quest::ding(); quest::exp("400");
  } elsif ($itemcount{13168} == 1 && $itemcount{13169} == 1 && $itemcount{3000} == 1 && $itemcount{10113} == 1){
 	quest::say("In honor of your recent acts of courage and dedication, I reward you, $name, with the purple headband of the Silent Fist Clan.");
 	quest::summonitem("10114");
-	quest::faction("2082","1");
-	quest::faction("10101","1");
-	quest::faction("2030","1");
+    quest::faction("300","1");
+    quest::faction("135","1");
+    quest::faction("12","1");
 	quest::ding(); quest::exp("500");
  } else {
   #do all other handins first with plugin, then let it do disciplines
