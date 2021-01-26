@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==1/25/2021==
+Congdar: Herald Telcha faction fixes
+
 ==1/23/2021==
 Congdar: Item turn-in faction fixes for Togahn_Sorast, Phin_Esrinap, Reyia_Beslin, Brother_Belatin
 
