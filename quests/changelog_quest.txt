@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==1/28/2021==
+Congdar: Brother Balatin gives proper faction updates.
+
 ==1/25/2021==
 Congdar: Herald Telcha faction fixes
 
