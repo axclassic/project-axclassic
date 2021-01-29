@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==1/29/2021==
+Congdar: Fix Nagafen and Vox banish code.
+
 ==1/28/2021==
 Congdar: Brother Balatin gives proper faction updates.
 
