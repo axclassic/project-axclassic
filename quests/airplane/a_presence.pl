@@ -1,3 +1,5 @@
+# a_presence (71066)
+
 sub EVENT_SAY {
    if($text=~/hail/i) {
       quest::emote("ignores you.");
@@ -17,7 +19,7 @@ sub EVENT_ITEM {
    }
    else {
       quest::say("I have no need for this, $name.");
-      quest::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
    }
 }
 # End of File a_presence NPCID: 71066

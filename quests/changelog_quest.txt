@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==1/30/2021==
+Congdar: Fix several files using quest::return_items(\%itemcount) to plugin::return_items(\%itemcount)
+
 ==1/29/2021==
 Congdar: Fix Nagafen and Vox banish code.
 
