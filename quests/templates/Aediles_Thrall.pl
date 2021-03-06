@@ -1,5 +1,4 @@
-############################################
-###########
+#######################################################
 # ZONE: All Starter Zones, PoK and Bazaar
 # DATABASE: AX_CLASSIC Custom
 # LAST EDIT DATE: Febuary 4th, 2009
@@ -52,6 +51,7 @@
 # Some global settings for the quest.  Set them to your preferred levels and plat costs
 # Level options for when a character can acquire more slaves(bots)
 # $firstbotlevel is now bypassed, as the flag is set automatically upon first log in
+
 my $firstbotlevel  = 1;
 my $firstbotcost   = 1;
 my $secondbotlevel = 5;
@@ -255,7 +255,7 @@ sub EVENT_SAY {
             $client->Message(14,"A bot is another name we give to your NPC helpers or Mercenaries. You can use them so you don't have to venture alone.");
         }
         if(($ulevel >= $firstbotlevel) && ($qglobals{bot_spawn_limit} <= 0)) {
-#quest::settimer("face", 25);
+            #quest::settimer("face", 25);
             if($text=~/Hail/i) {
                 $client->Message(14,"Aediles Thrall says, \"Hey der youngster.  Lookin' fer a bit o' $help with yer adventurin'?\"");
             }
@@ -301,7 +301,7 @@ sub EVENT_SAY {
             if($text=~/Hail/i) {
                 $client->Message(14,"Ahh, a returnin' customer. Are ye $interested in another Individual?");
             }
-#spider legs, spiderling legs, fine mosquito wing, fire beetle leg, Sabertooth Cub Canine
+            #spider legs, spiderling legs, fine mosquito wing, fire beetle leg, Sabertooth Cub Canine
             elsif($text=~/supplies/i) {
                 if($race eq 'Froglok') {
                     quest::emote("looks around the room");
@@ -361,7 +361,8 @@ sub EVENT_SAY {
                 $client->Message(14,"Shhh, I kin deliver ye another Individual for $nineteenbotcost platinum an' one o' dem hunting bows fer shootin' at dem runaway Individuals.");
             }
         }
-        elsif(($ulevel >= $twentyninebotlevel) && ($qglobals{bot_spawn_limit} <= 29)) { #Level 55
+        elsif(($ulevel >= $twentyninebotlevel) && ($qglobals{bot_spawn_limit} <= 29)) {
+            #Level 55
             my $interested = quest::saylink("interested", 1);
             if($text=~/Hail/i) {
                 $client->Message(14,"Ahh, a returnin' customer. Are ye $interested in another Individual?");
@@ -371,7 +372,8 @@ sub EVENT_SAY {
                 $client->Message(14,"Shhh, I kin deliver ye another Individual for $twentyninebotcost platinum an' da wife wants a nice Blue Diamond cause she tinks she's so cute!, and I gotta keep her happy!");
             }
         }
-	elsif(($ulevel >= $fortyfourbotlevel) && ($qglobals{bot_spawn_limit} <=44)) { #Level 60
+        elsif(($ulevel >= $fortyfourbotlevel) && ($qglobals{bot_spawn_limit} <=44)) {
+            #Level 60
             my $interested = quest::saylink("interested", 1);
             if($text=~/Hail/i) {
                 $client->Message(14,"Ahh, a returnin' customer. Are ye $interested in another Individual?");
@@ -381,7 +383,8 @@ sub EVENT_SAY {
                 $client->Message(14,"Shhh, I kin deliver ye another Individual for $fortyfourbotcost platinum an' da wife wants to collect Fire Emerald Rings, so get me one a dose ... I gotta keep her happy!");
             }
         }
-        elsif(($ulevel >= $sixtyfourbotlevel) && ($qglobals{bot_spawn_limit} <=64 )) { #Level 65
+        elsif(($ulevel >= $sixtyfourbotlevel) && ($qglobals{bot_spawn_limit} <=64 )) {
+            #Level 65
             my $interested = quest::saylink("interested", 1);
             if($text=~/Hail/i) {
                 $client->Message(14,"Ahh, a returnin' customer. Are ye $interested in another Individual?");
@@ -431,10 +434,10 @@ sub EVENT_SAY {
                 $client->Message(14,"Ya already got all da bots ya can get!");
                 $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");
             }
-#elsif(($text=~/Hail/i) && ($ulevel >= $sixtyfourbotlevel) && ($ulevel < $nextbotlevel)) {
-#   $client->Message(14,"Yer not ready yet, come back when you get level $nextbotlevel .");
-#   $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");
-#}
+            #elsif(($text=~/Hail/i) && ($ulevel >= $sixtyfourbotlevel) && ($ulevel < $nextbotlevel)) {
+            #   $client->Message(14,"Yer not ready yet, come back when you get level $nextbotlevel .");
+            #   $client->Message(14,"Or maybe ya wants ta learn more about $command s or $macros ?");
+            #}
         }
     }
     else {
@@ -450,15 +453,15 @@ sub EVENT_ITEM {
     my $macros = quest::saylink("macros", 1);
     my $show = quest::saylink("show", 1);
     my $spawn = quest::saylink("spawn", 1);
-#First bot items
+    #First bot items
     my @itemz = (13068,13071,12405,12466,13064,13073); #batwing, rat whiskers ,small mosquito wings, loose scale, rat fur, bonechips
-#Second bot items
+    #Second bot items
     my $total = 0;
     foreach my $xitem (@itemz) {
         $total += $itemcount{$xitem}
     }
     my @itemy = (13417,13254,97171,13250,12426); #spider legs, spiderling legs, fine mosquito wing, fire beetle leg, Sabertooth Cub Canine
-#Fourth bot items (third bot items are cracked staffs, you can find those anywhere)
+    #Fourth bot items (third bot items are cracked staffs, you can find those anywhere)
     my $total2 = 0;
     foreach my $witem (@itemy) {
         $total2 += $itemcount{$witem}
@@ -469,7 +472,7 @@ sub EVENT_ITEM {
         $total3 += $itemcount{$vitem}
     }
     my @itema = (10038,13731,13928);  #Assorted Silver Ring IDs
-#Fifth bot items
+    #Fifth bot items
     my $total4 = 0;
     foreach my $bitem (@itema) {
         $total4 += $itemcount{$bitem}
@@ -483,9 +486,10 @@ sub EVENT_ITEM {
     }
     if(defined $qglobals{bot_spawn_limit} && (quest::spawnbotcount() > $qglobals{bot_spawn_limit})) {
         my $success = 0;
-	my $ranonce = 0;
+        my $ranonce = 0;
         if(($ulevel >= $firstbotlevel) && ($qglobals{bot_spawn_limit} <= 0)) {
-            if(($platinum == $firstbotcost) && ($total >= 4)) { #First bot items
+            if(($platinum == $firstbotcost) && ($total >= 4)) {
+                #First bot items
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Ya did okay! Now if ya need me to $show you how to work these things, or want to learn how to make $macros of your bot $command s, Even if ya don't know how to $spawn a bot, just say so.");
             }
@@ -496,10 +500,11 @@ sub EVENT_ITEM {
                     quest::givecash($copper, $silver, $gold, $platinum);
                 }
             }
-	    $ranonce = 1;
+            $ranonce = 1;
         }
         elsif(($ulevel >= $secondbotlevel) && ($qglobals{bot_spawn_limit} <= 1)) {
-            if(($platinum == $secondbotcost) && ($total2 >= 4)) { #Second bot items
+            if(($platinum == $secondbotcost) && ($total2 >= 4)) {
+                #Second bot items
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Thanks $name!");
             }
@@ -510,10 +515,11 @@ sub EVENT_ITEM {
                     quest::givecash($copper, $silver, $gold, $platinum);
                 }
             }
-	    $ranonce = 1;
+            $ranonce = 1;
         }
         elsif(($ulevel >= $thirdbotlevel) && ($qglobals{bot_spawn_limit} <= 2)) {
-            if(($platinum == $thirdbotcost) && plugin::check_handin(\%itemcount, 6018  => 2)) { #cracked staff
+            if(($platinum == $thirdbotcost) && plugin::check_handin(\%itemcount, 6018  => 2)) {
+                #cracked staff
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Thanks $name!");
             }
@@ -524,10 +530,11 @@ sub EVENT_ITEM {
                     quest::givecash($copper, $silver, $gold, $platinum);
                 }
             }
-	    $ranonce = 1;
+            $ranonce = 1;
         }
         elsif(($ulevel >= $fourthbotlevel) && ($qglobals{bot_spawn_limit} <= 3)) {
-            if(($platinum == $fourthbotcost) && ($total3 >= 1)) { #fourth bot items
+            if(($platinum == $fourthbotcost) && ($total3 >= 1)) {
+                #fourth bot items
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Thanks $name!");
             }
@@ -538,10 +545,11 @@ sub EVENT_ITEM {
                     quest::givecash($copper, $silver, $gold, $platinum);
                 }
             }
-	    $ranonce = 1;
+            $ranonce = 1;
         }
         elsif(($ulevel >= $fifthbotlevel) && ($qglobals{bot_spawn_limit} <= 4)) {
-            if(($platinum == $fifthbotcost) &&  ($total4 >= 1)) { #silver rings
+            if(($platinum == $fifthbotcost) &&  ($total4 >= 1)) {
+                #silver rings
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Thanks $name!");
             }
@@ -552,19 +560,22 @@ sub EVENT_ITEM {
                     quest::givecash($copper, $silver, $gold, $platinum);
                 }
             }
-	    $ranonce = 1;
+            $ranonce = 1;
         }
         elsif(($ulevel >= $nineteenbotlevel) && ($qglobals{bot_spawn_limit} <= 19)) {
-            if(($platinum == $nineteenbotcost) && plugin::check_handin(\%itemcount, 8011 => 1)) { #hunting bow
+            if(($platinum == $nineteenbotcost) && plugin::check_handin(\%itemcount, 8011 => 1)) {
+                #hunting bow
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Thanks $name!");
             }
             else {
-                if(plugin::check_handin(\%itemcount, 8003 => 1)) { #the wrong bow
+                if(plugin::check_handin(\%itemcount, 8003 => 1)) {
+                    #the wrong bow
                     $client->Message(14,"I don want that stink'n bow, me wants a hunting bow!");
                     quest::summonitem(8003);
                 }
-                if(plugin::check_handin(\%itemcount, 8009 => 1)) { #the wrong bow
+                if(plugin::check_handin(\%itemcount, 8009 => 1)) {
+                    #the wrong bow
                     $client->Message(14,"I don want that stink'n bow, me wants a hunting bow!");
                     quest::summonitem(8009);
                 }
@@ -574,10 +585,11 @@ sub EVENT_ITEM {
                 $client->Message(14,"Dat ain't whats me asked ye fer!!");
                 plugin::return_items(\%itemcount);
             }
-	    $ranonce = 1;
+            $ranonce = 1;
         }
-	elsif(($ulevel >= $twentyninebotlevel) && ($qglobals{bot_spawn_limit} <= 29)) {
-            if(($platinum == $twentyninebotcost) && plugin::check_handin(\%itemcount, 22503 => 1)) { #Blue Diamond
+        elsif(($ulevel >= $twentyninebotlevel) && ($qglobals{bot_spawn_limit} <= 29)) {
+            if(($platinum == $twentyninebotcost) && plugin::check_handin(\%itemcount, 22503 => 1)) {
+                #Blue Diamond
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Thanks $name!");
             }
@@ -588,10 +600,11 @@ sub EVENT_ITEM {
                     quest::givecash($copper, $silver, $gold, $platinum);
                 }
             }
-	    $ranonce = 1;
+            $ranonce = 1;
         }
-       elsif(($ulevel >= $fortyfourbotlevel) && ($qglobals{bot_spawn_limit} <= 44)) {
-            if(($platinum == $fortyfourbotcost) && plugin::check_handin(\%itemcount, 10049 => 1)) { #Fire Emerald Ring
+        elsif(($ulevel >= $fortyfourbotlevel) && ($qglobals{bot_spawn_limit} <= 44)) {
+            if(($platinum == $fortyfourbotcost) && plugin::check_handin(\%itemcount, 10049 => 1)) {
+                #Fire Emerald Ring
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Thanks $name!");
             }
@@ -602,7 +615,7 @@ sub EVENT_ITEM {
                     quest::givecash($copper, $silver, $gold, $platinum);
                 }
             }
-	    $ranonce = 1;
+            $ranonce = 1;
         }
         elsif(($ulevel >= $sixtyfourbotlevel) && ($qglobals{bot_spawn_limit} <= 64)) {
             if((($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72650 =>1))) ||
@@ -616,7 +629,8 @@ sub EVENT_ITEM {
                (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72659 =>1))) ||
                (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72660 =>1))) ||
                (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72661 =>1))) ||
-               (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72656 =>1)))) { #Flow Stones
+               (($platinum == $sixtyfourbotcost) && (plugin::check_handin(\%itemcount, 72656 =>1)))) {
+                #Flow Stones
                 $success = $qglobals{bot_spawn_limit}+1;
                 $client->Message(14,"Thanks $name!");
             }
@@ -627,10 +641,10 @@ sub EVENT_ITEM {
                     quest::givecash($copper, $silver, $gold, $platinum);
                 }
             }
-	    $ranonce = 1;
+            $ranonce = 1;
         }
         if($success > 0) {
-	    #$client->Message(14,"Thanks $name!");
+            #$client->Message(14,"Thanks $name!");
             quest::setglobal("bot_spawn_limit", $success, 5, "F");
             $bot_spawn_limit = undef;
             $client->Message(6,"You receive a character flag!");
@@ -640,15 +654,15 @@ sub EVENT_ITEM {
             my $sbcount = quest::spawnbotcount();
             $client->Message(6,"You have $success out of $sbcount possible Individuals.");
             $success = 0;
-	    $ranonce = 1;
+            $ranonce = 1;
         }
-	if($ranonce<=0) {
-	    $client->Message(14,"I don want dat! Yer wasting me time!");
-	    plugin::return_items(\%itemcount);
-	    if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-		quest::givecash($copper, $silver, $gold, $platinum);
-	    }
-	}
+        if($ranonce<=0) {
+            $client->Message(14,"I don want dat! Yer wasting me time!");
+            plugin::return_items(\%itemcount);
+            if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+                quest::givecash($copper, $silver, $gold, $platinum);
+            }
+        }
     }
 }
 
@@ -667,7 +681,7 @@ sub EVENT_SPAWN {
 sub EVENT_ENTER {
     my $assistance = quest::saylink("assistance", 1);
     my $bot = quest::saylink("bot", 1);
-#if(quest::botquest()) {
+    #if(quest::botquest()) {
     if(!defined $qglobals{bot_spawn_limit}) {
         quest::setglobal("bot_spawn_limit", 1, 5, "F");
         $bot_spawn_limit = undef;
@@ -676,10 +690,10 @@ sub EVENT_ENTER {
         $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
     }
     #      if(!defined $qglobals{bot_spawn_limit}) {
-        #         quest::setglobal("bot_spawn_limit", 0, 5, "F");
-        # 	$bot_spawn_limit = undef;
-        #      }
-        #}
+    #         quest::setglobal("bot_spawn_limit", 0, 5, "F");
+    # 	$bot_spawn_limit = undef;
+    #      }
+    #}
     my $random_result2 = int(rand(100));
     if($random_result2<=40) {
         if($ulevel <= $firstbotlevel) {
@@ -687,4 +701,6 @@ sub EVENT_ENTER {
         }
     }
 }
+
 # END of FILE Zone:many -- Aediles_Thrall.pl
+

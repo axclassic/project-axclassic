@@ -1,7 +1,7 @@
 sub EVENT_SPAWN {
     my $x = $npc->GetX();
     my $y = $npc->GetY();
-    quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+    quest::set_proximity($x - 100, $x + 100, $y - 100, $y + 100);
 }
 
 sub EVENT_ENTER {
