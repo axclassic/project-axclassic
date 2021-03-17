@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==03/17/2021==
+Angelox: A batch file for copy Adiles Thrall scripts to all
+starter zones - you should only update his script in templates!
+
 ==03/06/2021==
 Congdar: increase proximity of bot epic vendor controller 
 
