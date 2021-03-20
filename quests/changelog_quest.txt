@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==03/20/2021==
+Congdar: Klom Jysun factions for turn-in
+
 ==03/17/2021==
 Angelox: A batch file for copy Adiles Thrall scripts to all
 starter zones - you should only update his script in templates!
