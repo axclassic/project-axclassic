@@ -51,7 +51,6 @@
 # Some global settings for the quest.  Set them to your preferred levels and plat costs
 # Level options for when a character can acquire more slaves(bots)
 # $firstbotlevel is now bypassed, as the flag is set automatically upon first log in
-
 my $firstbotlevel  = 1;
 my $firstbotcost   = 1;
 my $secondbotlevel = 5;
@@ -70,13 +69,13 @@ my $fortyfourbotlevel = 60;
 my $fortyfourbotcost  = 4000;
 my $sixtyfourbotlevel = 65;
 my $sixtyfourbotcost  = 5000;
-
+#
 # They have enough for one group, now they start creating raid bots up to the quest::spawnbotcount() limit.
 # A rule setting EQOffline:SpawnBotCount of 11 is two full groups including you.
 # my $nextbotlevel   = 340;
 # my $nextbotcost    = 1000;
 # my $nextextracost  = 2000;
-
+#
 sub EVENT_SAY {
     my $want = quest::saylink("want", 1);
     my $create= quest::saylink("create", 1);
@@ -125,7 +124,7 @@ sub EVENT_SAY {
     my $inventory = quest::saylink("inventory", 1);
     my $show = quest::saylink("show", 1);
     my $single = quest::saylink("single", 1);
-
+#
     if(defined $qglobals{bot_spawn_limit} && (quest::spawnbotcount() >= $qglobals{bot_spawn_limit})) {
         if($text=~/show/i) {
             $client->Message(14,"Well, ya gotta tell'm what ya $want , and they don't know everything!");
@@ -446,8 +445,7 @@ sub EVENT_SAY {
         }
     }
 }
-
-
+#
 sub EVENT_ITEM {
     my $command = quest::saylink("command ", 1);
     my $macros = quest::saylink("macros", 1);
@@ -665,42 +663,41 @@ sub EVENT_ITEM {
         }
     }
 }
-
-sub EVENT_SPAWN {
-    my $x;
-    my $y;
-    my $z;
-    my $h;
-    $x = $npc->GetX();
-    $y = $npc->GetY();
-    $z = $npc->GetZ();
-    $h = $npc->GetHeading();
-    quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
-}
-
-sub EVENT_ENTER {
-    my $assistance = quest::saylink("assistance", 1);
-    my $bot = quest::saylink("bot", 1);
-    #if(quest::botquest()) {
-    if(!defined $qglobals{bot_spawn_limit}) {
-        quest::setglobal("bot_spawn_limit", 1, 5, "F");
-        $bot_spawn_limit = undef;
-        $client->Message(6,"You receive a character flag!");
-        $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
-        $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
-    }
-    #      if(!defined $qglobals{bot_spawn_limit}) {
-    #         quest::setglobal("bot_spawn_limit", 0, 5, "F");
-    # 	$bot_spawn_limit = undef;
-    #      }
-    #}
-    my $random_result2 = int(rand(100));
-    if($random_result2<=40) {
-        if($ulevel <= $firstbotlevel) {
-            $client->Message(14,"Aediles Thrall says, \"Psst! hey $name! wouldn't you like to have some $assistance ? I can provide you with some $bot helpers! Come find me and we can talk.\"");
-        }
-    }
-}
-
+## Quoting this out so as to see if the freeze ups stop
+# sub EVENT_SPAWN {
+#     my $x;
+#     my $y;
+#     my $z;
+#     my $h;
+#     $x = $npc->GetX();
+#     $y = $npc->GetY();
+#     $z = $npc->GetZ();
+#     $h = $npc->GetHeading();
+#     quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50);
+# }
+# 
+# sub EVENT_ENTER {
+#     my $assistance = quest::saylink("assistance", 1);
+#     my $bot = quest::saylink("bot", 1);
+#     #if(quest::botquest()) {
+#     if(!defined $qglobals{bot_spawn_limit}) {
+#         quest::setglobal("bot_spawn_limit", 1, 5, "F");
+#         $bot_spawn_limit = undef;
+#         $client->Message(6,"You receive a character flag!");
+#         $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
+#         $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
+#     }
+#     #      if(!defined $qglobals{bot_spawn_limit}) {
+#     #         quest::setglobal("bot_spawn_limit", 0, 5, "F");
+#     # 	$bot_spawn_limit = undef;
+#     #      }
+#     #}
+#     my $random_result2 = int(rand(100));
+#     if($random_result2<=40) {
+#         if($ulevel <= $firstbotlevel) {
+#             $client->Message(14,"Aediles Thrall says, \"Psst! hey $name! wouldn't you like to have some $assistance ? I can provide you with some $bot helpers! Come find me and we can talk.\"");
+#         }
+#     }
+# }
+#
 # END of FILE Zone:many -- Aediles_Thrall.pl
-
