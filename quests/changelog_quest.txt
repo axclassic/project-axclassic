@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==03/24/2021==
+Angelox: Reverted last Adiles update.
+
 ==03/23/2021==
 Angelox: Quoting Adiles proximites so as to see if this causes his freeze ups.
 
