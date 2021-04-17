@@ -1,5 +1,11 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==04/16/2021==
+Patrikpatrik: Updated url links.
+Patrikpatrik: Color fixes.
+Patrikpatrik: Trimmed unnecessary bloat.
+Patrikpatrik: Changelogs -> Updates
+
 ==04/12/2021==
 Patrikpatrik: Bbcode parser done.
 
