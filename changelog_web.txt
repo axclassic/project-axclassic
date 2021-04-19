@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==04/18/2021==
+Patrikpatrik: Revamped Registration page.
+
 ==04/16/2021==
 Patrikpatrik: Updated url links.
 Patrikpatrik: Color fixes.
