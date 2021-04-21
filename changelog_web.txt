@@ -1,7 +1,7 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==04/20/2021==
-Patrikpatrik: Re-added mailer.
+Patrikpatrik: Re-added mailer now tls/ssl secure.
 
 ==04/18/2021==
 Patrikpatrik: Revamped Registration page.
