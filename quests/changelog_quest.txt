@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==07/01/2021==
+Angelox: Mystic voice in Nexus was stealing items off the bots.
+
 ==03/24/2021==
 Angelox: Reverted last Adiles update.
 

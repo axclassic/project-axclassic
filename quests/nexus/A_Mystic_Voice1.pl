@@ -23,5 +23,8 @@ sub EVENT_SIGNAL {
       quest::say("In approximately ten minutes the portals will become active and will transport you back to Odus, Antonica, Faydwer, and Kunark.  In five minutes the portal to Velious will become active.");
    }
 }
+sub EVENT_ITEM{
+	plugin::return_items(\%itemcount); #returns item
+}
 # AX_Classic Nexus Spire Portal Relay NPC: 152000
 

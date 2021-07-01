@@ -49,5 +49,8 @@ sub EVENT_TIMER {
       quest::signalwith(152000,26,3000);
    }
 }
+sub EVENT_ITEM{
+	plugin::return_items(\%itemcount); #returns item
+}
 # AX_Classic Nexus Spire Portal Timer NPC: 152019
 
