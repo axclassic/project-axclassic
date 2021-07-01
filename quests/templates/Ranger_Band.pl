@@ -17,7 +17,7 @@
 ## to hunt for the moonstones yourself - Patrik.
 ## UPDATE- SAYLINKS placed back in subroutines!
 
-my $minCharID  = 7711; # 5829 Ladder info RATHEUSA
+my $minCharID  = 8056; # 5829 Ladder info RATHEUSA
     if ($ActiveServer == 2){#RATHEUK
         $minCharID  = 1;
    }
