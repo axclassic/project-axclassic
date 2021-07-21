@@ -5,7 +5,8 @@
 ## by Patrikpatrik                         ##
 ## UPDATE 1/1/2017 will reward shrink item ##
 ## upon random ticket from darkwater       ##
-## 10/1/2017 22298 changed to 22294	       ##
+## 10/1/2017 22298 changed to 22294	   ##
+## 7/21/2021 120216 changed to 120341      ##
 #############################################
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
@@ -66,7 +67,7 @@ sub EVENT_ITEM {
 		# }
 		# else {
 		# quest::we(13, "Champion Lightwater shouts, 'Congratulations to $name for a risky proposition and came out victorious!'");
-		quest::summonitem(120216); # rathe server is 120216 test is 120199
+		quest::summonitem(120341); # rathe server is 120216 test is 120199
 		$client->Message(14,"Champion Lightwater says, 'Farewell!'");
 		$client->Message(15,"*POOF* Champion Lightwater disappears into thin air.");
 		# }
