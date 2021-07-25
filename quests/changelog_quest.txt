@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==07/24/2021==
+Congdar: Rylaz: Update Eschina_Sybell.pl
+Congdar: Update Sir_Edwin_Motte.pl
+
 ==07/21/2021==
 Angelox: new Moonstone of Life replaces older Moonstone of Life.
 Patrikpatrik: Champion Lightwater updated on newer item.
