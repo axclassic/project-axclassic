@@ -163,7 +163,8 @@ my $activeMonth = "July"; #July January
 			$client->Message(14, "Champion Darkwater says, 'I'm sorry but you are not eligible for the Ladder Title at this time.'");
 			}
 		elsif (($ulevel == '65') && ($ladder_title == '1')) { #set Ladder Title
-			$client->SetAATitle("Ladder Champion");
+			##$client->SetAATitle("Ladder Champion"); changed to quest::enabletitle() 08/01/2021 by Congdar
+            quest::enabletitle(3);
 			##quest::we is bugged
 			##quest::we(13, "Champion Darkwater shouts, 'All Hail $name for earning the title Ladder Champion!'");
 			quest::ding();
@@ -171,12 +172,17 @@ my $activeMonth = "July"; #July January
 			$ladder_title=undef;
 			}
 		elsif (($ulevel == '65') && ($ladder_title == '2')) {
-			$client->Message(15, "You already received your Ladder Title.");
+            if(quest::checktitle(3)) {
+                $client->Message(15, "You already received your Ladder Title.");
+            }
+            else {
+                quest::enabletitle(3);
+            }
 			#quest::setglobal("ladder_trophy", 0, 4, "F"); #For resets
 			#quest::setglobal("ladder_title", 0, 4, "F");  #For resets
 			#$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
-			}
 		}
+	}
 #End Rewards
 #Moonstone Quests
 	elsif ($text=~/items/i) {

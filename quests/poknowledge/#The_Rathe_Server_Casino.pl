@@ -105,31 +105,31 @@ sub EVENT_ITEM {
             ####begin main price item win 66 tm 75####################################
             elsif($win_win == 66) {
                 #quest::summonitem(); 
-                quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this prize for myself!");
+                quest::shout2("$name has won the JACKPOT, $name gets nothing this time, I am keeping this prize for myself!");
             }
             elsif($win_win == 67) {
                 #quest::summonitem(); 
-                quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this prize for myself!");
+                quest::shout2("$name has won the JACKPOT, $name gets nothing this time, I am keeping this prize for myself!");
             }
             elsif($win_win == 68) {
                 #quest::summonitem(); 
-                quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this prize for myself!");
+                quest::shout2("$name has won the JACKPOT, $name gets nothing this time, I am keeping this prize for myself!");
             }
             elsif($win_win == 69) {
                 #quest::summonitem(); 
-                quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this prize for myself!");
+                quest::shout2("$name has won the JACKPOT, $name gets nothing this time, I am keeping this prize for myself!");
             }
             elsif($win_win == 70) {
                 #quest::summonitem(); 
-                quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this prize for myself!");
+                quest::shout2("$name has won the JACKPOT, $name gets nothing this time, I am keeping this prize for myself!");
             }
             elsif($win_win == 71) {
                 #quest::summonitem(); 
-                quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this prize for myself!");
+                quest::shout2("$name has won the JACKPOT, $name gets nothing this time, I am keeping this prize for myself!");
             }
             elsif($win_win == 72) {
                 #quest::summonitem(); 
-                quest::shout2("$name has won the JACKPOT, $name gets nothing thistime, I am keeping this prize for myself!");
+                quest::shout2("$name has won the JACKPOT, $name gets nothing this time, I am keeping this prize for myself!");
             }
             elsif($win_win == 73) {
                 quest::summonitem(7867); #Black Ornate Chain Bridle

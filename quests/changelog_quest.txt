@@ -1,7 +1,10 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/01/2021==
+Congdar: Fix Ladder Champion Title
+
 ==07/24/2021==
-Congdar: Rylaz: Update Eschina_Sybell.pl
+Rylaz: Update Eschina_Sybell.pl
 Congdar: Update Sir_Edwin_Motte.pl
 
 ==07/21/2021==
