@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==08/02/2021==
+Angelox: Fixed bug where Nahunta repos changelogs were not updating.
+
 ==04/20/2021==
 Patrikpatrik: Re-added mailer now tls/ssl secure.
 
