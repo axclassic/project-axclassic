@@ -8,6 +8,7 @@ copy/y Aediles_Thrall.pl ..\bazaar
 copy/y Aediles_Thrall.pl ..\cabeast
 copy/y Aediles_Thrall.pl ..\cabwest
 copy/y Aediles_Thrall.pl ..\erudnint
+copy/y Aediles_Thrall.pl ..\erudnext
 copy/y Aediles_Thrall.pl ..\felwithea
 copy/y Aediles_Thrall.pl ..\felwitheb
 copy/y Aediles_Thrall.pl ..\freporte
@@ -15,6 +16,7 @@ copy/y Aediles_Thrall.pl ..\freportw
 copy/y Aediles_Thrall.pl ..\gfaydark
 copy/y Aediles_Thrall.pl ..\grobb
 copy/y Aediles_Thrall.pl ..\gukta
+copy/y Aediles_Thrall.pl ..\gunthak
 copy/y Aediles_Thrall.pl ..\halas
 copy/y Aediles_Thrall.pl ..\kaladima
 copy/y Aediles_Thrall.pl ..\kaladimb

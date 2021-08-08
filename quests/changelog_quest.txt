@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/08/2021==
+Angelox: Aediles_Thrall fix.
+
 ==08/07/2021==
 Congdar: SolB Fabled fixes
 
