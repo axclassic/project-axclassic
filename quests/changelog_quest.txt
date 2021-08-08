@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/07/2021==
+Congdar: SolB Fabled fixes
+
 ==08/01/2021==
 Congdar: Fix Ladder Champion Title
 
