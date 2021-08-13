@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==08/12/2021==
+Patrikpatrik: Condensed left column. Server Rules moved to How to Connect?
+
 ==08/11/2021==
 Patrikpatrik: Minor updates.
 
