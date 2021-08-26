@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==08/25/2021==
+Patrikpatrik: Ladder page conversion with more info.
+
 ==08/12/2021==
 Patrikpatrik: Condensed left column. Server Rules moved to How to Connect?
 
