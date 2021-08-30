@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/29/2021==
+Congdar: Update for Ladder
+
 ==08/24/2021==
 Angelox: small change to make Baobob Miller quest more understandable.
 
