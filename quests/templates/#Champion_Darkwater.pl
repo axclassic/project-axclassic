@@ -32,6 +32,7 @@ sub EVENT_SAY {
     my $agree = quest::saylink("agree", 1);
     #Ladder date and char settings
     #RATHEUSA
+    $ActiveServer = 1;
     my $minCharID  = 8056; #6125 Dont forget lines @ 255 260 for EVENT_ITEM
     my $maxCharID  = 8055; #6124 5828
 
@@ -82,14 +83,19 @@ sub EVENT_SAY {
         $client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
         $client->Message(14, "Champion Darkwater says, 'Warning: The Ladder is for Seasoned Players. This typically means you are not the main character but an alternate or secondary or thirdary etc. The Ladder is not for new players but you can join the Ladder if you want.");
         $client->Message(14, "Champion Darkwater says, 'Do you $agree to join the Ladder?'");
+        $client->Message(14, "ulevel is $ulevel");
+        $client->Message(14, "isladderplayer() is quest::isladderplayer()");
+        $client->Message(14, "ulevel is $ulevel");
     }
-    elsif(($text=~/agree/i) && ($client->GetLadder()) && ($ulevel == 1)) {
+    elsif(($text=~/agree/i) && (quest::isladderplayer() != 1) && ($ulevel == 1)) {
+        $client->Message(14, "isladderplayer() is quest::isladderplayer() and ulevel==1");
         quest::setglobal("ladder_trophy", 1, 5, "F");
         quest::setglobal("ladder_title", 1, 5, "F");
         quest::ladder("on");
         #$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
     }
-    elsif(($text=~/agree/i) && (!$client->GetLadder()) && ($ulevel != 1)) {
+    elsif(($text=~/agree/i) && (quest::isladderplayer() != 1) && ($ulevel != 1)) {
+        $client->Message(14, "isladderplayer() and ulevel != 1");
         $client->Message(14, "Champion Darkwater says, 'You are not eligible for The Ladder.'");
         quest::ladder("off");
         #$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging

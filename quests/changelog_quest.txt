@@ -1,6 +1,6 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
-==08/29/2021==
+==09/01/2021==
 Congdar: Update for Ladder
 
 ==08/24/2021==
