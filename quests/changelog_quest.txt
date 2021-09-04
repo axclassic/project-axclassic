@@ -2,9 +2,9 @@ AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==09/04/2021==
 Angelox: Champion_Darkwater will give earring after you agree to the Ladder.
-               You have to be level 2 for Darkwaters New Years gift.
-               The turnin scroll is not turnin any more, instead tells you to see 
-               Darkwater and join  the ladder.
+         You have to be level 2 for Darkwaters New Years gift.
+         The turnin scroll is not turnin any more, instead tells you to see 
+         Darkwater and join  the ladder.
 
 ==09/01/2021==
 Congdar: Update for Ladder

@@ -1,24 +1,24 @@
-########################
-## NPC: Champion Darkwater          ##
-## Zone: All Starter Towns          ##
-## Darkwater Ladder Event           ##
-## By: Angelox	                    ##
-## Revised Clicklinks by Caved      ##
-## 3rd rev by Angelox logic 2/01/11 ##
-## 7/29/15 4th REV patrikpatrik     ##
-## 7/31/15 improved globals         ##
-## 1/01/16 SoW Earring gift         ##
-## 2/02/16 More rewards at level 65 ##
-## 1/01/17 added shrink item reward ##
-## 6/30/17 update		            ##
-## 10/1/17 Changed 22298 to 22294   ##
-## 12/31/19 Changed yr to 2020      ##
-## 7/1/20 July 1st update	        ##
-## 12/31/20 Jan 1st update	        ##
-## 07/01/21 Jul 1st update          ##
-## 08/24/21 PvP to Ladder by Congdar##
-## 09/04/21 Changes to starter gifts by Angelox##
-###############################
+##################################################
+## NPC: Champion Darkwater                      ##
+## Zone: All Starter Towns                      ##
+## Darkwater Ladder Event                       ##
+## By: Angelox	                                ##
+## Revised Clicklinks by Caved                  ##
+## 3rd rev by Angelox logic 2/01/11             ##
+## 7/29/15 4th REV patrikpatrik                 ##
+## 7/31/15 improved globals                     ##
+## 1/01/16 SoW Earring gift                     ##
+## 2/02/16 More rewards at level 65             ##
+## 1/01/17 added shrink item reward             ##
+## 6/30/17 update		                        ##
+## 10/1/17 Changed 22298 to 22294               ##
+## 12/31/19 Changed yr to 2020                  ##
+## 7/1/20 July 1st update	                    ##
+## 12/31/20 Jan 1st update	                    ##
+## 07/01/21 Jul 1st update                      ##
+## 08/24/21 PvP to Ladder by Congdar            ##
+## 09/04/21 Changes to starter gifts by Angelox ##
+##################################################
 sub EVENT_SAY {
     #hyperlinks
     my $reward = quest::saylink("reward", 1);
