@@ -1,4 +1,4 @@
-######################################
+########################
 ## NPC: Champion Darkwater          ##
 ## Zone: All Starter Towns          ##
 ## Darkwater Ladder Event           ##
@@ -17,7 +17,8 @@
 ## 12/31/20 Jan 1st update	        ##
 ## 07/01/21 Jul 1st update          ##
 ## 08/24/21 PvP to Ladder by Congdar##
-######################################
+## 09/04/21 Changes to starter gifts by Angelox##
+###############################
 sub EVENT_SAY {
     #hyperlinks
     my $reward = quest::saylink("reward", 1);
@@ -93,6 +94,10 @@ sub EVENT_SAY {
         quest::setglobal("ladder_title", 1, 5, "F");
         quest::ladder("on");
         #$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
+        $client->Message(14, "Champion Darkwater says, 'Welcome $name to the Rathe Ladder! Here is your earring.");
+        $client->Message(6, "You received a Darkwater's Gift!");
+        quest::summonitem(119924);
+        quest::ding();
     }
     elsif(($text=~/agree/i) && (quest::isladderplayer() != 1) && ($ulevel != 1)) {
         $client->Message(14, "isladderplayer() and ulevel != 1");
@@ -273,17 +278,17 @@ sub EVENT_SAY {
     #End Moonstone
 
     #Angelox's New Year's reward SoW Earring only when Event1 is ON
-    if(($text=~/hail/i) && ($event1 == 1) && ((!defined $qglobals{"newyears"}) || ($qglobals{"newyears"} == 0))) {
+    if(($text=~/hail/i) && ($event1 == 1)  && ($ulevel > 1) && ((!defined $qglobals{"newyears"}) || ($qglobals{"newyears"} == 0))) {
         $client->Message(14,"Champion Darkwater says, 'Is it New Years already? Well, Happy New Year $name! Here, take my $newyears reward for your dedication.");
         quest::setglobal("newyears", 1, 5, "F");
     }
-    elsif(($text=~/special/i) && ($event1 == 1) && ($qglobals{'newyears'} == 1)) {
+    elsif(($text=~/special/i) && ($event1 == 1)  && ($ulevel > 1) && ($qglobals{'newyears'} == 1)) {
         quest::summonitem(625);
         quest::ding();
         $client->Message(6,"You received Darkwater's earring of travel!");
         quest::setglobal("newyears", 2, 5, "F");
     }
-    elsif(($text=~/hail/i) && ($event1 == 1) && ($qglobals{"newyears"} == 2)) {
+    elsif(($text=~/hail/i) && ($event1 == 1)  && ($ulevel > 1) && ($qglobals{"newyears"} == 2)) {
         $client->Message(14, "Champion Darkwater says, 'Happy New Year $name. Glad to see you again!");
         # $client->Message(14, "debugging, newyears is $newyears, or qglobals is $qglobals{'newyears'}");
     }
@@ -322,12 +327,12 @@ sub EVENT_ITEM {
         $client->Message(14, "Champion Darkwater says, 'Ermmm... well okay thanks.'");
     }
     #Champion Darkwater's gift
-    elsif(plugin::check_handin(\%itemcount, 119925=>1)) {
-        $client->Message(14, "Champion Darkwater says, 'Welcome $name to the Rathe Ladder! Here is your earring.");
-        $client->Message(6, "You received a Darkwater's Gift!");
-        quest::summonitem(119924);
-        quest::ding();
-    }
+#     elsif(plugin::check_handin(\%itemcount, 119925=>1)) {
+#         $client->Message(14, "Champion Darkwater says, 'Welcome $name to the Rathe Ladder! Here is your earring.");
+#         $client->Message(6, "You received a Darkwater's Gift!");
+#         quest::summonitem(119924);
+#         quest::ding();
+#     }
     # Bone Barbs, Water Ring (both types),Sarnak Head,Tool Kit
     elsif((plugin::check_handin(\%itemcount, 19037 =>1)) | (plugin::check_handin(\%itemcount, 69246 => 1)) | (plugin::check_handin(\%itemcount, 10546 => 1)) | (plugin::check_handin(\%itemcount, 12911 => 1)) | (plugin::check_handin(\%itemcount, 17057 => 1))) {
         $client->Message(14, "Champion Darkwater says, 'Well done $name! Here is your Moonstone.'");
