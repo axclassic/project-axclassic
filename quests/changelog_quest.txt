@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/05/2021==
+Angelox: Changes in qeytoqrg zone npcs - simplified text interaction.  
+
 ==09/04/2021==
 Angelox: Champion_Darkwater will give earring after you agree to the Ladder.
          You have to be level 2 for Darkwaters New Years gift.

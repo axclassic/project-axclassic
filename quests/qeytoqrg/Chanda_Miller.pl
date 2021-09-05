@@ -25,33 +25,33 @@ sub EVENT_SAY {
          quest::say("Um.. I do not know you. Please um.. leave me be.");
       }
 
-      if($text=~/baobob sent me/i){
+      if($text=~/baobob/i){
          quest::say("Oh.. Hello. My name is Chanda. $name is your name? That's a nice name. My [brother] sent you to talk to me? You must want some bear.. um.. [clothes].");
       }
 
-      if($text=~/what brother/i){
+      if($text=~/brother/i){
          quest::say("umm.. My brother.. Um.. I mean my BROTHER.. He is the finest tanner there is. His name is Baobob and I love him very much.");
       }
 
-      if($text=~/what clothes/i){
+      if($text=~/clothes/i){
          quest::say("I um.. know how to make.. umm.. [cloaks] and [boots]. Oh yes! and belts! I love to make bear skin belts! Um.. I really like [belts]. My [brother] says I have to start charging more gold 
 
 for my stuff though..");
       }
 
-      if($text=~/what cloak/i){
+      if($text=~/cloak/i){
          quest::say("I.. um.. can make.. um.. a good cloak for you. You have to get me a bear skin of high quality and my brother says I should not make them unless you also give me 21 gold pieces. I used to 
 
 give them away but [Baobob] got mad at me so I don't do that anymore.");
       }
 
-      if($text=~/what boot/i){
+      if($text=~/boots/i){
          quest::say("I know how to make boots. Um.. I don't like them as much as belts. They are harder to make. You have to get me a medium quality bear skin and give me 15 gold pieces if you want some bear 
 
 boots. They are really good, though. At least that is what Baobob tells me.");
       }
 
-      if($text=~/what belt/i){
+      if($text=~/belt/i){
          quest::say("Oh, yes, I like making belts! They are easy! All I need is a bear skin and 5 gold pieces. The bear skin doesn't have to be that great but don't bring me a ruined one. The gold was my 
 
 brother's idea.. sorry.");

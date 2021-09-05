@@ -9,7 +9,7 @@ sub EVENT_SAY {
    if ($text =~ /hail/i) {
        quest::say("Well, it seems that you have something of importance that you wish to speak to me about? No? Then perhaps you can do something [for me].");
    }
-   if ($text =~ /for you/i) {
+   if ($text =~ /for/i) {
        quest::say("Well I need some information. It appears that some gnolls are planning an [invasion] of Surefall. I believe there are some gnoll couriers that are running information. If you could bring me their marching orders, invasion plans, area maps, and their encryption key. Your best chance to catch a courier is probably inside Blackburrow.");
    }
    if ($text =~ /invasion/i) {
