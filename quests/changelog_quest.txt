@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/06/2021==
+Angelox: Tweak to Ladder script. 
+
 ==09/05/2021==
 Angelox: Changes in qeytoqrg zone npcs - simplified text interaction.  
 
