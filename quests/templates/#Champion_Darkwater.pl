@@ -100,7 +100,7 @@ sub EVENT_SAY {
         quest::ding();
     }
     elsif(($text=~/agree/i) && (quest::isladderplayer() != 1) && ($ulevel != 1)) {
-        $client->Message(14, "isladderplayer() and ulevel != 1");
+        #$client->Message(14, "isladderplayer() and ulevel != 1");
         $client->Message(14, "Champion Darkwater says, 'You are not eligible for The Ladder.'");
         quest::ladder("off");
         #$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging

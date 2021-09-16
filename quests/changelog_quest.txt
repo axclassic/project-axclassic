@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/15/2021==
+Congdar: remove debug code from Champion Darkwater
+
 ==09/06/2021==
 Angelox: Tweak to Ladder script. 
 
