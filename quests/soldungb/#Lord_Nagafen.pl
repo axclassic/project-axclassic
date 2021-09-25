@@ -26,8 +26,10 @@ sub EVENT_ATTACK {
 # A solo player of level 53+ will not get banished if they just stand there
 # and don't attack, so we need to have EVENT_AGGRO for that condition
 sub EVENT_AGGRO {
-    quest::shout("I will not fight you, but I will banish you!");
-    quest::movepc(27, 535.3, 955.9, 57.4, 228.8);
+    if($ulevel > 52) {
+        quest::shout("I will not fight you, but I will banish you!");
+        quest::movepc(27, 535.3, 955.9, 57.4, 228.8);
+    }
 }
 
 # EOF zone: soldungb ID: 32040 NPC: #Lord_Nagafen

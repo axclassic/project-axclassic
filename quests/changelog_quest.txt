@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/15/2021==
+Congdar: Lord Nagafen level check
+
 ==09/19/2021==
 rylaz: Congdar: add Regbor_Vallgerthon.pl for Kael Berserker Quest Armor
 
