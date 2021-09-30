@@ -18,6 +18,10 @@
 ## 07/01/21 Jul 1st update                      ##
 ## 08/24/21 PvP to Ladder by Congdar            ##
 ## 09/04/21 Changes to starter gifts by Angelox ##
+##                                              ##
+## Special ladder restart for Oct 1st 2021 see  ##
+## below for extra comments - patrikpatrik      ##
+## Todo: Need to update by 9pm pst!             ##
 ##################################################
 sub EVENT_SAY {
     #hyperlinks
@@ -36,6 +40,19 @@ sub EVENT_SAY {
     $ActiveServer = 1;
     my $minCharID  = 8056; #6125 Dont forget lines @ 255 260 for EVENT_ITEM
     my $maxCharID  = 8055; #6124 5828
+    
+    # NOTE: ---------------------  #
+    # Darkwater Script has exceptions to previous players to continue
+    # playing until December 31st. Normal reset procedures starts at
+    # cutoff charid = 8126 Therefore any id's before this MUST have
+    # been added as an exception ($ladder == 1) in char_.blob column
+    # Last updated September 30, 2021 - patrikpatrik
+    my $mrdoak    = 8088; # (50)
+    my $meek      = 8090; # (14)
+    my $dozer     = 8118; # (13)
+    my $holder    = 8117; # (10)
+    my $flashback = 8121; # (3)
+    # --- End of Exception List --- #
 
     if($ActiveServer == 2) {
         #RATHEUK
