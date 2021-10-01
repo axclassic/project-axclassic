@@ -1,5 +1,9 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==09/30/2021==
+Patrikpatrik: Alignment issues fixed for Firefox browsers.
+Patrikpatrik: Special October 1st ladder restart for rankings.
+
 ==08/25/2021==
 Patrikpatrik: Ladder page conversion with more info.
 
