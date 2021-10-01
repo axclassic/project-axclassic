@@ -21,7 +21,6 @@
 ##                                              ##
 ## Special ladder restart for Oct 1st 2021 see  ##
 ## below for extra comments - patrikpatrik      ##
-## Todo: Need to update by 9pm pst!             ##
 ##################################################
 sub EVENT_SAY {
     #hyperlinks
@@ -38,14 +37,15 @@ sub EVENT_SAY {
     #Ladder date and char settings
     #RATHEUSA
     $ActiveServer = 1;
-    my $minCharID  = 8056; #6125 Dont forget lines @ 255 260 for EVENT_ITEM
-    my $maxCharID  = 8055; #6124 5828
+    my $minCharID  = 8127; # Dont forget lines @ 255 260 for EVENT_ITEM
+    my $maxCharID  = 8126; # one less
     
     # NOTE: ---------------------  #
     # Darkwater Script has exceptions to previous players to continue
     # playing until December 31st. Normal reset procedures starts at
-    # cutoff charid = 8126 Therefore any id's before this MUST have
+    # cutoff charid = 8127 Therefore any id's before this MUST have
     # been added as an exception ($ladder == 1) in char_.blob column
+    # Don't forget to restore back to usual on Januart 1st etc...!
     # Last updated September 30, 2021 - patrikpatrik
     my $mrdoak    = 8088; # (50)
     my $meek      = 8090; # (14)
@@ -66,7 +66,7 @@ sub EVENT_SAY {
     }
 
     my $activeYear = 2021; #2016
-    my $activeMonth = "July"; #July January
+    my $activeMonth = "October"; #July January October
 
     if(($text=~/server/i) && ($ActiveServer == 1)) {
         $client->Message(14, "Champion Darkwater says, 'This is Rathe USA Server'");
@@ -89,7 +89,8 @@ sub EVENT_SAY {
         quest::ladder("off");
         return;
     }
-    elsif(($text=~/hail/i) && ($charid < $minCharID)) {
+    #elsif(($text=~/hail/i) && ($charid < $minCharID)) {
+    elsif(($text=~/hail/i) && ( ($charid < $minCharID) && ($charid != $mrdoak) && ($charid != $meek) && ($charid != $dozer) && ($charid != $holder) && ($charid != $flashback) )) {
         #this is the newest charID
         $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
         $client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
@@ -319,15 +320,16 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
     if($ActiveServer == 1) {
         #RATHEUSA
-        $minCharID = 8056;
+        $minCharID = 8127; # 8127
     }
     elsif($ActiveServer == 2) {
         #RATHEUK
         $minCharID = 1;
     }
-    my $activeMonth = "July";
+    my $activeMonth = "October";
     my $activeYear = 2021;
-    if($charid < $minCharID) {
+    # if($charid < $minCharID) { // special oct 1st edit @ line 313 here as well!
+    if(($charid < $minCharID) && ( ($charid != $mrdoak) && ($charid != $meek) && ($charid != $dozer) && ($charid != $holder) && ($charid != $flashback) )) {
         #this charid and the one above should be the same.
         $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
         $client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
