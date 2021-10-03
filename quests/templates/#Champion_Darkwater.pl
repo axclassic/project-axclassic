@@ -22,6 +22,22 @@
 ## Special ladder restart for Oct 1st 2021 see  ##
 ## below for extra comments - patrikpatrik      ##
 ##################################################
+
+    # NOTE: ---------------------  #
+    # Darkwater Script has exceptions to previous players to continue
+    # playing until December 31st. Normal reset procedures starts at
+    # cutoff charid = 8127 Therefore any id's before this MUST have
+    # been added as an exception ($ladder == 1) in char_.blob column
+    # Don't forget to restore back to usual on Januart 1st etc...!
+    # Last updated September 30, 2021 - patrikpatrik
+    # make global since used in EVENT_SAY and also EVENT_ITEM
+    my $mrdoak    = 8088; # (50)
+    my $meek      = 8090; # (14)
+    my $dozer     = 8118; # (13)
+    my $holder    = 8117; # (10)
+    my $flashback = 8121; # (3)
+    # --- End of Exception List --- #
+
 sub EVENT_SAY {
     #hyperlinks
     my $reward = quest::saylink("reward", 1);
@@ -40,20 +56,6 @@ sub EVENT_SAY {
     my $minCharID  = 8127; # Dont forget lines @ 255 260 for EVENT_ITEM
     my $maxCharID  = 8126; # one less
     
-    # NOTE: ---------------------  #
-    # Darkwater Script has exceptions to previous players to continue
-    # playing until December 31st. Normal reset procedures starts at
-    # cutoff charid = 8127 Therefore any id's before this MUST have
-    # been added as an exception ($ladder == 1) in char_.blob column
-    # Don't forget to restore back to usual on Januart 1st etc...!
-    # Last updated September 30, 2021 - patrikpatrik
-    my $mrdoak    = 8088; # (50)
-    my $meek      = 8090; # (14)
-    my $dozer     = 8118; # (13)
-    my $holder    = 8117; # (10)
-    my $flashback = 8121; # (3)
-    # --- End of Exception List --- #
-
     if($ActiveServer == 2) {
         #RATHEUK
         $minCharID  = 1;
@@ -97,7 +99,7 @@ sub EVENT_SAY {
         $client->Message(15, "You should start a new character today for The Ladder.");
         quest::ladder("off");
     }
-    elsif(($text=~/hail/i) && ($charid > $maxCharID) && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
+    elsif(($text=~/hail/i) && (($charid > $maxCharID) || (($charid == $mrdoak) || ($charid == $meek) || ($charid == $dozer) || ($charid == $holder) || ($charid == $flashback))) && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
         $client->Message(14, "Champion Darkwater says, 'Hail, $name! I am Champion Darkwater the Ladder Guide, and I will be observing and rewarding you for your advancement on the Ladder.'");
         $client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
         $client->Message(14, "Champion Darkwater says, 'Warning: The Ladder is for Seasoned Players. This typically means you are not the main character but an alternate or secondary or thirdary etc. The Ladder is not for new players but you can join the Ladder if you want.");
@@ -123,7 +125,7 @@ sub EVENT_SAY {
         quest::ladder("off");
         #$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
     }
-    elsif(($text=~/hail/i) && ($charid > $maxCharID) && (defined $qglobals{"ladder_trophy"})) {
+    elsif(($text=~/hail/i) && (($charid > $maxCharID) || (($charid == $mrdoak) || ($charid == $meek) || ($charid == $dozer) || ($charid == $holder) || ($charid == $flashback))) && (defined $qglobals{"ladder_trophy"})) {
         #charid must be greater than X
         $client->Message(14, "Champion Darkwater says, 'Welcome back, $name!'");
         $client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
@@ -143,12 +145,16 @@ sub EVENT_SAY {
             $client->Message(6, "You received the Ladder Players Trophy!");
             $client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession that can help you with your travels.'");
             quest::setglobal("ladder_trophy", 2, 5, "F");
-            quest::ladder("on");
+            if(!quest::isladderplayer()) {
+                quest::ladder("on");
+            }
         }
         elsif(($ulevel < '35') && ($ladder_trophy == '2')) {
             $client->Message(15, "You already have your level 20 trophy.");
             $client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession that can help you with your travels.'");
-            quest::ladder("on");
+            if(!quest::isladderplayer()) {
+                quest::ladder("on");
+            }
         }
         elsif(($ulevel < '45') && ($ladder_trophy < '3')) {
             #set 2nd trophy
@@ -158,12 +164,16 @@ sub EVENT_SAY {
             quest::ding();
             $client->Message(6, "You received the Dedicated Ladder Players Trophy!");
             quest::setglobal("ladder_trophy", 3, 5, "F");
-            quest::ladder("on");
+            if(!quest::isladderplayer()) {
+                quest::ladder("on");
+            }
         }
         elsif(($ulevel < '45') && ($ladder_trophy == '3')) {
             $client->Message(15, "You already have your level 35 trophy.");
             $client->Message(14, "Champion Darkwater says, 'Do you still travel by ship? I have $items in my possession that can help you with your travels.'");
-            quest::ladder("on");
+            if(!quest::isladderplayer()) {
+                quest::ladder("on");
+            }
         }
         elsif(($ulevel < '55') && ($ladder_trophy < '4')) {
             #set 3rd trophy
@@ -173,7 +183,9 @@ sub EVENT_SAY {
             quest::ding();
             $client->Message(6, "You received the Advanced Ladder Players Trophy!");
             quest::setglobal("ladder_trophy", 4, 5, "F");
-            quest::ladder("on");
+            if(!quest::isladderplayer()) {
+                quest::ladder("on");
+            }
         }
         elsif(($ulevel < '55') && ($ladder_trophy == '4')) {
             if($ulevel < '53') {
@@ -184,7 +196,9 @@ sub EVENT_SAY {
             else {
                 $client->Message(15, "Champion Darkwater says, 'You already have your level 45 trophy.'");
             }
-            quest::ladder("on");
+            if(!quest::isladderplayer()) {
+                quest::ladder("on");
+            }
         }
         elsif(($ulevel < '65') && ($ladder_trophy < '5')) {
             #set 4th trophy
@@ -194,11 +208,15 @@ sub EVENT_SAY {
             quest::ding();
             $client->Message(6, "You received the Master's Ladder Players Trophy!");
             quest::setglobal("ladder_trophy", 5, 5, "F");
-            quest::ladder("on");
+            if(!quest::isladderplayer()) {
+                quest::ladder("on");
+            }
         }
         elsif(($ulevel < '65') && ($ladder_trophy == '5')) {
             $client->Message(15, "You already have your level 55 trophy.");
-            quest::ladder("on");
+            if(!quest::isladderplayer()) {
+                quest::ladder("on");
+            }
         }
         elsif(($ulevel < '66') && ($ladder_trophy < '6')) {
             #set 5th trophy
@@ -209,7 +227,9 @@ sub EVENT_SAY {
             $client->Message(6, "You received the Champion's Ladder Players Trophy!");
             quest::setglobal("ladder_trophy", 6, 5, "F");
             $client->Message(14, "Champion Darkwater says, 'I will give you something more $name, all you need to do is show me the final trophy.'");
-            quest::ladder("on");
+            if(!quest::isladderplayer()) {
+                quest::ladder("on");
+            }
         }
         elsif(($ulevel < '66') && ($ladder_trophy == '6')) {
             $client->Message(15, "You already have your level 65 trophy.");
