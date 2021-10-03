@@ -2,6 +2,7 @@ AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==10/02/2021==
 Congdar: #Champion_Darkwater.pl updated
+Congdar: Update for Sleepers
 
 ==09/15/2021==
 Congdar: Lord Nagafen level check
