@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/03/2021==
+Angelox: Champion_Darkwater.pl arrays added.
+
 ==10/02/2021==
 Congdar: #Champion_Darkwater.pl updated
 Congdar: Update for Sleepers

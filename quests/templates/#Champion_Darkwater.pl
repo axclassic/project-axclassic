@@ -21,6 +21,7 @@
 ##                                              ##
 ## Special ladder restart for Oct 1st 2021 see  ##
 ## below for extra comments - patrikpatrik      ##
+## 10/03/2021 Added arrays - Angelox            ##
 ##################################################
 
     # NOTE: ---------------------  #
@@ -31,14 +32,25 @@
     # Don't forget to restore back to usual on Januart 1st etc...!
     # Last updated September 30, 2021 - patrikpatrik
     # make global since used in EVENT_SAY and also EVENT_ITEM
-    my $mrdoak    = 8088; # (50)
-    my $meek      = 8090; # (14)
-    my $dozer     = 8118; # (13)
-    my $holder    = 8117; # (10)
-    my $flashback = 8121; # (3)
+    ##Kept these so we know who is in the array
+    #my $mrdoak    = 8088; # (50)
+    #my $meek      = 8090; # (14)
+    #my $dozer     = 8118; # (13)
+    #my $holder    = 8117; # (10)
+    #my $flashback = 8121; # (3)
     # --- End of Exception List --- #
 
 sub EVENT_SAY {
+    # This array can be used in every ladder season, 
+    # As one of the forum posts said they would like more time -so if they are low level,
+    # We can add them to this array (remove the older one when season is over)
+    # Add exeptions in this array
+    #Also add to array in EVENT_ITEM
+    my @playerID = (8088,8090,8118,8117,8121);
+    my $FoundPlayer = 0;
+        foreach (@playerID) {
+            /$charid/ and $FoundPlayer = 1;
+        }
     #hyperlinks
     my $reward = quest::saylink("reward", 1);
     my $title = quest::saylink("title", 1);
@@ -92,14 +104,14 @@ sub EVENT_SAY {
         return;
     }
     #elsif(($text=~/hail/i) && ($charid < $minCharID)) {
-    elsif(($text=~/hail/i) && ( ($charid < $minCharID) && ($charid != $mrdoak) && ($charid != $meek) && ($charid != $dozer) && ($charid != $holder) && ($charid != $flashback) )) {
+    elsif(($text=~/hail/i) && ( ($charid < $minCharID) && ($FoundPlayer != 1))) {
         #this is the newest charID
         $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
         $client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
         $client->Message(15, "You should start a new character today for The Ladder.");
         quest::ladder("off");
     }
-    elsif(($text=~/hail/i) && (($charid > $maxCharID) || (($charid == $mrdoak) || ($charid == $meek) || ($charid == $dozer) || ($charid == $holder) || ($charid == $flashback))) && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
+    elsif(($text=~/hail/i) && (($charid > $maxCharID) || ($FoundPlayer == 1)) && (!defined $qglobals{"ladder_trophy"}) && (!defined $qglobals{"ladder_title"})) {
         $client->Message(14, "Champion Darkwater says, 'Hail, $name! I am Champion Darkwater the Ladder Guide, and I will be observing and rewarding you for your advancement on the Ladder.'");
         $client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
         $client->Message(14, "Champion Darkwater says, 'Warning: The Ladder is for Seasoned Players. This typically means you are not the main character but an alternate or secondary or thirdary etc. The Ladder is not for new players but you can join the Ladder if you want.");
@@ -125,7 +137,7 @@ sub EVENT_SAY {
         quest::ladder("off");
         #$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
     }
-    elsif(($text=~/hail/i) && (($charid > $maxCharID) || (($charid == $mrdoak) || ($charid == $meek) || ($charid == $dozer) || ($charid == $holder) || ($charid == $flashback))) && (defined $qglobals{"ladder_trophy"})) {
+    elsif(($text=~/hail/i) && (($charid > $maxCharID) || ($FoundPlayer == 1)) && (defined $qglobals{"ladder_trophy"})) {
         #charid must be greater than X
         $client->Message(14, "Champion Darkwater says, 'Welcome back, $name!'");
         $client->Message(14, "Champion Darkwater says, 'I will $reward you for your advancement at 20, 35, 45, 55, and 65. When you reach 65, ask me for your $title, and I will provide it for you, in addition to your reward.'");
@@ -338,6 +350,12 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+    # Add exeptions in this array
+    my @playerID = (8088,8090,8118,8117,8121);
+    my $FoundPlayer = 0;
+        foreach (@playerID) {
+            /$charid/ and $FoundPlayer = 1;
+        }
     if($ActiveServer == 1) {
         #RATHEUSA
         $minCharID = 8127; # 8127
@@ -349,7 +367,7 @@ sub EVENT_ITEM {
     my $activeMonth = "October";
     my $activeYear = 2021;
     # if($charid < $minCharID) { // special oct 1st edit @ line 313 here as well!
-    if(($charid < $minCharID) && ( ($charid != $mrdoak) && ($charid != $meek) && ($charid != $dozer) && ($charid != $holder) && ($charid != $flashback) )) {
+    if(($charid < $minCharID) && ($FoundPlayer != 1)) {
         #this charid and the one above should be the same.
         $client->Message(14, "Champion Darkwater says, 'Your character is too old for this ladder, start a new character!'");
         $client->Message(15, "This ladder began on $activeMonth 1st, $activeYear, check AX Classic forums.");
