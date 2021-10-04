@@ -1,5 +1,9 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/04/2021==
+Patrikpatrik: LadderInfo data only applies to ladder participants.
+Patrikpatrik: Ladder rankings will only show ladder participants.
+
 ==09/30/2021==
 Patrikpatrik: Alignment issues fixed for Firefox browsers.
 Patrikpatrik: Special October 1st ladder restart for rankings.
