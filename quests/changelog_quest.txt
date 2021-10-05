@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/04/2021==
+Congdar: Update Bodbin_Gimple.pl
+
 ==10/03/2021==
 Angelox: Champion_Darkwater.pl arrays added.
 
