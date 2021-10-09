@@ -5,7 +5,7 @@
 ## Revised by caved for AX-CLASSIC ##
 ## Revision NR: 1 ##
 ## EQWorld Server ##
-## Condar: rename from Gimble to Gimple
+## Congdar rename Gimble to Gimple
 ######################################
 
 sub EVENT_SAY {
@@ -42,8 +42,8 @@ sub EVENT_ITEM {
 
     elsif(plugin::check_handin(\%itemcount, 19662 => 1, 13060 => 1)) {
         #Paladin handin
-        quest::emote("fashions a grip out of the ruined thorn drakeling scales then tests and polishes the blade of the sword.");
-        $client->Message(14,"Yer another one of Kaya's trainees I suppose. This here's a fine weapon for a young Paladin like yerself.");
+        quest::emote("fashions a grip out of the large snakeskin then tests and polishes the blade of the sword.");
+        $client->Message(14,"Yer another one of Kaya's trainees I suppose. This here's a fine weapon for a young Paladin of the Storm Reapers like yerself.");
         quest::faction(218,10);
         quest::faction(77,10);
         quest::faction(133,10);
