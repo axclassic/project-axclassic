@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/16/2021==
+Angelox: Changed Ranger Band to quest::isladderplayer() checks.
+               Converted most Events to "ladder only".
+
 ==10/09/2021==
 Congdar: Update Bodbin_Gimple.pl 
 

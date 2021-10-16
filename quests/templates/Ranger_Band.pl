@@ -16,12 +16,12 @@
 ## if you are currently participating in the Ladder Rankings. Otherwise, you have
 ## to hunt for the moonstones yourself - Patrik.
 ## UPDATE- SAYLINKS placed back in subroutines!
-
-my $minCharID  = 8056; # 5829 Ladder info RATHEUSA
-    if ($ActiveServer == 2){#RATHEUK
-        $minCharID  = 1;
-   }
-
+## $minCharID not needed anymore - replaced with quest::isladderplayer()
+# my $minCharID  = 8056; # 5829 Ladder info RATHEUSA 
+#     if ($ActiveServer == 2){#RATHEUK
+#         $minCharID  = 1;
+#    }
+## 
 my $MoneyFlag = 0;
 
 sub EVENT_SPAWN {
@@ -73,19 +73,19 @@ sub EVENT_ENTER {
     elsif(($random_result2 <= 75) && ($event2==1)) {
        $client->Message(14,"Ranger Band says, 'Happy Easter $name!'");
     }
-    #if(($random_result2 <= 75) && ($event3==1)) { #Bloodhunt Event
-       #$client->Message(14,"Ranger Band says, 'Countess Zellia can be found around here at night.'");
-    #}
-    #if(($random_result2 <= 75) && ($event4==1)) {
-	   #$client->Message(14,"Ranger Band says, 'Better head to Ocean of Tears if you want to see something that is unexplainable! Stay off of the piers there, you have been forewarned.'");
-    #} 
+    if(($random_result2 <= 75) && ($event3==1)) { #Bloodhunt Event
+       $client->Message(14,"Ranger Band says, 'If you are a ladder Player, Countess Zellia can be found around here at night.'");
+    }
+    if(($random_result2 <= 75) && ($event4==1)) {
+	   $client->Message(14,"Ranger Band says, 'Better head to Ocean of Tears if you want to see something that is unexplainable! Stay off of the piers there, you have been forewarned.'");
+    } 
 	elsif(($random_result2 <= 75) && ($event6==1)) {
        $client->Message(14,"Ranger Band says, 'Merry Xmas $name!'");
     } #End EVENT responses
    
 	#IF EVENT IS ACTIVE AND UP
-	if(($event1 == 1) && ($ulevel <= 10)) {
-        $client->Message(14, "Ranger Band says, 'It looks as if a $tevent1 Event is going on! Remember, this is active for level 10 and below.'");
+	if(($event1 == 1) && ($ulevel <= 40)) {
+        $client->Message(14, "Ranger Band says, 'It looks as if a $tevent1 Event is going on! Remember, this is active for level 40 and below, and you must have joined the ladder.'");
     }
 	elsif($event2 == 1) {
         $client->Message(14, "Ranger Band says, 'It looks as if an $tevent2 Event is going on! This event has no level restrictions.'");
@@ -99,10 +99,10 @@ sub EVENT_ENTER {
         stay away from the piers there, you have been forewarned.'");
     }
 	elsif($event5 == 1) {
-        $client->Message(14, "Ranger Band says, 'It looks as if the Random moonstone Event is going on! Remember, this is only active for Ladder participants who are level 20 and below.'");
+        $client->Message(14, "Ranger Band says, 'It looks as if the Random moonstone Event is going on! Remember, this is only active for Ladder participants who are level 40 and below.'");
     }
 	elsif($event6 == 1) {
-        $client->Message(14, "Ranger Band says, 'It looks as if a $tevent6 Event is going on! This event has no level restrictions.'");
+        $client->Message(14, "Ranger Band says, 'It looks as if a $tevent6 Event is going on! This event has no level restrictions, but you must be a ladder member.'");
     }
 
 	if($random_result <= 185){ # 40=26% 113=75% chance of saying something when near
@@ -166,7 +166,7 @@ sub EVENT_ENTER {
     }
 
     ##Countess Event
-    if($event3==1) {
+    if(($event3==1)&& (quest::isladderplayer())) {
         if(($countess1!=1) && ($zoneid == 2) && ((($zonetime >= 0)&&($zonetime <= 800)) | (($zonetime >= 2000)&&($zonetime <= 2359)))) {
             quest::unique_spawn(1310,0,0,162,468,3.1,161);
         }
@@ -302,17 +302,19 @@ sub EVENT_SAY {
 	elsif($random_result3 <= 120) {
         $npc->DoAnim(8, 77);#sigh
     }
-
     if($text=~/Hail/i) {
-        if(($ulevel <= 10) && ($event1 == 1)) {
+        if(($ulevel <= 40) && ($event1 == 1)) {
 			$client->Message(14,"Ranger Band says, 'Happy $btevent1 $name, I have $traveled many lands, seen many things, if you're interested, I can tell you of them.'");
         }
         elsif($event2 == 1) {
 			$client->Message(14,"Ranger Band says, 'Happy $btevent2 $name, I have $traveled many lands, seen many things, if you're interested, I can tell you of them.'");
         }
-        elsif(($ulevel <= 20) && ($event5 == 1) && ($charid > $minCharID)) { #Must have Ladder check here
-            $client->Message(14,"Ranger Band says, '$name! Have you been looking for faster ways to travel? If so, I have some rare items that might $interest you.'");
+        elsif(($ulevel <= 40) && ($event5 == 1) && (quest::isladderplayer())) {
+            $client->Message(14,"Ranger Band says, '$name! I see you are a ladder member - have you been looking for faster ways to travel? If so, I have some rare items that might $interest you.'");
         }
+        elsif(($ulevel <= 40) && ($event5 == 1) && (!quest::isladderplayer())) {
+            $client->Message(14,"Ranger Band says, 'Sorry $name, my rare items event is only available for ladder players..'");
+        }        
 		elsif($event6 == 1) {
 		    $client->Message(14,"Ranger Band says, 'Merry $btevent6 $name, I have $traveled many lands, seen many things, if you're interested, I can tell you of them.'");
         }
@@ -495,29 +497,36 @@ sub EVENT_SAY {
 	elsif(($text=~/wind/i) && ($zoneid == 165)) {
         $client->Message(14,"Ranger Band says, 'Aye, Moonstone of the Wind! Fastest moonstone in Norrath, also great to have when trying to escape a dire situation.'");
     }
-	elsif(($ulevel <= 10) && ($text=~/New Years/i) && ($event1==1)) {
-        $client->Message(14,"Ranger Band says, 'What will I do in $activeYear you ask? I'll travel around and make new friends. I'll seek adventure so I can tell stories about my travels to anyone who wants to hear. Would you like to travel too? Maybe I can help! I have a stack of Moonstones with me, but you guessed it; bring what I want, and I will give you a random Moonstone in return - go and find me: 1 Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.'");
+	elsif(($ulevel <= 40) && ($text=~/New Years/i) && ($event1==1) && (quest::isladderplayer())) {
+        $client->Message(14,"Ranger Band says, 'What will I do in $activeYear you ask? I'll travel around and make new friends. I'll seek adventure so I can tell stories about my travels to anyone who wants to hear. Would you like to travel too? Maybe I can help! I have a stack of Moonstones with me, but you guessed it; bring what I want, and I will give you a random Moonstone in return - go and find me: 1 Fire Beetle leg, 1 Spider leg, 1 cracked staff and 1 Bone Chips.'");
     }
-
+    elsif(($ulevel <= 40) && ($text=~/New Years/i) && ($event1==1) && (!quest::isladderplayer())) {
+         $client->Message(14,"Ranger Band says, 'You must be a ladder member for this quest'");
+    }
     #Orc EVENT 
-    elsif(($ulevel <= 20) && ($text=~/interest/i) && ($event5==1) && ($charid > $minCharID)) { #Must have Ladder check here
+    elsif(($ulevel <= 30) && ($text=~/interest/i) && ($event5==1) &&  (quest::isladderplayer())) {
         $client->Message(14,"Ranger Band says, 'I have a collection of Moonstones I obtained while camping certain named mobs in Norrath, I haven't much need for them anymore, void to $tempt you with a quest!'");
     }
-	elsif(($ulevel <= 20) && ($text=~/tempt/i) && ($event5==1) && ($charid > $minCharID)) { #Must have Ladder check here
+	elsif(($ulevel <= 30) && ($text=~/tempt/i) && ($event5==1) &&  (quest::isladderplayer())) {
         $client->Message(14,"Ranger Band says, 'I have always disliked the orcs, show me you dislike them too - Bring me one orc scalp and one orc skull and I will reward you.'");
     }
 	elsif(($ulevel <= 65) && ($text=~/Easter/i) && ($event2==1)) {
         $client->Message(14,"Ranger Band says, 'Oh yes, Easter! I'm in a pinch with that: I'm throwing a big Easter party for all my friends but I don't have enough eggs for the easter egg hunt!'");
-        $client->Message(14,"Ranger Band says, 'I need eggs of any type. For every four eggs you bring me, I will give you a handsome reward!'");
+        if (quest::isladderplayer()){
+           $client->Message(14,"Ranger Band says, 'I need eggs of any type. For every four eggs you bring me, I will give you a handsome reward!'");
+        }
+        else{
+            $client->Message(14,"Ranger Band says, 'You must be a ladder member for this quest'");
+        }
     }
 	elsif(($ulevel <= 65) && ($text=~/Bloodhunt/i) && ($event3==1)) {
-        $client->Message(14,"Ranger Band says, 'Countess Zellia can be found around here at night.'");
+        $client->Message(14,"Ranger Band says, 'Only ladder players can find Countess Zellia around here at night.'");
     }
 	elsif(($ulevel <= 65) && ($text=~/Christmas/i) && ($event6==1)) {
         $client->Message(14, "Ranger Band says, 'I've been busy making these colorful bags for presents. I have so many and want to make something $different.'");
     }
 	elsif(($ulevel <= 65) && ($text=~/different/i) && ($event6==1)) {
-        $client->Message(14,"Ranger Band says, 'I am interested in spider silks for creating something different. I'll trade you one of my hand-made colorful bags for four spider silks of any kind.'");
+        $client->Message(14,"Ranger Band says, 'I am interested in spider silks for creating something different. I'll trade you one of my hand-made colorful bags for four spider silks of any kind, and you must have joined the ladder.'");
     }
 }#End sub EVENT_SAY
 
@@ -616,7 +625,7 @@ sub EVENT_ITEM {
         quest::summonitem(138);
         return;
     }
-    if($event2==1) {
+    if(($event2==1) && (quest::isladderplayer())){
         my @itemy = (1429,3457,3458,5495,10160,12765,12787,13088,13164,14386,14909,14910,19137 .. 19139,28322,29746,31862,32643 .. 32645,36154,36160,36205,36454,36595,45376,46485,48082,49022,51012,54657,55599,55900,65489,66182,81909,82028,82427,83544,98184 .. 98201,105918,106418); ## Easter Event eggs
         my $total2 = 0;
         foreach my $xxitem (@itemy) {
@@ -630,10 +639,12 @@ sub EVENT_ITEM {
             quest::summonitem($total3);
             return;
         }
+     }
+    elsif (($event2==1) && (!quest::isladderplayer())){
+            $client->Message(14,"Ranger Band says, 'You must be a ladder member for this quest'");
     }
-
-    if($event1 == 1) {
-        if(($ulevel <= 10) && ((plugin::check_handin(\%itemcount, 13417 =>1, 13250 =>1, 6018 =>1, 13073 =>1))||(plugin::check_handin(\%itemcount, 13254 =>1, 13250 =>1, 6018 =>1, 13073 =>1)))) { #newyear turnin for moonstones
+    if(($event1==1)  && (quest::isladderplayer())){
+        if(($ulevel <= 40) && ((plugin::check_handin(\%itemcount, 13417 =>1, 13250 =>1, 6018 =>1, 13073 =>1))||(plugin::check_handin(\%itemcount, 13254 =>1, 13250 =>1, 6018 =>1, 13073 =>1)))) { #newyear turnin for moonstones
             my @items = (125 .. 139,141,142); ## New Years Event random item reward
             my $total4 = $items[ rand @items ];
             $client->Message(14,"Ranger Band says,\"Congratulations, $name! Take this Moonstone as a reward!.\"");
@@ -644,9 +655,11 @@ sub EVENT_ITEM {
             return;
         }
     }
-
-    if($event5 == 1) { # Must have Ladder Check below
-        if(($ulevel <= 20) && ($charid > $minCharID) && (plugin::check_handin(\%itemcount, 13791 =>1, 16174 =>1))) { #Turnin for random Moonstones
+    elsif(($event1==1)  && (!quest::isladderplayer())){
+      $client->Message(14,"Ranger Band says, 'You must be a ladder member for this quest'");
+    }
+    if(($event5 == 1) && (quest::isladderplayer())){
+        if(($ulevel <= 40)  && (plugin::check_handin(\%itemcount, 13791 =>1, 16174 =>1))) { #Turnin for random Moonstones
             my @items = (125 .. 139,141,142); ## Random  Moonstone item reward
             my $total4 = $items[ rand @items ];
             $client->Message(14,"Ranger Band says,\"Well done, $name! Take this Moonstone as a reward!.\"");
@@ -657,8 +670,11 @@ sub EVENT_ITEM {
             return;
         }
     }
-
-    if($event6 == 1) {
+     elsif (($event5 == 1) && (!quest::isladderplayer())){
+        $client->Message(14,"Ranger Band says,'You're not a ladder member'");
+    }
+    ##
+    if(($event6 == 1) && (quest::isladderplayer())){
         my @itemsk = (9914,13041,13099,20357,54234,86010,2659,2789,2790,6695,10983,12766,12878,12957,16483,16484,25306); ## Spider Silks for Colorful Bag Event.
         my $total6 = 0;
         foreach my $skitem (@itemsk) {
@@ -673,7 +689,10 @@ sub EVENT_ITEM {
             return;
         }
     }
-
+    elsif (($event6 == 1) && (!quest::isladderplayer())){
+        $client->Message(14,"Ranger Band says,'You're not a ladder member'");
+    }
+    ##
     my $owner = $npc->GetOwnerID();
     if($owner > 0) {
     }
