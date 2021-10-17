@@ -1,5 +1,12 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/17/2021==
+Patrikpatrik: Added extra clause on ladder intro.
+Patrikpatrik: Ladder Info changed to Ladder Stats.
+Patrikpatrik: Front Updates changed to Logs.
+Patrikpatrik: Removed home link clutter and replaced with Guides.
+Patrikpatrik: Moved guides link to menubar.
+
 ==10/04/2021==
 Patrikpatrik: LadderInfo data only applies to ladder participants.
 Patrikpatrik: Ladder rankings will only display ladder participants.
