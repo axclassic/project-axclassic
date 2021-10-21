@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/20/2021==
+Patrikpatrik: Updated left column.
+
 ==10/17/2021==
 Patrikpatrik: Smarter way of displaying topics.
 Patrikpatrik: Added extra clause on ladder intro.
