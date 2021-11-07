@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/06/2021==
+Congdar: Add Glatigi.pl Skyshrine Berserker armor quest
+
 ==10/16/2021==
 Angelox: Changed Ranger Band to quest::isladderplayer() checks.
                Converted most Events to "ladder only".
