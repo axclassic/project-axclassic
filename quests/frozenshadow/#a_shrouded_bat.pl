@@ -8,7 +8,7 @@ sub EVENT_DEATH {
 			quest::spawn2(111185,0,0,$x,$y,$z,0); #spawns Fabled
 			quest::setglobal("tserrina",1,3,"F");
 		}
-		elsif($random_result <=25) { #15
+		elsif($random_result <=15) { #15
 			quest::spawn2(111154,0,0,$x,$y,$z,0); #spawns normal
 			quest::setglobal("tserrina",1,3,"F");
 		}
