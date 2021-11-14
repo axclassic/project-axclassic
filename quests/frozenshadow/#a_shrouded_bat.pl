@@ -4,7 +4,7 @@
 sub EVENT_DEATH {
     if ($tserrina>1){ #named not up yet
 	my $random_result = int(rand(100));
-		if (($random_result <= 9) && ($ulevel > 39)) { #5
+		if (($random_result <= 2) && ($ulevel > 52)) { #5
 			quest::spawn2(111185,0,0,$x,$y,$z,0); #spawns Fabled
 			quest::setglobal("tserrina",1,3,"F");
 		}

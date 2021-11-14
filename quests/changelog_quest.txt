@@ -1,5 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/14/2021==
+Angelox: Fabled Tserrina was spawning too much and set to attack
+    groups too low in level.
+
 ==11/06/2021==
 Congdar: Add Glatigi.pl Skyshrine Berserker armor quest
 
