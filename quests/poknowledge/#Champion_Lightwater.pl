@@ -7,6 +7,9 @@
 ## upon random ticket from darkwater       ##
 ## 10/1/2017 22298 changed to 22294	   ##
 ## 7/21/2021 120216 changed to 120341      ##
+## 12/15/2021 - Since oct Ladder revamp,   ##
+## increased rewards and items for the     ##
+## very best - patrikpatrik                ##
 #############################################
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
@@ -36,10 +39,13 @@ sub EVENT_ITEM {
 		# my $randomroll = int(rand(100));  #Random roll
 		# if ($randomroll < '34') {
 			quest::summonitem(17527); #satchel of legacies lost w/ items
-			quest::summonitem(40605, 5); #5 potion of adventure
-			quest::summonitem(17523);#book of knowledge
-			quest::summonitem(21813);#Run 2 speed horse black chain bridle
-			quest::summonitem(14009, 5);# 5 potion of moderate healing
+			quest::summonitem(17702); #treasure hunter's satchel
+			#quest::summonitem(40605, 10); #10 potion of adventure
+			quest::summonitem(17523); #book of knowledge
+			#quest::summonitem(21813); #Run 2 speed horse black chain bridle
+			quest::summonitem(21818); #Run 2 speed horse White chain bridle
+			quest::summonitem(14009, 10); #10 potion of moderate healing
+			quest::summonitem(14209, 10); #10 potion of serious healing
 		#This outputs two items without duplicates to prevent lore bug!
 		my @miniarray = ('21820', '21821', '21822', '21823'); #This array contains 4 platinum bags
 				for (my $i = 0; $i< 2; $i++) { #This will loop twice
@@ -67,7 +73,8 @@ sub EVENT_ITEM {
 		# }
 		# else {
 		# quest::we(13, "Champion Lightwater shouts, 'Congratulations to $name for a risky proposition and came out victorious!'");
-		quest::summonitem(120341); # rathe server is 120216 test is 120199
+		#quest::summonitem(120341); # rathe server is 120216 test is 120199
+		quest::summonitem(120346); # Improved Moonstone of Life for ladder revamp
 		$client->Message(14,"Champion Lightwater says, 'Farewell!'");
 		$client->Message(15,"*POOF* Champion Lightwater disappears into thin air.");
 		# }
