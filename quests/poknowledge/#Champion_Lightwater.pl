@@ -40,6 +40,7 @@ sub EVENT_ITEM {
 		# if ($randomroll < '34') {
 			quest::summonitem(17527); #satchel of legacies lost w/ items
 			quest::summonitem(17702); #treasure hunter's satchel
+			quest::summonitem(14727); #locket of escape
 			#quest::summonitem(40605, 10); #10 potion of adventure
 			quest::summonitem(17523); #book of knowledge
 			#quest::summonitem(21813); #Run 2 speed horse black chain bridle
