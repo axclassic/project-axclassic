@@ -22,6 +22,8 @@
 ## Special ladder restart for Oct 1st 2021 see  ##
 ## below for extra comments - patrikpatrik      ##
 ## 10/03/2021 Added arrays - Angelox            ##
+## 12/15/2021 Added 'Ring of the Shadows'       ##
+## starter item #120342 created by Angelox      ##
 ##################################################
 
     # NOTE: ---------------------  #
@@ -126,9 +128,12 @@ sub EVENT_SAY {
         quest::setglobal("ladder_title", 1, 5, "F");
         quest::ladder("on");
         #$client->Message(15, "Your qglobal and ladder number is $ladder_trophy and $ladder_title."); #debugging
-        $client->Message(14, "Champion Darkwater says, 'Welcome $name to the Rathe Ladder! Here is your earring.");
-        $client->Message(6, "You received a Darkwater's Gift!");
+        #$client->Message(14, "Champion Darkwater says, 'Welcome $name to the Rathe Ladder! Here is your earring.");
+        #$client->Message(6, "You received a Darkwater's Gift!");
+        $client->Message(14, "Champion Darkwater says, 'Welcome $name to the Rathe Ladder. Here are some jewelry to get you started, Good luck!");
+        $client->Message(6, "You receive Ring of the Shadows and a Darkwater's Gift!");
         quest::summonitem(119924);
+        quest::summonitem(120342);
         quest::ding();
     }
     elsif(($text=~/agree/i) && (quest::isladderplayer() != 1) && ($ulevel != 1)) {
