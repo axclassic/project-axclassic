@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==01/13/2022==
+Angelox:Fiirst part of the boats scripts fix (more to come).
+
 ==11/14/2021==
 Angelox: Fabled Tserrina was spawning too much and set to attack
     groups too low in level.

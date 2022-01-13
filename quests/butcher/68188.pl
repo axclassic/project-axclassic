@@ -2,7 +2,6 @@
 ## SirensBane travels from oot to oot to butcher and back
 ## Angelox
 ## Qadar
-## UPDATE 1/15/2017 Patrikpatrik Testing corrected boat height without using ramp
 
 sub EVENT_SPAWN{
 no warnings 'all' ;
@@ -47,32 +46,32 @@ no warnings 'all' ;
       my $tempvar = $butchertimer+1;
      # if($debugpl==1){quest::shout("Stormbreaker hasn't moved, increasing timer to $tempvar");}
       quest::delglobal("butchertimer");
-      quest::setglobal("butchertimer",$tempvar,"3","F");}
+      quest::setglobal("butchertimer",$tempvar,3,"F");}
   }else{                          #boat has changed waypoints, tell butcherlastseen its new waypoint, reset timer to 0
    # if($debugpl==1){quest::shout("Stormbreaker seems to be moving ok");}
     quest::delglobal("butcherlastseen");
-    quest::setglobal("butcherlastseen",$sirens,"3","F");
-    $butcherlastseen = 0;
+    quest::setglobal("butcherlastseen",$sirens,3,F);
+    $butcherlastseen = undef;
     quest::delglobal("butchertimer");
-    quest::setglobal("butchertimer",0,"3","M7");}
-    $butchertimer = 0;
+    quest::setglobal("butchertimer",0,3,7);
+    $butchertimer = undef;}
 #}
 
 
 
 #### Watcher script:  When Sirens == 100, it spawns real boat, and changes $sirens to 0, so it won't keep triggering this script
 
-  #if($debugpl){ quest::shout("Sirens is set at $sirens");}
+  if($debugpl){ quest::shout("Sirens is set at $sirens");}
   if($sirens==100){
     quest::depopall(68228);
     quest::delglobal("sirens");
     quest::setglobal("sirens",0,7,"F");
     $sirens = undef;
-    quest::spawn2(68228,224,0,3680,2010,-30,153);
+    quest::spawn2(68228,224,0,3680,2010,-21,153);
   }
 }
 
 sub EVENT_SIGNAL{      ### depops the boat and drops players onto the real boat when the real boat signals it to
-  #if($debugpl){quest::shout("Fake boat depopping!");}
+  if($debugpl){quest::shout("Fake boat depopping!");}
   quest::depop();
 }

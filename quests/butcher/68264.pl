@@ -13,5 +13,5 @@ sub EVENT_ENTER{
        quest::delglobal("sirens");
        quest::setglobal("sirens",14,7,"F");
      }
-     #if($debugpl==1){quest::shout ("Zoning PC's to OOT!!!");}
+     if($debugpl==1){quest::shout ("Zoning PC's to OOT!!!");}
      quest::movepc(69,10738.9,1138.8,13.7);}}
