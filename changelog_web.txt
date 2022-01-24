@@ -1,7 +1,16 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==1/23/2022==
+Patrikpatrik: Editor fixed.
+
+==1/22/2022==
+Patrikpatrik: Proper redirection for domain and forums.
+Patrikpatrik: How to Connect? moved to Connect menubar.
+
 ==1/21/2022==
 Patrikpatrik: Major update on front site.
+Patrikpatrik: Overhaul on color swap.
+Patrikpatrik: Simplified front layout.
 
 ==10/20/2021==
 Patrikpatrik: Updated left column.
