@@ -2,6 +2,9 @@ AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
 ==1/23/2022==
 Patrikpatrik: Editor fixed.
+Patrikpatrik: Connect page revised.
+Patrikpatrik: Guides section revised.
+Patrikpatrik: Ladder page revised.
 
 ==1/22/2022==
 Patrikpatrik: Proper redirection for domain and forums.
