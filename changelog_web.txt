@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==1/24/2022==
+Patrikpatrik: More Ladder Rankings info added.
+
 ==1/23/2022==
 Patrikpatrik: Editor fixed.
 Patrikpatrik: Connect page revised.
