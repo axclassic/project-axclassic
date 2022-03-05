@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==3/5/2022==
+Patrikpatrik: Temp ladder extension for newer players.
+
 ==1/25/2022==
 Patrikpatrik: Server stats window updated.
 
