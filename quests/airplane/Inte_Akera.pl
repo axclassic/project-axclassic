@@ -48,6 +48,13 @@ sub EVENT_ITEM {
       quest::exp(841790);
       quest::say("You have chosen wisely, my friend. Take this note as a token of my blessing upon you.");
    }
+   elsif(plugin::check_handin(\%itemcount, 68260 => 1)) {
+      #fabled ghoulbane
+      quest::summonitem(18034); #inte's second blessing
+      quest::ding();
+      quest::exp(841790);
+      quest::say("You have chosen wisely, my friend. Take this note as a token of my blessing upon you.");
+   }
    elsif(plugin::check_handin(\%itemcount, 18033 => 1, 18034 => 1, 19073 => 1, 1254 => 1)) { #inte's first blessing, inte's second blessing, miragul's head, miragul's robe
       quest::summonitem(11050); #fiery avenger
       quest::ding();
