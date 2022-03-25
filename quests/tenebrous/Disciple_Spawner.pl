@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 }
 sub EVENT_ENTER {
 if(defined $qglobals{"EpicBox"} == 1){
-   quest::spawn2(172419,0,0,898.2,229.2,-9,66.4);
+   quest::unique_spawn(172419,0,0,898.2,229.2,-9,66.4);
    quest::depopall(172420);
  }
 elsif(!defined $qglobals{"EpicBox"}){
