@@ -1,8 +1,7 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
-==02/05/2022==
-Angelox: Update to bot commands page: removed obsolete bot raid forming method.
-Angelox; Also updated raid commands page.
+==5/23/2022==
+Patrikpatrik: Github changelog date fix.
 
 ==5/11/2022==
 Patrikpatrik: Set inactive ladder players to 3 months falloff.
@@ -12,6 +11,10 @@ Patrikpatrik: Inactive ladder players will fall off.
 
 ==3/5/2022==
 Patrikpatrik: Temp ladder extension for newer players.
+
+==02/05/2022==
+Angelox: Update to bot commands page: removed obsolete bot raid forming method.
+Angelox; Also updated raid commands page.
 
 ==1/25/2022==
 Patrikpatrik: Server stats window updated.
