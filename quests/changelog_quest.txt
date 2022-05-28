@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==05/28/2022==
+Congdar: Fixes for Tower of Frozen Shadow.
+
 ==03/24/2022==
 Congdar: Fixes for Disciple of Focus.
 
