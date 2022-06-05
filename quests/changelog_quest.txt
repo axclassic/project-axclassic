@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==06/05/2022==
+Congdar: Updates to Guild Lobby and Guild Hall
+
 ==05/28/2022==
 Congdar: Fixes for Tower of Frozen Shadow.
 
