@@ -5,14 +5,23 @@ sub EVENT_SAY {
 	}
 }
 
+sub EVENT_SUMMON {
+	$count = $client->GetCorpseCount();
+
+	if($count > 0) {
+		$charid = $client->CharacterID();
+		quest::summonallplayercorpses($charid);
+	}
+	quest::emote("takes your stone and places it on the altar. Shadows begin to drift across the floor and over the altar and finally onto the soulstone.  The priest's voice chants with intensity and is soon joined with several others as the shadows slowly coalesce into a wispy mass that feels familiar.  The two candles near the altar explode with light and there, before you, appears all that remains of your former life.");
+}
+
 sub EVENT_ITEM {
 	$failure = "This focus is not powerful enough to summon the remnants of your former self.  The disciple of Luclin can help you select an appropriate focus.";
 	if(plugin::check_handin(\%itemcount, 76013 => 1)) {
-		#Minor Soulstone
+       #Minor Soulstone
 		if($ulevel < 21) {
 			EVENT_SUMMON();
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76013); # Item: Minor Soulstone
 		}
@@ -20,8 +29,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76014 => 1)) {#Lesser Soulstone
 		if($ulevel < 31) {
 			EVENT_SUMMON();
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76014); # Item: Lesser Soulstone
 		}
@@ -29,8 +37,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76015 => 1)) {#Soulstone
 		if($ulevel < 41) {
 			EVENT_SUMMON(); 
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76015); # Item: Soulstone
 		}
@@ -38,8 +45,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76016 => 1)) {#Greater Soulstone
 		if($ulevel < 51) {
 			EVENT_SUMMON(); 
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76016); # Item: Greater Soulstone
 		}
@@ -47,8 +53,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76017 => 1)) {#Faceted Soulstone
 		if($ulevel < 56) {
 			EVENT_SUMMON();
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76017); # Item: Faceted Soulstone
 		}
@@ -56,8 +61,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76018 => 1)) {#Pristine Soulstone
 		if($ulevel < 71) {
 			EVENT_SUMMON(); 
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76018); # Item: Pristine Soulstone
 		}
@@ -65,8 +69,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76019 => 1)) {#Glowing Soulstone
 		if($ulevel < 76) {
 			EVENT_SUMMON(); 
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76019); # Item: Glowing Soulstone
 		}
@@ -74,8 +77,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76048 => 1)) {#Prismatic Soulstone
 		if($ulevel < 81) {
 			EVENT_SUMMON();
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76048); # Item: Prismatic Soulstone
 		}
@@ -83,8 +85,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76065 => 1)) {#Iridescent Soulstone
 		if($ulevel < 86) {
 			EVENT_SUMMON(); 
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76065); # Item: Iridescent Soulstone
 		}
@@ -92,8 +93,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76274 => 1)) {#Phantasmal Soulstone
 		if($ulevel < 91) {
 			EVENT_SUMMON(); 
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76274); # Item: Phantasmal Soulstone
 		}
@@ -101,8 +101,7 @@ sub EVENT_ITEM {
 	elsif(plugin::check_handin(\%itemcount, 76275 => 1)) {#Luminous Soulstone
 		if($ulevel < 96) {
 			EVENT_SUMMON(); 
-		}
-        else {
+		} else {
 			quest::say($failure);
 			quest::summonitem(76275); # Item: Luminous Soulstone
 		}
@@ -110,12 +109,3 @@ sub EVENT_ITEM {
 	plugin::return_items(\%itemcount);
 }
 
-sub EVENT_SUMMON {
-	$count = $client->GetCorpseCount();
-
-	if($count > 0) {
-        $charid = $client->CharacterID();
-        quest::summonallplayercorpses($charid);
-	}
-	quest::emote("takes your stone and places it on the altar. Shadows begin to drift across the floor and over the altar and finally onto the soulstone.  The priest's voice chants with intensity and is soon joined with several others as the shadows slowly coalesce into a wispy mass that feels familiar.  The two candles near the altar explode with light and there, before you, appears all that remains of your former life.");
-}

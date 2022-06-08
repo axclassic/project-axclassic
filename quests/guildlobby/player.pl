@@ -1,6 +1,5 @@
 
 sub EVENT_CLICKDOOR {
-   my $d_id = ($doorid % 256);
     if(($doorid == 2) || ($doorid == 4) || ($doorid == 40) || ($doorid == 42) || ($doorid == 514) || ($doorid == 516) || ($doorid == 260)) {
         if($uguild_id > 0) {
            my $QGlobalValue = $client->GetQGlobal(${uguild_id}.".guildhall");
