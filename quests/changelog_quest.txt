@@ -1,6 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==06/07/2022==
+Congdar: Fix Guildhall Priest and Priestess of Luclin
+
+==06/07/2022==
 Congdar: Updates to Guild Lobby and Guild Hall
 
 ==06/05/2022==
