@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==06/12/2022==
+Congdar: Fix Ry`Gorr Avenger spawn
+
 ==06/11/2022==
 Congdar: Fix Guildhall Priest and Priestess of Luclin
 
