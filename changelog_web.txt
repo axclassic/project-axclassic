@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==6/18/2022==
+Patrikpatrik: Added items search to front page for testing.
+
 ==5/23/2022==
 Patrikpatrik: Github changelog date fix.
 
