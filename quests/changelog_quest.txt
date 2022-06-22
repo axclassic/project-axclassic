@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==06/21/2022==
+Congdar: Fix Grieg Veneficus
+
 ==06/12/2022==
 Congdar: Fix Ry`Gorr Avenger spawn
 
