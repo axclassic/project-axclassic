@@ -48,7 +48,7 @@ sub EVENT_SAY {
     # We can add them to this array (remove the older one when season is over)
     # Add exeptions in this array
     #Also add to array in EVENT_ITEM
-    my @playerID = (8088,8090,8118,8117,8121);
+    my @playerID = (8088,8090,8118,8117,8121,8182);
     my $FoundPlayer = 0;
         foreach (@playerID) {
             /$charid/ and $FoundPlayer = 1;
@@ -356,7 +356,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
     # Add exeptions in this array
-    my @playerID = (8088,8090,8118,8117,8121);
+    my @playerID = (8088,8090,8118,8117,8121,8182);
     my $FoundPlayer = 0;
         foreach (@playerID) {
             /$charid/ and $FoundPlayer = 1;
