@@ -1,5 +1,9 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==6/26/2022==
+Patrikpatrik: Front news posts modified as islands.
+Patrikpatrik: Color corrections & minor fixes to ladder.
+
 ==6/18/2022==
 Patrikpatrik: Added items search to front page for testing.
 
