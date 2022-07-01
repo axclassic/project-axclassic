@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==6/29/2022==
+Patrikpatrik: Ladder rankings page modified to keep 65 winners until next reset.
+
 ==6/26/2022==
 Patrikpatrik: Front news posts modified as islands.
 Patrikpatrik: Color corrections & minor fixes to ladder.
