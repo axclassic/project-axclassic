@@ -67,8 +67,8 @@ sub EVENT_SAY {
     #Ladder date and char settings
     #RATHEUSA
     $ActiveServer = 1;
-    my $minCharID  = 8127; # Dont forget lines @ 255 260 for EVENT_ITEM
-    my $maxCharID  = 8126; # one less
+    my $minCharID  = 8360; # Dont forget lines @ 255 260 for EVENT_ITEM 8127
+    my $maxCharID  = 8359; # one less 8126
     
     if($ActiveServer == 2) {
         #RATHEUK
@@ -81,8 +81,8 @@ sub EVENT_SAY {
         $maxCharID  = 20000;
     }
 
-    my $activeYear = 2021; #2016
-    my $activeMonth = "October"; #July January October
+    my $activeYear = 2022; #2021
+    my $activeMonth = "July"; #July January October
 
     if(($text=~/server/i) && ($ActiveServer == 1)) {
         $client->Message(14, "Champion Darkwater says, 'This is Rathe USA Server'");
@@ -363,14 +363,14 @@ sub EVENT_ITEM {
         }
     if($ActiveServer == 1) {
         #RATHEUSA
-        $minCharID = 8127; # 8127
+        $minCharID = 8360; # 8127
     }
     elsif($ActiveServer == 2) {
         #RATHEUK
         $minCharID = 1;
     }
-    my $activeMonth = "October";
-    my $activeYear = 2021;
+    my $activeMonth = "July";
+    my $activeYear = 2022;
     # if($charid < $minCharID) { // special oct 1st edit @ line 313 here as well!
     if(($charid < $minCharID) && ($FoundPlayer != 1)) {
         #this charid and the one above should be the same.
