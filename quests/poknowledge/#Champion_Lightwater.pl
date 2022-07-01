@@ -39,7 +39,6 @@ sub EVENT_ITEM {
 		# my $randomroll = int(rand(100));  #Random roll
 		# if ($randomroll < '34') {
 			quest::summonitem(17527); #satchel of legacies lost w/ items
-			quest::summonitem(17702); #treasure hunter's satchel
 			quest::summonitem(14727); #locket of escape
 			#quest::summonitem(40605, 10); #10 potion of adventure
 			quest::summonitem(17523); #book of knowledge
@@ -76,6 +75,7 @@ sub EVENT_ITEM {
 		# quest::we(13, "Champion Lightwater shouts, 'Congratulations to $name for a risky proposition and came out victorious!'");
 		#quest::summonitem(120341); # rathe server is 120216 test is 120199
 		quest::summonitem(120346); # Improved Moonstone of Life for ladder revamp
+		quest::summonitem(17702); #treasure hunter's satchel
 		$client->Message(14,"Champion Lightwater says, 'Farewell!'");
 		$client->Message(15,"*POOF* Champion Lightwater disappears into thin air.");
 		# }
