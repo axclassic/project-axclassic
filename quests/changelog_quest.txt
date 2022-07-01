@@ -1,7 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==6/30/2022==
-Patrikpatrik: Moved Treasure Satchel to last reward for Lore check.
+Patrikpatrik: Moved Treasure Satchel to last reward for Champion Lightwater lore check.
 Patrikpatrik: Champion Darkwater updated for July 1st.
 
 ==06/21/2022==
