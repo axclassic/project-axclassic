@@ -32,7 +32,7 @@ sub EVENT_SAY {
         if(defined($qglobals{$name."chambersf9"})) {
             $client->Message(14,"Going to send you back to your Tier 2 instance now.");
             my $QGlobalValue = $qglobals{$name."chambersf9"};
-            quest::MovePCInstance(309, $QGlobalValue, 0.00, 0.00, -0.21);
+            quest::MovePCInstance(309, $QGlobalValue, 0.00, -37.00, -1.7, 0);
             return 1;
         }
         else {
@@ -62,7 +62,7 @@ sub EVENT_ITEM {
         my $instanceID = quest::CreateInstance("chambersf", 9, 12800);
         quest::AssignToInstance($instanceID);
         quest::setglobal($name."chambersf9", $instanceID, 7, M213);
-        quest::MovePCInstance(309, $instanceID, 0.00, 0.00, -0.21, 150);
+        quest::MovePCInstance(309, $instanceID, 0.00, -37.00, -1.7, 0);
         return 1;
     }
     elsif(($platinum == 1000) && $ulevel >= 65 && !defined($qglobals{$name."chambersf9"}) && $aatotal <= 74) {
