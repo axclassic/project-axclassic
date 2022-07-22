@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==07/21/2022==
+Congdar: change spawn rates of quest spawned CoM and Nadox mobs
+
 ==07/16/2022==
 Congdar: Fix Beastlord Epic 1.0
 

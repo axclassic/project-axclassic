@@ -11,7 +11,7 @@ sub EVENT_SAY {
 	my $back = quest::saylink("back", 1);
 
 	if($text=~/hail/i && $ulevel >= 60) {
-		$client->Message(14,"Hello $name , I am Thilos Dagorod. Time A is camped again by another player huh? I know how you feel. Lucky for you I am here to make a few bucks and sel zone instances. If you want I can $open a zone instance for you to begin your Time A hunt, it will stay open for 2.47 hours. I charge 250pp per zone instance. You can purchase a new instance after the old one has expired.");
+		$client->Message(14,"Hello $name , I am Thilos Dagorod. Time A is camped again by another player huh? I know how you feel. Lucky for you I am here to make a few bucks and sell zone instances. If you want I can $open a zone instance for you to begin your Time A hunt, it will stay open for 2.47 hours. I charge 250pp per zone instance. You can purchase a new instance after the old one has expired.");
 		$client->Message(12,"In the event that you would die in your Time A instance, I can port you $back for as long as the instance is active. In case your instance has already expired, your corpse will end up here. After some time..");
 	}
 

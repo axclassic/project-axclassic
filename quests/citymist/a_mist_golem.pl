@@ -1,6 +1,6 @@
 sub EVENT_DEATH {
    my $random_result = int(rand(100));
-   if($random_result <= 10) {
+   if($random_result >= 90) {
       my $x = $npc->GetX();
       my $y = $npc->GetY();
       my $z = $npc->GetZ();
