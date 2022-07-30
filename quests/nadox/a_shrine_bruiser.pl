@@ -3,7 +3,7 @@
 
 sub EVENT_DEATH {
     my $random_result = int(rand(100));
-    if(($random_result > 95) && ($kars eq 2)) {
+    if(($random_result > 95) && ($kars eq "2")) {
         my $a = 227115; #Karsonizzak_Bloodblade
         my $x1 = $npc->GetX();
         my $y1 = $npc->GetY();
