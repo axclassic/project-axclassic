@@ -55,6 +55,11 @@ sub EVENT_ITEM {
         quest::shout("Citizens of Shar Vahl, please take the time to acknowledge the efforts of a true champion and hero to our people. $name has worked valiantly with great personal risk, to restore balance to our realm. We, the Khati Sha of Shar Vahl, feel that only a spirit as strong as $name can be entrusted with the Claws of the Savage Spirit. Please take this time to give $name your thanks and respect.");
         quest::summonitem(8495);
         quest::summonitem(8496);
+        quest::ding(); quest::exp(350000);
+        quest::shout2("Denizens of The Rathe. Please join me in congratulating $name for earning the Beastlord Epic: Claw of the Savage Spirit!");
+        if($class ne 'Beastlord') {
+            quest::shout2("...probably for a Bot since $name is a $class");
+        }
     }
 
     plugin::return_items(\%itemcount); # return unused items

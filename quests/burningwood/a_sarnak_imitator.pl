@@ -44,8 +44,12 @@ sub EVENT_ITEM {
   elsif (plugin::check_handin(\%itemcount, 10639 => 1)) {
     quest::say("The path you trod was long and hard. Now you are worthy to bear the Serpent. Use it well.");
     quest::faction(342,30);
-     quest::ding(); quest::exp(1500000);
     quest::summonitem(10650);
+    quest::ding(); quest::exp(350000);
+    quest::shout2("Denizens of The Rathe. Please join me in congratulating $name for earning the Enchanter Epic: Staff of the Serpent!");
+    if($class ne 'Enchanter') {
+        quest::shout2("...probably for a Bot since $name is a $class");
+    }
   }
   else {
     plugin::return_items(\%itemcount);

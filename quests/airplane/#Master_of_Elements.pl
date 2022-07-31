@@ -24,6 +24,11 @@ sub EVENT_ITEM {
       quest::say("You... are.. balanced... and.. powerful.. for.. a.. mortal... $name ..... $name. More.. so.. than.... Magi'kot. But.... you.. are.. not.. yet.. ready.. to.. transcend.. transcend... this.. mortal.. coil. Take.. take.. seize.. this.. Orb... for.. you.. are.. worthy.. of.. reward.. and.. with... the.. aid.. of... the... balance.. balance.. contained.. within.. the.. Orb.. you.. may.. yet.. reach.. the... ultimate... Mastery.");
       quest::summonitem(19436);
       quest::stoptimer("moedepop");
+      quest::ding(); quest::exp(350000);
+      quest::shout2("Denizens of The Rathe. Please join me in congratulating $name for earning the Magican Epic: Orb of Mastery!");
+      if($class ne 'Magician') {
+          quest::shout2("...probably for a Bot since $name is a $class");
+      }
       quest::depop();
    }
    else {

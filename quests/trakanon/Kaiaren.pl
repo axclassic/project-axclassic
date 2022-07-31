@@ -48,7 +48,11 @@ sub EVENT_ITEM {
       quest::say("I honestly did not believe you could have defeated Vorash. Even though he sought nothing by war and bloodshed, it is a life nonetheless and we must mourn him. I will sew these fangs into magical fist wraps and they shall be yours. Remember Xenevorash. A purpose can be found for every situation and individual. To achieve perfection is to perceive this truth.");
       # Summon: Monk Epic 1.0: Celestial Fists(10652)
       quest::summonitem(10652);
-      quest::ding();
+      quest::ding(); quest::exp(350000);
+      quest::shout2("Denizens of The Rathe. Please join me in congratulating $name for earning the Monk Epic: Celstial Fists!");
+      if($class ne 'Monk') {
+          quest::shout2("...probably for a Bot since $name is a $class");
+      }
       quest::depop();
    }
    else {

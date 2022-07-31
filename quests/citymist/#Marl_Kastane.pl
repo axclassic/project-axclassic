@@ -17,6 +17,10 @@ sub EVENT_ITEM {
             #Lhranc's Token
             quest::say("Very good, I will go deliver this right away.");
             quest::summonitem(14383); #Innoruuk's Curse
+            quest::shout2("Denizens of The Rathe. Please join me in congratulating $name for earning the Shadowknight Epic: Innoruuk's Curse!");
+            if($class ne 'Shadowknight') {
+                quest::shout2("...probably for a Bot since $name is a $class");
+            }
             quest::depop();
         }
         else {

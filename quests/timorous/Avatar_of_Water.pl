@@ -10,8 +10,11 @@ sub EVENT_ITEM {
     quest::emote("takes the orb from you. The avatar has determined that you are worthy!");
     quest::summonitem(5532); # Water Sprinkler of Nem Ankh 
     quest::summonitem(628);  # BattleRez Scroll
-    quest::exp(200000); 
-    quest::ding();
+    quest::ding(); quest::exp(350000);
+    quest::shout2("Denizens of The Rathe. Please join me in congratulating $name for earning the Cleric Epic: Water Sprinkler of Nem Ankh!");
+    if($class ne 'Cleric') {
+        quest::shout2("...probably for a Bot since $name is a $class");
+    }
     quest::depop();
   }
   else {

@@ -63,8 +63,12 @@ sub EVENT_ITEM {
     }
     elsif(plugin::check_handin(\%itemcount, 20652 => 1)) { #Gkzzallk in a Box
         quest::emote("grins wildly and his eyes flare a deep red. The scythe he promised you flies through the air and into your hand. 'Enjoy your toy, I have no more need of you as a servant.'");
-        quest::exp(10000);
         quest::summonitem(20544); #Scythe of the Shadowed Soul
+        quest::ding(); quest::exp(350000);
+        quest::shout2("Denizens of The Rathe. Please join me in congratulating $name for earning the Necromancer Epic: Scythe of the Shadowed Soul!");
+        if($class ne 'Necromancer') {
+            quest::shout2("...probably for a Bot since $name is a $class");
+        }
     }
     elsif(plugin::check_handin(\%itemcount, 20612 => 1)) { #Piece of the Staff
         if(defined($qglobals{NecroPre}) && ($qglobals{NecroPre} == 2)) {

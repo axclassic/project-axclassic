@@ -3,12 +3,13 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SIGNAL {
-  if ($signal == 23) {
-    $counter += 1;
+    if ($signal == 23) {
+        $counter += 1;
+    }
+    if ($counter == 12) {
+        #spawn Navigator
+        quest::spawn2(228110,0,0,1542,982,-582,125); # NPC: the_Broken_Skull_Navigator
+        quest::depop();
+        $counter = 0;
+    }
 }
-  if ($counter == 12) { #spawn Navigator
-    quest::spawn2(228110,0,0,1542,982,-582,125);
-    quest::depop();
-    $counter = 0;
-}
- }

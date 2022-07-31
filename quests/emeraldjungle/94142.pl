@@ -33,6 +33,11 @@ sub EVENT_SAY {
         quest::me("We have kept it since then and now we wish you to have it. When you strike with it, you must have the same singularity of purpose as did Thalger when he defeated Miragul's mantle.");
         quest::summonitem(10651);
         $item1 = undef;
+        quest::ding(); quest::exp(350000);
+        quest::shout2("Denizens of The Rathe. Please join me in congratulating $name for earning the Shaman Epic: Spear of Fate!");
+        if($class ne 'Shaman') {
+            quest::shout2("...probably for a Bot since $name is a $class");
+        }
         quest::depop();
     }
 }

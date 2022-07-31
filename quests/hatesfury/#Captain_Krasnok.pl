@@ -1,15 +1,14 @@
 sub EVENT_DEATH { 
-     quest::depopall(228122);
-     quest::signalwith(228114,333,0);
-     quest::signalwith(228115,333,1);
-     quest::signalwith(228116,333,2);
-     quest::signalwith(228117,333,3);
-     quest::signalwith(228118,333,4);
-     quest::signalwith(228122,66,5);
+    quest::signalwith(228114,333,0); #bleeding_spell
+    quest::signalwith(228115,333,0); #drowning_spell
+    quest::signalwith(228116,333,0); #hate_spell
+    quest::signalwith(228117,333,0); #languish_spell
+    quest::signalwith(228118,333,0); #spell_target
+    quest::signalwith(228122,66,0); #Fist_of_Krasnok
 }    
 
 sub EVENT_SIGNAL {
-  if ($signal == 66) {
-    quest::depop();
+    if($signal == 66) {
+        quest::depop();
+    }
 }
- }
