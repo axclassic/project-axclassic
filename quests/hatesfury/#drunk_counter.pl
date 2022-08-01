@@ -1,3 +1,4 @@
+my $drunk = 0;
 sub EVENT_SPAWN {
     $drunk = 0;
 }
