@@ -51,7 +51,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Druid Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Druid Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'druid' && plugin::check_handin(\%itemcount, 62863 => 1)) {
 		#Druid epic 1.5 to 2.0
@@ -61,7 +61,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(62880); #Druid Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Druid Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Druid Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'druid' && plugin::check_handin(\%itemcount, 62880 => 1)) {
 		#Druid epic 2.0 to 2.5
@@ -71,7 +71,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119466); #Druid Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Druid Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Druid Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'druid' && plugin::check_handin(\%itemcount, 119466 => 1)) {
 		#Druid epic 2.5 to 3.0
@@ -81,7 +81,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119483); #Druid Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Druid Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Druid Epic!");
 	}
 ######################################################################--BEGIN CLERIC--####################################################################################
 	elsif($ulevel == 65 && $class == 'cleric' && plugin::check_handin(\%itemcount, 5532 => 1)) {
@@ -95,7 +95,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Cleric Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Cleric Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'cleric' && plugin::check_handin(\%itemcount, 9955 => 1)) {
 		#Cleric epic 1.5 to 2.0
@@ -105,7 +105,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(20076); #Cleric Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Cleric Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Cleric Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'cleric' && plugin::check_handin(\%itemcount, 20076 => 1)) {
 		#Cleric epic 2.0 to 2.5
@@ -115,7 +115,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119467); #Cleric Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Cleric Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Cleric Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'cleric' && plugin::check_handin(\%itemcount, 119467 => 1)) {
 		#Cleric epic 2.5 to 3.0
@@ -125,7 +125,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119484); #Cleric Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Cleric Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Cleric Epic!");
 	}
 ######################################################################--BEGIN SHADOWKNIGHT--####################################################################################
 	elsif($ulevel == 65 && $class == 'shadowknight' && plugin::check_handin(\%itemcount, 14383 => 1)) {
@@ -138,7 +138,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Shadowknight Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Shadowknight Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'shadowknight' && plugin::check_handin(\%itemcount, 50003 => 1)) {
 		#Shadowknight epic 1.5 to 2.0
@@ -148,7 +148,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(48136); #Shadowknight Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Shadowknight Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Shadowknight Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'shadowknight' && plugin::check_handin(\%itemcount, 48136 => 1)) {
 		#Shadowknight epic 2.0 to 2.5
@@ -158,7 +158,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119469); #Shadowknight Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Shadowknight Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Shadowknight Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'shadowknight' && plugin::check_handin(\%itemcount, 119469 => 1)) {
 		#Shadowknight epic 2.5 to 3.0
@@ -168,7 +168,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119485); #Shadowknight Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Shadowknight Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Shadowknight Epic!");
 	}
 ######################################################################--BEGIN SHAMAN--####################################################################################
 	elsif($ulevel == 65 && $class == 'shaman' && plugin::check_handin(\%itemcount, 10651 => 1)) {
@@ -181,7 +181,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Shaman Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Shaman Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'shaman' && plugin::check_handin(\%itemcount, 57400 => 1)) {
 		#Shaman epic 1.5 to 2.0
@@ -191,7 +191,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(57405); #Shaman Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Shaman Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Shaman Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'shaman' && plugin::check_handin(\%itemcount, 57405 => 1)) {
 		#Shaman epic 2.0 to 2.5
@@ -201,7 +201,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119470); #Shaman Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Shaman Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Shaman Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'shaman' && plugin::check_handin(\%itemcount, 119470 => 1)) {
 		#Shaman epic 2.5 to 3.0
@@ -211,7 +211,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119486); #Shaman Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Shaman Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Shaman Epic!");
 	}
 ######################################################################--BEGIN WIZARD--####################################################################################
 	elsif($ulevel == 65 && $class == 'wizard' && plugin::check_handin(\%itemcount, 14341 => 1)) {
@@ -224,7 +224,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Wizard Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Wizard Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'wizard' && plugin::check_handin(\%itemcount, 12665 => 1)) {
 		#Wizard epic 1.5 to 2.0
@@ -234,7 +234,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(16576); #Wizard Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Wizard Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Wizard Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'wizard' && plugin::check_handin(\%itemcount, 16576 => 1)) {
 		#Wizard epic 2.0 to 2.5
@@ -244,7 +244,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119471); #Wizard Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Wizard Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Wizard Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'wizard' && plugin::check_handin(\%itemcount, 119471 => 1)) {
 		#Wizard epic 2.5 to 3.0
@@ -254,7 +254,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119487); #Wizard Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Wizard Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Wizard Epic!");
 	}
 ######################################################################--BEGIN MAGICIAN--####################################################################################
 	elsif($ulevel == 65 && $class == 'magician' && plugin::check_handin(\%itemcount, 28034 => 1)) {
@@ -267,7 +267,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Magician Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Magician Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'magician' && plugin::check_handin(\%itemcount, 19092 => 1)) {
 		#Magician epic 1.5 to 2.0
@@ -277,7 +277,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(19839); #Magician Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Magician Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Magician Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'magician' && plugin::check_handin(\%itemcount, 19839 => 1)) {
 		#Magician epic 2.0 to 2.5
@@ -287,7 +287,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119472); #Magician Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Magician Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Magician Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'magician' && plugin::check_handin(\%itemcount, 119472 => 1)) {
 		#Magician epic 2.5 to 3.0
@@ -297,7 +297,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119488); #Magician Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Magician Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Magician Epic!");
 	}
 ######################################################################--BEGIN ENCHANTER--####################################################################################
 	elsif($ulevel == 65 && $class == 'enchanter' && plugin::check_handin(\%itemcount, 10650 => 1)) {
@@ -310,7 +310,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Enchanter Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Enchanter Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'enchanter' && plugin::check_handin(\%itemcount, 52952 => 1)) {
 		#Enchanter epic 1.5 to 2.0
@@ -320,7 +320,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(52962); #Enchanter Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Enchanter Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Enchanter Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'enchanter' && plugin::check_handin(\%itemcount, 52962 => 1)) {
 		#Enchanter epic 2.0 to 2.5
@@ -330,7 +330,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119473); #Enchanter Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Enchanter Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Enchanter Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'enchanter' && plugin::check_handin(\%itemcount, 119473 => 1)) {
 		#Enchanter epic 2.5 to 3.0
@@ -340,7 +340,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119489); #Enchanter Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Enchanter Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Enchanter Epic!");
 	}
 ######################################################################--BEGIN NECROMANCER--####################################################################################
 	elsif($ulevel == 65 && $class == 'necromancer' && plugin::check_handin(\%itemcount, 20544 => 1)) {
@@ -353,7 +353,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Necromancer Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Necromancer Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'necromancer' && plugin::check_handin(\%itemcount, 62581 => 1)) {
 		#Necromancer epic 1.5 to 2.0
@@ -363,7 +363,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(64067); #Necromancer Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Necromancer Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Necromancer Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'necromancer' && plugin::check_handin(\%itemcount, 64067 => 1)) {
 		#Necromancer epic 2.0 to 2.5
@@ -373,7 +373,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119474);#Necromancer Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Necromancer Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Necromancer Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'necromancer' && plugin::check_handin(\%itemcount, 119474 => 1)) {
 		#Necromancer epic 2.5 to 3.0
@@ -383,7 +383,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119490);#Necromancer Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Necromancer Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Necromancer Epic!");
 	}
 ######################################################################--BEGIN WARRIOR--####################################################################################
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 66177 => 1)) {
@@ -396,7 +396,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Warrior Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Warrior Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 66176 => 1)) {
 		#Warrior epic 1.0 to 1.5
@@ -406,7 +406,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(60321);#Warrior Epic 1.5
 		quest::level(10); #Set level to 10
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Warrior Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Warrior Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 60321 => 1)) {
 		#Warrior epic 1.5 to 2.0
@@ -416,7 +416,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(60332); #Warrior Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Warrior Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Warrior Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 60332 => 1)) {
 		#Warrior epic 2.0 to 2.5
@@ -426,7 +426,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119475);#Warrior Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Warrior Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Warrior Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 119475 => 1)) {
 		#Warrior epic 2.5 to 3.0
@@ -436,7 +436,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119491);#Warrior Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Warrior Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Warrior Epic!");
 	}
 ######################################################################--BEGIN ROQUE--####################################################################################
 	elsif($ulevel == 65 && $class == 'roque' && plugin::check_handin(\%itemcount, 11057 => 1)) {
@@ -449,7 +449,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Roque Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Roque Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'roque' && plugin::check_handin(\%itemcount, 52347 => 1)) {
 		#Roque epic 1.5 to 2.0
@@ -459,7 +459,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(52348); #Roque Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Roque Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Roque Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'roque' && plugin::check_handin(\%itemcount, 52348 => 1)) {
 		#Roque epic 2.0 to 2.5
@@ -469,7 +469,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119476); #Roque Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Roque Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Roque Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'roque' && plugin::check_handin(\%itemcount, 119476 => 1)) {
 		#Roque epic 2.5 to 3.0
@@ -479,7 +479,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119492); #Roque Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Roque Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Roque Epic!");
 	}
 ######################################################################--BEGIN MONK--####################################################################################
 	elsif($ulevel == 65 && $class == 'monk' && plugin::check_handin(\%itemcount, 10652 => 1)) {
@@ -492,7 +492,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Monk Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Monk Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'monk' && plugin::check_handin(\%itemcount, 61025 => 1)) {
 		#Monk epic 1.5 to 2.0
@@ -502,7 +502,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(67742); #Monk Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Monk Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Monk Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'monk' && plugin::check_handin(\%itemcount, 67742 => 1)) {
 		#Monk epic 2.0 to 2.5
@@ -512,7 +512,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119477); #Monk Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Monk Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Monk Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'monk' && plugin::check_handin(\%itemcount, 119477 => 1)) {
 		#Monk epic 2.5 to 3.0
@@ -522,7 +522,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119493); #Monk Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Monk Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Monk Epic!");
 	}
 ######################################################################--BEGIN BEASTLORD--####################################################################################
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 8495 => 1)) {
@@ -535,7 +535,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Beastlord Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Beastlord Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 8496 => 1)) {
 		#Beastlord epic 1.0 to 1.5
@@ -545,7 +545,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(52911); #Beastlord Epic 1.5
 		quest::level(10); #Set level to 10
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Beastlord Epic!")
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Beastlord Epic!")
 	}
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 52911 => 1)) {
 		#Beastlord epic 1.5 to 2.0
@@ -555,7 +555,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(57054); #Beastlord Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Beastlord Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Beastlord Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 57054 => 1)) {
 		#Beastlord epic 2.0 to 2.5
@@ -565,7 +565,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119478); #Beastlord Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Beastlord Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Beastlord Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 119478 => 1)) {
 		#Beastlord epic 2.5 to 3.0
@@ -575,7 +575,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119494); #Beastlord Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Beastlord Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Beastlord Epic!");
 	}
 ######################################################################--BEGIN BARD--####################################################################################
 	elsif($ulevel == 65 && $class == 'bard' && plugin::check_handin(\%itemcount, 20542 => 1)) {
@@ -588,7 +588,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Bard Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Bard Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'bard' && plugin::check_handin(\%itemcount, 77631 => 1)) {
 		#Bard epic 1.5 to 2.0
@@ -598,7 +598,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(77640); #Bard Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Bard Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Bard Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'bard' && plugin::check_handin(\%itemcount, 77640 => 1)) {
 		#Bard epic 2.0 to 2.5
@@ -608,7 +608,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119479); #Bard Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Bard Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Bard Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'bard' && plugin::check_handin(\%itemcount, 119479 => 1)) {
 		#Bard epic 2.5 to 3.0
@@ -618,7 +618,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119495); #Bard Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Bard Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Bard Epic!");
 	}
 ######################################################################--BEGIN PALADIN--####################################################################################
 	elsif($ulevel == 65 && $class == 'paladin' && plugin::check_handin(\%itemcount, 10099 => 1)) {
@@ -631,7 +631,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Paladin Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Paladin Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'paladin' && plugin::check_handin(\%itemcount, 64031 => 1)) {
 		#Paladin epic 1.5 to 2.0
@@ -641,7 +641,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(48147); #Paladin Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Paladin Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Paladin Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'paladin' && plugin::check_handin(\%itemcount, 48147 => 1)) {
 		#Paladin epic 2.0 to 2.5
@@ -651,7 +651,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119480); #Paladin Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Paladin Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Paladin Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'paladin' && plugin::check_handin(\%itemcount, 119480 => 1)) {
 		#Paladin epic 2.5 to 3.0
@@ -661,7 +661,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119496); #Paladin Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Paladin Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Paladin Epic!");
 	}
 ######################################################################--BEGIN BERSERKER--####################################################################################
 	elsif($ulevel == 65 && $class == 'berserker' && plugin::check_handin(\%itemcount, 68299 => 1)) {
@@ -674,7 +674,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Berserker Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Berserker Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'berserker' && plugin::check_handin(\%itemcount, 18398 => 1)) {
 		#Berserker epic 1.5 to 2.0
@@ -684,7 +684,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(18609); #Berserker Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Berserker Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Berserker Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'berserker' && plugin::check_handin(\%itemcount, 18609 => 1)) {
 		#Berserker epic 2.0 to 2.5
@@ -694,7 +694,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119481); #Berserker Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Berserker Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Berserker Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'berserker' && plugin::check_handin(\%itemcount, 119481 => 1)) {
 		#Berserker epic 2.5 to 3.0
@@ -704,7 +704,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119497); #Berserker Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Berserker Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Berserker Epic!");
 	}
 ######################################################################--BEGIN RANGER--####################################################################################
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 20488 => 1)) {
@@ -717,7 +717,7 @@ sub EVENT_ITEM {
 		quest::level(10); #Set level to 10
 		quest::setglobal("EpicBox", 1, 5, "F"); 
 		$client->Message(14,"You recieve the Epic flag!");
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Ranger Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Ranger Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 20487 => 1)) {
 		#Ranger epic 1.0 to 1.5 || plugin::check_handin(\%itemcount, 204887 => 1)
@@ -727,7 +727,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(62627); #Ranger Epic 1.5
 		quest::level(10); #Set level to 10
-		quest::shout2("Please congratulate!! $name is now working on the 1.5 Ranger Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 1.5 Ranger Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 62627 => 1)) {
 		#Ranger epic 1.5 to 2.0
@@ -737,7 +737,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(62649); #Ranger Epic 2.0
 		quest::level(20); #Set level to 20
-		quest::shout2("Please congratulate!! $name is now working on the 2.0 Ranger Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.0 Ranger Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 62649 => 1)) {
 		#Ranger epic 2.0 to 2.5
@@ -747,7 +747,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119482);#Ranger Epic 2.5
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 2.5 Ranger Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 2.5 Ranger Epic!");
 	}
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 119482 => 1)) {
 		#Ranger epic 2.5 to 3.0
@@ -757,7 +757,7 @@ sub EVENT_ITEM {
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
 		quest::summonitem(119498);#Ranger Epic 3.0
 		quest::level(30); #Set level to 30
-		quest::shout2("Please congratulate!! $name is now working on the 3.0 Ranger Epic!");
+		quest::shout2("Please congratulate $name!! $name is now working on the 3.0 Ranger Epic!");
 	}
 ######################################################################--THE END--####################################################################################
 	else {
