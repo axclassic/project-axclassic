@@ -1,5 +1,11 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/10/2022==
+Congdar: Add The_Fabled_Ghoul_Lord.pl script
+
+==08/02/2022==
+Congdar: Fix Kirak_Vil.pl
+
 ==07/31/2022==
 Congdar: Epic turn in announcements
 
