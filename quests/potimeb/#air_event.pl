@@ -5,7 +5,8 @@ my $anpccounter = 0;
 my $airc = 0;
 
 sub EVENT_SPAWN {
-	$anpccounter = 0;
+    $anpccounter = 0;
+    $airc = 0;
 	quest::spawn2(223087,0,0,67,1364,494.8,185.5); #An_Air_Phoenix_Noble
 	quest::spawn2(223087,0,0,67,1347,494.8,185.5);
 	quest::spawn2(223087,0,0,62,1364,494.8,185.5);
@@ -14,12 +15,12 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
 	if($signal == 14058) {
-		$anpccounter += 1;
+		$anpccounter = $anpccounter + 1;
 		$airc = $anpccounter;
         #quest::ze(15, "okay i signaled and my counte ris now $airc.");
 	}
 
-	if($anpccounter == 4) {
+	if($anpccounter >= 4) {
 		# at 4 set at 2
 		quest::spawn2(223120,0,0,68,1355,494.8,185.5); #Neimon_of_Air
 		quest::spawn2(223995,0,0,68,1365,494.8,185.5); #servitor_of_xegony

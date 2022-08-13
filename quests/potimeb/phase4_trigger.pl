@@ -14,28 +14,28 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
 	if($signal == 12010) {
-		$godcounterI += 1;
+		$godcounterI = $godcounterI + 1;
 	}
 
     if($signal == 12011) {
 		#depop Vallons crew after his death
-		$godcounterI += 1;
+        $godcounterI = $godcounterI + 1;
         #quest::settimer("vallon",300);
 	}
 
     if($signal == 12012) {
 		#depop Saryrns crew after her death
-		$godcounterI += 1;
+        $godcounterI = $godcounterI + 1;
         #quest::settimer("saryrn",1800);
 	}
 
     if($signal == 12013) {
 		#depop Terris crew after her death
-		$godcounterI += 1;
+        $godcounterI = $godcounterI + 1;
         #quest::settimer("terris",1800);
 	}
 
-    if($godcounterI == 4) {
+    if($godcounterI >= 4) {
 		#event success
 		quest::ze(15, "You are halfway through this phase. Click on the fountain to continue.");
 		quest::setglobal("portal4", "1", 7, "H1"); #sets flag to portal through fountain

@@ -86,12 +86,12 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
 	if($signal == 1011) {
 		#sets counter to start 1st wave upon all 8 dying
-		$wonpccounter += 1;
+		$wonpccounter = $wonpccounter + 1;
 		$waveoc = $wonpccounter;
         #quest::ze(15, "okay i signaled and my 1st counter is now $waveoc.");
 	}
 
-    if($wonpccounter == 8) {
+    if($wonpccounter >= 8) {
 		# triggers #wave1.pl
 		$wonpccounter = 0;
         #quest::ze(15, "okay all 8 are dead now do something!");
@@ -106,10 +106,10 @@ sub EVENT_SIGNAL {
 
 	if($signal == 11010) {
 		#1st two names
-		$namedI += 1;
+		$namedI = $namedI + 1;
 	}
 
-    if($namedI == 2) {
+    if($namedI >= 2) {
         #quest::spawn_condition("potimeb",3,1); # wave 2
         #quest::spawn2(223218,0,0,0,0,0,0); # wave counter
 		quest::depopall(223016); #depop untargetable nameds
@@ -132,12 +132,12 @@ sub EVENT_SIGNAL {
     #starts counter of wave 2
 	if($signal == 2022) {
 		#sets counter to start 3rd wave upon all 8 dying
-		$wtwnpccounter += 1;
+		$wtwnpccounter = $wtwnpccounter + 1;
 		$wavetwc = $wtwnpccounter;
         #quest::ze(15, "okay i signaled and my 2nd counter is now $wavetwc.");
 	}
 
-	if($wtwnpccounter == 8) {
+	if($wtwnpccounter >= 8) {
 		# triggers #wave3.pl
 		$wtwnpccounter = 0;
         #quest::ze(15, "okay all 8 are dead now do something!");
@@ -149,10 +149,10 @@ sub EVENT_SIGNAL {
 	}
 
 	if($signal == 11020) {
-		$namedII += 1;
+		$namedII = $namedII + 1;
 	}
 
-    if($namedII == 2) {
+    if($namedII >= 2) {
 		#start of wave 3
 		quest::depopall(223022); #non target named A_Deadly_Warboar
 		quest::depopall(223023);  #non target named Deathbringer_Skullsmash
@@ -173,12 +173,12 @@ sub EVENT_SIGNAL {
     #starts counter of wave 3
 	if($signal == 3033) {
 		#sets counter to start 4th wave upon all 8 dying
-		$wthnpccounter += 1;
+		$wthnpccounter = $wthnpccounter + 1;
 		$wavethc = $wthnpccounter;
         #quest::ze(15, "okay i signaled and my 3rd counter is now $wavethc.");
 	}
 
-	if($wthnpccounter == 8) {
+	if($wthnpccounter >= 8) {
 		# triggers #wave4.pl
 		$wthnpccounter = 0;
         #quest::ze(15, "okay all 8 are dead now do something!");
@@ -191,10 +191,10 @@ sub EVENT_SIGNAL {
 
     if($signal == 11030) {
 		#start of wave 4
-		$namedIII += 1;
+		$namedIII = $namedIII + 1;
 	}
 
-    if($namedIII == 2) {
+    if($namedIII >= 2) {
 		#start of wave 3
 		quest::depopall(223012); #non target named Sinrunal_Gorgedreal
 		quest::depopall(223013); #non target named Herlsoakian
@@ -214,11 +214,11 @@ sub EVENT_SIGNAL {
     #starts counter of wave 4
 	if($signal == 4044) {
 		#sets counter to start 4th wave upon all 8 dying
-		$wfourcounter += 1;
+		$wfourcounter = $wfourcounter + 1;
 		$wfourc = $wfourcounter;
         #quest::ze(15, "okay i signaled and my 4th counter is now $wfourc.");
 	}
-	if($wfourcounter == 8) {
+	if($wfourcounter >= 8) {
 		# triggers 4th
 		$wfourcounter = 0;
         #quest::ze(15, "okay all 8 are dead now do something!");
@@ -231,7 +231,7 @@ sub EVENT_SIGNAL {
 
     if($signal == 11040) {
 		#start of wave 5
-		$namedIV += 1;
+		$namedIV = $namedIV + 1;
 	}
 
     if($namedIV == 2) {
@@ -253,12 +253,12 @@ sub EVENT_SIGNAL {
 
 	if($signal == 5055) {
 		#sets counter to start 6th wave upon all 8 dying
-		$wfivecounter += 1;
+		$wfivecounter = $wfivecounter + 1;
 		$wfivec = $wfivecounter;
         #quest::ze(15, "okay i signaled and my 5th counter is now $wfivec.");
 	}
 
-    if($wfivecounter == 8) {
+    if($wfivecounter >= 8) {
 		$wfivecounter = 0;
         #quest::ze(15, "okay all 8 are dead now do something!");
         #depopping
@@ -270,10 +270,10 @@ sub EVENT_SIGNAL {
 
     if($signal == 11050) {
 		#start of wave 6
-		$namedV += 1;
+		$namedV = $namedV + 1;
 	}
 
-    if($namedV == 2) {
+    if($namedV >= 2) {
 		quest::depopall(223015); #non target named Dersool_Fal`Giersnaol
 		quest::depopall(223014); #non target named Xerskel_Gerodnsal
 		quest::spawn2(223014,0,0,1250.0,1135.0,359.5,192.0); #non target named Xerskel_Gerodnsal
@@ -291,12 +291,12 @@ sub EVENT_SIGNAL {
 
     if($signal == 6066) {
 		#sets counter to start 6th wave upon all 8 dying
-		$wsixcounter += 1;
+		$wsixcounter = $wsixcounter + 1;
 		$wsixc = $wsixcounter;
         #quest::ze(15, "okay i signaled and my 6th counter is now $wsixc.");
 	}
 
-    if($wsixcounter == 8) {
+    if($wsixcounter >= 8) {
 		$wsixcounter = 0;
         #quest::ze(15, "okay all 8 are dead now do something!");
         #depopping
@@ -308,10 +308,10 @@ sub EVENT_SIGNAL {
 
     if($signal == 11060) {
 		#start of wave 7
-		$namedVI += 1;
+		$namedVI = $namedVI + 1;
 	}
 
-    if($namedVI == 2) {
+    if($namedVI >= 2) {
 		quest::depopall(223020); #non target named Dark_Knight_of_Terris
 		quest::depopall(223021); #non target named Undead_Squad_Leader
 		quest::spawn2(223020,0,0,1250.0,1085.0,359.5,192.0); #non target named Dark_Knight_of_Terris
@@ -329,12 +329,12 @@ sub EVENT_SIGNAL {
 
     if($signal == 7077) {
 		#sets counter to start 7th wave upon all 8 dying
-		$wsevcounter += 1;
+		$wsevcounter = $wsevcounter + 1;
 		$wsevc = $wsevcounter;
         #quest::ze(15, "okay i signaled and my 7th counter is now $wsevc.");
 	}
 
-    if($wsevcounter == 8) {
+    if($wsevcounter >= 8) {
 		$wsevcounter = 0;
         #quest::ze(15, "okay all 8 are dead now do something!");
         #depopping
@@ -346,10 +346,10 @@ sub EVENT_SIGNAL {
 
 	if($signal == 11070) {
 		#start of wave 7
-		$namedVII += 1;
+		$namedVII = $namedVII + 1;
 	}
 
-    if($namedVII == 2) {
+    if($namedVII >= 2) {
 		quest::depopall(223018); #non target named Dreamwarp
 		quest::depopall(223019); #non target named Champion_of_Torment
 		quest::spawn2(223018,0,0,1250.0,1085.0,359.5,192.0); #non target named Dreamwarp
@@ -367,12 +367,12 @@ sub EVENT_SIGNAL {
 
     if($signal == 8088) {
 		#sets counter to start 8th wave upon all 8 dying
-		$weigcounter += 1;
+		$weigcounter = $weigcounter + 1;
 		$weigc = $weigcounter;
         #quest::ze(15, "okay i signaled and my 8th counter is now $weigc.");
 	}
 
-    if($weigcounter == 8) {
+    if($weigcounter >= 8) {
 		$weigcounter = 0;
         #quest::ze(15, "okay all 8 are dead now do something!");
         #depopping
@@ -384,10 +384,10 @@ sub EVENT_SIGNAL {
 
     if($signal == 11080) {
 		#start of Last encounter with 2 guardians
-		$namedVIII += 1;
+		$namedVIII = $namedVIII + 1;
 	}
 
-    if($namedVIII == 2) {
+    if($namedVIII >= 2) {
 		quest::spawn2(223073,0,0,1492.0,1110.0,369.0,195.5); #targetable NPC's Avatar_of_Elements
 		quest::spawn2(223074,0,0,1563.0,1110.0,369.0,195.5); #targetable NPC's Supernatural_Guardian
 		$namedVIII = 0;
@@ -395,12 +395,12 @@ sub EVENT_SIGNAL {
 
     if($signal == 11090) {
 		#counter to open portal to phase 4
-		$wnincounter += 1;
+		$wnincounter = $wnincounter + 1;
 		$wninc = $wnincounter;
         #quest::ze(15, "okay counter is unlocked $wninc.");
 	}
 
-    if($wnincounter == 2) {
+    if($wnincounter >= 2) {
 		$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
         ##quest::we is bugged
         ##quest::we(14, "Congratulations to $name! Phase 3 has been completed, click on the portal to phase 4.");

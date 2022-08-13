@@ -6,13 +6,18 @@ my $savedc2 = 0;
 my $savedg = 0;
 
 sub EVENT_ZONE { #when zoning out, counters must be reset!
+    $IIcounter = 0;
+    $groupboss = 0;
+    $savedc2 = 0;
     $savedg = 0;
-	$savedc2 = 0;
-	$IIcounter = 0;
-	$groupboss = 0;
 }
 
 sub EVENT_SPAWN {
+    $IIcounter = 0;
+    $groupboss = 0;
+    $savedc2 = 0;
+    $savedg = 0;
+
     # $IIacounter = 0;
 	quest::signalwith(223111,1001,0); #flavor triggers invisible _ 223111.pl
     #spawning phase 2's 1st group no boss
@@ -31,11 +36,11 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
 	if($signal == 14034) {
 		#keeps track of group mob #1
-		$groupboss += 1;
+		$groupboss = $groupboss + 1;
 		$savedg = $groupboss;
 	}
 
-    if($groupboss == 5) {
+    if($groupboss >= 5) {
 		quest::spawn2(223169,0,0,-129.6,1720,547,0); #earth boss group
 		quest::spawn2(223170,0,0,-129.6,1720,547,0); #air boss group
 		quest::spawn2(223171,0,0,-129.6,1720,547,0); #undead boss group
@@ -49,12 +54,12 @@ sub EVENT_SIGNAL {
 	if($signal == 14035) {
 		#phase 2 boss signals
         #quest::ze(15, "Mob+boss earth grp for phase 2 is dead, door should open!");
-		$IIcounter += 1;
+		$IIcounter = $IIcounter + 1;
 		$savedc2 = $IIcounter;
         #quest::ze(15, "testing signal 14035 and counter is $savedc2.");
 	}
 
-    if($IIcounter == 5) {
+    if($IIcounter >= 5) {
 		#Inner doors open!
 		$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
         ##quest::we is bugged

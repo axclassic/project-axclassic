@@ -5,6 +5,8 @@ my $anpccounter = 0;
 my $airc = 0;
 
 sub EVENT_SPAWN { #This spawns air grp + boss for phase 2
+    $anpccounter = 0;
+    $airc = 0;
 	quest::spawn2(223216,0,0,252.0,1369.0,491.0,192.5);
 	quest::spawn2(223226,0,0,242.0,1364.0,491.3,192.5);
 	quest::spawn2(223226,0,0,232.0,1359.0,491.9,192.5);
@@ -19,11 +21,11 @@ sub EVENT_SPAWN { #This spawns air grp + boss for phase 2
 
 sub EVENT_SIGNAL { #like air_counter.pl starts a counter for when all are dead, then opens inner doors!
 	if($signal == 14035) { #This signal are from these mobs upon death!
-		$anpccounter += 1;
+		$anpccounter = $anpccounter + 1;
 		$airc = $anpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $airc.");
 	}	
-	if($anpccounter == 10) { # phase_trigger script npcid - 223191
+	if($anpccounter >= 10) { # phase_trigger script npcid - 223191
 		quest::signalwith(223191, 14035, 0);
 		$anpccounter = 0;
 		quest::depop();

@@ -1,26 +1,26 @@
 # phase_trigger script npcid - 223177 This is required for signals of all 5 trials
 
-my $Icounter;
+my $Icounter = 0;
 my $savedc = 0;
 
 sub EVENT_ZONE { #when zoning out, counters must be reset!
-	$savedc = 0;
-	$Icounter = 0;
+    $Icounter = 0;
+    $savedc = 0;
 }
 
 sub EVENT_ENTERZONE {
-	$savedc = 0;
-	$Icounter = 0;
+    $Icounter = 0;
+    $savedc = 0;
 }
 
 sub EVENT_SIGNAL { #phase 1 signals
 	if($signal == 14060) {
-		$Icounter += 1;
+		$Icounter = $Icounter + 1;
 		$savedc = $Icounter;
         #quest::ze(15, "Muahahah you have more to go mortal. and counter is $savedc.");
 	}
 
-    if($Icounter == 5) {
+    if($Icounter >= 5) {
 		#phase 1 success all doors should unlock
         # quest::settimer("zshake", 1);
 		$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake

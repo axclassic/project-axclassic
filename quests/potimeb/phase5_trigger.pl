@@ -5,7 +5,9 @@ my $lastcounter = 0;
 my $lastlast = 0;
 
 sub EVENT_SPAWN {
-	$godcounterII = 0;
+    $godcounterII = 0;
+    $lastcounter = 0;
+    $lastlast = 0;
 	quest::signalwith(223111,1004,0); #flavor
 
 	quest::spawn2(223098,0,0,-299,-297,23.3,31); #Fake Bertoxxulous
@@ -67,12 +69,12 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
 	if($signal == 1234) {
 		#sets counter before last 4 gods up
-		$lastcounter += 1;
+		$lastcounter = $lastcounter + 1;
 		$lastlast = $lastcounter;
         #quest::ze(15, "okay i signaled last counter it is $lastlast.");
 	}
 
-    if($lastcounter == 49) {
+    if($lastcounter >= 49) {
 		$lastcounter = 0;
 		quest::depopall(223098);
 		quest::depopall(223165);
@@ -85,10 +87,10 @@ sub EVENT_SIGNAL {
 	}
 
 	if($signal == 13010) {
-		$godcounterII += 1;
+		$godcounterII = $godcounterII + 1;
 	}
 
-    if($godcounterII == 4) {
+    if($godcounterII >= 4) {
 		#event success
 		$npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
         ##quest::we is bugged

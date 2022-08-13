@@ -5,6 +5,8 @@ my $fnpccounter = 0;
 my $firec = 0;
 
 sub EVENT_SPAWN { # This spawns fire grp + boss for phase 2
+    $fnpccounter = 0;
+    $firec = 0;
 	quest::spawn2(223143,0,0,252.0,589.0,491.0,192.5);
 	quest::spawn2(223109,0,0,242.0,584.0,491.2,192.5);
 	quest::spawn2(223143,0,0,252.0,579.0,491.0,192.5);
@@ -19,11 +21,11 @@ sub EVENT_SPAWN { # This spawns fire grp + boss for phase 2
 
 sub EVENT_SIGNAL { #like fire_counter.pl starts a counter for when all are dead, then opens inner doors!
 	if($signal == 14035) { #This signal are from these mobs upon death!
-		$fnpccounter += 1;
+		$fnpccounter = $fnpccounter + 1;
 		$firec = $fnpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $firec.");
 	}	
-	if($fnpccounter == 10) { # phase_trigger script npcid - 223191
+	if($fnpccounter >= 10) { # phase_trigger script npcid - 223191
 		quest::signalwith(223191, 14035, 0);
 		$fnpccounter = 0;
 		quest::depop();

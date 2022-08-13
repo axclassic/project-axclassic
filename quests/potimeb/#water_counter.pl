@@ -5,6 +5,8 @@ my $wnpccounter = 0;
 my $waterc = 0;
 
 sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
+    $wnpccounter = 0;
+    $waterc = 0;
     #water group
 	quest::spawn2(223148,0,0,252.0,884.0,491.0,192.5);
 	quest::spawn2(223148,0,0,242.0,879.0,491.3,192.5);
@@ -19,12 +21,12 @@ sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
 
 sub EVENT_SIGNAL { #like water_event.pl starts a counter for when all are dead, spawns the next group!
 	if($signal == 14058) { #This signal are from these mobs upon death!
-		$wnpccounter += 1;
+		$wnpccounter = $wnpccounter + 1;
 		$waterc = $wnpccounter;
 		#quest::ze(15, "okay i signaled and my counter is now $waterc.");
 	}	
 
-    if($wnpccounter == 9) { # phase_trigger script npcid - 223191
+    if($wnpccounter >= 9) { # phase_trigger script npcid - 223191
 		quest::signalwith(223191, 14034, 0);
 		$wnpccounter = 0;
 		quest::depop();

@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/13/2022==
+Congdar: timeb script update
+
 ==08/10/2022==
 Congdar: Add The_Fabled_Ghoul_Lord.pl script
 

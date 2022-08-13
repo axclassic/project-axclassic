@@ -5,8 +5,8 @@ my $unpccounter = 0;
 my $undeadc = 0;
 
 sub EVENT_SPAWN {
-	$unpccounter = 0;
-	#$ubosscount = 0;
+    $unpccounter = 0;
+    $undeadc = 0;
 	quest::spawn2(223105,0,0,65.2,1109.7,494.8,185.5); #an_undead_guardian
 	quest::spawn2(223105,0,0,65.2,1119.7,494.8,185.5);
 	quest::spawn2(223105,0,0,65.2,1099.7,494.8,185.5);
@@ -14,7 +14,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
 	if($signal == 14048) {
-		$unpccounter += 1;
+		$unpccounter = $unpccounter + 1;
 		$undeadc = $unpccounter;
         #quest::ze(15, "okay i signaled and my counte ris now $undeadc.");
 	}
@@ -34,7 +34,7 @@ sub EVENT_SIGNAL {
 		quest::spawn2(223129,0,0,65.2,1109.7,494.8,185.5); #Rythor_of_the_Undead
 		quest::spawn2(223150,0,0,65.2,1119.7,494.8,185.5); #an_undead_protector
 		quest::spawn2(223150,0,0,65.2,1099.7,494.8,185.5);
-		$unpccounter = -15;
+		$unpccounter = 6;
 	}
 	if($signal == 14040) {
 		quest::signalwith(223177,14060,0); #tell main about event success
