@@ -4,6 +4,7 @@
 #-- Skill_ID: 1HB(0), 1HS(1), 2HB(2), 2HS(3), Archery(7), Piercing(36), Throwing(51)
 
 sub EVENT_SCALE_CALC {
+    my %skill_matrix;
     my $max_skills = 0;
     my $total_count = 0;
 
@@ -33,9 +34,10 @@ sub EVENT_SCALE_CALC {
         23 => [8,51,120]
     );
 
-    for(my $i=1; $i<=23; $i++) {
-        if($itemWearer->GetClass() == $skill_matrix{$i}->[1]) {
-            if($itemWearer->GetSkill($skill_matrix{$i}->[2]) >= $skill_matrix{$i}->[3]) {
+    foreach my $id (keys %skill_matrix) {
+        if($class == $skill_matrix{$id}->[1]) {
+            my $pc = $entity_list->GetClientByCharID($charid);
+            if($pc->GetSkill($skill_matrix{$id}->[2]) >= $skill_matrix{$id}->[3]) {
                 $max_skills = $max_skills + 1;
             }
             $total_count = $total_count + 1;
@@ -48,3 +50,4 @@ sub EVENT_SCALE_CALC {
 
     $questitem->SetScale($max_skills / $total_count);
 }
+
