@@ -26,7 +26,7 @@ sub EVENT_SIGNAL { #like fire_counter.pl starts a counter for when all are dead,
 		#quest::ze(15, "okay i signaled and my counter is now $firec.");
 	}	
 	if($fnpccounter >= 10) { # phase_trigger script npcid - 223191
-		quest::signalwith(223191, 14035, 0);
+		quest::signalwith(223191, 14035, 4000);
 		$fnpccounter = 0;
 		quest::depop();
 	}

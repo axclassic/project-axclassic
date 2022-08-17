@@ -55,7 +55,7 @@ sub EVENT_SPAWN {
     $weigc = 0;
     $wnincounter = 0;
     $wninc = 0;
-	quest::signalwith(223111,1002,0); #flavor text
+	quest::signalwith(223111,1002,4000); #flavor text
 	quest::spawn2(223010,0,0,1280,1010,359.38,195); #16 non target nameds
 	quest::spawn2(223011,0,0,1280,1030,359.38,195);
 	quest::spawn2(223012,0,0,1260,1250,359.38,195);

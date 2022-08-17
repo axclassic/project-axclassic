@@ -27,7 +27,7 @@ sub EVENT_SIGNAL { #like undead_counter.pl starts a counter for when all are dea
 	}	
 
     if($unpccounter >= 10) { # phase_trigger script npcid - 223191
-		quest::signalwith(223191, 14035, 0);
+		quest::signalwith(223191, 14035, 4000);
 		$unpccounter = 0;
 		quest::depop();
 	}

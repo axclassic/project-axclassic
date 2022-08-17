@@ -26,7 +26,7 @@ sub EVENT_SIGNAL {
 	}
 
     if($signal == 14038) { #if anar-of-water dies this triggers the counter
-		quest::signalwith(223177,14060,0); #tell main about event success
+		quest::signalwith(223177,14060,4000); #tell main about event success
 		quest::depop();
 	}
 }

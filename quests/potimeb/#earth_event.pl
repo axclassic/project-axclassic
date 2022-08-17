@@ -23,7 +23,7 @@ sub EVENT_SIGNAL {
 		$enpccounter = 0;
 	}
 	if($signal == 14010) {
-		quest::signalwith(223177,14060,0); #tell phase_trigger about event success (earth boss is dead)
+		quest::signalwith(223177,14060,4000); #tell phase_trigger about event success (earth boss is dead)
 		quest::depop();
 		
 	}

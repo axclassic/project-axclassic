@@ -24,13 +24,13 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
     if(plugin::check_handin(\%itemcount,56004=>1, 56005=>1, 56006=>1, 56007=>1)) {
         #Ancient Compass, Mystical Spyglass, Map of Norrath's Oceans, Krasnok's Private Reserve
-        quest::signalwith(228119,66,0);
-        quest::signalwith(228120,66,1);
-        quest::signalwith(228118,43,2);
-        quest::signalwith(228114,666,3);
-        quest::signalwith(228115,666,4);
-        quest::signalwith(228116,666,5);
-        quest::signalwith(228117,666,6);
+        quest::signalwith(228119,66,4000);
+        quest::signalwith(228120,66,4000);
+        quest::signalwith(228118,43,4000);
+        quest::signalwith(228114,666,4000);
+        quest::signalwith(228115,666,4000);
+        quest::signalwith(228116,666,4000);
+        quest::signalwith(228117,666,4000);
         quest::spawn2(228121,0,0,-1281,-46,-285.8,60); #captain
         quest::spawn2(228122,0,0,-1281,-120,-285.8,0); #Fists
         quest::spawn2(228122,0,0,-1281,118,-285.8,124); 

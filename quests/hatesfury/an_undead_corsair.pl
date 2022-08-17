@@ -1,3 +1,4 @@
 sub EVENT_DEATH {
-    quest::signalwith(228113,33,0); # NPC: #drunk_counter
+    # NPC: #drunk_counter
+    quest::signalwith(228113,33,4000);
 }

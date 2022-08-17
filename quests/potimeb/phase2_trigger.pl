@@ -19,7 +19,8 @@ sub EVENT_SPAWN {
     $savedg = 0;
 
     # $IIacounter = 0;
-	quest::signalwith(223111,1001,0); #flavor triggers invisible _ 223111.pl
+    #flavor triggers invisible _ 223111.pl
+	quest::signalwith(223111,1001,4000);
     #spawning phase 2's 1st group no boss
     #Earth group using #earth_counter.pl
     quest::spawn2(223178,0,0,-129.6,1720,547,0);

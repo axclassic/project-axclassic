@@ -1,5 +1,6 @@
 # 223067.pl Warbeast_of_Saryrn
 
 sub EVENT_DEATH {
-    quest::signalwith(223154,8088,0); #count 8th wave
+    #count 8th wave
+    quest::signalwith(223154,8088,4000);
 }

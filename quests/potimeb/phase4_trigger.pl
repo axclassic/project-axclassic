@@ -4,7 +4,7 @@ my $godcounterI = 0;
 
 sub EVENT_SPAWN {
 	$godcounterI = 0;
-	quest::signalwith(223111,1003,0); #flavor
+	quest::signalwith(223111,1003,4000); #flavor
 	quest::spawn2(223075,0,0,-310,307,365,95); #Terris Thule
 	quest::spawn2(223076,0,0,-320,-316,358,32.5); #Saryrn
 	quest::spawn2(223077,0,0,405,-84,358,192); #Tallon Zek

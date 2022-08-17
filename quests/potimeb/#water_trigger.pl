@@ -27,7 +27,7 @@ sub EVENT_SIGNAL { #like water_counter.pl starts a counter for when all are dead
 	}	
 
     if($wnpccounter >= 10) { # phase_trigger script npcid - 223191
-		quest::signalwith(223191, 14035, 0);
+		quest::signalwith(223191, 14035, 4000);
 		$wnpccounter = 0;
 		quest::depop();
 	}
@@ -41,7 +41,7 @@ sub EVENT_SIGNAL { #like water_counter.pl starts a counter for when all are dead
 #sub EVENT_TIMER {
 	# if($timer eq "water") {
 		# quest::spawn2(223189,0,0,-129.6,1720,547,0); #spawn event script
-		# quest::signalwith(223211,23,0); #send signal to main trigger to start hour time limit
+		# quest::signalwith(223211,23,4000); #send signal to main trigger to start hour time limit
 		# quest::stoptimer("water");
 		# quest::depop();
 	# }

@@ -5,7 +5,7 @@ sub EVENT_DEATH {
     my $y = $npc->GetY();
     my $z = $npc->GetZ();
     my $h = $npc->GetHeading();
-    quest::signalwith(223186,14018,0);
+    quest::signalwith(223186,14018,4000);
     quest::spawn2(223147,0,0,$x,$y + 5,$z,$h); #a rock shaped assassin
     quest::spawn2(223147,0,0,$x,$y - 5,$z,$h);
     my $rndspawn = int(rand(100));

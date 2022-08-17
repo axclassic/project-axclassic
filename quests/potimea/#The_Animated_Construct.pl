@@ -9,7 +9,8 @@
 
 sub EVENT_DEATH {
     #If player manages to kill the final blow
-	quest::signalwith(219065, 10505, 0); #Triggers Udunir_Dagorod's signal
+    #Triggers Udunir_Dagorod's signal
+	quest::signalwith(219065, 10505, 4000);
 	if(!defined $qglobals{'portalab'} || ($qglobals{'portalab'} < 4)) {
 		quest::ze(15, "A booming echo bellows from across the sky, 'You have more to dispatch to appease the gods...'");
 	}

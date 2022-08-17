@@ -1,6 +1,7 @@
 # 223039.pl  Battlemaster_of_the_Faceless
 
 sub EVENT_DEATH {
-    quest::signalwith(223154,4044,0); #count 4th wave
+    #count 4th wave
+    quest::signalwith(223154,4044,4000);
     quest::emote("loses its semi-rigid consistency and deflates. The burbling noise and fetid scent are nauseating.");
 }

@@ -82,7 +82,7 @@ sub EVENT_ENTERZONE {
         #$client->Message(15, "blockout is here so spawns should pop.");
         quest::delglobal("blockout2");
         #first message
-        quest::signalwith(223111, 1000, 1);
+        quest::signalwith(223111, 1000, 4000);
         # phase_triggerl.pl
         quest::spawn2(223177,0,0, -129.6,1720,547,0); #spawn phase_trigger.pl
         #Earth

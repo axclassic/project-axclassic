@@ -23,7 +23,7 @@ sub EVENT_SIGNAL {
 		$fnpccounter = 0;
 	}
 	if($signal == 14020) {
-		quest::signalwith(223177,14060,0); #tell main about phase 1 success
+		quest::signalwith(223177,14060,4000); #tell main about phase 1 success
 		quest::depop();
 	}
 }

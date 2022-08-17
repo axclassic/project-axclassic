@@ -20,7 +20,7 @@ sub EVENT_HP {
 }
 
 sub EVENT_DEATH {
-	quest::signalwith(223157,12011,0);
+	quest::signalwith(223157,12011,4000);
 	quest::say("You stand to gain no honor in my death. May the wrath of Rallos Zek strike you down with great vengeance.");
 	quest::stoptimer("vzek");
 }

@@ -27,7 +27,7 @@ sub EVENT_SIGNAL { #like water_event.pl starts a counter for when all are dead, 
 	}	
 
     if($wnpccounter >= 9) { # phase_trigger script npcid - 223191
-		quest::signalwith(223191, 14034, 0);
+		quest::signalwith(223191, 14034, 4000);
 		$wnpccounter = 0;
 		quest::depop();
 	}

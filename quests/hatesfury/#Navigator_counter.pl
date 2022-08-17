@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
     if($signal == 23) {
-        $counter += 1;
+        $counter = $counter + 1;
     }
     if($counter >= 12) {
         #spawn Navigator

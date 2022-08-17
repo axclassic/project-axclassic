@@ -33,7 +33,7 @@ sub EVENT_HP {
 }
 
 sub EVENT_DEATH {
-	quest::signalwith(223158,13010,0);
+	quest::signalwith(223158,13010,4000);
 	quest::stoptimer("innoruuk");
 	quest::say("This cannot be. . . I will return. . . somehow, in some way. . .");
 }

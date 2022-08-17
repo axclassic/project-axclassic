@@ -1,6 +1,6 @@
 
 sub EVENT_DEATH {
-	quest::signalwith(223187,14050,0);
+	quest::signalwith(223187,14050,4000);
 	quest::say("What madness is this? How could I have been defeated? I beg of you Xegony, please forgive my weakness.");
 }
 

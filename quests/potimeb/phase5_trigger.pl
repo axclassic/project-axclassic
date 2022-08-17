@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
     $godcounterII = 0;
     $lastcounter = 0;
     $lastlast = 0;
-	quest::signalwith(223111,1004,0); #flavor
+	quest::signalwith(223111,1004,4000); #flavor
 
 	quest::spawn2(223098,0,0,-299,-297,23.3,31); #Fake Bertoxxulous
 	quest::spawn2(223165,0,0,-257,255,6,101.5); #Fake Cazic
