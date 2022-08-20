@@ -1,4 +1,4 @@
-# mob is _ npcid - 223111. Spawns with phase2_trigger.pl This could be nothing but signals
+# _ (223111)
 
 sub EVENT_SIGNAL {
 	if($signal == 1000) {
@@ -35,8 +35,6 @@ sub EVENT_SIGNAL {
 		quest::ze(15,"Xegony says, 'Mithaniel, Karana please record what you see here. With your good nature I am sure that your records will be impartial to any side. We must record this for the ages and learn from our mistake of allowing Zebuxoruk to gain so much power that he is easily passed on to mortals.'");
 		quest::pause(2000);
 		quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
-        #quest::pause(2000);
-        #quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have one additional hour.");
 	}
 
     if($signal == 1002) {
@@ -63,8 +61,6 @@ sub EVENT_SIGNAL {
 		quest::ze(15,"Innoruuk says, 'Do not mock me! I shall seek you out after this is done and my power is restored. You will not be so smug after our next meeting.'");
 		quest::pause(2000);
 		quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
-        #quest::pause(2000);
-        #quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have an additional one hour and fifteen minutes.");
 	}
 
     if($signal == 1003) {
@@ -77,8 +73,6 @@ sub EVENT_SIGNAL {
 		quest::ze(15,"Saryrn says, 'It is no matter anyways, no mortal could ever ascend to this place. These precautions are unnecessary. Bringing them here was a waste of time.'");
 		quest::pause(2000);
 		quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
-        #quest::pause(2000);
-        #quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have four additional hours.");
 	}
 
     if($signal == 1004) {
@@ -95,8 +89,6 @@ sub EVENT_SIGNAL {
 		quest::ze(15,"Rallos Zek says, 'Now is not the time to bicker! We must focus our strength on these puny mortals! Minions of the army, come to our sides. Your gods beckon you, we need you now!'");
 		quest::pause(2000);
 		quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
-        #quest::pause(2000);
-        #quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have four additional hours.");
 	}
 
     if($signal == 1005) {
@@ -112,8 +104,6 @@ sub EVENT_SIGNAL {
 		quest::ze(15,"A horrible creation with all the powers from each elemental realm. Your body begins to shudder by the mere presence of this being.");
 		quest::pause(2000);
 		quest::ze(15,"With a sudden jolt the wall comes into crystal clear focus.");
-        # quest::pause(2000);
-        #quest::ze(15,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have two additional hours.");
 	}
 
     if($signal == 1006) {

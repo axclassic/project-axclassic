@@ -1,20 +1,25 @@
-#An_air_phoneix_noble npcid -223087
+# An_Air_Phoenix_Noble (223087)
 
 sub EVENT_DEATH {
-    my $x = $npc->GetX();
-    my $y = $npc->GetY();
-    my $z = $npc->GetZ();
-    my $h = $npc->GetHeading();
-    quest::signalwith(223187,14058,4000);
-    quest::spawn2(223995,0,0,$x,$y + 5,$z,$h); #a rock shaped assassin
-    quest::spawn2(223995,0,0,$x,$y - 5,$z,$h);
+    my $x1 = $npc->GetX();
+    my $y1 = $npc->GetY();
+    my $z1 = $npc->GetZ();
+    my $h1 = $npc->GetHeading();
+    quest::ze(15, "Congdar An_Air_Phoenix_Noble signaling air_event (223187).");
+    quest::signalwith(223187, 14058, 2000);
+    # Servitor_of_Xegony (223995)
+    quest::ze(15, "Congdar An_Air_Phoenix_Noble spawning 2 Servitor_of_Xegony (223995).");
+    quest::spawn2(223995,0,0,$x1,$y1 + 5,$z1,$h1);
+    quest::spawn2(223995,0,0,$x1,$y1 - 5,$z1,$h1);
     my $rndspawn = int(rand(100));
     if($rndspawn < 50) {
-        quest::spawn2(223995,0,0,$x,$y + 10,$z,$h);
+        quest::ze(15, "Congdar An_Air_Phoenix_Noble spawning BONUS Servitor_of_Xegony (223995).");
+        quest::spawn2(223995,0,0,$x1,$y1 + 10,$z1,$h1);
     }
     $rndspawn = int(rand(100));
     if($rndspawn < 50) {
-        quest::spawn2(223995,0,0,$x,$y - 10,$z,$h);
+        quest::ze(15, "Congdar An_Air_Phoenix_Noble spawning BONUS Servitor_of_Xegony (223995).");
+        quest::spawn2(223995,0,0,$x1,$y1 - 10,$z1,$h1);
     }
 }
 

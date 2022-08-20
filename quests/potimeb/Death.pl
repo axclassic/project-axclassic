@@ -17,7 +17,8 @@ sub EVENT_SAY {
         quest::say("Yes?");
         quest::doanim(5);
     }
-}#END sub EVENT_SAY
+}
+#END sub EVENT_SAY
 
 sub EVENT_WAYPOINT {
     if($wp == 2) {
@@ -61,5 +62,6 @@ sub EVENT_WAYPOINT {
             quest::emote("pats his pockets and says, 'Hmm, now where did I put my keys?'");
 		}
 	}
-}#END sub EVENT_WAYPOINT
+}
+#END sub EVENT_WAYPOINT
 

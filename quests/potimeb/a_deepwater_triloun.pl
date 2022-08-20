@@ -1,10 +1,7 @@
+# a_deepwater_triloun (223115)
 
 sub EVENT_DEATH {
-    quest::signalwith(223189,14038,4000);
+    quest::ze(15, "Congdar signaling the water_event (223189).");
+    quest::signalwith(223189, 14039, 2000);
 }
 
-sub EVENT_SIGNAL {
-    if($signal == 66) {
-        quest::depop();
-    }
-}

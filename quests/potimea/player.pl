@@ -3,82 +3,272 @@
 ##into Plane of Time B
 ##zone: Plane of Time A
 ##alternate method for entry by patrikpatrik
-## 3rd revision 11/19/2016
+## 3rd revision 08/19/2022 - Congdar
 ## Files associated 5#The_*_Construct.pl Udunir_Dagorod
 #####################################
 
 sub EVENT_ENTERZONE {
-	quest::delglobal("portalab");
-	#no warnings 'all' ;
-	#$event1 = 0;
-	#$event2 = 0;
-	#$event3 = 0;
-	#$event4 = 0;
-	#$event5 = 0;
-	$client->Message(15, "Welcome $name! If you're here to access Plane of Time B, the portals 
+	$client->Message(15, "Welcome to Plane of Time $name! If you're here to access The Plane of Time, the portals 
 					 are locked until you kill all 5 bosses guarding the sundial portals. You have 60 minutes 
 					 to kill all 5 and timer starts after the 1st one killed. You must kill each one to gain portal
 					 access and you'll know when all 5 are dead.");
 }
 
-sub EVENT_ZONE {
-    quest::delglobal("portalab");
-}
-
 sub EVENT_CLICKDOOR {
-    #quest::ze(15, "portal says bosscounter is $bosscounter.");
-    if(((defined $qglobals{portalab}) && ($qglobals{portalab} == 5)) && (!defined $qglobals{blockout})) {
+    if(Five_Bosses_Are_Dead()) {
         if($doorid == 8) {
-            quest::setglobal("blockout", "1", 7, "H2");
-            quest::setglobal("blockout2", "1", 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
-            #Once zone in, counter is reset
-            quest::delglobal("portalab");
-            quest::movepc(223, -36, 1352, 496);
+            ##
+            ## Instance Code
+            ##
+            ## Every player or group gets their own private zone.
+            ## It can be re-entered if you die up to 3 hours.
+            ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
+            ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
+            ## 
+            my @clients;
+            my $the_group = $client->GetGroup();
+            my $nMembers = $the_group->GroupCount();
+            for($i=0; $i<$nMembers; $i++) {
+                my $member = $the_group->GetMember($i);
+                if($the_group->IsClient($member)) {
+                    push(@clients, $member);
+                }
+            }
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+            if($QGlobalValue1) {
+                quest::delglobal($name."pobcorpse");
+                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                return;
+            }
+            elsif($QGlobalValue2) {
+                quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                return;
+            }
+            else {
+                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                }
+                else {
+                    quest::AssignToInstance($instance_ID);
+                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                }
+            }
+            ##
+            ## End Instance Code
+            ##
         }
         elsif($doorid == 9) {
-            quest::setglobal("blockout", "1", 7, "H2");
-            quest::setglobal("blockout2", "1", 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
-            #Once zone in, counter is reset
-            quest::delglobal("portalab");
-            quest::movepc(223, -51, 857, 496);
+            ##
+            ## Instance Code
+            ##
+            ## Every player or group gets their own private zone.
+            ## It can be re-entered if you die up to 3 hours.
+            ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
+            ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
+            ## 
+            my @clients;
+            my $the_group = $client->GetGroup();
+            my $nMembers = $the_group->GroupCount();
+            for($i=0; $i<$nMembers; $i++) {
+                my $member = $the_group->GetMember($i);
+                if($the_group->IsClient($member)) {
+                    push(@clients, $member);
+                }
+            }
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+            if($QGlobalValue1) {
+                quest::delglobal($name."pobcorpse");
+                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                return;
+            }
+            elsif($QGlobalValue2) {
+                quest::MoveGroupInstance(223, $QGlobalValue2, -51, 857, 496);
+                return;
+            }
+            else {
+                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                }
+                else {
+                    quest::AssignToInstance($instance_ID);
+                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                }
+            }
+            ##
+            ## End Instance Code
+            ##
         }
         elsif($doorid == 10) {
-            quest::setglobal("blockout", "1", 7, "H2");
-            quest::setglobal("blockout2", "1", 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
-            #Once zone in, counter is reset
-            quest::delglobal("portalab");
-            quest::movepc(223, -35, 1636, 496);
+            ##
+            ## Instance Code
+            ##
+            ## Every player or group gets their own private zone.
+            ## It can be re-entered if you die up to 3 hours.
+            ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
+            ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
+            ## 
+            my @clients;
+            my $the_group = $client->GetGroup();
+            my $nMembers = $the_group->GroupCount();
+            for($i=0; $i<$nMembers; $i++) {
+                my $member = $the_group->GetMember($i);
+                if($the_group->IsClient($member)) {
+                    push(@clients, $member);
+                }
+            }
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+            if($QGlobalValue1) {
+                quest::delglobal($name."pobcorpse");
+                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                return;
+            }
+            elsif($QGlobalValue2) {
+                quest::MoveGroupInstance(223, $QGlobalValue2, -35, 1636, 496);
+                return;
+            }
+            else {
+                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                }
+                else {
+                    quest::AssignToInstance($instance_ID);
+                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                }
+            }
+            ##
+            ## End Instance Code
+            ##
         }
         elsif($doorid == 11) {
-            quest::setglobal("blockout", "1", 7, "H2");
-            quest::setglobal("blockout2", "1", 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
-            #Once zone in, counter is reset
-            quest::delglobal("portalab");
-            quest::movepc(223, -55, 569, 496);
+            ##
+            ## Instance Code
+            ##
+            ## Every player or group gets their own private zone.
+            ## It can be re-entered if you die up to 3 hours.
+            ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
+            ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
+            ## 
+            my @clients;
+            my $the_group = $client->GetGroup();
+            my $nMembers = $the_group->GroupCount();
+            for($i=0; $i<$nMembers; $i++) {
+                my $member = $the_group->GetMember($i);
+                if($the_group->IsClient($member)) {
+                    push(@clients, $member);
+                }
+            }
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+            if($QGlobalValue1) {
+                quest::delglobal($name."pobcorpse");
+                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                return;
+            }
+            elsif($QGlobalValue2) {
+                quest::MoveGroupInstance(223, $QGlobalValue2, -55, 569, 496);
+                return;
+            }
+            else {
+                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                }
+                else {
+                    quest::AssignToInstance($instance_ID);
+                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                }
+            }
+            ##
+            ## End Instance Code
+            ##
         }
         elsif($doorid == 12) {
-            quest::setglobal("blockout", "1", 7, "H2");
-            quest::setglobal("blockout2", "1", 7, "H2");
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
-            #Once zone in, counter is reset
-            quest::delglobal("portalab");
-            quest::movepc(223, -27, 1103, 496);
+            ##
+            ## Instance Code
+            ##
+            ## Every player or group gets their own private zone.
+            ## It can be re-entered if you die up to 3 hours.
+            ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
+            ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
+            ## 
+            my @clients;
+            my $the_group = $client->GetGroup();
+            my $nMembers = $the_group->GroupCount();
+            for($i=0; $i<$nMembers; $i++) {
+                my $member = $the_group->GetMember($i);
+                if($the_group->IsClient($member)) {
+                    push(@clients, $member);
+                }
+            }
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+            if($QGlobalValue1) {
+                quest::delglobal($name."pobcorpse");
+                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                return;
+            }
+            elsif($QGlobalValue2) {
+                quest::MoveGroupInstance(223, $QGlobalValue2, -27, 1103, 496);
+                return;
+            }
+            else {
+                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                }
+                else {
+                    quest::AssignToInstance($instance_ID);
+                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                }
+            }
+            ##
+            ## End Instance Code
+            ##
         }
-    } #Lockout initializes
-    elsif(((defined $qglobals{portalab}) && ($qglobals{portalab} == 5)) && (defined $qglobals{blockout})) {
-        $client->Message(15, "You are flagged for access but there is someone already in Plane of Time B. Wait until he/she leaves and try again later.");
     }
     else {
-        $client->Message(14, "Portal is locked.");
+        $client->Message(14, "The Portal is locked.");
     }
-}#END sub EVENT_CLICKDOOR
+}
+
+sub Five_Bosses_Are_Dead {
+    my $Elemental = $entity_list->GetMobByNpcTypeID(219059);
+    my $Undead = $entity_list->GetMobByNpcTypeID(219060);
+    my $Animated = $entity_list->GetMobByNpcTypeID(219061);
+    my $Golem = $entity_list->GetMobByNpcTypeID(219062);
+    my $Guardian = $entity_list->GetMobByNpcTypeID(219063);
+    if($Elemenal || $Undead || $Animated || $Golem || $Guardian) {
+        quest::ze(15, "A booming echo bellows from across the sky, 'You have more to dispatch to appease the gods...'");
+        return undef;
+    }
+    quest::ze(14, "A booming echo bellows from across the sky, 'Congratulations! You feel an overwhelming urge to pass through the portals. Make haste before it's too late...'");
+    return 1;
+}
+#END sub EVENT_CLICKDOOR
 

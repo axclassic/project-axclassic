@@ -1,5 +1,5 @@
-#an_undead_protector npcid - 223116
+# an_undead_protector (223150)
 
 sub EVENT_DEATH {
-    quest::signalwith(223188,14040,4000);
+    quest::signalwith(223188, 14040, 2000);
 }

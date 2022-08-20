@@ -1,19 +1,24 @@
-##an_undead_guardian npcid - 223105
+# #an_undead_guardian npcid - 223105
 
 sub EVENT_DEATH {
-    my $x = $npc->GetX();
-    my $y = $npc->GetY();
-    my $z = $npc->GetZ();
-    my $h = $npc->GetHeading();
-    quest::signalwith(223188,14048,4000);
-    quest::spawn2(223116,0,0,$x,$y + 5,$z,$h); #an_undead_protector
-    quest::spawn2(223116,0,0,$x,$y - 5,$z,$h);
+    my $x1 = $npc->GetX();
+    my $y1 = $npc->GetY();
+    my $z1 = $npc->GetZ();
+    my $h1 = $npc->GetHeading();
+    quest::ze(15, "Congdar an_undead_guardian signaling undead_event (223188).");
+    quest::signalwith(223188, 14048, 2000);
+    quest::ze(15, "Congdar an_undead_guardian spawning 2 an_undead_guardian.");
+    # an_undead_guardian (223116)
+    quest::spawn2(223116,0,0,$x1,$y1 + 5,$z1,$h1);
+    quest::spawn2(223116,0,0,$x1,$y1 - 5,$z1,$h1);
     my $rndspawn = int(rand(100));
     if($rndspawn < 50) {
-        quest::spawn2(223116,0,0,$x,$y + 10,$z,$h);
+        quest::ze(15, "Congdar an_undead_guardian spawning BONUS an_undead_guardian.");
+        quest::spawn2(223116,0,0,$x1,$y1 + 10,$z1,$h1);
     }
     $rndspawn = int(rand(100));
     if($rndspawn < 50) {
-        quest::spawn2(223116,0,0,$x,$y - 10,$z,$h);
+        quest::ze(15, "Congdar an_undead_guardian spawning BONUS an_undead_guardian.");
+        quest::spawn2(223116,0,0,$x1,$y1 - 10,$z1,$h1);
     }
 }

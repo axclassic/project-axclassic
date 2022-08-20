@@ -1,29 +1,32 @@
 #This is an invisible controller which spawns the flame mephits
-#npcid - 223190
+# #fire_event (223190)
 
-my $fnpccounter = 0;
-my $firec = 0;
+my $phase1_fire_npcevent = 1;
 
 sub EVENT_SPAWN {
-    $fnpccounter = 0;
-    $firec = 0;
-    quest::spawn2(223088,0,0,68,573,504,185.5); #a_flame_mephit
+    $phase1_fire_npcevent = 1;
+    # #a_flame_mephit (223088)
+    quest::spawn2(223088,0,0,68,573,504,185.5);
     quest::spawn2(223088,0,0,68,563,504,185.5);
     quest::spawn2(223088,0,0,68,583,504,185.5);
+    quest::ze(15, "Congdar spawned 3 a_flame_mephit.");
 }  
 
 sub EVENT_SIGNAL {
 	if($signal == 14028) {
-		$fnpccounter = $fnpccounter + 1;
-		$firec = $fnpccounter;
-		#quest::ze(15, "okay i signaled and my counte ris now $firec.");
+        quest::ze(15, "Congdar fire_event signaled phase1_fire_npcevent $phase1_fire_npcevent of 9.");
+		$phase1_fire_npcevent = $phase1_fire_npcevent + 1;
 	}
-	if($fnpccounter >= 3 ) { # was at 9, testing at 2.
-		quest::spawn2(223090,0,0,68,573,504,185.5); #Kazrok_of_Fire
-		$fnpccounter = 0;
+	if($phase1_fire_npcevent >= 10 ) {
+        quest::ze(15, "Congdar phase1_fire_npcevent 9 of 9 so spawn Kazrok_of_Fire (223090).");
+        # Kazrok_of_Fire (223090)
+		quest::spawn2(223090,0,0,68,573,504,185.5);
+		$phase1_fire_npcevent = 1;
 	}
 	if($signal == 14020) {
-		quest::signalwith(223177,14060,4000); #tell main about phase 1 success
+        quest::ze(15, "Congdar Kazrok_of_Fire dead signalling phase_trigger, bye.");
+        #tell main about phase 1 success
+		quest::signalwith(223177, 14060, 2000);
 		quest::depop();
 	}
 }

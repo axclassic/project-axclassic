@@ -4,7 +4,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH {
-    quest::signalwith(223158,13010,4000);
+    quest::signalwith(223158, 13010, 2000);
     quest::say("Noooo. . . fear. . . shall never die. . .");
 }
 
