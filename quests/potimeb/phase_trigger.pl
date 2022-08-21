@@ -21,6 +21,12 @@ sub EVENT_SIGNAL {
 		quest::settimer("opendoors", 5);
         #phase 2 trigger
 		quest::spawn2(223191,0,0,-140,1737,547,0);
+        # Time_Companion
+        quest::spawn2(223228,0,0,74.19,908.29,493.39,172.8);
+        quest::spawn2(223228,0,0,76.59,617.2,495.2,177.8);
+        quest::spawn2(223228,0,0,75.9,1156.4,494.39,160.8);
+        quest::spawn2(223228,0,0,75.4,1404.9,493.7,171.89);
+        quest::spawn2(223228,0,0,74.4,1688.59,493.89,169.89);
 		$Icounter = 1;
 	}
 }
