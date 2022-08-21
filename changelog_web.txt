@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==8/21/2022==
+Patrikpatrik: Fixed hotzones bug.
+
 ==6/29/2022==
 Patrikpatrik: Ladder rankings page modified to keep 65 winners until next reset.
 
