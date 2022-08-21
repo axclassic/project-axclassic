@@ -4,8 +4,23 @@
 ##zone: Plane of Time A
 ##alternate method for entry by patrikpatrik
 ## 3rd revision 08/19/2022 - Congdar
-## Files associated 5#The_*_Construct.pl Udunir_Dagorod
 #####################################
+
+sub EVENT_ZONE {
+    @corpse = $entity_list->GetCorpseList();
+    if(@corpse) {
+        foreach $ent (@corpse) {
+            $corpseName = $ent->GetOwnerName();
+            if($corpseName eq $name) {
+                #randomize corpse loc in graveyard area
+                my $ex = int(rand(140) -70);
+                my $yy = int(rand(50) -25);
+                $ent->GMMove(132+$ex, 1+$yy, 8);
+            }
+        }
+    }
+}
+#END sub EVENT_ZONE
 
 sub EVENT_ENTERZONE {
 	$client->Message(15, "Welcome to Plane of Time $name! If you're here to access The Plane of Time, the portals 

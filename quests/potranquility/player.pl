@@ -22,16 +22,18 @@ sub EVENT_CLICKDOOR {
         ## 
         my @clients;
         my $the_group = $client->GetGroup();
-        my $nMembers = $the_group->GroupCount();
-        for($i=0; $i<$nMembers; $i++) {
-            my $member = $the_group->GetMember($i);
-            if($the_group->IsClient($member)) {
-                push(@clients, $member);
+        if($the_group) {
+            my $nMembers = $the_group->GroupCount();
+            for($i=0; $i<$nMembers; $i++) {
+                my $member = $the_group->GetMember($i);
+                if($the_group->IsClient($member)) {
+                    push(@clients, $member);
+                }
             }
         }
         my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeA");
         if($QGlobalValue2) {
-            quest::MoveGroupInstance(219, $QGlobalValue2, 223, 140, 9.12, 94);
+            quest::MoveGroupInstance(219, $QGlobalValue2, 219, 1, 6, 8);
             return;
         }
         else {
