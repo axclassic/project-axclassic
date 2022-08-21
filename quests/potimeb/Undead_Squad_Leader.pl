@@ -5,7 +5,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH {
-	quest::signalwith(223154,11070,4000);
+	quest::signalwith(223154, 11070, 2000);
 	quest::say("This is not the first time I have been 'killed', and it will certainly not be the last. Be always on your guard, mortals.");
 }
 

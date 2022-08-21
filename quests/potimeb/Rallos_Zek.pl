@@ -49,7 +49,7 @@ sub EVENT_TIMER {
 		if($check == 1) {
 		}
 		if($check == 0) {
-			quest::signalwith(223158,13080,4000);
+			quest::signalwith(223158, 13080, 2000);
 		}
 	}
 } 

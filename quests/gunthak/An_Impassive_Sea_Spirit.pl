@@ -24,8 +24,8 @@ sub EVENT_ITEM{
   }
   elsif($itemcount{59020} == 1) {
     quest::emote("melds with the murky ocean water, and two elements of the sea appear.");
-    quest::spawn2(id,0,0,xxxx,yyyy,zzzz);
-    quest::spawn2(id,0,0,xxxx,yyyy,zzzz);
+    quest::spawn2(id,0,0,$x,$y,$z);
+    quest::spawn2(id,0,0,$x,$y,$z);
   }
   elsif($itemcount{58014} == 1 && $itemcount{58015} == 1) {
     quest::say("Now you comprehend. This is the way things are, and the way they have always been. Your acceptance of these truths proves your worthiness.");

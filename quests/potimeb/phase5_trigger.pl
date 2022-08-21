@@ -1,15 +1,14 @@
 #phase5_trigger.pl npcid - 223158
 
-my $godcounterII = 0;
-my $lastcounter = 0;
-my $lastlast = 0;
+my $god_counterII = 1;
+my $last_counter = 1;
 
 sub EVENT_SPAWN {
-    $godcounterII = 0;
-    $lastcounter = 0;
-    $lastlast = 0;
+    $god_counterII = 1;
+    $lastcounter = 1;
+    $last_last = 1;
     #flavor
-    quest::signalwith(223111,1004,4000);
+    quest::signalwith(223111, 1004, 2000);
     #Fake Bertoxxulous
     quest::spawn2(223098,0,0,-299,-297,23.3,31);
     #Fake Cazic
@@ -82,12 +81,10 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
     if($signal == 1234) {
         #sets counter before last 4 gods up
-        $lastcounter = $lastcounter + 1;
-        $lastlast = $lastcounter;
-        #quest::ze(15, "okay i signaled last counter it is $lastlast.");
+        $last_counter = $last_counter + 1;
     }
 
-    if($lastcounter >= 49) {
+    if($lastcounter >= 50) {
         $lastcounter = 0;
         quest::depopall(223098);
         quest::depopall(223165);
@@ -104,17 +101,16 @@ sub EVENT_SIGNAL {
     }
 
     if($signal == 13010) {
-        $godcounterII = $godcounterII + 1;
+        $god_counterII = $god_counterII + 1;
     }
 
-    if($godcounterII >= 4) {
+    if($god_counterII >= 5) {
         #event success
         $npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
-        ##quest::we is bugged
-        ##quest::we(14, "Congratulations to $name with the completion of phase 4. The 5th and final phase is in the next room through the fountain.");
         #sets flag forfinal phase to Quarm
         quest::setglobal("portal5","1",7,"H1");
-        $godcounterII = 0;
+        $god_counterII = 1;
+        quest::depop();
     }
 }
 

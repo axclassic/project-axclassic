@@ -8,14 +8,13 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH {
-	quest::signalwith(223157,12010,4000);
+	quest::signalwith(223157, 12010, 2000);
 	quest::say("Foolish mortals, you know not what you do. Continue on this path and you shall lead us all to destruction!");
 	quest::stoptimer("tzek");
 }
 
 sub EVENT_TIMER {
 	my $x = $npc->GetX();
-	my $y = $npc->GetY();
 	if($timer eq "tzek") {
 		if($x < 260) {
 			$npc->GMMove(405,-84,358,192);

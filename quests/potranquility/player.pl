@@ -19,7 +19,20 @@ sub EVENT_CLICKDOOR {
         ## It can be re-entered if you die up to 3 hours.
         ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
         ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
-        ## 
+        ##
+        my $PoTimeA_Instance_Counter = 0;
+        if(defined $qglobals{pop_potimea_instances}) {
+            $PoTimeA_Instance_Counter = $qglobals{pop_potimea_instances};
+        }
+        else {
+            $PoTimeA_Instance_Counter = 1;
+        }
+        if($PoTimeA_Instance_Counter >= 5) {
+            $client->Message(14, "There are no available instances for Plane of Time.");
+            return;
+        }
+        $PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter + 1;
+        quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H20");
         my @clients;
         my $the_group = $client->GetGroup();
         if($the_group) {
@@ -33,11 +46,12 @@ sub EVENT_CLICKDOOR {
         }
         my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeA");
         if($QGlobalValue2) {
-            quest::MoveGroupInstance(219, $QGlobalValue2, 219, 1, 6, 8);
+            quest::MoveGroupInstance(219, $QGlobalValue2, 1, 6, 8);
             return;
         }
         else {
-            my $instance_ID = quest::CreateInstance('potimeA', 2, 25200);
+            my $instance_ID = quest::CreateInstance('potimeA', $PoTimeA_Instance_Counter, 25200);
+            $PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter + 1;
             my $arraySize = @clients;
             if($arraySize > 1) {
                 quest::AssignGroupToInstance($instance_ID);

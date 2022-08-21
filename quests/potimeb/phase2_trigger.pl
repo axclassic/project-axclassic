@@ -54,7 +54,7 @@ sub EVENT_SIGNAL {
     }
 
     if($IIcounter >= 6) {
-        quest::ze(15, "Congdar Phase2 count is 5 of 5, shake the world, open doors, spawn phase3_trigger (223154).");
+        quest::ze(15, "Congdar Phase2 count is 5 of 5, shake the world, open doors, spawn phase3_trigger.");
         #Inner doors open!
         #Worlwide camera shake
         $npc->CameraEffect(3000, 6, 0, 1);

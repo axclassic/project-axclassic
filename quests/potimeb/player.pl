@@ -6,11 +6,7 @@ sub EVENT_ZONE {
         foreach $ent (@corpse) {
             $corpseName = $ent->GetOwnerName();
             if($corpseName eq $name) {
-                quest::setglobal($name."pobcorpse", "1", 7, "D7");
-                #randomize corpse loc in graveyard area
-                my $ex = int(rand(140) -70);
-                my $yy = int(rand(50) -25);
-                $ent->GMMove(850+$ex, -140+$yy, 400);
+                quest::setglobal($name."potimeb_corpse", "1", 7, "D7");
             }
         }
     }

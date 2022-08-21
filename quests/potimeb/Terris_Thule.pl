@@ -46,7 +46,7 @@ sub EVENT_HP {
 }
 
 sub EVENT_DEATH {
-    quest::signalwith(223157,12013,4000);
+    quest::signalwith(223157, 12013, 2000);
     quest::say("My armies have failed. . . how could this have happened?");
     quest::stoptimer("terris");
 }

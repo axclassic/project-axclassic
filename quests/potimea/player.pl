@@ -6,20 +6,20 @@
 ## 3rd revision 08/19/2022 - Congdar
 #####################################
 
-sub EVENT_ZONE {
-    @corpse = $entity_list->GetCorpseList();
-    if(@corpse) {
-        foreach $ent (@corpse) {
-            $corpseName = $ent->GetOwnerName();
-            if($corpseName eq $name) {
-                #randomize corpse loc in graveyard area
-                my $ex = int(rand(140) -70);
-                my $yy = int(rand(50) -25);
-                $ent->GMMove(132+$ex, 1+$yy, 8);
-            }
-        }
-    }
-}
+#sub EVENT_ZONE {
+#    @corpse = $entity_list->GetCorpseList();
+#    if(@corpse) {
+#        foreach $ent (@corpse) {
+#            $corpseName = $ent->GetOwnerName();
+#            if($corpseName eq $name) {
+#                #randomize corpse loc in graveyard area
+#                my $ex = int(rand(140) -70);
+#                my $yy = int(rand(50) -25);
+#                $ent->GMMove(132+$ex, 1+$yy, 8);
+#            }
+#        }
+#    }
+#}
 #END sub EVENT_ZONE
 
 sub EVENT_ENTERZONE {
@@ -30,6 +30,9 @@ sub EVENT_ENTERZONE {
 }
 
 sub EVENT_CLICKDOOR {
+    my $d_id = ($doorid % 256);
+    $client->Message(14, "Door Clicked doorid = $doorid");
+    $client->Message(14, "Door Clicked d_id = $d_id");
     if(Five_Bosses_Are_Dead()) {
         if($doorid == 8) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
@@ -42,6 +45,19 @@ sub EVENT_CLICKDOOR {
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
             ## 
+            my $PoTimeB_Instance_Counter = 0;
+            if(defined $qglobals{pop_potimeb_instances}) {
+                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
+            }
+            else {
+                $PoTimeB_Instance_Counter = 1;
+            }
+            if($PoTimeB_Instance_Counter >= 5) {
+                $client->Message(14, "There are no available instances for Plane of Time.");
+                return;
+            }
+            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
             my $nMembers = $the_group->GroupCount();
@@ -51,10 +67,10 @@ sub EVENT_CLICKDOOR {
                     push(@clients, $member);
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
             if($QGlobalValue1) {
-                quest::delglobal($name."pobcorpse");
+                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
                 quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
                 return;
             }
@@ -89,6 +105,19 @@ sub EVENT_CLICKDOOR {
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
             ## 
+            my $PoTimeB_Instance_Counter = 0;
+            if(defined $qglobals{pop_potimeb_instances}) {
+                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
+            }
+            else {
+                $PoTimeB_Instance_Counter = 1;
+            }
+            if($PoTimeB_Instance_Counter >= 5) {
+                $client->Message(14, "There are no available instances for Plane of Time.");
+                return;
+            }
+            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
             my $nMembers = $the_group->GroupCount();
@@ -98,10 +127,10 @@ sub EVENT_CLICKDOOR {
                     push(@clients, $member);
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
             if($QGlobalValue1) {
-                quest::delglobal($name."pobcorpse");
+                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
                 quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
                 return;
             }
@@ -136,6 +165,19 @@ sub EVENT_CLICKDOOR {
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
             ## 
+            my $PoTimeB_Instance_Counter = 0;
+            if(defined $qglobals{pop_potimeb_instances}) {
+                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
+            }
+            else {
+                $PoTimeB_Instance_Counter = 1;
+            }
+            if($PoTimeB_Instance_Counter >= 5) {
+                $client->Message(14, "There are no available instances for Plane of Time.");
+                return;
+            }
+            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
             my $nMembers = $the_group->GroupCount();
@@ -145,10 +187,10 @@ sub EVENT_CLICKDOOR {
                     push(@clients, $member);
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
             if($QGlobalValue1) {
-                quest::delglobal($name."pobcorpse");
+                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
                 quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
                 return;
             }
@@ -183,6 +225,19 @@ sub EVENT_CLICKDOOR {
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
             ## 
+            my $PoTimeB_Instance_Counter = 0;
+            if(defined $qglobals{pop_potimeb_instances}) {
+                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
+            }
+            else {
+                $PoTimeB_Instance_Counter = 1;
+            }
+            if($PoTimeB_Instance_Counter >= 5) {
+                $client->Message(14, "There are no available instances for Plane of Time.");
+                return;
+            }
+            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
             my $nMembers = $the_group->GroupCount();
@@ -192,10 +247,10 @@ sub EVENT_CLICKDOOR {
                     push(@clients, $member);
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
             if($QGlobalValue1) {
-                quest::delglobal($name."pobcorpse");
+                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
                 quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
                 return;
             }
@@ -230,6 +285,19 @@ sub EVENT_CLICKDOOR {
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
             ## 
+            my $PoTimeB_Instance_Counter = 0;
+            if(defined $qglobals{pop_potimeb_instances}) {
+                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
+            }
+            else {
+                $PoTimeB_Instance_Counter = 1;
+            }
+            if($PoTimeB_Instance_Counter >= 5) {
+                $client->Message(14, "There are no available instances for Plane of Time.");
+                return;
+            }
+            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
             my $nMembers = $the_group->GroupCount();
@@ -239,10 +307,10 @@ sub EVENT_CLICKDOOR {
                     push(@clients, $member);
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."pobcorpse");
+            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
             if($QGlobalValue1) {
-                quest::delglobal($name."pobcorpse");
+                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
                 quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
                 return;
             }
