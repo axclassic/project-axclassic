@@ -1,3 +1,5 @@
+# #Navigator_trigger (228108)
+
 sub EVENT_SPAWN {
     my $x1 = $npc->GetX();
     my $y1 = $npc->GetY();
@@ -5,6 +7,8 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-    quest::spawn2(228107,0,0,0,0,0,0); # NPC: #Navigator_counter
+    # NPC: #Navigator_counter
+    quest::spawn2(228107,0,0,0,0,0,0);
     quest::depop();
 }
+

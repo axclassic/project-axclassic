@@ -31,7 +31,7 @@ sub EVENT_CLICKDOOR {
                 $PoTimeA_Instance_Counter = 1;
             }
             if($PoTimeA_Instance_Counter >= 5) {
-                $client->Message(14, "There are no available instances for Plane of Time.");
+                $client->Message(14, "There are no available instances for The Plane of Time.");
                 return;
             }
             $PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter + 1;

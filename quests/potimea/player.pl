@@ -34,7 +34,7 @@ sub EVENT_CLICKDOOR {
     $client->Message(14, "Door Clicked doorid = $doorid");
     $client->Message(14, "Door Clicked d_id = $d_id");
     if(Five_Bosses_Are_Dead()) {
-        if($doorid == 8) {
+        if(($doorid == 8) || ($d_id == 8)) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             ##
@@ -60,11 +60,13 @@ sub EVENT_CLICKDOOR {
             quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
-            my $nMembers = $the_group->GroupCount();
-            for($i=0; $i<$nMembers; $i++) {
-                my $member = $the_group->GetMember($i);
-                if($the_group->IsClient($member)) {
-                    push(@clients, $member);
+            if($the_group) {
+                my $nMembers = $the_group->GroupCount();
+                for($i=0; $i<$nMembers; $i++) {
+                    my $member = $the_group->GetMember($i);
+                    if($the_group->IsClient($member)) {
+                        push(@clients, $member);
+                    }
                 }
             }
             my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
@@ -94,7 +96,7 @@ sub EVENT_CLICKDOOR {
             ## End Instance Code
             ##
         }
-        elsif($doorid == 9) {
+        elsif(($doorid == 9) || ($d_id == 9)) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             ##
@@ -120,11 +122,13 @@ sub EVENT_CLICKDOOR {
             quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
-            my $nMembers = $the_group->GroupCount();
-            for($i=0; $i<$nMembers; $i++) {
-                my $member = $the_group->GetMember($i);
-                if($the_group->IsClient($member)) {
-                    push(@clients, $member);
+            if($the_group) {
+                my $nMembers = $the_group->GroupCount();
+                for($i=0; $i<$nMembers; $i++) {
+                    my $member = $the_group->GetMember($i);
+                    if($the_group->IsClient($member)) {
+                        push(@clients, $member);
+                    }
                 }
             }
             my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
@@ -154,7 +158,7 @@ sub EVENT_CLICKDOOR {
             ## End Instance Code
             ##
         }
-        elsif($doorid == 10) {
+        elsif(($doorid == 10) || ($d_id == 10)) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             ##
@@ -180,11 +184,13 @@ sub EVENT_CLICKDOOR {
             quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
-            my $nMembers = $the_group->GroupCount();
-            for($i=0; $i<$nMembers; $i++) {
-                my $member = $the_group->GetMember($i);
-                if($the_group->IsClient($member)) {
-                    push(@clients, $member);
+            if($the_group) {
+                my $nMembers = $the_group->GroupCount();
+                for($i=0; $i<$nMembers; $i++) {
+                    my $member = $the_group->GetMember($i);
+                    if($the_group->IsClient($member)) {
+                        push(@clients, $member);
+                    }
                 }
             }
             my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
@@ -214,7 +220,7 @@ sub EVENT_CLICKDOOR {
             ## End Instance Code
             ##
         }
-        elsif($doorid == 11) {
+        elsif(($doorid == 11) || ($d_id == 11)) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             ##
@@ -240,11 +246,13 @@ sub EVENT_CLICKDOOR {
             quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
-            my $nMembers = $the_group->GroupCount();
-            for($i=0; $i<$nMembers; $i++) {
-                my $member = $the_group->GetMember($i);
-                if($the_group->IsClient($member)) {
-                    push(@clients, $member);
+            if($the_group) {
+                my $nMembers = $the_group->GroupCount();
+                for($i=0; $i<$nMembers; $i++) {
+                    my $member = $the_group->GetMember($i);
+                    if($the_group->IsClient($member)) {
+                        push(@clients, $member);
+                    }
                 }
             }
             my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
@@ -274,7 +282,7 @@ sub EVENT_CLICKDOOR {
             ## End Instance Code
             ##
         }
-        elsif($doorid == 12) {
+        elsif(($doorid == 12) || ($d_id == 12)) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
             ##
@@ -300,11 +308,13 @@ sub EVENT_CLICKDOOR {
             quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
             my @clients;
             my $the_group = $client->GetGroup();
-            my $nMembers = $the_group->GroupCount();
-            for($i=0; $i<$nMembers; $i++) {
-                my $member = $the_group->GetMember($i);
-                if($the_group->IsClient($member)) {
-                    push(@clients, $member);
+            if($the_group) {
+                my $nMembers = $the_group->GroupCount();
+                for($i=0; $i<$nMembers; $i++) {
+                    my $member = $the_group->GetMember($i);
+                    if($the_group->IsClient($member)) {
+                        push(@clients, $member);
+                    }
                 }
             }
             my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
