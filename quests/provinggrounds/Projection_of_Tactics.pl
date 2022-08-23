@@ -21,7 +21,7 @@ sub EVENT_SAY {
     elsif($text=~/subversion/i) {
         quest::say("The group trials are not yet available. Send all complaints to The Rathe Management.");
         return;
-        my $flagged = 1;
+        my $flagged = 2;
         my @groupclients;
         if($client->IsGrouped()) {
             my $the_group = $client->GetGroup();
@@ -32,13 +32,14 @@ sub EVENT_SAY {
                     my $ClientName = $member->GetCleanName();
                     my $QuestGlobalValue = $member->GetQGlobal("mpg_group_subversion_lockout");
                     if($QuestGlobalValue) {
-                        $flagged = 0;
+                        $flagged = 1;
                         my $qgduration = $member->GetQGlobalDuration("mpg_group_subversion_lockout");
                         my $timeleft = plugin::GetTimeLeft($qgduration, "DHM");
                         $member->Message(15, "$name is locked out of the Subversion trial for $timeleft.");
                     }
-                    if($flagged == 1) {
+                    if($flagged == 2) {
                         push(@groupclients, $member);
+                        $flagged = 3;
                     }
                 }
             }
@@ -46,13 +47,13 @@ sub EVENT_SAY {
         else {
             my $QuestGlobalValue = $client->GetQGlobal("mpg_group_subversion_lockout");
             if($QuestGlobalValue) {
-                $flagged = 0;
+                $flagged = 1;
                 my $qgduration = $client->GetQGlobalDuration("mpg_group_subversion_lockout");
                 my $timeleft = plugin::GetTimeLeft($qgduration, "DHM");
                 $client->Message(15, "$name is locked out of the Subversion trial for $timeleft.");
             }
         }
-        if($flagged == 1) {
+        if($flagged == 3) {
             my $QGlobalValue1 = $client->GetQGlobal(${name}."chambersc1");
             if($QGlobalValue1) {
                 $client->Message(15, "You are already assigned to this trial.");
@@ -72,7 +73,7 @@ sub EVENT_SAY {
         }
     }
     elsif($text=~/foresight/i) {
-        my $flagged = 1;
+        my $flagged = 2;
         my @clients;
         if($client->IsGrouped()) {
             my $the_group = $client->GetGroup();
@@ -83,13 +84,14 @@ sub EVENT_SAY {
                     my $ClientName = $member->GetCleanName();
                     my $QuestGlobalValue = $member->GetQGlobal("mpg_raid_foresight_lockout");
                     if($QuestGlobalValue) {
-                        $flagged = 0;
+                        $flagged = 1;
                         my $qgduration = $member->GetQGlobalDuration("mpg_raid_foresight_lockout");
                         my $timeleft = plugin::GetTimeLeft($qgduration, "DHM");
                         $member->Message(15, "$name is currently locked out of the Foresight trial for $timeleft.");
                     }
-                    if($flagged == 1) {
+                    if($flagged == 2) {
                         push(@clients, $member);
+                        $flagged = 3;
                     }
                 }
             }
@@ -97,13 +99,13 @@ sub EVENT_SAY {
         else {
             my $QuestGlobalValue = $client->GetQGlobal("mpg_raid_foresight_lockout");
             if($QuestGlobalValue) {
-                $flagged = 0;
+                $flagged = 1;
                 my $qgduration = $client->GetQGlobalDuration("mpg_raid_foresight_lockout");
                 my $timeleft = plugin::GetTimeLeft($qgduration, "DHM");
                 $client->Message(15, "$name is currently locked out of the Foresight trial for $timeleft.");
             }
         }
-        if($flagged == 1) {
+        if($flagged == 3) {
             my $QGlobalValue2 = $client->GetQGlobal(${name}."chambersc2");
             if($QGlobalValue2) {
                 $client->Message(15, "You are already assigned to this trial.");
