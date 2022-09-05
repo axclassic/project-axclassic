@@ -6,20 +6,20 @@
 ## 3rd revision 08/19/2022 - Congdar
 #####################################
 
-#sub EVENT_ZONE {
-#    @corpse = $entity_list->GetCorpseList();
-#    if(@corpse) {
-#        foreach $ent (@corpse) {
-#            $corpseName = $ent->GetOwnerName();
-#            if($corpseName eq $name) {
-#                #randomize corpse loc in graveyard area
-#                my $ex = int(rand(140) -70);
-#                my $yy = int(rand(50) -25);
-#                $ent->GMMove(132+$ex, 1+$yy, 8);
-#            }
-#        }
-#    }
-#}
+sub EVENT_ZONE {
+    @corpse = $entity_list->GetCorpseList();
+    if(@corpse) {
+        foreach $ent (@corpse) {
+            $corpseName = $ent->GetOwnerName();
+            if($corpseName eq $name) {
+                #randomize corpse loc in graveyard area
+                my $ex = int(rand(40));
+                my $yy = int(rand(45));
+                $ent->GMMove((-0.2)+$ex, 145.6+$yy, 10.9);
+            }
+        }
+    }
+}
 #END sub EVENT_ZONE
 
 sub EVENT_ENTERZONE {
@@ -34,9 +34,14 @@ sub EVENT_CLICKDOOR {
     $client->Message(14, "Door Clicked doorid = $doorid");
     $client->Message(14, "Door Clicked d_id = $d_id");
     if(Five_Bosses_Are_Dead()) {
-        if(($doorid == 8) || ($d_id == 8)) {
+        if((($doorid == 64) || ($d_id == 64)) ||
+            (($doorid == 44) || ($d_id == 44)) ||
+            (($doorid == 49) || ($d_id == 49)) ||
+            (($doorid == 54) || ($d_id == 54)) ||
+            (($doorid == 59) || ($d_id == 59))) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
+
             ##
             ## Instance Code
             ##
@@ -44,20 +49,7 @@ sub EVENT_CLICKDOOR {
             ## It can be re-entered if you die up to 3 hours.
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
-            ## 
-            my $PoTimeB_Instance_Counter = 0;
-            if(defined $qglobals{pop_potimeb_instances}) {
-                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
-            }
-            else {
-                $PoTimeB_Instance_Counter = 1;
-            }
-            if($PoTimeB_Instance_Counter >= 5) {
-                $client->Message(14, "There are no available instances for Plane of Time.");
-                return;
-            }
-            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
+            ##
             my @clients;
             my $the_group = $client->GetGroup();
             if($the_group) {
@@ -69,36 +61,80 @@ sub EVENT_CLICKDOOR {
                     }
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
-            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+
+            my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
+            my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
+            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
-                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
-                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                if($client->GetGroup()) {
+                    quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
+                else {
+                    quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
                 return;
             }
             elsif($QGlobalValue2) {
-                quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                if($client->GetGroup()) {
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
+                else {
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
                 return;
             }
             else {
-                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
-                my $arraySize = @clients;
-                if($arraySize > 1) {
-                    quest::AssignGroupToInstance($instance_ID);
-                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                my $PoTimeB_Instance_Counter = 0;
+                if(defined $qglobals{pop_potimeb_instances}) {
+                    quest::ze(15, "pop_potimeb_instances = $qglobals{pop_potimeb_instances}");
+                    $PoTimeB_Instance_Counter = $qglobals{pop_potimeb_instances};
+                    if($PoTimeB_Instance_Counter >= 5) {
+                        $client->Message(14, "There are no available instances for The Plane of Time.");
+                        return;
+                    }
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
+                    $PoTimeB_Instance_Counter = 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                }
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal(".potimeB", $instance_ID, 7, "H7");
+                    quest::MoveGroupInstance(223, $instance_ID, -36, 1352, 496);
+                }
+                else {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
                     quest::AssignToInstance($instance_ID);
-                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                    quest::setglobal($name.".potimeB", $instance_ID, 7, "H7");
+                    quest::MovePCInstance(223, $instance_ID, -36, 1352, 496);
                 }
             }
             ##
             ## End Instance Code
             ##
         }
-        elsif(($doorid == 9) || ($d_id == 9)) {
+        elsif((($doorid == 65) || ($d_id == 65)) ||
+              (($doorid == 45) || ($d_id == 45)) ||
+              (($doorid == 50) || ($d_id == 50)) ||
+              (($doorid == 55) || ($d_id == 55)) ||
+              (($doorid == 60) || ($d_id == 60))) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
+
             ##
             ## Instance Code
             ##
@@ -106,20 +142,7 @@ sub EVENT_CLICKDOOR {
             ## It can be re-entered if you die up to 3 hours.
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
-            ## 
-            my $PoTimeB_Instance_Counter = 0;
-            if(defined $qglobals{pop_potimeb_instances}) {
-                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
-            }
-            else {
-                $PoTimeB_Instance_Counter = 1;
-            }
-            if($PoTimeB_Instance_Counter >= 5) {
-                $client->Message(14, "There are no available instances for Plane of Time.");
-                return;
-            }
-            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
+            ##
             my @clients;
             my $the_group = $client->GetGroup();
             if($the_group) {
@@ -131,36 +154,80 @@ sub EVENT_CLICKDOOR {
                     }
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
-            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+
+            my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
+            my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
+            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
-                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
-                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                if($client->GetGroup()) {
+                    quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
+                else {
+                    quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
                 return;
             }
             elsif($QGlobalValue2) {
-                quest::MoveGroupInstance(223, $QGlobalValue2, -51, 857, 496);
+                if($client->GetGroup()) {
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
+                else {
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
                 return;
             }
             else {
-                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
-                my $arraySize = @clients;
-                if($arraySize > 1) {
-                    quest::AssignGroupToInstance($instance_ID);
-                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                my $PoTimeB_Instance_Counter = 0;
+                if(defined $qglobals{pop_potimeb_instances}) {
+                    quest::ze(15, "pop_potimeb_instances = $qglobals{pop_potimeb_instances}");
+                    $PoTimeB_Instance_Counter = $qglobals{pop_potimeb_instances};
+                    if($PoTimeB_Instance_Counter >= 5) {
+                        $client->Message(14, "There are no available instances for The Plane of Time.");
+                        return;
+                    }
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
+                    $PoTimeB_Instance_Counter = 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                }
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal(".potimeB", $instance_ID, 7, "H7");
+                    quest::MoveGroupInstance(223, $instance_ID, -51, 857, 496);
+                }
+                else {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
                     quest::AssignToInstance($instance_ID);
-                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                    quest::setglobal($name.".potimeB", $instance_ID, 7, "H7");
+                    quest::MovePCInstance(223, $instance_ID, -51, 857, 496);
                 }
             }
             ##
             ## End Instance Code
             ##
         }
-        elsif(($doorid == 10) || ($d_id == 10)) {
+        elsif((($doorid == 66) || ($d_id == 66)) ||
+              (($doorid == 46) || ($d_id == 46)) ||
+              (($doorid == 51) || ($d_id == 51)) ||
+              (($doorid == 56) || ($d_id == 56)) ||
+              (($doorid == 61) || ($d_id == 61))) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
+
             ##
             ## Instance Code
             ##
@@ -168,20 +235,7 @@ sub EVENT_CLICKDOOR {
             ## It can be re-entered if you die up to 3 hours.
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
-            ## 
-            my $PoTimeB_Instance_Counter = 0;
-            if(defined $qglobals{pop_potimeb_instances}) {
-                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
-            }
-            else {
-                $PoTimeB_Instance_Counter = 1;
-            }
-            if($PoTimeB_Instance_Counter >= 5) {
-                $client->Message(14, "There are no available instances for Plane of Time.");
-                return;
-            }
-            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
+            ##
             my @clients;
             my $the_group = $client->GetGroup();
             if($the_group) {
@@ -193,36 +247,80 @@ sub EVENT_CLICKDOOR {
                     }
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
-            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+
+            my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
+            my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
+            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
-                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
-                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                if($client->GetGroup()) {
+                    quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
+                else {
+                    quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
                 return;
             }
             elsif($QGlobalValue2) {
-                quest::MoveGroupInstance(223, $QGlobalValue2, -35, 1636, 496);
+                if($client->GetGroup()) {
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
+                else {
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
                 return;
             }
             else {
-                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
-                my $arraySize = @clients;
-                if($arraySize > 1) {
-                    quest::AssignGroupToInstance($instance_ID);
-                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                my $PoTimeB_Instance_Counter = 0;
+                if(defined $qglobals{pop_potimeb_instances}) {
+                    quest::ze(15, "pop_potimeb_instances = $qglobals{pop_potimeb_instances}");
+                    $PoTimeB_Instance_Counter = $qglobals{pop_potimeb_instances};
+                    if($PoTimeB_Instance_Counter >= 5) {
+                        $client->Message(14, "There are no available instances for The Plane of Time.");
+                        return;
+                    }
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
+                    $PoTimeB_Instance_Counter = 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                }
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal(".potimeB", $instance_ID, 7, "H7");
+                    quest::MoveGroupInstance(223, $instance_ID, -35, 1636, 496);
+                }
+                else {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
                     quest::AssignToInstance($instance_ID);
-                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                    quest::setglobal($name.".potimeB", $instance_ID, 7, "H7");
+                    quest::MovePCInstance(223, $instance_ID, -35, 1636, 496);
                 }
             }
             ##
             ## End Instance Code
             ##
         }
-        elsif(($doorid == 11) || ($d_id == 11)) {
+        elsif((($doorid == 67) || ($d_id == 67)) ||
+              (($doorid == 47) || ($d_id == 47)) ||
+              (($doorid == 52) || ($d_id == 52)) ||
+              (($doorid == 57) || ($d_id == 57)) ||
+              (($doorid == 62) || ($d_id == 62))) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
+
             ##
             ## Instance Code
             ##
@@ -230,20 +328,7 @@ sub EVENT_CLICKDOOR {
             ## It can be re-entered if you die up to 3 hours.
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
-            ## 
-            my $PoTimeB_Instance_Counter = 0;
-            if(defined $qglobals{pop_potimeb_instances}) {
-                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
-            }
-            else {
-                $PoTimeB_Instance_Counter = 1;
-            }
-            if($PoTimeB_Instance_Counter >= 5) {
-                $client->Message(14, "There are no available instances for Plane of Time.");
-                return;
-            }
-            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
+            ##
             my @clients;
             my $the_group = $client->GetGroup();
             if($the_group) {
@@ -255,36 +340,80 @@ sub EVENT_CLICKDOOR {
                     }
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
-            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+
+            my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
+            my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
+            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
-                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
-                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                if($client->GetGroup()) {
+                    quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
+                else {
+                    quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
                 return;
             }
             elsif($QGlobalValue2) {
-                quest::MoveGroupInstance(223, $QGlobalValue2, -55, 569, 496);
+                if($client->GetGroup()) {
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
+                else {
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
                 return;
             }
             else {
-                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
-                my $arraySize = @clients;
-                if($arraySize > 1) {
-                    quest::AssignGroupToInstance($instance_ID);
-                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                my $PoTimeB_Instance_Counter = 0;
+                if(defined $qglobals{pop_potimeb_instances}) {
+                    quest::ze(15, "pop_potimeb_instances = $qglobals{pop_potimeb_instances}");
+                    $PoTimeB_Instance_Counter = $qglobals{pop_potimeb_instances};
+                    if($PoTimeB_Instance_Counter >= 5) {
+                        $client->Message(14, "There are no available instances for The Plane of Time.");
+                        return;
+                    }
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
+                    $PoTimeB_Instance_Counter = 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                }
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal(".potimeB", $instance_ID, 7, "H7");
+                    quest::MoveGroupInstance(223, $instance_ID, -55, 569, 496);
+                }
+                else {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
                     quest::AssignToInstance($instance_ID);
-                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                    quest::setglobal($name.".potimeB", $instance_ID, 7, "H7");
+                    quest::MovePCInstance(223, $instance_ID, -55, 569, 496);
                 }
             }
             ##
             ## End Instance Code
             ##
         }
-        elsif(($doorid == 12) || ($d_id == 12)) {
+        elsif((($doorid == 68) || ($d_id == 68)) ||
+              (($doorid == 48) || ($d_id == 48)) ||
+              (($doorid == 53) || ($d_id == 53)) ||
+              (($doorid == 58) || ($d_id == 58)) ||
+              (($doorid == 63) || ($d_id == 63))) {
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
+
             ##
             ## Instance Code
             ##
@@ -292,20 +421,7 @@ sub EVENT_CLICKDOOR {
             ## It can be re-entered if you die up to 3 hours.
             ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
             ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
-            ## 
-            my $PoTimeB_Instance_Counter = 0;
-            if(defined $qglobals{pop_potimeb_instances}) {
-                $PoTimeb_Instance_Counter = $qglobals{pop_potimeb_instances};
-            }
-            else {
-                $PoTimeB_Instance_Counter = 1;
-            }
-            if($PoTimeB_Instance_Counter >= 5) {
-                $client->Message(14, "There are no available instances for Plane of Time.");
-                return;
-            }
-            $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-            quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H20");
+            ##
             my @clients;
             my $the_group = $client->GetGroup();
             if($the_group) {
@@ -317,27 +433,66 @@ sub EVENT_CLICKDOOR {
                     }
                 }
             }
-            my $QGlobalValue1 = $client->GetQGlobal(${name}."potimeb_corpse");
-            my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeB");
+
+            my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
+            my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
+            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
-                quest::setgroupglobal($name."potimeb_corpse", $instance_ID, 7, "M1");
-                quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                if($client->GetGroup()) {
+                    quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
+                else {
+                    quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                }
                 return;
             }
             elsif($QGlobalValue2) {
-                quest::MoveGroupInstance(223, $QGlobalValue2, -27, 1103, 496);
+                if($client->GetGroup()) {
+                    quest::AssignGroupToInstance($QGlobalValue2);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
+                else {
+                    quest::AssignToInstance($QGlobalValue2);
+                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                }
                 return;
             }
             else {
-                my $instance_ID = quest::CreateInstance('potimeB', 2, 10800);
-                my $arraySize = @clients;
-                if($arraySize > 1) {
-                    quest::AssignGroupToInstance($instance_ID);
-                    quest::setgroupglobal("potimeB", $instance_ID, 7, "H3");
+                my $PoTimeB_Instance_Counter = 0;
+                if(defined $qglobals{pop_potimeb_instances}) {
+                    quest::ze(15, "pop_potimeb_instances = $qglobals{pop_potimeb_instances}");
+                    $PoTimeB_Instance_Counter = $qglobals{pop_potimeb_instances};
+                    if($PoTimeB_Instance_Counter >= 5) {
+                        $client->Message(14, "There are no available instances for The Plane of Time.");
+                        return;
+                    }
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
+                    $PoTimeB_Instance_Counter = 1;
+                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                }
+                my $arraySize = @clients;
+                if($arraySize > 1) {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
+                    quest::AssignGroupToInstance($instance_ID);
+                    quest::setgroupglobal(".potimeB", $instance_ID, 7, "H7");
+                    quest::MoveGroupInstance(223, $instance_ID, -27, 1103, 496);
+                }
+                else {
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
+                    quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H8");
                     quest::AssignToInstance($instance_ID);
-                    quest::setglobal(${name}."potimeB", $instance_ID, 7, "H3");
+                    quest::setglobal($name.".potimeB", $instance_ID, 7, "H7");
+                    quest::MovePCInstance(223, $instance_ID, -27, 1103, 496);
                 }
             }
             ##
@@ -348,8 +503,16 @@ sub EVENT_CLICKDOOR {
     else {
         $client->Message(14, "The Portal is locked.");
     }
+    $qglobals{pop_potimea_instances}=undef;
+    $qglobals{pop_potimeb_instances}=undef;
+    $PoTimeA_Instance_Counter=undef;
+    $PoTimeB_Instance_Counter=undef;
+    $QGlobalValue1=undef;
+    $QGlobalValue2=undef;
 }
+#END sub EVENT_CLICKDOOR
 
+# This is a boolean return method undef for false and 1 for true
 sub Five_Bosses_Are_Dead {
     my $Elemental = $entity_list->GetMobByNpcTypeID(219059);
     my $Undead = $entity_list->GetMobByNpcTypeID(219060);
@@ -360,8 +523,15 @@ sub Five_Bosses_Are_Dead {
         quest::ze(15, "A booming echo bellows from across the sky, 'You have more to dispatch to appease the gods...'");
         return undef;
     }
-    quest::ze(14, "A booming echo bellows from across the sky, 'Congratulations! You feel an overwhelming urge to pass through the portals. Make haste before it's too late...'");
     return 1;
 }
-#END sub EVENT_CLICKDOOR
+
+sub EVENT_CONNECT {
+    quest::delglobal("potimeaLD$name");
+}
+
+sub EVENT_DISCONNECT {
+    # S20  20 seconds qglobal
+    quest::setglobal("potimeaLD$name", "1", 7, "F");
+}
 

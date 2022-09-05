@@ -30,13 +30,13 @@ sub EVENT_SIGNAL {
     if($signal == 14035) {
         quest::ze(15, "Congdar earth_trigger signaled phase2_earth_npctrigger $phase2_earth_npctrigger of 10.");
         $phase2_earth_npctrigger = $phase2_earth_npctrigger + 1;
-    }
-    #phase_trigger script npcid - 223191
-    if($phase2_earth_npctrigger >= 11) {
-        quest::ze(15, "Congdar phase2_earth2_npctrigger 10 of 10 so signal phase2_trigger, bye.");
-        quest::signalwith(223191, 14035, 2000);
-        $phase2_earth_npctrigger = 1;
-        quest::depop();
+        #phase_trigger script npcid - 223191
+        if($phase2_earth_npctrigger >= 11) {
+            quest::ze(15, "Congdar phase2_earth2_npctrigger 10 of 10 so signal phase2_trigger, bye.");
+            quest::signalwith(223191, 14035, 2000);
+            $phase2_earth_npctrigger = 1;
+            quest::depop();
+        }
     }
 }
 

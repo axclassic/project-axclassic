@@ -1,4 +1,4 @@
-# Champion_of_Korascian (223099)
+# Champion_of_Korascian.pl (223099)
 
 sub EVENT_DEATH {
     quest::ze(15, "Congdar A_Watercrafted_Hunter signaling water_counter and water_trigger.");

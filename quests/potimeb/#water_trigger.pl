@@ -31,13 +31,13 @@ sub EVENT_SIGNAL {
         quest::ze(15, "Congdar water_trigger signaled phase2_water_npctrigger is $phase2_water_npctrigger out of 10."); 
         #This signal are from these mobs upon death!
         $phase2_water_npctrigger = $phase2_water_npctrigger + 1;
-    }
-    #phase_trigger script npcid - 223191
-    if($phase2_water_npctrigger >= 11) {
-        quest::ze(15, "Congdar phase2_water_npctrigger 10 of 10 so signal phase2_trigger.");
-        quest::signalwith(223191, 14035, 2000);
-        $phase2_water_npctrigger = 1;
-        quest::depop();
+        #phase_trigger script npcid - 223191
+        if($phase2_water_npctrigger >= 11) {
+            quest::ze(15, "Congdar phase2_water_npctrigger 10 of 10 so signal phase2_trigger.");
+            quest::signalwith(223191, 14035, 2000);
+            $phase2_water_npctrigger = 1;
+            quest::depop();
+        }
     }
 }
 

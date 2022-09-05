@@ -19,21 +19,21 @@ sub EVENT_SPAWN {
     quest::spawn2(223216,0,0,232.0,1349.0,491.9,192.5);
 	quest::spawn2(223216,0,0,242.0,1344.0,491.4,192.5);
 	quest::spawn2(223216,0,0,252.0,1339.0,491.0,192.5);
-    quest::ze(15, "Congdar spawned 4 An_Air_Phoenix_Noble, 5 Servitor_of_Xegony.");
+    quest::ze(15, "Congdar air_counter spawned 4 An_Air_Phoenix_Noble, 5 Servitor_of_Xegony.");
 }
 
 sub EVENT_SIGNAL {
     #This signal are from these mobs upon death!
 	if($signal == 14038) {
-        quest::ze(15, "Congdar earth_counter signaled phase2_air_npccounter $phase2_air_npccounter of 9.");
+        quest::ze(15, "Congdar air_counter received signal phase2_air_npccounter $phase2_air_npccounter of 8.");
 		$phase2_air_npccounter = $phase2_air_npccounter + 1;
-	}
-    # phase_trigger script npcid - 223191
-	if($phase2_air_npccounter >= 10) {
-        quest::ze(15, "Congdar phase2_air_npccounter 9 of 9 so signal phase2_trigger, bye.");
-		quest::signalwith(223191, 14034, 4000);
-		$phase2_air_npccounter = 1;
-		quest::depop();
+        # phase_trigger script npcid - 223191
+        if($phase2_air_npccounter == 9) {
+            quest::ze(15, "Congdar air_counter phase2_air_npccounter 9 of 9 so signal phase2_trigger, bye.");
+            quest::signalwith(223191, 14034, 2000);
+            $phase2_air_npccounter = 11;
+            quest::depop();
+        }
 	}
 }
 

@@ -1,7 +1,8 @@
 #A_Deepwater_Assassin.pl npcid - 223141
 
 sub EVENT_DEATH {
-    #Triggers #water_counter.pl
-    quest::signalwith(223181,14058,4000);
+    quest::ze(15, "Congdar A_Watercrafted_Hunter signaling water_counter and water_trigger.");
+    quest::signalwith(223181, 14058, 2000);
+    quest::signalwith(223172, 14035, 2000);
 }
 

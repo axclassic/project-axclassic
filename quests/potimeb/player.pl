@@ -6,7 +6,11 @@ sub EVENT_ZONE {
         foreach $ent (@corpse) {
             $corpseName = $ent->GetOwnerName();
             if($corpseName eq $name) {
-                quest::setglobal($name."potimeb_corpse", "1", 7, "D7");
+                quest::setglobal($name.".potimeb_corpse", "1", 7, "D7");
+                #randomize corpse loc in graveyard area
+                my $ex = int(rand(40));
+                my $yy = int(rand(45));
+                $ent->GMMove(854.8+$ex, -246.2+$yy, 395.8);
             }
         }
     }
@@ -16,6 +20,10 @@ sub EVENT_ZONE {
 sub EVENT_ENTERZONE {
     quest::ze(15, "Congdar enter potimeb signaling 223111 with 1000.");
     quest::signalwith(223111, 1000, 10000);
+    my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
+    if($QGlobalValue1) {
+        quest::setglobal($name.".potimeb_corpse", "1", 7, "S5");
+    }
 }
 #END sub_EVENT_ENTERZONE
 
@@ -42,15 +50,31 @@ sub EVENT_CLICKDOOR {
         #spawn quarm_trigger
         quest::spawn2(223159,0,0,166,-938,9.7,0);
     }
+
+    if($d_id == 236) {
+        my $QGlobalValue2 = $client->GetQGlobal($name.".potimeA");
+        quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        if($QGlobalValue2) {
+            if($client->GetGroup()) {
+                quest::AssignGroupToInstance($QGlobalValue2);
+                quest::MoveGroupInstance(219, $QGlobalValue2, 1, 6, 8);
+            }
+            else {
+                quest::AssignToInstance($QGlobalValue2);
+                quest::MovePCInstance(219, $QGlobalValue2, 1, 6, 8);
+            }
+            return;
+        }
+    }
 }
 #END sub_EVENT_CLICKDOOR
 
 sub EVENT_CONNECT {
-    quest::delglobal("aLD$name");
+    quest::delglobal("potimebLD$name");
 }
 
 sub EVENT_DISCONNECT {
     # S20  20 seconds qglobal
-    quest::setglobal("aLD$name", "1", 7, "F");
+    quest::setglobal("potimebLD$name", "1", 7, "F");
 }
 

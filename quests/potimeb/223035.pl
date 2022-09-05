@@ -2,5 +2,6 @@
 
 sub EVENT_DEATH {
     #counts 3033
-    quest::signalwith(223154,3033,4000);
+    quest::signalwith(223154, 3033, 2000);
 }
+

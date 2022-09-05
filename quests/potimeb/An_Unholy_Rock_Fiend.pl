@@ -7,3 +7,4 @@ sub EVENT_DEATH {
     #Triggers earth_trigger.pl
     quest::signalwith(223169, 14035, 2000);
 }
+

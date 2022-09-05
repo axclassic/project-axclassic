@@ -30,13 +30,13 @@ sub EVENT_SIGNAL {
         quest::ze(15, "Congdar fire_trigger signaled phase2_fire_npctrigger $phase2_fire_npctrigger of 9.");
         #This signal are from these mobs upon death!
         $phase2_fire_npctrigger = $phase2_fire_npctrigger + 1;
-    }
-    if($phase2_fire_npctrigger >= 10) {
-        quest::ze(15, "Congdar Gutripping_War_Beast dead signalling phase2_trigger, bye.");
-        # phase_trigger script npcid - 223191
-        quest::signalwith(223191, 14035, 2000);
-        $phase2_fire_npctrigger = 1;
-        quest::depop();
+        if($phase2_fire_npctrigger >= 10) {
+            quest::ze(15, "Congdar Gutripping_War_Beast dead signalling phase2_trigger, bye.");
+            # phase_trigger script npcid - 223191
+            quest::signalwith(223191, 14035, 2000);
+            $phase2_fire_npctrigger = 1;
+            quest::depop();
+        }
     }
 }
 
