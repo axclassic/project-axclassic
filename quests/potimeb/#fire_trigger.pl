@@ -21,17 +21,17 @@ sub EVENT_SPAWN {
     quest::spawn2(223117,0,0,242.0,564.0,491.6,192.5);
     # Boss Gutripping_War_Beast
     quest::spawn2(223146,0,0,262.0,574.0,491.0,192.5);
-    quest::ze(15, "Congdar spawned 3 A_Ferocious_War_Boar, 3 A_Smoldering_Elemental, 3 A_Fire_Etched_Doombringer, and Gutripping_War_Beast.");
+    #quest::ze(15, "Congdar spawned 3 A_Ferocious_War_Boar, 3 A_Smoldering_Elemental, 3 A_Fire_Etched_Doombringer, and Gutripping_War_Beast.");
 }
 
 #like fire_counter.pl starts a counter forwhen all are dead, then opens inner doors!
 sub EVENT_SIGNAL {
     if($signal == 14035) {
-        quest::ze(15, "Congdar fire_trigger signaled phase2_fire_npctrigger $phase2_fire_npctrigger of 9.");
+        #quest::ze(15, "Congdar fire_trigger signaled phase2_fire_npctrigger $phase2_fire_npctrigger of 9.");
         #This signal are from these mobs upon death!
         $phase2_fire_npctrigger = $phase2_fire_npctrigger + 1;
         if($phase2_fire_npctrigger >= 10) {
-            quest::ze(15, "Congdar Gutripping_War_Beast dead signalling phase2_trigger, bye.");
+            #quest::ze(15, "Congdar Gutripping_War_Beast dead signalling phase2_trigger, bye.");
             # phase_trigger script npcid - 223191
             quest::signalwith(223191, 14035, 2000);
             $phase2_fire_npctrigger = 1;

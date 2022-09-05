@@ -5,7 +5,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH {
-    quest::signalwith(223154,11070,4000);
+    quest::signalwith(223154, 11070, 4000);
     quest::say("This is not over, fools. My death here is merely the beginning. I will return to you in your most horrible nightmares!");
 }
 

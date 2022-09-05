@@ -21,18 +21,18 @@ sub EVENT_SPAWN {
     quest::spawn2(223102,0,0,252.0,1629.0,491.0,192.5);
     #Boss Earthen_Overseer (223134)
     quest::spawn2(223134,0,0,262.0,1644.0,491.0,192.5);
-    quest::ze(15, "Congdar spawned 5 An_Unholy_Rock_Fiend, 4 An_Elemental_Stonefist, and Earthen_Overseer.");
+    #quest::ze(15, "Congdar spawned 5 An_Unholy_Rock_Fiend, 4 An_Elemental_Stonefist, and Earthen_Overseer.");
 }
 
 #like earth_counter.pl starts a counter for when all are dead, then opens inner doors!
 sub EVENT_SIGNAL {
     #This signal are from these mobs upon death!
     if($signal == 14035) {
-        quest::ze(15, "Congdar earth_trigger signaled phase2_earth_npctrigger $phase2_earth_npctrigger of 10.");
+        #quest::ze(15, "Congdar earth_trigger signaled phase2_earth_npctrigger $phase2_earth_npctrigger of 10.");
         $phase2_earth_npctrigger = $phase2_earth_npctrigger + 1;
         #phase_trigger script npcid - 223191
         if($phase2_earth_npctrigger >= 11) {
-            quest::ze(15, "Congdar phase2_earth2_npctrigger 10 of 10 so signal phase2_trigger, bye.");
+            #quest::ze(15, "Congdar phase2_earth2_npctrigger 10 of 10 so signal phase2_trigger, bye.");
             quest::signalwith(223191, 14035, 2000);
             $phase2_earth_npctrigger = 1;
             quest::depop();

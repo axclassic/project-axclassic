@@ -19,7 +19,7 @@ sub EVENT_SPAWN {
     quest::spawn2(223138,0,0,252.0,1114.0,491.8,192.5);
     #Boss Ralthos_Enrok
     quest::spawn2(223127,0,0,262.0,1109.0,492.1,192.5);
-    quest::ze(15, "Congdar spawned 9 an_undead_guardian_, and Ralthos_Enrok.");
+    #quest::ze(15, "Congdar spawned 9 an_undead_guardian_, and Ralthos_Enrok.");
 }
 
 #like undead_counter.pl starts a counter forwhen all are dead, then opens inner doors!

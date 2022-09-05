@@ -9,10 +9,10 @@ sub EVENT_SPAWN {
 sub EVENT_SIGNAL {
     #phase 1 signals
     if($signal == 14060) {
-        quest::ze(15, "Congdar phase_trigger received signal $Icounter of 5.");
+        #quest::ze(15, "Congdar phase_trigger received signal $Icounter of 5.");
         $Icounter = $Icounter + 1;
         if($Icounter == 6) {
-            quest::ze(15, "Congdar phase_trigger count is 5 of 5, shake the world, open doors, spawn phase2_trigger.");
+            #quest::ze(15, "Congdar phase_trigger count is 5 of 5, shake the world, open doors, spawn phase2_trigger.");
             #5 seconds
             quest::settimer("opendoors", 5);
             #phase 2 trigger
@@ -29,7 +29,7 @@ sub EVENT_TIMER {
         #Worlwide camera shake
         $npc->CameraEffect(3000, 6, 0, 1);
         if($instanceversion == 1) {
-            quest::ze(15, "Congdar Opening version 1 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 1 doors, bye.");
             my $open_door = $entity_list->FindDoor(76);
             $open_door->SetOpenType(81);
             $open_door->ForceOpen($npc);
@@ -93,7 +93,7 @@ sub EVENT_TIMER {
             quest::depop();
         }
         if($instanceversion == 2) {
-            quest::ze(15, "Congdar Opening version 2 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 2 doors, bye.");
             my $open_door = $entity_list->FindDoor(108);
             $open_door->SetOpenType(81);
             $open_door->ForceOpen($npc);
@@ -157,7 +157,7 @@ sub EVENT_TIMER {
             quest::depop();
         }
         if($instanceversion == 3) {
-            quest::ze(15, "Congdar Opening version 3 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 3 doors, bye.");
             my $open_door = $entity_list->FindDoor(140);
             $open_door->SetOpenType(81);
             $open_door->ForceOpen($npc);
@@ -221,7 +221,7 @@ sub EVENT_TIMER {
             quest::depop();
         }
         if($instanceversion == 4) {
-            quest::ze(15, "Congdar Opening version 4 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 4 doors, bye.");
             my $open_door = $entity_list->FindDoor(172);
             $open_door->SetOpenType(81);
             $open_door->ForceOpen($npc);
@@ -285,7 +285,7 @@ sub EVENT_TIMER {
             quest::depop();
         }
         if($instanceversion == 5) {
-            quest::ze(15, "Congdar Opening version 5 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 5 doors, bye.");
             my $open_door = $entity_list->FindDoor(204);
             $open_door->SetOpenType(81);
             $open_door->ForceOpen($npc);

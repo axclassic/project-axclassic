@@ -31,8 +31,8 @@ sub EVENT_ENTERZONE {
 
 sub EVENT_CLICKDOOR {
     my $d_id = ($doorid % 256);
-    $client->Message(14, "Door Clicked doorid = $doorid");
-    $client->Message(14, "Door Clicked d_id = $d_id");
+    #$client->Message(14, "Door Clicked doorid = $doorid");
+    #$client->Message(14, "Door Clicked d_id = $d_id");
     if(Five_Bosses_Are_Dead()) {
         if((($doorid == 64) || ($d_id == 64)) ||
             (($doorid == 44) || ($d_id == 44)) ||
@@ -64,8 +64,8 @@ sub EVENT_CLICKDOOR {
 
             my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
-            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+            #quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
@@ -93,19 +93,19 @@ sub EVENT_CLICKDOOR {
             else {
                 my $PoTimeB_Instance_Counter = 0;
                 if(defined $qglobals{pop_potimeb_instances}) {
-                    quest::ze(15, "pop_potimeb_instances = $qglobals{pop_potimeb_instances}");
+                    #quest::ze(15, "pop_potimeb_instances = $qglobals{pop_potimeb_instances}");
                     $PoTimeB_Instance_Counter = $qglobals{pop_potimeb_instances};
                     if($PoTimeB_Instance_Counter >= 5) {
                         $client->Message(14, "There are no available instances for The Plane of Time.");
                         return;
                     }
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                     $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
                     $PoTimeB_Instance_Counter = 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 my $arraySize = @clients;
                 if($arraySize > 1) {
@@ -157,8 +157,8 @@ sub EVENT_CLICKDOOR {
 
             my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
-            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+            #quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
@@ -186,19 +186,19 @@ sub EVENT_CLICKDOOR {
             else {
                 my $PoTimeB_Instance_Counter = 0;
                 if(defined $qglobals{pop_potimeb_instances}) {
-                    quest::ze(15, "pop_potimeb_instances = $qglobals{pop_potimeb_instances}");
+                    #quest::ze(15, "pop_potimeb_instances = $qglobals{pop_potimeb_instances}");
                     $PoTimeB_Instance_Counter = $qglobals{pop_potimeb_instances};
                     if($PoTimeB_Instance_Counter >= 5) {
                         $client->Message(14, "There are no available instances for The Plane of Time.");
                         return;
                     }
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                     $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
                     $PoTimeB_Instance_Counter = 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 my $arraySize = @clients;
                 if($arraySize > 1) {
@@ -250,8 +250,8 @@ sub EVENT_CLICKDOOR {
 
             my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
-            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+            #quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
@@ -285,13 +285,13 @@ sub EVENT_CLICKDOOR {
                         $client->Message(14, "There are no available instances for The Plane of Time.");
                         return;
                     }
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                     $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
                     $PoTimeB_Instance_Counter = 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 my $arraySize = @clients;
                 if($arraySize > 1) {
@@ -343,8 +343,8 @@ sub EVENT_CLICKDOOR {
 
             my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
-            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+            #quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
@@ -378,13 +378,13 @@ sub EVENT_CLICKDOOR {
                         $client->Message(14, "There are no available instances for The Plane of Time.");
                         return;
                     }
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                     $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
                     $PoTimeB_Instance_Counter = 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 my $arraySize = @clients;
                 if($arraySize > 1) {
@@ -436,8 +436,8 @@ sub EVENT_CLICKDOOR {
 
             my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
             my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-            quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
-            quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+            #quest::ze(15, "QGlobalValue1 = $QGlobalValue1");
+            #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
@@ -471,13 +471,13 @@ sub EVENT_CLICKDOOR {
                         $client->Message(14, "There are no available instances for The Plane of Time.");
                         return;
                     }
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                     $PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter + 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 else {
                     $PoTimeB_Instance_Counter = 1;
-                    quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
+                    #quest::ze(15, "PoTimeB_Instance_Counter = $PoTimeB_Instance_Counter");
                 }
                 my $arraySize = @clients;
                 if($arraySize > 1) {

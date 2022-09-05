@@ -1,7 +1,7 @@
 # Zebuxoruk.pl npcid - 223212
 
 sub EVENT_SPAWN {
-	quest::emote("staggers about and looks at you, drowsy from his weakened state. 'My thanks to you. I am surprised to see you have made it here. We must get back to Norrath. The time has come for me to share my knowledge. Something is coming, a threat to us all, and the sands in the hourglass are thinning. Make haste and take me back the way you came.'");
+	quest::emote(" staggers about and looks at you, drowsy from his weakened state. 'My thanks to you. I am surprised to see you have made it here. We must get back to Norrath. The time has come for me to share my knowledge. Something is coming, a threat to us all, and the sands in the hourglass are thinning. Make haste and take me back the way you came.'");
 	quest::settimer("zeb1",15);
 }
 

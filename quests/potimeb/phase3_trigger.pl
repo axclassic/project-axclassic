@@ -41,7 +41,7 @@ sub EVENT_SPAWN {
     #flavor text
     quest::signalwith(223111, 1002, 2000);
     #16 non target nameds
-    quest::ze(15, "Congdar phase3_trigger spawning 16 non-targetables.");
+    #quest::ze(15, "Congdar phase3_trigger spawning 16 non-targetables.");
     quest::spawn2(223010,0,0,1280,1010,359.38,195);
     quest::spawn2(223011,0,0,1280,1030,359.38,195);
     quest::spawn2(223012,0,0,1260,1250,359.38,195);
@@ -60,7 +60,7 @@ sub EVENT_SPAWN {
     quest::spawn2(223156,0,0,1250,1085,359.5,192);
     #8 targetable mobs
     #sametargetable NPC's A_Pig_of_War
-    quest::ze(15, "Congdar phase3_trigger spawning 8 targetables.");
+    #quest::ze(15, "Congdar phase3_trigger spawning 8 targetables.");
     quest::spawn2(223005,0,0,1150.0,1135.0,351.7,192.5);
     quest::spawn2(223005,0,0,1200.0,1185.0,352.2,192.5);
     quest::spawn2(223005,0,0,1200.0,1135.0,351.0,192.5);
@@ -74,11 +74,11 @@ sub EVENT_SPAWN {
 
 sub EVENT_SIGNAL {
     if($signal == 1011) {
-        quest::ze(15, "Congdar phase3_trigger received signal wave_one_npccounter $wave_one_npccounter of 7.");
+        #quest::ze(15, "Congdar phase3_trigger received signal wave_one_npccounter $wave_one_npccounter of 7.");
         #sets counter to start 1st wave upon all 8 dying
         $wave_one_npccounter = $wave_one_npccounter + 1;
         if($wave_one_npccounter == 8) {
-            quest::ze(15, "Congdar phase3_trigger wave_one_npccounter is 8 of 8, spawn Deathbringer_Blackheart and A_Ferocious_Warboar.");
+            #quest::ze(15, "Congdar phase3_trigger wave_one_npccounter is 8 of 8, spawn Deathbringer_Blackheart and A_Ferocious_Warboar.");
             #triggers #wave1.pl
             $wave_one_npccounter = 10;
             #start wave1
@@ -94,11 +94,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 11010) {
-        quest::ze(15, "Congdar phase3_trigger received signal namedI $namedI of 2.");
+        #quest::ze(15, "Congdar phase3_trigger received signal namedI $namedI of 2.");
         #1st two names
         $namedI = $namedI + 1;
         if($namedI == 3) {
-            quest::ze(15, "Congdar phase3_trigger namedI is 2 of 2, depop some untargetables, spawn different untargetables, 3 Archon_of_the_Plaquebringer, 4 Revenant_of_the_Plaquebringer and Incantator_of_the_Plaquebringer.");
+            #quest::ze(15, "Congdar phase3_trigger namedI is 2 of 2, depop some untargetables, spawn different untargetables, 3 Archon_of_the_Plaquebringer, 4 Revenant_of_the_Plaquebringer and Incantator_of_the_Plaquebringer.");
             #depop untargetable nameds
             quest::depopall(223016);
             quest::depopall(223017);
@@ -124,11 +124,11 @@ sub EVENT_SIGNAL {
     }
     #starts counter of wave 2
     if($signal == 2022) {
-        quest::ze(15, "Congdar phase3_trigger received signal wave_two_npccounter $wave_two_npccounter of 7.");
+        #quest::ze(15, "Congdar phase3_trigger received signal wave_two_npccounter $wave_two_npccounter of 7.");
         #sets counter to start 3rd wave upon all 8 dying
         $wave_two_npccounter = $wave_two_npccounter + 1;
         if($wave_two_npccounter == 8) {
-            quest::ze(15, "Congdar phase3_trigger wave_two_npccounter is 8 of 8, depop some untargetables, spawn Xeroan_XiGeruonask and Kraksmaal_FirDethsin.");
+            #quest::ze(15, "Congdar phase3_trigger wave_two_npccounter is 8 of 8, depop some untargetables, spawn Xeroan_XiGeruonask and Kraksmaal_FirDethsin.");
             #triggers #wave3.pl
             $wave_two_npccounter = 10;
             #depopping
@@ -143,10 +143,10 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 11020) {
-        quest::ze(15, "Congdar phase3_trigger recieved signal namedII $namedII of 2.");
+        #quest::ze(15, "Congdar phase3_trigger recieved signal namedII $namedII of 2.");
         $namedII = $namedII + 1;
         if($namedII == 3) {
-            quest::ze(15, "Congdar phase3_trigger namedI is 2 of 2, depop some untargetables, spawn different untargetables, 2 A_Zek_Bloodtusk, 4 A_Dark_Guardian_of_the_Warlord, A_Deadly_Warboar, A_Zek_Bloodtusk and Deathbringer_Skullsmash.");
+            #quest::ze(15, "Congdar phase3_trigger namedI is 2 of 2, depop some untargetables, spawn different untargetables, 2 A_Zek_Bloodtusk, 4 A_Dark_Guardian_of_the_Warlord, A_Deadly_Warboar, A_Zek_Bloodtusk and Deathbringer_Skullsmash.");
             #start of wave 3
             #non target named A_Deadly_Warboar
             quest::depopall(223022);
@@ -173,11 +173,11 @@ sub EVENT_SIGNAL {
     }
     #starts counter of wave 3
     if($signal == 3033) {
-        quest::ze(15, "Congdar phase3_trigger received signal wave_three_npccounter $wave_three_npccounter of 7.");
+        #quest::ze(15, "Congdar phase3_trigger received signal wave_three_npccounter $wave_three_npccounter of 7.");
         #sets counter to start 4th wave upon all 8 dying
         $wave_three_npccounter = $wave_three_npccounter + 1;
         if($wave_three_npccounter == 8) {
-            quest::ze(15, "Congdar phase3_trigger wave_three_npccounter is 8 of 8, depop some untargetables, spawn Deathbringer_Skulls and A_Deadly_Warboar.");
+            #quest::ze(15, "Congdar phase3_trigger wave_three_npccounter is 8 of 8, depop some untargetables, spawn Deathbringer_Skulls and A_Deadly_Warboar.");
             #triggers #wave4.pl
             $wave_three_npccounter = 10;
             #depopping
@@ -192,11 +192,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 11030) {
-        quest::ze(15, "Congdar phase3_trigger received signal namedIII $namedIII of 2.");
+        #quest::ze(15, "Congdar phase3_trigger received signal namedIII $namedIII of 2.");
         #start of wave 4
         $namedIII = $namedIII + 1;
         if($namedIII == 3) {
-            quest::ze(15, "Congdar phase3_trigger namedIII is 2 of 2, depop some untargetables, spawn different untargetables, 4 A_Ferocious_Cube_Phantasmist, 2 Vanquisher_of_the_Faceless, A_Ferocious_Cube_Formation and Battlemaster_of_the_Faceless.");
+            #quest::ze(15, "Congdar phase3_trigger namedIII is 2 of 2, depop some untargetables, spawn different untargetables, 4 A_Ferocious_Cube_Phantasmist, 2 Vanquisher_of_the_Faceless, A_Ferocious_Cube_Formation and Battlemaster_of_the_Faceless.");
             #start of wave 3
             #non target named Sinrunal_Gorgedreal
             quest::depopall(223012);
@@ -223,11 +223,11 @@ sub EVENT_SIGNAL {
     }
     #starts counter of wave 4
     if($signal == 4044) {
-        quest::ze(15, "Congdar phase3_trigger received signal wave_four_npccounter $wave_four_npccounter of 7.");
+        #quest::ze(15, "Congdar phase3_trigger received signal wave_four_npccounter $wave_four_npccounter of 7.");
         #sets counter to start 4th wave upon all 8 dying
         $wave_four_npccounter = $wave_four_npccounter + 1;
-        if($wave_four_counter == 8) {
-            quest::ze(15, "Congdar phase3_trigger wave_four_npccounter is 8 of 8, depop some untargetables, spawn Sinrunal_Gorgedreal and Herlsoakian.");
+        if($wave_four_npccounter == 8) {
+            #quest::ze(15, "Congdar phase3_trigger wave_four_npccounter is 8 of 8, depop some untargetables, spawn Sinrunal_Gorgedreal and Herlsoakian.");
             #triggers 4th
             $wave_four_npccounter = 10;
             #depopping
@@ -242,11 +242,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 11040) {
-        quest::ze(15, "Congdar phase3_trigger received signal namedIV $namedIV of 2.");
+        #quest::ze(15, "Congdar phase3_trigger received signal namedIV $namedIV of 2.");
         #start of wave 5
         $namedIV = $namedIV + 1;
         if($namedIV == 3) {
-            quest::ze(15, "Congdar phase3_trigger namedIV is 8 of 8, depop some untargetables, spawn different untargetables, 4 A_Warboar_of_Suffering and 4 A_Minion_of_the_Warlord.");
+            #quest::ze(15, "Congdar phase3_trigger namedIV is 8 of 8, depop some untargetables, spawn different untargetables, 4 A_Warboar_of_Suffering and 4 A_Minion_of_the_Warlord.");
             #start of wave 5
             #non target named Sinrunal_Gorgedreal
             quest::depopall(223012);
@@ -270,11 +270,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 5055) {
-        quest::ze(15, "Congdar phase3_trigger recieved signal wave_five_npccounter $wave_five_npccounter of 8.");
+        #quest::ze(15, "Congdar phase3_trigger recieved signal wave_five_npccounter $wave_five_npccounter of 8.");
         #sets counter to start 6th wave upon all 8 dying
         $wave_five_npccounter = $wave_five_npccounter + 1;
         if($wave_five_npccounter == 9) {
-            quest::ze(15, "Congdar phase3_trigger wave_five_npccounter is 8 of 8, depop some untargetables, spawn A_Needletusk_Warboar and Deathbringer_Rianit.");
+            #quest::ze(15, "Congdar phase3_trigger wave_five_npccounter is 8 of 8, depop some untargetables, spawn A_Needletusk_Warboar and Deathbringer_Rianit.");
             $wave_five_npccounter = 10;
             #depopping
             #non target named A_Needletusk_Warboar
@@ -288,11 +288,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 11050) {
-        quest::ze(15, "Congdar phase3_trigger recieved signal namedV $namedV of 2.");
+        #quest::ze(15, "Congdar phase3_trigger recieved signal namedV $namedV of 2.");
         #start of wave 6
         $namedV = $namedV + 1;
         if($namedV == 3) {
-            quest::ze(15, "Congdar phase3_trigger namedV is 2 of 2, depop some untargetables, spawn different untargetables, 4 A_Warboar_of_Suffering and 4 A_Minion_of_the_Warlord.");
+            #quest::ze(15, "Congdar phase3_trigger namedV is 2 of 2, depop some untargetables, spawn different untargetables, 4 A_Warboar_of_Suffering and 4 A_Minion_of_the_Warlord.");
             #non target named Dersool_Fal`Giersnaol
             quest::depopall(223015);
             #non target named Xerskel_Gerodnsal
@@ -321,11 +321,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 6066) {
-        quest::ze(15, "Congdar phase3_trigger recieved signal wave_six_npccounter $wave_six_npccounter of 8.");
+        #quest::ze(15, "Congdar phase3_trigger recieved signal wave_six_npccounter $wave_six_npccounter of 8.");
         #sets counter to start 6th wave upon all 8 dying
         $wave_six_npccounter = $wave_six_npccounter + 1;
         if($wave_six_npccounter == 9) {
-            quest::ze(15, "Congdar phase3_trigger wave_six_npccounter is 8 of 8, depop some untargetables, spawn Dersool_FalGiersnaol and Xerskel_Gerodnsal.");
+            #quest::ze(15, "Congdar phase3_trigger wave_six_npccounter is 8 of 8, depop some untargetables, spawn Dersool_FalGiersnaol and Xerskel_Gerodnsal.");
             $wave_six_npccounter = 10;
             #depopping
             #non target named Xerskel_Gerodnsal
@@ -339,11 +339,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 11060) {
-        quest::ze(15, "Congdar phase3_trigger received signal namedVI $namedVI of 2.");
+        #quest::ze(15, "Congdar phase3_trigger received signal namedVI $namedVI of 2.");
         #start of wave 7
         $namedVI = $namedVI + 1;
         if($namedVI == 3) {
-            quest::ze(15, "Congdar phase3_trigger namedVI is 2 of 2, depop some untargetables, spawn different untargetables, 4 Undead_Pawn_of_Terris, 3 Knight_of_Nightmare and A_Hobgoblin_Servant.");
+            #quest::ze(15, "Congdar phase3_trigger namedVI is 2 of 2, depop some untargetables, spawn different untargetables, 4 Undead_Pawn_of_Terris, 3 Knight_of_Nightmare and A_Hobgoblin_Servant.");
             #non target named Dark_Knight_of_Terris
             quest::depopall(223020);
             #non target named Undead_Squad_Leader
@@ -367,11 +367,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 7077) {
-        quest::ze(15, "Congdar phase3_trigger received signal wave_seven_npccounter $wave_seven_npccounter of 8.");
+        #quest::ze(15, "Congdar phase3_trigger received signal wave_seven_npccounter $wave_seven_npccounter of 8.");
         #sets counter to start 7th wave upon all 8 dying
         $wave_seven_npccounter = $wave_seven_npccounter + 1;
         if($wave_seven_npccounter == 9) {
-            quest::ze(15, "Congdar phase3_trigger wave_seven_npccounter is 8 of 8, depop some untargetables, spawn Dark_Knight_of_Terris and Undead_Squad_Leader.");
+            #quest::ze(15, "Congdar phase3_trigger wave_seven_npccounter is 8 of 8, depop some untargetables, spawn Dark_Knight_of_Terris and Undead_Squad_Leader.");
             $wave_seven_npccounter = 10;
             #quest::ze(15, "okay all 8 are dead now do something!");
             #depopping
@@ -386,11 +386,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 11070) {
-        quest::ze(15, "Congdar phase3_trigger received signal namedVII $namedVII of 2.");
+        #quest::ze(15, "Congdar phase3_trigger received signal namedVII $namedVII of 2.");
         #start of wave 7
         $namedVII = $namedVII + 1;
         if($namedVII == 3) {
-            quest::ze(15, "Congdar phase3_trigger namedVII is 2 of 2, depop some untargetables, spawn different untargetables, 2 Doombringer_of_Saryrn, 2 Cutthtoat_of_Saryrn , 2 Dark_Knight_of_Saryrn, Templar_of_Saryrn and Warbeast_of_Saryrn.");
+            #quest::ze(15, "Congdar phase3_trigger namedVII is 2 of 2, depop some untargetables, spawn different untargetables, 2 Doombringer_of_Saryrn, 2 Cutthtoat_of_Saryrn , 2 Dark_Knight_of_Saryrn, Templar_of_Saryrn and Warbeast_of_Saryrn.");
             #non target named Dreamwarp
             quest::depopall(223018);
             #non target named Champion_of_Torment
@@ -416,11 +416,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 8088) {
-        quest::ze(15, "Congdar phase3_trigger received signal wave_eight_npccounter $wave_eight_npccounter of 8.");
+        #quest::ze(15, "Congdar phase3_trigger received signal wave_eight_npccounter $wave_eight_npccounter of 8.");
         #sets counter to start 8th wave upon all 8 dying
         $wave_eight_npccounter = $wave_eight_npccounter + 1;
         if($wave_eight_npccounter == 9) {
-            quest::ze(15, "Congdar phase3_trigger wave_eight_npccounter is 8 of 8, depop some untargetables, spawn Dreamwarp and Champion_of_Torment.");
+            #quest::ze(15, "Congdar phase3_trigger wave_eight_npccounter is 8 of 8, depop some untargetables, spawn Dreamwarp and Champion_of_Torment.");
             $wave_eight_npccounter = 10;
             #depopping
             #non target named Dreamwarp
@@ -434,11 +434,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 11080) {
-        quest::ze(15, "Congdar phase3_trigger received signal namedVIII $namedVIII of 2.");
+        #quest::ze(15, "Congdar phase3_trigger received signal namedVIII $namedVIII of 2.");
         #start of Last encounter with 2 guardians
         $namedVIII = $namedVIII + 1;
         if($namedVIII == 3) {
-            quest::ze(15, "Congdar phase3_trigger signal is namedVIII $namedVIII of 2.");
+            #quest::ze(15, "Congdar phase3_trigger signal is namedVIII $namedVIII of 2.");
             #targetable NPC's Avatar_of_Elements
             quest::spawn2(223073,0,0,1492.0,1110.0,369.0,195.5);
             #targetable NPC's Supernatural_Guardian
@@ -447,11 +447,11 @@ sub EVENT_SIGNAL {
         }
     }
     if($signal == 11090) {
-        quest::ze(15, "Congdar phase3_trigger received signal wave_nine_npccounter $wave_nine_npccounter of 2.");
+        #quest::ze(15, "Congdar phase3_trigger received signal wave_nine_npccounter $wave_nine_npccounter of 2.");
         #counter to open portal to phase 4
         $wave_nine_npccounter = $wave_nine_npccounter + 1;
         if($wave_nine_npccounter == 3) {
-            quest::ze(15, "Congdar phase3_trigger wave_nine_npccounter is 2 of 2 set portal3 flag for 1 hour, bye.");
+            #quest::ze(15, "Congdar phase3_trigger wave_nine_npccounter is 2 of 2 set portal3 flag for 1 hour, bye.");
             #Worlwide camera shake
             $npc->CameraEffect(3000, 6, 0, 1);
             #depopping

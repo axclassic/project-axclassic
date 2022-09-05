@@ -5,7 +5,7 @@
 #December 2012
 
 sub EVENT_SPAWN {
-	quest::settimer("feign", 10);
+	quest::settimer("feign", 5);
 }
 
 sub EVENT_TIMER {

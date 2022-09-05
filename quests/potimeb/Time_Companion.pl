@@ -80,7 +80,7 @@ sub EVENT_ITEM {
     if($platinum >= 100 && $portfire == 1) {
         quest::say("Good luck $name.");
         my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-        quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
         if($QGlobalValue2) {
             if($client->GetGroup()) {
                 quest::AssignGroupToInstance($QGlobalValue2);
@@ -92,12 +92,12 @@ sub EVENT_ITEM {
             }
             return;
         }
-        $portfire == 0;
+        $portfire = 0;
     }
     elsif($platinum >= 100 && $portwater == 1) {
         quest::say("Good luck $name.");
         my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-        quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
         if($QGlobalValue2) {
             if($client->GetGroup()) {
                 quest::AssignGroupToInstance($QGlobalValue2);
@@ -109,12 +109,12 @@ sub EVENT_ITEM {
             }
             return;
         }
-        $portwater == 0;
+        $portwater = 0;
     }
     elsif($platinum >= 100 && $portearth == 1) {
         quest::say("Good luck $name.");
         my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-        quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
         if($QGlobalValue2) {
             if($client->GetGroup()) {
                 quest::AssignGroupToInstance($QGlobalValue2);
@@ -126,12 +126,12 @@ sub EVENT_ITEM {
             }
             return;
         }
-        $portearth == 0;
+        $portearth = 0;
     }
     elsif($platinum >= 100 && $portair == 1) {
         quest::say("Good luck $name.");
         my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-        quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
         if($QGlobalValue2) {
             if($client->GetGroup()) {
                 quest::AssignGroupToInstance($QGlobalValue2);
@@ -143,12 +143,12 @@ sub EVENT_ITEM {
             }
             return;
         }
-        $portair == 0;
+        $portair = 0;
     }
     elsif($platinum >= 100 && $portdead == 1) {
         quest::say("Good luck $name.");
         my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
-        quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
         if($QGlobalValue2) {
             if($client->GetGroup()) {
                 quest::AssignGroupToInstance($QGlobalValue2);
@@ -160,7 +160,7 @@ sub EVENT_ITEM {
             }
             return;
         }
-        $portdead == 0;
+        $portdead = 0;
     }
     elsif($platinum >= 100) {
         quest::say("Errm... Gee thanks I suppose.");

@@ -18,7 +18,7 @@ sub EVENT_ZONE {
 #END sub EVENT_ZONE
 
 sub EVENT_ENTERZONE {
-    quest::ze(15, "Congdar enter potimeb signaling 223111 with 1000.");
+    #phase5_flagquest::ze(15, "Congdar enter potimeb signaling 223111 with 1000.");
     quest::signalwith(223111, 1000, 10000);
     my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
     if($QGlobalValue1) {
@@ -29,31 +29,65 @@ sub EVENT_ENTERZONE {
 
 sub EVENT_CLICKDOOR {
     my $d_id = ($doorid % 256);
-    quest::ze(15, "doorid is $doorid and d_id is $d_id.");
-    if(($d_id == 62) && (defined $qglobals{portal3})) {
+    #phase5_flagquest::ze(15, "doorid is $doorid and d_id is $d_id.");
+    if((($d_id == 62) || ($d_id == 241) || ($d_id == 242) || ($d_id == 243) || ($d_id == 244)) && (defined $qglobals{portal3})) {
         #moves to portal 4 spot upon phase 3 completion
-        quest::movepc(223, -401, 0, 347);
+        my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
+        #phase5_flagquest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        if($QGlobalValue2) {
+            if($client->GetGroup()) {
+                quest::AssignGroupToInstance($QGlobalValue2);
+                quest::MoveGroupInstance(223, $QGlobalValue2, -401, 0, 347, 64.6);
+            }
+            else {
+                quest::AssignToInstance($QGlobalValue2);
+                quest::MovePCInstance(223, $QGlobalValue2, -401, 0, 347, 64.6);
+            }
+        }
         #spawn phase4_trigger.pl
         quest::spawn2(223157,0,0,-410,-69,348,0);
     }
 
-    if(($d_id == 24) && (defined $qglobals{portal4})) {
+    if((($d_id == 24) || ($d_id == 245) || ($d_id == 246) || ($d_id == 247) || ($d_id == 248)) && (defined $qglobals{portal4})) {
         #semi last phase
-        quest::movepc(223, -419, 0, 4);
+        my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
+        #phase5_flagquest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        if($QGlobalValue2) {
+            if($client->GetGroup()) {
+                quest::AssignGroupToInstance($QGlobalValue2);
+                quest::MoveGroupInstance(223, $QGlobalValue2, -419, 0, 4, 64.6);
+            }
+            else {
+                quest::AssignToInstance($QGlobalValue2);
+                quest::MovePCInstance(223, $QGlobalValue2, -419, 0, 4, 64.6);
+            }
+        }
         # phase5_trigger.pl
         quest::spawn2(223158,0,0,-415.5,-68.8,3.3,0);
     }
 
-    if(($d_id == 51) && (defined $qglobals{portal5})) {
+    if((($d_id == 51) || ($d_id == 249) || ($d_id == 250) || ($d_id == 251) || ($d_id == 252)) && (defined $qglobals{portal5})) {
         #To Quarm the end in front!
-        quest::movepc(223, 268, -1121, -2);
+        my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
+        #phase5_flagquest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        if($QGlobalValue2) {
+            if($client->GetGroup()) {
+                quest::AssignGroupToInstance($QGlobalValue2);
+                quest::MoveGroupInstance(223, $QGlobalValue2, 268, -1121, -2, 64.6);
+            }
+            else {
+                quest::AssignToInstance($QGlobalValue2);
+                quest::MovePCInstance(223, $QGlobalValue2, 268, -1121, -2, 64.6);
+            }
+        }
         #spawn quarm_trigger
         quest::spawn2(223159,0,0,166,-938,9.7,0);
     }
 
-    if($d_id == 236) {
+    if(($d_id == 236) || ($d_id == 237) || ($d_id == 238) || ($d_id == 239) || ($d_id == 240)) {
+        # Corpse recovery in potimeb sends you back to potimea
         my $QGlobalValue2 = $client->GetQGlobal($name.".potimeA");
-        quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        #phase5_flagquest::ze(15, "QGlobalValue2 = $QGlobalValue2");
         if($QGlobalValue2) {
             if($client->GetGroup()) {
                 quest::AssignGroupToInstance($QGlobalValue2);
@@ -63,7 +97,6 @@ sub EVENT_CLICKDOOR {
                 quest::AssignToInstance($QGlobalValue2);
                 quest::MovePCInstance(219, $QGlobalValue2, 1, 6, 8);
             }
-            return;
         }
     }
 }

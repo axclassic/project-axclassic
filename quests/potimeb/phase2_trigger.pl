@@ -19,16 +19,16 @@ sub EVENT_SPAWN {
     quest::spawn2(223181,0,0,-129.6,1720,547,0);
     #Fire group using #fire_counter.pl
     quest::spawn2(223182,0,0,-129.6,1720,547,0);
-    quest::ze(15, "Congdar phase2_trigger spawining earth_counter, air_counter, undead_counter, water_counter, fire_counter, ");
+    #quest::ze(15, "Congdar phase2_trigger spawining earth_counter, air_counter, undead_counter, water_counter, fire_counter, ");
 }
 
 sub EVENT_SIGNAL {
     if($signal == 14034) {
-        quest::ze(15, "Congdar phase2_trigger received signal groupboss $groupboss of 5.");
+        #quest::ze(15, "Congdar phase2_trigger received signal groupboss $groupboss of 5.");
         #keeps track of group mob #1
         $groupboss = $groupboss + 1;
         if($groupboss == 6) {
-            quest::ze(15, "Congdar phase2_trigger count is 5 of 5, spawn 5 bosses.");
+            #quest::ze(15, "Congdar phase2_trigger count is 5 of 5, spawn 5 bosses.");
             #earth boss group
             quest::spawn2(223169,0,0,-129.6,1720,547,0);
             #air boss group
@@ -44,11 +44,11 @@ sub EVENT_SIGNAL {
     }
     #This signal keeps track of the groups dead to open inner doors
     if($signal == 14035) {
-        quest::ze(15, "Congdar phase2_trigger received signal IIcounter $IIcounter of 5.");
+        #quest::ze(15, "Congdar phase2_trigger received signal IIcounter $IIcounter of 5.");
         #phase 2 boss signals
         $IIcounter = $IIcounter + 1;
         if($IIcounter == 6) {
-            quest::ze(15, "Congdar phase2_trigger count is 5 of 5, shake the world, open doors, spawn phase3_trigger.");
+            #quest::ze(15, "Congdar phase2_trigger count is 5 of 5, shake the world, open doors, spawn phase3_trigger.");
             #Inner doors open!
             quest::settimer("twoopens", 5);
             #triggers phase3_trigger.pl
@@ -64,7 +64,7 @@ sub EVENT_TIMER {
         #Worlwide camera shake
         $npc->CameraEffect(3000, 6, 0, 1);
         if($instanceversion == 1) {
-            quest::ze(15, "Congdar Opening version 1 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 1 doors, bye.");
             #inner connecting doors
             my $open_door = $entity_list->FindDoor(80);
             $open_door->SetOpenType(80);
@@ -105,7 +105,7 @@ sub EVENT_TIMER {
             quest::depop();
         }
         if($instanceversion == 2) {
-            quest::ze(15, "Congdar Opening version 2 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 2 doors, bye.");
             #inner connecting doors
             my $open_door = $entity_list->FindDoor(112);
             $open_door->SetOpenType(80);
@@ -146,7 +146,7 @@ sub EVENT_TIMER {
             quest::depop();
         }
         if($instanceversion == 3) {
-            quest::ze(15, "Congdar Opening version 3 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 3 doors, bye.");
             #inner connecting doors
             my $open_door = $entity_list->FindDoor(144);
             $open_door->SetOpenType(80);
@@ -187,7 +187,7 @@ sub EVENT_TIMER {
             quest::depop();
         }
         if($instanceversion == 4) {
-            quest::ze(15, "Congdar Opening version 4 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 4 doors, bye.");
             #inner connecting doors
             my $open_door = $entity_list->FindDoor(176);
             $open_door->SetOpenType(80);
@@ -228,7 +228,7 @@ sub EVENT_TIMER {
             quest::depop();
         }
         if($instanceversion == 5) {
-            quest::ze(15, "Congdar Opening version 5 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 5 doors, bye.");
             #inner connecting doors
             my $open_door = $entity_list->FindDoor(208);
             $open_door->SetOpenType(80);

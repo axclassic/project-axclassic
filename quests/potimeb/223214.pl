@@ -4,3 +4,4 @@ sub EVENT_DEATH {
     #spawns Zebuxoruk
     quest::spawn2(223212,0,0,-635.485,-1109.51,-2.8105,60);
 }
+

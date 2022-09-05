@@ -20,19 +20,6 @@ sub EVENT_CLICKDOOR {
         ## It can handle Solo players or a group with multiple Clients should some friend group with somebody
         ## by creating a unique name flag that matches with their instance so nobody enters the wrong instance
         ##
-        my $PoTimeA_Instance_Counter = 0;
-        if(defined $qglobals{pop_potimea_instances}) {
-            $PoTimeA_Instance_Counter = $qglobals{pop_potimea_instances};
-        }
-        else {
-            $PoTimeA_Instance_Counter = 1;
-        }
-        if($PoTimeA_Instance_Counter >= 5) {
-            $client->Message(14, "There are no available instances for The Plane of Time.");
-            return;
-        }
-        $PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter + 1;
-        quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H20");
         my @clients;
         my $the_group = $client->GetGroup();
         if($the_group) {
@@ -44,22 +31,50 @@ sub EVENT_CLICKDOOR {
                 }
             }
         }
-        my $QGlobalValue2 = $client->GetQGlobal(${name}."potimeA");
+        my $QGlobalValue2 = $client->GetQGlobal($name.".potimeA");
+        quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
         if($QGlobalValue2) {
-            quest::MoveGroupInstance(219, $QGlobalValue2, 1, 6, 8);
+            if($client->GetGroup()) {
+                quest::AssignGroupToInstance($QGlobalValue2);
+                quest::MoveGroupInstance(219, $QGlobalValue2, 1, 6, 8);
+            }
+            else {
+                quest::AssignToInstance($QGlobalValue2);
+                quest::MovePCInstance(219, $QGlobalValue2, 1, 6, 8);
+            }
             return;
         }
         else {
-            my $instance_ID = quest::CreateInstance('potimeA', $PoTimeA_Instance_Counter, 25200);
-            $PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter + 1;
-            my $arraySize = @clients;
-            if($arraySize > 1) {
-                quest::AssignGroupToInstance($instance_ID);
-                quest::setgroupglobal("potimeA", $instance_ID, 7, "H7");
+            my $PoTimeA_Instance_Counter = 0;
+            if(defined $qglobals{pop_potimea_instances}) {
+                quest::ze(15, "pop_potimea_instances = $qglobals{pop_potimea_instances}");
+                $PoTimeA_Instance_Counter = $qglobals{pop_potimea_instances};
+                if($PoTimeA_Instance_Counter >= 5) {
+                    $client->Message(14, "There are no available instances for Plane of Time.");
+                    return;
+                }
+                quest::ze(15, "PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter");
+                $PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter + 1;
+                quest::ze(15, "PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter");
             }
             else {
+                $PoTimeA_Instance_Counter = 1;
+                quest::ze(15, "PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter");
+            }
+            my $arraySize = @clients;
+            if($arraySize > 1) {
+                my $instance_ID = quest::CreateInstance('potimeA', $PoTimeA_Instance_Counter, 25200);
+                quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H8");
+                quest::AssignGroupToInstance($instance_ID);
+                quest::setgroupglobal(".potimeA", $instance_ID, 7, "H7");
+                quest::MoveGroupInstance(219, $instance_ID, 1, 6, 8);
+            }
+            else {
+                my $instance_ID = quest::CreateInstance('potimeA', $PoTimeA_Instance_Counter, 25200);
+                quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H8");
                 quest::AssignToInstance($instance_ID);
-                quest::setglobal(${name}."potimeA", $instance_ID, 7, "H7");
+                quest::setglobal($name.".potimeA", $instance_ID, 7, "H7");
+                quest::MovePCInstance(219, $instance_ID, 1, 6, 8);
             }
         }
         ##
@@ -202,4 +217,11 @@ sub EVENT_CLICKDOOR {
 	$qglobals{pop_eartha_arbitor_projection}=undef;
 	$qglobals{pop_earthb_rathe}=undef;
 	$qglobals{pop_time_maelin}=undef;
+    $qglobals{pop_potimea_instances}=undef;
+    $qglobals{pop_potimeb_instances}=undef;
+    $PoTimeA_Instance_Counter=undef;
+    $PoTimeB_Instance_Counter=undef;
+    $QGlobalValue1=undef;
+    $QGlobalValue2=undef;
 }
+

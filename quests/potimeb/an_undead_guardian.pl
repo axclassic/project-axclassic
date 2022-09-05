@@ -1,7 +1,7 @@
 # an_undead_guardian (223116)
 
 sub EVENT_DEATH {
-    quest::ze(15, "Congdar an_undead_guardian signaling undead_event.");
+    #quest::ze(15, "Congdar an_undead_guardian signaling undead_event.");
     #Triggers #undead_event.pl
     quest::signalwith(223188, 14048, 2000);
     #Triggers #undead_counter.pl
