@@ -2,6 +2,6 @@
 
 sub EVENT_DEATH {
     #triggers phase3_trigger.pl with signal 1011
-    quest::signalwith(223154, 1011, 2000);
+    #quest::signalwith(223154, 1011, 2000);
 }
 

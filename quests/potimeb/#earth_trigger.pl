@@ -1,11 +1,16 @@
 ##earth_trigger this is an invisible controller for phase 2 last mob+boss encounter
 # #earth_trigger (223169)
 
-my $phase2_earth_npctrigger = 1;
+#my $phase2_earth_npctrigger = 1;
+my $aurf1_spawned = 1;
+my $aurf2_spawned = 1;
+my $aes1_spawned = 1;
+my $aes2_spawned = 1;
+my $eo_spawned = 1;
 
 #This spawns 2nd grp + boss forphase 2
 sub EVENT_SPAWN {
-    $phase2_earth_npctrigger = 1;
+    #$phase2_earth_npctrigger = 1;
     # An_Unholy_Rock_Fiend (223125)
     quest::spawn2(223125,0,0,242.0,1654.0,491.6,192.5);
     quest::spawn2(223125,0,0,252.0,1649.0,491.3,192.5);
@@ -22,21 +27,64 @@ sub EVENT_SPAWN {
     #Boss Earthen_Overseer (223134)
     quest::spawn2(223134,0,0,262.0,1644.0,491.0,192.5);
     #quest::ze(15, "Congdar spawned 5 An_Unholy_Rock_Fiend, 4 An_Elemental_Stonefist, and Earthen_Overseer.");
+    quest::settimer("phase2_earth_trigger_mobs1", 10);
+}
+
+sub EVENT_TIMER {
+    if($timer eq "phase2_earth_trigger_mobs1") {
+        # An_Unholy_Rock_Fiend (223125)
+        my $aurf1 = $entity_list->GetMobByNpcTypeID(223125);
+        # #An_Unholy_Rock_Fiend (223110)
+        my $aurf2 = $entity_list->GetMobByNpcTypeID(223110);
+        # An_Elemental_Stonefist (223133)
+        my $aes1 = $entity_list->GetMobByNpcTypeID(223133);
+        # An_Elemental_Stonefist (223102)
+        my $aes2 = $entity_list->GetMobByNpcTypeID(223102);
+        # Earthen_Overseer (223134)
+        my $eo = $entity_list->GetMobByNpcTypeID(223134);
+        if($aurf1) {
+            $aurf1_spawned = undef;
+        }
+        if($aurf2) {
+            $aurf2_spawned = undef;
+        }
+        if($aes1) {
+            $aes1_spawned = undef;
+        }
+        if($aes2) {
+            $aes2_spawned = undef;
+        }
+        if($eo) {
+            $eo_spawned = undef;
+        }
+        if($aurf1_spawned || $aurf2_spawned || $aes1_spawned || $aes2_spawned || $eo_spawned) {
+            # Do Nothing
+        }
+        else {
+            quest::stoptimer("phase2_earth_trigger_mobs1");
+            quest::depop();
+        }
+        $aurf1 = undef;
+        $aurf2 = undef;
+        $aes1 = undef;
+        $aes2 = undef;
+        $eo = undef;
+    }
 }
 
 #like earth_counter.pl starts a counter for when all are dead, then opens inner doors!
-sub EVENT_SIGNAL {
+#sub EVENT_SIGNAL {
     #This signal are from these mobs upon death!
-    if($signal == 14035) {
+#    if($signal == 14035) {
         #quest::ze(15, "Congdar earth_trigger signaled phase2_earth_npctrigger $phase2_earth_npctrigger of 10.");
-        $phase2_earth_npctrigger = $phase2_earth_npctrigger + 1;
+#        $phase2_earth_npctrigger = $phase2_earth_npctrigger + 1;
         #phase_trigger script npcid - 223191
-        if($phase2_earth_npctrigger >= 11) {
+#        if($phase2_earth_npctrigger >= 11) {
             #quest::ze(15, "Congdar phase2_earth2_npctrigger 10 of 10 so signal phase2_trigger, bye.");
-            quest::signalwith(223191, 14035, 2000);
-            $phase2_earth_npctrigger = 1;
-            quest::depop();
-        }
-    }
-}
+#            quest::signalwith(223191, 14035, 2000);
+#            $phase2_earth_npctrigger = 1;
+#            quest::depop();
+#        }
+#    }
+#}
 

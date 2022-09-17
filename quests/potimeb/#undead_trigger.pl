@@ -1,11 +1,14 @@
 ##undead_trigger this is an invisible controller that triggers #undead_event.pl
 # #undead2_trigger (223175)
 
-my $undead_npc_counter = 1;
+#my $undead_npc_counter = 1;
+my $aug1_spawned = 1;
+my $aug2_spawned = 1;
+my $re_spawned = 1;
 
 # This spawns undead 2nd grp + boss phase 2
 sub EVENT_SPAWN {
-    $undead_npc_counter = 1;
+    #$undead_npc_counter = 1;
     # an_undead_guardian_ (223107)
     quest::spawn2(223107,0,0,232.0,1114.0,491.2,192.5);
     quest::spawn2(223107,0,0,242.0,1119.0,491.3,192.5);
@@ -20,19 +23,50 @@ sub EVENT_SPAWN {
     #Boss Ralthos_Enrok
     quest::spawn2(223127,0,0,262.0,1109.0,492.1,192.5);
     #quest::ze(15, "Congdar spawned 9 an_undead_guardian_, and Ralthos_Enrok.");
+    quest::settimer("phase2_undead_trigger_mobs1", 10);
+}
+
+sub EVENT_TIMER {
+    if($timer eq "phase2_undead_trigger_mobs1") {
+        # an_undead_guardian_ (223107)
+        my $aug1 = $entity_list->GetMobByNpcTypeID(223107);
+        # an_undead_guardian_ (223138)
+        my $aug2 = $entity_list->GetMobByNpcTypeID(223138);
+        # Ralthos_Enrok (223127)
+        my $re = $entity_list->GetMobByNpcTypeID(223127);
+        if($aug1) {
+            $aug1_spawned = undef;
+        }
+        if($aug2) {
+            $aug2_spawned = undef;
+        }
+        if($re) {
+            $re_spawned = undef;
+        }
+        if($aug1_spawned || $aug2_spawned || $re_spawned) {
+            # Do Nothing
+        }
+        else {
+            quest::stoptimer("phase2_undead_trigger_mobs1");
+            quest::depop();
+        }
+        $aug1 = undef;
+        $aug2 = undef;
+        $re = undef;
+    }
 }
 
 #like undead_counter.pl starts a counter forwhen all are dead, then opens inner doors!
-sub EVENT_SIGNAL {
-    if($signal == 14035) {
+#sub EVENT_SIGNAL {
+#    if($signal == 14035) {
         #This signal are from these mobs upon death!
-        $undead_npc_counter = $undead_npc_counter + 1;
-        if($undead_npc_counter >= 10) {
+#        $undead_npc_counter = $undead_npc_counter + 1;
+#        if($undead_npc_counter >= 10) {
             # phase_trigger script npcid - 223191
-            quest::signalwith(223191, 14035, 4000);
-            $undead_npc_counter = 1;
-            quest::depop();
-        }
-    }
-}
+#            quest::signalwith(223191, 14035, 4000);
+#            $undead_npc_counter = 1;
+#            quest::depop();
+#        }
+#    }
+#}
 

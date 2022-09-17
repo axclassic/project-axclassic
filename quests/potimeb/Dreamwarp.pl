@@ -5,7 +5,7 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH {
-    quest::signalwith(223154, 11080, 4000);
+    #quest::signalwith(223154, 11080, 4000);
     quest::emote(" can support itself no longer and crashes to the ground in a writhing mass of flesh.");
 }
 

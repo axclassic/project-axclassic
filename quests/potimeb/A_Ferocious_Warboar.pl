@@ -2,6 +2,6 @@
 
 sub EVENT_DEATH {
     #sets counter
-    quest::signalwith(223154, 11010, 2000);
+    #quest::signalwith(223154, 11010, 2000);
 }
 

@@ -2,5 +2,5 @@
 
 sub EVENT_DEATH {
     #count 8th wave
-    quest::signalwith(223154,8088,4000);
+    #quest::signalwith(223154,8088,4000);
 }

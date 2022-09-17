@@ -2,6 +2,8 @@ my $headCount = 4;
 my $nukeDelay = 35;
 
 sub EVENT_SPAWN {
+    $headCount = 4;
+    $nukeDelay = 35;
 	quest::setnexthpevent(76);
 }
 
@@ -93,7 +95,7 @@ sub EVENT_TIMER {
 
 sub EVENT_HP {
 	if($hpevent == 76) {
-		quest::emote("roars in pain as his red head explodes in a shower of flaming ethereal energy!");
+		quest::emote(" roars in pain as his red head explodes in a shower of flaming ethereal energy!");
 		$npc->SendIllusion(304,2,1,1,0,1,1,0,1,0,0,0,70);
 		quest::stoptimer("inf_flm");
 		quest::settimer("glc_bth", $nukeDelay - int(rand(10)));
@@ -102,7 +104,7 @@ sub EVENT_HP {
 		quest::setnexthpevent(51);
 	}
     elsif($hpevent == 51) {
-		quest::emote("roars in pain as his blue head explodes into pure ethereal energy!");
+		quest::emote(" roars in pain as his blue head explodes into pure ethereal energy!");
 		$npc->SendIllusion(304,2,2,2,0,1,1,0,1,0,0,0,70); 
 		quest::stoptimer("glc_bth");
 		quest::stoptimer("glc_bst");
@@ -112,7 +114,7 @@ sub EVENT_HP {
 		quest::setnexthpevent(26);
 	}
     elsif($hpevent == 26) {
-		quest::emote("shakes the cavern with a bellow of pain as the white head explodes into a swirling vortex of ethereal energy!");
+		quest::emote(" shakes the cavern with a bellow of pain as the white head explodes into a swirling vortex of ethereal energy!");
 		$npc->SendIllusion(304,2,3,3,0,1,1,0,1,0,0,0,70); 
 		quest::stoptimer("vnm_mst");
 		quest::stoptimer("vnm_bst");
@@ -123,11 +125,13 @@ sub EVENT_HP {
 }
 
 sub EVENT_DEATH {
-	quest::spawn2(223250,0,0,-656.2,-1096.5,-2.7,60); #spawns new beehive
+    #spawns new beehive
+	quest::spawn2(223250,0,0,-656.2,-1096.5,-2.7,60);
     #quest::depop(223999);#phase5_flag
     #quest::spawn2(223991, 0, 0, -186, -1114, -2, 192);#phase6_flag
     #quest::signalwith(223177,667,0);
-    $npc->CameraEffect(3000, 9, 0, 1); #Worlwide camera shake
+    #Worlwide camera shake
+    $npc->CameraEffect(3000, 9, 0, 1);
     ##quest::we is bugged
     #quest::we(14, "CONGRATULATIONS to $name with the completion of phase 5! Prepare for armageddon.");
     #quest::we(15, "For a brief moment, it feels as if all time has stopped. Inside your mind, you hear a great beast screaming as it takes one last breath. It has been done. The gods have been overthrown.");

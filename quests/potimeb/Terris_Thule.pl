@@ -46,7 +46,7 @@ sub EVENT_HP {
 }
 
 sub EVENT_DEATH {
-    quest::signalwith(223157, 12013, 2000);
+    #quest::signalwith(223157, 12013, 2000);
     quest::say("My armies have failed. . . how could this have happened?");
     quest::stoptimer("terris");
 }
@@ -56,7 +56,7 @@ sub EVENT_TIMER {
     my $y = $npc->GetY();
     if($timer eq "terris") {
         if($x < -380 || $x > -199 || $y > 380 || $y < 199) {
-            $npc->GMMove(-310,307,365,95); #-310,307,365,95
+            $npc->GMMove(-310,307,365,95);
         }
     }
 }

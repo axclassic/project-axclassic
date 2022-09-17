@@ -6,7 +6,7 @@ sub EVENT_DEATH {
     my $z1 = $npc->GetZ();
     my $h1 = $npc->GetHeading();
     #quest::ze(15, "Congdar An_Air_Phoenix_Noble signaling air_event (223187).");
-    quest::signalwith(223187, 14058, 2000);
+    #quest::signalwith(223187, 14058, 2000);
     # Servitor_of_Xegony (223995)
     #quest::ze(15, "Congdar An_Air_Phoenix_Noble spawning 2 Servitor_of_Xegony (223995).");
     quest::spawn2(223995,0,0,$x1,$y1 + 5,$z1,$h1);

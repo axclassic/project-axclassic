@@ -8,7 +8,7 @@ sub EVENT_SPAWN {
 	quest::settimer("vzek",1);
 }
 
-sub EVENT_HP {       
+sub EVENT_HP {
 	if($hpevent == 50) {
 		my $x1 = $npc->GetX();
 		my $y1 = $npc->GetY();
@@ -20,7 +20,7 @@ sub EVENT_HP {
 }
 
 sub EVENT_DEATH {
-	quest::signalwith(223157, 12011, 2000);
+	#quest::signalwith(223157, 12011, 2000);
 	quest::say("You stand to gain no honor in my death. May the wrath of Rallos Zek strike you down with great vengeance.");
 	quest::stoptimer("vzek");
 }

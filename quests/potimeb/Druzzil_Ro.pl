@@ -2,13 +2,15 @@
 
 sub EVENT_SPAWN {
     quest::emote("speaks with no movement of her mouth. Her thoughts flow through you, calming you as you begin to comprehend what she is trying to communicate to you.");
-    quest::settimer("druzzil1",5); #5
+    #5
+    quest::settimer("druzzil1",5);
 }
 
 sub EVENT_TIMER {
     if($timer eq "druzzil1") {
         quest::emote("speaks to your mind, 'Zebuxoruk, my student I cannot allow this to happen. If you were to escape from another prison the will and power of the gods will have been compromised.'");
-        quest::settimer("druzzil2",12); #5
+         #5
+        quest::settimer("druzzil2",12);
         quest::stoptimer("druzzil1");
     }
 
@@ -46,9 +48,11 @@ sub EVENT_TIMER {
         if(@carray) {
             foreach $ent(@carray) {
                 my $members = $ent->GetName();
-                $ent->MovePC(202,1001,8,390,66); #back to Pok for clients
+                #back to Pok for clients
+                $ent->MovePC(202,1001,8,390,66);
             }
         }
     }
-}#END sub_EVENT_TIMER
+}
+#END sub_EVENT_TIMER
 

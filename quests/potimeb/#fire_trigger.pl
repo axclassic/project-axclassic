@@ -1,11 +1,16 @@
 ##fire_trigger this is an invisible controller that triggers #fire_event.pl
 # #fire_trigger (223173)
 
-my $phase2_fire_npctrigger = 1;
+#my $phase2_fire_npctrigger = 1;
+my $afwb1_spawned = 1;
+my $afwb2_spawned = 1;
+my $afed_spawned = 1;
+my $ase_spawned = 1;
+my $gwb_spawned = 1;
 
 # This spawns fire grp + boss forphase 2
 sub EVENT_SPAWN {
-    $phase2_fire_npctrigger = 1;
+    #$phase2_fire_npctrigger = 1;
     # A_Ferocious_War_Boar (223143)
     quest::spawn2(223143,0,0,252.0,589.0,491.0,192.5);
     quest::spawn2(223143,0,0,252.0,579.0,491.0,192.5);
@@ -22,21 +27,59 @@ sub EVENT_SPAWN {
     # Boss Gutripping_War_Beast
     quest::spawn2(223146,0,0,262.0,574.0,491.0,192.5);
     #quest::ze(15, "Congdar spawned 3 A_Ferocious_War_Boar, 3 A_Smoldering_Elemental, 3 A_Fire_Etched_Doombringer, and Gutripping_War_Beast.");
+    quest::settimer("phase2_fire_trigger_mobs", 10);
 }
 
-#like fire_counter.pl starts a counter forwhen all are dead, then opens inner doors!
-sub EVENT_SIGNAL {
-    if($signal == 14035) {
-        #quest::ze(15, "Congdar fire_trigger signaled phase2_fire_npctrigger $phase2_fire_npctrigger of 9.");
-        #This signal are from these mobs upon death!
-        $phase2_fire_npctrigger = $phase2_fire_npctrigger + 1;
-        if($phase2_fire_npctrigger >= 10) {
-            #quest::ze(15, "Congdar Gutripping_War_Beast dead signalling phase2_trigger, bye.");
-            # phase_trigger script npcid - 223191
-            quest::signalwith(223191, 14035, 2000);
-            $phase2_fire_npctrigger = 1;
+sub EVENT_TIMER {
+    if($timer eq "phase2_fire_trigger_mobs") {
+        # A_Ferocious_War_Boar (223143)
+        my $afwb1 = $entity_list->GetMobByNpcTypeID(223143);
+        # A_Ferocious_War_Boar (223117)
+        my $afwb2 = $entity_list->GetMobByNpcTypeID(223117);
+        # A_Fire_Etched_Doombringer (223137)
+        my $afed = $entity_list->GetMobByNpcTypeID(223137);
+        # A_Smoldering_Elemental (223109)
+        my $ase = $entity_list->GetMobByNpcTypeID(223109);
+        # Gutripping_War_Beast (223146)
+        my $gwb = $entity_list->GetMobByNpcTypeID(223146);
+        if($afwb1) {
+            $afwb1_spawned = undef;
+        }
+        if($afwb2) {
+            $afwb2_spawned = undef;
+        }
+        if($afed) {
+            $afed_spawned = undef;
+        }
+        if($ase) {
+            $ase_spawned = undef;
+        }
+        if($gwb) {
+            $gwb_spawned = undef;
+        }
+        if($afwb1_spawned || $afwb2_spawned || $afed_spawned || $ase_spawned || $gwb_spawned) {
+            # Do Nothing
+        }
+        else {
+            quest::stoptimer("phase2_fire_trigger_mobs");
             quest::depop();
         }
     }
 }
+
+#like fire_counter.pl starts a counter forwhen all are dead, then opens inner doors!
+#sub EVENT_SIGNAL {
+#    if($signal == 14035) {
+        #quest::ze(15, "Congdar fire_trigger signaled phase2_fire_npctrigger $phase2_fire_npctrigger of 9.");
+        #This signal are from these mobs upon death!
+#        $phase2_fire_npctrigger = $phase2_fire_npctrigger + 1;
+#        if($phase2_fire_npctrigger >= 10) {
+            #quest::ze(15, "Congdar Gutripping_War_Beast dead signalling phase2_trigger, bye.");
+            # phase_trigger script npcid - 223191
+#            quest::signalwith(223191, 14035, 2000);
+#            $phase2_fire_npctrigger = 1;
+#            quest::depop();
+#        }
+#    }
+#}
 

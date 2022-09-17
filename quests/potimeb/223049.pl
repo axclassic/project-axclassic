@@ -2,5 +2,5 @@
 
 sub EVENT_DEATH {
     #count 5th wave
-    quest::signalwith(223154,5055,4000);
+    #quest::signalwith(223154,5055,4000);
 }
