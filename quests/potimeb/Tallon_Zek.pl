@@ -8,7 +8,6 @@ sub EVENT_AGGRO {
 }
 
 sub EVENT_DEATH {
-	#quest::signalwith(223157, 12010, 2000);
 	quest::say("Foolish mortals, you know not what you do. Continue on this path and you shall lead us all to destruction!");
 	quest::stoptimer("tzek");
 }

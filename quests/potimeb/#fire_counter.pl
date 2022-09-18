@@ -1,14 +1,13 @@
 #fire_counter.pl used as phase2 mobs instead!
 # #fire_counter (223182)
 
-#my $phase2_fire_npccounter = 1;
 my $afwb1_spawned = 1;
 my $afwb2_spawned = 1;
 my $afed_spawned = 1;
 my $ase_spawned = 1;
 
-sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
-    #$phase2_fire_npccounter = 1;
+sub EVENT_SPAWN {
+    #This spawns 1st mob group for Phase 2
     #fire group
     # A_Ferocious_War_Boar (223143)
 	quest::spawn2(223143,0,0,232.0,579.0,491.6,192.5);
@@ -60,19 +59,4 @@ sub EVENT_TIMER {
         }
     }
 }
-
-#sub EVENT_SIGNAL {
-    #like fire_event.pl starts a counter for when all are dead, spawns the next group!
-#	if($signal == 14068) {
-        #quest::ze(15, "Congdar fire_counter received signal phase2_fire_npccounter $phase2_fire_npccounter of 8.");
-        #This signal are from these mobs upon death!
-#		$phase2_fire_npccounter = $phase2_fire_npccounter + 1;
-#        if($phase2_fire_npccounter == 9) {
-            #quest::ze(15, "Congdar fire_counter phase2_fire_npccounter 9 of 9 so signal phase2_trigger, bye.");
-#            quest::signalwith(223191, 14034, 2000);
-#            $phase2_fire_npccounter = 11;
-#            quest::depop();
-#        }
-#	}	
-#}
 

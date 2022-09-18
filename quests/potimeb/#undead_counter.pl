@@ -1,13 +1,11 @@
 #undead_counter.pl used as phase2 mobs instead!
 # #undead_counter (223180)
 
-#my $phase2_undead_npccounter = 1;
 my $aug1_spawned = 1;
 my $aug2_spawned = 1;
 
 sub EVENT_SPAWN {
     #This spawns 1st mob group for Phase 2
-    #$phase2_undead_npccounter = 1;
 	#undead group
     # an_undead_guardian_ (223107)
 	quest::spawn2(223107,0,0,242.0,1119.0,491.3,192.5);
@@ -64,20 +62,4 @@ sub EVENT_TIMER {
         $aug2 = undef;
     }
 }
-
-#sub EVENT_SIGNAL {
-    #like air_event.pl starts a counter for when all are dead, spawns the next group!
-#	if($signal == 14048) {
-        #quest::ze(15, "Congdar undead_counter received signal phase2_undead_npccounter $phase2_undead_npccounter of 8.");
-        #This signal are from these mobs upon death!
-#		$phase2_undead_npccounter = $phase2_undead_npccounter + 1;
-#        if($phase2_undead_npccounter == 9) {
-            #quest::ze(15, "Congdar undead_counter phase2_undead_npccounter 9 of 9 so signal phase2_trigger, bye.");
-            # phase_trigger script npcid - 223191
-#            quest::signalwith(223191, 14034, 2000);
-#            $phase2_undead_npccounter = 11;
-#            quest::depop();
-#        }
-#	}	
-#}
 

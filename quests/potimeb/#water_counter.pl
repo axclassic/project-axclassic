@@ -1,7 +1,6 @@
 #water_counter.pl used as phase2 mobs instead!
 # #water_counter (223181)
 
-#my $phase2_water_npccounter = 1;
 my $awh1_spawned = 1;
 my $awh2_spawned = 1;
 my $cok1_spawned = 1;
@@ -10,7 +9,6 @@ my $ada1_spawned = 1;
 my $ada2_spawned = 1;
 
 sub EVENT_SPAWN { #This spawns 1st mob group for Phase 2
-    #$phase2_water_npccounter = 1;
     #water group
     # A_Watercrafted_Hunter (223148)
 	quest::spawn2(223148,0,0,252.0,884.0,491.0,192.5);
@@ -107,20 +105,4 @@ sub EVENT_TIMER {
         $ada2 = undef;
     }
 }
-
-#sub EVENT_SIGNAL {
-    #like water_event.pl starts a counter for when all are dead, spawns the next group!
-#	if($signal == 14058) {
-        #quest::ze(15, "Congdar water_counter received signal phase2_water_npccounter is $phase2_water_npccounter out of 8."); 
-        #This signal are from these mobs upon death!
-#		$phase2_water_npccounter = $phase2_water_npccounter + 1;
-#        if($phase2_water_npccounter == 9) {
-            #quest::ze(15, "Congdar water_counter phase2_water_npccounter 9 of 9 so signal phase2_trigger.");
-            # phase_trigger script npcid - 223191
-#            quest::signalwith(223191, 14034, 2000);
-#            $phase2_water_npccounter = 11;
-#            quest::depop();
-#        }
-#	}	
-#}
 

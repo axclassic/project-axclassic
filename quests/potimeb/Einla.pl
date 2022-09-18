@@ -17,9 +17,6 @@ sub EVENT_TIMER {
 
 sub EVENT_SAY {
     #shortcuts
-    #quest::signalwith(223177,14060,0); #signals counter at 4 and will open on 5th
-    #quest::signalwith(223191,14035,0); #signals inner doors.
-    #quest::signalwith(223154,11090,0); #signals portal
     $npc->SetAppearance(0);
     if($text =~/hail/i) {
         quest::say ("Welcome to Time, $name. To have a chance of beating the God's of this plane you will need more than your army of magical minions. I posses a [powerful ring] that could help you in your quest");
@@ -44,5 +41,6 @@ sub EVENT_ITEM {
     else {
         plugin::return_items(\%itemcount);
     }
-}#END sub_EVENT_SAY
+}
+
 

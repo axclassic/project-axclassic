@@ -1,11 +1,6 @@
 #phase_five_trigger.pl npcid - 223158
 
-#my $god_counterII = 1;
-#my $last_counter = 1;
-
 sub EVENT_SPAWN {
-    #$god_counterII = 1;
-    #$lastcounter = 1;
     #flavor
     quest::signalwith(223111, 1004, 2000);
     #Fake Bertoxxulous
@@ -140,37 +135,4 @@ sub EVENT_TIMER {
         }
     }
 }
-
-#sub EVENT_SIGNAL {
-#    if($signal == 1234) {
-#        #sets counter before last 4 gods up
-#        $last_counter = $last_counter + 1;
-#        if($last_counter >= 50) {
-#            $last_counter = 1;
-#            quest::depopall(223098);
-#            quest::depopall(223165);
-#            quest::depopall(223000);
-#            quest::depopall(223001);
-#            #Real Bertoxxulous
-#            quest::spawn2(223142,0,0,-299,-297,23.3,31);
-#            #Real Cazic
-#            quest::spawn2(223166,0,0,-257,255,6,101.5);
-#            #Real Innoruuk
-#            quest::spawn2(223167,0,0,303.3,306,13.3,161.5);
-#            #Real Rallos
-#            quest::spawn2(223168,0,0,264,-279,18.75,217.5);
-#        }
-#    }
-#    if($signal == 13010) {
-#        $god_counterII = $god_counterII + 1;
-#        if($god_counterII >= 5) {
-#            #event success
-#            $npc->CameraEffect(3000, 6, 0, 1); #Worlwide camera shake
-#            #sets flag forfinal phase to Quarm
-#            quest::setglobal("portal5","1",7,"H1");
-#            $god_counterII = 1;
-#            quest::depop();
-#        }
-#    }
-#}
 

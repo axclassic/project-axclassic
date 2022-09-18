@@ -127,14 +127,7 @@ sub EVENT_HP {
 sub EVENT_DEATH {
     #spawns new beehive
 	quest::spawn2(223250,0,0,-656.2,-1096.5,-2.7,60);
-    #quest::depop(223999);#phase5_flag
-    #quest::spawn2(223991, 0, 0, -186, -1114, -2, 192);#phase6_flag
-    #quest::signalwith(223177,667,0);
     #Worlwide camera shake
     $npc->CameraEffect(3000, 9, 0, 1);
-    ##quest::we is bugged
-    #quest::we(14, "CONGRATULATIONS to $name with the completion of phase 5! Prepare for armageddon.");
-    #quest::we(15, "For a brief moment, it feels as if all time has stopped. Inside your mind, you hear a great beast screaming as it takes one last breath. It has been done. The gods have been overthrown.");
-    #quest::we(15, "After a short moment of peace and joy, you are swallowed by the horror of what has happened. You say, out loud for no one to hear, 'What have we done?'");
 }
 

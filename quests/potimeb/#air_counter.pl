@@ -1,14 +1,11 @@
 #air_counter.pl used as phase2 mobs instead!
 # #air_counter (223179)
 
-#my $phase2_air_npccounter = 1;
 my $aapn_spawned = 1;
 my $sox_spawned = 1;
 
 #This spawns 1st mob group for Phase 2
 sub EVENT_SPAWN {
-    #$phase2_air_npccounter = 1;
-
     #air group
     # #An_Air_Phoenix_Noble (223226)
 	quest::spawn2(223226,0,0,232.0,1359.0,491.9,192.5);
@@ -65,19 +62,4 @@ sub EVENT_TIMER {
         $sox = undef;
     }
 }
-
-#sub EVENT_SIGNAL {
-    #This signal are from these mobs upon death!
-	#if($signal == 14038) {
-        #quest::ze(15, "Congdar air_counter received signal phase2_air_npccounter $phase2_air_npccounter of 8.");
-		#$phase2_air_npccounter = $phase2_air_npccounter + 1;
-        # phase_trigger script npcid - 223191
-        #if($phase2_air_npccounter == 9) {
-            #quest::ze(15, "Congdar air_counter phase2_air_npccounter 9 of 9 so signal phase2_trigger, bye.");
-            #quest::signalwith(223191, 14034, 2000);
-            #$phase2_air_npccounter = 11;
-            #quest::depop();
-        #}
-	#}
-#}
 

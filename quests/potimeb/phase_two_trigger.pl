@@ -1,7 +1,5 @@
 #phase_two_trigger (223191) This is required for signals for phase 2
 
-#my $IIcounter = 1;
-#my $groupboss = 1;
 my $wse_spawned = 1;
 my $re_spawned = 1;
 my $gwb_spawned = 1;
@@ -14,8 +12,6 @@ sub EVENT_SPAWN {
     $ut_spawned = 1;
     $wt_spawned = 1;
     $ft_spawned = 1;
-    #$IIcounter = 1;
-    #$groupboss = 1;
 
     #flavor triggers invisible _ 223111.pl
     quest::signalwith(223111, 1001, 2000);
@@ -29,45 +25,9 @@ sub EVENT_SPAWN {
     quest::spawn2(223181,0,0,-129.6,1720,547,0);
     #Fire group using #fire_counter (223182)
     quest::spawn2(223182,0,0,-129.6,1720,547,0);
-    quest::ze(15, "Congdar phase2_trigger spawned.");
+    #quest::ze(15, "Congdar phase2_trigger spawned.");
     quest::settimer("phase2_boss_check1", 5);
 }
-
-#sub EVENT_SIGNAL {
-#if($signal == 14034) {
-    #quest::ze(15, "Congdar phase2_trigger received signal groupboss $groupboss of 5.");
-    #keeps track of group mob #1
-    #$groupboss = $groupboss + 1;
-    #if($groupboss == 6) {
-        #quest::ze(15, "Congdar phase2_trigger count is 5 of 5, spawn 5 bosses.");
-        ##earth_trigger (223169)
-        #quest::spawn2(223169,0,0,-129.6,1720,547,0);
-        #air boss group
-        #quest::spawn2(223170,0,0,-129.6,1720,547,0);
-        #undead boss group
-        #quest::spawn2(223171,0,0,-129.6,1720,547,0);
-        #water boss group
-        #quest::spawn2(223172,0,0,-129.6,1720,547,0);
-        #fire boss group
-        #quest::spawn2(223173,0,0,-129.6,1720,547,0);
-        #$groupboss = 7;
-        #}
-        #}
-        #This signal keeps track of the groups dead to open inner doors
-        #if($signal == 14035) {
-            #quest::ze(15, "Congdar phase2_trigger received signal IIcounter $IIcounter of 5.");
-            #phase 2 boss signals
-            #$IIcounter = $IIcounter + 1;
-            #if($IIcounter == 6) {
-                #quest::ze(15, "Congdar phase2_trigger count is 5 of 5, shake the world, open doors, spawn phase3_trigger.");
-                #Inner doors open!
-                #quest::settimer("twoopens", 5);
-                #triggers phase3_trigger.pl
-                #quest::spawn2(223154,0,0,-129.6,1720,547,0);
-                #$IIcounter = 7;
-                #}
-                #}
-                #}
 
 sub EVENT_TIMER {
     if($timer eq "phase2_boss_check1") {
@@ -126,7 +86,7 @@ sub EVENT_TIMER {
         }
         else {
             quest::stoptimer("phase2_boss_check2");
-            quest::ze(15, "Congdar all 5 _triggers down, spawning phase3_trigger.");
+            #quest::ze(15, "Congdar all 5 _triggers down, spawning phase3_trigger.");
             #phase3_trigger (223154)
             quest::spawn2(223154,0,0,-129.6,1720,547,0);
             quest::settimer("twoopens", 10);
@@ -135,11 +95,11 @@ sub EVENT_TIMER {
 
     if($timer eq "twoopens") {
         quest::stoptimer("twoopens");
-        quest::ze(15, "Congdar twoopens $instanceversion.");
+        #quest::ze(15, "Congdar twoopens $instanceversion.");
         #Worlwide camera shake
         $npc->CameraEffect(3000, 6, 0, 1);
         if($instanceversion == 1) {
-            quest::ze(15, "Congdar Opening version 1 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 1 doors, bye.");
             #inner connecting doors
             my $open_door = $entity_list->FindDoor(80);
             $open_door->SetOpenType(80);
@@ -338,7 +298,7 @@ sub EVENT_TIMER {
             $open_door->SetOpenType(81);
             $open_door->ForceOpen($npc);
         }
-        quest::ze(15, "Congdar phase2_trigger depop, bye.");
+        #quest::ze(15, "Congdar phase2_trigger depop, bye.");
         $npc->Depop();
     }
 }

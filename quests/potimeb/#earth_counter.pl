@@ -1,7 +1,6 @@
 #earth_counter.pl used as phase2 mobs instead!
 # #earth_counter (223178)
 
-#my $phase2_earth_npccounter = 1;
 my $aurf1_spawned = 1;
 my $aurf2_spawned = 1;
 my $aes1_spawned = 1;
@@ -9,7 +8,6 @@ my $aes2_spawned = 1;
 
 sub EVENT_SPAWN {
     #This spawns 1st mob group for Phase 2
-    #$phase2_earth_npccounter = 1;
     #Earth
     # An_Unholy_Rock_Fiend (223125)
 	quest::spawn2(223125,0,0,252.0+5,1659.0-5,491.0,192.5);
@@ -86,21 +84,4 @@ sub EVENT_TIMER {
         $aes2 = undef;
     }
 }
-
-#sub EVENT_SIGNAL {
-    #like earth_event.pl starts a counter for when all are dead, spawns the next group!
-	#if($signal == 14028) {
-        #quest::ze(15, "Congdar earth_counter received signal phase2_earth_npccounter $phase2_earth_npccounter of 9.");
-        #This signal are from these mobs upon death!
-		#$phase2_earth_npccounter = $phase2_earth_npccounter + 1;
-		#quest::ze(15, "okay i signaled and my counter is now $earthc.");
-        #if($phase2_earth_npccounter == 9) {
-            #quest::ze(15, "Congdar earth_counter phase2_earth_npccounter 9 of 9 so signal phase2_trigger, bye.");
-            # phase_trigger script npcid - 223191
-            #quest::signalwith(223191, 14034, 2000);
-            #$phase2_earth_npccounter = 111;
-            #quest::depop();
-        #}
-	#}	
-#}
 

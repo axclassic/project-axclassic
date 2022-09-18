@@ -1,6 +1,5 @@
 #phase_one_trigger script npcid - 223177 This is required for signals of all 5 trials
 
-#my $Icounter = 1;
 my $noa_spawned = 1;
 my $toe_spawned = 1;
 my $kof_spawned = 1;
@@ -13,27 +12,9 @@ sub EVENT_SPAWN {
     $kof_spawned = 1;
     $rotu_spawned = 1;
     $aow_spawned = 1;
-    #$Icounter = 1;
-    quest::ze(15, "Congdar phase_trigger spawned.");
+    #quest::ze(15, "Congdar phase_trigger spawned.");
     quest::settimer("phase1_boss_check", 10);
 }
-
-#sub EVENT_SIGNAL {
-#phase 1 signals
-#if($signal == 14060) {
-    #quest::ze(15, "Congdar phase_trigger received signal $Icounter of 5.");
-    #$Icounter = $Icounter + 1;
-    #if($Icounter == 6) {
-        #quest::ze(15, "Congdar phase_trigger count is 5 of 5, shake the world, open doors, spawn phase2_trigger.");
-        #5 seconds
-        #quest::settimer("opendoors", 5);
-        #phase 2 trigger
-        #quest::spawn2(223191,0,0,-140,1737,547,0);
-        #$Icounter = 7;
-        #}
-        #}
-        #}
-        #END sub_EVENT_SIGNAL
 
 sub EVENT_TIMER {
     if($timer eq "phase1_boss_check") {
@@ -67,7 +48,7 @@ sub EVENT_TIMER {
         }
         else {
             quest::stoptimer("phase1_boss_check");
-            quest::ze(15, "Congdar all 5 bosses spawned.");
+            #quest::ze(15, "Congdar all 5 bosses spawned.");
             quest::settimer("phase1_boss_check2", 5);
         }
         $noa = undef;
@@ -93,7 +74,7 @@ sub EVENT_TIMER {
         }
         else {
             quest::stoptimer("phase1_boss_check2");
-            quest::ze(15, "Congdar all 5 bosses down, spawning phase2_trigger.");
+            #quest::ze(15, "Congdar all 5 bosses down, spawning phase2_trigger.");
             #phase2_trigger (223191)
             quest::spawn2(223191,0,0,-140,1737,547,0);
             quest::settimer("opendoors", 5);
@@ -107,11 +88,11 @@ sub EVENT_TIMER {
 
     if($timer eq "opendoors") {
         quest::stoptimer("opendoors");
-        quest::ze(15, "Congdar opendoors $instanceversion.");
+        #quest::ze(15, "Congdar opendoors $instanceversion.");
         #Worlwide camera shake
         $npc->CameraEffect(3000, 6, 0, 1);
         if($instanceversion == 1) {
-            quest::ze(15, "Congdar Opening version 1 doors, bye.");
+            #quest::ze(15, "Congdar Opening version 1 doors, bye.");
             my $open_door = $entity_list->FindDoor(76);
             $open_door->SetOpenType(81);
             $open_door->ForceOpen($npc);
@@ -425,7 +406,7 @@ sub EVENT_TIMER {
             $open_door->SetOpenType(81);
             $open_door->ForceOpen($npc);
         }
-        quest::ze(15, "Congdar phase_trigger depop, bye.");
+        #quest::ze(15, "Congdar phase_trigger depop, bye.");
         $npc->Depop();
     }
 }

@@ -5,8 +5,6 @@ sub EVENT_DEATH {
     my $y1 = $npc->GetY();
     my $z1 = $npc->GetZ();
     my $h1 = $npc->GetHeading();
-    #quest::ze(15, "Congdar a_pile_of_living_rubble signaling earth_event (223186).");
-    #quest::signalwith(223186, 14018, 2000);
     # a rock shaped assassin
     #quest::ze(15, "Congdar a_pile_of_living_rubble spawning 2 a_rock_shaped_assassin.");
     quest::spawn2(223147,0,0,$x1,$y1 + 5,$z1,$h1);

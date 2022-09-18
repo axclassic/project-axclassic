@@ -14,7 +14,6 @@ sub EVENT_TIMER {
 	if($timer eq "zeb2") {
 		quest::say("If they have taken measures these extreme I must rethink what I have done, and what I will do. If there was this much cause for conc...");
 		quest::signalwith(223111, 1006, 2000);
-        #quest::spawn2(223213,0,0,47,-1105.91,-2.8105,187.9); #spawns over at quarm
          #next to zeb
 		quest::spawn2(223213,0,0,-597,-1106,-3,187.9);
         #10
