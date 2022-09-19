@@ -10,6 +10,7 @@ sub DoSummon {
     my $CorpseCount = $client->GetCorpseCount();
     if($CorpseCount > 0) {
         quest::summonallplayercorpses($charid);
+        quest::delglobal($name.".potimeb_corpse");
     }
 }
 

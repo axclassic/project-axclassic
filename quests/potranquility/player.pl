@@ -2,8 +2,8 @@
 
 sub EVENT_CLICKDOOR {
     my $d_id = ($doorid % 256);
-    $client->Message(14, "Door Clicked doorid = $doorid");
-    $client->Message(14, "Door Clicked d_id = $d_id");
+    #$client->Message(14, "Door Clicked doorid = $doorid");
+    #$client->Message(14, "Door Clicked d_id = $d_id");
     #timea
     if($doorid == 18 || $d_id == 18) {
         if(defined $qglobals{pop_time_maelin}) {
@@ -32,14 +32,12 @@ sub EVENT_CLICKDOOR {
             }
         }
         my $QGlobalValue2 = $client->GetQGlobal($name.".potimeA");
-        quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
+        #quest::ze(15, "QGlobalValue2 = $QGlobalValue2");
         if($QGlobalValue2) {
             if($client->GetGroup()) {
-                quest::AssignGroupToInstance($QGlobalValue2);
                 quest::MoveGroupInstance(219, $QGlobalValue2, 1, 6, 8);
             }
             else {
-                quest::AssignToInstance($QGlobalValue2);
                 quest::MovePCInstance(219, $QGlobalValue2, 1, 6, 8);
             }
             return;
@@ -47,33 +45,34 @@ sub EVENT_CLICKDOOR {
         else {
             my $PoTimeA_Instance_Counter = 0;
             if(defined $qglobals{pop_potimea_instances}) {
-                quest::ze(15, "pop_potimea_instances = $qglobals{pop_potimea_instances}");
+                #quest::ze(15, "pop_potimea_instances = $qglobals{pop_potimea_instances}");
                 $PoTimeA_Instance_Counter = $qglobals{pop_potimea_instances};
                 if($PoTimeA_Instance_Counter >= 5) {
                     $client->Message(14, "There are no available instances for Plane of Time.");
                     return;
                 }
-                quest::ze(15, "PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter");
+                #quest::ze(15, "PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter");
                 $PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter + 1;
-                quest::ze(15, "PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter");
+                #quest::ze(15, "PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter");
             }
             else {
                 $PoTimeA_Instance_Counter = 1;
-                quest::ze(15, "PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter");
+                #quest::ze(15, "PoTimeA_Instance_Counter = $PoTimeA_Instance_Counter");
             }
             my $arraySize = @clients;
             if($arraySize > 1) {
                 my $instance_ID = quest::CreateInstance('potimeA', $PoTimeA_Instance_Counter, 25200);
-                quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H8");
+                quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H7");
                 quest::AssignGroupToInstance($instance_ID);
                 quest::setgroupglobal(".potimeA", $instance_ID, 7, "H7");
                 quest::MoveGroupInstance(219, $instance_ID, 1, 6, 8);
             }
             else {
                 my $instance_ID = quest::CreateInstance('potimeA', $PoTimeA_Instance_Counter, 25200);
-                quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H8");
+                quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H7");
                 quest::AssignToInstance($instance_ID);
                 quest::setglobal($name.".potimeA", $instance_ID, 7, "H7");
+                #quest::ze(15, "Congdar short test.");
                 quest::MovePCInstance(219, $instance_ID, 1, 6, 8);
             }
         }

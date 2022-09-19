@@ -103,11 +103,11 @@ sub EVENT_CLICKDOOR {
 #END sub_EVENT_CLICKDOOR
 
 sub EVENT_CONNECT {
-    quest::delglobal("potimebLD$name");
+    quest::delglobal("potimebLD.".$name);
 }
 
 sub EVENT_DISCONNECT {
     # S20  20 seconds qglobal
-    quest::setglobal("potimebLD$name", "1", 7, "F");
+    quest::setglobal("potimebLD.".$name, "1", 7, "F");
 }
 
