@@ -28,8 +28,8 @@ sub EVENT_ENTERZONE {
 
 sub EVENT_CLICKDOOR {
     my $d_id = ($doorid % 256);
-    $client->Message(14, "Door Clicked doorid = $doorid");
-    $client->Message(14, "Door Clicked d_id = $d_id");
+    #$client->Message(14, "Door Clicked doorid = $doorid");
+    #$client->Message(14, "Door Clicked d_id = $d_id");
     my $PortalEventPassed = $client->GetQGlobal($name.".potimea_portal_event_timer");
     my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
     my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
