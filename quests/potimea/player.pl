@@ -19,6 +19,7 @@ sub EVENT_ZONE {
             }
         }
     }
+    quest::delglobal("potimeaLD.".$name);
 }
 #END sub EVENT_ZONE
 
@@ -511,14 +512,8 @@ sub Five_Bosses_Are_Dead {
     return 1;
 }
 
-sub EVENT_CONNECT {
-    quest::delglobal("potimeaLD".$name);
-}
-
 sub EVENT_DISCONNECT {
     # S20  20 seconds qglobal
-    quest::setglobal("potimeaLD".$name, "1", 7, "F");
+    quest::setglobal("potimeaLD.".$name, "1", 7, "H7");
 }
 
-sub EVENT_TIMER {
-}

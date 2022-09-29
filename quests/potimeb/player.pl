@@ -1,6 +1,7 @@
 # The Plane of Time player.pl
 
 sub EVENT_ZONE {
+    quest::delglobal("potimebLD.".$name);
     @corpse = $entity_list->GetCorpseList();
     if(@corpse) {
         foreach $ent (@corpse) {
@@ -22,7 +23,7 @@ sub EVENT_ENTERZONE {
     quest::signalwith(223111, 1000, 10000);
     my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
     if($QGlobalValue1) {
-        quest::setglobal($name.".potimeb_corpse", "1", 7, "S5");
+        quest::delglobal($name.".potimeb_corpse");
     }
 }
 #END sub_EVENT_ENTERZONE
@@ -102,12 +103,8 @@ sub EVENT_CLICKDOOR {
 }
 #END sub_EVENT_CLICKDOOR
 
-sub EVENT_CONNECT {
-    quest::delglobal("potimebLD.".$name);
-}
-
 sub EVENT_DISCONNECT {
     # S20  20 seconds qglobal
-    quest::setglobal("potimebLD.".$name, "1", 7, "F");
+    quest::setglobal("potimebLD.".$name, "1", 7, "H7");
 }
 
