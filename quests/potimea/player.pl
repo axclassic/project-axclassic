@@ -36,7 +36,6 @@ sub EVENT_CLICKDOOR {
     my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
     my $QGlobalValue3 = $client->GetQGlobal($name.".potimeA");
     if(Five_Bosses_Are_Dead() && ($PortalEventPassed || $QGlobalValue2)) {
-        quest::delglobal($name.".potimea_portal_event_timer");
         if((($doorid == 64) || ($d_id == 64)) ||
             (($doorid == 44) || ($d_id == 44)) ||
             (($doorid == 49) || ($d_id == 49)) ||
