@@ -1,16 +1,5 @@
 # #The_Golem_Construct (219062)
 
-my @now_raid;
-
-sub EVENT_COMBAT {
-    if($npc->IsEngaged()) {
-        @now_raid = $npc->GetHateList();
-	}
-    else {
-        @now_raid = undef;
-	}
-}
-
 sub EVENT_DEATH {
     my $Elemental = $entity_list->GetMobByNpcTypeID(219059);
     my $Undead = $entity_list->GetMobByNpcTypeID(219060);
@@ -20,9 +9,11 @@ sub EVENT_DEATH {
         quest::ze(14, "A booming echo bellows from across the sky, 'Congratulations! You feel an overwhelming urge to pass through the portals. Make haste before it's too late...'");
     }
 
+    my @now_raid = $npc->GetHateList();
     foreach(@now_raid) {
         if($_->GetEnt()->IsClient()) {
-            my $QuestGlobalValue = $_->GetEnt()->GetQGlobal($name.".potimea_portal_event_timer");
+            my $potimea_name = $_->GetEnt()->GetName();
+            my $QuestGlobalValue = $_->GetEnt()->GetQGlobal($potimea_name.".potimea_portal_event_timer");
             if(!$QuestGlobalValue) {
                 quest::targlobal($name.".potimea_portal_event_timer", "1", "H1", 0, $client->CharacterID(), 0);
                 $QuestGlobalValue = undef;
