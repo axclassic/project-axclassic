@@ -489,7 +489,6 @@ sub EVENT_CLICKDOOR {
     }
     $qglobals{pop_potimea_instances}=undef;
     $qglobals{pop_potimeb_instances}=undef;
-    $PoTimeA_Instance_Counter=undef;
     $PoTimeB_Instance_Counter=undef;
     $QGlobalValue1=undef;
     $QGlobalValue2=undef;
@@ -504,7 +503,7 @@ sub Five_Bosses_Are_Dead {
     my $Animated = $entity_list->GetMobByNpcTypeID(219061);
     my $Golem = $entity_list->GetMobByNpcTypeID(219062);
     my $Guardian = $entity_list->GetMobByNpcTypeID(219063);
-    if($Elemenal || $Undead || $Animated || $Golem || $Guardian) {
+    if($Elemental || $Undead || $Animated || $Golem || $Guardian) {
         quest::ze(15, "A booming echo bellows from across the sky, 'You have more to dispatch to appease the gods...'");
         return undef;
     }
