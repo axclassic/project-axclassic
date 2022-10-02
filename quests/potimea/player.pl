@@ -113,7 +113,7 @@ sub EVENT_CLICKDOOR {
                     quest::MoveGroupInstance(223, $instance_ID, -36, 1352, 496);
                 }
                 else {
-                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 3600);
+                    my $instance_ID = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
                     quest::setglobal("pop_potimeb_instances", $PoTimeB_Instance_Counter, 7, "H7");
                     quest::AssignToInstance($instance_ID);
                     quest::setglobal($name.".potimeB", $instance_ID, 7, "H7");
