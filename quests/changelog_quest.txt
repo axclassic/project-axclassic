@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/02/2022==
+Congdar: Hybrid Research
+
 ==08/17/2022==
 Congdar: timeb script update
 

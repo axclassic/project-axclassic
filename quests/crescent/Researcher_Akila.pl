@@ -1,84 +1,145 @@
+# Researcher_Akila (394109)
+
 sub EVENT_SAY {
-    if($text=~/hail/i) {
-        if(quest::istaskactivityactive(170,4)) {
-            #Smithing Collect Step 5
-            quest::say("No more work now. Snokin happy wit what you do already. Snokin show you secret now. You not tell anyone!");
-            quest::emote("looks around furtively, as if everyone on the ship doesn't hear everything he says. He hands you a piece of paper with some very precise writing on it. You can only guess that he did not write it. You look it over and you understand the methods for smelting the aligned ore and the shimmering aligned ore. It's not a complicated process, but you would have needed information that only that Wayfarers have to uncover it. Now all you need to do is place the ore into a forge and you will be able to make the steel. However, you are certain that you can improve the process if you work with the ore long enough. Snokin takes the paper back and pulls out a ledger. You see him carefully note your name on the ledger with clear and concise penmanship that matches that on the paper you just read.");
-            $client->LearnRecipe(3630); #Bar of Aligned Steel
-            $client->LearnRecipe(3631); #Bar of Shimmering Steel
+    if($client->GetLevel() > 24) {
+        my $training = quest::saylink("training", 1);
+        my $recipes = quest::saylink("recipes", 1);
+        my $supplies = quest::saylink("supplies", 1);
+        my $start = quest::saylink("start", 1);
+        my $Research_Skill = $client->GetSkill(58);
+        if($text=~/hail/i) {
+            quest::say("Yes Yes. I am so excited to see you. You must be here for the $training I can offer. I so love training others as one can learn from teaching others and learning a new thing is a joy to those of us with intellect.");
         }
-        if(quest::istaskactivityactive(163,4)) {
-            #Smithing Freebie Step 5
-            quest::say("No more work now. Snokin happy wit what you do already. Snokin show you secret now. You not tell anyone!");
-            quest::emote("looks around furtively, as if everyone on the ship doesn't hear everything he says. He hands you a piece of paper with some very precise writing on it. You can only guess that he did not write it. You look it over and you understand the methods for smelting the aligned ore and the shimmering aligned ore. It's not a complicated process, but you would have needed information that only that Wayfarers have to uncover it. Now all you need to do is place the ore into a forge and you will be able to make the steel. However, you are certain that you can improve the process if you work with the ore long enough. Snokin takes the paper back and pulls out a ledger. You see him carefully note your name on the ledger with clear and concise penmanship that matches that on the paper you just read.");
-            $client->LearnRecipe(3630); #Bar of Aligned Steel
-            $client->LearnRecipe(3631); #Bar of Shimmering Steel
-        } else {
-            quest::say("Hello, Snokin can help you with da smith stuff. Can you [help] Snokin? Snokin too busy, need more time at forge with new ore, less time doing silly work for Wayfarers.");
+        if($text=~/training/i) {
+            if($Research_Skill >= 54) {
+                quest::say("While we appreciate the offer to help, your skills are high enough that it would be better for you to seek training in a skill where you have less ability. If you have forgotten the recipes or just wish to know them for posterity, I can teach you the $recipes.");
+            }
+            else {
+                quest::say("The Circle of the Crystalwing have decided as a group that the best way to teach is by experience. You will be given a series of tasks that you can use to learn about the skill you are working on. When you are ready, simply tell me that you are ready to $start and I will assign you a task appropriate for your skill.");
+            }
         }
-    }
-    if($text=~/help/i) {
-        quest::say("You is nice person! Da Wayfarers wants Snokin to make lots of silly things for dem, but Snokin want to make stuff with [new ore], not old steel. Can you do some [silly work] for Snokin?");
-    }
-    if($text=~/new ore/i) {
-        quest::say("It is strange ore, Snokin never see anything like it. It very easy to work with, if you knows the way. It also make very strong steel. Dey say dat it get dat way when something big, like explosion or something magic, make all da metal line up. So dey call it aligned ore,' Snokin says the words, clearly unsure of what they mean. 'It make great steel! Very strong and make good, sharp edges if you hammer on it right way. Snokin know how to make steel from new ore. If you find any ore, bring to Snokin and Snokin give you new steel.");
-    }
-    if($text=~/silly work/i) {
-        quest::say("Tank you! If you make stuff for Snokin, Snokin can work more on new ore. You work as hard as Snokin, den Snokin give you good reward. Snokin knows people work good for good reward. Take [dis stuff] and make tings for me.");
-#quest::tasksetselector(163); #Smithing Freebie
-        if(!quest::istaskactive(163)) {
-            quest::taskselector(163);
+        if($text=~/recipes/i) {
+            if($Research_Skill >= 54) {
+                quest::say("While we appreciate the offer to help, your skills are high enough that it would be better for you to seek training in a skill where you have less ability. If you have forgotten the recipes or just wish to know them for posterity, I can teach you the $recipes.");
+            }
+            else {
+                quest::say("Here you go.");
+                #Recipe 13492: "Simple Quill" 
+                $client->LearnRecipe(13492);
+                #Recipe 13491: "Simple Ink" 
+                $client->LearnRecipe(13491);
+                #Recipe 13490: "Simple Book Binding" 
+                $client->LearnRecipe(13490);
+                #Recipe 13489: "Simple Blank Book" 
+                $client->LearnRecipe(13489);
+            }
         }
-    }
-    if($text=~/dis stuff/i) {
-        if(quest::istaskactivityactive(163,0)) {
-            #Smithing Freebie Step 1
-            quest::say("Take [dis stuff] and make studs so Snokin no have to. Just go to forge and put stuff in. One of each is good. When you have da studs, bring to Snokin. When you do enough work, Snokin will show you da secret for makin da new ore into da new steel.");
-            quest::summonitem(58167,20); #Vial of Abysmal Sea Water
-            quest::summonitem(58055,20); #Metal Scraps
-            quest::summonitem(58103,20); #Simple Iron File
+        if($text=~/start/i) {
+            if($Research_Skill >= 54) {
+                quest::say("While we appreciate the offer to help, your skills are high enough that it would be better for you to seek training in a skill where you have less ability. If you have forgotten the recipes or just wish to know them for posterity, I can teach you the $recipes.");
+            }
+            else {
+                if(!quest::istaskactive(197)) {
+                    quest::say("Even the most intelligent of pupils must start at the beginning. Though this task may seem to have nothing to do with learning about creating spells, the skills you learn while doing them will help you in the future. take these supplies and follow the directions give to you carefully. I will have more $supplies available if you need them, just ask me and I shall supply them.");
+                    quest::taskselector(197);
+                    quest::summonitem(98296, 20);
+                    quest::summonitem(98297, 1);
+                    #Recipe 13492: "Simple Quill" 
+                    #$client->LearnRecipe(13492);
+                }
+                else {
+                    quest::say("Even the most intelligent of pupils must start at the beginning. Though this task may seem to have nothing to do with learning about creating spells, the skills you learn while doing them will help you in the future. take these supplies and follow the directions give to you carefully. I will have more $supplies available if you need them, just ask me and I shall supply them.");
+                    if(quest::istaskactivityactive(197,3)) {
+                        quest::summonitem(98294, 20);
+                        quest::summonitem(98302, 20);
+                        quest::summonitem(98303, 20);
+                        #Recipe 13489: "Simple Blank Book" 
+                        #$client->LearnRecipe(13489);
+                    }
+                    elsif(quest::istaskactivityactive(197,2)) {
+                        quest::summonitem(98299, 20);
+                        quest::summonitem(98300, 20);
+                        quest::summonitem(98301, 20);
+                        #Recipe 13490: "Simple Book Binding" 
+                        #$client->LearnRecipe(13490);
+                    }
+                    elsif(quest::istaskactivityactive(197,1)) {
+                        quest::summonitem(98256, 20);
+                        quest::summonitem(98298, 20);
+                        quest::summonitem(58145, 20);
+                        #Recipe 13491: "Simple Ink" 
+                        #$client->LearnRecipe(13491);
+                    }
+                }
+            }
         }
-        if(quest::istaskactivityactive(163,1)) {
-            #Smithing Freebie Step 2
-            quest::emote("smiles at you, showing very crooked teeth.");
-            quest::say("Good! Snokin needs some rings for da Wayfarers. If you could make dem. Snokin be happy. Take dis stuff and go over to da forge and make rings. Bring da rings to Snokin.");  
-            quest::summonitem(58113,20); #Simple Ring Mold
-            quest::summonitem(58055,20); #Metal Scraps
-            quest::summonitem(58103,20); #Simple Iron File
-        }
-        if(quest::istaskactivityactive(163,2)) {
-            #Smithing Freebie Step 3
-            quest::say("Snokin not tink you as bad as dey say. Snokin need chisels and you can make dem. Take dis stuff to da forge, put one of each of dem in and make da chisel. Bring da chisel to Snokin fast, da Wayfarers needs dem.");
-            quest::summonitem(58055,20); #Metal Scraps
-            quest::summonitem(58091,20); #Simple Chisel Mold
-        }
-        if(quest::istaskactivityactive(163,3)) {
-            #Smithing Freebie Step 4
-            quest::say("Good! More stuff for you to do for Snokin. Snokin like you. Make files and bring Snokin soon. Take dis stuff and put into forge to make files. Go now, work hard for reward, not stand and look at Snokin.");
-            quest::summonitem(58039,20); #Flask of Abysmal Sea Water
-            quest::summonitem(58055,20); #Metal Scraps
-            quest::summonitem(58096,20); #Simple File Mold
+        if($text=~/supplies/i) {
+            if($Research_Skill >= 54) {
+                quest::say("While we appreciate the offer to help, your skills are high enough that it would be better for you to seek training in a skill where you have less ability. If you have forgotten the recipes or just wish to know them for posterity, I can teach you the $recipes.");
+            }
+            else {
+                quest::say("Here are some more supplies you will need. Do not hesitate to ask if you need more $supplies to complete a task.");
+                if(quest::istaskactivityactive(197,3)) {
+                    quest::summonitem(98294, 20);
+                    quest::summonitem(98302, 20);
+                    quest::summonitem(98303, 20);
+                }
+                elsif(quest::istaskactivityactive(197,2)) {
+                    quest::summonitem(98299, 20);
+                    quest::summonitem(98300, 20);
+                    quest::summonitem(98301, 20);
+                }
+                elsif(quest::istaskactivityactive(197,1)) {
+                    quest::summonitem(98256, 20);
+                    quest::summonitem(98298, 20);
+                    quest::summonitem(58145, 20);
+                }
+                elsif(quest::istaskactivityactive(197,0)) {
+                    quest::summonitem(98296, 20);
+                }
+            }
         }
     }
 }
 
 sub EVENT_ITEM {
-    if(plugin::check_handin(\%itemcount, 58018 => 1)) {
-        #Aligned Ore
-        quest::say("Ok. Take dis steel.");
-        quest::summonitem(58019,2); #Bar of Aligned Steel
+    #Simple Quill
+    if(plugin::check_handin(\%itemcount, 98292 => 20) {
+        # +Crystalwing
+        quest::faction(11981, 20);
+        quest::exp(1000);
+        quest::ding();
+        quest::updatetaskactivity(197, 0, 20);
     }
-    elsif(plugin::check_handin(\%itemcount, 58124 => 4) || plugin::check_handin(\%itemcount, 58124 => 3) || plugin::check_handin(\%itemcount, 58124 => 2) || plugin::check_handin(\%itemcount, 58124 => 1)) { #Simple Stud
-        quest::say("Ok. Tanks.");
+    #Simple Ink
+    elsif(plugin::check_handin(\%itemcount, 98293 => 20) {
+        # +Crystalwing
+        quest::faction(11981, 20);
+        quest::exp(1000);
+        quest::ding();
+        quest::updatetaskactivity(197, 0, 20);
+        quest::updatetaskactivity(197, 1, 20);
     }
-    elsif(plugin::check_handin(\%itemcount, 58112 => 4) || plugin::check_handin(\%itemcount, 58112 => 3) || plugin::check_handin(\%itemcount, 58112 => 2) || plugin::check_handin(\%itemcount, 58112 => 1)) { #Simple Ring
-        quest::say("Ok. Tanks.");
+    #Simple Book Binding
+    elsif(plugin::check_handin(\%itemcount, 98294 => 20) {
+       # +Crystalwing
+       quest::faction(11981, 20);
+       quest::exp(1000);
+       quest::ding();
+       quest::updatetaskactivity(197, 0, 20);
+       quest::updatetaskactivity(197, 1, 20);
+       quest::updatetaskactivity(197, 2, 20);
     }
-    elsif(plugin::check_handin(\%itemcount, 58090 => 4) || plugin::check_handin(\%itemcount, 58090 => 3) || plugin::check_handin(\%itemcount, 58090 => 2) || plugin::check_handin(\%itemcount, 58090 => 1)) { #Simple Chisel
-        quest::say("Ok. Tanks.");
-    }
-    elsif(plugin::check_handin(\%itemcount, 58095 => 4) || plugin::check_handin(\%itemcount, 58095 => 3) || plugin::check_handin(\%itemcount, 58095 => 2) || plugin::check_handin(\%itemcount, 58095 => 1)) { #Simple File
-        quest::say("Ok. Tanks.");
+    #Simple Blank Book
+    elsif(plugin::check_handin(\%itemcount, 98295 => 20) {
+       # +Crystalwing
+       quest::faction(11981, 20);
+       quest::exp(5000);
+       quest::ding();
+       quest::updatetaskactivity(197, 0, 20);
+       quest::updatetaskactivity(197, 1, 20);
+       quest::updatetaskactivity(197, 2, 20);
+       quest::updatetaskactivity(197, 3, 20);
     }
     plugin::return_items(\%itemcount);
 }
