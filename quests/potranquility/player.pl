@@ -43,7 +43,7 @@ sub EVENT_CLICKDOOR {
             return;
         }
         else {
-            my $PoTimeA_Instance_Counter = 0;
+            my $PoTimeA_Instance_Counter = 1;
             if(defined $qglobals{pop_potimea_instances}) {
                 #quest::ze(15, "pop_potimea_instances = $qglobals{pop_potimea_instances}");
                 $PoTimeA_Instance_Counter = $qglobals{pop_potimea_instances};
@@ -61,19 +61,19 @@ sub EVENT_CLICKDOOR {
             }
             my $arraySize = @clients;
             if($arraySize > 1) {
-                my $instance_ID = quest::CreateInstance('potimeA', $PoTimeA_Instance_Counter, 25200);
+                my $PoTimeA_Instance_ID_1 = quest::CreateInstance('potimea', $PoTimeA_Instance_Counter, 25200);
                 quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H7");
-                quest::AssignGroupToInstance($instance_ID);
-                quest::setgroupglobal(".potimeA", $instance_ID, 7, "H7");
-                quest::MoveGroupInstance(219, $instance_ID, 1, 6, 8);
+                quest::AssignGroupToInstance($PoTimeA_Instance_ID_1);
+                quest::setgroupglobal(".potimeA", $PoTimeA_Instance_ID_1, 7, "H7");
+                quest::MoveGroupInstance(219, $PoTimeA_Instance_ID_1, 1, 6, 8);
             }
             else {
-                my $instance_ID = quest::CreateInstance('potimeA', $PoTimeA_Instance_Counter, 25200);
+                my $PoTimeA_Instance_ID_2 = quest::CreateInstance('potimea', $PoTimeA_Instance_Counter, 25200);
                 quest::setglobal("pop_potimea_instances", $PoTimeA_Instance_Counter, 7, "H7");
-                quest::AssignToInstance($instance_ID);
-                quest::setglobal($name.".potimeA", $instance_ID, 7, "H7");
+                quest::AssignToInstance($PoTimeA_Instance_ID_2);
+                quest::setglobal($name.".potimeA", $PoTimeA_Instance_ID_2, 7, "H7");
                 #quest::ze(15, "Congdar short test.");
-                quest::MovePCInstance(219, $instance_ID, 1, 6, 8);
+                quest::MovePCInstance(219, $PoTimeA_Instance_ID_2, 1, 6, 8);
             }
         }
         ##
@@ -220,6 +220,8 @@ sub EVENT_CLICKDOOR {
     $qglobals{pop_potimeb_instances}=undef;
     $PoTimeA_Instance_Counter=undef;
     $PoTimeB_Instance_Counter=undef;
+    $PoTimeA_Instance_ID_1=undef;
+    $PoTimeA_Instance_ID_2=undef;
     $QGlobalValue1=undef;
     $QGlobalValue2=undef;
 }
