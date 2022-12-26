@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==12/26/2022==
+Patrikpatrik: HotZones fix from source update.
+
 ==9/29/2022==
 Patrikpatrik: Changelog update fix.
 
