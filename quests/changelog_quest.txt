@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==01/01/2023==
+Congdar: Ranger Band text update.
+
 ==10/02/2022==
 Congdar: Hybrid Research
 

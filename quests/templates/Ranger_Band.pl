@@ -270,7 +270,7 @@ sub EVENT_SAY {
     my $pirates = quest::saylink("pirates", 1);
     my $treasure = quest::saylink("treasure", 1);
     my $skeletons = quest::saylink("Skeletons", 1);
-    my $activeYear = 2020;
+    my $activeYear = 2023;
     my $moonstone = quest::saylink("moonstone", 1);
     my $shadeweavers = quest::saylink("Shadeweavers Thicket", 1);
     my $transport = quest::saylink("transport", 1);
@@ -648,7 +648,7 @@ sub EVENT_ITEM {
             my @items = (125 .. 139,141,142); ## New Years Event random item reward
             my $total4 = $items[ rand @items ];
             $client->Message(14,"Ranger Band says,\"Congratulations, $name! Take this Moonstone as a reward!.\"");
-            $client->Message(6,"You received a random Moonstone! In the event that you already got the Moonstone Ranger Band was about to give you, you will get nothing. Better luck next time!\"");
+            $client->Message(6,"You received a random Moonstone!");
             quest::summonitem($total4);
             quest::exp(1000);
             quest::ding();
@@ -663,7 +663,7 @@ sub EVENT_ITEM {
             my @items = (125 .. 139,141,142); ## Random  Moonstone item reward
             my $total4 = $items[ rand @items ];
             $client->Message(14,"Ranger Band says,\"Well done, $name! Take this Moonstone as a reward!.\"");
-            $client->Message(6,"You received a random Moonstone! In the event that you already got the Moonstone Ranger Band was about to give you, you will get nothing. Better luck next time!\"");
+            $client->Message(6,"You received a random Moonstone!");
             quest::summonitem($total4);
             quest::exp(1000);
             quest::ding();

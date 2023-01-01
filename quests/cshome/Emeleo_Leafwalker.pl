@@ -197,7 +197,6 @@ sub EVENT_SAY {
       quest::setglobal("event4",0,7,"F");
       quest::delglobal("event5");
       quest::setglobal("event5",0,7,"F");
-      quest::setglobal("event5",0,7,"F");
       quest::delglobal("event6");
       quest::setglobal("event6",0,7,"F");
       quest::delglobal("event7");
@@ -219,7 +218,6 @@ sub EVENT_SAY {
       quest::delglobal("event4");
       quest::setglobal("event4",0,7,"F");
       quest::delglobal("event5");
-      quest::setglobal("event5",0,7,"F");
       quest::setglobal("event5",0,7,"F");
       quest::delglobal("event6");
       quest::setglobal("event6",0,7,"F");
@@ -243,7 +241,6 @@ sub EVENT_SAY {
       quest::setglobal("event4",0,7,"F");
       quest::delglobal("event5");
       quest::setglobal("event5",0,7,"F");
-      quest::setglobal("event5",0,7,"F");
       quest::delglobal("event6");
       quest::setglobal("event6",0,7,"F");
       quest::delglobal("event7");
@@ -255,7 +252,7 @@ sub EVENT_SAY {
       $event9 = undef;
    }
    elsif($text=~/start/i) {
-      $client->Message(14,"Do you want to $startNewyear, $startEaster, $startBloodhunt, $startMoonstone, $startXmas, $startPitchblack, $startNewEaster or $startThanksgiving\?");
+      $client->Message(14,"Do you want to $startNewyear, $startEaster, $startBloodhunt, $startMoonstone, $startXmas, $startPitchblack, $startOrc, $startNewEaster or $startThanksgiving\?");
    }
    elsif($text=~/terminate/i) {
       $client->Message(14,"As you wish, all events have been terminated and reset.");
