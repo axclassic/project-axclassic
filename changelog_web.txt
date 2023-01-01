@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==1/1/2023==
+Patrikpatrik: Ladder page update for January 1st restart.
+
 ==12/26/2022==
 Patrikpatrik: HotZones fix from source update.
 
