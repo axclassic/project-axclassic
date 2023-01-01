@@ -14,7 +14,7 @@
 ## 10/1/17 Changed 22298 to 22294               ##
 ## 12/31/19 Changed yr to 2020                  ##
 ## 7/1/20 July 1st update                       ##
-## 12/31/20 Jan 1st update	                    ##
+## 12/31/20 Jan 1st update                      ##
 ## 07/01/21 Jul 1st update                      ##
 ## 08/24/21 PvP to Ladder by Congdar            ##
 ## 09/04/21 Changes to starter gifts by Angelox ##
@@ -48,11 +48,11 @@ sub EVENT_SAY {
     # We can add them to this array (remove the older one when season is over)
     # Add exeptions in this array
     #Also add to array in EVENT_ITEM
-    my @playerID = (8088,8090,8118,8117,8121);
-    my $FoundPlayer = 0;
-        foreach (@playerID) {
-            /$charid/ and $FoundPlayer = 1;
-        }
+    #my @playerID = (8088,8090,8118,8117,8121);
+    #my $FoundPlayer = 0;
+    #    foreach (@playerID) {
+    #        /$charid/ and $FoundPlayer = 1;
+    #    }
     #hyperlinks
     my $reward = quest::saylink("reward", 1);
     my $title = quest::saylink("title", 1);
