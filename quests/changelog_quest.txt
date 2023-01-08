@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==01/08/2023==
+Congdar: Update to night spawns in Lesser Faydark
+
 ==01/01/2023==
 Congdar: Ranger Band text update.
 
