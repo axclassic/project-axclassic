@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==01/10/2023==
+Congdar: update Researcher Akila
+
 ==01/08/2023==
 Congdar: Update to night spawns in Lesser Faydark
 

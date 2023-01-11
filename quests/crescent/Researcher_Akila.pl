@@ -12,6 +12,10 @@ sub EVENT_SAY {
         }
         if($text=~/training/i) {
             if($Research_Skill >= 54) {
+                quest::updatetaskactivity(197, 0, 20);
+                quest::updatetaskactivity(197, 1, 20);
+                quest::updatetaskactivity(197, 2, 20);
+                quest::updatetaskactivity(197, 3, 20);
                 quest::say("While we appreciate the offer to help, your skills are high enough that it would be better for you to seek training in a skill where you have less ability. If you have forgotten the recipes or just wish to know them for posterity, I can teach you the $recipes.");
             }
             else {
@@ -20,6 +24,10 @@ sub EVENT_SAY {
         }
         if($text=~/recipes/i) {
             if($Research_Skill >= 54) {
+                quest::updatetaskactivity(197, 0, 20);
+                quest::updatetaskactivity(197, 1, 20);
+                quest::updatetaskactivity(197, 2, 20);
+                quest::updatetaskactivity(197, 3, 20);
                 quest::say("While we appreciate the offer to help, your skills are high enough that it would be better for you to seek training in a skill where you have less ability. If you have forgotten the recipes or just wish to know them for posterity, I can teach you the $recipes.");
             }
             else {
@@ -75,6 +83,10 @@ sub EVENT_SAY {
         }
         if($text=~/supplies/i) {
             if($Research_Skill >= 54) {
+                quest::updatetaskactivity(197, 0, 20);
+                quest::updatetaskactivity(197, 1, 20);
+                quest::updatetaskactivity(197, 2, 20);
+                quest::updatetaskactivity(197, 3, 20);
                 quest::say("While we appreciate the offer to help, your skills are high enough that it would be better for you to seek training in a skill where you have less ability. If you have forgotten the recipes or just wish to know them for posterity, I can teach you the $recipes.");
             }
             else {
