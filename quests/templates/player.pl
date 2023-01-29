@@ -58,7 +58,7 @@ sub EVENT_ENTERZONE {
     elsif($zoneid == 48 ) {
         ##CT
         if(!defined $cazpop) {
-            quest::setglobal("cazpop)",3,3,"H3");
+            quest::setglobal("cazpop",3,3,"H3");
             if($ulevel <=45) {
                 quest::spawn_condition("cazicthule",7,0);
                 quest::spawn_condition("cazicthule",8,1);
