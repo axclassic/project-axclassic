@@ -1,15 +1,10 @@
 # respawn boiling on death
 
-my $x;
-my $y;
-my $z;
-my $h;
-
 sub EVENT_DEATH {
-  my $x = $npc->GetX();
-  my $y = $npc->GetY();
-  my $z = $npc->GetZ();
-  my $h = $npc->GetHeading();
-  quest::spawn2(48423,0,0,$x,$y,$z,$h);
+  my $x1 = $npc->GetX();
+  my $y1 = $npc->GetY();
+  my $z1 = $npc->GetZ();
+  my $h1 = $npc->GetHeading();
+  quest::spawn2(48423,0,0,$x1,$y1,$z1,$h1);
 }
 # EOF zone: Cazicthule ID: NPC: #a_bubbling_ooze

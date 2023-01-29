@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==01/28/2023==
+Congdar: Cazic 2.0
+
 ==01/10/2023==
 Congdar: update Researcher Akila
 

@@ -7,8 +7,8 @@ sub EVENT_CONNECT {
         $client->Message(6,"You receive a character flag!");
         $client->Message(14,"Your first bot should already be grouped with you, if not, use the '#bot create' command..");
         $client->Message(14,"Talk to Aediles Thrall about adding more bots to your group.");
-	quest::setglobal("seen_shadeweaver", 0, 5, "F");
-	$seen_shadeweaver = undef;
+        quest::setglobal("seen_shadeweaver", 0, 5, "F");
+        $seen_shadeweaver = undef;
     }
 } # EVENT_CONNECT End
 
@@ -57,17 +57,16 @@ sub EVENT_ENTERZONE {
     }
     elsif($zoneid == 48 ) {
         ##CT
-        if($ulevel <=45) {
-            quest::spawn_condition("cazicthule",7,0);
-            quest::spawn_condition("cazicthule",8,1);
-            quest::delglobal("cazpop");
-            quest::setglobal("cazpop",3,3,"F");
-        }
-        elsif($ulevel >=46) {
-            quest::spawn_condition("cazicthule",7,1);
-            quest::spawn_condition("cazicthule",8,0);
-            quest::delglobal("cazpop");
-            quest::setglobal("cazpop",3,3,"F");
+        if(!defined $cazpop) {
+            quest::setglobal("cazpop)",3,3,"H3");
+            if($ulevel <=45) {
+                quest::spawn_condition("cazicthule",7,0);
+                quest::spawn_condition("cazicthule",8,1);
+            }
+            elsif($ulevel >=46) {
+                quest::spawn_condition("cazicthule",7,1);
+                quest::spawn_condition("cazicthule",8,0);
+            }
         }
     }
 #    elsif($zoneid ==  20 ) {
@@ -102,9 +101,9 @@ sub EVENT_ENTERZONE {
 #        }
 #    }
     if ($rand1<=10){
-	if($ulevel >= 15 && !defined($qglobals{Wayfarer}) && $client->GetStartZone()!=$zoneid && $zoneid !=50 && $zoneid !=12) {
-	    $client->Message(15,"A mysterious voice whispers to you, 'If you can feel me in your thoughts, know this -- something is changing in the world and I reckon you should be a part of it. I do not know much, but I do know that in every home city and the wilds there are agents of an organization called the Wayfarers Brotherhood. They are looking for recruits . . . If you can hear this message, you are one of the chosen. Rush to your home city, or search the West Karanas and Rathe Mountains for a contact if you have been exiled from your home for your deeds, and find out more. Adventure awaits you, my friend.'");
-	}
+    	if($ulevel >= 15 && !defined($qglobals{Wayfarer}) && $client->GetStartZone()!=$zoneid && $zoneid !=50 && $zoneid !=12) {
+    	    $client->Message(15,"A mysterious voice whispers to you, 'If you can feel me in your thoughts, know this -- something is changing in the world and I reckon you should be a part of it. I do not know much, but I do know that in every home city and the wilds there are agents of an organization called the Wayfarers Brotherhood. They are looking for recruits . . . If you can hear this message, you are one of the chosen. Rush to your home city, or search the West Karanas and Rathe Mountains for a contact if you have been exiled from your home for your deeds, and find out more. Adventure awaits you, my friend.'");
+    	}
     }
     ## Angelox: I'm gonna put in some random help for new players (new players are our life line :) - feel free to add.).
     if($ulevel <= 3) {
@@ -115,7 +114,7 @@ sub EVENT_ENTERZONE {
         elsif($rand2<=50) {
             $client->Message(14,"You best be using the Underfoot client posted at AXClassic Forums; http://forums.axclassic.com."); 
             $client->Message(14,"You will not be able to board the ship that sails from Freeport to Butcher and back without an AXClassic client.");
-	    $client->Message(14,"You may also have problems with disconnects if not using an AXClassic client.");
+            $client->Message(14,"You may also have problems with disconnects if not using an AXClassic client.");
         }
         elsif($rand2<=75) {
             $client->Message(14,"Post petitions and requests at http://forums.axclassic.com."); 
@@ -165,16 +164,16 @@ sub EVENT_ENTERZONE {
     if ($ulevel <= 9){
       if(!defined $seen_shadeweaver) {
           $client->Message(14,"For game play in Shadeweavers Thicket, Ask Ranger Band about the [Moonstone].");
-	  quest::setglobal("seen_shadeweaver", 0, 5, "F");
-	  $seen_shadeweaver = undef;
+          quest::setglobal("seen_shadeweaver", 0, 5, "F");
+          $seen_shadeweaver = undef;
       }
       if (($zoneid == 165) && ($seen_shadeweaver <= 1)) {
-	  $client->Message(14,"You should bind yourself here if you plan to play in Shadeweavers Thicket.");
-	  $client->Message(14,"If you die,this stone will send you back to Shadeweavers and will work only a few times.");  
-	  quest::summonitem(140); #CR Stone for newbes in Shadeweavers
-	  $client->Message(14,"Ask Ranger Band again about a [Moonstone] for returning.");
-	  quest::setglobal("seen_shadeweaver", 2, 5, "F");
-	  $seen_shadeweaver = undef;
+    	  $client->Message(14,"You should bind yourself here if you plan to play in Shadeweavers Thicket.");
+    	  $client->Message(14,"If you die,this stone will send you back to Shadeweavers and will work only a few times.");  
+    	  quest::summonitem(140); #CR Stone for newbes in Shadeweavers
+    	  $client->Message(14,"Ask Ranger Band again about a [Moonstone] for returning.");
+    	  quest::setglobal("seen_shadeweaver", 2, 5, "F");
+    	  $seen_shadeweaver = undef;
       }
     }
     elsif(($ulevel >= 10 && $ulevel <= 15) && ($seen_shadeweaver >= 1)) {
