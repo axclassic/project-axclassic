@@ -55,19 +55,31 @@ sub EVENT_ENTERZONE {
             quest::setglobal("nurpop",3,3,"F");
         }
     }
-    elsif($zoneid == 48 ) {
+    elsif($zoneid == 48) {
         ##CT
         if(!defined $cazpop) {
-            quest::setglobal("cazpop",3,3,"H3");
             if($ulevel <=45) {
+                quest::setglobal("cazpop",1,3,"H3");
+                $client->Message(14, "Welcome to The Temple of Cazic Thule.");
                 quest::spawn_condition("cazicthule",7,0);
                 quest::spawn_condition("cazicthule",8,1);
             }
             elsif($ulevel >=46) {
+                quest::setglobal("cazpop",2,3,"H3");
+                $client->Message(14, "Welcome to The Accursed Temple of Cazic Thule.");
                 quest::spawn_condition("cazicthule",7,1);
                 quest::spawn_condition("cazicthule",8,0);
             }
         }
+        else {
+            if($cazpop eq 1) {
+                $client->Message(14, "Welcome to Cazic 1.0");
+            }
+            if($cazpop eq 2) {
+                $client->Message(14, "Welcome to Cazic 2.0");
+            }
+        }
+        $cazpop = undef;
     }
 #    elsif($zoneid ==  20 ) {
         ##Kitchicor
