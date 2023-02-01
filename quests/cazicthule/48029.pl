@@ -3,7 +3,10 @@
 my $tragedy_at_cazic_thule_spell_id = 2127;
 my $unstable_rift_id = 48126;
 
-# npcId = 48029
+sub EVENT_SPAWN {
+    quest::settimer("version", 20);
+}
+
 sub EVENT_SIGNAL {
     # signal 1 = emote and blow up lizards
     if($signal == 1) {
@@ -19,5 +22,18 @@ sub EVENT_TIMER {
         quest::stoptimer(1);
         quest::depopall(48029);
     }
+    if($timer eq "version") {
+        if(defined $cazpop) {
+            if($cazpop eq 1) {
+                quest::stoptimer("version");
+                quest::depop();
+            }
+        }
+    }
+}
+
+sub EVENT_DEATH {
+    quest::stoptimer(1);
+    quest::stoptimer("version");
 }
 

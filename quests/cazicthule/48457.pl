@@ -1,15 +1,4 @@
-# RoF Event Avatar_of_Dread (48419)
-
-sub EVENT_SPAWN {
-    quest::settimer("version", 20);
-}
-
-sub EVENT_SIGNAL {
-    # signal 1 = Come to Life
-    if($signal == 1) {
-        quest::modifynpcstat("special_attacks","SETQMCDfd");
-    }
-}
+# #Amygdalan_Knight (48457)
 
 sub EVENT_TIMER {
     if($timer eq "version") {
@@ -23,7 +12,6 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-    quest::stoptimer(1);
     quest::stoptimer("version");
 }
 

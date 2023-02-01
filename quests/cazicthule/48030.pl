@@ -6,6 +6,7 @@ my $rune_of_faceless_id = 8234;
 
 # npcId = 48030
 sub EVENT_SPAWN {
+    quest::settimer("version", 20);
     quest::start(89);
 }
 
@@ -40,5 +41,18 @@ sub EVENT_TIMER {
         quest::spawn2($unstable_rift_id, 0, 0, 587, 1090, -98, 360);
         $npc->SetAppearance(1)
     }
+    if($timer eq "version") {
+        if(defined $cazpop) {
+            if($cazpop eq 1) {
+                quest::stoptimer("version");
+                quest::depop();
+            }
+        }
+    }
+}
+
+sub EVENT_DEATH {
+    quest::stoptimer("sit");
+    quest::stoptimer("version");
 }
 

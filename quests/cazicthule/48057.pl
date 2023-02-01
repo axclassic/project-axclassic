@@ -6,6 +6,7 @@ my $tahia_felwah_1_id = 48030;
 # npcId = 48057
 sub EVENT_SPAWN {
     quest::settimer("Feign", 12);
+    quest::settimer("version", 20);
 }
 
 sub EVENT_SIGNAL {
@@ -40,5 +41,18 @@ sub EVENT_TIMER {
         quest::say("You have interrupted a complicated ritual and soon the rift to the Faceless will become unstable. I must collect three runes of the Faceless for my research. I have been appointed to uncover the source of these lizards' newfound power. If I fail, their kind will surely spread across the land and threaten the balance of Norrath.");
         $npc->SetAppearance(0);
     }
+    if($timer eq "version") {
+        if(defined $cazpop) {
+            if($cazpop eq 1) {
+                quest::stoptimer("version");
+                quest::depop();
+            }
+        }
+    }
+}
+
+sub EVENT_DEATH {
+    quest::stoptimer("sit");
+    quest::stoptimer("version");
 }
 

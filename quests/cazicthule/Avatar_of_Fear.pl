@@ -21,6 +21,7 @@ sub EVENT_SPAWN {
 
     # 2 minutes after he pops, the first wave spawns
     quest::settimer(1, 120);
+    quest::settimer("version", 20);
 }
 
 sub EVENT_TIMER {
@@ -171,7 +172,15 @@ sub EVENT_TIMER {
     elsif($timer == 23) {
         quest::stoptimer(23);
         # Wave 20 `Avatar of Fear` comes to life
-        quest::modifynpcstat("special_attacks",TQMCDd);
+        quest::modifynpcstat("special_attacks","SETQMCDfd");
+    }
+    if($timer eq "version") {
+        if(defined $cazpop) {
+            if($cazpop eq 1) {
+                quest::stoptimer("version");
+                quest::depop();
+            }
+        }
     }
 }
 
@@ -243,4 +252,5 @@ sub EVENT_DEATH {
     # signal victory
     quest::signalwith($tahia_felwah_id_2, 1, 0);
     quest::depopall($unstable_rift_id);
+    quest::stoptimer("version");
 }
