@@ -8,7 +8,7 @@
 # *** NPC INFORMATION ***
 #
 # NAME: #Rock_Garn_Timer
-# ID: 174240
+# ID: 174540
 # TYPE: Warrior
 # RACE: Teleport Man
 # LEVEL: 50
@@ -28,7 +28,7 @@
 ############################################# 
 
 sub EVENT_SPAWN {
-   quest::settimer("RGT", 1800);
+   quest::settimer("RGT", 1200);
    quest::settimer("setqg", 20);
 }
 
@@ -36,7 +36,7 @@ sub EVENT_TIMER {
    if($timer eq "RGT") {
       quest::stoptimer("RGT");
       quest::delglobal("Rockhopper_Sambata");
-      quest::depop_withtimer();
+      quest::depop();
    }
    if($timer eq "setqg") {
       quest::stoptimer("setqg");
@@ -44,4 +44,4 @@ sub EVENT_TIMER {
    }
 }
 
-# END of FILE Zone:dawnshroud  ID:174240 -- #Rock_Garn_Timer
+# END of FILE Zone:dawnshroud  ID:174540 -- #Rock_Garn_Timer (174540)

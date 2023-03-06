@@ -8,7 +8,7 @@
 # *** NPC INFORMATION ***
 #
 # NAME: #An_Age_Old_Rockhopper
-# ID: 174316
+# ID: 174616
 # TYPE: Warrior
 # RACE: Rockhopper
 # LEVEL: 47
@@ -27,12 +27,9 @@
 ############################################# 
 
 sub EVENT_DEATH {
-    if(!defined $qglobals{"Rockhopper_Sambata"}) {
-        quest::spawn_condition($zonesn, 2, 0);
-        quest::spawn_condition($zonesn, 1, 1);
-    }
+    quest::signalwith(174240,940,0);
 }
 
-# END of FILE Zone:dawnshroud  ID:174316 -- #An_Age_Old_Rockhopper
+# END of FILE Zone:dawnshroud  #An_Age_Old_Rockhopper (174616)
 
 

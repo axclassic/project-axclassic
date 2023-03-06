@@ -8,7 +8,7 @@
 # *** NPC INFORMATION ***
 #
 # NAME: #Sambata_Tribal_Leader_Garn
-# ID: 174277
+# ID: 174577
 # TYPE: Warrior
 # RACE: Galorian
 # LEVEL: 47
@@ -27,12 +27,9 @@
 ############################################# 
 
 sub EVENT_DEATH {
-    if(!defined $qglobals{"Rockhopper_Sambata"}) {
-        quest::spawn_condition($zonesn, 2, 1);
-        quest::spawn_condition($zonesn, 1, 0);
-    }
+    quest::signalwith(174240,530,0);
 }
 
-# END of FILE Zone:dawnshroud  ID:174277 -- #Sambata_Tribal_Leader_Garn
+# END of FILE Zone:dawnshroud  #Sambata_Tribal_Leader_Garn (174577)
 
 
