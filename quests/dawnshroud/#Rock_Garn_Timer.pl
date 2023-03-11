@@ -28,20 +28,14 @@
 ############################################# 
 
 sub EVENT_SPAWN {
-   quest::settimer("RGT", 1200);
-   quest::settimer("setqg", 20);
+    quest::delglobal("Rockhopper_Sambata");
+    quest::settimer("Chance", 3600);
 }
 
 sub EVENT_TIMER {
-   if($timer eq "RGT") {
-      quest::stoptimer("RGT");
-      quest::delglobal("Rockhopper_Sambata");
-      quest::depop();
-   }
-   if($timer eq "setqg") {
-      quest::stoptimer("setqg");
-      quest::setglobal("Rockhopper_Sambata", 1, 3, "M20");
-   }
+    if($timer eq "Chance") {
+        quest::setglobal("Rockhopper_Sambata", 1, 3, "M20");
+    }
 }
 
 # END of FILE Zone:dawnshroud  ID:174540 -- #Rock_Garn_Timer (174540)
