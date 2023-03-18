@@ -11,6 +11,7 @@ sub DoSummon {
     if($CorpseCount > 0) {
         quest::summonallplayercorpses($charid);
         quest::delglobal($name.".potimeb_corpse");
+        quest::castspell(5249, $charid);
     }
 }
 

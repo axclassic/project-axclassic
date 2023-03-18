@@ -28,13 +28,13 @@
 ############################################# 
 
 sub EVENT_SPAWN {
-    quest::delglobal("Rockhopper_Sambata");
+    quest::delglobal("Rockhopper_Sambata_Delay");
     quest::settimer("Chance", 3600);
 }
 
 sub EVENT_TIMER {
     if($timer eq "Chance") {
-        quest::setglobal("Rockhopper_Sambata", 1, 3, "M20");
+        quest::setglobal("Rockhopper_Sambata_Delay", 1, 3, "M20");
     }
 }
 

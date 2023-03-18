@@ -2,7 +2,7 @@
 
 sub EVENT_SAY {
     if($text=~/hail/i) {
-        $client->Message(14,"I'm on break, next teller please.");
+        quest::emote(" puts a sign on the counter that reads 'On break. Next teller please.'");
     }
 }
 

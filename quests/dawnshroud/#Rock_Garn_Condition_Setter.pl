@@ -39,16 +39,16 @@ sub EVENT_SIGNAL {
 
 sub EVENT_TIMER {
     if($timer eq "ChangeToSambata") {
-        quest::stoptimer("ChangeToSambata");
-        if(!defined $qglobals{"Rockhopper_Sambata"}) {
+        if(!defined $qglobals{"Rockhopper_Sambata_Delay"}) {
+            quest::stoptimer("ChangeToSambata");
             quest::spawn_condition($zonesn, 1, 1);
             quest::spawn_condition($zonesn, 2, 0);
             quest::spawn_condition($zonesn, 3, 0);
         }
     }
     if($timer eq "ChangeToRockhoppers") {
-        quest::stoptimer("ChangeToRockhoppers");
-        if(!defined $qglobals{"Rockhopper_Sambata"}) {
+        if(!defined $qglobals{"Rockhopper_Sambata_Delay"}) {
+            quest::stoptimer("ChangeToRockhoppers");
             quest::spawn_condition($zonesn, 1, 0);
             quest::spawn_condition($zonesn, 2, 1);
             quest::spawn_condition($zonesn, 3, 0);

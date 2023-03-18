@@ -1,7 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==03/11/2023==
-Congdar: more Rockhopper/Samabata cycle
+Congdar: more Rockhopper/Samabata cycle 
 
 ==03/02/2023==
 Congdar: Merko Quetalis faction fix 
