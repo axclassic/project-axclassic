@@ -1,13 +1,16 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==04/10/2023==
+Congdar: Guild Lobby Rez now gets you Resurrection Sickness
+
 ==03/11/2023==
-Congdar: more Rockhopper/Samabata cycle 
+Congdar: more Rockhopper/Sambata cycle 
 
 ==03/02/2023==
 Congdar: Merko Quetalis faction fix 
 
 ==02/28/2023==
-Congdar: Rockhopper/Samabata cycle
+Congdar: Rockhopper/Sambata cycle
 
 ==02/05/2023==
 Congdar: Soulfire updates
