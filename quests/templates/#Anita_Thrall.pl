@@ -68,7 +68,8 @@ sub EVENT_SAY {
         $client->Message(14,"That is the Coin of Tash quest, go and see Romar Sunto in the Temple of Solusek Ro.");
     }
     elsif($text=~/tash/i) {
-        $client->Message(14,"These include merchant bought: Tashan (level 2), Tashani (level 18), $quested Tashania (level 41), and Tashanian (level 57), Howl of Tashan (level 61), Echo of Tashan (level 72)");
+        $client->Message(14,"These include merchant bought: Tashan (level 2), Tashani (level 18), $quested Tashania (level 41), and Tashanian (level 57), Howl of Tashan (level 61)");
+        #$client->Message(14,"These include merchant bought: Tashan (level 2), Tashani (level 18), $quested Tashania (level 41), and Tashanian (level 57), Howl of Tashan (level 61), Echo of Tashan (level 72)");
         $client->Message(14,"I also can scribe you the spells Wind of Tashani (55), and Wind of Tashanian (60).");
         $client->Message(14,"You can bring the spells to me one at a time, as you acquire the needed level.");
     }

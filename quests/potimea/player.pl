@@ -36,11 +36,9 @@ sub EVENT_CLICKDOOR {
     my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
     my $QGlobalValue3 = $client->GetQGlobal($name.".potimeA");
     if(Five_Bosses_Are_Dead() && ($PortalEventPassed || $QGlobalValue2)) {
-        if((($doorid == 64) || ($d_id == 64)) ||
-            (($doorid == 44) || ($d_id == 44)) ||
-            (($doorid == 49) || ($d_id == 49)) ||
-            (($doorid == 54) || ($d_id == 54)) ||
-            (($doorid == 59) || ($d_id == 59))) {
+        if(($doorid == 44) || ($d_id == 44)) {
+
+            # Time B Air Trial
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
 
@@ -69,20 +67,20 @@ sub EVENT_CLICKDOOR {
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496, 66);
                 }
                 else {
                     quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496, 66);
                 }
                 return;
             }
             elsif($QGlobalValue2) {
                 if($client->GetGroup()) {
-                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496, 66);
                 }
                 else {
-                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496, 66);
                 }
                 return;
             }
@@ -110,7 +108,7 @@ sub EVENT_CLICKDOOR {
                     quest::AssignGroupToInstance($PoTimeB_Instance_ID_1);
                     quest::setgroupglobal(".potimeB", $PoTimeB_Instance_ID_1, 7, "H7");
                     quest::setgroupglobal(".potimeA", $QGlobalValue3, 7, "H7");
-                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -36, 1352, 496);
+                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -36, 1352, 496, 66);
                 }
                 else {
                     my $PoTimeB_Instance_ID_2 = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
@@ -119,18 +117,15 @@ sub EVENT_CLICKDOOR {
                     quest::setglobal($name.".potimeB", $PoTimeB_Instance_ID_2, 7, "H7");
                     quest::setglobal($name.".potimeA", $QGlobalValue3, 7, "H7");
                     #quest::ze(15, "Congdar short test.");
-                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -36, 1352, 496);
+                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -36, 1352, 496, 66);
                 }
             }
             ##
             ## End Instance Code
             ##
         }
-        elsif((($doorid == 65) || ($d_id == 65)) ||
-              (($doorid == 45) || ($d_id == 45)) ||
-              (($doorid == 50) || ($d_id == 50)) ||
-              (($doorid == 55) || ($d_id == 55)) ||
-              (($doorid == 60) || ($d_id == 60))) {
+        elsif(($doorid == 49) || ($d_id == 49)) {
+            # Time B Water Trial
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
 
@@ -159,20 +154,20 @@ sub EVENT_CLICKDOOR {
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -51, 857, 496, 66);
                 }
                 else {
                     quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MovePCInstance(223, $QGlobalValue2, -51, 857, 496, 66);
                 }
                 return;
             }
             elsif($QGlobalValue2) {
                 if($client->GetGroup()) {
-                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -51, 857, 496, 66);
                 }
                 else {
-                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MovePCInstance(223, $QGlobalValue2, -51, 857, 496, 66);
                 }
                 return;
             }
@@ -200,7 +195,7 @@ sub EVENT_CLICKDOOR {
                     quest::AssignGroupToInstance($PoTimeB_Instance_ID_1);
                     quest::setgroupglobal(".potimeB", $PoTimeB_Instance_ID_1, 7, "H7");
                     quest::setgroupglobal(".potimeA", $QGlobalValue3, 7, "H7");
-                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -35, 1636, 496);
+                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -51, 857, 496, 66);
                 }
                 else {
                     my $PoTimeB_Instance_ID_2 = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
@@ -208,18 +203,15 @@ sub EVENT_CLICKDOOR {
                     quest::AssignToInstance($PoTimeB_Instance_ID_2);
                     quest::setglobal($name.".potimeB", $PoTimeB_Instance_ID_2, 7, "H7");
                     quest::setglobal($name.".potimeA", $QGlobalValue3, 7, "H7");
-                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -35, 1636, 496);
+                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -51, 857, 496, 66);
                 }
             }
             ##
             ## End Instance Code
             ##
         }
-        elsif((($doorid == 66) || ($d_id == 66)) ||
-              (($doorid == 46) || ($d_id == 46)) ||
-              (($doorid == 51) || ($d_id == 51)) ||
-              (($doorid == 56) || ($d_id == 56)) ||
-              (($doorid == 61) || ($d_id == 61))) {
+        elsif(($doorid == 54) || ($d_id == 54)) {
+            # Time B Earth Trial
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
 
@@ -248,20 +240,20 @@ sub EVENT_CLICKDOOR {
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -35, 1636, 496, 66);
                 }
                 else {
                     quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MovePCInstance(223, $QGlobalValue2, -35, 1636, 496, 66);
                 }
                 return;
             }
             elsif($QGlobalValue2) {
                 if($client->GetGroup()) {
-                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -35, 1636, 496, 66);
                 }
                 else {
-                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MovePCInstance(223, $QGlobalValue2, -35, 1636, 496, 66);
                 }
                 return;
             }
@@ -289,7 +281,7 @@ sub EVENT_CLICKDOOR {
                     quest::AssignGroupToInstance($PoTimeB_Instance_ID_1);
                     quest::setgroupglobal(".potimeB", $PoTimeB_Instance_ID_1, 7, "H7");
                     quest::setgroupglobal(".potimeA", $QGlobalValue3, 7, "H7");
-                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -35, 1636, 496);
+                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -35, 1636, 496, 66);
                 }
                 else {
                     my $PoTimeB_Instance_ID_2 = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
@@ -297,18 +289,15 @@ sub EVENT_CLICKDOOR {
                     quest::AssignToInstance($PoTimeB_Instance_ID_2);
                     quest::setglobal($name.".potimeB", $PoTimeB_Instance_ID_2, 7, "H7");
                     quest::setglobal($name.".potimeA", $QGlobalValue3, 7, "H7");
-                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -35, 1636, 496);
+                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -35, 1636, 496, 66);
                 }
             }
             ##
             ## End Instance Code
             ##
         }
-        elsif((($doorid == 67) || ($d_id == 67)) ||
-              (($doorid == 47) || ($d_id == 47)) ||
-              (($doorid == 52) || ($d_id == 52)) ||
-              (($doorid == 57) || ($d_id == 57)) ||
-              (($doorid == 62) || ($d_id == 62))) {
+        elsif(($doorid == 59) || ($d_id == 59)) {
+            # Time B Fire Trial
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
 
@@ -337,20 +326,20 @@ sub EVENT_CLICKDOOR {
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -55, 569, 496, 66);
                 }
                 else {
                     quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MovePCInstance(223, $QGlobalValue2, -55, 569, 496, 66);
                 }
                 return;
             }
             elsif($QGlobalValue2) {
                 if($client->GetGroup()) {
-                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -55, 569, 496, 66);
                 }
                 else {
-                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MovePCInstance(223, $QGlobalValue2, -55, 569, 496, 66);
                 }
                 return;
             }
@@ -378,7 +367,7 @@ sub EVENT_CLICKDOOR {
                     quest::AssignGroupToInstance($PoTimeB_Instance_ID_1);
                     quest::setgroupglobal(".potimeB", $PoTimeB_Instance_ID_1, 7, "H7");
                     quest::setgroupglobal(".potimeA", $QGlobalValue3, 7, "H7");
-                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -55, 569, 496);
+                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -55, 569, 496, 66);
                 }
                 else {
                     my $PoTimeB_Instance_ID_2 = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
@@ -386,18 +375,15 @@ sub EVENT_CLICKDOOR {
                     quest::AssignToInstance($PoTimeB_Instance_ID_2);
                     quest::setglobal($name.".potimeB", $PoTimeB_Instance_ID_2, 7, "H7");
                     quest::setglobal($name.".potimeA", $QGlobalValue3, 7, "H7");
-                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -55, 569, 496);
+                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -55, 569, 496, 66);
                 }
             }
             ##
             ## End Instance Code
             ##
         }
-        elsif((($doorid == 68) || ($d_id == 68)) ||
-              (($doorid == 48) || ($d_id == 48)) ||
-              (($doorid == 53) || ($d_id == 53)) ||
-              (($doorid == 58) || ($d_id == 58)) ||
-              (($doorid == 63) || ($d_id == 63))) {
+        elsif(($doorid == 64) || ($d_id == 64)) {
+            # Time B Undead Trial
             $client->Message(14, "The portal, dim at first, begins to glow brighter.");
             $client->Message(14, "The portal flashes briefly, then glows steadily.");
 
@@ -426,20 +412,20 @@ sub EVENT_CLICKDOOR {
             if($QGlobalValue1) {
                 if($client->GetGroup()) {
                     quest::setgroupglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MoveGroupInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -27, 1103, 496, 66);
                 }
                 else {
                     quest::setglobal($name.".potimeb_corpse", $QGlobalValue1, 7, "M1");
-                    quest::MovePCInstance(223, $QGlobalValue2, 851, -141, 395);
+                    quest::MovePCInstance(223, $QGlobalValue2, -27, 1103, 496, 66);
                 }
                 return;
             }
             elsif($QGlobalValue2) {
                 if($client->GetGroup()) {
-                    quest::MoveGroupInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MoveGroupInstance(223, $QGlobalValue2, -27, 1103, 496, 66);
                 }
                 else {
-                    quest::MovePCInstance(223, $QGlobalValue2, -36, 1352, 496);
+                    quest::MovePCInstance(223, $QGlobalValue2, -27, 1103, 496, 66);
                 }
                 return;
             }
@@ -467,7 +453,7 @@ sub EVENT_CLICKDOOR {
                     quest::AssignGroupToInstance($PoTimeB_Instance_ID_1);
                     quest::setgroupglobal(".potimeB", $PoTimeB_Instance_ID_1, 7, "H7");
                     quest::setgroupglobal(".potimeA", $QGlobalValue3, 7, "H7");
-                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -27, 1103, 496);
+                    quest::MoveGroupInstance(223, $PoTimeB_Instance_ID_1, -27, 1103, 496, 66);
                 }
                 else {
                     my $PoTimeB_Instance_ID_2 = quest::CreateInstance('potimeB', $PoTimeB_Instance_Counter, 25200);
@@ -475,7 +461,7 @@ sub EVENT_CLICKDOOR {
                     quest::AssignToInstance($PoTimeB_Instance_ID_2);
                     quest::setglobal($name.".potimeB", $PoTimeB_Instance_ID_2, 7, "H7");
                     quest::setglobal($name.".potimeA", $QGlobalValue3, 7, "H7");
-                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -27, 1103, 496);
+                    quest::MovePCInstance(223, $PoTimeB_Instance_ID_2, -27, 1103, 496, 66);
                 }
             }
             ##
@@ -488,9 +474,6 @@ sub EVENT_CLICKDOOR {
     }
     $qglobals{pop_potimea_instances}=undef;
     $qglobals{pop_potimeb_instances}=undef;
-    $PoTimeB_Instance_Counter=undef;
-    $PoTimeB_Instance_ID_1=undef;
-    $PoTimeB_Instance_ID_2=undef;
     $QGlobalValue1=undef;
     $QGlobalValue2=undef;
     $QGlobalValue3=undef;
