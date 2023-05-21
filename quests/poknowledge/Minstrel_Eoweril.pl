@@ -24,8 +24,19 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(28477, 28485, 28486)); #Level 65 Bard spell, PoP (Tuyen's Chant of Fire, Harmony of Sound, Lullaby of Morell)
   }
   else {
-    quest::say("I don't need this."); #text made up
-    plugin::return_items(\%itemcount);
+      my $stuff = (\%itemcount);
+      my $yes = 2;
+      foreach my $k (keys(%{$stuff})) {
+          next if($k == 0);
+          $yes = 1;
+      }
+      if($yes == 1) {
+          $client->Message(14, "I don't need this $name. Take it back.");
+          plugin::return_items(\%itemcount);
+      }
+      if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+          $client->Message(14, "Thanks for the coin!");
+      }
   }
 }
 #Done, quest by Kilelen

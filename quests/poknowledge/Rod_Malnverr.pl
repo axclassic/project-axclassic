@@ -333,3 +333,19 @@ elsif($text=~/comrades/i && plugin::check_hasitem($client, 119498)) { ## Ranger 
 	quest::say("You can not fool me! Return to me only if you have aquired your Epic 1.5 or above $name.");
 	}
 	}
+
+sub EVENT_ITEM {
+        my $stuff = (\%itemcount);
+        my $yes = 2;
+        foreach my $k (keys(%{$stuff})) {
+            next if($k == 0);
+            $yes = 1;
+        }
+        if($yes == 1) {
+            $client->Message(14, "I don't need this $name. Take it back.");
+            plugin::return_items(\%itemcount);
+        }
+        if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+            $client->Message(14, "Thanks for the coin!");
+        }
+}

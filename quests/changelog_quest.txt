@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==05/20/2023==
+Congdar: Yendrik Epione coin fix
+
 ==05/09/2023==
 Congdar: Time A Portals to Time B trial location fixes
 

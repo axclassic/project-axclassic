@@ -14,8 +14,20 @@ sub EVENT_ITEM {
     quest::say("I must say, this is a surprise. I was beginning to wonder if you would ever return with these. I'm glad you see you have though. Take this new book and use it well in your future journeys. You may also be interested to know that Tenada Jeried also has a few lesson plans for very advanced students. If you should see him, be sure to tell him you are interested in learning from him. Good luck to you, $name!");#Stole Text from Advanced Combat Manual quest, I have no other reference
     quest::summonitem(28797); #Advanced Magic Manual
   }
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
-    
+  else {
+      my $stuff = (\%itemcount);
+      my $yes = 2;
+      foreach my $k (keys(%{$stuff})) {
+          next if($k == 0);
+          $yes = 1;
+      }
+      if($yes == 1) {
+          $client->Message(14, "I don't need this $name. Take it back.");
+          plugin::return_items(\%itemcount);
+      }
+      if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+          $client->Message(14, "Thanks for the coin!");
+      }
+  }
 }#END of FILE Zone:poknowledge  ID:202037 -- Zalil_Nyvin 
 

@@ -162,4 +162,19 @@ sub EVENT_ITEM {
         quest::say("Thank you $name for returning these to me and solving the mystery of what happened to Jaden.");
         quest::say("Now I have a question for you, would you like this cloak improved for a $Berserker, $Monk, $Rogue, $Warrior, $Cleric, $Druid, $Shaman, $Enchanter, $Magician, $Necromancer, $Wizard, $Bard, $Beastlord, $Paladin, $Ranger or $Shadowknight?"); 
     }
+    else {
+        my $stuff = (\%itemcount);
+        my $yes = 2;
+        foreach my $k (keys(%{$stuff})) {
+            next if($k == 0);
+            $yes = 1;
+        }
+        if($yes == 1) {
+            $client->Message(14, "I don't need this $name. Take it back.");
+            plugin::return_items(\%itemcount);
+        }
+        if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+            $client->Message(14, "Thanks for the coin!");
+        }
+    }
 }

@@ -30,9 +30,20 @@ sub EVENT_ITEM {
         #Level 65 Enchanter spell, PoP (Illusion Froglok, Vallon's Quickening, Voice of Quellious)
         quest::summonitem(quest::ChooseRandom(21648, 21664, 28470));
     }
-    if(1) {
-        quest::say("I don't need this."); #text made up
-        plugin::return_items(\%itemcount);
+    else {
+        my $stuff = (\%itemcount);
+        my $yes = 2;
+        foreach my $k (keys(%{$stuff})) {
+            next if($k == 0);
+            $yes = 1;
+        }
+        if($yes == 1) {
+            $client->Message(14, "I don't need this $name. Take it back.");
+            plugin::return_items(\%itemcount);
+        }
+        if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+            $client->Message(14, "Thanks for the coin!");
+        }
     }
 }
 #Done, quest by Kilelen

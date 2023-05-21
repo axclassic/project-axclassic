@@ -131,6 +131,20 @@ sub EVENT_ITEM {
 		quest::say("Truly amazing! Now the Councilman and I can be off on our expedition to the Elemental Planes!' He takes out a tool and marks his signet before handing it to you, 'Before we depart you may want to ask the Councilman about the signet.");
 		quest::summonitem(16256); #Marked Runed Signet
 	}
-	plugin::return_items(\%itemcount);
+    else {
+        my $stuff = (\%itemcount);
+        my $yes = 2;
+        foreach my $k (keys(%{$stuff})) {
+           next if($k == 0);
+           $yes = 1;
+        }
+        if($yes == 1) {
+            $client->Message(14, "I don't need this $name. Take it back.");
+           plugin::return_items(\%itemcount);
+        }
+        if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+           $client->Message(14, "Thanks for the coin!");
+        }
+    }
 }
 

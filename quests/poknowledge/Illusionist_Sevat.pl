@@ -12,6 +12,21 @@ sub EVENT_ITEM {
         #Emerald and Poison Vial
         quest::selfcast(540); #Clarify Mana
     }
+    else {
+        my $stuff = (\%itemcount);
+        my $yes = 2;
+        foreach my $k (keys(%{$stuff})) {
+            next if($k == 0);
+            $yes = 1;
+        }
+        if($yes == 1) {
+            $client->Message(14, "I don't need this $name. Take it back.");
+            plugin::return_items(\%itemcount);
+        }
+        if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+            $client->Message(14, "Thanks for the coin!");
+        }
+    }
 }
 #END of FILE Zone:poknowledge  ID:202212 -- Illusionist_Sevat 
 

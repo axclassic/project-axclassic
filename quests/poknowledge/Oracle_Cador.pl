@@ -45,13 +45,19 @@ sub EVENT_ITEM {
 			quest::summonitem(96467);# Philter of Major Translocation
 		}
 	}
-	else {
-		quest::say("I don't need this."); #text made up
-		plugin::return_items(\%itemcount);
-		if(($copper > 0) || ($silver > 0) || ($gold > 0) || ($platinum > 0)) {
-			quest::givecash($copper, $silver, $gold, $platinum); #Return money
-		}
-		return 1;
-	}
-
+    else {
+        my $stuff = (\%itemcount);
+        my $yes = 2;
+        foreach my $k (keys(%{$stuff})) {
+            next if($k == 0);
+            $yes = 1;
+        }
+        if($yes == 1) {
+            $client->Message(14, "I don't need this $name. Take it back.");
+            plugin::return_items(\%itemcount);
+        }
+        if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+            $client->Message(14, "Thanks for the coin!");
+        }
+    }
 }#END of FILE Zone:poknowledge  ID:202238 -- Oracle_Cador 

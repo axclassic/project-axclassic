@@ -24,10 +24,19 @@ sub EVENT_ITEM {
     quest::emote("takes the arcane item from you. Carefully, he inspects it -- nodding to himself in recognition of the item and planning of his next step. The ranger then begins a soft, melodic chant of priestly origin. You recognize the nature of the words to be a hym of the natural world, though you cannot decipher their meaning. The arcane object fades into existence, the runes etching themselves upon the surface become clear in their mat, neutral hues. Eventually, the ranger's chant ends and the object in his hand is complete. He then extends it to you in unconditional offering, 'Use this wisely and with great respect for the power that has originated it. The primordial arcane powers of the divine worlds are not to be disrespected.'");
     quest::summonitem(quest::ChooseRandom(21655, 26932)); #Level 65 Ranger spell, PoP (Protection of the Wild, Cry of Thunder)
   }
-  
   else {
-   quest::say("I don't need this."); #text made up
-   plugin::return_items(\%itemcount);
+      my $stuff = (\%itemcount);
+      my $yes = 2;
+      foreach my $k (keys(%{$stuff})) {
+          next if($k == 0);
+          $yes = 1;
+      }
+      if($yes == 1) {
+          $client->Message(14, "I don't need this $name. Take it back.");
+          plugin::return_items(\%itemcount);
+      }
+      if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+          $client->Message(14, "Thanks for the coin!");
+      }
   }
-    
 }#Done
