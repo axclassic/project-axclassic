@@ -1,5 +1,8 @@
 AX Classic Database Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==05/22/2023==
+Patrikpatrik: Updated ladderboards update.
+
 ==08/12/2020==
 Angelox: Updated Windows executables, added database update with updater.
 Angelox: Updated ax_classic database (clean copy).
