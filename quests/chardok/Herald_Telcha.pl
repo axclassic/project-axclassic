@@ -67,7 +67,8 @@ sub EVENT_ITEM {
         # Sarnak Collective
         quest::faction(281,500);
         quest::ding(); quest::exp(50000);
-        quest::summonitem(5727); # 5727  Regal Band of Bathezid
+        quest::summonitem(5728); # Di'zok Signet of Service 
+        quest::summonitem(5727); # Regal Band of Bathezid
         quest::delglobal("RegalBandBathezid");
     }
 

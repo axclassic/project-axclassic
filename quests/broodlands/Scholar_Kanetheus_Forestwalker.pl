@@ -67,7 +67,7 @@ my $Storm = quest::saylink("Storm", 1);
    }
    if ($ulevel >= 61 && $text=~/Storm/i){
    quest::say("Our spies report that a handful of storm dragon scales were recently given to one of Yar'Lir's most powerful advisors, a goblin warlock know as the Storm Caller. We need you to organize an expedition to recover these scales before the goblins use their newfound power against us. Be careful, for the Storm Caller lair is high on the peaks about Stillmoon, and it is rumoured he has rudimentary control of the weather itself.");
-   quest::say("Bring me the Storm Dagon Scales and I shall reward you.");
+   quest::say("Bring me the Storm Dragon Scales and I shall reward you.");
   }
  }
 sub EVENT_ITEM { 

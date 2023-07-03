@@ -12,7 +12,7 @@ sub EVENT_SAY {
 	my $sick = quest::saylink("sick", 1);
 	my $secret = quest::saylink("secret", 1);
 	my $craft = quest::saylink("craft", 1);
-	my $sacrofice = quest::saylink("sacrofice", 1);
+	my $sacrofice = quest::saylink("sacrifice", 1);
 	if($text=~/Hail/i&&$ulevel == 65) {
 		$client->Message(14,"Hello $name\! Most people you will meet around here will tell you to stay far away from me... I am a very old and $sick man you know?");
 	}
@@ -32,7 +32,7 @@ sub EVENT_SAY {
 
 	}
 	elsif($text=~/sacrofice/i&&$ulevel == 65) {
-		$client->Message(14, "As i said i am a dieing man but I know of a chanting that could extend my life for a couple of years, when you give me your epic piece, I will place my hand on your forehead and drain your soul in order to extend my life. It won't kill you but will drain all your battle experience.. yes you will be lvl 1. Only then will I grant you the next version of your epic weapon. WARNING: People that wield 2x a 1 hand epic weapon like Rangers and Beastlords, should give me only 1 of the 2 epic weapons. Warriors should also give me 1 of their 1 handers.");
+		$client->Message(14, "As i said i am a dying man but I know of a chanting that could extend my life for a couple of years, when you give me your epic piece, I will place my hand on your forehead and drain your soul in order to extend my life. It won't kill you but will drain all your battle experience.. yes you will be lvl 1. Only then will I grant you the next version of your epic weapon. WARNING: People that wield 2x a 1 hand epic weapon like Rangers and Beastlords, should give me only 1 of the 2 epic weapons. Warriors should also give me 1 of their 1 handers.");
 	}
 	else {
 		$client->Message(14,"I don't talk to you for you are not worthy!! You are a newbie and you have nothing to offer me, begone!!");

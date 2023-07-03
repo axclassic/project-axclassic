@@ -26,13 +26,24 @@ sub EVENT_ITEM {
         $client->Message(14,"Well, arent you full of surprises! I appreciate you retrieving this for me, as I cant really leave my shop here for very long, the services I provide are nearly irreplacable. As promised, here is your mold! Good luck!");    
         quest::summonitem(51114); #Shield Frame Mold
     }
-    elsif(($ulevel == 65) && plugin::check_handin(\%itemcount,119947 => 1)) {
+    elsif(($ulevel >= 65) && plugin::check_handin(\%itemcount,119947 => 1)) {
         #Rathe Prestige Quest
-        $client->Message(14,"Ahh I see my friend Melvin send you. I will sharpen this dagger so he can go on his dragon hunt..");    
+        $client->Message(14,"Ahh I see my friend Melvin sent you. I will sharpen this dagger so he can go on his dragon hunt.");    
         quest::summonitem(119951); #Sharpened Dragon Dagger
     }
     else {
-        $client->Message(14,"I have no need for this, $name.");
-        plugin::return_items(\%itemcount);
+        my $stuff = (\%itemcount);
+        my $yes = 2;
+        foreach my $k (keys(%{$stuff})) {
+            next if($k == 0);
+            $yes = 1;
+        }
+        if($yes == 1) {
+            $client->Message(14, "I don't need this $name. Take it back.");
+            plugin::return_items(\%itemcount);
+        }
+        if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
+            $client->Message(14, "Thanks for the coin!");
+        }
     }
 }

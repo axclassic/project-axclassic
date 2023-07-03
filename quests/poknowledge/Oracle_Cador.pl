@@ -12,7 +12,7 @@ sub EVENT_SAY {
 	if($text=~/Philter/i) {
 		if(($ulevel > 40) && ($class ne 'Shaman')) {
 			# Shaman must use Trade Skills
-			quest::say("You are most astute. I do have a stock of Philter of Major Translocation with me, but I will only share it with those who prove themselves worthy. I already have the Prism Grains, but you need to give me 150 platinum pieces, a blade leaf, a simple potion vial, a heliotrop and a yebamante.");
+			quest::say("You are most astute. I do have a stock of Philter of Major Translocation with me, but I will only share it with those who prove themselves worthy. I already have the Prism Grains, but you need to give me 150 platinum pieces, a blade leaf, a simple potion vial, a heliotrope and a yebamante.");
 		}
 	}
 }
