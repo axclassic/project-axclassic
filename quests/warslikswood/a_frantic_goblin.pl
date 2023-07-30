@@ -9,8 +9,10 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-    quest::stoptimer(1);
-    quest::signalwith(79128,1,0);
+    if($timer == 1) {
+        quest::stoptimer(1);
+        quest::signalwith(79128,1,0);
+    }
 }
 
 sub EVENT_DEATH {
@@ -19,8 +21,10 @@ sub EVENT_DEATH {
 }
 
 sub EVENT_SIGNAL {
-    quest::stoptimer(1);
-    quest::depop();
+    if($signal == 1) {
+        quest::stoptimer(1);
+        quest::depop();
+    }
 }
-
 #EndFile: warslikswood\a_frantic_goblin.pl (79130)
+
