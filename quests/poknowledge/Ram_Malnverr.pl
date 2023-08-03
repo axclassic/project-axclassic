@@ -31,7 +31,7 @@ sub EVENT_SAY {
 		$client->Message(14, "I can craft the epic weapons of all classes 1.5, 2.0, 2.5 and the 3.0 versions, but I won't help you unless you can make the ultimate $sacrofice I demand of you..");
 
 	}
-	elsif($text=~/sacrofice/i&&$ulevel == 65) {
+	elsif($text=~/sacrifice/i&&$ulevel == 65) {
 		$client->Message(14, "As i said i am a dying man but I know of a chanting that could extend my life for a couple of years, when you give me your epic piece, I will place my hand on your forehead and drain your soul in order to extend my life. It won't kill you but will drain all your battle experience.. yes you will be lvl 1. Only then will I grant you the next version of your epic weapon. WARNING: People that wield 2x a 1 hand epic weapon like Rangers and Beastlords, should give me only 1 of the 2 epic weapons. Warriors should also give me 1 of their 1 handers.");
 	}
 	else {

@@ -5,8 +5,8 @@
 ##    11-11-2013    ##
 ######################
 
-my $goblin;
-my $stage;
+my $goblin = 1;
+my $stage = 1;
 
 sub EVENT_SPAWN {
     $goblin = 1;
@@ -36,6 +36,7 @@ sub EVENT_TIMER {
 
 sub EVENT_SIGNAL {
     if($signal == 1) {
+        $client->Message(14, "alive goblin signal to depop.");
         #Signal from an alive goblin
         quest::stoptimer(1);
         quest::signalwith(79130,1,0); #a frantic goblin
@@ -63,7 +64,7 @@ sub EVENT_SIGNAL {
                 quest::start(81);
             }
         }
-        if(($goblin == 4) && ($stage == 5)) {
+        if(($stage == 5) && ($goblin == 4)) {
             $stage = 6;
             quest::stoptimer(1);
             quest::start(82);

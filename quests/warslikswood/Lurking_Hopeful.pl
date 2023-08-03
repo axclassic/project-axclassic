@@ -6,7 +6,7 @@
 ## Changed Mob ID from 79127 to 79131 ##
 ########################################
 
-my $medal;
+my $medal = 5;
 
 sub EVENT_SPAWN {
     $medal = 2;
@@ -51,11 +51,11 @@ sub EVENT_ITEM {
             $yes = 1;
         }
         if($yes == 1) {
-            $client->Message(14, "I don't need this $name. Take it back.");
+            quest::say(14, "I don't need this $name. Take it back.");
             plugin::return_items(\%itemcount);
         }
         if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-            $client->Message(14, "Thanks for the coin!");
+            quest::say(14, "Thanks for the coin!");
         }
     }
 }

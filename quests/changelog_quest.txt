@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==08/02/2023==
+Congdar:  Berserker Epic quest fixed
+
 ==07/29/2023==
 Congdar:  Berserker Epic quest fixes.
 
