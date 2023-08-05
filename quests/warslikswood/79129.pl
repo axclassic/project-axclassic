@@ -5,7 +5,7 @@
 ##   11-11-2013     ##
 ######################
 sub EVENT_SAY {
-    if(($text=~/hail/i)  {
+    if($text=~/hail/i)  {
         quest::say("Yes, indeed. This has been a surprise. You are better than most and more wise. However, you are not yet complete. Be prepared to try to knock me off my feet!");
         quest::settimer(1,600); #Depop after 10 minutes
         quest::modifynpcstat("special_attacks", "SERTUMCNIDd");
