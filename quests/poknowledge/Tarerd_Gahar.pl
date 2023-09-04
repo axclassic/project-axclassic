@@ -16,7 +16,7 @@ sub EVENT_SAY {
     if($text=~/hail/i) {
         if(quest::istaskactivityactive(13,2)) {
             quest::say("Thanks for contacting me, $name. Your information on this matter has been most useful.");
-            $client->Message(7,"The ideal of burial grounds nearby is one that can not be easily overlooked. That's exactly why you were sent to check these areas out. Sadly none of them turned out to be the rumored burial grounds, but there's plenty more land to cover, so you maybe called upon again. You'll be recieving some payment, mostly for your time investment, but partially for the danger involved. Good job.");
+            quest::say("The ideal of burial grounds nearby is one that can not be easily overlooked. That's exactly why you were sent to check these areas out. Sadly none of them turned out to be the rumored burial grounds, but there's plenty more land to cover, so you maybe called upon again. You'll be recieving some payment, mostly for your time investment, but partially for the danger involved. Good job.");
         }
         else {
             quest::say("I'm sorry, I have neither the time nor the patience to chat right now.");
@@ -44,11 +44,11 @@ sub EVENT_ITEM {
             $yes = 1;
         }
         if($yes == 1) {
-            $client->Message(14, "I don't need this $name. Take it back.");
+            quest::say("I don't need this $name. Take it back.");
             plugin::return_items(\%itemcount);
         }
         if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-            $client->Message(14, "Thanks for the coin!");
+            quest::say("Thanks for the coin!");
         }
     }
 }

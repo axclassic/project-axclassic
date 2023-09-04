@@ -7,20 +7,20 @@
 #######################################
 sub EVENT_SAY {
     if($text=~/hail/i && $ulevel >= 65) {
-        $client->Message(14,"Hello $name who are you?");
+        quest::say("Hello $name who are you?");
     }
     elsif($text=~/hail/i && $ulevel < 65) {
-        $client->Message(14,"I dont think I should talk to you. Move along now!");
+        quest::say("I dont think I should talk to you. Move along now!");
     }
 }
 
 sub EVENT_ITEM {
     if(($ulevel >= 65) && plugin::check_handin(\%itemcount, 119963 => 1, 119962 => 1)) {
-        $client->Message(14,"Hello $name, Desree told me that you were on the way to see me and here you are. Well met my friend. You are only moments away from getting your great quest reward. I just wanted you to do 1 more thing for me. Return my Token of trust to me together with 3 Drachnid Leg tips. I need to make a half decent dagger so I can defend myself. Do this for me and I will send you to your final fight!");
+        quest::say("Hello $name, Desree told me that you were on the way to see me and here you are. Well met my friend. You are only moments away from getting your great quest reward. I just wanted you to do 1 more thing for me. Return my Token of trust to me together with 3 Drachnid Leg tips. I need to make a half decent dagger so I can defend myself. Do this for me and I will send you to your final fight!");
         quest::summonitem("119964");
     }
     elsif(($ulevel >= 65) && plugin::check_handin(\%itemcount, 119964 => 1, 11937 => 3)) {
-        $client->Message(14,"Ok $name. You are ready for the final fight. I give you this coin for Eldor Torbele. He can be found in the icy regions of Velious. Be prepared to fight once you give it to him.");
+        quest::say("Ok $name. You are ready for the final fight. I give you this coin for Eldor Torbele. He can be found in the icy regions of Velious. Be prepared to fight once you give it to him.");
         quest::summonitem("119965");
     }
     else {
@@ -31,11 +31,11 @@ sub EVENT_ITEM {
             $yes = 1;
         }
         if($yes == 1) {
-            $client->Message(14, "I don't need this $name. Take it back.");
+            quest::say("I don't need this $name. Take it back.");
             plugin::return_items(\%itemcount);
         }
         if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-            $client->Message(14, "Thanks for the coin!");
+            quest::say("Thanks for the coin!");
         }
     }
 }

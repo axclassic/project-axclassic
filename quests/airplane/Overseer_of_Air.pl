@@ -1,3 +1,5 @@
+my $did_dt = 1;
+
 sub EVENT_SAY {
    if($text=~/Hail/i) {
       quest::say("So you have awakened me!! It seems my brother was not much of a challenge. Before we get on to business, there are some matters that must be addressed. But enough talk, let's address these matters first.");
@@ -12,10 +14,13 @@ sub EVENT_SAY {
 
 sub EVENT_COMBAT {
    if($npc->IsEngaged()) {
-      quest::settimer("ooadt", 45);
-      my $targetmob1 = $npc->GetHateTop();
-      my $targetid1 = $targetmob1->GetID();
-      quest::castspell(982, $targetid1);
+       if($did_dt < 2) {
+           $did_dt = $did_dt + 1;
+           my $targetmob1 = $npc->GetHateTop();
+           my $targetid1 = $targetmob1->GetID();
+           quest::castspell(982, $targetid1);
+           quest::settimer("ooadt", 45);
+       }
    }
    else {
       quest::stoptimer("ooadt");
@@ -31,7 +36,9 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-   quest::spawn2(71060,55,0,-1462.2,-270.1,1250.9,62.9);
+    $did_dt = undef;
+    quest::stoptimer("ooadt");
+    quest::spawn2(71060,55,0,-1462.2,-270.1,1250.9,62.9);
 }
 # Overseer_of_Air NPCID: 71034
 

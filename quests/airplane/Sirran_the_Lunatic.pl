@@ -25,7 +25,7 @@ sub EVENT_SAY {
       }
    }
    if($text=~/citanul eht narris, liah/i && $sirran == 6) { #island6
-      quest::say("Lortap llaw taerg eht fo lahsram, Narris lahsram ma I. Flesym ecudortni ot em wolla. Sgniteerg");
+      quest::say("lortap llaw taerg eht fo lahsram, narriS lahsraM ma I. flesym ecudortni ot em wollA. sgniteerG");
    }
    if($text=~/llaw eht htiw eno I ma/i && $sirran == 6) { #island6
       quest::say("Kcul doog! Ouy rof ydaer si erips eht fo retsis eht won, sdik boj doog.");

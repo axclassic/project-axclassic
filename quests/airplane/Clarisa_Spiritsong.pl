@@ -1,43 +1,44 @@
 #Clarisa Spiritsong. Bard Quest NPC
+
 sub EVENT_SPAWN {
   quest::settimer("depop",300);
-  }
+}
 
 sub EVENT_SAY {
-  if($text=~/hail/i){
-    quest::say("Hail and well met $name! I give the second half of the test of songs. If you are ready, choose between the tests of brass, wind, and harmony.");
-  }
-  if($text=~/brass/i){ #Bard Test of Brass
-    quest::say("Then bring back to me an Efreeti War Horn, a Saffron Spiroc Feather, Adamintium Bands, and a Glowing Diamond. Then I will give you the horn of disaster.");
-  }
-  if($text=~/wind/i){ #Bard Test of Wind
-    quest::say("Bring me an imp statuette, a dull stone, and an amulet of woven hair. Then I will give you the fae amulet.");
-  }
-  if($text=~/harmony/){ #Bard Test of Harmony
-    quest::say("Working with the environment to enthrall those that listen to you is of the utmost importance to us. Go out and retrieve an efreeti war spear, some manna nectar, a nebulous emerald, and a nebulous diamond. Return these items to me and receive the harmonic spear as your reward.");
-  }
+  if ($text=~/hail/i) {
+    quest::say("Hi there $name! I give three sections of the test of songs. Clarisa does the rest. Do you wish to take the test of pitch, voice, or tone?");
+    }
+  if ($text=~/pitch/i) { #Bard test of pitch
+    quest::say("The pitch that we sing and play has a great affect on those that listen.  Keep this in mind, $name, and you shall always be welcome in taverns and inns.  Now if you return to me Phosphoric Globe, a Shimmering Diamond, and crude wooden flute I will give to you Ervaj's Flute of Flight.");
+    }
+  if ($text=~/voice/i) { #bard test of voice
+    quest::say("The sweet sound rising forth from our throats are what makes us truly great.  Go forth and give voice to your songs, and return to me a platinum disc, a music box, and a light woolen mantle. If you do this I shall give you the Songweaver's Mantle. Good luck!");
+    }
+  if ($text=~/tone/i) { #bard test of tone
+    quest::say("Tone is important to all singers. Prove to me that you can keep your tone even and pure by bringing me an Ochre Tessera, a songbird statuette, and a light woolen cloak. If you do this I will give you the Mask of the Songbird.");
+    }
 }
 
 sub EVENT_ITEM {
-  if(plugin::check_handin(\%itemcount, 20830 => 1, 20961 => 1, 20828 => 1, 20829 => 1)) { #Bard test of Brass using Adamantium Bands, Effreeti War horn, glowing diamond, and saffron spiroc feather
-    quest::summonitem(27724); #Denon's Horn of Disaster
+  if(plugin::check_handin(\%itemcount, 20947 => 1, 20824 => 1, 20825 => 1)) { #bard test of pitch using crude wooden flute, phosphoric globe, and shimmering diamond
+    quest::summonitem(27722); #Ervaj's flute of flight
      quest::ding(); 
      quest::exp(841790);
-    quest::say("Well done, $name. Here is your reward.");
+    quest::say("Excellent! Take this as your reward.");
     quest::depop();
     }
-  elsif(plugin::check_handin(\%itemcount, 20953 => 1, 20826 => 1, 20827 => 1)) { #Bard test of Wind using Amulet of woven hair, dull stone, and imp statuette
-    quest::summonitem(14565); #Fae amulet
+  elsif(plugin::check_handin(\%itemcount, 20940 => 1, 20822 => 1, 20823 => 1)) { #bard test of voice using light woolen mantle, music box, platinum disc
+    quest::summonitem(27721); #mantle of the songweaver
      quest::ding(); 
      quest::exp(841790);
-    quest::say("Well done, $name. Here is your reward.");
+    quest::say("Excellent! Take this as your reward.");
     quest::depop();
     }
-  elsif(plugin::check_handin(\%itemcount, 20831 => 1, 20968 => 1, 20832 => 1, 20833 => 1)) { #Bard test of harmony using Effreeti war spear, manna nectar, nebulous diamond, and nebulous emerald
-    quest::summonitem(10852); #harmonic spear
+  elsif(plugin::check_handin(\%itemcount, 20933 => 1, 20823 => 1, 20820 => 1)) { #bard test of tone using ochre tessera, songbird statuette, light wooden cloak
+    quest::summonitem(27720); #mask of song
      quest::ding(); 
      quest::exp(841790);
-    quest::say("Well done, $name. Here is your reward.");
+    quest::say("Excellent! Take this as your reward.");
     quest::depop();
     }
   else {
@@ -47,6 +48,8 @@ sub EVENT_ITEM {
 }
 
 sub EVENT_TIMER {
-  quest::depop();
   quest::stoptimer("depop");
+  quest::depop();
+  
 } 
+ 

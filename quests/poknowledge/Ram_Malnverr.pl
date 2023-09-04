@@ -14,36 +14,33 @@ sub EVENT_SAY {
 	my $craft = quest::saylink("craft", 1);
 	my $sacrofice = quest::saylink("sacrifice", 1);
 	if($text=~/Hail/i&&$ulevel == 65) {
-		$client->Message(14,"Hello $name\! Most people you will meet around here will tell you to stay far away from me... I am a very old and $sick man you know?");
+		quest::say("Hello $name\! Most people you will meet around here will tell you to stay far away from me... I am a very old and $sick man you know?");
 	}
 	elsif($text=~/Hail/i&&$ulevel <= 64) {
-		$client->Message(14,"Begone newbee! I have no time for you!! Can't you see I am a sick old man? Come back when you got something decent to offer me, ugh ugh were are my stupid pills?");
+		quest::say("Begone newbee! I have no time for you!! Can't you see I am a sick old man? Come back when you got something decent to offer me, ugh ugh were are my stupid pills?");
 	}
 	elsif($text=~/sick/i&&$ulevel == 65) {
-		$client->Message(14,"Yes I am very sick... Doctors say that I have only weeks or days to live but what do they know hahaha I got a few tricks up my sleeve. Do you want to know the $secret of my life?");
+		quest::say("Yes I am very sick... Doctors say that I have only weeks or days to live but what do they know hahaha I got a few tricks up my sleeve. Do you want to know the $secret of my life?");
 
 	}
 	elsif($text=~/secret/i&&$ulevel == 65) {
-		$client->Message(14, "The secret noone knows is that I used to be the very best weaponsmith Norrath has ever known HA yes they call themself smiths lol I be laughing in their faces. Although i am now old and ill, I can still $craft the very best... (and I am the ONLY one)");
-
+		quest::say("The secret noone knows is that I used to be the very best weaponsmith Norrath has ever known HA yes they call themself smiths lol I be laughing in their faces. Although i am now old and ill, I can still $craft the very best... (and I am the ONLY one)");
 	}
 	elsif($text=~/craft/i&&$ulevel == 65) {
-		$client->Message(14, "I can craft the epic weapons of all classes 1.5, 2.0, 2.5 and the 3.0 versions, but I won't help you unless you can make the ultimate $sacrofice I demand of you..");
-
+		quest::say("I can craft the epic weapons of all classes 1.5, 2.0, 2.5 and the 3.0 versions, but I won't help you unless you can make the ultimate $sacrofice I demand of you..");
 	}
 	elsif($text=~/sacrifice/i&&$ulevel == 65) {
-		$client->Message(14, "As i said i am a dying man but I know of a chanting that could extend my life for a couple of years, when you give me your epic piece, I will place my hand on your forehead and drain your soul in order to extend my life. It won't kill you but will drain all your battle experience.. yes you will be lvl 1. Only then will I grant you the next version of your epic weapon. WARNING: People that wield 2x a 1 hand epic weapon like Rangers and Beastlords, should give me only 1 of the 2 epic weapons. Warriors should also give me 1 of their 1 handers.");
+		quest::say("As i said i am a dying man but I know of a chanting that could extend my life for a couple of years, when you give me your epic piece, I will place my hand on your forehead and drain your soul in order to extend my life. It won't kill you but will drain all your battle experience.. yes you will be lvl 1. Only then will I grant you the next version of your epic weapon. WARNING: People that wield 2x a 1 hand epic weapon like Rangers and Beastlords, should give me only 1 of the 2 epic weapons. Warriors should also give me 1 of their 1 handers.");
 	}
 	else {
-		$client->Message(14,"I don't talk to you for you are not worthy!! You are a newbie and you have nothing to offer me, begone!!");
-		return 1;
+		quest::say("I don't talk to you for you are not worthy!! You are a newbie and you have nothing to offer me, begone!!");
 	}
 }
 ######################################################################--BEGIN DRUID--####################################################################################
 sub EVENT_ITEM {
 	if($ulevel == 65 && $class == 'druid' && plugin::check_handin(\%itemcount, 20490 => 1)) {
 		#Druid epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");;
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");;
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -55,7 +52,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'druid' && plugin::check_handin(\%itemcount, 62863 => 1)) {
 		#Druid epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -65,7 +62,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'druid' && plugin::check_handin(\%itemcount, 62880 => 1)) {
 		#Druid epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -75,7 +72,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'druid' && plugin::check_handin(\%itemcount, 119466 => 1)) {
 		#Druid epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -86,7 +83,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN CLERIC--####################################################################################
 	elsif($ulevel == 65 && $class == 'cleric' && plugin::check_handin(\%itemcount, 5532 => 1)) {
 		#Cleric epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -99,7 +96,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'cleric' && plugin::check_handin(\%itemcount, 9955 => 1)) {
 		#Cleric epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -109,7 +106,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'cleric' && plugin::check_handin(\%itemcount, 20076 => 1)) {
 		#Cleric epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -119,7 +116,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'cleric' && plugin::check_handin(\%itemcount, 119467 => 1)) {
 		#Cleric epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -130,7 +127,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN SHADOWKNIGHT--####################################################################################
 	elsif($ulevel == 65 && $class == 'shadowknight' && plugin::check_handin(\%itemcount, 14383 => 1)) {
 		#Shadowknight epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -142,7 +139,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'shadowknight' && plugin::check_handin(\%itemcount, 50003 => 1)) {
 		#Shadowknight epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -152,7 +149,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'shadowknight' && plugin::check_handin(\%itemcount, 48136 => 1)) {
 		#Shadowknight epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -162,7 +159,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'shadowknight' && plugin::check_handin(\%itemcount, 119469 => 1)) {
 		#Shadowknight epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -173,7 +170,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN SHAMAN--####################################################################################
 	elsif($ulevel == 65 && $class == 'shaman' && plugin::check_handin(\%itemcount, 10651 => 1)) {
 		#Shaman epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -185,7 +182,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'shaman' && plugin::check_handin(\%itemcount, 57400 => 1)) {
 		#Shaman epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -195,7 +192,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'shaman' && plugin::check_handin(\%itemcount, 57405 => 1)) {
 		#Shaman epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -205,7 +202,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'shaman' && plugin::check_handin(\%itemcount, 119470 => 1)) {
 		#Shaman epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -216,7 +213,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN WIZARD--####################################################################################
 	elsif($ulevel == 65 && $class == 'wizard' && plugin::check_handin(\%itemcount, 14341 => 1)) {
 		#Wizard epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -228,7 +225,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'wizard' && plugin::check_handin(\%itemcount, 12665 => 1)) {
 		#Wizard epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -238,7 +235,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'wizard' && plugin::check_handin(\%itemcount, 16576 => 1)) {
 		#Wizard epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -248,7 +245,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'wizard' && plugin::check_handin(\%itemcount, 119471 => 1)) {
 		#Wizard epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -259,7 +256,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN MAGICIAN--####################################################################################
 	elsif($ulevel == 65 && $class == 'magician' && plugin::check_handin(\%itemcount, 28034 => 1)) {
 		#Magician epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -271,7 +268,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'magician' && plugin::check_handin(\%itemcount, 19092 => 1)) {
 		#Magician epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -281,7 +278,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'magician' && plugin::check_handin(\%itemcount, 19839 => 1)) {
 		#Magician epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -291,7 +288,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'magician' && plugin::check_handin(\%itemcount, 119472 => 1)) {
 		#Magician epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -302,7 +299,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN ENCHANTER--####################################################################################
 	elsif($ulevel == 65 && $class == 'enchanter' && plugin::check_handin(\%itemcount, 10650 => 1)) {
 		#Enchanter epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!.");
@@ -314,7 +311,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'enchanter' && plugin::check_handin(\%itemcount, 52952 => 1)) {
 		#Enchanter epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -324,7 +321,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'enchanter' && plugin::check_handin(\%itemcount, 52962 => 1)) {
 		#Enchanter epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -334,7 +331,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'enchanter' && plugin::check_handin(\%itemcount, 119473 => 1)) {
 		#Enchanter epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -345,7 +342,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN NECROMANCER--####################################################################################
 	elsif($ulevel == 65 && $class == 'necromancer' && plugin::check_handin(\%itemcount, 20544 => 1)) {
 		#Necromancer epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -357,7 +354,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'necromancer' && plugin::check_handin(\%itemcount, 62581 => 1)) {
 		#Necromancer epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -367,7 +364,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'necromancer' && plugin::check_handin(\%itemcount, 64067 => 1)) {
 		#Necromancer epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -377,7 +374,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'necromancer' && plugin::check_handin(\%itemcount, 119474 => 1)) {
 		#Necromancer epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -388,7 +385,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN WARRIOR--####################################################################################
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 66177 => 1)) {
 		#Warrior epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -400,7 +397,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 66176 => 1)) {
 		#Warrior epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -410,7 +407,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 60321 => 1)) {
 		#Warrior epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -420,7 +417,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 60332 => 1)) {
 		#Warrior epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -430,7 +427,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'warrior' && plugin::check_handin(\%itemcount, 119475 => 1)) {
 		#Warrior epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -441,7 +438,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN ROQUE--####################################################################################
 	elsif($ulevel == 65 && $class == 'roque' && plugin::check_handin(\%itemcount, 11057 => 1)) {
 		#Roque epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -453,7 +450,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'roque' && plugin::check_handin(\%itemcount, 52347 => 1)) {
 		#Roque epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -463,7 +460,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'roque' && plugin::check_handin(\%itemcount, 52348 => 1)) {
 		#Roque epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -473,7 +470,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'roque' && plugin::check_handin(\%itemcount, 119476 => 1)) {
 		#Roque epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -484,7 +481,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN MONK--####################################################################################
 	elsif($ulevel == 65 && $class == 'monk' && plugin::check_handin(\%itemcount, 10652 => 1)) {
 		#Monk epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -496,7 +493,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'monk' && plugin::check_handin(\%itemcount, 61025 => 1)) {
 		#Monk epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -506,7 +503,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'monk' && plugin::check_handin(\%itemcount, 67742 => 1)) {
 		#Monk epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -516,7 +513,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'monk' && plugin::check_handin(\%itemcount, 119477 => 1)) {
 		#Monk epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -527,7 +524,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN BEASTLORD--####################################################################################
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 8495 => 1)) {
 		#Beastlord epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -539,7 +536,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 8496 => 1)) {
 		#Beastlord epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -549,7 +546,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 52911 => 1)) {
 		#Beastlord epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -559,7 +556,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 57054 => 1)) {
 		#Beastlord epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -569,7 +566,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'beastlord' && plugin::check_handin(\%itemcount, 119478 => 1)) {
 		#Beastlord epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -580,7 +577,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN BARD--####################################################################################
 	elsif($ulevel == 65 && $class == 'bard' && plugin::check_handin(\%itemcount, 20542 => 1)) {
 		#Bard epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -592,7 +589,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'bard' && plugin::check_handin(\%itemcount, 77631 => 1)) {
 		#Bard epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -602,7 +599,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'bard' && plugin::check_handin(\%itemcount, 77640 => 1)) {
 		#Bard epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -612,7 +609,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'bard' && plugin::check_handin(\%itemcount, 119479 => 1)) {
 		#Bard epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -623,7 +620,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN PALADIN--####################################################################################
 	elsif($ulevel == 65 && $class == 'paladin' && plugin::check_handin(\%itemcount, 10099 => 1)) {
 		#Paladin epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -635,7 +632,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'paladin' && plugin::check_handin(\%itemcount, 64031 => 1)) {
 		#Paladin epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -645,7 +642,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'paladin' && plugin::check_handin(\%itemcount, 48147 => 1)) {
 		#Paladin epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -655,7 +652,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'paladin' && plugin::check_handin(\%itemcount, 119480 => 1)) {
 		#Paladin epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -666,7 +663,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN BERSERKER--####################################################################################
 	elsif($ulevel == 65 && $class == 'berserker' && plugin::check_handin(\%itemcount, 68299 => 1)) {
 		#Berserker epic 1.0 to 1.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -678,7 +675,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'berserker' && plugin::check_handin(\%itemcount, 18398 => 1)) {
 		#Berserker epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -688,7 +685,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'berserker' && plugin::check_handin(\%itemcount, 18609 => 1)) {
 		#Berserker epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -698,7 +695,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'berserker' && plugin::check_handin(\%itemcount, 119481 => 1)) {
 		#Berserker epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -709,7 +706,7 @@ sub EVENT_ITEM {
 ######################################################################--BEGIN RANGER--####################################################################################
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 20488 => 1)) {
 		#Ranger epic 1.0 to 1.5 || plugin::check_handin(\%itemcount, 204887 => 1)
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -721,7 +718,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 20487 => 1)) {
 		#Ranger epic 1.0 to 1.5 || plugin::check_handin(\%itemcount, 204887 => 1)
-		$client->Message(14,"You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 1.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -731,7 +728,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 62627 => 1)) {
 		#Ranger epic 1.5 to 2.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -741,7 +738,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 62649 => 1)) {
 		#Ranger epic 2.0 to 2.5
-		$client->Message(14,"You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 2.5 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -751,7 +748,7 @@ sub EVENT_ITEM {
 	}
 	elsif($ulevel == 65 && $class == 'ranger' && plugin::check_handin(\%itemcount, 119482 => 1)) {
 		#Ranger epic 2.5 to 3.0
-		$client->Message(14,"You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
+		quest::say("You have agreed to our deal, here is your epic 3.0 weapon. I shall start the ancient chanting now to drain your lifeforce, as agreed in the contract you just signed, this is irreversable!!");
 		$client->Message(6,"You notice a strange wind comming up as the old man places his hand on your forehead: did you make a pact with the devil himself?");
 		$client->Message(6,"You are starting to feel strange as the old man begins to chant in an ancient old language, you feel your lifeforce draining away as you hear him screem: ARGOSS BEHILIA DEMBOLA!!!!");
 		$client->Message(6,"When everything gets back to normal you notice that you forgot all about fighting, you notice you have lost ALOT of combat experience!!");
@@ -768,11 +765,11 @@ sub EVENT_ITEM {
             $yes = 1;
         }
         if($yes == 1) {
-            $client->Message(14, "I don't need this $name. Take it back.");
+            quest::say("I don't need this $name. Take it back.");
             plugin::return_items(\%itemcount);
         }
         if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-            $client->Message(14, "Thanks for the coin!");
+            quest::say("Thanks for the coin!");
         }
     }
 }

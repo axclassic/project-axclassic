@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/04/2023==
+Congdar: fix quests that used clientsay to questsay
+
 ==08/02/2023==
 Congdar: Berserker Epic quest fixed
 

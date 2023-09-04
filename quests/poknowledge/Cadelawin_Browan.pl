@@ -13,7 +13,7 @@ sub EVENT_SAY {
         quest::say("Well, in the case of the Mystic Cloak at least, the true enchantment is in the brooch that you use to clip the cloak around your shoulders. The cloak itself cannot run out of magic, the brooch, however, can. When it no longer has the ability to cast spells you should be able to attach a [new brooch] and regain the magic the cloak once possessed.");
     }
     if($text=~/new brooch/i) {
-        quest::say("'I figured that would be your next question. Each enchanted cloak has its own brooch, and you need to know the specifics of the brooch for your cloak in order to replace it. You happen to be in luck today as I happen to know the specifications for the cloak associated with the Mystic Cloak. First you will need talisman made from Chrysoberyl. That talisman will need to be affixed inside a Planar Jeweler's kit by a skilled jewelcrafter to an enchanted platinum bar with a magic scroll of steelskin and a vial of distilled mana. Once you have the brooch simply attach it to your cloak in one of the looms you can find in Jeral, it shouldn't be terribly difficult.");
+        quest::say("I figured that would be your next question. Each enchanted cloak has its own brooch, and you need to know the specifics of the brooch for your cloak in order to replace it. You happen to be in luck today as I happen to know the specifications for the cloak associated with the Mystic Cloak. First you will need talisman made from Chrysoberyl. That talisman will need to be affixed inside a Planar Jeweler's kit by a skilled jewelcrafter to an enchanted platinum bar with a magic scroll of steelskin and a vial of distilled mana. Once you have the brooch simply attach it to your cloak in one of the looms you can find in Jeral, it shouldn't be terribly difficult.");
     }
 }
 
@@ -26,11 +26,11 @@ sub EVENT_ITEM {
         $yes = 1;
     }
     if($yes == 1) {
-        $client->Message(14, "I don't need this $name. Take it back.");
+        quest::say("I don't need this $name. Take it back.");
         plugin::return_items(\%itemcount);
     }
     if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-        $client->Message(14, "Thanks for the coin!");
+        quest::say("Thanks for the coin!");
     }
 }#Done
 #END of FILE Zone:poknowledge  ID:202053 -- Cadelawin_Browan 

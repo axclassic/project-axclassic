@@ -1,6 +1,11 @@
 # Bazzt_Zzzt NPCID 71072
 # spawns Sirran on Death
+
+my $did_dt = 1;
+
 sub EVENT_DEATH {
+   quest::stoptimer("bzdt");
+   $did_dt = undef;
    my $x = $npc->GetX();
    my $y = $npc->GetY();
    my $z = $npc->GetZ();
@@ -11,10 +16,13 @@ sub EVENT_DEATH {
 
 sub EVENT_COMBAT {
    if($npc->IsEngaged()) {
-      quest::settimer("bzdt", 45);
-      my $targetmob1 = $npc->GetHateTop();
-      my $targetid1 = $targetmob1->GetID();
-      quest::castspell(982, $targetid1);
+       if($did_dt < 2) {
+           $did_dt = $did_dt + 1;
+           my $targetmob1 = $npc->GetHateTop();
+           my $targetid1 = $targetmob1->GetID();
+           quest::castspell(982, $targetid1);
+           quest::settimer("bzdt", 45);
+       }
    }
    else {
       quest::stoptimer("bzdt");
