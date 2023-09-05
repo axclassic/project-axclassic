@@ -37,7 +37,7 @@ sub EVENT_ITEM {
             $yes = 1;
         }
         if($yes == 1) {
-            quest::say(quest::say("I don't need this $name. Take it back.");
+            quest::say("I don't need this $name. Take it back.");
             plugin::return_items(\%itemcount);
         }
         if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
