@@ -24,7 +24,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-    $did_dt = undef;
+    $did_dt = 1;
     quest::stoptimer("thovdt");
 }
 # the_Hand_of_Veeshan NPCID: 71060

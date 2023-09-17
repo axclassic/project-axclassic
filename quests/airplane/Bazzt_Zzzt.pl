@@ -5,7 +5,7 @@ my $did_dt = 1;
 
 sub EVENT_DEATH {
    quest::stoptimer("bzdt");
-   $did_dt = undef;
+   $did_dt = 1;
    my $x = $npc->GetX();
    my $y = $npc->GetY();
    my $z = $npc->GetZ();

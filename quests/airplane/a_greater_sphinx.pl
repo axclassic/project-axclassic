@@ -24,7 +24,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-    $did_dt = undef;
+    $did_dt = 1;
     quest::stoptimer("agsdt");
 }
 # a_greater_sphinx NPCID: 71001

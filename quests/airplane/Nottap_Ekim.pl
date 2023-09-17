@@ -1,6 +1,6 @@
 sub EVENT_SPAWN {
-   quest::settimer("selfdepop",8400);
-   quest::settimer("keeperpop",4200);
+   quest::settimer("selfdepop",3400);
+   quest::settimer("keeperpop",2100);
 }
 
 sub EVENT_TIMER {

@@ -36,7 +36,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-    $did_dt = undef;
+    $did_dt = 1;
     quest::stoptimer("ooadt");
     quest::spawn2(71060,55,0,-1462.2,-270.1,1250.9,62.9);
 }

@@ -6,7 +6,7 @@ sub EVENT_DEATH {
    $y = $npc->GetY();
    $z = $npc->GetZ();
    $sirran = undef;
-   $did_dt = undef;
+   $did_dt = 1;
    quest::setglobal("sirran",7,3,"M10");
    quest::spawn(71058,0,0,$x-10,$y,$z+10);
 }
