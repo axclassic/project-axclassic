@@ -1,7 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==09/10/2023==
-Congdar: Alchemy and Poison Making for non-Shaman non-Rogue classes. 
+Congdar: Alchemy and Poison Making for non-Shaman non-Rogue classes.
 
 ==09/04/2023==
 Congdar: Permafrost Extract for non Alchemy, Poison classes.

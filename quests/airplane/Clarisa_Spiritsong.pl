@@ -15,7 +15,7 @@ sub EVENT_SAY {
     quest::say("The sweet sound rising forth from our throats are what makes us truly great.  Go forth and give voice to your songs, and return to me a platinum disc, a music box, and a light woolen mantle. If you do this I shall give you the Songweaver's Mantle. Good luck!");
     }
   if ($text=~/tone/i) { #bard test of tone
-    quest::say("Tone is important to all singers. Prove to me that you can keep your tone even and pure by bringing me an Ochre Tessera, a songbird statuette, and a light woolen cloak. If you do this I will give you the Mask of the Songbird.");
+    quest::say("Tone is important to all singers. Prove to me that you can keep your tone even and pure by bringing me an Ochre Tessera, a songbird statuette, and a light woolen mask. If you do this I will give you the Mask of the Songbird.");
     }
 }
 
@@ -34,7 +34,7 @@ sub EVENT_ITEM {
     quest::say("Excellent! Take this as your reward.");
     quest::depop();
     }
-  elsif(plugin::check_handin(\%itemcount, 20933 => 1, 20823 => 1, 20820 => 1)) { #bard test of tone using ochre tessera, songbird statuette, light wooden cloak
+  elsif(plugin::check_handin(\%itemcount, 20933 => 1, 20823 => 1, 20821 => 1)) { #bard test of tone using ochre tessera, songbird statuette, light wooden mask
     quest::summonitem(27720); #mask of song
      quest::ding(); 
      quest::exp(841790);
