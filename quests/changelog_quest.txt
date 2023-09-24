@@ -1,7 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==09/24/2023==
-Congdar: add Tier 5
+Congdar: add Tier 5 
 
 ==09/10/2023==
 Congdar: Alchemy and Poison Making for non-Shaman non-Rogue classes.

@@ -34,7 +34,7 @@ sub EVENT_ITEM {
     quest::say("Excellent! Take this as your reward.");
     quest::depop();
     }
-  elsif(plugin::check_handin(\%itemcount, 20933 => 1, 20823 => 1, 20821 => 1)) { #bard test of tone using ochre tessera, songbird statuette, light wooden mask
+  elsif(plugin::check_handin(\%itemcount, 20933 => 1, 20820 => 1, 20821 => 1)) { #bard test of tone using ochre tessera, songbird statuette, light woolen mask
     quest::summonitem(27720); #mask of song
      quest::ding(); 
      quest::exp(841790);
