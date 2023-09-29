@@ -83,13 +83,13 @@ sub EVENT_TIMER {
                 else {
                     my $aim_name = $random_raider->GetCleanName();
                     if($kyv_num == 1) {
-                        quest::ze(14, "From the corner of your eye, you notice a Kyv taking aim at $aim_name`s position. They should move.");
+                        quest::ze(14, "From the corner of your eye, you notice a Kyv taking aim at $aim_name's position. They should move.");
                     }
                     if($kyv_num == 2) {
-                        quest::ze(14, "From the corner of your eye, you notice a Kyv taking aim near $aim_name`s position. He appears to be leading the target, anticipating $aim_name`s next movement. $aim_name should stand still.");
+                        quest::ze(14, "From the corner of your eye, you notice a Kyv taking aim near $aim_name's position. He appears to be leading the target, anticipating $aim_name's next movement. $aim_name should stand still.");
                     }
                     if($kyv_num == 3) {
-                        quest::ze(14, "From the corner of your eye, you notice a Kyv taking aim at $aim_name`s head. $aim_name should duck.");
+                        quest::ze(14, "From the corner of your eye, you notice a Kyv taking aim at $aim_name's head. $aim_name should duck.");
                     }
                 }
                 quest::settimer("kyv_action", 3);
@@ -109,7 +109,7 @@ sub EVENT_TIMER {
                         quest::ze(14, "$arrow_name is struck by a stray arrow!");
                     }
                     if($kyv_num == 3) {
-                        quest::ze(14, "$arrow_name`s head is struck by a deadly arrow!");
+                        quest::ze(14, "$arrow_name's head is struck by a deadly arrow!");
                     }
                 }
                 $npc->SendBeginCast($kyvs{$kyv_num}->[2], 0);

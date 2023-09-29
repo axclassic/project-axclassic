@@ -62,12 +62,12 @@ sub check_weapon {
             my $secondary = $random_raider->GetItemAt(14);
             my $random_name1 = $random_raider->GetCleanName();
             if($primary || $secondary) {
-                quest::ze(14, "$random_name1`s weaponry becomes incredibly hot, searing their hands!");
+                quest::ze(14, "$random_name1's weaponry becomes incredibly hot, searing their hands!");
                 $npc->SendBeginCast(2315, 0);
                 quest::castspell(2315, $random_raider->GetID());
             }
             else {
-                quest::ze(14, "$random_name1`s weaponry cools down.");
+                quest::ze(14, "$random_name1's weaponry cools down.");
             }
         }
     }
@@ -98,7 +98,7 @@ sub check_rings {
             my $right_ring = $random_raider->GetItemAt(16);
             my $random_name1 = $random_raider->GetCleanName();
             if($left_ring || $right_ring) {
-                quest::ze(14, "$random_name1`s rings clamp down, breaking fingers and disabling thier manual dexterity.");
+                quest::ze(14, "$random_name1's rings clamp down, breaking fingers and disabling thier manual dexterity.");
                 $npc->SendBeginCast(5695, 0);
                 quest::castspell(5695, $random_raider->GetID());
             }
@@ -237,10 +237,10 @@ sub EVENT_TIMER {
                 else {
                     my $non_client_name = $random_raider->GetCleanName();
                     if($random_equipment == 1) {
-                        quest::ze(14, "$non_client_name`s rings constrict and bite into their fingers. They should remove them.");
+                        quest::ze(14, "$non_client_name's rings constrict and bite into their fingers. They should remove them.");
                     }
                     if($random_equipment == 2) {
-                        quest::ze(14, "The Weapon in $non_client_name`s right hand begins to heat up dramatically. They should remove it.");
+                        quest::ze(14, "The Weapon in $non_client_name's right hand begins to heat up dramatically. They should remove it.");
                     }
                 }
                 quest::settimer("equipment_action", 5);
