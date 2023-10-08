@@ -38,16 +38,20 @@ sub EVENT_CLICKDOOR {
                 }
             }
             else {
-                if(!defined($oow_rss_taromani_insignias)) {
+                $ClientName = $client->GetCleanName();
+                $QuestGlobalValueSolo = $client->GetQGlobal("oow_rss_taromani_insignias");
+                if(!$QuestGlobalValueSolo) {
                     $flagged = 1;
-                    quest::echo(15, "$name is not protected from the chaos magic in Mata Muram's citadel.");
+                    quest::echo(15, "$ClientName is not protected from the chaos magic in Mata Muram's citadel.");
                 }
-                if(!defined($oow_mpg_raids_complete)) {
+                $QuestGlobalValueSolo = $client->GetQGlobal("oow_mpg_raids_complete");
+                if(!$QuestGlobalValue) {
                     $flagged = 1;
-                    quest::echo(15, "$name must complete the Muramite Proving Grounds raid trials.");
+                    quest::echo(15, "$ClientName must complete the Muramite Proving Grounds raid trials.");
                 }
-                $oow_rss_taromani_insignias = undef;
-                $oow_mpg_raids_complete = undef;
+                if($flagged == 2) {
+                    $flagged == 3;
+                }
             }
             if($flagged == 3) {
                 quest::echo(15, "The door swings wide and allows you entrance to Anguish, the Fallen Palace.");

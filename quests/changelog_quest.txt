@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/07/2023==
+Congdar: charm item fixes
+
 ==09/28/2023==
 Congdar: Trial of Forsight updates 
 
