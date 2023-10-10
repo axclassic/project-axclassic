@@ -31,7 +31,7 @@ sub EVENT_CLICKDOOR {
                             }
                             if($flagged == 2) {
                                 push(@clients, $member);
-                                $flagged == 3;
+                                $flagged = 3;
                             }
                         }
                     }
@@ -50,7 +50,7 @@ sub EVENT_CLICKDOOR {
                     quest::echo(15, "$ClientName must complete the Muramite Proving Grounds raid trials.");
                 }
                 if($flagged == 2) {
-                    $flagged == 3;
+                    $flagged = 3;
                 }
             }
             if($flagged == 3) {
