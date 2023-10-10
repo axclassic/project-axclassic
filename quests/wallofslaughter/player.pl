@@ -45,7 +45,7 @@ sub EVENT_CLICKDOOR {
                     quest::echo(15, "$ClientName is not protected from the chaos magic in Mata Muram's citadel.");
                 }
                 $QuestGlobalValueSolo = $client->GetQGlobal("oow_mpg_raids_complete");
-                if(!$QuestGlobalValue) {
+                if(!$QuestGlobalValueSolo) {
                     $flagged = 1;
                     quest::echo(15, "$ClientName must complete the Muramite Proving Grounds raid trials.");
                 }
