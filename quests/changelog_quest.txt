@@ -1,6 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==10/09/2023==
+Congdar: Anguish Jelvan spawn fix
+
+==10/09/2023==
 Congdar: Anguish door fix
 
 ==10/07/2023==

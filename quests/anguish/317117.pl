@@ -159,7 +159,7 @@ sub Spawn_keldovan {
 
 sub Spawn_jelvan {
     # Jelvan
-    quest::unique_spawn(317004, 0, 0, -256, 2100, -120, 4);
+    quest::unique_spawn(317004, 0, 0, -256, 2100, -110, 4);
 }
 
 sub Spawn_ture {
