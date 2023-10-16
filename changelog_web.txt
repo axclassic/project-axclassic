@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+==10/16/2023==
+Patrikpatrik: Attempt to correctly populate ladder standings.
+
 ==10/02/2023==
 Patrikpatrik: Added replies count to News section.
 
