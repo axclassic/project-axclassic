@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==10/18/2023==
+Patrikpatrik: Champion Lightwater epic fix for Paladin.
+
 ==10/09/2023==
 Congdar: brother qwinn fix
 
