@@ -10,6 +10,8 @@
 ## 12/15/2021 - Since oct Ladder revamp,   ##
 ## increased rewards and items for the     ##
 ## very best - patrikpatrik                ##
+## Fiery Avenger -> Fiery Defender 10099   ##
+## @ line 65 - Oct/2023                    ##
 #############################################
 sub EVENT_SPAWN {
 	$x = $npc->GetX();
@@ -60,7 +62,7 @@ sub EVENT_ITEM {
 			#$client->Message(14,"Champion Lightwater says, 'Farewell!'");
 		#	}
 		# elsif ($randomroll < '68') {
-			my @epicarray = (10650, 8495, 14341, 11050, 20490, 68299, 28034, 14383, 10651, 10652, 11057, 20488, 5532, 20542, 10908, 20544);
+			my @epicarray = (10650, 8495, 14341, 10099, 20490, 68299, 28034, 14383, 10651, 10652, 11057, 20488, 5532, 20542, 10908, 20544);
 			my $randomepic = $epicarray[rand @epicarray];
 				if ($randomepic == 8495) { #If beastlord epic is chosen, must summon two items
 				quest::summonitem(8495);
