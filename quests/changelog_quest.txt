@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/07/2023==
+Congdar: Fix for Captured Puresoul Charm
+
 ==10/18/2023==
 Patrikpatrik: Champion Lightwater epic fix for Paladin.
 
