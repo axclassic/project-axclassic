@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/25/2023==
+Congdar: The Summoning of Terror quest update
+
 ==11/07/2023==
 Congdar: Fix for Captured Puresoul Charm
 
