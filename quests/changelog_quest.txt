@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/09/2023==
+Congdar: TimeB instancing
+
 ==11/25/2023==
 Congdar: The Summoning of Terror quest update
 
