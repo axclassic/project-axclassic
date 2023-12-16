@@ -44,35 +44,35 @@ sub EVENT_CLICKDOOR {
         $client->Message(14, "The portal, dim at first, begins to glow brighter.");
         $client->Message(14, "The portal flashes briefly, then glows steadily.");
 
-        if(($doorid == 44) || ($d_id == 44)) {
+        if(($doorid == 556) || ($d_id == 44) || ($doorid == 45) || ($d_id == 45)) {
             # Time B Air Trial
             $the_X = -36;
             $the_Y = 1352;
             $the_Z = 496;
             $the_H = 66;
         }
-        if(($doorid == 49) || ($d_id == 49)) {
+        if(($doorid == 561) || ($d_id == 49) || ($doorid == 50) || ($d_id == 50)) {
             # Time B Water Trial
             $the_X = -51;
             $the_Y = 857;
             $the_Z = 496;
             $the_H = 66;
         }
-        if(($doorid == 54) || ($d_id == 54)) {
+        if(($doorid == 566) || ($d_id == 54) || ($doorid == 55) || ($d_id == 55)) {
             # Time B Earth Trial
             $the_X = -35;
             $the_Y = 1636;
             $the_Z = 496;
             $the_H = 66;
         }
-        elsif(($doorid == 59) || ($d_id == 59)) {
+        elsif(($doorid == 571) || ($d_id == 59) || ($doorid == 60) || ($d_id == 60)) {
             # Time B Fire Trial
             $the_X = -55;
             $the_Y = 569;
             $the_Z = 496;
             $the_H = 66;
         }
-        elsif(($doorid == 64) || ($d_id == 64)) {
+        elsif(($doorid == 320) || ($d_id == 64) || ($doorid == 65) || ($d_id == 65)) {
             # Time B Undead Trial
             $the_X = -27;
             $the_Y = 1103;
