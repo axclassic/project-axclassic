@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==01/13/2024==
+Congdar: fixed Mammoth Calf Hides script
+
 ==01/11/2024==
 Congdar: fixed The Fabled Drolvarg Captain script
 
