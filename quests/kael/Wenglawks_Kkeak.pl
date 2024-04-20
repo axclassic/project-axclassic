@@ -8,6 +8,9 @@ sub EVENT_SAY {
   if($text=~/looking/i){
     quest::say("I have been looking for a few good people to deliver goods for me. I have several [deliveries] to clients which must be made soon. My last delivery person ended up dead, unfortunately.");
   }
+  if($text=~/dead/i){
+    quest::say("Yes, I do not know who did it, as there is not much competition in this city for trade. He was found stabbed in the back and gutted, just outside the city.");
+  }
   if($text=~/deliveries/i){
     quest::say("I have three clients whose orders must be taken care of. These will not be simple deliveries. I want you not only to deliver the items but to assist them if they need help using their packages. Do you wish to hear of the first task I have for you?");
   }
