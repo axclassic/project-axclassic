@@ -64,20 +64,17 @@ sub EVENT_ITEM {
 ## quest::pvp("on"); Angelox; no PVP for now.
         quest::ding(); quest::exp(100);
     }
-    elsif(($itemcount{77765} == 3 && $itemcount{77766} == 1) && ($class eq 'Druid')) {
-        #Druid spells
-        quest::emote('takes the sickly blood and spreads it across the enchanted scroll. It blends and swims horribly over it. When it settles, the priest hands it to you.');
-        quest::say('You may now travel further into Discord, true power awaits!');
-        quest::summonitem("77662");
-        quest::summonitem("77663");
-    }
-    elsif(($itemcount{77765} == 3 && $itemcount{77766} == 1) && ($class eq 'Wizard')) {
-        #Wizard spells
+    elsif(($itemcount{77765} == 3 && $itemcount{77766} == 1)) {
+        #Wizard and Druid spells
         quest::emote('takes the sickly blood and spreads it across the enchanted scroll. It blends and swims horribly over it. When it settles, the priest hands it to you.');
         quest::say('You may now travel further into Discord, true power awaits!');
         quest::summonitem("77659");
         quest::summonitem("77660");
         quest::summonitem("77661");
+        quest::summonitem("77661");
+        quest::summonitem("77662");
+        quest::summonitem("77662");
+        quest::summonitem("77663");
     }
     else {
         quest::say("I can't use this.");

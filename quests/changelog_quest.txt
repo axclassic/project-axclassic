@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==05/16/2024==
+Congdar: Fix Priest of Discord Bloodfield Spells quest
+
 ==04/20/2024==
 Congdar: add an_outcast_siren.pl
 
