@@ -1,10 +1,13 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+== 6/30/2024==
+Patrikpatrik: Ladder restart for July 1st.
+
 == 1/01/2024==
 Patrikpatrik: Ladder restart for January 1st.
 
 ==10/16/2023==
-Patrikpatrik: Attempt to correctly populate ladder standings.
+Patrikpatrik: Corrected ladder standings count.
 
 ==10/02/2023==
 Patrikpatrik: Added replies count to News section.
