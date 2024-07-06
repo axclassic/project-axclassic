@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==7/06/2024==
+Congdar: Test code for potimeb ports
+
 ==6/30/2024==
 Patrikpatrik: Champion_Darkwater updated for July ladder.
 

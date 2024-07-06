@@ -29,8 +29,8 @@ sub EVENT_ENTERZONE {
 
 sub EVENT_CLICKDOOR {
     my $d_id = ($doorid % 256);
-    #$client->Message(14, "Door Clicked doorid = $doorid");
-    #$client->Message(14, "Door Clicked d_id = $d_id");
+    $client->Message(14, "Door Clicked doorid = $doorid");
+    $client->Message(14, "Door Clicked d_id = $d_id");
     my $PortalEventPassed = $client->GetQGlobal($name.".potimea_portal_event_timer");
     my $QGlobalValue1 = $client->GetQGlobal($name.".potimeb_corpse");
     my $QGlobalValue2 = $client->GetQGlobal($name.".potimeB");
@@ -50,6 +50,7 @@ sub EVENT_CLICKDOOR {
             $the_Y = 1352;
             $the_Z = 496;
             $the_H = 66;
+            $client->Message(14, "Your clicked Air Trial");
         }
         if(($doorid == 561) || ($d_id == 49) || ($doorid == 50) || ($d_id == 50)) {
             # Time B Water Trial
@@ -57,6 +58,7 @@ sub EVENT_CLICKDOOR {
             $the_Y = 857;
             $the_Z = 496;
             $the_H = 66;
+            $client->Message(14, "Your clicked Water Trial");
         }
         if(($doorid == 566) || ($d_id == 54) || ($doorid == 55) || ($d_id == 55)) {
             # Time B Earth Trial
@@ -64,16 +66,27 @@ sub EVENT_CLICKDOOR {
             $the_Y = 1636;
             $the_Z = 496;
             $the_H = 66;
+            $client->Message(14, "Your clicked Earth Trial");
         }
-        elsif(($doorid == 571) || ($d_id == 59) || ($doorid == 60) || ($d_id == 60)) {
+        if(($doorid == 571) || ($d_id == 59) || ($doorid == 60) || ($d_id == 60)) {
             # Time B Fire Trial
             $the_X = -55;
             $the_Y = 569;
             $the_Z = 496;
             $the_H = 66;
+            $client->Message(14, "Your clicked Fire Trial");
         }
-        elsif(($doorid == 320) || ($d_id == 64) || ($doorid == 65) || ($d_id == 65)) {
+        if(($doorid == 320) || ($d_id == 64) || ($doorid == 65) || ($d_id == 65)) {
             # Time B Undead Trial
+            $the_X = -27;
+            $the_Y = 1103;
+            $the_Z = 496;
+            $the_H = 66;
+            $client->Message(14, "Your clicked Undead Trial");
+        }
+        if($the_X == 1) {
+            $client->Message(14, "Your click did not match any known door id.");
+            $client->Message(14, "Sending you to Undead Trial instead of 1,1,1,1.");
             $the_X = -27;
             $the_Y = 1103;
             $the_Z = 496;
