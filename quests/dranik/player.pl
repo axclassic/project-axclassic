@@ -1,7 +1,9 @@
 # The Ruined City of Dranik (dranik)
 
 sub EVENT_CLICKDOOR {
-    #quest::ze(15, "doorid = $doorid");
+    my $d_id = ($doorid % 256);
+    $client->Message(14, "Door Clicked doorid = $doorid");
+    $client->Message(14, "Door Clicked d_id = $d_id");
     if($doorid == 2) {
     }
     if($doorid == 3) {
