@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==7/20/2024==
+Congdar: Update Tilania_Shadowwalker.pl and Seria_Woodwind.pl
+
 ==7/06/2024==
 Congdar: Test code for potimeb ports
 
