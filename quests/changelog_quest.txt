@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==7/22/2024==
+Congdar: Update Jelvan spawnpoint
+
 ==7/20/2024==
 Congdar: Update Tilania_Shadowwalker.pl and Seria_Woodwind.pl
 

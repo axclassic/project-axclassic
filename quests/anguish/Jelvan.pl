@@ -61,7 +61,7 @@ sub EVENT_TIMER {
         }
         if($torment_alive == 0) {
             # --Jelvan`s_Keepsake (317111)
-			quest::unique_spawn(317111, 0, 0, $x, $y, $z, 0);
+			quest::unique_spawn(317111, 0, 0, -256, 2117, -119, 4);
 			quest::ze(15, "You hear Jelvan's shouts of gratitude as he runs into the shadows.");
             #--set player lockout
             #--chance to spawn 2.0 orb, if so set zone lockout for "bottom orb"
