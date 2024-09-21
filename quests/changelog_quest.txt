@@ -1,6 +1,9 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
 ==7/22/2024==
+Congdar: Add Purified mana to Illusionist Mercita
+
+==7/22/2024==
 Congdar: Update Jelvan spawnpoint
 
 ==7/20/2024==

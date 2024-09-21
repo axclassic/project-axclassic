@@ -5,7 +5,7 @@ sub EVENT_SAY{
         quest::say("Hello $name, I have some [tradeskills] that may be of use to you");
     }
     elsif($text=~/tradeskills/i) {
-        quest::say("I can [enchant] bars, make [viscous] and [clear mana], and upgrade your [flow] stones.");
+        quest::say("I can [enchant] bars, make [viscous], [clear mana], [purified mana], or upgrade your [flow] stones.");
     }
     elsif($text=~/enchant/i) {
         quest::say("I can enchant [silver], [electrum], [gold] and [platinum] bars ");
@@ -40,12 +40,19 @@ sub EVENT_SAY{
     elsif($text=~/Clear Mana/i) {
         quest::say("I will gladly perform this service for you.  Just hand me an Emerald, a Poison Vial and 100 platinum.");
     }
+    elsif($text=~/Purified Mana/i) {
+        quest::say("I will gladly perform this service for you.  Just hand me 3 Rubys, a Poison Vial and 500 platinum.");
+    }
 }
 
 sub EVENT_ITEM{
     if(($platinum>99) && plugin::check_handin(\%itemcount, 10029 => 1) && plugin::check_handin(\%itemcount, 16965 => 1)) {
         #Emerald and Poison Vial
         quest::selfcast(540); #Clarify Mana
+    }
+    elsif(($platinum>99) && plugin::check_handin(\%itemcount, 10035 => 3) && plugin::check_handin(\%itemcount, 16965 => 1)) {
+        #Emerald and Poison Vial
+        quest::selfcast(696); #Purify Mana
     }
     elsif(($itemcount{16500} == 1) && ($platinum >= 5)) {
         if($ulevel < 7) {
