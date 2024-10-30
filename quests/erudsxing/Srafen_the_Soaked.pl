@@ -23,7 +23,7 @@ sub EVENT_SAY {
     if($text=~/wait/i) {
         quest::say("We've been waiting quite some time, really. I have been here the least amount of time, but that doesn't help keep the boredom away, heheh. What are we waiting for, you ask? HehehHAahahah! What are we waiting for?? Heheheh, what a silly question! It's quite obvious if you take the time to think about it. Heh. Ummm.. I'm really not sure.");
     }
-    if($text=~/else /i) {
+    if($text=~/else/i) {
         quest::say("Ahh, yes, there's also a really old guy I've only seen a couple times, name's Froham. Whew, he is really old, and not much of a talker. Mostly mumbles from time to time. Dillon says he's been here since Erud first took his people across the sea. Not sure who this Erud feller is but Froham isn't in the best of shape, so it must have been a LONG time ago. Froham did mention there's one other guy but we've never seen him.");
         quest::say("He apparently had something to do with the Combine Empire, no idea what that is though.");
         quest::spawn2(98051, 0, 0, 4215.0, -1610.0, -287.3, 0);
