@@ -1,7 +1,7 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
-==10/29/2024==
-Congdar: Update Srafen_the_Soaked and Abe_the_Abandoned quest files
+==11/09/2024==
+Congdar: Update Srafen_the_Soaked and Abe_the_Abandoned quest files again
 
 ==7/22/2024==
 Congdar: Add Purified mana to Illusionist Mercita

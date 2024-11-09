@@ -45,10 +45,10 @@ sub EVENT_SIGNAL {
         quest::spawn2(98057, 0, 0, 4219.4, -1586.2, -292.7, 128.1);
     }
     if ($signal == 499) {
-        quest::signalwith(98050, 599, 40000);
+        quest::signalwith(98050, 599, 1000);
     }
     if ($signal == 699) {
-        quest::signalwith(98050, 799, 40000);
+        quest::signalwith(98050, 799, 1000);
     }
     if ($signal == 399) {
         quest::depop();

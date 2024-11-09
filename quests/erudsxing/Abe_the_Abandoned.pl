@@ -29,17 +29,19 @@ sub EVENT_SAY {
     if($text=~/spirits/i) {
         quest::emote("removes a quiver slung across his shoulder and solemnly hands it to you without a word.");
         quest::summonitem(1680);
+
+        # Signal with Srafen
         quest::signalwith(98046, 499, 1000);
     }
 }
 sub EVENT_SIGNAL {
     if ($signal == 599) {
         quest::say("Shaman? My time will soon be at hand and I fear I will never see our friends again. But the arrow must be given, our holy broken arrow. Shaman, will you bear our obligation and give them the arrow? You will know who to give it to when it is time.");
-        quest::signalwith(98046, 699, 10000);
+        quest::signalwith(98046, 699, 1000);
     }
     if ($signal == 799) {
         quest::emote("suddenly gasps and says, 'I have found it! I know the answer! Come with me and I will tell you. Eyes are everywhere and this knowledge is not for everyone. Finally my centuries of waiting are over hahahaha! Follow me Shaman!");
-        quest::signalwith(98046, 299, 10000);
+        quest::signalwith(98046, 299, 1000);
         quest::start(65);
     }
 }
