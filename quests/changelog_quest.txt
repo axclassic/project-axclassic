@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/12/2024==
+Congdar: Update Alister.pl
+
 ==11/09/2024==
 Congdar: Update Srafen_the_Soaked and Abe_the_Abandoned quest files again
 

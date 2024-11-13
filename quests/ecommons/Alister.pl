@@ -27,7 +27,7 @@ sub EVENT_ENTER
 sub EVENT_SAY
 {
     if($text =~/hail/i) {
-        quest::say ("Hey there $name, I craft Platinum jewelry. I can craft [ring]s, [necklace]s, [bracelet]s, [mask]s and an [earring]. I can also [enchant] Platinum bars for 5pp ea. I have mats for sale if you need any.");
+        quest::say ("Hey there $name, I craft Platinum jewelry. I can craft [ring]s, [necklace]s, [bracelet]s, [mask]s and an [earring]. I can also [enchant] Platinum bars for 5pp and and [Velium] bars for 100pp. I have mats for sale if you need any.");
     }
     elsif($text =~/earring/i)
     {
@@ -102,6 +102,10 @@ sub EVENT_SAY
     {
         quest::say ("Hand me your Platinum Bar and 5pp and I will enchant it for you.");
     }
+    elsif($text =~/Velium/i)
+    {
+        quest::say ("Hand me your Velium Bar and 100pp and I will enchant it for you.");
+    }
 }
 
 sub EVENT_ITEM
@@ -109,6 +113,10 @@ sub EVENT_ITEM
     if(($itemcount{16503}) && ($platinum == 5)) {
         quest::say ("Here is your Enchanted Platinum Bar.");
         quest::summonitem(16507);
+    }
+    elsif(($itemcount{22098}) && ($platinum == 100)) {
+        quest::say ("Here is your Enchanted Velium Bar.");
+        quest::summonitem(22099);
     }
     elsif(($itemcount{10011}) && ($itemcount{16507} == 1)  && ($platinum == 10))
     {
