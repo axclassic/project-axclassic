@@ -1,8 +1,4 @@
-# Srafen_the_Soaked (98046)
-
-sub EVENT_SPAWN {
-    quest::settimer("depop",600);
-}
+#Srafen_the_Soaked - 98046
 
 my $illusion = quest::saylink("illusion", 1);
 my $here = quest::saylink("here", 1);
@@ -12,7 +8,7 @@ my $else = quest::saylink("else", 1);
 
 sub EVENT_SAY {
     if($text=~/hail/i) {
-        quest::say("Why hello there! Ahh, it's good to see a new face down $here. So you've come to $wait with $us eh? That is splendid! It's been getting very boring lately.");
+        quest::say("Why hello there! Ahh, it's good to see a new face down $here. So you've come to wait with $us eh? That is splendid! It's been getting very boring lately.");
     }
     if($text=~/here/i) {
         quest::say("Oh! Well this is where we $wait. It's not much for looks but if you're lucky, a pretty fish will swim by. Oh, and once Dillon said he saw one of those fish women, a mermaid, he called it! Although, I'm not so sure of his state of mind, hehehe. He's been waiting here much longer than I.");
@@ -31,29 +27,38 @@ sub EVENT_SAY {
     if($text=~/illusion/i) {
         quest::say("Awww, well that's too bad. Although illusions and real people don't seem to be much different at times, so, please stay and keep Dillon and me company. We could use it, right Dillon?");
         quest::say("Hey Dillon, why don't you tell us again about what happened up top? You know, where they blew that big hole into the ground.");
-        quest::signalwith(98051, 299, 5);
+        quest::signalwith(98051, 299, 5000);
     }
 }
 
-sub EVENT_SIGNAL {
-    if ($signal == 199) {
-        quest::emote("looks around frantically a moment then laughs");
-        quest::doanim(12);
-        quest::say("Ohhh, them! Hehehe! This is a friend of mine come to wait with us. Isn't that exciting, Dillon? And it's not just an illusion, I don't think! Say, are you an $illusion, shaman?");
-    }
-    if ($signal == 299) {
+sub EVENT_TIMER {
+    if($timer eq "Wait2") {
+        quest::stoptimer("Wait2");
+        quest::say("Okay, well, I've had enough. Yet again, we've waited for nothing. Sometimes I wonder if the spirits are real after all. Well I for one am going to go find something fun to do, perhaps fish with Temian- this is obviously a waste of time. Come with me, Shaman, it'll be great fun!");
         quest::spawn2(98057, 0, 0, 4219.4, -1586.2, -292.7, 128.1);
-    }
-    if ($signal == 499) {
-        quest::signalwith(98050, 599, 1000);
-    }
-    if ($signal == 699) {
-        quest::signalwith(98050, 799, 1000);
-    }
-    if ($signal == 399) {
         quest::depop();
     }
 }
 
-#End of File - Srafen_the_Soaked (98046)
+sub EVENT_SIGNAL {
+    if($signal == 199){
+        quest::emote("looks around frantically a moment then laughs");
+        quest::doanim(12);
+        quest::say("Ohhh, them! Hehehe! This is a friend of mine come to wait with us. Isn't that exciting, Dillon? And it's not just an illusion, I don't think! Say, are you an $illusion, shaman?");
+    }
+    if($signal == 299){
+        quest::settimer("Wait2", 500);
+    }
+    if($signal == 499){
+        quest::signalwith(98050, 599, 50000);
+    }
+    if($signal == 699){
+        quest::signalwith(98050, 799, 50000);
+    }
+    if($signal == 399) {
+        quest::depop();
+    }
+}
+
+#End of File - Srafen_the_Soaked 98046
 

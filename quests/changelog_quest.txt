@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==11/30/2024==
+Congdar: Fix Test of Patience part of Shaman Epic
+
 ==11/12/2024==
 Congdar: Update Alister.pl
 
