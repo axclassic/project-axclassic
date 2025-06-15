@@ -24,8 +24,8 @@ well den these special exercise will surely be right for ye! Aye.");
   }
   if($text=~/recipes/i){
     quest::say("Now yer talking $name, I be glad to see yer ready to begin crafting yer honor and heed yer calling as a servant o Brell! I have the armor material recipes and molds for Brells Blessed Platemail $Helm, $Bracer, $Armguards, $Boots, $Greaves, $Gauntlets, and $Breastplate. All ye must do is simply tell me what armor piece ye want to craft and I will gladly present ye with the material recipe and armor mold necessary fer craftin it.");
-    #Mail Assembly Kit    
-    quest::summonitem(17124);
+    # Holy Assembly Kit    
+    quest::summonitem(17253);
   }
   if($text=~/Armguards/i){
     #Quest: Brells Blessed Platemail Armguards 

@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==06/15/2025==
+Congdar: Haldorak_Foamymugs.pl now gives out the correct combine container
+
 ==01/01/2025==
 Patrikpatrik: Champion Darkwater updated for January 1st, 2025.
 
