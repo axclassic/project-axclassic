@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==7/01/2025==
+Patrikpatrik: Champion_Darkwater updated for July ladder.
+
 ==06/15/2025==
 Congdar: Haldorak_Foamymugs.pl now gives out the correct combine container
 
