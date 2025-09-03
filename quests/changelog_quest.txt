@@ -1,10 +1,15 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+<<<<<<< HEAD
 ==7/01/2025==
 Patrikpatrik: Champion_Darkwater updated for July ladder.
+=======
+==09/02/2025==
+Congdar: Paw Door update
+>>>>>>> 6599531f (Paw door update)
 
 ==06/15/2025==
-Congdar: Haldorak_Foamymugs.pl now gives out the correct combine container
+Congdar: Haldorak Foamymugs now gives out the correct combine container
 
 ==01/01/2025==
 Patrikpatrik: Champion Darkwater updated for January 1st, 2025.
