@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==09/12/2025==
+Congdar: qvic perl cleanup
+
 ==09/02/2025==
 Congdar: Paw Door update
 

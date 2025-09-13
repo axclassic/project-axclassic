@@ -23,7 +23,7 @@ sub EVENT_SIGNAL {
       quest::modifynpcstat("max_hit", "2250");
    }
    if($signal == 3) {
-      quest::emote("goes into a frenzy to protect its wounded pack mate");
+      quest::emote(" goes into a frenzy to protect its wounded pack mate");
       quest::modifynpcstat("special_attacks", "RrFQMCNIDf");
       quest::modifynpcstat("max_hit", "2250");
       $rage = 1;

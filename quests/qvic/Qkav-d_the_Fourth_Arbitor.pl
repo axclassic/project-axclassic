@@ -10,20 +10,21 @@ sub CastSpells {
 }
 
 sub EVENT_TIMER {
-   if($timer eq "CastSpells") {
-      CastSpells();
+   if($timer eq "CastSpells4A") {
+       quest::stoptimer("CastSpells4A");
+       CastSpells();
+       quest::settimer("CastSpells4A", 35);
    }
 }
 
 sub EVENT_SIGNAL {
    if($signal == 1) {
-      quest::settimer("CastSpells", 35);
-      CastSpells();
+      quest::settimer("CastSpells4A", 1);
    }
    else {
       $Cynosure = $entity_list->GetMobByNpcTypeID(295146);
       if($Cynosure) {
-         quest::emote("locks minds with Cynosure Kvanjji, as it mimics the Cynosure's spell.");
+         quest::emote(" locks minds with Cynosure Kvanjji, as it mimics the Cynosure's spell.");
          $SpellTarget = $Cynosure->GetHateRandom();
          $npc->SendBeginCast($signal, 0);
          quest::castspell($signal, $SpellTarget->GetID());
@@ -32,7 +33,7 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_DEATH {
-   quest::stoptimer("CastSpells");
+   quest::stoptimer("CastSpells4A");
    $check_cyno = $entity_list->GetMobByNpcTypeID(295146);
    if($check_cyno) {
       quest::signalwith(295146, 4, 20000);

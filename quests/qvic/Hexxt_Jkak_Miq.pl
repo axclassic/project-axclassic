@@ -6,12 +6,12 @@ sub EVENT_SPAWN {
 
 sub EVENT_HP {
    if($hpevent == 45) {
-      quest::settimer("casting", 10);
+      quest::settimer("castingHJM", 10);
    }
 }
 
 sub EVENT_TIMER {
-   if($timer eq "casting") {
+   if($timer eq "castingHJM") {
       $SpellToCast = quest::chooserandom(4850, 4849, 4851);
       $SpellTarget = $npc->GetHateMost();
       if($SpellTarget) {
@@ -22,6 +22,6 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH {
-   quest::stoptimer("casting");
+   quest::stoptimer("castingHJM");
 }
 

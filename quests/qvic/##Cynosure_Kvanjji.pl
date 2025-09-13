@@ -18,7 +18,7 @@ sub SyncCast {
 }
 
 sub HealMe {
-    quest::stoptimer("HealMe");
+    quest::stoptimer("HealMeCCK");
     $npc->SetHP($npc->GetHP() + ($npc->GetMaxHP() / 20));
     quest::signalwith(295150, 0);
     quest::signalwith(295149, 0);
@@ -27,21 +27,24 @@ sub HealMe {
 }
 
 sub EVENT_AGGRO {
-    SyncCast();
-    quest::settimer("CastSpell", 35);
+    quest::settimer("CastSpellCCK", 1);
 }
 
 sub EVENT_TIMER {
-    if($timer eq "CastSpell") {
+    if($timer eq "CastSpellCCK") {
+        quest::stoptimer("CastSpellsCCK");
         SyncCast();
+        quest::settimer("CastSpellsCCk", 35);
+
     }
-    if($timer eq "HealMe") {
+    if($timer eq "HealMeCCK") {
+        quest::stoptimer("HealMeCCK");
         HealMe();
     }
 }
 
 sub EVENT_DEATH {
-    quest::stoptimer("CastSpell");
+    quest::stoptimer("CastSpellCCK");
     quest::emote("'s corpse grins as a small seam opens before you, and it casts a dark ripple of energy through.");
     quest::signalwith(295154, 1);
     quest::signalwith(295153, 1);
@@ -56,7 +59,7 @@ sub EVENT_DEATH {
 sub EVENT_SIGNAL {
     # $signal 0 is for healing
     if($signal == 0) {
-        quest::settimer("HealMe", 2);
+        quest::settimer("HealMeCCK", 2);
     }
 
     # There will always be one healer up, otherwise spawn non-healer

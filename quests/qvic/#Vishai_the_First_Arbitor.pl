@@ -9,7 +9,7 @@ sub EVENT_TIMER {
       quest::emote("channels its energy and begins to heal Cynosure Kvanjji.");
       quest::signalwith(295146, 0);
    }
-   if($timer eq "CastSpells") {
+   if($timer eq "CastSpellsFA") {
       CastSpells();
    }
 }
@@ -23,16 +23,16 @@ sub CastSpells {
 
 sub EVENT_SIGNAL {
    if($signal == 0) {
-      quest::emote("heals Cynosure Kvanjji's wounds.");
+      quest::emote(" heals Cynosure Kvanjji's wounds.");
    }
    elsif($signal == 1) {
       quest::stoptimer("First");
-      quest::settimer("CastSpells", 35);
+      quest::settimer("CastSpellsFA", 35);
       CastSpells();
    }
    else {
       $Cynosure = $entity_list->GetMobByNpcTypeID(295146);
-      if($Cynosure) {
+      if($Cynosure) { 
          quest::emote("locks minds with Cynosure Kvanjji, as it mimics the Cynosure's spell.");
          $SpellTarget = $Cynosure->GetHateRandom();
          $npc->SendBeginCast($signal, 0);
@@ -42,7 +42,7 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_DEATH {
-   quest::stoptimer("CastSpells");
+   quest::stoptimer("CastSpellsFA");
    quest::stoptimer("First");
    $check_cyno = $entity_list->GetMobByNpcTypeID(295146);
    if($check_cyno) {

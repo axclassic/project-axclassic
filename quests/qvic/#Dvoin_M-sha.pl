@@ -1,7 +1,7 @@
 # #Dvoin_M`sha (295087)
 
 sub EVENT_AGGRO {
-   quest::say("You dare challenge the might of a M`sha?");
+   quest::say("You dare challenge the might of a M sha?");
 }
 
 sub EVENT_DEATH {

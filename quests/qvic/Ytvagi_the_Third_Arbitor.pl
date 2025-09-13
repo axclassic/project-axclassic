@@ -10,15 +10,16 @@ sub CastSpells {
 }
 
 sub EVENT_TIMER {
-   if($timer eq "CastSpells") {
-      CastSpells();
+   if($timer eq "CastSpellsCK") {
+       quest::stoptimer("CastSpellsCK");
+       CastSpells();
+       quest::settimer("CastSpellsCK", 35);
    }
 }
 
 sub EVENT_SIGNAL {
    if($signal == 1) {
-      quest::settimer("CastSpells", 35);
-      CastSpells();
+      quest::settimer("CastSpells", 1);
    }
    else {
       $Cynosure = $entity_list->GetMobByNpcTypeID(295146);
@@ -32,7 +33,7 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_DEATH {
-   quest::stoptimer("CastSpells");
+   quest::stoptimer("CastSpellsCK");
    $check_cyno = $entity_list->GetMobByNpcTypeID(295146);
    if($check_cyno) {
       quest::signalwith(295146, 3, 20000);
