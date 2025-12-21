@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+== 12/10/2025==
+Patrikpatrik: DNS change for eqhost.txt.
+
 == 7/01/2025==
 Patrikpatrik: Ladder restart for July 1st.
 
