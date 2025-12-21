@@ -5,7 +5,7 @@
 sub EVENT_SPAWN{
 	$x = $npc->GetX();
 	$y = $npc->GetY();
-	quest::set_proximity($x - 70, $x + 70, $y - 70, $y + 70);}
+	quest::set_proximity($x - 270, $x + 270, $y - 270, $y + 270);}
 
 sub EVENT_ENTER{
     if (($skiffa ==0) || ($skiffa >=65) && ($skiffa <=80)){

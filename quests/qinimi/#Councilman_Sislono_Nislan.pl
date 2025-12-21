@@ -40,7 +40,7 @@ sub EVENT_SAY {
   }
   if ($text=~/ready/i) {
     if (defined($qglobals{bic}) && ($qglobals{bic} >= 3)) {
-      if (!$event_started && $entity_list->GetNPCByNPCTypeID(281077)) { #Pixtt_Xictic_Krvne (NoTarget)
+      if (!$event_started && $entity_list->GetMobByNpcTypeID(281077)) { #Pixtt_Xictic_Krvne (NoTarget)
         $raid = $entity_list->GetRaidByClient($client);
         if ($raid) {
           for ($count = 0; $count < $raid->RaidCount(); $count++) {

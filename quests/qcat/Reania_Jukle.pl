@@ -4,7 +4,7 @@
 
 sub EVENT_SAY {
   if ($text=~/Hail/i) {
-   quest::say("Why are you talking to me? Don't you know where you are? I can either turn you into a hideous thing or just call the guards and let them take into the next life! Unless you have something for me I suggest you run for your life!");  
+   quest::say("Why are you talking to me? Don't you know where you are? I can either turn you into a hideous thing or just call the guards and let them take you into the next life! Unless you have something for me I suggest you run for your life!");  
   }
   if ($text=~/ink/i) {
     quest::say("Ink of the Dark, you say? That isn't an everyday item, you know. In fact, I can't remember the last time someone requested it. I have given up keeping any here with me. You are going to need to find your own supply now. Sorry.");

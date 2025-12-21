@@ -477,7 +477,7 @@ sub EVENT_ITEM {
     foreach my $bitem (@itema) {
         $total4 += $itemcount{$bitem}
     }
-    if($itemcount{200} == 1) {
+    if((defined($itemcount{200}) && ($itemcount{200} == 1))) {
         $client->Message(14,"Nice to meets ya! Here's a little somtin' ta get ya started. It's me own lucky charm!");
         $client->Message(14,"You gots work ta do! Take yer help wid ya an go do some fightn!");
         $client->Message(14,"Go gets me 4 spider legs an two platinum pieces - don't weigh me down with dat copper and silver or gold! Just two platium pieces and da spider legs. An don't come back tell yer level five!");
