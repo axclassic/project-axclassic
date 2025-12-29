@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==12/29/2025==
+Congdar: update Gartrog_Smitehammer.pl
+
 ==12/20/2025==
 Congdar: update Brother_Balatin.pl
 

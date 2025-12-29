@@ -17,4 +17,11 @@ sub EVENT_ITEM {
         quest::summonitem(66176);
         quest::summonitem(66177);
     }
+    if(plugin::check_handin(\%itemcount, 66175 => 1, 66176 => 1, 66177 => 1)) {
+        quest::say("You don't like my work? Well then... your old weapons returned.");
+        quest::summonitem(10908);
+        quest::summonitem(17859);
+        quest::depop();
+    }
 }
+
