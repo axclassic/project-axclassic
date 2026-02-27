@@ -11,7 +11,7 @@
 # JrFaust
 
 sub EVENT_ATTACK {
- quest::signalwith(227081,1,0);
+ quest::signalwith(227081,1,10);
 }
    
 sub EVENT_DEATH{

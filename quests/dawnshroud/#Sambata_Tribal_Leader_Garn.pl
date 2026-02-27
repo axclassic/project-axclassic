@@ -27,7 +27,7 @@
 ############################################# 
 
 sub EVENT_DEATH {
-    quest::signalwith(174240,530,0);
+    quest::signalwith(174240,530,10);
 }
 
 # END of FILE Zone:dawnshroud  #Sambata_Tribal_Leader_Garn (174577)

@@ -4,5 +4,5 @@ quest::shout("When we have defeated you, I shall see that your corpses rot in th
 }
 }
 sub EVENT_DEATH {
-quest::signalwith(340049,113,0); 
+quest::signalwith(340049,113,10); 
 }

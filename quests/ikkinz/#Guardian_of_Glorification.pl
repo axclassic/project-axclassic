@@ -4,9 +4,9 @@ sub EVENT_SPAWN {
 
 sub EVENT_HP {
   if($hpevent == 90) {
-    quest::signalwith(294474,1,0);
-    quest::signalwith(294475,1,0);
-    quest::signalwith(294478,1,0);
+    quest::signalwith(294474,1,10);
+    quest::signalwith(294475,1,10);
+    quest::signalwith(294478,1,10);
     quest::setnexthpevent(55);
   }
   if($hpevent == 55) {

@@ -22,52 +22,52 @@ sub EVENT_TIMER {
 
 sub EVENT_DEATH {
   if(($class eq "Bard") && ($qglobals{vrexkill4} == 1)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Beastlord") && ($qglobals{vrexkill4} == 2)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Berserker") && ($qglobals{vrexkill4} == 3)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Cleric") && ($qglobals{vrexkill4} == 4)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Druid") && ($qglobals{vrexkill4} == 5)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Enchanter") && ($qglobals{vrexkill4} == 6)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Magician") && ($qglobals{vrexkill4} == 7)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Monk") && ($qglobals{vrexkill4} == 8)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Necromancer") && ($qglobals{vrexkill4} == 9)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Paladin") && ($qglobals{vrexkill4} == 10)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Ranger") && ($qglobals{vrexkill4} == 11)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Rogue") && ($qglobals{vrexkill4} == 12)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Shadowknight") && ($qglobals{vrexkill4} == 13)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Shaman") && ($qglobals{vrexkill4} == 14)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Warrior") && ($qglobals{vrexkill4} == 15)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   elsif(($class eq "Wizard") && ($qglobals{vrexkill4} == 16)) {
-    quest::signalwith(294597,1,0);
+    quest::signalwith(294597,1,10);
   }
   else {
     quest::spawn2(294599,0,0,$x,$y,$z,$h); 

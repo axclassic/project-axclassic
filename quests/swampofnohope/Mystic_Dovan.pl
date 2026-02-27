@@ -50,7 +50,7 @@ my $Galdon = quest::saylink("Galdon", 1);
 	#Cure disease.
 	elsif(plugin::check_handin(\%itemcount, 12671 => 1)) {#giant blood sac
 		quest::say("Day destroys the night, night divides the day. Tried to run, tried to hide, break on through to the other side.");#Obviously borrowed.
-		quest::castspell($userid, 213);
+		quest::castspell(213, $userid);
 		quest::faction(282, 10); #Scaled Mystics
 		quest::faction(193, 10); #Legion of Cabilis
 	}
@@ -58,14 +58,14 @@ my $Galdon = quest::saylink("Galdon", 1);
 	#Heal (Light Healing)
 	elsif(plugin::check_handin(\%itemcount, 12739 => 2)) {#2x Brittle Iksar Skull
 		quest::emote("Destruction leads to a very rough road, but it also breeds creation.");#Obviouslyborrowed.
-		quest::castspell($userid, 17);
+		quest::castspell(17, $userid);
 		quest::faction(282, 10); #Scaled Mystics
 		quest::faction(193, 10); #Legion of Cabilis
 	}
 	#Cure Poison
 	elsif(plugin::check_handin(\%itemcount, 12441 => 1)) {#Watcher Signal Torch
 		quest::emote("All the money you make will never buy back your soul.");#Obviously borrowed.
-		quest::castspell($userid, 203);
+		quest::castspell(203, $userid);
 		quest::faction(282, 10); #Scaled Mystics
 		quest::faction(193, 10); #Legion of Cabilis
 	}

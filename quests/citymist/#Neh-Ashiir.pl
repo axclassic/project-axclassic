@@ -1,5 +1,5 @@
 # Shaman Epic 1.0
-# #Neh`Ashiir
+# #Neh`Ashiir (90184)
 # City of Mist
 # True Spirit Faction - Warmly
 # Have to save as NPCID Number  Neh`Ashiir
@@ -22,12 +22,11 @@ sub EVENT_ITEM {
         $z = $npc->GetZ();
         $h = $npc->GetHeading();
         quest::faction(342,50);
-        quest::sleep(5000);
-        quest::depop();
-        $entid1 = quest::spawn2(quest::ChooseRandom(90181,90181,90181,90181,90181,90190,90190),0,0,$x,$y,$z,$h);
+        $entid1 = quest::spawn2(quest::ChooseRandom(90181,90181,90181,90181,90190,90190,90190),0,0,$x,$y,$z,$h);
         $mob1 = $entity_list->GetMobID($entid1);
         $mob1attack = $mob1->CastToNPC();
         $mob1attack->AddToHateList($client, 1);
+        quest::depop();
     }
     else {
         quest::emote("will not take this item.");

@@ -20,5 +20,5 @@ sub EVENT_DEATH {
     quest::depop(280083);
     quest::depop(280087);
     quest::depop(280088);
-    quest::signalwith(280086,280,0);
+    quest::signalwith(280086,280,10);
    }	

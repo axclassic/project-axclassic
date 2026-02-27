@@ -5,5 +5,5 @@ quest::shout("Please forgive my poor humor, but I am very eager to test your met
 }
 }
 sub EVENT_DEATH {
-quest::signalwith(340049,113,0); 
+quest::signalwith(340049,113,10); 
 }

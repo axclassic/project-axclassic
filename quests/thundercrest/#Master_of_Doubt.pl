@@ -6,5 +6,5 @@ quest::shout("I do not know what will happen next. I see the same misgiving in s
 }
 }
 sub EVENT_DEATH {
-quest::signalwith(340049,113,0); 
+quest::signalwith(340049,113,10); 
 }

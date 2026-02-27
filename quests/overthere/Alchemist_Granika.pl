@@ -15,7 +15,7 @@ sub EVENT_ITEM {
   quest::spawn2(93126,0,0,1955,2794,-49,190);
   quest::spawn2(93126,0,0,1954,2855,-49,190);
   quest::spawn2(93126,0,0,1915,2825,-49,190);
-  quest::signalwith(93077,0,0);
+  quest::signalwith(93077,0,10);
 }
 else{
   quest::say("I have no use for that. Take it back!"); #Made up text

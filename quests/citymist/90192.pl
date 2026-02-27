@@ -1,3 +1,4 @@
+# a_black_reaver (90192)
 # a_black_reaver that spawns #Neh`Ashiir (90184)
 sub EVENT_DEATH {
     my $x = $npc->GetX();
@@ -6,7 +7,7 @@ sub EVENT_DEATH {
     my $h = $npc->GetHeading();
     my $random_result = int(rand(100));
     if($random_result < 15) {
-        quest::spawn2(quest::ChooseRandom(90184,90190,90184,90190,90184,90190,90184),0,0,$x,$y,$z,$h);
+        quest::spawn2(90184,0,0,$x,$y,$z,$h);
     }
     else {
         quest::spawn2(90192,0,0,$x,$y,$z,$h);

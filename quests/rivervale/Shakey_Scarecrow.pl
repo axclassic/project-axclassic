@@ -1,7 +1,7 @@
 sub EVENT_SAY {
 if($text=~/hail/i){
   quest::emote("Shakey Scarecrow rustles and looks up at you in acknowledgment.");
-  quest::signalwith(19052,0,0);
+  quest::signalwith(19052,0,10);
   }
 }
 sub EVENT_ITEM {

@@ -12,6 +12,6 @@ sub EVENT_TIMER {
   }
 }
 sub EVENT_DEATH{
-quest::signalwith(176105,176,0);
+quest::signalwith(176105,176,10);
 }
 # EOF

@@ -25,5 +25,5 @@ sub EVENT_SIGNAL {
 
 sub EVENT_DEATH {
     quest::shout("Oh No! We have failed the mission!");
-    quest::signalwith(167982,7214,0);
+    quest::signalwith(167982,7214,10);
 }     

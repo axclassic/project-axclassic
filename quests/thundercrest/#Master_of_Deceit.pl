@@ -5,5 +5,5 @@ quest::shout("You certainly will find Rage difficult to stop. I see it boiling u
 }
 }
 sub EVENT_DEATH {
-quest::signalwith(340049,113,0); 
+quest::signalwith(340049,113,10); 
 }

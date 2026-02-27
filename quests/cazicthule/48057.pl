@@ -20,7 +20,7 @@ sub EVENT_TIMER {
     if($timer eq "justicar") {
         quest::stoptimer("justicar");
         # signal Justicar
-        quest::signalwith($a_tae_ew_justicar_id, 1, 0);
+        quest::signalwith($a_tae_ew_justicar_id, 1, 10);
         quest::say("This failed ritual presents a unique opportunity to gather the runes I desperately need. Recover the runes from the fallen minions of the faceless. When your need is greatest, hand me a rune and I will replenish you and your companions.");
         quest::say("Prepare youselves! You must repel the denizens of Fear itself! Good luck brave souls, I will remain here until my task is fulfilled.");
         quest::ze(1, "The walls of the temple begin to crack as the ground beneath your feet shakes violently.");

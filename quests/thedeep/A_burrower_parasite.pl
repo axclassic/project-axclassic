@@ -6,12 +6,12 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_TIMER {
-  quest::signalwith(164098,101,0);
+  quest::signalwith(164098,101,10);
   quest::depop();
 }
 
 sub EVENT_DEATH {
-  quest::signalwith(164098,201,0);
+  quest::signalwith(164098,201,10);
   quest::stoptimer("countdown");
 }
 

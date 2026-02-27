@@ -473,7 +473,7 @@ sub EVENT_SAY {
 
     ## Band Saystuff Ends here
 	elsif($text=~/buffs/i) {
-        $npc->SendBeginCast(269, 0);
+        $npc->SendBeginCast(269, 2);
         $client->Message(14,"Ranger Band says, 'Good hunting!'");
         quest::castspell(269, $userid);
     }

@@ -39,7 +39,7 @@ sub EVENT_SIGNAL {
             quest::spawn2(167966,0,0,574.4,-674.5,-33.5,156.4);
         }
         if($counter == 17) {
-            quest::signalwith(167992,7226,0);
+            quest::signalwith(167992,7226,10);
             quest::depop(167989);
             quest::depop();
         }

@@ -1,5 +1,8 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==02/27/2026==
+Congdar: update #Neh`Ashiir.pl
+
 ==12/29/2025==
 Congdar: update Gartrog_Smitehammer.pl
 

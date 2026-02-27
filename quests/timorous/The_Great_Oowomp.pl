@@ -65,7 +65,7 @@ sub EVENT_ITEM {
 
 sub EVENT_TIMER {
   if ($timer == 1) {
-    quest::signalwith(96088,5,0);
+    quest::signalwith(96088,5,10);
     quest::stoptimer(1);
   }
 }

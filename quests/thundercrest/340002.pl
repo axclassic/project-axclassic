@@ -4,5 +4,5 @@ my $x = $npc->GetX();
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
   quest::spawn2(340116,0,0,$x,$y,$z,$h);
-quest::signalwith(340108,911,0);
+quest::signalwith(340108,911,10);
 }

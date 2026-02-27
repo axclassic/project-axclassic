@@ -6,5 +6,5 @@ quest:shout("Death is upon you now!");
 
 sub EVENT_DEATH {
   quest::say("This cannot be...");
-  quest::signalwith(167975,7206,0);
+  quest::signalwith(167975,7206,10);
  } 

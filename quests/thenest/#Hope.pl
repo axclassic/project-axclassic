@@ -15,7 +15,7 @@ my $No = quest::saylink("No", 1);
    if($text=~/Yes/i) {
    quest::say("You must destroy the Aspects in order to test your metal against T'Shara, you have 30 minutes.");
    quest::spawn2(343184,0,0,-1470.9,-467,-175.6,194.6);
-   quest::signalwith(343184,310,0);
+   quest::signalwith(343184,310,10);
    quest::depop(343233);
    quest::depop(343234);
    quest::depop(343235);

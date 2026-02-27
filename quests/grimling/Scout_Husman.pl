@@ -11,7 +11,7 @@ my $ready = quest::saylink("ready", 1);
      quest::say("Very well then $name, Follow me.");
      quest::spawn2(167974,0,0,-1136.7,374,6.8,234.5);
      quest::spawn2(167979,0,0,-1136.7,374,6.8,234.5);
-     quest::signalwith(167974,7202,0);
+     quest::signalwith(167974,7202,10);
      quest::signalwith(167979,7203,10);
      quest::start(1);
      }

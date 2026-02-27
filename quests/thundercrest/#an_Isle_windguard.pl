@@ -1,6 +1,6 @@
 sub EVENT_WAYPOINT {
     if ($wp == 6) {
-    quest::signalwith(340079,566,0);
+    quest::signalwith(340079,566,10);
     }
 	if ($wp == 7) {
 	quest::spawn2(340085,340073,0,-643.7,-667.6,61.6,191.1);
@@ -13,6 +13,6 @@ sub EVENT_SIGNAL {
 }
 }
 sub EVENT_DEATH {
-   quest::signalwith(340080,666,0);
+   quest::signalwith(340080,666,10);
    quest::spawn2(340085,340073,0,-643.7,-667.6,61.6,191.1);
 }

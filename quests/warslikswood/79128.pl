@@ -39,8 +39,8 @@ sub EVENT_SIGNAL {
         $client->Message(14, "alive goblin signal to depop.");
         #Signal from an alive goblin
         quest::stoptimer(1);
-        quest::signalwith(79130,1,0); #a frantic goblin
-        quest::signalwith(79131,1,0); #Ferocious Goblin
+        quest::signalwith(79130,1,10); #a frantic goblin
+        quest::signalwith(79131,1,10); #Ferocious Goblin
         quest::shout("How pathetic. You are weaker than I guessed! Like all the others, you present no threat! I shall leave as you are  such a bore. Return to challenge me when you are a less of a chore.");
         quest::depop();
     }

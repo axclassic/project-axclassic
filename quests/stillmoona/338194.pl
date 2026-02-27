@@ -1,3 +1,3 @@
 sub EVENT_DEATH {
-quest::signalwith(338184,622,0);
+quest::signalwith(338184,622,10);
 }

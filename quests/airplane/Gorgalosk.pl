@@ -11,8 +11,8 @@ sub EVENT_SAY {
    if($text=~/strange things/i) {
       quest::say("Like ATTACK you!");
       my $annoyer = $client->GetID();
-      quest::signalwith(71019,$annoyer,0);
-      quest::signalwith(71022,$annoyer,0);
+      quest::signalwith(71019,$annoyer,10);
+      quest::signalwith(71022,$annoyer,10);
       quest::sleep(2000);
       quest::attack($name);
    }

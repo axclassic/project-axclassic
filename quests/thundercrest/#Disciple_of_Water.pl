@@ -4,5 +4,5 @@ quest::shout("Ah, yes. You must forgive Fire, for he cares little for pleasantri
 }
 }
 sub EVENT_DEATH {
-quest::signalwith(340049,113,0); 
+quest::signalwith(340049,113,10); 
 }

@@ -32,7 +32,7 @@ sub EVENT_SAY {
     #}
     elsif(($text=~/wish to go to Discord/i) && ($ulevel>=40)) {
         # Level 40+ zone
-        $npc->SendBeginCast(6225, 0);
+        $npc->SendBeginCast(6225, 3);
         quest::say("Prepare yourself to enter the depths of Discord.");
         quest::setglobal("OOW_PoD_Origin", $npc->GetZoneID(), 5, "F");
         quest::castspell(6225, $userid);

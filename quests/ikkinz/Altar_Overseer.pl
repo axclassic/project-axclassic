@@ -4,19 +4,19 @@ sub EVENT_SPAWN {
 
 sub EVENT_HP {
   if($hpevent == 84) {
-  quest::signalwith(294605,1,0);
+  quest::signalwith(294605,1,10);
   quest::setnexthpevent(51);
   quest::emote("motions for one of the Altar Monuments to come forth and aid in the attack!");
   quest::settimer(1,3);
   }
   if($hpevent == 51) {
-  quest::signalwith(294606,1,0);
+  quest::signalwith(294606,1,10);
   quest::setnexthpevent(23);
   quest::emote("motions for one of the Altar Monuments to come forth and aid in the attack!");
   quest::settimer(1,3);  
   }
   if($hpevent == 23) {
-  quest::signalwith(294607,1,0);
+  quest::signalwith(294607,1,10);
   quest::emote("motions for one of the Altar Monuments to come forth and aid in the attack!");
   quest::settimer(1,3);  
   }
@@ -26,7 +26,7 @@ sub EVENT_TIMER {
   my $NPCToRespond = 294608; # NPCID to call in to assist
 	my @hatelist = $npc->GetHateList();	# Get the NPC's current Hate List
 	my $HateCount = @hatelist;	# Total mobs on the NPC's hate list
-	my @npclist = $entity_list->GetNPCList();	# Get the full NPC list for the zone
+	my @npclist = $entity_list->GetMobList();	# Get the full NPC list for the zone
 	foreach $ent (@npclist)
 	{
 		if($ent->GetNPCTypeID() == $NPCToRespond)	# Verify that the current NPC being checked is the NPCID we want

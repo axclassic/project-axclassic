@@ -4,7 +4,7 @@ my $rage = 0;
 
 sub EVENT_DEATH {
    quest::emote("'s corpse oozes from large cracks in its shell as it struggles in vain to remain standing.");
-   quest::signalwith(295130,1,0);
+   quest::signalwith(295130,1,10);
 }
 
 # signals from Iqthinxa Karnkvi

@@ -5,6 +5,6 @@ sub EVENT_SPAWN {
     }
 sub EVENT_ENTER {
     quest::spawn2(338184,0,0,-430.1,1017.4,6.1,1.3);
-	quest::signalwith(338184,621,0);
+	quest::signalwith(338184,621,10);
  	quest::depop();
 }

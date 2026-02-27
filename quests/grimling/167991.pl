@@ -15,7 +15,7 @@ sub EVENT_SAY {
         quest::say("We must sneak up on the encampment, rushing in this time would surely mean death for both us..");
         quest::spawn2(167989,0,0,531.4,-831.4,13.8,15.5);
         quest::spawn2(167990,0,0,531.4,-831.4,13.8,15.5);
-        quest::signalwith(167960,7222,0);
+        quest::signalwith(167960,7222,10);
         quest::signalwith(167989,7223,10);
         quest::start(501018);
     }

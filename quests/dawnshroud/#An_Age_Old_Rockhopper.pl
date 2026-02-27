@@ -27,7 +27,7 @@
 ############################################# 
 
 sub EVENT_DEATH {
-    quest::signalwith(174240,940,0);
+    quest::signalwith(174240,940,10);
 }
 
 # END of FILE Zone:dawnshroud  #An_Age_Old_Rockhopper (174616)

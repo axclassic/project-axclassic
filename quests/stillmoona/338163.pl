@@ -6,7 +6,7 @@ my $worthy = quest::saylink("worthy", 1);
 	if($text=~/worthy/i) {
     quest::say("Rise, warriors of the past! Experience the glory of combat once more!");
 	quest::spawn2(338165,0,0,-7.3,976.6,39.6,128.8);
-	quest::signalwith(338165,322,0);
+	quest::signalwith(338165,322,1);
 	quest::signalwith(338165,321,5);
 	quest::depop();
  }

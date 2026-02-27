@@ -5,7 +5,7 @@ sub EVENT_SPAWN {
     }
 sub EVENT_ENTER {
 quest::summonitem(120167);
-quest::signalwith(340103,880,0);
+quest::signalwith(340103,880,10);
 quest::depop(340106);
 quest::depop(340105);
 quest::depop();

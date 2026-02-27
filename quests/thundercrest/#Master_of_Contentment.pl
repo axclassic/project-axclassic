@@ -5,5 +5,5 @@ quest::shout("Ah! I am pleased to meet you all. This is a fine challenge for us,
 }
 }
 sub EVENT_DEATH {
-quest::signalwith(340049,113,0); 
+quest::signalwith(340049,113,10); 
 }

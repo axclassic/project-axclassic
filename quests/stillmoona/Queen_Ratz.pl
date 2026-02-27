@@ -1,3 +1,3 @@
 sub EVENT_SPAWN {
-quest::signalwith(338215,855,0);
+quest::signalwith(338215,855,10);
 }

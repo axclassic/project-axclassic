@@ -7,7 +7,7 @@ sub EVENT_SAY {
         if(($text=~/hail/i) && (defined($qglobals{Soulwhisper}) && ($qglobals{Soulwhisper} == 2))) {
             quest::say("I wonder how much I could get for the tongue of a blithering fool..leave before I decide to find out for myself.");
             $isNecro = 1;
-            quest::modifynpcstat("special_attacks", SEMCNIDf);
+            quest::modifynpcstat("special_attacks", "SEMCNIDf");
             quest::attack($name);
         }
     }

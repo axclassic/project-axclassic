@@ -11,13 +11,13 @@ sub EVENT_SPAWN {
 sub EVENT_TIMER {
     if($timer == 1) {
         quest::stoptimer(1);
-        quest::signalwith(79128,1,0);
+        quest::signalwith(79128,1,10);
     }
 }
 
 sub EVENT_DEATH {
     quest::stoptimer(1);
-    quest::signalwith(79128,2,0);
+    quest::signalwith(79128,2,10);
 }
 
 sub EVENT_SIGNAL {

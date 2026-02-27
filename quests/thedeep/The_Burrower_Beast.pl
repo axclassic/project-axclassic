@@ -15,11 +15,11 @@ sub EVENT_TIMER {
 sub EVENT_SIGNAL {
   if ($signal == 101) { #failure - despawn the worms
     quest::settimer("start_controller",300);
-    quest::signalwith(164118,102,0);
-    quest::signalwith(164104,102,0);
-    quest::signalwith(164100,102,0);
-    quest::signalwith(164108,102,0);
-    quest::signalwith(164085,102,0);
+    quest::signalwith(164118,102,10);
+    quest::signalwith(164104,102,10);
+    quest::signalwith(164100,102,10);
+    quest::signalwith(164108,102,10);
+    quest::signalwith(164085,102,10);
   }
   elsif ($signal == 201) { #success
     quest::depop();

@@ -5,5 +5,5 @@ sub EVENT_DEATH {
   my $z = $npc->GetZ();
   my $h = $npc->GetHeading();
   quest::spawn2(340108,0,0,$x,$y,$z,$h);
-quest::signalwith(340108,910,0);
+quest::signalwith(340108,910,10);
 }

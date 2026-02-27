@@ -1,5 +1,5 @@
 sub EVENT_DEATH {
-  quest::signalwith(294142,1,0);
+  quest::signalwith(294142,1,10);
   $group = $entity_list->GetGroupByClient($client);
       if ($group) {
         for ($count = 0; $count < $group->GroupCount(); $count++) {

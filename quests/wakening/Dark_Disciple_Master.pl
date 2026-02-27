@@ -30,12 +30,12 @@ sub EVENT_HP {
         quest::spawn2(119178,0,0,$x-15,$y+15,$z,0); # Minion_of_the_Master
         quest::spawn2(119178,0,0,$x+15,$y-15,$z,0); # Minion_of_the_Master
         quest::say("You have underestimated me! I will not fall this day!");
-        $npc->SendBeginCast(1248, 0);
+        $npc->SendBeginCast(1248, 1);
         quest::castspell(1248, $npc->GetID()); #-- Spell: Spiritual Echo
         quest::setnexthpevent(18);
     }
     elsif($hpevent == 18) {
-        $npc->SendBeginCast(4746, 0);
+        $npc->SendBeginCast(4746, 1);
         quest::castspell(4746, $npc->GetID()); #-- Spell: Protection of Discord III
     }
 }

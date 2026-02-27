@@ -31,7 +31,7 @@ sub EVENT_SIGNAL {
     $ocounter += 1;
 }
   if ($ocounter == 4 ) {
-    quest::signalwith(226066,66,0);
+    quest::signalwith(226066,66,10);
     quest::spawn2(226085,0,0,479,197,3,191);
     quest::depop();
     $ocounter = 0;

@@ -44,7 +44,6 @@ sub check_weapon {
         if($random_raider->IsClient()) {
             my $client_raider = $random_raider->CastToClient();
             if($client_raider) {
-                quest::ze(15, "client_raider");
                 my $primary = $client_raider->GetItemAt(13);
                 my $secondary = $client_raider->GetItemAt(14);
                 if($primary || $secondary) {
@@ -77,10 +76,8 @@ sub check_rings {
     if($random_raider) {
         my $dbgname2 = $random_raider->GetCleanName();
         if($random_raider->IsClient()) {
-            quest::ze(15, "random_raider->IsClient()");
             my $client_raider = $random_raider->CastToClient();
             if($client_raider) {
-                quest::ze(15, "client_raider");
                 my $left_ring = $client_raider->GetItemAt(15);
                 my $right_ring = $client_raider->GetItemAt(16);
                 if($left_ring || $right_ring) {

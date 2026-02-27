@@ -73,16 +73,16 @@ sub CheckForRavs {
                   if(abs($rav1HPR - $rav2HPR) >= 10.0) {
                      if($rav1HPR < $rav2HPR) {
                         $WhichRav = 1;
-                        quest::signalwith(295131, 2, 0);
-                        quest::signalwith(295132, 3, 0);
+                        quest::signalwith(295131, 2, 10);
+                        quest::signalwith(295132, 3, 10);
                         $TopHate = $rav1->GetHateTop();
                         $rav2->WipeHateList();
                         $rav2->AddToHateList($TopHate->CastToMob(), 100000);
                      }
                      else {
                         $WhichRav = 2;
-                        quest::signalwith(295131, 3, 0);
-                        quest::signalwith(295132, 2, 0);
+                        quest::signalwith(295131, 3, 10);
+                        quest::signalwith(295132, 2, 10);
                         $TopHate = $rav2->GetHateTop();
                         $rav1->WipeHateList();
                         $rav1->AddToHateList($TopHate->CastToMob(), 100000);
@@ -95,16 +95,16 @@ sub CheckForRavs {
                   if(abs($rav1HPR - $rav3HPR) >= 10.0) {
                      if($rav1HPR < $rav3HPR) {
                         $WhichRav = 1;
-                        quest::signalwith(295131, 2, 0);
-                        quest::signalwith(295133, 3, 0);
+                        quest::signalwith(295131, 2, 10);
+                        quest::signalwith(295133, 3, 10);
                         $TopHate = $rav1->GetHateTop();
                         $rav3->WipeHateList();
                         $rav3->AddToHateList($TopHate->CastToMob(), 100000);
                      }
                      else {
                         $WhichRav = 3;
-                        quest::signalwith(295131, 3, 0);
-                        quest::signalwith(295133, 2, 0);
+                        quest::signalwith(295131, 3, 10);
+                        quest::signalwith(295133, 2, 10);
                         $TopHate = $rav3->GetHateTop();
                         $rav1->WipeHateList();
                         $rav1->AddToHateList($TopHate->CastToMob(), 100000);
@@ -118,16 +118,16 @@ sub CheckForRavs {
                if(abs($rav2HPR - $rav3HPR) >= 10.0) {
                   if($rav2HPR < $rav3HPR) {
                      $WhichRav = 2;
-                     quest::signalwith(295132, 2, 0);
-                     quest::signalwith(295133, 3, 0);
+                     quest::signalwith(295132, 2, 10);
+                     quest::signalwith(295133, 3, 10);
                      $TopHate = $rav2->GetHateTop();
                      $rav3->WipeHateList();
                      $rav3->AddToHateList($TopHate->CastToMob(), 100000);
                   }
                   else {
                      $WhichRav = 3;
-                     quest::signalwith(295132, 3, 0);
-                     quest::signalwith(295133, 2, 0);
+                     quest::signalwith(295132, 3, 10);
+                     quest::signalwith(295133, 2, 10);
                      $TopHate = $rav3->GetHateTop();
                      $rav2->WipeHateList();
                      $rav2->AddToHateList($TopHate->CastToMob(), 100000);
@@ -143,9 +143,9 @@ sub CheckForRavs {
                if($rav1HPR < $rav2HPR) {
                   if($rav1HPR < $rav3HPR) {
                      $WhichRav = 1;
-                     quest::signalwith(295131, 2, 0);
-                     quest::signalwith(295132, 3, 0);
-                     quest::signalwith(295133, 3, 0);
+                     quest::signalwith(295131, 2, 10);
+                     quest::signalwith(295132, 3, 10);
+                     quest::signalwith(295133, 3, 10);
                      $TopHate = $rav1->GetHateTop();
                      $rav2->WipeHateList();
                      $rav3->WipeHateList();
@@ -154,9 +154,9 @@ sub CheckForRavs {
                   }
                   else {
                      $WhichRav = 3;
-                     quest::signalwith(295131, 3, 0);
-                     quest::signalwith(295132, 3, 0);
-                     quest::signalwith(295133, 2, 0);
+                     quest::signalwith(295131, 3, 10);
+                     quest::signalwith(295132, 3, 10);
+                     quest::signalwith(295133, 2, 10);
                      $TopHate = $rav3->GetHateTop();
                      $rav1->WipeHateList();
                      $rav2->WipeHateList();
@@ -166,9 +166,9 @@ sub CheckForRavs {
                }
                elsif($rav2HPR < $rav3HPR) {
                   $WhichRav = 2;
-                  quest::signalwith(295131, 3, 0);
-                  quest::signalwith(295132, 2, 0);
-                  quest::signalwith(295133, 3, 0);
+                  quest::signalwith(295131, 3, 10);
+                  quest::signalwith(295132, 2, 10);
+                  quest::signalwith(295133, 3, 10);
                   $TopHate = $rav2->GetHateTop();
                   $rav1->WipeHateList();
                   $rav3->WipeHateList();
@@ -177,9 +177,9 @@ sub CheckForRavs {
                }
                else {
                   $WhichRav = 3;
-                  quest::signalwith(295131, 3, 0);
-                  quest::signalwith(295132, 3, 0);
-                  quest::signalwith(295133, 2, 0);
+                  quest::signalwith(295131, 3, 10);
+                  quest::signalwith(295132, 3, 10);
+                  quest::signalwith(295133, 2, 10);
                   $TopHate = $rav3->GetHateTop();
                   $rav1->WipeHateList();
                   $rav2->WipeHateList();
@@ -190,9 +190,9 @@ sub CheckForRavs {
          }
       }
       if($WhichRav == 0) {
-         quest::signalwith(295131, 1, 0);
-         quest::signalwith(295132, 1, 0);
-         quest::signalwith(295133, 1, 0);
+         quest::signalwith(295131, 1, 10);
+         quest::signalwith(295132, 1, 10);
+         quest::signalwith(295133, 1, 10);
       }
    }
 }

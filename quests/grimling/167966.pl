@@ -7,5 +7,5 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH {
     quest::say("This cannot be...");
-    quest::signalwith(167990,7225,0);
+    quest::signalwith(167990,7225,10);
 } 

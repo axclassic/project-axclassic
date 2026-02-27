@@ -6,19 +6,19 @@ sub EVENT_SPAWN {
 
 sub EVENT_HP {
   if($hpevent == 75) {
-  quest::signalwith(294344,1,0);
+  quest::signalwith(294344,1,10);
   quest::setnexthpevent(47);
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
   quest::settimer(1,3);    
   }
   if($hpevent == 47) {
-  quest::signalwith(294345,1,0);
+  quest::signalwith(294345,1,10);
   quest::setnexthpevent(26);
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
   quest::settimer(1,3);
   }
   if($hpevent == 26) {
-  quest::signalwith(294346,1,0);
+  quest::signalwith(294346,1,10);
   quest::emote("motions for one of the Crumbling Monuments to come forth and aid in the attack!");
   quest::settimer(1,3);
   }
@@ -34,7 +34,7 @@ if($timer == 1) {
   my $NPCToRespond = 294578; # NPCID to call in to assist
 	my @hatelist = $npc->GetHateList();	# Get the NPC's current Hate List
 	my $HateCount = @hatelist;	# Total mobs on the NPC's hate list
-	my @npclist = $entity_list->GetNPCList();	# Get the full NPC list for the zone
+	my @npclist = $entity_list->GetMobList();	# Get the full NPC list for the zone
 	foreach $ent (@npclist)
 	{
 		if($ent->GetNPCTypeID() == $NPCToRespond)	# Verify that the current NPC being checked is the NPCID we want
@@ -65,5 +65,5 @@ sub EVENT_DEATH {
   quest::spawn2(294346,0,0,316,-778,2,224);
   quest::spawn2(294346,0,0,201,-776,2,29);
   quest::spawn2(294346,0,0,161,-717,2,52);
-  quest::signalwith(294342,1,0);
+  quest::signalwith(294342,1,10);
 }

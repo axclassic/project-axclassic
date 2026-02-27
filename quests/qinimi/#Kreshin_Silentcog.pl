@@ -34,6 +34,6 @@ sub EVENT_ITEM {
 
 sub EVENT_TIMER {
   quest::stoptimer("KreshinDepop");
-  quest::signalwith(281116,3,0); #Trigger_Qinimi_1
+  quest::signalwith(281116,3,10); #Trigger_Qinimi_1
   quest::depop();
 }

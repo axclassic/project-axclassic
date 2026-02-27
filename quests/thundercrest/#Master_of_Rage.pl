@@ -4,5 +4,5 @@ quest::shout("I hate you! I will rend you into bite-sized chunks of flesh and fe
 }
 }
 sub EVENT_DEATH {
-quest::signalwith(340049,113,0); 
+quest::signalwith(340049,113,10); 
 }

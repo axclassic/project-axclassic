@@ -1,6 +1,6 @@
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 60246 =>1 )) {
-    quest::signalwith(294614,1,0);
+    quest::signalwith(294614,1,10);
   }
   plugin::return_items(\%itemcount);
 }

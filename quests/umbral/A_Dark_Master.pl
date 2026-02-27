@@ -3,7 +3,7 @@
 
 
 sub EVENT_DEATH {
-    quest::signalwith(176087,99,0);
+    quest::signalwith(176087,99,10);
   }
 
 # EOF ZONE: umbral ID: 176042 NPC: A_Dark_Master

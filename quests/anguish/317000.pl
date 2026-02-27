@@ -55,7 +55,10 @@ sub EVENT_SAY {
                 quest::modifynpcstat("special_attacks", "SERQMCNIDf");
                 my $random_raid_member = $client->GetRandomBotRaidMember();
                 if($random_raid_member) {
-                    $npc->AddToHateList($random_raid_member, 100);
+                    $npc->AddToHateList($random_raid_member, 200);
+                }
+                else {
+                    $npc->AddToHateList($client, 200);
                 }
             }
         }
