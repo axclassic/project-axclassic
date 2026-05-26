@@ -9,7 +9,6 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
     my @raid_clients = $entity_list->GetClientList();
-    $boss_hp = $npc->GetHPRatio();
     if($timer eq "tick") {
         foreach(@raid_clients) {
             if($_) {
@@ -20,7 +19,7 @@ sub EVENT_TIMER {
                         # Spell: Cazic Touch
                         quest::castspell(982, $_->GetID());
                     }
-                    $warnings++;
+                    $warnings = $warnings + 1;
                 }
                 my $bot_raid_count = $entity_list->GetBotRaidCount($_);
                 if(($bot_raid_count > 54) || ($bot_raid_count == 0)) {
@@ -30,7 +29,7 @@ sub EVENT_TIMER {
                         # Spell: Cazic Touch
                         quest::castspell(982, $_->GetID());
                     }
-                    $warnings++;
+                    $warnings = $warnings + 1;
                 }
             }
         }

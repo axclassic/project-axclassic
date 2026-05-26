@@ -62,7 +62,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_DEATH {
-    quest::signal(309069);
+    quest::signalwith(309069, 1, 5);
     $npc->ClearItemList();
 }
 

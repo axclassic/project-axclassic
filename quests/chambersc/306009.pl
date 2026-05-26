@@ -89,16 +89,16 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_DEATH {
-    signalwith(306003, 666);
-    signalwith(306004, 666);
-    signalwith(306005, 666);
-    signalwith(306007, 666);
-    signalwith(306008, 666);
-    signalwith(306009, 666);
-    signalwith(306010, 666);
-    signalwith(306011, 666);
-    signalwith(306012, 666);
-    signalwith(306013, 666);
-    signalwith(306014, 666);
+    signalwith(306003, 666, 1);
+    signalwith(306004, 666, 1);
+    signalwith(306005, 666, 1);
+    signalwith(306007, 666, 1);
+    signalwith(306008, 666, 1);
+    signalwith(306009, 666, 1);
+    signalwith(306010, 666, 1);
+    signalwith(306011, 666, 1);
+    signalwith(306012, 666, 1);
+    signalwith(306013, 666, 1);
+    signalwith(306014, 666, 1);
 }
 

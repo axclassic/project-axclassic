@@ -28,7 +28,7 @@ sub EVENT_DEATH {
     #-- Spawn Shell of the Master
     quest::spawn2(308018, 0, 0, $x, $y, $z, $h);
     quest::depopall(308015);
-    quest::signalwith(308009, 308011);
+    quest::signalwith(308009, 308011, 3);
 }
 
 sub EVENT_COMBAT {

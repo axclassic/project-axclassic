@@ -69,7 +69,7 @@ sub EVENT_TIMER {
                         # Spell: Cazic Touch
                         quest::castspell(982, $_->GetID());
                     }
-                    $warnings++;
+                    $warnings = $warnings + 1;
                 }
                 my $bot_raid_count = $entity_list->GetBotRaidCount($_);
                 if(($bot_raid_count > 54) || ($bot_raid_count == 0)) {
@@ -79,7 +79,7 @@ sub EVENT_TIMER {
                         # Spell: Cazic Touch
                         quest::castspell(982, $_->GetID());
                     }
-                    $warnings++;
+                    $warnings = $warnings + 1;
                 }
             }
         }
@@ -123,7 +123,7 @@ sub EVENT_TIMER {
             my $feran = $entity_list->GetMobByNpcTypeID($feran_choice);
             if($feran) {
                 $feran_alive = 1;
-                quest::signalwith($feran_choice, 222);
+                quest::signalwith($feran_choice, 222, 3);
             }
         }
         quest::settimer("pups", 15);

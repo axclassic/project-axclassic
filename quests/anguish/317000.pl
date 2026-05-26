@@ -110,7 +110,7 @@ sub EVENT_HP {
         # a_languished_convert (317110)
         quest::spawn2(317110, 0, 0, 331, 4961, 278, 128);
         quest::spawn2(317110, 0, 0, 505, 4792, 278, 384);
-        quest::signal(317110, 2);
+        quest::signalwith(317110, 2, 3);
     }
     elsif($hpevent == 30) {
         $npc->CameraEffect(2000, 3);
@@ -298,6 +298,7 @@ sub EVENT_TIMER {
 			quest::spawn2(317133, 0, 0, $BuzzTarget_x, $BuzzTarget_y, $BuzzTarget_z+10, $BuzzTarget_h);
 			quest::spawn2(317133, 0, 0, $BuzzTarget_x, $BuzzTarget_y, $BuzzTarget_z+10, $BuzzTarget_h);
 			quest::spawn2(317133, 0, 0, $BuzzTarget_x, $BuzzTarget_y, $BuzzTarget_z+10, $BuzzTarget_h);
+            quest::signalwith(317133, 1, 3);
         }
     }
 	elsif($timer eq "banish") {

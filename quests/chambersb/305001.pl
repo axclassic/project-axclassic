@@ -27,7 +27,7 @@ sub EVENT_TIMER {
                         # Spell: Cazic Touch
                         quest::castspell(982, $_->GetID());
                     }
-                    $warnings++;
+                    $warnings = $warnings + 1;
                 }
                 my $bot_raid_count = $entity_list->GetBotRaidCount($_);
                 if(($bot_raid_count > 54) || ($bot_raid_count == 0)) {
@@ -37,7 +37,7 @@ sub EVENT_TIMER {
                         # Spell: Cazic Touch
                         quest::castspell(982, $_->GetID());
                     }
-                    $warnings++;
+                    $warnings = $warnings + 1;
                 }
             }
         }
@@ -46,8 +46,8 @@ sub EVENT_TIMER {
         quest::settimer("event", 60);
         $event += 5;
         if($event < 100) {
-            quest::signalwith(305000, 305001);
-            quest::signalwith(305002, 305001);
+            quest::signalwith(305000, 305001, 3);
+            quest::signalwith(305002, 305001, 3);
         }
         else {
             $event_started = 0;

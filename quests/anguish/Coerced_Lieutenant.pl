@@ -23,7 +23,7 @@ sub EVENT_TIMER {
     }
 }
 sub EVENT_DEATH {
-    quest::signalwith(317000, 317114);
+    quest::signalwith(317000, 317114, 1);
     quest::stoptimer("gettarget");
 }
 

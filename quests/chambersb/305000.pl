@@ -27,7 +27,7 @@ sub EVENT_SAY {
                 quest::spawn2(305001, 0, 0, -9, -25, -2, 192);
                 quest::say("Very well! Let the battle commence!");
                 quest::settimer("begin", 5);
-                quest::signalwith(305002, 305000);
+                quest::signalwith(305002, 305000, 3);
                 $event_started = 1;
             }
         }

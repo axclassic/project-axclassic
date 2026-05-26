@@ -33,7 +33,8 @@ sub EVENT_ITEM
         #Give Antonious Bayle Faction
         quest::faction(9, 5);
 
-        quest::ding(); quest::exp(200);
+        quest::ding();
+        quest::exp(200);
 
         #Give a note ID:18937
         quest::summonitem(18937);
