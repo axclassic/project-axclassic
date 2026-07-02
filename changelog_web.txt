@@ -1,5 +1,8 @@
 AX Classic Web Changelog (Started October 11, 2016)
 |-------------------------------------------------------|
+== 7/01/2026==
+Patrikpatrik: Mid season ladder restart for July 1st.
+
 == 1/01/2026==
 Patrikpatrik: Ladder restart for January 1st.
 
