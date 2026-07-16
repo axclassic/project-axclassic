@@ -8,7 +8,10 @@ sub EVENT_COMBAT {
 }
 
 sub EVENT_TIMER {
-    quest::depop();
+    if($timer eq "depopper") {
+        quest::stoptimer("depopper"); 
+        quest::depop();
+    }
 }
 #EOF zone: ssratemple ID: 162199 NPC: Shissar_broodlings
 

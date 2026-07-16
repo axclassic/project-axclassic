@@ -582,7 +582,7 @@ sub EVENT_ITEM {
         }
         else {
             $client->Message(14,"Well done! You may now use the command  \"#bot magepic\".");
-            $client->Message(6,"Your Magician Epic scroll have been scribed!");
+            $client->Message(6,"Your Magician Epic scroll has been scribed!");
             quest::setglobal("mage_epic_1",1,5,"F");
             $mage_epic_1 = undef;
         }

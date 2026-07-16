@@ -1,5 +1,11 @@
 AX Classic Quests Changelog (Started April 15, 2009)
 |-----------------------------------------------------|
+==7/016/2026==
+Congdar: fix Ssraeshzian Blood Golem not spawning after failed Emperor attempt
+
+==7/01/2026==
+Patrikpatrik: Champion_Darkwater updated for July ladder.
+
 ==02/27/2026==
 Congdar: update #Neh`Ashiir.pl
 

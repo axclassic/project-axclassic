@@ -9,7 +9,7 @@ sub EVENT_COMBAT {
     }
     else {
         quest::depopall(162280);
-        quest::signalwith(162582, 3); # Emp_Event_Controllerf
+        quest::signalwith(162582, 3); # Emp_Event_Controller
         quest::depop();
     }
 }

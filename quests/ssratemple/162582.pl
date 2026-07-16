@@ -1,8 +1,7 @@
 # #Emp_Event_Controller (162582)
 
-my $GolemCoolDownTime = int(rand(60)) + 60; #Waiting time to reattempt Emp after failure (Current setting: 1-2 hours)
-my $EmpRepopTime = int(rand(60)) + 480; #Respawn time forEmp after success (Current setting: 8-9 hours)
-my $EmpPrepTime = 150; #Seconds before Emp becomes targetable after killing Blood/Golem (Current setting: 2min 30sec)
+my $GolemCoolDownTime = 3600; #Waiting time to reattempt Emp after failure (Current setting: 1 hour)
+my $EmpPrepTime = 180; #Seconds before Emp becomes targetable after killing Blood/Golem (Current setting: 3 min)
 my $EmpPrep = 1;
 
 sub EVENT_SPAWN {
@@ -50,11 +49,6 @@ sub EVENT_TIMER {
         quest::setglobal("SsraEmperor", "3", 2 ,"F");
         quest::setglobal("SsraGolem", "2", 2, "F");
     }
-    if($timer eq "RespawnEmperor") {
-        quest::stoptimer("RespawnEmperor");
-        quest::setglobal("SsraEmperor", "1", 2 ,"F");
-        quest::setglobal("SsraGolem", "1", 2, "F");
-    }
 }
 
 sub EVENT_SIGNAL {
@@ -65,29 +59,41 @@ sub EVENT_SIGNAL {
         $EmpPrep = 1;
     }
     if($signal == 2) {
+        quest::stoptimer("EmpCycle");
         #Emperor is dead
-        quest::settimer("RespawnEmperor", ($EmpRepopTime * 60));
-        quest::setglobal("SsraEmperor", "5", 2 ,"F");
-        quest::setglobal("SsraGolem", "5", 2, "F");
-        #Respawn time forEmp after success (Current setting: 3-5 days)
-    }
-    if($signal == 3) {
-        #Raid Failure
         # Ssraeshza Traps
         quest::depopall(162280);
-        ##Emperor_Ssraeshza (No Target)
-        quest::depop(162065);
+        quest::kill();
+    }
+    if($signal == 3) {
+        # Emperor Failure
+        # Ssraeshza Traps
+        quest::depopall(162280);
         if(($qglobals{SsraEmperor} == 2) && ($qglobals{SsraGolem} == 1)) { # Failed on Golem
-            quest::settimer("CoolDownGolem", ($GolemCoolDownTime * 60));
+            quest::settimer("CoolDownGolem", $GolemCoolDownTime);
             quest::setglobal("SsraEmperor", "5", 2 ,"F");
             quest::setglobal("SsraGolem", "5", 2, "F");
         }
         if(($qglobals{SsraEmperor} == 3) && ($qglobals{SsraGolem} == 2)) { # Failed on Emperor or second Golem
-            quest::settimer("CoolDownEmperor", ($GolemCoolDownTime * 60));
+            quest::settimer("CoolDownEmperor", $GolemCoolDownTime);
             quest::setglobal("SsraEmperor", "5", 2 ,"F");
             quest::setglobal("SsraGolem", "5", 2, "F");
         }
-        #Waiting time to reattempt Emp after failure (Current setting: 3-4 hours)
+    }
+    if($signal == 4) {
+        # Raid Failure before Emperor was targetable
+        # Ssraeshza Traps
+        quest::depopall(162280);
+        if(($qglobals{SsraEmperor} == 2) && ($qglobals{SsraGolem} == 1)) { # Failed on Golem
+            quest::settimer("CoolDownGolem", $GolemCoolDownTime);
+            quest::setglobal("SsraEmperor", "5", 2 ,"F");
+            quest::setglobal("SsraGolem", "5", 2, "F");
+        }
+        if(($qglobals{SsraEmperor} == 3) && ($qglobals{SsraGolem} == 2)) { # Failed on Emperor or second Golem
+            quest::settimer("CoolDownEmperor", $GolemCoolDownTime);
+            quest::setglobal("SsraEmperor", "5", 2 ,"F");
+            quest::setglobal("SsraGolem", "5", 2, "F");
+        }
     }
 }
 
